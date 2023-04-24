@@ -1,0 +1,257 @@
+---
+import {Picture} from "@astrojs/image/components";
+import {contacts} from "@shared/constants/contacts";
+
+const {
+  phone495String,
+  phone495,
+  phone812,
+  phone812String,
+  whatsApp,
+  telegram,
+  vk,
+} = contacts;
+---
+
+<script>
+  const menuButton = document.querySelector("#top_nav_burger_menu");
+  const menuBar = document.querySelector('[role="menubar"]');
+
+  menuButton?.addEventListener("click", () => {
+    const isMenuExpanded = menuButton.getAttribute("aria-expanded") === "true";
+    menuButton.setAttribute("aria-expanded", isMenuExpanded ? "true" : "false");
+    menuButton.setAttribute(
+      "aria-label",
+      isMenuExpanded ? "Закрыть меню" : "Открыть меню"
+    );
+    menuBar?.classList.toggle("hidden");
+    menuBar?.classList.toggle("flex");
+  });
+</script>
+
+<nav>
+  <div class='bg-teal-600 mx-auto p-4'>
+    <!-- LOGO -->
+    <div class='container mx-auto flex items-center justify-between relative'>
+      <a
+        href='/'
+        data-testid='velar_logo'
+        class='lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:top-2 z-50 hover:opacity-50 transition-opacity w-1/3'
+        aria-label='Ссылка на главную страницу'
+      >
+        <Picture
+          loading='eager'
+          widths={[100, 150, 200, 300]}
+          sizes='(max-width: 640px) 140px,  176px'
+          aspectRatio='1052:255'
+          src='/images/logo.png'
+          class='w-38 w-38 md:w-44 lg:hidden'
+          alt='Логотип Velar'
+        />
+      </a>
+
+      <!-- Phones -->
+      <div
+        class='lg:hidden flex flex-col gap-1'
+        aria-label='Телефоны для связи'
+      >
+        <a
+          href={`tel:${phone495}`}
+          aria-label='Московский номер'
+          class='text-xs text-neutral-900 font-light hover:text-neutral-700'
+          >{phone495String}
+        </a>
+        <a
+          href={`tel:${phone812}`}
+          aria-label='Санкт-Петербургский номер'
+          class='text-xs text-neutral-900 font-light hover:text-neutral-700'
+          >{phone812String}
+        </a>
+      </div>
+
+      <!-- Burger -->
+      <button
+        id='top_nav_burger_menu'
+        data-testid='burger_menu'
+        aria-label='Открыть меню'
+        aria-expanded='false'
+        class='lg:hidden text-neutral-900 hover:text-neutral-700 rounded-sm focus:outline-none focus-visible:ring-2 ring-neutral-900 transition-colors'
+      >
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          fill='none'
+          viewBox='0 0 24 24'
+          stroke-width='1.5'
+          stroke='currentColor'
+          class='w-8 h-8'
+        >
+          <path
+            stroke-linecap='round'
+            stroke-linejoin='round'
+            d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'
+          ></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- MENU BAR -->
+    <div
+      role='menubar'
+      aria-label='Главное меню'
+      class='hidden flex-col gap-4 absolute left-0 items-center right-0 top-18 shadow-lg p-6 text-center text-md pb-10 bg-teal-600 lg:py-2 lg:flex-row lg:static lg:shadow-none lg:justify-center lg:w-full lg:flex'
+    >
+      <div class='my-2 flex flex-row gap-20 justify-between lg:hidden'>
+        <a
+          href={`https://vk.com/${vk}`}
+          rel='noopener noreferrer nofollow'
+          aria-label='Наша страница Вконтакте'
+          target='_blank'
+        >
+          <img
+            src='/images/social-icons/vk.svg'
+            alt='vk'
+            class='w-8 h-8 opacity-75 hover:opacity-100 transition-opacity'
+          />
+        </a>
+        <a
+          href={`https://wa.me/${whatsApp}`}
+          rel='noopener noreferrer nofollow'
+          aria-label='Наш WhatsApp для связи'
+          target='_blank'
+        >
+          <img
+            src='/images/social-icons/whatsapp.svg'
+            alt='whatsapp'
+            class='w-8 h-8 opacity-75 hover:opacity-100 transition-opacity'
+          />
+        </a>
+        <a
+          href={`https://t.me/${telegram}`}
+          rel='noopener noreferrer nofollow'
+          target='_blank'
+          aria-label='Наш Телеграм'
+        >
+          <img
+            src='/images/social-icons/telegram.svg'
+            alt='whatsapp'
+            class='w-8 h-8 opacity-75 hover:opacity-100 transition-opacity'
+          />
+        </a>
+      </div>
+
+      <a
+        href='/'
+        class='text-sm my-1 mx-auto transition-colors hover:text-neutral-700 lg:hidden'
+      >
+        Дизайн-радиаторы
+      </a>
+      <a
+        href='/'
+        class='text-sm my-1 mx-auto transition-colors hover:text-neutral-700 lg:hidden'
+      >
+        Трубчатые радиаторы
+      </a>
+      <a
+        href='/'
+        class='text-sm my-1 mx-auto transition-colors hover:text-neutral-700 lg:hidden'
+      >
+        Ретро-радиаторы
+      </a>
+      <!-- <a
+        href='/'
+        class='text-sm my-1 mx-auto transition-colors hover:text-neutral-700 lg:hidden'
+      >
+        Полотенцесушители
+      </a> -->
+      <a
+        href='/'
+        class='text-sm my-1 mx-auto transition-colors hover:text-neutral-700 lg:hidden'
+      >
+        Внутрипольные конвекторы
+      </a>
+      <div class='border-emerald-700 border-b w-full lg:hidden'></div>
+      <a
+        href='/about'
+        class='text-sm lg:text-xs my-1 mx-auto transition-colors hover:text-neutral-700'
+      >
+        О магазине
+      </a>
+      <a
+        href='/delivery'
+        class='text-sm lg:text-xs my-1 hover:text-neutral-700 mx-auto transition-colors'
+      >
+        Доставка и оплата
+      </a>
+      <a
+        href='/'
+        data-testid='velar_logo'
+        class='hidden lg:block lg:w-48 hover:opacity-50 transition-opacity'
+        aria-label='Ссылка на главную страницу'
+      >
+        <Picture
+          loading='eager'
+          widths={[192, 384]}
+          sizes='192px'
+          aspectRatio='1052:255'
+          src='/images/logo.png'
+          alt='Логотип Velar'
+        />
+      </a>
+      <a
+        href='/guarantees'
+        class='lg:hidden text-sm lg:text-xs my-1 hover:text-neutral-700 mx-auto transition-colors'
+        >Сертификаты и гарантии</a
+      >
+      <a
+        href='/'
+        class='text-sm lg:text-xs my-1 hover:text-neutral-700 mx-auto transition-colors'
+      >
+        Сделать запрос
+      </a>
+      <a
+        href='/'
+        class='text-sm lg:text-xs my-1 hover:text-neutral-700 mx-auto transition-colors'
+      >
+        Полезная информация
+      </a>
+    </div>
+  </div>
+
+  <!-- Large Screen Catalog Menu -->
+  <div
+    aria-label='Разделы каталога продукции'
+    role='navigation'
+    class='container hidden lg:flex flex-row justify-center gap-8 items-center my-4 mx-auto'
+  >
+    <a
+      href='/'
+      class='text-xs text-neutral-900 font-light hover:underline'
+    >
+      Дизайн-радиаторы
+    </a>
+    <a
+      href='/'
+      class='text-xs text-neutral-900 font-light hover:underline'
+    >
+      Трубчатые радиаторы
+    </a>
+    <a
+      href='/'
+      class='text-xs text-neutral-900 font-light hover:underline'
+    >
+      Ретро радиаторы
+    </a>
+    <!-- <a
+      href='/'
+      class='text-xs text-neutral-900 font-light hover:underline'
+    >
+      Полотенцесушители
+    </a> -->
+    <a
+      href='/'
+      class='text-xs text-neutral-900 font-light hover:underline'
+    >
+      Внутрипольные конвекторы
+    </a>
+  </div>
+</nav>

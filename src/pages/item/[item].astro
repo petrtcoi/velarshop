@@ -1,0 +1,48 @@
+---
+import Layout from "@shared/layouts/Layout.astro";
+
+import ItemBasicInfo from "@widgets/pageItem/ItemBasicInfo.astro";
+import RalatedRadiators from "@widgets/pageItem/RelatedRadiators.astro";
+
+import { itemsJsonData } from "@entities/Item";
+
+import type { ItemJson } from "@entities/Item";
+import type { RadiatorJson } from "@entities/Radiator";
+
+export async function getStaticPaths() {
+  return itemsJsonData.map((item) => {
+    return {
+      params: { item: item.slug },
+      props: { item },
+    };
+  });
+}
+
+export type Props = {
+  item: ItemJson;
+  relatedRadiators: RadiatorJson[];
+};
+const { item } = Astro.props as Props;
+
+const itemTitle = `${item.prefix} Velar ${item.title}`;
+const metaTitle = `${itemTitle} | купить по выгодным ценам с доставкой по России | VelarShop.ru`;
+---
+
+<Layout title={metaTitle}>
+  <h1 class='text-2xl'>{itemTitle}</h1>
+  <ItemBasicInfo item={item} />
+  <RalatedRadiators itemId={item.id} />
+  <!-- </div>
+  <ModelDownloadSchema model={model} />
+  <ModelAdditionalInfo model={model} />
+
+  <ModelsImagesGallery
+    title={`Дополнительные изображения Velar ${model.name}`}
+    ignoreMain={true}
+    model={model}
+  />
+  <RelatedItems radiator={radiator} />
+  <RelatedModels model={model} />  -->
+
+  <!-- TODO: ADD Related Items -->
+</Layout>

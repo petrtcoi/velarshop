@@ -1,0 +1,178 @@
+---
+import {contacts} from "@shared/constants/contacts";
+const {
+  phone495String,
+  phone495,
+  phone812,
+  phone812String,
+  email,
+  vk,
+  instagram,
+  telegram,
+  mouseliteWebsite,
+  whatsApp,
+} = contacts;
+---
+
+<footer class='my-16'>
+  <div
+    class='max-w-6xl border-t py-5 px-10 mx-auto flex flex-row flex-wrap justify-between items-start wrap text-xs'
+  >
+    <div
+      class='w-full mx-auto sm:w-1/2 md:w-1/3 mt-10'
+      role='navigation'
+    >
+      <h3 class='text-neutral-900 font-semibold'>Полезные ссылки</h3>
+      <div class='flex flex-col gap-3 pt-4 font-light'>
+        <a
+          href='/about'
+          class='hover:underline'
+          >О магазине</a
+        >
+        <a
+          href='/delivery'
+          class='hover:underline'
+          >Доставка и оплата</a
+        >
+        <a
+          href='/guarantees'
+          class='hover:underline'
+          >Сертификаты и гарантии</a
+        >
+        <a
+          href='/'
+          class='hover:underline'
+          >Новости и информация</a
+        >
+      </div>
+    </div>
+    <div
+      class='w-full mx-auto sm:w-1/2 md:w-1/3 mt-10'
+      aria-label='Каталог товаров'
+      role='navigation'
+    >
+      <h3 class='text-neutral-900 font-semibold'>Каталог продукции</h3>
+      <div class='flex flex-col gap-3 pt-4 font-light'>
+        <a
+          href='/'
+          class='hover:underline'
+        >
+          Дизайн-радиаторы
+        </a>
+        <a
+          href='/'
+          class='hover:underline'
+        >
+          Трубчатые радиаторы
+        </a>
+        <a
+          href='/'
+          class='hover:underline'
+          role='menuitem'
+        >
+          Чугунные радиаторы ретро</a
+        >
+        <a
+          href='/'
+          class='hover:underline'
+          >Полотенцесушители</a
+        >
+        <a
+          href='/'
+          class='hover:underline'
+          >Внутрипольные конвекторы</a
+        >
+      </div>
+    </div>
+    <div class='w-full mx-auto md:w-1/3 mt-10'>
+      <h3 class='text-neutral-900 font-semibold'>Контактная информация</h3>
+      <div class='flex flex-col gap-3 pt-4 font-light'>
+        <a
+          href={mouseliteWebsite}
+          rel='noopener noreferrer nofollow'
+          aria-label='Ссылка на сайт компании ООО МАУС ЛАЙТ'
+          target='_blank'
+          class='text-xs text-neutral-900 font-light hover:underline'
+          >ООО МАУС ЛАЙТ
+        </a>
+        <a
+          href={`tel:${phone495}`}
+          aria-label='Московский номер'
+          class='text-xs text-neutral-900 font-light hover:underline'
+          >{phone495String}
+        </a>
+        <a
+          href={`tel:${phone812}`}
+          aria-label='Санкт-Петербургский номер'
+          class='text-xs text-neutral-900 font-light hover:underline'
+          >{phone812String}
+        </a>
+        <a
+          href={`mailto:${email}`}
+          aria-label='Электронная почта'
+          class='text-xs text-neutral-900 font-light hover:underline'
+          >{email}
+        </a>
+        <a
+          href={`https://vk.com/${vk}`}
+          rel='noopener noreferrer nofollow'
+          aria-label='Наша страница Вконтакте'
+          target='_blank'
+          class='text-xs text-neutral-900 font-light hover:underline'
+          >Вконтакте
+        </a>
+        <a
+          href={`https://t.me/${telegram}`}
+          rel='noopener noreferrer nofollow'
+          target='_blank'
+          aria-label='Наш Телеграм'
+          class='text-xs text-neutral-900 font-light hover:underline'
+          >Телеграм
+        </a>
+        <!-- <a
+          href={`https://instagram.com/${instagram}`}
+          rel='noopener noreferrer nofollow'
+          aria-label='Санкт-Петербургский номер'
+          target='_blank'
+          class='text-xs text-neutral-900 font-light hover:underline'
+          >Instagram
+        </a> -->
+        <a
+          href={`https://wa.me/${whatsApp}`}
+          rel='noopener noreferrer nofollow'
+          aria-label='Наш WhatsApp для связи'
+          target='_blank'
+          class='text-xs text-neutral-900 font-light hover:underline'
+          >Whatsapp
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class='max-w-6xl border-t pt-6 px-10 mx-auto text-xs text-neutral-600'>
+    <div
+      class='flex flex-col md:flex-row gap-5 font-light md:justify-center'
+      role='menubar'
+    >
+      <a
+        href='/privacy'
+        class='hover:underline'
+        role='menuitem'
+        >Политика конфиденциальности</a
+      >
+      <div class='text-neutral-500 hidden md:block'>|</div>
+      <a
+        href='/oferta'
+        class='hover:underline'
+        role='menuitem'
+        >Публичная оферта</a
+      >
+      <div class='text-neutral-500 hidden md:block'>|</div>
+      <a
+        href='/agreement'
+        class='hover:underline'
+        role='menuitem'
+        >Пользовательское соглашение</a
+      >
+    </div>
+  </div>
+</footer>

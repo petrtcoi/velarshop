@@ -1,0 +1,58 @@
+---
+import { Picture } from "@astrojs/image/components";
+import type { ModelJson } from "@entities/Model";
+
+type Props = {
+  title: string;
+  ignoreMain?: boolean;
+  model: ModelJson;
+};
+const { ignoreMain = true, model, title } = Astro.props as Props;
+
+const imagePromises = import.meta.glob(
+  "../../../../public/images/models/*/*.*"
+);
+const _images = await Promise.all(
+  Object.entries(imagePromises)
+    .filter(([key, _]) => {
+      const arr = key.split("/");
+      const modelId = arr.at(-2);
+      if (modelId !== model.id) return false;
+      const fileName = arr.at(-1);
+      if (ignoreMain === true && fileName === "main.jpg") return false;
+      return true;
+    })
+    .map(([_, value]) => value())
+);
+// @ts-ignore
+const images = _images.map((file) => file.default);
+
+//TODO: Add show / hide images toggle link or button
+---
+
+{
+  images.length !== 0 && (
+    <div>
+      <h3 class='mt-14 mb-1'>{title}</h3>
+      <div class='mb-4 font-thin text-xs'>
+        Обращаем ваше внимание на то, что реальный внешний вид может отличаться
+        от изображений на экране.
+      </div>
+      <div class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto'>
+        {images.map((image) => (
+          <div>
+            <Picture
+              src={image}
+              alt={`${model.prefix} Velar ${model.name}`}
+              title={`${model.prefix} Velar ${model.name}`}
+              aspectRatio={`${image.width}:${image.height}`}
+              widths={[350, 600, 1000, 1500]}
+              sizes='(max-width: 629px) 620px, (max-width: 1020px) 512px, 400px '
+              loading='lazy'
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}

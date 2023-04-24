@@ -1,0 +1,15 @@
+---
+import Layout from "@shared/layouts/Layout.astro";
+import OrderForm from "@widgets/order/OrderForm";
+import ShoppingCartList from "@widgets/order/ShoppingCartList";
+---
+
+<Layout
+  title='Корзина покупок | VelarShop.ru'
+  paddings={true}
+  hideShoppingCartWidgt={true}
+>
+  <h1 class='text-3xl'>Корзина покупок</h1>
+  <ShoppingCartList client:load />
+  <OrderForm client:load />
+</Layout>

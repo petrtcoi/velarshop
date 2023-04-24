@@ -1,0 +1,1 @@
+export { getRadiatorTotalCost } from './store/storeRadiatorPrice'

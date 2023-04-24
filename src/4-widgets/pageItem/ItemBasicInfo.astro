@@ -1,0 +1,42 @@
+---
+import { Picture } from "@astrojs/image/components";
+
+import LeftRightBlock4555 from "@shared/components/LeftRightBlock4555.astro";
+import ItemDescription from "./ItemDescription.astro";
+import BuyItemBlock from "./BuyItemBlock.astro";
+
+import type { ItemJson } from "@entities/Item";
+
+type Props = {
+  item: ItemJson;
+};
+
+const { item } = Astro.props as Props;
+const { prefix, title, mdx_slug, image_slug } = item;
+
+const imagePath = `/images/items/${item.image_slug || "empty"}/main.jpg`;
+---
+
+<div class='mt-5'>
+  <LeftRightBlock4555>
+    <div
+      slot='left'
+      class='mx-auto md:mx-0'
+    >
+      <Picture
+        src={imagePath}
+        alt={`${prefix} Velar ${title}`}
+        title={`${prefix} Velar ${title}`}
+        loading='eager'
+        aspectRatio='1:1'
+        widths={[420, 600, 900, 1200, 1500]}
+        sizes='420px'
+      />
+    </div>
+
+    <div slot='right'>
+      <ItemDescription slug={mdx_slug} />
+      <BuyItemBlock item={item} />
+    </div>
+  </LeftRightBlock4555>
+</div>

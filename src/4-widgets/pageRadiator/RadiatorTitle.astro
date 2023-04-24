@@ -1,0 +1,17 @@
+---
+import { getRadiatorTitle } from "@shared/utils/getRadiatorTitle";
+
+import type { ModelJson } from "@entities/Model";
+import type { RadiatorJson } from "@entities/Radiator";
+
+type Props = {
+  model: ModelJson;
+  radiator: RadiatorJson;
+};
+const { model, radiator } = Astro.props as Props;
+
+let baseName = `${model.prefix} Velar`;
+const radiatorTitle = getRadiatorTitle({ model, radiator });
+---
+
+<h1 class='text-2xl'>{baseName} {radiatorTitle}</h1>

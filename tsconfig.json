@@ -1,0 +1,32 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "baseUrl": ".",
+    "paths": {
+      "@widgets/*": [
+        "src/4-widgets/*"
+      ],
+      "@shared/*": [
+        "src/7-shared/*"
+      ],
+      "@features/*": [
+        "src/5-features/*"
+      ],
+      "@entities/*": [
+        "src/6-entities/*"
+      ],
+      "@public/*": [
+        "public/*"
+      ]
+    },
+    "types": [
+      "@astrojs/image/client"
+    ],
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
+  },
+  "include": [
+    "src"
+  ]
+}

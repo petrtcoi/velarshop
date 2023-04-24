@@ -1,0 +1,42 @@
+---
+import Layout from "@shared/layouts/Layout.astro";
+
+import ModelTitle from "@widgets/pageModel/ModelTitle.astro";
+import RadiatorList from "@widgets/pageModel/RadiatorList/RadiatorList.astro";
+import ModelBasicInfo from "@widgets/pageModel/ModelBasicInfo.astro";
+
+import RelatedModels from "@features/model/RelatedModels/RelatedModels.astro";
+import ModelsImagesGallery from "@features/model/ModelsImagesGallery/ModelsImagesGallery.astro";
+import ModelAdditionalInfo from "@features/model/ModelAdditionalInfo/ModelAdditionalInfo.astro";
+
+import { modelsJsonData } from "@entities/Model";
+import { getModelMetaTitle } from "@shared/utils/getModelMetaTitle";
+
+import type { ModelJson } from "@entities/Model";
+
+export async function getStaticPaths() {
+  return modelsJsonData.map((model) => ({
+    params: { model: model.slug },
+    props: { model: model },
+  }));
+}
+
+export type Props = {
+  model: ModelJson;
+};
+const { model } = Astro.props as Props;
+---
+
+<Layout title={getModelMetaTitle(model)}>
+  <ModelTitle {...model} />
+  <ModelBasicInfo model={model} />
+  <RadiatorList model={model} />
+  <ModelsImagesGallery
+    title={`Дополнительные изображения Velar ${model.name}`}
+    ignoreMain={true}
+    model={model}
+  />
+  <ModelAdditionalInfo model={model} />
+  <RelatedModels model={model} />
+  <!-- TODO: ADD Related Items -->
+</Layout>

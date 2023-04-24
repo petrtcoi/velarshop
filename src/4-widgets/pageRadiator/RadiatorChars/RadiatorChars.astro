@@ -1,0 +1,123 @@
+---
+import type { ModelJson } from "@entities/Model";
+import type { RadiatorJson } from "@entities/Radiator";
+
+type Props = {
+  model: ModelJson;
+  radiator: RadiatorJson;
+};
+const { radiator, model } = Astro.props as Props;
+
+let radiatorType = "";
+let convectionType = "";
+let powerDescription = "";
+
+if (model.type === "design") {
+  if (model.orientation === "vertical") {
+    radiatorType = "Вертикальный дизайн-радиатор";
+  } else if (model.orientation === "horizontal") {
+    radiatorType = "Горизонтальный дизайн-радиатор";
+  }
+}
+if (model.type === "floor") {
+  radiatorType = "Напольный дизайн-радиатор";
+}
+if (model.type === "ironcast") {
+  radiatorType = "Чугунный ретро-радиатор";
+}
+
+if (model.type === "convector") {
+  radiatorType = "Внутрипльный конвектор";
+  if (model.id === "kwhv") {
+    convectionType = "принудительная";
+    powerDescription =
+      "мощность указана при максимальной скорости вращения вентиляторов";
+  }
+  if (model.id === "kwh") {
+    convectionType = "естественная";
+  }
+}
+---
+
+<div>
+  <h2 class='sr-only'>Характеристики радиатора</h2>
+  <div class='grid grid-cols-[150px,1fr] gap-2'>
+    {
+      radiatorType && (
+        <>
+          <div class='text-xs font-thin'>тип прибора:</div>
+          <div class='text-xs'>{radiatorType}</div>
+        </>
+      )
+    }
+    {
+      convectionType && (
+        <>
+          <div class='text-xs font-thin'>тип конвекции:</div>
+          <div class='text-xs'>{convectionType} </div>
+        </>
+      )
+    }
+
+    {
+      radiator.sections && (
+        <>
+          <div class='text-xs font-thin'>число секций:</div>
+          <div class='text-xs'>{radiator.sections} </div>
+        </>
+      )
+    }
+
+    <div class='text-xs font-thin'>габариты (ВхДхГ):</div>
+    <div class='text-xs'>
+      {radiator.height}
+      <span class='font-thin'>x</span>
+      {radiator.length}
+      <span class='font-thin'>x</span>
+      {radiator.width}
+      <span class='font-thin'>мм</span>
+    </div>
+
+    {
+      radiator.dt50 && (
+        <>
+          <div class='text-xs font-thin'>мощность (Δt=50°C):</div>
+          <div class='text-xs'>
+            {radiator.dt50}
+            <span class='font-thin'>Вт</span>
+          </div>
+        </>
+      )
+    }
+    {
+      radiator.dt60 && (
+        <>
+          <div class='text-xs font-thin'>мощность (Δt=60°C):</div>
+          <div class='text-xs'>
+            {radiator.dt60}
+            <span class='font-thin'>Вт</span>
+          </div>
+        </>
+      )
+    }
+    {
+      radiator.dt70 && (
+        <>
+          <div class='text-xs font-thin'>мощность (Δt=70°C):</div>
+          <div class='text-xs'>
+            {radiator.dt70}
+            <span class='font-thin'>Вт</span>
+          </div>
+        </>
+      )
+    }
+    {
+      powerDescription && (
+        <>
+          <div />
+          <div class='text-xs'>{powerDescription}</div>
+        </>
+      )
+    }
+  </div>
+</div>

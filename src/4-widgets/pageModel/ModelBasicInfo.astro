@@ -1,0 +1,58 @@
+---
+import { Picture } from "@astrojs/image/components";
+
+import ModelDescription from "@features/model/ModelDescription/ModelDescription.astro";
+import ModelDownloadSchema from "@features/model/ModelDownloadShema/ModelDownloadSchema.astro";
+
+import ModelPrice from "./ModelPrice";
+import LeftRightBlock4555 from "@shared/components/LeftRightBlock4555.astro";
+
+import { getModelMainImagePath } from "@shared/utils/getModelMainImagePath";
+import { radiatorsJsonData } from "@entities/Radiator";
+
+import type { ModelJson } from "@entities/Model";
+import { NO_PRICE } from "./constants/noPrice";
+
+type Props = {
+  model: ModelJson;
+};
+
+const { model } = Astro.props as Props;
+const { name, prefix, slug } = model;
+
+const imagePath = getModelMainImagePath(model.slug);
+
+const minPrice =
+  radiatorsJsonData
+    .filter((r) => r.model_id === model.id)
+    .sort((a, b) => parseInt(a.price) - parseInt(b.price))
+    .at(0)?.price || NO_PRICE;
+---
+
+<div class='mt-5'>
+  <LeftRightBlock4555>
+    <div
+      slot='left'
+      class='mx-auto md:mx-0'
+    >
+      <Picture
+        src={imagePath}
+        alt={`${prefix} Velar ${name}`}
+        title={`${prefix} Velar ${name}`}
+        loading='eager'
+        aspectRatio='1:1'
+        widths={[420, 600, 900, 1200, 1500]}
+        sizes='420px'
+      />
+    </div>
+
+    <div slot='right'>
+      <ModelPrice
+        minPrice={minPrice}
+        client:only='preact'
+      />
+      <ModelDescription slug={slug} />
+      <ModelDownloadSchema model={model} />
+    </div>
+  </LeftRightBlock4555>
+</div>

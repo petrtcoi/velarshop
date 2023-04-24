@@ -1,0 +1,32 @@
+---
+import type { ItemJson } from "@entities/Item";
+import BuyButton from "@features/order/ShoppingCart";
+
+type Props = {
+  item: ItemJson;
+};
+const { item } = Astro.props as Props;
+const { prefix, title } = item;
+---
+
+<div class='mt-8 sm:mt-16'>
+  <div
+    id='buy-radiator'
+    class='flex flex-col gap-6 sm:flex-row sm:gap-8 items-center justify-center sm:justify-start w-full'
+  >
+    <div class='flex flex-row items-end mx-auto'>
+      <span class='text-sm mr-1 font-thin'>Цена:</span>
+      <span class='mx-2 text-4xl text-neutral-900'>
+        {parseInt(item.price).toLocaleString("ru-RU")}
+      </span>
+      <span class='text-sm font-thin'>&#8381;</span>
+    </div>
+    <BuyButton
+      client:load
+      type='large'
+      itemTitle={`${prefix} Velar ${title}`}
+      price={parseInt(item.price)}
+      item={item}
+    />
+  </div>
+</div>

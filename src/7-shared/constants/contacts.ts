@@ -1,0 +1,16 @@
+export const contacts = {
+  phone812String: '(812) 409-35-05',
+  phone812: '+78124093505',
+  phone495String: '(495) 128-85-05',
+  phone495: '+74951288505',
+  whatsAppString: '+1 (218) 516-15-29',
+  whatsApp: '12185161529',
+  website: 'www.velarshop.ru',
+  email: 'mail@velarshop.ru',
+  emailFrom: 'VelarShop.ru <mail@velarshop.ru>',
+  instagram: 'mouseliteru',
+  vk: "ooomouselite",
+  telegram: "mouselite",
+  emailNotifications: 'mail@velarshop.ru',
+  mouseliteWebsite: 'https://mouselite.ru',
+}

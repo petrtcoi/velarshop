@@ -1,0 +1,71 @@
+---
+import { Picture } from "@astrojs/image/components";
+
+import BuyRadiator from "./BuyRadiator";
+import RadiatorChars from "./RadiatorChars/RadiatorChars.astro";
+
+import SelectAddon from "@features/options/SelectAddons";
+import SelectConnection from "@features/options/SelectConnection";
+import SelectIroncastColor from "@features/options/SelectIroncastColor";
+import SelectConvectorGrill from "@features/options/SelectConvectorGrill";
+
+import LeftRightBlock4555 from "@shared/components/LeftRightBlock4555.astro";
+import { getModelMainImagePath } from "@shared/utils/getModelMainImagePath";
+
+import type { ModelJson } from "@entities/Model";
+import type { RadiatorJson } from "@entities/Radiator";
+
+type Props = {
+  model: ModelJson;
+  radiator: RadiatorJson;
+};
+
+const { model, radiator } = Astro.props as Props;
+const imagePath = getModelMainImagePath(model.slug);
+---
+
+<div class='mt-5'>
+  <LeftRightBlock4555>
+    <div
+      slot='left'
+      class='mx-auto md:mx-0'
+    >
+      <Picture
+        src={imagePath}
+        alt={`${model.prefix} Velar ${model.name}`}
+        title={`${model.prefix} Velar ${model.name}`}
+        loading='eager'
+        aspectRatio='1:1'
+        widths={[420, 600, 900, 1200, 1500]}
+        sizes='420px'
+      />
+    </div>
+
+    <div slot='right'>
+      <RadiatorChars
+        model={model}
+        radiator={radiator}
+      />
+      {
+        (model.type === "design" || model.type === "floor") && (
+          <SelectConnection
+            model={model}
+            client:load
+          />
+        )
+      }
+      {model.type === "ironcast" && <SelectIroncastColor client:load />}
+      {model.type === "convector" && <SelectConvectorGrill client:load />}
+      <SelectAddon
+        model={model}
+        client:load
+      />
+      <BuyRadiator
+        client:load
+        model={model}
+        radiator={radiator}
+      />
+      <!-- TODO save addon selects for Radiator Page not for Models page -->
+    </div>
+  </LeftRightBlock4555>
+</div>

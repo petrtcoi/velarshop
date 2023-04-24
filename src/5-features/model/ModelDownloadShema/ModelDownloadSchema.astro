@@ -1,0 +1,25 @@
+---
+import type { ModelJson } from "@entities/Model";
+
+type Props = { model: Pick<ModelJson, "slug" | "id" | "name"> };
+const { model } = Astro.props as Props;
+
+const schemas = import.meta.glob("../../../public/docs/schemas/*.pdf");
+const isShemaExist = !!Object.keys(schemas).find((file) =>
+  file.includes(`/docs/schemas/${model.slug}.pdf`)
+);
+---
+
+{
+  isShemaExist && (
+    <div class='mt-4 text-xs hover:text-red-600 transition-colors duration-300'>
+      <a
+        href={`/docs/schemas/${model.id}.pdf`}
+        target='_blank'
+        aria-label={`Скачать схему монтажа для Velar ${model.name} в формате PDF`}
+      >
+        Скачать схему монтажа
+      </a>
+    </div>
+  )
+}

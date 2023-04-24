@@ -1,0 +1,80 @@
+---
+import ShoppingCartWidget from "@widgets/order/ShoppingCartWidget";
+import Footer from "./components/Footer.astro";
+import Navigation from "./components/Navigation.astro";
+import "@shared/styles/global.css";
+
+export interface Props {
+  title?: string;
+  description?: string;
+  paddings?: boolean;
+  hideShoppingCartWidgt?: boolean;
+}
+
+const {
+  title = "Velar дизайн-радиаторы отопления | VelarShop.ru",
+  description = "Фирменный магазин дизайнерских радиаторов отопления Velar. Доставка по России. Официальная гарантия. Полный модельный ряд и быстрые сроки производства.",
+  paddings = true,
+  hideShoppingCartWidgt = false,
+} = Astro.props as Props as Props;
+---
+
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta
+      name='viewport'
+      content='width=device-width'
+    />
+    <link
+      rel='apple-touch-icon'
+      sizes='120x120'
+      href='/favicons/apple-touch-icon.png'
+    />
+    <link
+      rel='icon'
+      type='image/png'
+      sizes='32x32'
+      href='/favicons/favicon-32x32.png'
+    />
+    <link
+      rel='icon'
+      type='image/png'
+      sizes='16x16'
+      href='/favicons/favicon-16x16.png'
+    />
+    <meta
+      name='msapplication-TileColor'
+      content='#da532c'
+    />
+    <meta
+      name='theme-color'
+      content='#ffffff'
+    />
+    <meta
+      name='generator'
+      content={Astro.generator}
+    />
+    <title>{title}</title>
+    <meta
+      name='description'
+      content={description}
+    />
+  </head>
+  <body
+    class='text-neutral-900 dark:text-neutral-200 bg-white dark:bg-neutral-800'
+  >
+    {hideShoppingCartWidgt === false && <ShoppingCartWidget client:load />}
+    <Navigation />
+    <main
+      class:list={[
+        {"max-w-6xl mx-auto p-3 md:p-5 lg:px-10 xl:px-0": paddings},
+        {"p-0 m-0": !paddings},
+      ]}
+    >
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,1 @@
+export const NO_PRICE = 'no_price'

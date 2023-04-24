@@ -1,0 +1,23 @@
+---
+import type { ModelJson } from "@entities/Model";
+import { getEntryBySlug } from "astro:content";
+
+type Props = {
+  model: ModelJson;
+};
+const { model } = Astro.props as Props;
+const { slug } = model;
+
+const modelAdditionalInfo = await getEntryBySlug("modelAdditionalInfos", slug);
+const { Content: ModelAdditionalInfo } = modelAdditionalInfo
+  ? await modelAdditionalInfo.render()
+  : { Content: null };
+---
+
+{
+  ModelAdditionalInfo && (
+    <div class='prose-sm mt-10'>
+      <ModelAdditionalInfo />
+    </div>
+  )
+}

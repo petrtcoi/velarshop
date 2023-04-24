@@ -1,0 +1,313 @@
+import type { ModelJson } from "../types/ModelJson.type"
+
+
+export const modelsJsonData: ModelJson[] = [
+  {
+    "id": "p30v",
+    "slug": "p30v",
+    "name": "P 30 V",
+    "type": "design",
+    "prefix": "Дизайн-радиатор",
+    "orientation": "vertical",
+    "connections": "lat,l50,r50,050,lr",
+    "related_models": "q40v,r32v,spv,q80v",
+    "related_items": ""
+  },
+  {
+    "id": "p30h",
+    "slug": "p30h",
+    "name": "P 30 H",
+    "type": "design",
+    "prefix": "Дизайн-радиатор",
+    "orientation": "horizontal",
+    "connections": "lat,l50,r50,050,lr",
+    "related_models": "q40h,sph,q80h",
+    "related_items": ""
+  },
+  {
+    "id": "p60v",
+    "slug": "p60v",
+    "name": "P 60 V",
+    "type": "design",
+    "prefix": "Дизайн-радиатор",
+    "orientation": "vertical",
+    "connections": "lat,l50,r50,050,lr",
+    "related_models": "spv,q80v",
+    "related_items": ""
+  },
+  {
+    "id": "p60h",
+    "slug": "p60h",
+    "name": "P 60 H",
+    "type": "design",
+    "prefix": "Дизайн-радиатор",
+    "orientation": "horizontal",
+    "connections": "lat,l50,r50,050,lr",
+    "related_models": "sph,q80h",
+    "related_items": ""
+  },
+  {
+    "id": "sv",
+    "slug": "sv",
+    "name": "S V",
+    "type": "design",
+    "prefix": "Дизайн-радиатор",
+    "orientation": "vertical",
+    "connections": "lat,l50,r50,050,lr",
+    "related_models": "p30v,spv,rt1v,r32v",
+    "related_items": ""
+  },
+  {
+    "id": "sh",
+    "slug": "sh",
+    "name": "S H",
+    "type": "design",
+    "prefix": "Дизайн-радиатор",
+    "orientation": "horizontal",
+    "connections": "lat,l50,r50,050,lr",
+    "related_models": "p30h,sph,r32h",
+    "related_items": ""
+  },
+  {
+    "id": "spv",
+    "slug": "spv",
+    "name": "SP V",
+    "type": "design",
+    "prefix": "Дизайн-радиатор",
+    "orientation": "vertical",
+    "connections": "lat,l50,r50,050,lr",
+    "related_models": "p30v,q40v,r32v",
+    "related_items": ""
+  },
+  {
+    "id": "sph",
+    "slug": "sph",
+    "name": "SP H",
+    "type": "design",
+    "prefix": "Дизайн-радиатор",
+    "orientation": "horizontal",
+    "connections": "lat,l50,r50,050,lr",
+    "related_models": "p30h,q40h,r32h",
+    "related_items": ""
+  },
+  {
+    "id": "q40v",
+    "slug": "q40v",
+    "name": "Q 40 V",
+    "type": "design",
+    "prefix": "Дизайн-радиатор",
+    "orientation": "vertical",
+    "connections": "lat,l50,r50,050,lr",
+    "related_models": "q80v,p30v,qt1v,qt2v",
+    "related_items": ""
+  },
+  {
+    "id": "q40h",
+    "slug": "q40h",
+    "name": "Q 40 H",
+    "type": "design",
+    "prefix": "Дизайн-радиатор",
+    "orientation": "horizontal",
+    "connections": "lat,l50,r50,050,lr",
+    "related_models": "q80h,p30v",
+    "related_items": ""
+  },
+  {
+    "id": "q80v",
+    "slug": "q80v",
+    "name": "Q 80 V",
+    "type": "design",
+    "prefix": "Дизайн-радиатор",
+    "orientation": "vertical",
+    "connections": "lat,l50,r50,050,lr",
+    "related_models": "q40v,p30v,qt1v,qt2v",
+    "related_items": ""
+  },
+  {
+    "id": "q80h",
+    "slug": "q80h",
+    "name": "Q 80 H",
+    "type": "design",
+    "prefix": "Дизайн-радиатор",
+    "orientation": "horizontal",
+    "connections": "lat,l50,r50,050,lr",
+    "related_models": "q40h,p30h",
+    "related_items": ""
+  },
+  {
+    "id": "r32v",
+    "slug": "r32v",
+    "name": "E 32 V",
+    "type": "design",
+    "prefix": "Дизайн-радиатор",
+    "orientation": "vertical",
+    "connections": "l50,r50,050,lr",
+    "related_models": "r89v,rt1v,rt2v,rt1wv",
+    "related_items": ""
+  },
+  {
+    "id": "r32h",
+    "slug": "r32h",
+    "name": "R 32 H",
+    "type": "design",
+    "prefix": "Дизайн-радиатор",
+    "orientation": "horizontal",
+    "connections": "lat",
+    "related_models": "r89h,sph",
+    "related_items": ""
+  },
+  {
+    "id": "r89v",
+    "slug": "r89v",
+    "name": "R 89 V",
+    "type": "design",
+    "prefix": "Дизайн-радиатор",
+    "orientation": "vertical",
+    "connections": "l50,r50,050,lr",
+    "related_models": "r32v,q80v,rt2v",
+    "related_items": ""
+  },
+  {
+    "id": "r89h",
+    "slug": "r89h",
+    "name": "R 89 H",
+    "type": "design",
+    "prefix": "Дизайн-радиатор",
+    "orientation": "horizontal",
+    "connections": "lat",
+    "related_models": "r32h,q80h",
+    "related_items": ""
+  },
+  {
+    "id": "rt1v",
+    "slug": "rt1v",
+    "name": "R T1 V",
+    "type": "design",
+    "prefix": "Дизайн-радиатор",
+    "orientation": "vertical",
+    "connections": "lat,l50,r50,050,lr",
+    "related_models": "rt2v,qt1v,rt1wv",
+    "related_items": ""
+  },
+  {
+    "id": "rt2v",
+    "slug": "rt2v",
+    "name": "R T2 V",
+    "type": "design",
+    "prefix": "Дизайн-радиатор",
+    "orientation": "vertical",
+    "connections": "lat,l50,r50,050,lr",
+    "related_models": "rt1v,qtv",
+    "related_items": ""
+  },
+  {
+    "id": "rt1wv",
+    "slug": "rt1wv",
+    "name": "R T1W V",
+    "type": "design",
+    "prefix": "Дизайн-радиатор",
+    "orientation": "vertical",
+    "connections": "lat,l50,r50,050,lr",
+    "related_models": "rt1v,qt1v",
+    "related_items": ""
+  },
+  {
+    "id": "qt1v",
+    "slug": "qt1v",
+    "name": "Q T1 V",
+    "type": "design",
+    "prefix": "Дизайн-радиатор",
+    "orientation": "vertical",
+    "connections": "lat,l50,r50,050,lr",
+    "related_models": "qt2v,rt1v,rt1wv",
+    "related_items": ""
+  },
+  {
+    "id": "qt2v",
+    "slug": "qt2v",
+    "name": "Q T2 V",
+    "type": "design",
+    "prefix": "Дизайн-радиатор",
+    "orientation": "vertical",
+    "connections": "lat,l50,r50,050,lr",
+    "related_models": "qt1v,rt2v",
+    "related_items": ""
+  },
+  {
+    "id": "q500",
+    "slug": "q500",
+    "name": "Q 500",
+    "type": "floor",
+    "prefix": "Напольный дизайн-радиатор",
+    "orientation": "",
+    "connections": "lat,l50,r50,lr",
+    "related_models": "p200,p300",
+    "related_items": ""
+  },
+  {
+    "id": "p200",
+    "slug": "p200",
+    "name": "P 200",
+    "type": "floor",
+    "prefix": "Напольный дизайн-радиатор",
+    "orientation": "",
+    "connections": "lat,l50,r50,lr",
+    "related_models": "p300,q500",
+    "related_items": ""
+  },
+  {
+    "id": "p300",
+    "slug": "p300",
+    "name": "P 300",
+    "type": "floor",
+    "prefix": "Напольный дизайн-радиатор",
+    "orientation": "",
+    "connections": "lat,l50,r50,lr",
+    "related_models": "p200,q500",
+    "related_items": ""
+  },
+  {
+    "id": "kwh",
+    "slug": "kwh",
+    "name": "KWH",
+    "type": "convector",
+    "prefix": "Внутрипольный конвектор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "kwhv",
+    "related_items": ""
+  },
+  {
+    "id": "kwhv",
+    "slug": "kwhv",
+    "name": "KWHV",
+    "type": "convector",
+    "prefix": "Внутрипольный конвектор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "kwh",
+    "related_items": ""
+  },
+  {
+    "id": "nostalgia500",
+    "slug": "nostalgia500",
+    "name": "Nostalgia 500",
+    "type": "ironcast",
+    "prefix": "Чугунный ретро-радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "historic500",
+    "related_items": ""
+  },
+  {
+    "id": "historic500",
+    "slug": "historic500",
+    "name": "Historic 500",
+    "type": "ironcast",
+    "prefix": "Чугунный ретро-радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "nostalgia500",
+    "related_items": ""
+  }
+]

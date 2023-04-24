@@ -1,0 +1,50 @@
+---
+import RadiatorsList from "./components/RadiatorsList";
+import { sortStringsAsInts } from "@shared/utils/sortStringsAsInts";
+import { filterRadiators } from "./utils/filterRadiators";
+import { getModelFilters } from "./utils/getModelFilters";
+
+import { radiatorsJsonData } from "@entities/radiator";
+
+import { ALL } from "./constants/filterAll";
+import type { ModelJson } from "@entities/model";
+
+type Props = {
+  model: ModelJson;
+};
+const { model } = Astro.props as Props;
+
+const radiators = radiatorsJsonData.filter((r) => r.model_id === model.id);
+const heights = [...new Set(radiators.map((r) => r.height))].sort(
+  sortStringsAsInts
+);
+const widths = [...new Set(radiators.map((r) => r.width))].sort(
+  sortStringsAsInts
+);
+const lengths = [...new Set(radiators.map((r) => r.length))].sort(
+  sortStringsAsInts
+);
+
+const { filterByHeight, filterByWidth, filterByLength } =
+  getModelFilters(model);
+
+const initialFilteredRadiators = filterRadiators({
+  radiators,
+  selectedHeight: filterByHeight ? heights[0] : ALL,
+  selectedLength: filterByLength ? lengths[0] : ALL,
+  selectedWidth: filterByWidth ? widths[0] : ALL,
+});
+---
+
+<RadiatorsList
+  client:load
+  model={model}
+  radiators={radiators}
+  initialFilteredRadiators={initialFilteredRadiators}
+  filterByHeight={filterByHeight}
+  filterByWidth={filterByWidth}
+  filterByLength={filterByLength}
+  heights={heights}
+  widths={widths}
+  lengths={lengths}
+/>

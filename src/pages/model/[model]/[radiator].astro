@@ -1,0 +1,64 @@
+---
+import Layout from "@shared/layouts/Layout.astro";
+
+import RadiatorTitle from "@widgets/pageRadiator/RadiatorTitle.astro";
+import RadiatorBasicInfo from "@widgets/pageRadiator/RadiatorBasicInfo.astro";
+import ModelDownloadSchema from "@features/model/ModelDownloadShema/ModelDownloadSchema.astro";
+
+import RelatedModels from "@features/model/RelatedModels/RelatedModels.astro";
+import RelatedItems from "@features/radiator/RelatedItems/RelatedItems.astro";
+import ModelDescription from "@features/model/ModelDescription/ModelDescription.astro";
+import ModelsImagesGallery from "@features/model/ModelsImagesGallery/ModelsImagesGallery.astro";
+import ModelAdditionalInfo from "@features/model/ModelAdditionalInfo/ModelAdditionalInfo.astro";
+
+import { modelsJsonData } from "@entities/Model";
+import { radiatorsJsonData } from "@entities/Radiator";
+
+import type { ModelJson } from "@entities/Model";
+import type { RadiatorJson } from "@entities/Radiator";
+import { getRadiatorTitle } from "@shared/utils/getRadiatorTitle";
+
+export async function getStaticPaths() {
+  return radiatorsJsonData.map((radiator) => {
+    const model = modelsJsonData.find((m) => radiator.model_id === m.id);
+    if (!model) throw `No model for ${radiator.slug}`;
+    return {
+      params: { model: model.slug, radiator: radiator.slug },
+      props: { model, radiator },
+    };
+  });
+}
+
+export type Props = {
+  model: ModelJson;
+  radiator: RadiatorJson;
+};
+const { model, radiator } = Astro.props as Props;
+---
+
+<Layout
+  title={`${model.prefix} Velar ${getRadiatorTitle({ model, radiator })}`}
+>
+  <RadiatorTitle
+    model={model}
+    radiator={radiator}
+  />
+  <RadiatorBasicInfo
+    model={model}
+    radiator={radiator}
+  />
+  <div class='mt-10'>
+    <ModelDescription slug={model.slug} />
+  </div>
+  <ModelDownloadSchema model={model} />
+  <ModelAdditionalInfo model={model} />
+
+  <ModelsImagesGallery
+    title={`Дополнительные изображения Velar ${model.name}`}
+    ignoreMain={true}
+    model={model}
+  />
+  <RelatedItems radiator={radiator} />
+  <RelatedModels model={model} />
+  <!-- TODO: ADD Related Items -->
+</Layout>

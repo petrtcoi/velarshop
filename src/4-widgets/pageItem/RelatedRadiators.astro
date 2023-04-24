@@ -1,0 +1,67 @@
+---
+import { Picture } from "@astrojs/image/components";
+import { radiatorsJsonData } from "@entities/Radiator";
+import { modelsJsonData } from "@entities/Model";
+
+import { getModelMainImagePath } from "@shared/utils/getModelMainImagePath";
+import { getRadiatorTitle } from "@shared/utils/getRadiatorTitle";
+
+import type { ItemJson } from "@entities/Item";
+
+type Props = {
+  itemId: ItemJson["id"];
+};
+const { itemId } = Astro.props as Props;
+
+const relatedRadiators =
+  radiatorsJsonData.filter(
+    (radiator) =>
+      !!radiator?.related_items && radiator.related_items.includes(itemId)
+  ) || [];
+---
+
+{
+  relatedRadiators.length > 0 && (
+    <>
+      <h3 class='mt-14 mb-1'>Подходит для</h3>
+      <div class='mb-4 font-thin text-xs'>
+        Данный товар подходит для следующих отопительных приборов:
+      </div>
+      <div class='flex flex-row flex-wrap items-center gap-8 justify-start'>
+        {relatedRadiators.map((radiator) => {
+          const model = modelsJsonData.find(
+            (model) => model.id === radiator.model_id
+          );
+          if (!model) return null;
+
+          const title = `${model.prefix} Velar ${getRadiatorTitle({
+            model,
+            radiator,
+          })}`;
+          const imagePath = getModelMainImagePath(model.slug);
+          const itemHref = `/model/${model.slug}/${radiator.slug}`;
+
+          return (
+            <div class='group w-52 mx-auto sm:mx-0'>
+              <a href={itemHref}>
+                <Picture
+                  src={imagePath}
+                  alt={title}
+                  title={title}
+                  loading='lazy'
+                  aspectRatio='1:1'
+                  widths={[420, 600, 900, 1200, 1500]}
+                  sizes='420px'
+                  class='rounded-lg opacity-100 md:opacity-50 group-hover:opacity-100 transition-opacity duration-300'
+                />
+                <h4 class='text-xs mt-2 group-hover:text-red-600 transition-colors duration-300'>
+                  {title}
+                </h4>
+              </a>
+            </div>
+          );
+        })}
+      </div>
+    </>
+  )
+}

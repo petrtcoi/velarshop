@@ -1,0 +1,1 @@
+export { radiatorTotalTitle } from './store/storeRadiatorTotalTitle'
