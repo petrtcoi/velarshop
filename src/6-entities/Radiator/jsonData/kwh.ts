@@ -10852,7 +10852,7 @@ export default [
     "height": "120",
     "length": "4300",
     "related_items": "kvu-250-120-90,kvu-250-120-135",
-    "price": "5496",
+    "price": "54960",
     "addon_stainless_body": "1924",
     "basiс_grille_price": "22801",
     "anod_color_grille_price": "26496",
