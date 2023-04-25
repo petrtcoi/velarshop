@@ -11,24 +11,20 @@ function RadiatorFilter ({
   availableOptions,
   selectedOption,
   setSelectedOption
-}: RadiatorFilterProps)
-{
+}: RadiatorFilterProps) {
 
 
-  const handleClick = (option: string) =>
-  {
-    if (option !== selectedOption)
-    {
+  const handleClick = (option: string) => {
+    if (option !== selectedOption) {
       setSelectedOption(option)
     }
   }
 
   return (
-    <div class="mt-5" aria-label={ `Фильтр по параметру: ${ title } ` }>
-      <h3 class="font-thin text-xs mb-2">{ title }:</h3>
-      <div role="listbox" class="flex flex-row gap-2 flex-wrap px-4 items-center">
-        { options.map((option) =>
-        {
+    <div class="mt-5" >
+      <div class="font-thin text-xs mb-2">{ title }:</div>
+      <div role="listbox" class="flex flex-row gap-2 flex-wrap px-4 items-center" aria-label={ `Фильтр по параметру: ${ title } ` }>
+        { options.map((option) => {
           const optionSelected = option === selectedOption
           const isOptionAvailable = availableOptions.includes(option)
 
