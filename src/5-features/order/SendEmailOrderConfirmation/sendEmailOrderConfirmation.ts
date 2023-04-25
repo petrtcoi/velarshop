@@ -5,25 +5,12 @@ import { API_URL } from "./config/apiUrl"
 import { contacts } from "@shared/constants/contacts"
 import type { ConfirmationFormData } from "./types/ConfirmationFormData.type"
 
-
-
-
-type RequestProps = {
-  from: string
-  to: string
-  bcc: string
-  subject: string
-  text: string
-  html: string
-}
 type RequestResult = { data: 'ok' | 'error' }
-
 type Props = {
   formData: ConfirmationFormData
 }
 
-const sendOrderConfirmation = async ({ formData }: Props): Promise<'ok' | 'error'> =>
-{
+const sendOrderConfirmation = async ({ formData }: Props): Promise<'ok' | 'error'> => {
 
   const text = getOrderConfirmationEmailText({ formData })
   const html = getOrderConfirmationEmailHtml({ formData })
@@ -36,8 +23,9 @@ const sendOrderConfirmation = async ({ formData }: Props): Promise<'ok' | 'error
     html
   }
 
-  try
-  {
+  console.log('data to send', data)
+
+  try {
     const res1 = formData.email?.length
       ? await fetch(API_URL, {
         method: 'POST',
@@ -56,7 +44,8 @@ const sendOrderConfirmation = async ({ formData }: Props): Promise<'ok' | 'error
       .catch(() => ({ data: 'error' }))
 
     return ((res1.data === 'ok' && res2.data === 'ok') ? 'ok' : 'error')
-  } catch {
+  } catch (err) {
+    console.log('sendOrderConfirmation error', err)
     return 'error'
   }
 }

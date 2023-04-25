@@ -1,3 +1,4 @@
+import sendOrderConfirmation from "@features/order/SendEmailOrderConfirmation/sendEmailOrderConfirmation"
 import { signal, computed } from "@preact/signals"
 
 const FORM_ID = 'order-form'
@@ -28,59 +29,72 @@ const isErrors = computed(() => !!Object.keys(errors.value).length)
 function OrderForm () {
 
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!window?.location) return
     checkForm.value = true
     if (isErrors.value) {
-      window.location.href = `#${FORM_ID}`
+      window.location.href = `#${ FORM_ID }`
       return
     }
 
+    const result = await sendOrderConfirmation({
+      formData: {
+        name: name.value,
+        city: city.value,
+        phone: phone.value,
+        email: email.value,
+        comments: comments.value
+      }
+    })
+    console.log('result', result)
     console.log(errors.value, name.value, city.value, phone.value, email.value, comments.value)
+
+    // window.location.href = "/success"
+
 
   }
 
 
 
   return (
-    <div id={FORM_ID}>
+    <div id={ FORM_ID }>
       <h2 class="text-2xl mb-2 mt-10">Оформление заказа</h2>
       <div class="w-full sm:w-3/4 md:w-1/2">
         <label class="text-xs">
           Как к вам можно обращаться:
           <input
-            value={name.value}
-            onChange={(e) => name.value = e.currentTarget.value}
+            value={ name.value }
+            onChange={ (e) => name.value = e.currentTarget.value }
             aria-required="true"
-            aria-invalid={errors.value.name ? 'true' : 'false'}
+            aria-invalid={ errors.value.name ? 'true' : 'false' }
             name="name"
             type="text"
             class="block mt-1 border border-neutral-200 py-1 px-1 rounded-lg text-base w-full aria-invalid:border-red-500"
           />
-          {errors.value.name && <p class="text-red-500 text-xs">{errors.value.name}</p>}
+          { errors.value.name && <p class="text-red-500 text-xs">{ errors.value.name }</p> }
         </label>
         <div class="mt-4">
           <label class="text-xs">
             В каком городе требуется доставка:
             <input
-              value={city.value}
-              onChange={(e) => city.value = e.currentTarget.value}
+              value={ city.value }
+              onChange={ (e) => city.value = e.currentTarget.value }
               aria-required="true"
-              aria-invalid={errors.value.city ? 'true' : 'false'}
+              aria-invalid={ errors.value.city ? 'true' : 'false' }
               name="city"
               type="text"
               class="block mt-1 border border-neutral-200 py-1 px-1 rounded-lg text-base w-full aria-invalid:border-red-500"
             />
-            {errors.value.city && <p class="text-red-500 text-xs">{errors.value.city}</p>}
+            { errors.value.city && <p class="text-red-500 text-xs">{ errors.value.city }</p> }
           </label>
         </div>
         <div class="mt-4">
           <label class="text-xs">
             Телефон:
             <input
-              value={phone.value}
-              onChange={(e) => phone.value = e.currentTarget.value}
-              aria-invalid={errors.value.contacts ? 'true' : 'false'}
+              value={ phone.value }
+              onChange={ (e) => phone.value = e.currentTarget.value }
+              aria-invalid={ errors.value.contacts ? 'true' : 'false' }
               name="phone"
               type="phone"
               class="block mt-1 border border-neutral-200 py-1 px-1 rounded-lg text-base w-full aria-invalid:border-red-500"
@@ -91,34 +105,34 @@ function OrderForm () {
           <label class="text-xs">
             Адрес электронной почты:
             <input
-              value={email.value}
-              onChange={(e) => email.value = e.currentTarget.value}
-              aria-invalid={errors.value.contacts ? 'true' : 'false'}
+              value={ email.value }
+              onChange={ (e) => email.value = e.currentTarget.value }
+              aria-invalid={ errors.value.contacts ? 'true' : 'false' }
               name="email"
               type="email"
               class="block mt-1 border border-neutral-200 py-1 px-1 rounded-lg text-base w-full aria-invalid:border-red-500"
             />
           </label>
         </div>
-        {errors.value.contacts && <p class="text-red-500 text-xs">{errors.value.contacts}</p>}
+        { errors.value.contacts && <p class="text-red-500 text-xs">{ errors.value.contacts }</p> }
         <div class="mt-4">
           <label class="text-xs">
             Комментарии:
             <textarea
-              value={comments.value}
-              onChange={(e) => comments.value = e.currentTarget.value}
+              value={ comments.value }
+              onChange={ (e) => comments.value = e.currentTarget.value }
               name="comments"
-              rows={5}
+              rows={ 5 }
               type="text"
               class="block mt-1 border border-neutral-200 py-1 px-1 rounded-lg text-base w-full"
             />
           </label>
         </div>
-        {/* <input type="submit" value="Submit" /> */}
+        {/* <input type="submit" value="Submit" /> */ }
         <button
-          disabled={isErrors.value}
+          disabled={ isErrors.value }
           aria-role="Отправить запрос"
-          onClick={() => handleSubmit()}
+          onClick={ () => handleSubmit() }
           class='
             w-full mt-4 py-1 px-2 border rounded-md 
             border-neutral-400  
