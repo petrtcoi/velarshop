@@ -1,6 +1,6 @@
 ---
-import {Picture} from "@astrojs/image/components";
-import {contacts} from "@shared/constants/contacts";
+import { Picture } from "@astrojs/image/components";
+import { contacts } from "@shared/constants/contacts";
 
 const {
   phone495String,
@@ -52,7 +52,7 @@ const {
 
       <!-- Phones -->
       <div
-        class='lg:hidden flex flex-col gap-1'
+        class='lg:hidden flex flex-col gap-3'
         aria-label='Телефоны для связи'
       >
         <a
@@ -103,6 +103,7 @@ const {
       <div class='my-2 flex flex-row gap-20 justify-between lg:hidden'>
         <a
           href={`https://vk.com/${vk}`}
+          role='menuitem'
           rel='noopener noreferrer nofollow'
           aria-label='Наша страница Вконтакте'
           target='_blank'
@@ -115,6 +116,7 @@ const {
         </a>
         <a
           href={`https://wa.me/${whatsApp}`}
+          role='menuitem'
           rel='noopener noreferrer nofollow'
           aria-label='Наш WhatsApp для связи'
           target='_blank'
@@ -127,6 +129,7 @@ const {
         </a>
         <a
           href={`https://t.me/${telegram}`}
+          role='menuitem'
           rel='noopener noreferrer nofollow'
           target='_blank'
           aria-label='Наш Телеграм'
@@ -142,18 +145,21 @@ const {
       <a
         href='/'
         class='text-sm my-1 mx-auto transition-colors hover:text-neutral-700 lg:hidden'
+        role='menuitem'
       >
         Дизайн-радиаторы
       </a>
       <a
         href='/'
         class='text-sm my-1 mx-auto transition-colors hover:text-neutral-700 lg:hidden'
+        role='menuitem'
       >
         Трубчатые радиаторы
       </a>
       <a
         href='/'
         class='text-sm my-1 mx-auto transition-colors hover:text-neutral-700 lg:hidden'
+        role='menuitem'
       >
         Ретро-радиаторы
       </a>
@@ -166,6 +172,7 @@ const {
       <a
         href='/'
         class='text-sm my-1 mx-auto transition-colors hover:text-neutral-700 lg:hidden'
+        role='menuitem'
       >
         Внутрипольные конвекторы
       </a>
@@ -173,12 +180,14 @@ const {
       <a
         href='/about'
         class='text-sm lg:text-xs my-1 mx-auto transition-colors hover:text-neutral-700'
+        role='menuitem'
       >
         О магазине
       </a>
       <a
         href='/delivery'
         class='text-sm lg:text-xs my-1 hover:text-neutral-700 mx-auto transition-colors'
+        role='menuitem'
       >
         Доставка и оплата
       </a>
@@ -187,6 +196,7 @@ const {
         data-testid='velar_logo'
         class='hidden lg:block lg:w-48 hover:opacity-50 transition-opacity'
         aria-label='Ссылка на главную страницу'
+        role='menuitem'
       >
         <Picture
           loading='eager'
@@ -200,17 +210,20 @@ const {
       <a
         href='/guarantees'
         class='lg:hidden text-sm lg:text-xs my-1 hover:text-neutral-700 mx-auto transition-colors'
+        role='menuitem'
         >Сертификаты и гарантии</a
       >
       <a
-        href='/'
+        href='/request'
         class='text-sm lg:text-xs my-1 hover:text-neutral-700 mx-auto transition-colors'
+        role='menuitem'
       >
         Сделать запрос
       </a>
       <a
         href='/'
         class='text-sm lg:text-xs my-1 hover:text-neutral-700 mx-auto transition-colors'
+        role='menuitem'
       >
         Полезная информация
       </a>
