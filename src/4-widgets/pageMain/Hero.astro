@@ -1,15 +1,37 @@
+---
+import { Picture } from "@astrojs/image/components";
+import LeftRightBlock5055 from "@shared/components/LeftRightBlock5055.astro";
+---
+
 <section
   id='hero'
-  class='flex flex-row justify-center max-w-6xl mx-auto md:px-10 mt-20'
+  class='flex flex-row justify-center max-w-6xl mx-auto px-5 md:px-10 mt-20'
 >
-  <div class='w-1/2'>
-    <h1 class='text-5xl font-bold text-left'>Радиаторы Velar</h1>
-    <p class='mt-5 leading-8'>
-      <span class='text-red-600'>Velar</span> - это бренд высококачественных приборов
-      отопления, не уступающих европейсим аналогам. С 2015 года на производственных
-      мощностях завода выпускаются внутрипольные конвекторы, профильные дизайн-радиаторы,
-      колончатые стальные радиаторы, чугунные радиаторы, полотенцесушители.
-    </p>
-  </div>
-  <div class='w-1/2'>ss</div>
+  <LeftRightBlock5055>
+    <div slot='left'>
+      <h1 class='text-5xl font-bold text-left'>Радиаторы Velar</h1>
+      <p class='mt-5 leading-8'>
+        <span class='text-red-600'>Velar</span> - это бренд высококачественных приборов
+        отопления, не уступающих европейсим аналогам. С 2015 года на производственных
+        мощностях завода выпускаются внутрипольные конвекторы, профильные дизайн-радиаторы,
+        колончатые стальные радиаторы, чугунные радиаторы, полотенцесушители.
+      </p>
+    </div>
+    <div
+      slot='right'
+      class='h-full'
+    >
+      <Picture
+        src='/images/main/main0.jpg'
+        alt='Горизонтальный дизайн-радиатор Velar P красного цвета'
+        title='Горизонтальный дизайн-радиатор Velar P красного цвета'
+        aspectRatio='719:254'
+        widths={[400, 650, 900, 1200, 1500]}
+        sizes='(max-width: 640px) 640px,  800px'
+        class='object-cover -ml-2 sm:ml-0 sm:h-3/4 sm:mt-10 md:h-3/4 overflow-hidden'
+        style={{ objectPosition: "left center" }}
+        loading='eager'
+      />
+    </div>
+  </LeftRightBlock5055>
 </section>
