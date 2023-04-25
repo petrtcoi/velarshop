@@ -2,6 +2,7 @@
 import Layout from "@shared/layouts/Layout.astro";
 
 import RadiatorTitle from "@widgets/pageRadiator/RadiatorTitle.astro";
+import LinkToModelPage from "@widgets/pageRadiator/LinkToModelPage.astro";
 import RadiatorBasicInfo from "@widgets/pageRadiator/RadiatorBasicInfo.astro";
 import ModelDownloadSchema from "@features/model/ModelDownloadShema/ModelDownloadSchema.astro";
 
@@ -39,6 +40,7 @@ const { model, radiator } = Astro.props as Props;
 <Layout
   title={`${model.prefix} Velar ${getRadiatorTitle({ model, radiator })}`}
 >
+  <LinkToModelPage model={model} />
   <RadiatorTitle
     model={model}
     radiator={radiator}

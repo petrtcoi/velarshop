@@ -1,0 +1,23 @@
+---
+import type { ModelJson } from "@entities/Model";
+
+type Props = {
+  model: Pick<ModelJson, "slug" | "name" | "prefix">;
+};
+const { model } = Astro.props as Props;
+const { slug, name, prefix } = model;
+---
+
+<div
+  class='mt-0 mb-1'
+  aria-label='Breadcrumb'
+>
+  <a
+    href={`/model/${slug}`}
+    aria-label='Перейти на страницу модели'
+    class='text-xs hover:underline'
+  >
+    {prefix}
+    {name}
+  </a>
+</div>
