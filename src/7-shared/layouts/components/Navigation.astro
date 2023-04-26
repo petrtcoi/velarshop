@@ -30,7 +30,7 @@ const {
 </script>
 
 <nav>
-  <div class='bg-teal-600 mx-auto p-4 shadow-2xl z-50'>
+  <div class='bg-teal-600 mx-auto p-4 shadow-lg z-50'>
     <!-- LOGO -->
     <div class='container mx-auto flex items-center justify-between relative'>
       <a
@@ -98,9 +98,9 @@ const {
     <div
       role='menubar'
       aria-label='Главное меню'
-      class='hidden flex-col gap-4 absolute left-0 items-center right-0 top-18 shadow-lg p-6 text-center text-md pb-10 bg-teal-600 lg:py-2 lg:flex-row lg:static lg:shadow-none lg:justify-center lg:w-full lg:flex'
+      class='hidden flex-col gap-4 relative left-0 items-center right-0 top-18 p-6 text-center text-md pb-10 bg-teal-600 lg:py-2 lg:flex-row lg:static lg:shadow-none lg:justify-center lg:w-full lg:flex'
     >
-      <div class='my-2 flex flex-row gap-20 justify-between lg:hidden'>
+      <div class='my-2 flex flex-row gap-20 justify-between lg:hidden z-50 '>
         <a
           href={`https://vk.com/${vk}`}
           role='menuitem'
@@ -148,6 +148,13 @@ const {
         role='menuitem'
       >
         Дизайн-радиаторы
+      </a>
+      <a
+        href='/'
+        class='text-sm my-1 mx-auto transition-colors hover:text-neutral-700 lg:hidden'
+        role='menuitem'
+      >
+        Напольные радиаторы
       </a>
       <a
         href='/'
@@ -241,6 +248,12 @@ const {
       class='text-xs text-neutral-900 font-light hover:underline'
     >
       Дизайн-радиаторы
+    </a>
+    <a
+      href='/'
+      class='text-xs text-neutral-900 font-light hover:underline'
+    >
+      Напольные радиаторы
     </a>
     <a
       href='/'
