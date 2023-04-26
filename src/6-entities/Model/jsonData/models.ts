@@ -11,7 +11,8 @@ export const modelsJsonData: ModelJson[] = [
     "orientation": "vertical",
     "connections": "lat,l50,r50,050,lr",
     "related_models": "q40v,r32v,spv,q80v",
-    "related_items": ""
+    "related_items": "",
+    "short_comment": "Классический вертикальный радиатор с прямоугольным сечением труб 30х60 мм"
   },
   {
     "id": "p30h",
@@ -22,7 +23,8 @@ export const modelsJsonData: ModelJson[] = [
     "orientation": "horizontal",
     "connections": "lat,l50,r50,050,lr",
     "related_models": "q40h,sph,q80h",
-    "related_items": ""
+    "related_items": "",
+    "short_comment": "Горизонтальная версия популярной модели.  Для установки под  окна"
   },
   {
     "id": "p60v",
@@ -33,7 +35,8 @@ export const modelsJsonData: ModelJson[] = [
     "orientation": "vertical",
     "connections": "lat,l50,r50,050,lr",
     "related_models": "spv,q80v",
-    "related_items": ""
+    "related_items": "",
+    "short_comment": "Плоский дизайн-радиатор с вертикальным расопложением труб. Сечение 30х60 мм"
   },
   {
     "id": "p60h",
@@ -44,7 +47,8 @@ export const modelsJsonData: ModelJson[] = [
     "orientation": "horizontal",
     "connections": "lat,l50,r50,050,lr",
     "related_models": "sph,q80h",
-    "related_items": ""
+    "related_items": "",
+    "short_comment": "Горизонтальный радиатор. Плоские трубы, расположенные параллельно стене"
   },
   {
     "id": "sv",
@@ -55,7 +59,8 @@ export const modelsJsonData: ModelJson[] = [
     "orientation": "vertical",
     "connections": "lat,l50,r50,050,lr",
     "related_models": "p30v,spv,rt1v,r32v",
-    "related_items": ""
+    "related_items": "",
+    "short_comment": "Вертикальный радиатор выполнен из стального профиля овальной формы"
   },
   {
     "id": "sh",
@@ -66,7 +71,8 @@ export const modelsJsonData: ModelJson[] = [
     "orientation": "horizontal",
     "connections": "lat,l50,r50,050,lr",
     "related_models": "p30h,sph,r32h",
-    "related_items": ""
+    "related_items": "",
+    "short_comment": "Овальное сечение труб 30х50 мм. Горизонтальное расположение"
   },
   {
     "id": "spv",
@@ -77,7 +83,8 @@ export const modelsJsonData: ModelJson[] = [
     "orientation": "vertical",
     "connections": "lat,l50,r50,050,lr",
     "related_models": "p30v,q40v,r32v",
-    "related_items": ""
+    "related_items": "",
+    "short_comment": "Вертикальный радиатор с секциями овальной формы, расположенными вдоль стены"
   },
   {
     "id": "sph",
@@ -88,7 +95,8 @@ export const modelsJsonData: ModelJson[] = [
     "orientation": "horizontal",
     "connections": "lat,l50,r50,050,lr",
     "related_models": "p30h,q40h,r32h",
-    "related_items": ""
+    "related_items": "",
+    "short_comment": "Горизонтальный радиатор с секциями овальной формы, расположенными вдоль стены"
   },
   {
     "id": "q40v",
@@ -99,7 +107,8 @@ export const modelsJsonData: ModelJson[] = [
     "orientation": "vertical",
     "connections": "lat,l50,r50,050,lr",
     "related_models": "q80v,p30v,qt1v,qt2v",
-    "related_items": ""
+    "related_items": "",
+    "short_comment": "Вертикальный радиатор. Секции имеют квадратное сечение 40х40 мм"
   },
   {
     "id": "q40h",
@@ -110,7 +119,8 @@ export const modelsJsonData: ModelJson[] = [
     "orientation": "horizontal",
     "connections": "lat,l50,r50,050,lr",
     "related_models": "q80h,p30v",
-    "related_items": ""
+    "related_items": "",
+    "short_comment": "Горизонтальный радиатор. Секции имеют квадратное сечение 40х40 мм"
   },
   {
     "id": "q80v",
@@ -121,7 +131,8 @@ export const modelsJsonData: ModelJson[] = [
     "orientation": "vertical",
     "connections": "lat,l50,r50,050,lr",
     "related_models": "q40v,p30v,qt1v,qt2v",
-    "related_items": ""
+    "related_items": "",
+    "short_comment": "Вертикальный радиатор. Секции имеют квадратное сечение 80х80 мм"
   },
   {
     "id": "q80h",
@@ -132,7 +143,8 @@ export const modelsJsonData: ModelJson[] = [
     "orientation": "horizontal",
     "connections": "lat,l50,r50,050,lr",
     "related_models": "q40h,p30h",
-    "related_items": ""
+    "related_items": "",
+    "short_comment": "Горизонтальный радиатор. Секции имеют квадратное сечение 80х80 мм"
   },
   {
     "id": "r32v",
@@ -143,7 +155,8 @@ export const modelsJsonData: ModelJson[] = [
     "orientation": "vertical",
     "connections": "l50,r50,050,lr",
     "related_models": "r89v,rt1v,rt2v,rt1wv",
-    "related_items": ""
+    "related_items": "",
+    "short_comment": "Вертикальная модель. Круглое сечение труб 32 мм"
   },
   {
     "id": "r32h",
@@ -154,7 +167,8 @@ export const modelsJsonData: ModelJson[] = [
     "orientation": "horizontal",
     "connections": "lat",
     "related_models": "r89h,sph",
-    "related_items": ""
+    "related_items": "",
+    "short_comment": "Горизонтальная модель. Круглое сечение труб 32 мм"
   },
   {
     "id": "r89v",
@@ -165,7 +179,8 @@ export const modelsJsonData: ModelJson[] = [
     "orientation": "vertical",
     "connections": "l50,r50,050,lr",
     "related_models": "r32v,q80v,rt2v",
-    "related_items": ""
+    "related_items": "",
+    "short_comment": "Вертиальное расположение труб сечением 89 мм"
   },
   {
     "id": "r89h",
@@ -176,7 +191,8 @@ export const modelsJsonData: ModelJson[] = [
     "orientation": "horizontal",
     "connections": "lat",
     "related_models": "r32h,q80h",
-    "related_items": ""
+    "related_items": "",
+    "short_comment": "Горизонтальный радиатор с секциями круглой формы 89 мм"
   },
   {
     "id": "rt1v",
@@ -187,7 +203,8 @@ export const modelsJsonData: ModelJson[] = [
     "orientation": "vertical",
     "connections": "lat,l50,r50,050,lr",
     "related_models": "rt2v,qt1v,rt1wv",
-    "related_items": ""
+    "related_items": "",
+    "short_comment": "Однорядный вертикальный радиатор. Секции круглой формы диаметром 32 мм"
   },
   {
     "id": "rt2v",
@@ -198,7 +215,8 @@ export const modelsJsonData: ModelJson[] = [
     "orientation": "vertical",
     "connections": "lat,l50,r50,050,lr",
     "related_models": "rt1v,qtv",
-    "related_items": ""
+    "related_items": "",
+    "short_comment": "Двухрядный вертикальный радиатор. Секции круглой формы диаметром 32 мм"
   },
   {
     "id": "rt1wv",
@@ -209,7 +227,8 @@ export const modelsJsonData: ModelJson[] = [
     "orientation": "vertical",
     "connections": "lat,l50,r50,050,lr",
     "related_models": "rt1v,qt1v",
-    "related_items": ""
+    "related_items": "",
+    "short_comment": "Оригинальный вевртикальный радиатор. Диаметр секций 32 мм"
   },
   {
     "id": "qt1v",
@@ -220,7 +239,8 @@ export const modelsJsonData: ModelJson[] = [
     "orientation": "vertical",
     "connections": "lat,l50,r50,050,lr",
     "related_models": "qt2v,rt1v,rt1wv",
-    "related_items": ""
+    "related_items": "",
+    "short_comment": "Однорядный вертикальный радиатор. Секции квадратного сечения 40х40 мм"
   },
   {
     "id": "qt2v",
@@ -231,7 +251,8 @@ export const modelsJsonData: ModelJson[] = [
     "orientation": "vertical",
     "connections": "lat,l50,r50,050,lr",
     "related_models": "qt1v,rt2v",
-    "related_items": ""
+    "related_items": "",
+    "short_comment": "Двухрядный вертикальный радиатор. Секции квадратного сечения 40х40 мм"
   },
   {
     "id": "q500",
@@ -242,7 +263,8 @@ export const modelsJsonData: ModelJson[] = [
     "orientation": "",
     "connections": "lat,l50,r50,lr",
     "related_models": "p200,p300",
-    "related_items": ""
+    "related_items": "",
+    "short_comment": "Радиатор-скамейка устанавливается в прихожих, гостиных, входных группах и т.д."
   },
   {
     "id": "p200",
@@ -253,7 +275,8 @@ export const modelsJsonData: ModelJson[] = [
     "orientation": "",
     "connections": "lat,l50,r50,lr",
     "related_models": "p300,q500",
-    "related_items": ""
+    "related_items": "",
+    "short_comment": "Напольный радиатор высотой 191 мм. Подходит для установки перед панорамными окнами"
   },
   {
     "id": "p300",
@@ -264,7 +287,8 @@ export const modelsJsonData: ModelJson[] = [
     "orientation": "",
     "connections": "lat,l50,r50,lr",
     "related_models": "p200,q500",
-    "related_items": ""
+    "related_items": "",
+    "short_comment": "Напольный радиатор высотой 191 мм. Подходит для установки перед панорамными окнами"
   },
   {
     "id": "kwh",
@@ -275,7 +299,8 @@ export const modelsJsonData: ModelJson[] = [
     "orientation": "",
     "connections": "",
     "related_models": "kwhv",
-    "related_items": ""
+    "related_items": "",
+    "short_comment": "Естественная конвекция. Ширина 150-420 мм. Высота 65-140 мм"
   },
   {
     "id": "kwhv",
@@ -286,7 +311,8 @@ export const modelsJsonData: ModelJson[] = [
     "orientation": "",
     "connections": "",
     "related_models": "kwh",
-    "related_items": ""
+    "related_items": "",
+    "short_comment": "Принудительная конвекция. Ширина 250-420 мм. Высота 85-140 мм"
   },
   {
     "id": "nostalgia500",
@@ -297,7 +323,8 @@ export const modelsJsonData: ModelJson[] = [
     "orientation": "",
     "connections": "",
     "related_models": "historic500",
-    "related_items": ""
+    "related_items": "",
+    "short_comment": "Чугунный ретро-радиатор в стиле ретро. Украшен цветочным орнаментом"
   },
   {
     "id": "historic500",
@@ -308,6 +335,7 @@ export const modelsJsonData: ModelJson[] = [
     "orientation": "",
     "connections": "",
     "related_models": "nostalgia500",
-    "related_items": ""
+    "related_items": "",
+    "short_comment": "Чугунный радиатор без орнамента. Отлично подходит для интерьеров в стиле лофт"
   }
 ]

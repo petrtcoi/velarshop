@@ -7,6 +7,7 @@ type ModelJson = {
   id: string
   slug: string
   type: ModelType
+  short_comment: string
 
   name: string
   prefix: string

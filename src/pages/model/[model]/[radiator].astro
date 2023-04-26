@@ -38,7 +38,10 @@ const { model, radiator } = Astro.props as Props;
 ---
 
 <Layout
-  title={`${model.prefix} Velar ${getRadiatorTitle({ model, radiator })}`}
+  title={`${model.prefix} Velar ${getRadiatorTitle({
+    model,
+    radiator,
+  })} купить в VelarShop.ru`}
 >
   <LinkToModelPage model={model} />
   <RadiatorTitle

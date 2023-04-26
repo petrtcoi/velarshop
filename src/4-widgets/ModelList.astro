@@ -1,0 +1,48 @@
+---
+import { Picture } from "@astrojs/image/components";
+import { ModelType, modelsJsonData } from "@entities/Model";
+
+type Props = {
+  type: ModelType;
+};
+const { type } = Astro.props as Props;
+
+const models = modelsJsonData.filter((m) => m.type === type);
+---
+
+<div
+  id='model_list'
+  aria-label='Список моделей'
+  class='mt-10 flex flex-row flex-wrap items-top gap-8 justify-center'
+>
+  {
+    models.map((m) => {
+      const title = `${m.prefix} Velar ${m.name}`;
+      const imgPath = `/images/models/${m.slug}/main.jpg`;
+      const modelHref = `/model/${m.slug}`;
+
+      return (
+        <div class='group w-72 mx-auto sm:mx-0 '>
+          <a href={modelHref}>
+            <Picture
+              src={imgPath}
+              alt={title}
+              title={title}
+              loading='lazy'
+              aspectRatio='1:1'
+              widths={[290, 500]}
+              sizes='290px'
+              class='rounded-lg opacity-100 md:opacity-75 group-hover:opacity-100 group-hover:shadow-lg transition-opacity duration-300'
+            />
+            <h4 class='text-sm mt-2 group-hover:text-red-600 transition-colors duration-300'>
+              {title}
+            </h4>
+            <div class='text-xs mt-1 text-neutral-600 group-hover:text-neutral-900'>
+              {m.short_comment}
+            </div>
+          </a>
+        </div>
+      );
+    })
+  }
+</div>
