@@ -8,8 +8,7 @@ type Props = {
 }
 
 
-const getOrderConfirmationEmailHtml = ({ formData }: Props): string =>
-{
+const getOrderConfirmationEmailHtml = ({ formData }: Props): string => {
 
   const { items } = storeShoppingCart.get()
   const cartTotalPrice = storeCartTotalPrice.get()
@@ -32,8 +31,7 @@ const getOrderConfirmationEmailHtml = ({ formData }: Props): string =>
   if (formData.comments?.length) html += `<p>Комментарий к заказу:<br/>${ formData.comments }</p>`
 
   if (items.length > 0) html += `<h3>Заказ</h3><table border="1" cellpadding="5" cellspacing="0"><thead><td>№</td><td>Наименование</td><td>Цена</td><td>Кол-во</td><td>Сумма</td></thead><tbody>`
-  items.forEach((item, index) =>
-  {
+  items.forEach((item, index) => {
     html += `<tr><td>${ index + 1 }</td><td>${ item.title }</td><td>${ item.price.toLocaleString() } руб.</td><td>${ item.qnty }</td><td>${ (item.price * item.qnty).toLocaleString() } руб.</td></tr>`
   })
 
@@ -43,7 +41,7 @@ const getOrderConfirmationEmailHtml = ({ formData }: Props): string =>
 
   if (items.length > 0) html += `<p>Итого: <strong>${ cartTotalPrice.toLocaleString() } руб.</strong></p > `
 
-  html += `< br/><br/><hr/ > <p>С уважением, <br/>Магазин дизайн-радиаторов Velar - velarshop.ru<br/ > <br/>сайт: ${ contacts.website }<br/ > тел.: +7 ${ contacts.phone495String } <br/>тел.: +7 ${ contacts.phone812String }<br/ > email: ${ contacts.email } </p>`
+  html += `<br/><br/><hr/ > <p>С уважением, <br/>Магазин дизайн-радиаторов Velar - velarshop.ru<br/ > <br/>сайт: ${ contacts.website }<br/ > тел.: +7 ${ contacts.phone495String } <br/>тел.: +7 ${ contacts.phone812String }<br/ > email: ${ contacts.email } </p>`
   html += '<img src="https://velarshop.ru/images/logo.jpg" height="50px" width="auto"/>'
 
   return html
