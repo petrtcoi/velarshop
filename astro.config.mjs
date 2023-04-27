@@ -7,5 +7,6 @@ import preact from "@astrojs/preact"
 
 // https://astro.build/config
 export default defineConfig( {
-  integrations: [ tailwind(), image(), mdx(), preact() ],
+  site: 'https://velarshop.ru',
+  integrations: [ tailwind(), image(), mdx(), preact(), sitemap() ],
 } )
