@@ -8,6 +8,16 @@ const pageSchema = defineCollection({
   })
 })
 
+const articleSchema = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    short_description: z.string(),
+    slug: z.string(),
+    thumbnail: z.string(),
+  })
+})
+
+
 const modelDescriptionSchema = defineCollection({
   schema: z.object({})
 })
@@ -20,6 +30,7 @@ const modelAdditionalInfoSchema = defineCollection({
 
 export const collection = {
   pages: pageSchema,
+  articles: articleSchema,
   modelDescriptions: modelDescriptionSchema,
   modelAdditionalInfos: modelAdditionalInfoSchema,
   itemDescriptions: itemDescriptionSchema,
