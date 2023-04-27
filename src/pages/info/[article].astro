@@ -23,6 +23,29 @@ const { title, short_description } = article.data;
   title={`${title} | VelarShop.ru`}
   description={short_description}
 >
+  <a
+    href='/info'
+    class='text-xs hover:text-red-500'
+  >
+    <div class='flex flex-row gap-1 items-center'>
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        fill='none'
+        viewBox='0 0 24 24'
+        stroke-width={1}
+        stroke='currentColor'
+        class='w-4 h-4'
+      >
+        <path
+          stroke-linecap='round'
+          stroke-linejoin='round'
+          d='M15.75 19.5L8.25 12l7.5-7.5'
+        ></path>
+      </svg>
+
+      к списку статей
+    </div>
+  </a>
   <article class='container mx-auto p-5 md:px-10 max-w-4xl prose-sm'>
     <Content />
   </article>

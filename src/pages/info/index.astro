@@ -11,7 +11,7 @@ const articles = await getCollection("articles");
   <div
     id='articles_list'
     aria-label='Список статей'
-    class='mt-10 flex flex-row flex-wrap items-top gap-8 justify-start'
+    class='mt-6 flex flex-row flex-wrap items-top gap-8 justify-start'
   >
     {
       articles
@@ -26,7 +26,7 @@ const articles = await getCollection("articles");
           const articleHref = `/info/${slug}`;
 
           return (
-            <div class='group w-72 mx-auto sm:mx-0 '>
+            <div class='group w-72 mx-auto sm:mx-0 mt-5'>
               <a href={articleHref}>
                 <Picture
                   src={imgPath}
