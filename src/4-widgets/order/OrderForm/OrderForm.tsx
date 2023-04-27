@@ -1,4 +1,5 @@
 import sendOrderConfirmation from "@features/order/SendEmailOrderConfirmation/sendEmailOrderConfirmation"
+import { storeShoppingCart } from "@features/order/ShoppingCart"
 import { signal, computed } from "@preact/signals"
 
 const FORM_ID = 'order-form'
@@ -15,6 +16,8 @@ const phone = signal('')
 const email = signal('')
 const comments = signal('')
 const checkForm = signal(false)
+const sendEmailError = signal('')
+const fetching = signal(false)
 
 const errors = computed(() => {
   if (!checkForm.value) return {}
@@ -31,7 +34,10 @@ function OrderForm () {
 
   const handleSubmit = async () => {
     if (!window?.location) return
+    sendEmailError.value = ''
+    fetching.value = true
     checkForm.value = true
+
     if (isErrors.value) {
       window.location.href = `#${ FORM_ID }`
       return
@@ -46,11 +52,13 @@ function OrderForm () {
         comments: comments.value
       }
     })
-    console.log('result', result)
-    console.log(errors.value, name.value, city.value, phone.value, email.value, comments.value)
-
-    // window.location.href = "/success"
-
+    fetching.value = false
+    if (result === 'ok') {
+      storeShoppingCart.set({ items: [] })
+      window.location.href = "/success"
+      return
+    }
+    sendEmailError.value = 'Во время отправки письма произошла ошибка!'
 
   }
 
@@ -130,7 +138,7 @@ function OrderForm () {
         </div>
         {/* <input type="submit" value="Submit" /> */ }
         <button
-          disabled={ isErrors.value }
+          disabled={ isErrors.value || fetching.value }
           aria-role="Отправить запрос"
           onClick={ () => handleSubmit() }
           class='
@@ -147,9 +155,11 @@ function OrderForm () {
              group-disabled:text-neutral-200  
              group-hover:group-enabled:text-neutral-900 
               transition-colors
-            '
-          >Отправить запрос</span>
+           '
+          >
+            { fetching.value ? 'Отправляю запрос...' : 'Отправить запрос' }</span>
         </button>
+        <div class="text-red-500 text-sm mt-1">{ sendEmailError.value }</div>
       </div>
     </div >
   )

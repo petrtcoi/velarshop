@@ -23,29 +23,34 @@ const sendOrderConfirmation = async ({ formData }: Props): Promise<'ok' | 'error
     html
   }
 
-  console.log('data to send', data)
 
   try {
     const res1 = formData.email?.length
       ? await fetch(API_URL, {
         method: 'POST',
-        body: JSON.stringify(data)
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify({ ...data })
       })
-        .then(res => res.json() as Promise<RequestResult>)
+        .then(() => ({ data: 'ok' }))
         .catch(() => ({ data: 'error' }))
       : { data: 'ok' }
 
-
     const res2 = await fetch(API_URL, {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8'
+      },
       body: JSON.stringify({ ...data, to: contacts.emailNotifications })
     })
-      .then(res => res.json() as Promise<RequestResult>)
-      .catch(() => ({ data: 'error' }))
-
+      .then(() => ({ data: 'ok' }))
+      .catch((data) => {
+        console.log(data)
+        return { data: 'error' }
+      })
     return ((res1.data === 'ok' && res2.data === 'ok') ? 'ok' : 'error')
   } catch (err) {
-    console.log('sendOrderConfirmation error', err)
     return 'error'
   }
 }

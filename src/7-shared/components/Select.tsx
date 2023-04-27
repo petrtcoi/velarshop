@@ -5,11 +5,9 @@ type Props = {
   id: string
 }
 
-function Select ({ options, selected, onChange, id }: Props)
-{
+function Select ({ options, selected, onChange, id }: Props) {
 
-  const handleChange = (e: any) =>
-  {
+  const handleChange = (e: any) => {
     onChange(e.target.value)
   }
 
@@ -17,7 +15,7 @@ function Select ({ options, selected, onChange, id }: Props)
 
     <select
       id={ id }
-      class='appearance-none w-full bg-transparent sm:w-auto block mt-1 text-xs p-3 border relative border-neutral-300 rounded-lg focus:ring-1 focus:ring-blue-500 '
+      class='appearance-none  w-[90vw] bg-transparent sm:w-auto block mt-1 text-xs p-3 border relative border-neutral-300 rounded-lg focus:ring-1 focus:ring-blue-500 '
       role='listbox'
       disabled={ !selected }
       onChange={ (e) => handleChange(e) }
