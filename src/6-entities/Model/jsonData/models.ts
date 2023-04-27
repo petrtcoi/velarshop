@@ -149,7 +149,7 @@ export const modelsJsonData: ModelJson[] = [
   {
     "id": "r32v",
     "slug": "r32v",
-    "name": "E 32 V",
+    "name": "R 32 V",
     "type": "design",
     "prefix": "Дизайн-радиатор",
     "orientation": "vertical",
