@@ -14,6 +14,7 @@ const articleSchema = defineCollection({
     short_description: z.string(),
     slug: z.string(),
     thumbnail: z.string(),
+    sortRank: z.number(),
   })
 })
 

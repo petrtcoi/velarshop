@@ -6,46 +6,48 @@ import { getCollection } from "astro:content";
 const articles = await getCollection("articles");
 ---
 
-<Layout title='Полезная информация |радиаторы и конвекторы | VelarShop.ru'>
+<Layout title='Полезная информация | радиаторы и конвекторы | VelarShop.ru'>
   <h1 class='text-2xl'>Полезные материалы</h1>
   <div
     id='articles_list'
     aria-label='Список статей'
-    class='mt-10 flex flex-row flex-wrap items-top gap-8 justify-center'
+    class='mt-10 flex flex-row flex-wrap items-top gap-8 justify-start'
   >
     {
-      articles.map((article) => {
-        const { title, short_description, slug, thumbnail } = article.data;
+      articles
+        .sort((a, b) => b.data.sortRank - a.data.sortRank)
+        .map((article) => {
+          const { title, short_description, slug, thumbnail } = article.data;
 
-        const imgPath =
-          thumbnail.length > 0
-            ? `/images/articles/${thumbnail}`
-            : "/images/articles/empty.jpg";
-        const articleHref = `/articles/${slug}`;
+          const imgPath =
+            thumbnail.length > 0
+              ? `/images/articles/${thumbnail}`
+              : "/images/articles/empty.jpg";
+          const articleHref = `/info/${slug}`;
 
-        return (
-          <div class='group w-72 mx-auto sm:mx-0 '>
-            <a href={articleHref}>
-              <Picture
-                src={imgPath}
-                alt={title}
-                title={title}
-                loading='lazy'
-                aspectRatio='1:1'
-                widths={[290, 500]}
-                sizes='290px'
-                class='rounded-lg opacity-100 md:opacity-75 group-hover:opacity-100 group-hover:shadow-lg transition-opacity duration-300'
-              />
-              <h4 class='text-sm mt-2 group-hover:text-red-600 transition-colors duration-300'>
-                {title}
-              </h4>
-              <div class='text-xs mt-1 text-neutral-600 group-hover:text-neutral-900'>
-                {short_description}
-              </div>
-            </a>
-          </div>
-        );
-      })
+          return (
+            <div class='group w-72 mx-auto sm:mx-0 '>
+              <a href={articleHref}>
+                <Picture
+                  src={imgPath}
+                  alt={title}
+                  title={title}
+                  loading='lazy'
+                  aspectRatio='1:1'
+                  widths={[290, 500]}
+                  sizes='290px'
+                  class='rounded-lg opacity-100 md:opacity-75 group-hover:opacity-100 group-hover:shadow-lg transition-opacity duration-300'
+                />
+                <h4 class='text-sm mt-2 group-hover:text-red-600 transition-colors duration-300'>
+                  {title}
+                </h4>
+                <div class='text-xs mt-1 text-neutral-600 group-hover:text-neutral-900'>
+                  {short_description}
+                </div>
+              </a>
+            </div>
+          );
+        })
     }
   </div>
 </Layout>

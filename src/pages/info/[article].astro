@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@shared/layouts/Layout.astro";
+import type { CollectionEntry } from "astro:content";
+
+export async function getStaticPaths() {
+  const articles = await getCollection("articles");
+  return articles.map((article) => ({
+    params: { article: article.slug },
+    props: { article },
+  }));
+}
+
+type Props = {
+  article: CollectionEntry<"articles">;
+};
+const { article } = Astro.props as Props;
+const { Content } = await article.render();
+const { title, short_description } = article.data;
+---
+
+<Layout
+  title={`${title} | VelarShop.ru`}
+  description={short_description}
+>
+  <article class='container mx-auto p-5 md:px-10 max-w-4xl prose-sm'>
+    <Content />
+  </article>
+</Layout>
