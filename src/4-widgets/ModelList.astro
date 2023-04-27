@@ -16,7 +16,7 @@ const models = modelsJsonData.filter((m) => m.type === type);
   class='mt-10 flex flex-row flex-wrap items-top gap-8 justify-center'
 >
   {
-    models.map((m) => {
+    models.map((m, i) => {
       const title = `${m.prefix} Velar ${m.name}`;
       const imgPath = `/images/models/${m.slug}/main.jpg`;
       const modelHref = `/model/${m.slug}`;
@@ -28,7 +28,7 @@ const models = modelsJsonData.filter((m) => m.type === type);
               src={imgPath}
               alt={title}
               title={title}
-              loading='lazy'
+              loading={i > 6 ? "lazy" : "eager"}
               aspectRatio='1:1'
               widths={[290, 500]}
               sizes='290px'
