@@ -7,7 +7,8 @@ export default [
     "height": "85",
     "length": "800",
     "fans_qnty": "1",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "17308",
     "addon_stainless_body": "3590",
     "basiс_grille_price": "4324",
@@ -24,7 +25,8 @@ export default [
     "height": "85",
     "length": "900",
     "fans_qnty": "1",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "17974",
     "addon_stainless_body": "3823",
     "basiс_grille_price": "4813",
@@ -41,7 +43,8 @@ export default [
     "height": "85",
     "length": "1000",
     "fans_qnty": "1",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "18638",
     "addon_stainless_body": "4056",
     "basiс_grille_price": "5304",
@@ -58,7 +61,8 @@ export default [
     "height": "85",
     "length": "1100",
     "fans_qnty": "1",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "19415",
     "addon_stainless_body": "4328",
     "basiс_grille_price": "5834",
@@ -75,7 +79,8 @@ export default [
     "height": "85",
     "length": "1200",
     "fans_qnty": "2",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "27241",
     "addon_stainless_body": "4599",
     "basiс_grille_price": "6361",
@@ -92,7 +97,8 @@ export default [
     "height": "85",
     "length": "1300",
     "fans_qnty": "2",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "27459",
     "addon_stainless_body": "4676",
     "basiс_grille_price": "6893",
@@ -109,7 +115,8 @@ export default [
     "height": "85",
     "length": "1400",
     "fans_qnty": "2",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "27677",
     "addon_stainless_body": "4752",
     "basiс_grille_price": "7423",
@@ -126,7 +133,8 @@ export default [
     "height": "85",
     "length": "1500",
     "fans_qnty": "2",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "29035",
     "addon_stainless_body": "5227",
     "basiс_grille_price": "7955",
@@ -143,7 +151,8 @@ export default [
     "height": "85",
     "length": "1600",
     "fans_qnty": "3",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "37447",
     "addon_stainless_body": "5704",
     "basiс_grille_price": "8482",
@@ -160,7 +169,8 @@ export default [
     "height": "85",
     "length": "1700",
     "fans_qnty": "3",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "37932",
     "addon_stainless_body": "5874",
     "basiс_grille_price": "9012",
@@ -177,7 +187,8 @@ export default [
     "height": "85",
     "length": "1800",
     "fans_qnty": "3",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "38418",
     "addon_stainless_body": "6044",
     "basiс_grille_price": "9541",
@@ -194,7 +205,8 @@ export default [
     "height": "85",
     "length": "1900",
     "fans_qnty": "3",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "39160",
     "addon_stainless_body": "6304",
     "basiс_grille_price": "10074",
@@ -211,7 +223,8 @@ export default [
     "height": "85",
     "length": "2000",
     "fans_qnty": "4",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "46953",
     "addon_stainless_body": "6564",
     "basiс_grille_price": "10606",
@@ -228,7 +241,8 @@ export default [
     "height": "85",
     "length": "2100",
     "fans_qnty": "4",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "47584",
     "addon_stainless_body": "6784",
     "basiс_grille_price": "11136",
@@ -245,7 +259,8 @@ export default [
     "height": "85",
     "length": "2200",
     "fans_qnty": "4",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "48214",
     "addon_stainless_body": "7005",
     "basiс_grille_price": "11668",
@@ -262,7 +277,8 @@ export default [
     "height": "85",
     "length": "2300",
     "fans_qnty": "4",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "48815",
     "addon_stainless_body": "7215",
     "basiс_grille_price": "12195",
@@ -279,7 +295,8 @@ export default [
     "height": "85",
     "length": "2400",
     "fans_qnty": "4",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "49414",
     "addon_stainless_body": "7425",
     "basiс_grille_price": "12725",
@@ -296,7 +313,8 @@ export default [
     "height": "85",
     "length": "2500",
     "fans_qnty": "4",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "52751",
     "addon_stainless_body": "8593",
     "basiс_grille_price": "13254",
@@ -313,7 +331,8 @@ export default [
     "height": "85",
     "length": "2600",
     "fans_qnty": "4",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "56083",
     "addon_stainless_body": "9759",
     "basiс_grille_price": "13784",
@@ -330,7 +349,8 @@ export default [
     "height": "85",
     "length": "2700",
     "fans_qnty": "4",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "56568",
     "addon_stainless_body": "9929",
     "basiс_grille_price": "14313",
@@ -347,7 +367,8 @@ export default [
     "height": "85",
     "length": "2800",
     "fans_qnty": "4",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "57053",
     "addon_stainless_body": "10099",
     "basiс_grille_price": "14843",
@@ -364,7 +385,8 @@ export default [
     "height": "85",
     "length": "2900",
     "fans_qnty": "4",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "57796",
     "addon_stainless_body": "10359",
     "basiс_grille_price": "15375",
@@ -381,7 +403,8 @@ export default [
     "height": "85",
     "length": "3000",
     "fans_qnty": "4",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "58539",
     "addon_stainless_body": "10619",
     "basiс_grille_price": "15908",
@@ -398,7 +421,8 @@ export default [
     "height": "85",
     "length": "3100",
     "fans_qnty": "5",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "66366",
     "addon_stainless_body": "10891",
     "basiс_grille_price": "16437",
@@ -415,7 +439,8 @@ export default [
     "height": "85",
     "length": "3200",
     "fans_qnty": "6",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "74194",
     "addon_stainless_body": "11163",
     "basiс_grille_price": "16970",
@@ -432,7 +457,8 @@ export default [
     "height": "85",
     "length": "3300",
     "fans_qnty": "6",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "74410",
     "addon_stainless_body": "11239",
     "basiс_grille_price": "17497",
@@ -449,7 +475,8 @@ export default [
     "height": "85",
     "length": "3400",
     "fans_qnty": "6",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "74626",
     "addon_stainless_body": "11314",
     "basiс_grille_price": "18026",
@@ -466,7 +493,8 @@ export default [
     "height": "85",
     "length": "3500",
     "fans_qnty": "6",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "75988",
     "addon_stainless_body": "11791",
     "basiс_grille_price": "18556",
@@ -483,7 +511,8 @@ export default [
     "height": "85",
     "length": "3600",
     "fans_qnty": "6",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "77348",
     "addon_stainless_body": "12267",
     "basiс_grille_price": "19085",
@@ -500,7 +529,8 @@ export default [
     "height": "85",
     "length": "3700",
     "fans_qnty": "6",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "77833",
     "addon_stainless_body": "12437",
     "basiс_grille_price": "19618",
@@ -517,7 +547,8 @@ export default [
     "height": "85",
     "length": "3800",
     "fans_qnty": "6",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "78318",
     "addon_stainless_body": "12606",
     "basiс_grille_price": "20147",
@@ -534,7 +565,8 @@ export default [
     "height": "85",
     "length": "3900",
     "fans_qnty": "7",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "86111",
     "addon_stainless_body": "12866",
     "basiс_grille_price": "20680",
@@ -551,7 +583,8 @@ export default [
     "height": "85",
     "length": "4000",
     "fans_qnty": "8",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "93902",
     "addon_stainless_body": "13126",
     "basiс_grille_price": "21212",
@@ -568,7 +601,8 @@ export default [
     "height": "85",
     "length": "4100",
     "fans_qnty": "8",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "94535",
     "addon_stainless_body": "13347",
     "basiс_grille_price": "21742",
@@ -585,7 +619,8 @@ export default [
     "height": "85",
     "length": "4200",
     "fans_qnty": "8",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "95165",
     "addon_stainless_body": "13568",
     "basiс_grille_price": "22271",
@@ -602,7 +637,8 @@ export default [
     "height": "85",
     "length": "4300",
     "fans_qnty": "8",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "95796",
     "addon_stainless_body": "13789",
     "basiс_grille_price": "22801",
@@ -619,7 +655,8 @@ export default [
     "height": "85",
     "length": "4400",
     "fans_qnty": "8",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "96429",
     "addon_stainless_body": "14010",
     "basiс_grille_price": "23331",
@@ -636,7 +673,8 @@ export default [
     "height": "85",
     "length": "4500",
     "fans_qnty": "8",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "97047",
     "addon_stainless_body": "14226",
     "basiс_grille_price": "23860",
@@ -653,7 +691,8 @@ export default [
     "height": "85",
     "length": "4600",
     "fans_qnty": "8",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "97667",
     "addon_stainless_body": "14443",
     "basiс_grille_price": "24393",
@@ -670,7 +709,8 @@ export default [
     "height": "85",
     "length": "4700",
     "fans_qnty": "8",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "98226",
     "addon_stainless_body": "14639",
     "basiс_grille_price": "24919",
@@ -687,7 +727,8 @@ export default [
     "height": "85",
     "length": "4800",
     "fans_qnty": "8",
-    "related_items": "kvu-250-85-90,kvu-250-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-85-90,kvu-250-85-135",
+
     "price": "98788",
     "addon_stainless_body": "14836",
     "basiс_grille_price": "25449",
@@ -704,7 +745,8 @@ export default [
     "height": "85",
     "length": "800",
     "fans_qnty": "1",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "22240",
     "addon_stainless_body": "5317",
     "basiс_grille_price": "5558",
@@ -721,7 +763,8 @@ export default [
     "height": "85",
     "length": "900",
     "fans_qnty": "1",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "23291",
     "addon_stainless_body": "5684",
     "basiс_grille_price": "6254",
@@ -738,7 +781,8 @@ export default [
     "height": "85",
     "length": "1000",
     "fans_qnty": "1",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "24341",
     "addon_stainless_body": "6052",
     "basiс_grille_price": "6953",
@@ -755,7 +799,8 @@ export default [
     "height": "85",
     "length": "1100",
     "fans_qnty": "1",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "25190",
     "addon_stainless_body": "6349",
     "basiс_grille_price": "7647",
@@ -772,7 +817,8 @@ export default [
     "height": "85",
     "length": "1200",
     "fans_qnty": "2",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "33090",
     "addon_stainless_body": "6647",
     "basiс_grille_price": "8340",
@@ -789,7 +835,8 @@ export default [
     "height": "85",
     "length": "1300",
     "fans_qnty": "2",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "34149",
     "addon_stainless_body": "7017",
     "basiс_grille_price": "9036",
@@ -806,7 +853,8 @@ export default [
     "height": "85",
     "length": "1400",
     "fans_qnty": "2",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "35209",
     "addon_stainless_body": "7388",
     "basiс_grille_price": "9730",
@@ -823,7 +871,8 @@ export default [
     "height": "85",
     "length": "1500",
     "fans_qnty": "2",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "36509",
     "addon_stainless_body": "7843",
     "basiс_grille_price": "10426",
@@ -840,7 +889,8 @@ export default [
     "height": "85",
     "length": "1600",
     "fans_qnty": "3",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "44859",
     "addon_stainless_body": "8298",
     "basiс_grille_price": "11119",
@@ -857,7 +907,8 @@ export default [
     "height": "85",
     "length": "1700",
     "fans_qnty": "3",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "45771",
     "addon_stainless_body": "8617",
     "basiс_grille_price": "11815",
@@ -874,7 +925,8 @@ export default [
     "height": "85",
     "length": "1800",
     "fans_qnty": "3",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "46684",
     "addon_stainless_body": "8937",
     "basiс_grille_price": "12512",
@@ -891,7 +943,8 @@ export default [
     "height": "85",
     "length": "1900",
     "fans_qnty": "3",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "47709",
     "addon_stainless_body": "9296",
     "basiс_grille_price": "13205",
@@ -908,7 +961,8 @@ export default [
     "height": "85",
     "length": "2000",
     "fans_qnty": "4",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "55785",
     "addon_stainless_body": "9655",
     "basiс_grille_price": "13901",
@@ -925,7 +979,8 @@ export default [
     "height": "85",
     "length": "2100",
     "fans_qnty": "4",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "56788",
     "addon_stainless_body": "10006",
     "basiс_grille_price": "14595",
@@ -942,7 +997,8 @@ export default [
     "height": "85",
     "length": "2200",
     "fans_qnty": "4",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "57795",
     "addon_stainless_body": "10358",
     "basiс_grille_price": "15288",
@@ -959,7 +1015,8 @@ export default [
     "height": "85",
     "length": "2300",
     "fans_qnty": "4",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "58928",
     "addon_stainless_body": "10755",
     "basiс_grille_price": "15984",
@@ -976,7 +1033,8 @@ export default [
     "height": "85",
     "length": "2400",
     "fans_qnty": "4",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "60061",
     "addon_stainless_body": "11151",
     "basiс_grille_price": "16680",
@@ -993,7 +1051,8 @@ export default [
     "height": "85",
     "length": "2500",
     "fans_qnty": "4",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "61885",
     "addon_stainless_body": "11790",
     "basiс_grille_price": "17374",
@@ -1010,7 +1069,8 @@ export default [
     "height": "85",
     "length": "2600",
     "fans_qnty": "4",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "69200",
     "addon_stainless_body": "14350",
     "basiс_grille_price": "18070",
@@ -1027,7 +1087,8 @@ export default [
     "height": "85",
     "length": "2700",
     "fans_qnty": "4",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "70112",
     "addon_stainless_body": "14669",
     "basiс_grille_price": "18766",
@@ -1044,7 +1105,8 @@ export default [
     "height": "85",
     "length": "2800",
     "fans_qnty": "4",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "71024",
     "addon_stainless_body": "14988",
     "basiс_grille_price": "19459",
@@ -1061,7 +1123,8 @@ export default [
     "height": "85",
     "length": "2900",
     "fans_qnty": "4",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "72050",
     "addon_stainless_body": "15348",
     "basiс_grille_price": "20156",
@@ -1078,7 +1141,8 @@ export default [
     "height": "85",
     "length": "3000",
     "fans_qnty": "4",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "73074",
     "addon_stainless_body": "15706",
     "basiс_grille_price": "20852",
@@ -1095,7 +1159,8 @@ export default [
     "height": "85",
     "length": "3100",
     "fans_qnty": "5",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "80973",
     "addon_stainless_body": "16003",
     "basiс_grille_price": "21545",
@@ -1112,7 +1177,8 @@ export default [
     "height": "85",
     "length": "3200",
     "fans_qnty": "6",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "88873",
     "addon_stainless_body": "16301",
     "basiс_grille_price": "22241",
@@ -1129,7 +1195,8 @@ export default [
     "height": "85",
     "length": "3300",
     "fans_qnty": "6",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "89932",
     "addon_stainless_body": "16671",
     "basiс_grille_price": "22937",
@@ -1146,7 +1213,8 @@ export default [
     "height": "85",
     "length": "3400",
     "fans_qnty": "6",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "90992",
     "addon_stainless_body": "17042",
     "basiс_grille_price": "23631",
@@ -1163,7 +1231,8 @@ export default [
     "height": "85",
     "length": "3500",
     "fans_qnty": "6",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "92292",
     "addon_stainless_body": "17497",
     "basiс_grille_price": "24327",
@@ -1180,7 +1249,8 @@ export default [
     "height": "85",
     "length": "3600",
     "fans_qnty": "6",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "93594",
     "addon_stainless_body": "17953",
     "basiс_grille_price": "25023",
@@ -1197,7 +1267,8 @@ export default [
     "height": "85",
     "length": "3700",
     "fans_qnty": "6",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "94505",
     "addon_stainless_body": "18272",
     "basiс_grille_price": "25717",
@@ -1214,7 +1285,8 @@ export default [
     "height": "85",
     "length": "3800",
     "fans_qnty": "6",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "95417",
     "addon_stainless_body": "18591",
     "basiс_grille_price": "26413",
@@ -1231,7 +1303,8 @@ export default [
     "height": "85",
     "length": "3900",
     "fans_qnty": "7",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "103493",
     "addon_stainless_body": "18950",
     "basiс_grille_price": "27106",
@@ -1248,7 +1321,8 @@ export default [
     "height": "85",
     "length": "4000",
     "fans_qnty": "8",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "111568",
     "addon_stainless_body": "19309",
     "basiс_grille_price": "27800",
@@ -1265,7 +1339,8 @@ export default [
     "height": "85",
     "length": "4100",
     "fans_qnty": "8",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "112572",
     "addon_stainless_body": "19660",
     "basiс_grille_price": "28496",
@@ -1282,7 +1357,8 @@ export default [
     "height": "85",
     "length": "4200",
     "fans_qnty": "8",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "113577",
     "addon_stainless_body": "20012",
     "basiс_grille_price": "29192",
@@ -1299,7 +1375,8 @@ export default [
     "height": "85",
     "length": "4300",
     "fans_qnty": "8",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "114582",
     "addon_stainless_body": "20364",
     "basiс_grille_price": "29885",
@@ -1316,7 +1393,8 @@ export default [
     "height": "85",
     "length": "4400",
     "fans_qnty": "8",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "115585",
     "addon_stainless_body": "20715",
     "basiс_grille_price": "30581",
@@ -1333,7 +1411,8 @@ export default [
     "height": "85",
     "length": "4500",
     "fans_qnty": "8",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "116719",
     "addon_stainless_body": "21112",
     "basiс_grille_price": "31275",
@@ -1350,7 +1429,8 @@ export default [
     "height": "85",
     "length": "4600",
     "fans_qnty": "8",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "117852",
     "addon_stainless_body": "21508",
     "basiс_grille_price": "31971",
@@ -1367,7 +1447,8 @@ export default [
     "height": "85",
     "length": "4700",
     "fans_qnty": "8",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "118987",
     "addon_stainless_body": "21905",
     "basiс_grille_price": "32667",
@@ -1384,7 +1465,8 @@ export default [
     "height": "85",
     "length": "4800",
     "fans_qnty": "8",
-    "related_items": "kvu-350-85-90,kvu-350-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-85-90,kvu-350-85-135",
+
     "price": "120122",
     "addon_stainless_body": "22303",
     "basiс_grille_price": "33361",
@@ -1401,7 +1483,8 @@ export default [
     "height": "85",
     "length": "800",
     "fans_qnty": "1",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "24550",
     "addon_stainless_body": "6125",
     "basiс_grille_price": "6820",
@@ -1418,7 +1501,8 @@ export default [
     "height": "85",
     "length": "900",
     "fans_qnty": "1",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "25610",
     "addon_stainless_body": "6496",
     "basiс_grille_price": "7674",
@@ -1435,7 +1519,8 @@ export default [
     "height": "85",
     "length": "1000",
     "fans_qnty": "1",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "26671",
     "addon_stainless_body": "6867",
     "basiс_grille_price": "8529",
@@ -1452,7 +1537,8 @@ export default [
     "height": "85",
     "length": "1100",
     "fans_qnty": "1",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "28171",
     "addon_stainless_body": "7392",
     "basiс_grille_price": "9380",
@@ -1469,7 +1555,8 @@ export default [
     "height": "85",
     "length": "1200",
     "fans_qnty": "2",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "36721",
     "addon_stainless_body": "7917",
     "basiс_grille_price": "10232",
@@ -1486,7 +1573,8 @@ export default [
     "height": "85",
     "length": "1300",
     "fans_qnty": "2",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "38153",
     "addon_stainless_body": "8419",
     "basiс_grille_price": "11087",
@@ -1503,7 +1591,8 @@ export default [
     "height": "85",
     "length": "1400",
     "fans_qnty": "2",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "39583",
     "addon_stainless_body": "8919",
     "basiс_grille_price": "11941",
@@ -1520,7 +1609,8 @@ export default [
     "height": "85",
     "length": "1500",
     "fans_qnty": "2",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "41006",
     "addon_stainless_body": "9417",
     "basiс_grille_price": "12793",
@@ -1537,7 +1627,8 @@ export default [
     "height": "85",
     "length": "1600",
     "fans_qnty": "3",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "49478",
     "addon_stainless_body": "9915",
     "basiс_grille_price": "13642",
@@ -1554,7 +1645,8 @@ export default [
     "height": "85",
     "length": "1700",
     "fans_qnty": "3",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "50358",
     "addon_stainless_body": "10223",
     "basiс_grille_price": "14496",
@@ -1571,7 +1663,8 @@ export default [
     "height": "85",
     "length": "1800",
     "fans_qnty": "3",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "51238",
     "addon_stainless_body": "10531",
     "basiс_grille_price": "15351",
@@ -1588,7 +1681,8 @@ export default [
     "height": "85",
     "length": "1900",
     "fans_qnty": "3",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "52106",
     "addon_stainless_body": "10835",
     "basiс_grille_price": "16205",
@@ -1605,7 +1699,8 @@ export default [
     "height": "85",
     "length": "2000",
     "fans_qnty": "4",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "60024",
     "addon_stainless_body": "11138",
     "basiс_grille_price": "17060",
@@ -1622,7 +1717,8 @@ export default [
     "height": "85",
     "length": "2100",
     "fans_qnty": "4",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "61909",
     "addon_stainless_body": "11798",
     "basiс_grille_price": "17912",
@@ -1639,7 +1735,8 @@ export default [
     "height": "85",
     "length": "2200",
     "fans_qnty": "4",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "63794",
     "addon_stainless_body": "12458",
     "basiс_grille_price": "18763",
@@ -1656,7 +1753,8 @@ export default [
     "height": "85",
     "length": "2300",
     "fans_qnty": "4",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "65664",
     "addon_stainless_body": "13112",
     "basiс_grille_price": "19618",
@@ -1673,7 +1771,8 @@ export default [
     "height": "85",
     "length": "2400",
     "fans_qnty": "4",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "67535",
     "addon_stainless_body": "13767",
     "basiс_grille_price": "20472",
@@ -1690,7 +1789,8 @@ export default [
     "height": "85",
     "length": "2500",
     "fans_qnty": "4",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "71841",
     "addon_stainless_body": "15274",
     "basiс_grille_price": "21321",
@@ -1707,7 +1807,8 @@ export default [
     "height": "85",
     "length": "2600",
     "fans_qnty": "4",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "76147",
     "addon_stainless_body": "16781",
     "basiс_grille_price": "22173",
@@ -1724,7 +1825,8 @@ export default [
     "height": "85",
     "length": "2700",
     "fans_qnty": "4",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "77027",
     "addon_stainless_body": "17089",
     "basiс_grille_price": "23028",
@@ -1741,7 +1843,8 @@ export default [
     "height": "85",
     "length": "2800",
     "fans_qnty": "4",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "77909",
     "addon_stainless_body": "17398",
     "basiс_grille_price": "23882",
@@ -1758,7 +1861,8 @@ export default [
     "height": "85",
     "length": "2900",
     "fans_qnty": "4",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "78775",
     "addon_stainless_body": "17701",
     "basiс_grille_price": "24737",
@@ -1775,7 +1879,8 @@ export default [
     "height": "85",
     "length": "3000",
     "fans_qnty": "4",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "79643",
     "addon_stainless_body": "18005",
     "basiс_grille_price": "25591",
@@ -1792,7 +1897,8 @@ export default [
     "height": "85",
     "length": "3100",
     "fans_qnty": "5",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "88193",
     "addon_stainless_body": "18530",
     "basiс_grille_price": "26443",
@@ -1809,7 +1915,8 @@ export default [
     "height": "85",
     "length": "3200",
     "fans_qnty": "6",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "96745",
     "addon_stainless_body": "19056",
     "basiс_grille_price": "27292",
@@ -1826,7 +1933,8 @@ export default [
     "height": "85",
     "length": "3300",
     "fans_qnty": "6",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "98176",
     "addon_stainless_body": "19557",
     "basiс_grille_price": "28146",
@@ -1843,7 +1951,8 @@ export default [
     "height": "85",
     "length": "3400",
     "fans_qnty": "6",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "99607",
     "addon_stainless_body": "20057",
     "basiс_grille_price": "29001",
@@ -1860,7 +1969,8 @@ export default [
     "height": "85",
     "length": "3500",
     "fans_qnty": "6",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "101029",
     "addon_stainless_body": "20555",
     "basiс_grille_price": "29853",
@@ -1877,7 +1987,8 @@ export default [
     "height": "85",
     "length": "3600",
     "fans_qnty": "6",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "102452",
     "addon_stainless_body": "21053",
     "basiс_grille_price": "30704",
@@ -1894,7 +2005,8 @@ export default [
     "height": "85",
     "length": "3700",
     "fans_qnty": "6",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "103332",
     "addon_stainless_body": "21361",
     "basiс_grille_price": "31559",
@@ -1911,7 +2023,8 @@ export default [
     "height": "85",
     "length": "3800",
     "fans_qnty": "6",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "104212",
     "addon_stainless_body": "21669",
     "basiс_grille_price": "32413",
@@ -1928,7 +2041,8 @@ export default [
     "height": "85",
     "length": "3900",
     "fans_qnty": "7",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "112130",
     "addon_stainless_body": "21973",
     "basiс_grille_price": "33268",
@@ -1945,7 +2059,8 @@ export default [
     "height": "85",
     "length": "4000",
     "fans_qnty": "8",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "120048",
     "addon_stainless_body": "22277",
     "basiс_grille_price": "34122",
@@ -1962,7 +2077,8 @@ export default [
     "height": "85",
     "length": "4100",
     "fans_qnty": "8",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "121931",
     "addon_stainless_body": "22936",
     "basiс_grille_price": "34974",
@@ -1979,7 +2095,8 @@ export default [
     "height": "85",
     "length": "4200",
     "fans_qnty": "8",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "123818",
     "addon_stainless_body": "23596",
     "basiс_grille_price": "35823",
@@ -1996,7 +2113,8 @@ export default [
     "height": "85",
     "length": "4300",
     "fans_qnty": "8",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "125703",
     "addon_stainless_body": "24256",
     "basiс_grille_price": "36675",
@@ -2013,7 +2131,8 @@ export default [
     "height": "85",
     "length": "4400",
     "fans_qnty": "8",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "127588",
     "addon_stainless_body": "24916",
     "basiс_grille_price": "37524",
@@ -2030,7 +2149,8 @@ export default [
     "height": "85",
     "length": "4500",
     "fans_qnty": "8",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "129458",
     "addon_stainless_body": "25570",
     "basiс_grille_price": "38378",
@@ -2047,7 +2167,8 @@ export default [
     "height": "85",
     "length": "4600",
     "fans_qnty": "8",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "131329",
     "addon_stainless_body": "26225",
     "basiс_grille_price": "39233",
@@ -2064,7 +2185,8 @@ export default [
     "height": "85",
     "length": "4700",
     "fans_qnty": "8",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "133198",
     "addon_stainless_body": "26879",
     "basiс_grille_price": "40087",
@@ -2081,7 +2203,8 @@ export default [
     "height": "85",
     "length": "4800",
     "fans_qnty": "8",
-    "related_items": "kvu-420-85-90,kvu-420-85-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-85-90,kvu-420-85-135",
+
     "price": "135067",
     "addon_stainless_body": "27533",
     "basiс_grille_price": "40942",
@@ -2098,7 +2221,8 @@ export default [
     "height": "105",
     "length": "800",
     "fans_qnty": "1",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "19500",
     "addon_stainless_body": "4358",
     "basiс_grille_price": "4324",
@@ -2115,7 +2239,8 @@ export default [
     "height": "105",
     "length": "900",
     "fans_qnty": "1",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "20229",
     "addon_stainless_body": "4613",
     "basiс_grille_price": "4813",
@@ -2132,7 +2257,8 @@ export default [
     "height": "105",
     "length": "1000",
     "fans_qnty": "1",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "20959",
     "addon_stainless_body": "4868",
     "basiс_grille_price": "5304",
@@ -2149,7 +2275,8 @@ export default [
     "height": "105",
     "length": "1100",
     "fans_qnty": "1",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "21914",
     "addon_stainless_body": "5202",
     "basiс_grille_price": "5834",
@@ -2166,7 +2293,8 @@ export default [
     "height": "105",
     "length": "1200",
     "fans_qnty": "2",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "29919",
     "addon_stainless_body": "5537",
     "basiс_grille_price": "6361",
@@ -2183,7 +2311,8 @@ export default [
     "height": "105",
     "length": "1300",
     "fans_qnty": "2",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "30561",
     "addon_stainless_body": "5761",
     "basiс_grille_price": "6893",
@@ -2200,7 +2329,8 @@ export default [
     "height": "105",
     "length": "1400",
     "fans_qnty": "2",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "31204",
     "addon_stainless_body": "5986",
     "basiс_grille_price": "7423",
@@ -2217,7 +2347,8 @@ export default [
     "height": "105",
     "length": "1500",
     "fans_qnty": "2",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "32363",
     "addon_stainless_body": "6392",
     "basiс_grille_price": "7955",
@@ -2234,7 +2365,8 @@ export default [
     "height": "105",
     "length": "1600",
     "fans_qnty": "3",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "40575",
     "addon_stainless_body": "6799",
     "basiс_grille_price": "8482",
@@ -2251,7 +2383,8 @@ export default [
     "height": "105",
     "length": "1700",
     "fans_qnty": "3",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "41228",
     "addon_stainless_body": "7027",
     "basiс_grille_price": "9012",
@@ -2268,7 +2401,8 @@ export default [
     "height": "105",
     "length": "1800",
     "fans_qnty": "3",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "41884",
     "addon_stainless_body": "7257",
     "basiс_grille_price": "9541",
@@ -2285,7 +2419,8 @@ export default [
     "height": "105",
     "length": "1900",
     "fans_qnty": "3",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "42801",
     "addon_stainless_body": "7578",
     "basiс_grille_price": "10074",
@@ -2302,7 +2437,8 @@ export default [
     "height": "105",
     "length": "2000",
     "fans_qnty": "4",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "50771",
     "addon_stainless_body": "7900",
     "basiс_grille_price": "10606",
@@ -2319,7 +2455,8 @@ export default [
     "height": "105",
     "length": "2100",
     "fans_qnty": "4",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "51581",
     "addon_stainless_body": "8183",
     "basiс_grille_price": "11136",
@@ -2336,7 +2473,8 @@ export default [
     "height": "105",
     "length": "2200",
     "fans_qnty": "4",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "52392",
     "addon_stainless_body": "8467",
     "basiс_grille_price": "11668",
@@ -2353,7 +2491,8 @@ export default [
     "height": "105",
     "length": "2300",
     "fans_qnty": "4",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "53211",
     "addon_stainless_body": "8754",
     "basiс_grille_price": "12195",
@@ -2370,7 +2509,8 @@ export default [
     "height": "105",
     "length": "2400",
     "fans_qnty": "4",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "54029",
     "addon_stainless_body": "9040",
     "basiс_grille_price": "12725",
@@ -2387,7 +2527,8 @@ export default [
     "height": "105",
     "length": "2500",
     "fans_qnty": "4",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "57781",
     "addon_stainless_body": "10353",
     "basiс_grille_price": "13254",
@@ -2404,7 +2545,8 @@ export default [
     "height": "105",
     "length": "2600",
     "fans_qnty": "4",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "61532",
     "addon_stainless_body": "11666",
     "basiс_grille_price": "13784",
@@ -2421,7 +2563,8 @@ export default [
     "height": "105",
     "length": "2700",
     "fans_qnty": "4",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "62187",
     "addon_stainless_body": "11895",
     "basiс_grille_price": "14313",
@@ -2438,7 +2581,8 @@ export default [
     "height": "105",
     "length": "2800",
     "fans_qnty": "4",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "62841",
     "addon_stainless_body": "12124",
     "basiс_grille_price": "14843",
@@ -2455,7 +2599,8 @@ export default [
     "height": "105",
     "length": "2900",
     "fans_qnty": "4",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "63760",
     "addon_stainless_body": "12446",
     "basiс_grille_price": "15375",
@@ -2472,7 +2617,8 @@ export default [
     "height": "105",
     "length": "3000",
     "fans_qnty": "4",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "64678",
     "addon_stainless_body": "12767",
     "basiс_grille_price": "15908",
@@ -2489,7 +2635,8 @@ export default [
     "height": "105",
     "length": "3100",
     "fans_qnty": "5",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "72683",
     "addon_stainless_body": "13102",
     "basiс_grille_price": "16437",
@@ -2506,7 +2653,8 @@ export default [
     "height": "105",
     "length": "3200",
     "fans_qnty": "6",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "80688",
     "addon_stainless_body": "13436",
     "basiс_grille_price": "16970",
@@ -2523,7 +2671,8 @@ export default [
     "height": "105",
     "length": "3300",
     "fans_qnty": "6",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "81330",
     "addon_stainless_body": "13661",
     "basiс_grille_price": "17497",
@@ -2540,7 +2689,8 @@ export default [
     "height": "105",
     "length": "3400",
     "fans_qnty": "6",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "81974",
     "addon_stainless_body": "13886",
     "basiс_grille_price": "18026",
@@ -2557,7 +2707,8 @@ export default [
     "height": "105",
     "length": "3500",
     "fans_qnty": "6",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "83132",
     "addon_stainless_body": "14291",
     "basiс_grille_price": "18556",
@@ -2574,7 +2725,8 @@ export default [
     "height": "105",
     "length": "3600",
     "fans_qnty": "6",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "84294",
     "addon_stainless_body": "14698",
     "basiс_grille_price": "19085",
@@ -2591,7 +2743,8 @@ export default [
     "height": "105",
     "length": "3700",
     "fans_qnty": "6",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "84947",
     "addon_stainless_body": "14926",
     "basiс_grille_price": "19618",
@@ -2608,7 +2761,8 @@ export default [
     "height": "105",
     "length": "3800",
     "fans_qnty": "6",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "85603",
     "addon_stainless_body": "15156",
     "basiс_grille_price": "20147",
@@ -2625,7 +2779,8 @@ export default [
     "height": "105",
     "length": "3900",
     "fans_qnty": "7",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "93570",
     "addon_stainless_body": "15477",
     "basiс_grille_price": "20680",
@@ -2642,7 +2797,8 @@ export default [
     "height": "105",
     "length": "4000",
     "fans_qnty": "8",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "101540",
     "addon_stainless_body": "15799",
     "basiс_grille_price": "21212",
@@ -2659,7 +2815,8 @@ export default [
     "height": "105",
     "length": "4100",
     "fans_qnty": "8",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "102351",
     "addon_stainless_body": "16083",
     "basiс_grille_price": "21742",
@@ -2676,7 +2833,8 @@ export default [
     "height": "105",
     "length": "4200",
     "fans_qnty": "8",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "103161",
     "addon_stainless_body": "16366",
     "basiс_grille_price": "22271",
@@ -2693,7 +2851,8 @@ export default [
     "height": "105",
     "length": "4300",
     "fans_qnty": "8",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "103971",
     "addon_stainless_body": "16650",
     "basiс_grille_price": "22801",
@@ -2710,7 +2869,8 @@ export default [
     "height": "105",
     "length": "4400",
     "fans_qnty": "8",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "104783",
     "addon_stainless_body": "16934",
     "basiс_grille_price": "23331",
@@ -2727,7 +2887,8 @@ export default [
     "height": "105",
     "length": "4500",
     "fans_qnty": "8",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "105601",
     "addon_stainless_body": "17220",
     "basiс_grille_price": "23860",
@@ -2744,7 +2905,8 @@ export default [
     "height": "105",
     "length": "4600",
     "fans_qnty": "8",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "106420",
     "addon_stainless_body": "17507",
     "basiс_grille_price": "24393",
@@ -2761,7 +2923,8 @@ export default [
     "height": "105",
     "length": "4700",
     "fans_qnty": "8",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "107238",
     "addon_stainless_body": "17793",
     "basiс_grille_price": "24919",
@@ -2778,7 +2941,8 @@ export default [
     "height": "105",
     "length": "4800",
     "fans_qnty": "8",
-    "related_items": "kvu-250-105-90,kvu-250-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-105-90,kvu-250-105-135",
+
     "price": "108058",
     "addon_stainless_body": "18080",
     "basiс_grille_price": "25449",
@@ -2795,7 +2959,8 @@ export default [
     "height": "105",
     "length": "800",
     "fans_qnty": "1",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "23415",
     "addon_stainless_body": "5728",
     "basiс_grille_price": "5558",
@@ -2812,7 +2977,8 @@ export default [
     "height": "105",
     "length": "900",
     "fans_qnty": "1",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "25472",
     "addon_stainless_body": "6448",
     "basiс_grille_price": "6254",
@@ -2829,7 +2995,8 @@ export default [
     "height": "105",
     "length": "1000",
     "fans_qnty": "1",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "26904",
     "addon_stainless_body": "6949",
     "basiс_grille_price": "6953",
@@ -2846,7 +3013,8 @@ export default [
     "height": "105",
     "length": "1100",
     "fans_qnty": "1",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "28004",
     "addon_stainless_body": "7334",
     "basiс_grille_price": "7647",
@@ -2863,7 +3031,8 @@ export default [
     "height": "105",
     "length": "1200",
     "fans_qnty": "2",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "36154",
     "addon_stainless_body": "7719",
     "basiс_grille_price": "8340",
@@ -2880,7 +3049,8 @@ export default [
     "height": "105",
     "length": "1300",
     "fans_qnty": "2",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "37986",
     "addon_stainless_body": "8360",
     "basiс_grille_price": "9036",
@@ -2897,7 +3067,8 @@ export default [
     "height": "105",
     "length": "1400",
     "fans_qnty": "2",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "39819",
     "addon_stainless_body": "9002",
     "basiс_grille_price": "9730",
@@ -2914,7 +3085,8 @@ export default [
     "height": "105",
     "length": "1500",
     "fans_qnty": "2",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "41362",
     "addon_stainless_body": "9542",
     "basiс_grille_price": "10426",
@@ -2931,7 +3103,8 @@ export default [
     "height": "105",
     "length": "1600",
     "fans_qnty": "3",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "49958",
     "addon_stainless_body": "10083",
     "basiс_grille_price": "11119",
@@ -2948,7 +3121,8 @@ export default [
     "height": "105",
     "length": "1700",
     "fans_qnty": "3",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "51393",
     "addon_stainless_body": "10585",
     "basiс_grille_price": "11815",
@@ -2965,7 +3139,8 @@ export default [
     "height": "105",
     "length": "1800",
     "fans_qnty": "3",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "52829",
     "addon_stainless_body": "11088",
     "basiс_grille_price": "12512",
@@ -2982,7 +3157,8 @@ export default [
     "height": "105",
     "length": "1900",
     "fans_qnty": "3",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "54391",
     "addon_stainless_body": "11634",
     "basiс_grille_price": "13205",
@@ -2999,7 +3175,8 @@ export default [
     "height": "105",
     "length": "2000",
     "fans_qnty": "4",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "63003",
     "addon_stainless_body": "12181",
     "basiс_grille_price": "13901",
@@ -3016,7 +3193,8 @@ export default [
     "height": "105",
     "length": "2100",
     "fans_qnty": "4",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "64508",
     "addon_stainless_body": "12708",
     "basiс_grille_price": "14595",
@@ -3033,7 +3211,8 @@ export default [
     "height": "105",
     "length": "2200",
     "fans_qnty": "4",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "66015",
     "addon_stainless_body": "13235",
     "basiс_grille_price": "15288",
@@ -3050,7 +3229,8 @@ export default [
     "height": "105",
     "length": "2300",
     "fans_qnty": "4",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "67802",
     "addon_stainless_body": "13861",
     "basiс_grille_price": "15984",
@@ -3067,7 +3247,8 @@ export default [
     "height": "105",
     "length": "2400",
     "fans_qnty": "4",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "69591",
     "addon_stainless_body": "14487",
     "basiс_grille_price": "16680",
@@ -3084,7 +3265,8 @@ export default [
     "height": "105",
     "length": "2500",
     "fans_qnty": "4",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "73227",
     "addon_stainless_body": "15759",
     "basiс_grille_price": "17374",
@@ -3101,7 +3283,8 @@ export default [
     "height": "105",
     "length": "2600",
     "fans_qnty": "4",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "76864",
     "addon_stainless_body": "17032",
     "basiс_grille_price": "18070",
@@ -3118,7 +3301,8 @@ export default [
     "height": "105",
     "length": "2700",
     "fans_qnty": "4",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "78297",
     "addon_stainless_body": "17534",
     "basiс_grille_price": "18766",
@@ -3135,7 +3319,8 @@ export default [
     "height": "105",
     "length": "2800",
     "fans_qnty": "4",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "79733",
     "addon_stainless_body": "18037",
     "basiс_grille_price": "19459",
@@ -3152,7 +3337,8 @@ export default [
     "height": "105",
     "length": "2900",
     "fans_qnty": "4",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "81295",
     "addon_stainless_body": "18583",
     "basiс_grille_price": "20156",
@@ -3169,7 +3355,8 @@ export default [
     "height": "105",
     "length": "3000",
     "fans_qnty": "4",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "82859",
     "addon_stainless_body": "19131",
     "basiс_grille_price": "20852",
@@ -3186,7 +3373,8 @@ export default [
     "height": "105",
     "length": "3100",
     "fans_qnty": "5",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "91009",
     "addon_stainless_body": "19516",
     "basiс_grille_price": "21545",
@@ -3203,7 +3391,8 @@ export default [
     "height": "105",
     "length": "3200",
     "fans_qnty": "6",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "99158",
     "addon_stainless_body": "19900",
     "basiс_grille_price": "22241",
@@ -3220,7 +3409,8 @@ export default [
     "height": "105",
     "length": "3300",
     "fans_qnty": "6",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "100990",
     "addon_stainless_body": "20542",
     "basiс_grille_price": "22937",
@@ -3237,7 +3427,8 @@ export default [
     "height": "105",
     "length": "3400",
     "fans_qnty": "6",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "102823",
     "addon_stainless_body": "21183",
     "basiс_grille_price": "23631",
@@ -3254,7 +3445,8 @@ export default [
     "height": "105",
     "length": "3500",
     "fans_qnty": "6",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "104367",
     "addon_stainless_body": "21723",
     "basiс_grille_price": "24327",
@@ -3271,7 +3463,8 @@ export default [
     "height": "105",
     "length": "3600",
     "fans_qnty": "6",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "105912",
     "addon_stainless_body": "22264",
     "basiс_grille_price": "25023",
@@ -3288,7 +3481,8 @@ export default [
     "height": "105",
     "length": "3700",
     "fans_qnty": "6",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "107346",
     "addon_stainless_body": "22766",
     "basiс_grille_price": "25717",
@@ -3305,7 +3499,8 @@ export default [
     "height": "105",
     "length": "3800",
     "fans_qnty": "6",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "108781",
     "addon_stainless_body": "23268",
     "basiс_grille_price": "26413",
@@ -3322,7 +3517,8 @@ export default [
     "height": "105",
     "length": "3900",
     "fans_qnty": "7",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "117395",
     "addon_stainless_body": "23816",
     "basiс_grille_price": "27106",
@@ -3339,7 +3535,8 @@ export default [
     "height": "105",
     "length": "4000",
     "fans_qnty": "8",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "126007",
     "addon_stainless_body": "24362",
     "basiс_grille_price": "27800",
@@ -3356,7 +3553,8 @@ export default [
     "height": "105",
     "length": "4100",
     "fans_qnty": "8",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "127512",
     "addon_stainless_body": "24889",
     "basiс_grille_price": "28496",
@@ -3373,7 +3571,8 @@ export default [
     "height": "105",
     "length": "4200",
     "fans_qnty": "8",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "129017",
     "addon_stainless_body": "25416",
     "basiс_grille_price": "29192",
@@ -3390,7 +3589,8 @@ export default [
     "height": "105",
     "length": "4300",
     "fans_qnty": "8",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "130522",
     "addon_stainless_body": "25943",
     "basiс_grille_price": "29885",
@@ -3407,7 +3607,8 @@ export default [
     "height": "105",
     "length": "4400",
     "fans_qnty": "8",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "132029",
     "addon_stainless_body": "26470",
     "basiс_grille_price": "30581",
@@ -3424,7 +3625,8 @@ export default [
     "height": "105",
     "length": "4500",
     "fans_qnty": "8",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "133817",
     "addon_stainless_body": "27096",
     "basiс_grille_price": "31275",
@@ -3441,7 +3643,8 @@ export default [
     "height": "105",
     "length": "4600",
     "fans_qnty": "8",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "135604",
     "addon_stainless_body": "27721",
     "basiс_grille_price": "31971",
@@ -3458,7 +3661,8 @@ export default [
     "height": "105",
     "length": "4700",
     "fans_qnty": "8",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "137393",
     "addon_stainless_body": "28348",
     "basiс_grille_price": "32667",
@@ -3475,7 +3679,8 @@ export default [
     "height": "105",
     "length": "4800",
     "fans_qnty": "8",
-    "related_items": "kvu-350-105-90,kvu-350-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-105-90,kvu-350-105-135",
+
     "price": "139181",
     "addon_stainless_body": "28973",
     "basiс_grille_price": "33361",
@@ -3492,7 +3697,8 @@ export default [
     "height": "105",
     "length": "800",
     "fans_qnty": "1",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "26382",
     "addon_stainless_body": "6766",
     "basiс_grille_price": "6820",
@@ -3509,7 +3715,8 @@ export default [
     "height": "105",
     "length": "900",
     "fans_qnty": "1",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "28429",
     "addon_stainless_body": "7483",
     "basiс_grille_price": "7674",
@@ -3526,7 +3733,8 @@ export default [
     "height": "105",
     "length": "1000",
     "fans_qnty": "1",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "30475",
     "addon_stainless_body": "8199",
     "basiс_grille_price": "8529",
@@ -3543,7 +3751,8 @@ export default [
     "height": "105",
     "length": "1100",
     "fans_qnty": "1",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "32224",
     "addon_stainless_body": "8811",
     "basiс_grille_price": "9380",
@@ -3560,7 +3769,8 @@ export default [
     "height": "105",
     "length": "1200",
     "fans_qnty": "2",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "41025",
     "addon_stainless_body": "9424",
     "basiс_grille_price": "10232",
@@ -3577,7 +3787,8 @@ export default [
     "height": "105",
     "length": "1300",
     "fans_qnty": "2",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "43302",
     "addon_stainless_body": "10221",
     "basiс_grille_price": "11087",
@@ -3594,7 +3805,8 @@ export default [
     "height": "105",
     "length": "1400",
     "fans_qnty": "2",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "45579",
     "addon_stainless_body": "11018",
     "basiс_grille_price": "11941",
@@ -3611,7 +3823,8 @@ export default [
     "height": "105",
     "length": "1500",
     "fans_qnty": "2",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "47564",
     "addon_stainless_body": "11712",
     "basiс_grille_price": "12793",
@@ -3628,7 +3841,8 @@ export default [
     "height": "105",
     "length": "1600",
     "fans_qnty": "3",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "56598",
     "addon_stainless_body": "12407",
     "basiс_grille_price": "13642",
@@ -3645,7 +3859,8 @@ export default [
     "height": "105",
     "length": "1700",
     "fans_qnty": "3",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "58519",
     "addon_stainless_body": "13079",
     "basiс_grille_price": "14496",
@@ -3662,7 +3877,8 @@ export default [
     "height": "105",
     "length": "1800",
     "fans_qnty": "3",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "60440",
     "addon_stainless_body": "13752",
     "basiс_grille_price": "15351",
@@ -3679,7 +3895,8 @@ export default [
     "height": "105",
     "length": "1900",
     "fans_qnty": "3",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "62347",
     "addon_stainless_body": "14419",
     "basiс_grille_price": "16205",
@@ -3696,7 +3913,8 @@ export default [
     "height": "105",
     "length": "2000",
     "fans_qnty": "4",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "71305",
     "addon_stainless_body": "15087",
     "basiс_grille_price": "17060",
@@ -3713,7 +3931,8 @@ export default [
     "height": "105",
     "length": "2100",
     "fans_qnty": "4",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "72776",
     "addon_stainless_body": "15602",
     "basiс_grille_price": "17912",
@@ -3730,7 +3949,8 @@ export default [
     "height": "105",
     "length": "2200",
     "fans_qnty": "4",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "74246",
     "addon_stainless_body": "16116",
     "basiс_grille_price": "18763",
@@ -3747,7 +3967,8 @@ export default [
     "height": "105",
     "length": "2300",
     "fans_qnty": "4",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "75722",
     "addon_stainless_body": "16633",
     "basiс_grille_price": "19618",
@@ -3764,7 +3985,8 @@ export default [
     "height": "105",
     "length": "2400",
     "fans_qnty": "4",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "77197",
     "addon_stainless_body": "17149",
     "basiс_grille_price": "20472",
@@ -3781,7 +4003,8 @@ export default [
     "height": "105",
     "length": "2500",
     "fans_qnty": "4",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "82134",
     "addon_stainless_body": "18877",
     "basiс_grille_price": "21321",
@@ -3798,7 +4021,8 @@ export default [
     "height": "105",
     "length": "2600",
     "fans_qnty": "4",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "87073",
     "addon_stainless_body": "20606",
     "basiс_grille_price": "22173",
@@ -3815,7 +4039,8 @@ export default [
     "height": "105",
     "length": "2700",
     "fans_qnty": "4",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "88993",
     "addon_stainless_body": "21278",
     "basiс_grille_price": "23028",
@@ -3832,7 +4057,8 @@ export default [
     "height": "105",
     "length": "2800",
     "fans_qnty": "4",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "90914",
     "addon_stainless_body": "21950",
     "basiс_grille_price": "23882",
@@ -3849,7 +4075,8 @@ export default [
     "height": "105",
     "length": "2900",
     "fans_qnty": "4",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "92822",
     "addon_stainless_body": "22618",
     "basiс_grille_price": "24737",
@@ -3866,7 +4093,8 @@ export default [
     "height": "105",
     "length": "3000",
     "fans_qnty": "4",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "94731",
     "addon_stainless_body": "23286",
     "basiс_grille_price": "25591",
@@ -3883,7 +4111,8 @@ export default [
     "height": "105",
     "length": "3100",
     "fans_qnty": "5",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "103530",
     "addon_stainless_body": "23898",
     "basiс_grille_price": "26443",
@@ -3900,7 +4129,8 @@ export default [
     "height": "105",
     "length": "3200",
     "fans_qnty": "6",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "112329",
     "addon_stainless_body": "24510",
     "basiс_grille_price": "27292",
@@ -3917,7 +4147,8 @@ export default [
     "height": "105",
     "length": "3300",
     "fans_qnty": "6",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "114606",
     "addon_stainless_body": "25307",
     "basiс_grille_price": "28146",
@@ -3934,7 +4165,8 @@ export default [
     "height": "105",
     "length": "3400",
     "fans_qnty": "6",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "116882",
     "addon_stainless_body": "26104",
     "basiс_grille_price": "29001",
@@ -3951,7 +4183,8 @@ export default [
     "height": "105",
     "length": "3500",
     "fans_qnty": "6",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "118866",
     "addon_stainless_body": "26798",
     "basiс_grille_price": "29853",
@@ -3968,7 +4201,8 @@ export default [
     "height": "105",
     "length": "3600",
     "fans_qnty": "6",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "120853",
     "addon_stainless_body": "27494",
     "basiс_grille_price": "30704",
@@ -3985,7 +4219,8 @@ export default [
     "height": "105",
     "length": "3700",
     "fans_qnty": "6",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "122771",
     "addon_stainless_body": "28165",
     "basiс_grille_price": "31559",
@@ -4002,7 +4237,8 @@ export default [
     "height": "105",
     "length": "3800",
     "fans_qnty": "6",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "124692",
     "addon_stainless_body": "28837",
     "basiс_grille_price": "32413",
@@ -4019,7 +4255,8 @@ export default [
     "height": "105",
     "length": "3900",
     "fans_qnty": "7",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "133651",
     "addon_stainless_body": "29505",
     "basiс_grille_price": "33268",
@@ -4036,7 +4273,8 @@ export default [
     "height": "105",
     "length": "4000",
     "fans_qnty": "8",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "142607",
     "addon_stainless_body": "30172",
     "basiс_grille_price": "34122",
@@ -4053,7 +4291,8 @@ export default [
     "height": "105",
     "length": "4100",
     "fans_qnty": "8",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "144079",
     "addon_stainless_body": "30688",
     "basiс_grille_price": "34974",
@@ -4070,7 +4309,8 @@ export default [
     "height": "105",
     "length": "4200",
     "fans_qnty": "8",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "145549",
     "addon_stainless_body": "31202",
     "basiс_grille_price": "35823",
@@ -4087,7 +4327,8 @@ export default [
     "height": "105",
     "length": "4300",
     "fans_qnty": "8",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "147020",
     "addon_stainless_body": "31717",
     "basiс_grille_price": "36675",
@@ -4104,7 +4345,8 @@ export default [
     "height": "105",
     "length": "4400",
     "fans_qnty": "8",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "148490",
     "addon_stainless_body": "32232",
     "basiс_grille_price": "37524",
@@ -4121,7 +4363,8 @@ export default [
     "height": "105",
     "length": "4500",
     "fans_qnty": "8",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "149966",
     "addon_stainless_body": "32748",
     "basiс_grille_price": "38378",
@@ -4138,7 +4381,8 @@ export default [
     "height": "105",
     "length": "4600",
     "fans_qnty": "8",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "151442",
     "addon_stainless_body": "33265",
     "basiс_grille_price": "39233",
@@ -4155,7 +4399,8 @@ export default [
     "height": "105",
     "length": "4700",
     "fans_qnty": "8",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "152917",
     "addon_stainless_body": "33781",
     "basiс_grille_price": "40087",
@@ -4172,7 +4417,8 @@ export default [
     "height": "105",
     "length": "4800",
     "fans_qnty": "8",
-    "related_items": "kvu-420-105-90,kvu-420-105-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-105-90,kvu-420-105-135",
+
     "price": "154395",
     "addon_stainless_body": "34298",
     "basiс_grille_price": "40942",
@@ -4189,7 +4435,8 @@ export default [
     "height": "120",
     "length": "800",
     "fans_qnty": "1",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "21489",
     "addon_stainless_body": "5054",
     "basiс_grille_price": "4324",
@@ -4206,7 +4453,8 @@ export default [
     "height": "120",
     "length": "900",
     "fans_qnty": "1",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "22475",
     "addon_stainless_body": "5399",
     "basiс_grille_price": "4813",
@@ -4223,7 +4471,8 @@ export default [
     "height": "120",
     "length": "1000",
     "fans_qnty": "1",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "23461",
     "addon_stainless_body": "5744",
     "basiс_grille_price": "5304",
@@ -4240,7 +4489,8 @@ export default [
     "height": "120",
     "length": "1100",
     "fans_qnty": "1",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "24310",
     "addon_stainless_body": "6041",
     "basiс_grille_price": "5834",
@@ -4257,7 +4507,8 @@ export default [
     "height": "120",
     "length": "1200",
     "fans_qnty": "2",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "32207",
     "addon_stainless_body": "6337",
     "basiс_grille_price": "6361",
@@ -4274,7 +4525,8 @@ export default [
     "height": "120",
     "length": "1300",
     "fans_qnty": "2",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "33072",
     "addon_stainless_body": "6640",
     "basiс_grille_price": "6893",
@@ -4291,7 +4543,8 @@ export default [
     "height": "120",
     "length": "1400",
     "fans_qnty": "2",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "33936",
     "addon_stainless_body": "6943",
     "basiс_grille_price": "7423",
@@ -4308,7 +4561,8 @@ export default [
     "height": "120",
     "length": "1500",
     "fans_qnty": "2",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "35063",
     "addon_stainless_body": "7337",
     "basiс_grille_price": "7955",
@@ -4325,7 +4579,8 @@ export default [
     "height": "120",
     "length": "1600",
     "fans_qnty": "3",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "43241",
     "addon_stainless_body": "7732",
     "basiс_grille_price": "8482",
@@ -4342,7 +4597,8 @@ export default [
     "height": "120",
     "length": "1700",
     "fans_qnty": "3",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "44055",
     "addon_stainless_body": "8017",
     "basiс_grille_price": "9012",
@@ -4359,7 +4615,8 @@ export default [
     "height": "120",
     "length": "1800",
     "fans_qnty": "3",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "44871",
     "addon_stainless_body": "8302",
     "basiс_grille_price": "9541",
@@ -4376,7 +4633,8 @@ export default [
     "height": "120",
     "length": "1900",
     "fans_qnty": "3",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "45952",
     "addon_stainless_body": "8681",
     "basiс_grille_price": "10074",
@@ -4393,7 +4651,8 @@ export default [
     "height": "120",
     "length": "2000",
     "fans_qnty": "4",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "54086",
     "addon_stainless_body": "9060",
     "basiс_grille_price": "10606",
@@ -4410,7 +4669,8 @@ export default [
     "height": "120",
     "length": "2100",
     "fans_qnty": "4",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "55160",
     "addon_stainless_body": "9436",
     "basiс_grille_price": "11136",
@@ -4427,7 +4687,8 @@ export default [
     "height": "120",
     "length": "2200",
     "fans_qnty": "4",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "56234",
     "addon_stainless_body": "9812",
     "basiс_grille_price": "11668",
@@ -4444,7 +4705,8 @@ export default [
     "height": "120",
     "length": "2300",
     "fans_qnty": "4",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "57279",
     "addon_stainless_body": "10178",
     "basiс_grille_price": "12195",
@@ -4461,7 +4723,8 @@ export default [
     "height": "120",
     "length": "2400",
     "fans_qnty": "4",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "58324",
     "addon_stainless_body": "10543",
     "basiс_grille_price": "12725",
@@ -4478,7 +4741,8 @@ export default [
     "height": "120",
     "length": "2500",
     "fans_qnty": "4",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "62513",
     "addon_stainless_body": "12010",
     "basiс_grille_price": "13254",
@@ -4495,7 +4759,8 @@ export default [
     "height": "120",
     "length": "2600",
     "fans_qnty": "4",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "66702",
     "addon_stainless_body": "13476",
     "basiс_grille_price": "13784",
@@ -4512,7 +4777,8 @@ export default [
     "height": "120",
     "length": "2700",
     "fans_qnty": "4",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "67516",
     "addon_stainless_body": "13761",
     "basiс_grille_price": "14313",
@@ -4529,7 +4795,8 @@ export default [
     "height": "120",
     "length": "2800",
     "fans_qnty": "4",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "68330",
     "addon_stainless_body": "14046",
     "basiс_grille_price": "14843",
@@ -4546,7 +4813,8 @@ export default [
     "height": "120",
     "length": "2900",
     "fans_qnty": "4",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "69412",
     "addon_stainless_body": "14424",
     "basiс_grille_price": "15375",
@@ -4563,7 +4831,8 @@ export default [
     "height": "120",
     "length": "3000",
     "fans_qnty": "4",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "70497",
     "addon_stainless_body": "14804",
     "basiс_grille_price": "15908",
@@ -4580,7 +4849,8 @@ export default [
     "height": "120",
     "length": "3100",
     "fans_qnty": "5",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "78394",
     "addon_stainless_body": "15100",
     "basiс_grille_price": "16437",
@@ -4597,7 +4867,8 @@ export default [
     "height": "120",
     "length": "3200",
     "fans_qnty": "6",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "86293",
     "addon_stainless_body": "15398",
     "basiс_grille_price": "16970",
@@ -4614,7 +4885,8 @@ export default [
     "height": "120",
     "length": "3300",
     "fans_qnty": "6",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "87156",
     "addon_stainless_body": "15700",
     "basiс_grille_price": "17497",
@@ -4631,7 +4903,8 @@ export default [
     "height": "120",
     "length": "3400",
     "fans_qnty": "6",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "88021",
     "addon_stainless_body": "16002",
     "basiс_grille_price": "18026",
@@ -4648,7 +4921,8 @@ export default [
     "height": "120",
     "length": "3500",
     "fans_qnty": "6",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "89147",
     "addon_stainless_body": "16396",
     "basiс_grille_price": "18556",
@@ -4665,7 +4939,8 @@ export default [
     "height": "120",
     "length": "3600",
     "fans_qnty": "6",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "90275",
     "addon_stainless_body": "16791",
     "basiс_grille_price": "19085",
@@ -4682,7 +4957,8 @@ export default [
     "height": "120",
     "length": "3700",
     "fans_qnty": "6",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "91090",
     "addon_stainless_body": "17077",
     "basiс_grille_price": "19618",
@@ -4699,7 +4975,8 @@ export default [
     "height": "120",
     "length": "3800",
     "fans_qnty": "6",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "91904",
     "addon_stainless_body": "17361",
     "basiс_grille_price": "20147",
@@ -4716,7 +4993,8 @@ export default [
     "height": "120",
     "length": "3900",
     "fans_qnty": "7",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "100038",
     "addon_stainless_body": "17741",
     "basiс_grille_price": "20680",
@@ -4733,7 +5011,8 @@ export default [
     "height": "120",
     "length": "4000",
     "fans_qnty": "8",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "108171",
     "addon_stainless_body": "18120",
     "basiс_grille_price": "21212",
@@ -4750,7 +5029,8 @@ export default [
     "height": "120",
     "length": "4100",
     "fans_qnty": "8",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "109245",
     "addon_stainless_body": "18496",
     "basiс_grille_price": "21742",
@@ -4767,7 +5047,8 @@ export default [
     "height": "120",
     "length": "4200",
     "fans_qnty": "8",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "110320",
     "addon_stainless_body": "18872",
     "basiс_grille_price": "22271",
@@ -4784,7 +5065,8 @@ export default [
     "height": "120",
     "length": "4300",
     "fans_qnty": "8",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "61896",
     "addon_stainless_body": "1924",
     "basiс_grille_price": "22801",
@@ -4801,7 +5083,8 @@ export default [
     "height": "120",
     "length": "4400",
     "fans_qnty": "8",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "112468",
     "addon_stainless_body": "19624",
     "basiс_grille_price": "23331",
@@ -4818,7 +5101,8 @@ export default [
     "height": "120",
     "length": "4500",
     "fans_qnty": "8",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "113511",
     "addon_stainless_body": "19989",
     "basiс_grille_price": "23860",
@@ -4835,7 +5119,8 @@ export default [
     "height": "120",
     "length": "4600",
     "fans_qnty": "8",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "114556",
     "addon_stainless_body": "20355",
     "basiс_grille_price": "24393",
@@ -4852,7 +5137,8 @@ export default [
     "height": "120",
     "length": "4700",
     "fans_qnty": "8",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "115603",
     "addon_stainless_body": "20721",
     "basiс_grille_price": "24919",
@@ -4869,7 +5155,8 @@ export default [
     "height": "120",
     "length": "4800",
     "fans_qnty": "8",
-    "related_items": "kvu-250-120-90,kvu-250-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-120-90,kvu-250-120-135",
+
     "price": "116648",
     "addon_stainless_body": "21087",
     "basiс_grille_price": "25449",
@@ -4886,7 +5173,8 @@ export default [
     "height": "120",
     "length": "800",
     "fans_qnty": "1",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "25593",
     "addon_stainless_body": "6490",
     "basiс_grille_price": "5558",
@@ -4903,7 +5191,8 @@ export default [
     "height": "120",
     "length": "900",
     "fans_qnty": "1",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "27339",
     "addon_stainless_body": "7101",
     "basiс_grille_price": "6254",
@@ -4920,7 +5209,8 @@ export default [
     "height": "120",
     "length": "1000",
     "fans_qnty": "1",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "29082",
     "addon_stainless_body": "7711",
     "basiс_grille_price": "6953",
@@ -4937,7 +5227,8 @@ export default [
     "height": "120",
     "length": "1100",
     "fans_qnty": "1",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "30182",
     "addon_stainless_body": "8096",
     "basiс_grille_price": "7647",
@@ -4954,7 +5245,8 @@ export default [
     "height": "120",
     "length": "1200",
     "fans_qnty": "2",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "38332",
     "addon_stainless_body": "8481",
     "basiс_grille_price": "8340",
@@ -4971,7 +5263,8 @@ export default [
     "height": "120",
     "length": "1300",
     "fans_qnty": "2",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "40163",
     "addon_stainless_body": "9122",
     "basiс_grille_price": "9036",
@@ -4988,7 +5281,8 @@ export default [
     "height": "120",
     "length": "1400",
     "fans_qnty": "2",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "41997",
     "addon_stainless_body": "9764",
     "basiс_grille_price": "9730",
@@ -5005,7 +5299,8 @@ export default [
     "height": "120",
     "length": "1500",
     "fans_qnty": "2",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "43540",
     "addon_stainless_body": "10304",
     "basiс_grille_price": "10426",
@@ -5022,7 +5317,8 @@ export default [
     "height": "120",
     "length": "1600",
     "fans_qnty": "3",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "52136",
     "addon_stainless_body": "10845",
     "basiс_grille_price": "11119",
@@ -5039,7 +5335,8 @@ export default [
     "height": "120",
     "length": "1700",
     "fans_qnty": "3",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "53571",
     "addon_stainless_body": "11347",
     "basiс_grille_price": "11815",
@@ -5056,7 +5353,8 @@ export default [
     "height": "120",
     "length": "1800",
     "fans_qnty": "3",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "55007",
     "addon_stainless_body": "11850",
     "basiс_grille_price": "12512",
@@ -5073,7 +5371,8 @@ export default [
     "height": "120",
     "length": "1900",
     "fans_qnty": "3",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "56569",
     "addon_stainless_body": "12397",
     "basiс_grille_price": "13205",
@@ -5090,7 +5389,8 @@ export default [
     "height": "120",
     "length": "2000",
     "fans_qnty": "4",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "65180",
     "addon_stainless_body": "12943",
     "basiс_grille_price": "13901",
@@ -5107,7 +5407,8 @@ export default [
     "height": "120",
     "length": "2100",
     "fans_qnty": "4",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "66686",
     "addon_stainless_body": "13470",
     "basiс_grille_price": "14595",
@@ -5124,7 +5425,8 @@ export default [
     "height": "120",
     "length": "2200",
     "fans_qnty": "4",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "68193",
     "addon_stainless_body": "13998",
     "basiс_grille_price": "15288",
@@ -5141,7 +5443,8 @@ export default [
     "height": "120",
     "length": "2300",
     "fans_qnty": "4",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "69980",
     "addon_stainless_body": "14623",
     "basiс_grille_price": "15984",
@@ -5158,7 +5461,8 @@ export default [
     "height": "120",
     "length": "2400",
     "fans_qnty": "4",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "71769",
     "addon_stainless_body": "15249",
     "basiс_grille_price": "16680",
@@ -5175,7 +5479,8 @@ export default [
     "height": "120",
     "length": "2500",
     "fans_qnty": "4",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "76494",
     "addon_stainless_body": "16903",
     "basiс_grille_price": "17374",
@@ -5192,7 +5497,8 @@ export default [
     "height": "120",
     "length": "2600",
     "fans_qnty": "4",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "81220",
     "addon_stainless_body": "18557",
     "basiс_grille_price": "18070",
@@ -5209,7 +5515,8 @@ export default [
     "height": "120",
     "length": "2700",
     "fans_qnty": "4",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "82653",
     "addon_stainless_body": "19059",
     "basiс_grille_price": "18766",
@@ -5226,7 +5533,8 @@ export default [
     "height": "120",
     "length": "2800",
     "fans_qnty": "4",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "84089",
     "addon_stainless_body": "19561",
     "basiс_grille_price": "19459",
@@ -5243,7 +5551,8 @@ export default [
     "height": "120",
     "length": "2900",
     "fans_qnty": "4",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "85651",
     "addon_stainless_body": "20108",
     "basiс_grille_price": "20156",
@@ -5260,7 +5569,8 @@ export default [
     "height": "120",
     "length": "3000",
     "fans_qnty": "4",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "87214",
     "addon_stainless_body": "20655",
     "basiс_grille_price": "20852",
@@ -5277,7 +5587,8 @@ export default [
     "height": "120",
     "length": "3100",
     "fans_qnty": "5",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "95363",
     "addon_stainless_body": "21040",
     "basiс_grille_price": "21545",
@@ -5294,7 +5605,8 @@ export default [
     "height": "120",
     "length": "3200",
     "fans_qnty": "6",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "103514",
     "addon_stainless_body": "21425",
     "basiс_grille_price": "22241",
@@ -5311,7 +5623,8 @@ export default [
     "height": "120",
     "length": "3300",
     "fans_qnty": "6",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "105346",
     "addon_stainless_body": "22066",
     "basiс_grille_price": "22937",
@@ -5328,7 +5641,8 @@ export default [
     "height": "120",
     "length": "3400",
     "fans_qnty": "6",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "107179",
     "addon_stainless_body": "22708",
     "basiс_grille_price": "23631",
@@ -5345,7 +5659,8 @@ export default [
     "height": "120",
     "length": "3500",
     "fans_qnty": "6",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "108723",
     "addon_stainless_body": "23248",
     "basiс_grille_price": "24327",
@@ -5362,7 +5677,8 @@ export default [
     "height": "120",
     "length": "3600",
     "fans_qnty": "6",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "110268",
     "addon_stainless_body": "23789",
     "basiс_grille_price": "25023",
@@ -5379,7 +5695,8 @@ export default [
     "height": "120",
     "length": "3700",
     "fans_qnty": "6",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "111702",
     "addon_stainless_body": "24291",
     "basiс_grille_price": "25717",
@@ -5396,7 +5713,8 @@ export default [
     "height": "120",
     "length": "3800",
     "fans_qnty": "6",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "113137",
     "addon_stainless_body": "24793",
     "basiс_grille_price": "26413",
@@ -5413,7 +5731,8 @@ export default [
     "height": "120",
     "length": "3900",
     "fans_qnty": "7",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "140083",
     "addon_stainless_body": "31757",
     "basiс_grille_price": "27106",
@@ -5430,7 +5749,8 @@ export default [
     "height": "120",
     "length": "4000",
     "fans_qnty": "8",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "130363",
     "addon_stainless_body": "25887",
     "basiс_grille_price": "27800",
@@ -5447,7 +5767,8 @@ export default [
     "height": "120",
     "length": "4100",
     "fans_qnty": "8",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "131868",
     "addon_stainless_body": "26414",
     "basiс_grille_price": "28496",
@@ -5464,7 +5785,8 @@ export default [
     "height": "120",
     "length": "4200",
     "fans_qnty": "8",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "133373",
     "addon_stainless_body": "26941",
     "basiс_grille_price": "29192",
@@ -5481,7 +5803,8 @@ export default [
     "height": "120",
     "length": "4300",
     "fans_qnty": "8",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "134878",
     "addon_stainless_body": "27467",
     "basiс_grille_price": "29885",
@@ -5498,7 +5821,8 @@ export default [
     "height": "120",
     "length": "4400",
     "fans_qnty": "8",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "136385",
     "addon_stainless_body": "27995",
     "basiс_grille_price": "30581",
@@ -5515,7 +5839,8 @@ export default [
     "height": "120",
     "length": "4500",
     "fans_qnty": "8",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "138172",
     "addon_stainless_body": "28620",
     "basiс_grille_price": "31275",
@@ -5532,7 +5857,8 @@ export default [
     "height": "120",
     "length": "4600",
     "fans_qnty": "8",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "139960",
     "addon_stainless_body": "29246",
     "basiс_grille_price": "31971",
@@ -5549,7 +5875,8 @@ export default [
     "height": "120",
     "length": "4700",
     "fans_qnty": "8",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "141749",
     "addon_stainless_body": "29872",
     "basiс_grille_price": "32667",
@@ -5566,7 +5893,8 @@ export default [
     "height": "120",
     "length": "4800",
     "fans_qnty": "8",
-    "related_items": "kvu-350-120-90,kvu-350-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-120-90,kvu-350-120-135",
+
     "price": "143537",
     "addon_stainless_body": "30498",
     "basiс_grille_price": "33361",
@@ -5583,7 +5911,8 @@ export default [
     "height": "120",
     "length": "800",
     "fans_qnty": "1",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "28560",
     "addon_stainless_body": "7529",
     "basiс_grille_price": "6820",
@@ -5600,7 +5929,8 @@ export default [
     "height": "120",
     "length": "900",
     "fans_qnty": "1",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "30607",
     "addon_stainless_body": "8245",
     "basiс_grille_price": "7674",
@@ -5617,7 +5947,8 @@ export default [
     "height": "120",
     "length": "1000",
     "fans_qnty": "1",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "32653",
     "addon_stainless_body": "8961",
     "basiс_grille_price": "8529",
@@ -5634,7 +5965,8 @@ export default [
     "height": "120",
     "length": "1100",
     "fans_qnty": "1",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "34402",
     "addon_stainless_body": "9573",
     "basiс_grille_price": "9380",
@@ -5651,7 +5983,8 @@ export default [
     "height": "120",
     "length": "1200",
     "fans_qnty": "2",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "43203",
     "addon_stainless_body": "10186",
     "basiс_grille_price": "10232",
@@ -5668,7 +6001,8 @@ export default [
     "height": "120",
     "length": "1300",
     "fans_qnty": "2",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "45480",
     "addon_stainless_body": "10983",
     "basiс_grille_price": "11087",
@@ -5685,7 +6019,8 @@ export default [
     "height": "120",
     "length": "1400",
     "fans_qnty": "2",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "47757",
     "addon_stainless_body": "11780",
     "basiс_grille_price": "11941",
@@ -5702,7 +6037,8 @@ export default [
     "height": "120",
     "length": "1500",
     "fans_qnty": "2",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "49742",
     "addon_stainless_body": "12475",
     "basiс_grille_price": "12793",
@@ -5719,7 +6055,8 @@ export default [
     "height": "120",
     "length": "1600",
     "fans_qnty": "3",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "58776",
     "addon_stainless_body": "13169",
     "basiс_grille_price": "13642",
@@ -5736,7 +6073,8 @@ export default [
     "height": "120",
     "length": "1700",
     "fans_qnty": "3",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "60697",
     "addon_stainless_body": "13841",
     "basiс_grille_price": "14496",
@@ -5753,7 +6091,8 @@ export default [
     "height": "120",
     "length": "1800",
     "fans_qnty": "3",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "62618",
     "addon_stainless_body": "14514",
     "basiс_grille_price": "15351",
@@ -5770,7 +6109,8 @@ export default [
     "height": "120",
     "length": "1900",
     "fans_qnty": "3",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "64525",
     "addon_stainless_body": "15181",
     "basiс_grille_price": "16205",
@@ -5787,7 +6127,8 @@ export default [
     "height": "120",
     "length": "2000",
     "fans_qnty": "4",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "73483",
     "addon_stainless_body": "15849",
     "basiс_grille_price": "17060",
@@ -5804,7 +6145,8 @@ export default [
     "height": "120",
     "length": "2100",
     "fans_qnty": "4",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "74952",
     "addon_stainless_body": "16363",
     "basiс_grille_price": "17912",
@@ -5821,7 +6163,8 @@ export default [
     "height": "120",
     "length": "2200",
     "fans_qnty": "4",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "76424",
     "addon_stainless_body": "16878",
     "basiс_grille_price": "18763",
@@ -5838,7 +6181,8 @@ export default [
     "height": "120",
     "length": "2300",
     "fans_qnty": "4",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "77900",
     "addon_stainless_body": "17395",
     "basiс_grille_price": "19618",
@@ -5855,7 +6199,8 @@ export default [
     "height": "120",
     "length": "2400",
     "fans_qnty": "4",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "79375",
     "addon_stainless_body": "17911",
     "basiс_grille_price": "20472",
@@ -5872,7 +6217,8 @@ export default [
     "height": "120",
     "length": "2500",
     "fans_qnty": "4",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "85401",
     "addon_stainless_body": "20020",
     "basiс_grille_price": "21321",
@@ -5889,7 +6235,8 @@ export default [
     "height": "120",
     "length": "2600",
     "fans_qnty": "4",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "91429",
     "addon_stainless_body": "22130",
     "basiс_grille_price": "22173",
@@ -5906,7 +6253,8 @@ export default [
     "height": "120",
     "length": "2700",
     "fans_qnty": "4",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "93348",
     "addon_stainless_body": "22802",
     "basiс_grille_price": "23028",
@@ -5923,7 +6271,8 @@ export default [
     "height": "120",
     "length": "2800",
     "fans_qnty": "4",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "95270",
     "addon_stainless_body": "23475",
     "basiс_grille_price": "23882",
@@ -5940,7 +6289,8 @@ export default [
     "height": "120",
     "length": "2900",
     "fans_qnty": "4",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "97178",
     "addon_stainless_body": "24142",
     "basiс_grille_price": "24737",
@@ -5957,7 +6307,8 @@ export default [
     "height": "120",
     "length": "3000",
     "fans_qnty": "4",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "99087",
     "addon_stainless_body": "24810",
     "basiс_grille_price": "25591",
@@ -5974,7 +6325,8 @@ export default [
     "height": "120",
     "length": "3100",
     "fans_qnty": "5",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "107884",
     "addon_stainless_body": "25422",
     "basiс_grille_price": "26443",
@@ -5991,7 +6343,8 @@ export default [
     "height": "120",
     "length": "3200",
     "fans_qnty": "6",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "116684",
     "addon_stainless_body": "26034",
     "basiс_grille_price": "27292",
@@ -6008,7 +6361,8 @@ export default [
     "height": "120",
     "length": "3300",
     "fans_qnty": "6",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "118961",
     "addon_stainless_body": "26831",
     "basiс_grille_price": "28146",
@@ -6025,7 +6379,8 @@ export default [
     "height": "120",
     "length": "3400",
     "fans_qnty": "6",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "121238",
     "addon_stainless_body": "27628",
     "basiс_grille_price": "29001",
@@ -6042,7 +6397,8 @@ export default [
     "height": "120",
     "length": "3500",
     "fans_qnty": "6",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "123222",
     "addon_stainless_body": "28323",
     "basiс_grille_price": "29853",
@@ -6059,7 +6415,8 @@ export default [
     "height": "120",
     "length": "3600",
     "fans_qnty": "6",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "125209",
     "addon_stainless_body": "29018",
     "basiс_grille_price": "30704",
@@ -6076,7 +6433,8 @@ export default [
     "height": "120",
     "length": "3700",
     "fans_qnty": "6",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "127128",
     "addon_stainless_body": "29690",
     "basiс_grille_price": "31559",
@@ -6093,7 +6451,8 @@ export default [
     "height": "120",
     "length": "3800",
     "fans_qnty": "6",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "129048",
     "addon_stainless_body": "30362",
     "basiс_grille_price": "32413",
@@ -6110,7 +6469,8 @@ export default [
     "height": "120",
     "length": "3900",
     "fans_qnty": "7",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "137180",
     "addon_stainless_body": "30741",
     "basiс_grille_price": "33268",
@@ -6127,7 +6487,8 @@ export default [
     "height": "120",
     "length": "4000",
     "fans_qnty": "8",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "145311",
     "addon_stainless_body": "31119",
     "basiс_grille_price": "34122",
@@ -6144,7 +6505,8 @@ export default [
     "height": "120",
     "length": "4100",
     "fans_qnty": "8",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "147608",
     "addon_stainless_body": "31923",
     "basiс_grille_price": "34974",
@@ -6161,7 +6523,8 @@ export default [
     "height": "120",
     "length": "4200",
     "fans_qnty": "8",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "149905",
     "addon_stainless_body": "32727",
     "basiс_grille_price": "35823",
@@ -6178,7 +6541,8 @@ export default [
     "height": "120",
     "length": "4300",
     "fans_qnty": "8",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "151376",
     "addon_stainless_body": "33242",
     "basiс_grille_price": "36675",
@@ -6195,7 +6559,8 @@ export default [
     "height": "120",
     "length": "4400",
     "fans_qnty": "8",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "152846",
     "addon_stainless_body": "33756",
     "basiс_grille_price": "37524",
@@ -6212,7 +6577,8 @@ export default [
     "height": "120",
     "length": "4500",
     "fans_qnty": "8",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "154322",
     "addon_stainless_body": "34273",
     "basiс_grille_price": "38378",
@@ -6229,7 +6595,8 @@ export default [
     "height": "120",
     "length": "4600",
     "fans_qnty": "8",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "155797",
     "addon_stainless_body": "34789",
     "basiс_grille_price": "39233",
@@ -6246,7 +6613,8 @@ export default [
     "height": "120",
     "length": "4700",
     "fans_qnty": "8",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "157260",
     "addon_stainless_body": "35301",
     "basiс_grille_price": "40087",
@@ -6263,7 +6631,8 @@ export default [
     "height": "120",
     "length": "4800",
     "fans_qnty": "8",
-    "related_items": "kvu-420-120-90,kvu-420-120-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-120-90,kvu-420-120-135",
+
     "price": "158751",
     "addon_stainless_body": "35823",
     "basiс_grille_price": "40942",
@@ -6280,7 +6649,8 @@ export default [
     "height": "140",
     "length": "800",
     "fans_qnty": "1",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "24273",
     "addon_stainless_body": "6028",
     "basiс_grille_price": "4324",
@@ -6297,7 +6667,8 @@ export default [
     "height": "140",
     "length": "900",
     "fans_qnty": "1",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "25407",
     "addon_stainless_body": "6425",
     "basiс_grille_price": "4813",
@@ -6314,7 +6685,8 @@ export default [
     "height": "140",
     "length": "1000",
     "fans_qnty": "1",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "26541",
     "addon_stainless_body": "6822",
     "basiс_grille_price": "5304",
@@ -6331,7 +6703,8 @@ export default [
     "height": "140",
     "length": "1100",
     "fans_qnty": "1",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "28099",
     "addon_stainless_body": "7367",
     "basiс_grille_price": "5834",
@@ -6348,7 +6721,8 @@ export default [
     "height": "140",
     "length": "1200",
     "fans_qnty": "2",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "36707",
     "addon_stainless_body": "7912",
     "basiс_grille_price": "6361",
@@ -6365,7 +6739,8 @@ export default [
     "height": "140",
     "length": "1300",
     "fans_qnty": "2",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "37883",
     "addon_stainless_body": "8324",
     "basiс_grille_price": "6893",
@@ -6382,7 +6757,8 @@ export default [
     "height": "140",
     "length": "1400",
     "fans_qnty": "2",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "39059",
     "addon_stainless_body": "8736",
     "basiс_grille_price": "7423",
@@ -6399,7 +6775,8 @@ export default [
     "height": "140",
     "length": "1500",
     "fans_qnty": "2",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "40903",
     "addon_stainless_body": "9381",
     "basiс_grille_price": "7955",
@@ -6416,7 +6793,8 @@ export default [
     "height": "140",
     "length": "1600",
     "fans_qnty": "3",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "49799",
     "addon_stainless_body": "10027",
     "basiс_grille_price": "8482",
@@ -6433,7 +6811,8 @@ export default [
     "height": "140",
     "length": "1700",
     "fans_qnty": "3",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "50905",
     "addon_stainless_body": "10414",
     "basiс_grille_price": "9012",
@@ -6450,7 +6829,8 @@ export default [
     "height": "140",
     "length": "1800",
     "fans_qnty": "3",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "52007",
     "addon_stainless_body": "10800",
     "basiс_grille_price": "9541",
@@ -6467,7 +6847,8 @@ export default [
     "height": "140",
     "length": "1900",
     "fans_qnty": "3",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "53539",
     "addon_stainless_body": "11336",
     "basiс_grille_price": "10074",
@@ -6484,7 +6865,8 @@ export default [
     "height": "140",
     "length": "2000",
     "fans_qnty": "4",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "62121",
     "addon_stainless_body": "11872",
     "basiс_grille_price": "10606",
@@ -6501,7 +6883,8 @@ export default [
     "height": "140",
     "length": "2100",
     "fans_qnty": "4",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "63311",
     "addon_stainless_body": "12289",
     "basiс_grille_price": "11136",
@@ -6518,7 +6901,8 @@ export default [
     "height": "140",
     "length": "2200",
     "fans_qnty": "4",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "64498",
     "addon_stainless_body": "12704",
     "basiс_grille_price": "11668",
@@ -6535,7 +6919,8 @@ export default [
     "height": "140",
     "length": "2300",
     "fans_qnty": "4",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "66030",
     "addon_stainless_body": "13241",
     "basiс_grille_price": "12195",
@@ -6552,7 +6937,8 @@ export default [
     "height": "140",
     "length": "2400",
     "fans_qnty": "4",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "67562",
     "addon_stainless_body": "13777",
     "basiс_grille_price": "12725",
@@ -6569,7 +6955,8 @@ export default [
     "height": "140",
     "length": "2500",
     "fans_qnty": "4",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "71950",
     "addon_stainless_body": "15313",
     "basiс_grille_price": "13254",
@@ -6586,7 +6973,8 @@ export default [
     "height": "140",
     "length": "2600",
     "fans_qnty": "4",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "76340",
     "addon_stainless_body": "16849",
     "basiс_grille_price": "13784",
@@ -6603,7 +6991,8 @@ export default [
     "height": "140",
     "length": "2700",
     "fans_qnty": "4",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "77444",
     "addon_stainless_body": "17235",
     "basiс_grille_price": "14313",
@@ -6620,7 +7009,8 @@ export default [
     "height": "140",
     "length": "2800",
     "fans_qnty": "4",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "78548",
     "addon_stainless_body": "17622",
     "basiс_grille_price": "14843",
@@ -6637,7 +7027,8 @@ export default [
     "height": "140",
     "length": "2900",
     "fans_qnty": "4",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "80080",
     "addon_stainless_body": "18158",
     "basiс_grille_price": "15375",
@@ -6654,7 +7045,8 @@ export default [
     "height": "140",
     "length": "3000",
     "fans_qnty": "4",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "81612",
     "addon_stainless_body": "18694",
     "basiс_grille_price": "15908",
@@ -6671,7 +7063,8 @@ export default [
     "height": "140",
     "length": "3100",
     "fans_qnty": "5",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "90220",
     "addon_stainless_body": "19240",
     "basiс_grille_price": "16437",
@@ -6688,7 +7081,8 @@ export default [
     "height": "140",
     "length": "3200",
     "fans_qnty": "6",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "98828",
     "addon_stainless_body": "19785",
     "basiс_grille_price": "16970",
@@ -6705,7 +7099,8 @@ export default [
     "height": "140",
     "length": "3300",
     "fans_qnty": "6",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "100004",
     "addon_stainless_body": "20196",
     "basiс_grille_price": "17497",
@@ -6722,7 +7117,8 @@ export default [
     "height": "140",
     "length": "3400",
     "fans_qnty": "6",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "101180",
     "addon_stainless_body": "20608",
     "basiс_grille_price": "18026",
@@ -6739,7 +7135,8 @@ export default [
     "height": "140",
     "length": "3500",
     "fans_qnty": "6",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "103023",
     "addon_stainless_body": "21253",
     "basiс_grille_price": "18556",
@@ -6756,7 +7153,8 @@ export default [
     "height": "140",
     "length": "3600",
     "fans_qnty": "6",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "104869",
     "addon_stainless_body": "21899",
     "basiс_grille_price": "19085",
@@ -6773,7 +7171,8 @@ export default [
     "height": "140",
     "length": "3700",
     "fans_qnty": "6",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "105973",
     "addon_stainless_body": "22286",
     "basiс_grille_price": "19618",
@@ -6790,7 +7189,8 @@ export default [
     "height": "140",
     "length": "3800",
     "fans_qnty": "6",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "107077",
     "addon_stainless_body": "22672",
     "basiс_grille_price": "20147",
@@ -6807,7 +7207,8 @@ export default [
     "height": "140",
     "length": "3900",
     "fans_qnty": "7",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "115659",
     "addon_stainless_body": "23208",
     "basiс_grille_price": "20680",
@@ -6824,7 +7225,8 @@ export default [
     "height": "140",
     "length": "4000",
     "fans_qnty": "8",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "124241",
     "addon_stainless_body": "23744",
     "basiс_grille_price": "21212",
@@ -6841,7 +7243,8 @@ export default [
     "height": "140",
     "length": "4100",
     "fans_qnty": "8",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "125431",
     "addon_stainless_body": "24161",
     "basiс_grille_price": "21742",
@@ -6858,7 +7261,8 @@ export default [
     "height": "140",
     "length": "4200",
     "fans_qnty": "8",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "126619",
     "addon_stainless_body": "24577",
     "basiс_grille_price": "22271",
@@ -6875,7 +7279,8 @@ export default [
     "height": "140",
     "length": "4300",
     "fans_qnty": "8",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "127809",
     "addon_stainless_body": "24993",
     "basiс_grille_price": "22801",
@@ -6892,7 +7297,8 @@ export default [
     "height": "140",
     "length": "4400",
     "fans_qnty": "8",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "129001",
     "addon_stainless_body": "25410",
     "basiс_grille_price": "23331",
@@ -6909,7 +7315,8 @@ export default [
     "height": "140",
     "length": "4500",
     "fans_qnty": "8",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "130529",
     "addon_stainless_body": "25945",
     "basiс_grille_price": "23860",
@@ -6926,7 +7333,8 @@ export default [
     "height": "140",
     "length": "4600",
     "fans_qnty": "8",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "132061",
     "addon_stainless_body": "26481",
     "basiс_grille_price": "24393",
@@ -6943,7 +7351,8 @@ export default [
     "height": "140",
     "length": "4700",
     "fans_qnty": "8",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "133591",
     "addon_stainless_body": "27017",
     "basiс_grille_price": "24919",
@@ -6960,7 +7369,8 @@ export default [
     "height": "140",
     "length": "4800",
     "fans_qnty": "8",
-    "related_items": "kvu-250-140-90,kvu-250-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-250-140-90,kvu-250-140-135",
+
     "price": "135123",
     "addon_stainless_body": "27553",
     "basiс_grille_price": "25449",
@@ -6977,7 +7387,8 @@ export default [
     "height": "140",
     "length": "800",
     "fans_qnty": "1",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "34235",
     "addon_stainless_body": "9515",
     "basiс_grille_price": "5558",
@@ -6994,7 +7405,8 @@ export default [
     "height": "140",
     "length": "900",
     "fans_qnty": "1",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "36385",
     "addon_stainless_body": "10267",
     "basiс_grille_price": "6254",
@@ -7011,7 +7423,8 @@ export default [
     "height": "140",
     "length": "1000",
     "fans_qnty": "1",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "38537",
     "addon_stainless_body": "11020",
     "basiс_grille_price": "6953",
@@ -7028,7 +7441,8 @@ export default [
     "height": "140",
     "length": "1100",
     "fans_qnty": "1",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "41315",
     "addon_stainless_body": "11993",
     "basiс_grille_price": "7647",
@@ -7045,7 +7459,8 @@ export default [
     "height": "140",
     "length": "1200",
     "fans_qnty": "2",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "51142",
     "addon_stainless_body": "12965",
     "basiс_grille_price": "8340",
@@ -7062,7 +7477,8 @@ export default [
     "height": "140",
     "length": "1300",
     "fans_qnty": "2",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "53834",
     "addon_stainless_body": "13907",
     "basiс_grille_price": "9036",
@@ -7079,7 +7495,8 @@ export default [
     "height": "140",
     "length": "1400",
     "fans_qnty": "2",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "56526",
     "addon_stainless_body": "14849",
     "basiс_grille_price": "9730",
@@ -7096,7 +7513,8 @@ export default [
     "height": "140",
     "length": "1500",
     "fans_qnty": "2",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "59304",
     "addon_stainless_body": "15821",
     "basiс_grille_price": "10426",
@@ -7113,7 +7531,8 @@ export default [
     "height": "140",
     "length": "1600",
     "fans_qnty": "3",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "69134",
     "addon_stainless_body": "16794",
     "basiс_grille_price": "11119",
@@ -7130,7 +7549,8 @@ export default [
     "height": "140",
     "length": "1700",
     "fans_qnty": "3",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "71388",
     "addon_stainless_body": "17583",
     "basiс_grille_price": "11815",
@@ -7147,7 +7567,8 @@ export default [
     "height": "140",
     "length": "1800",
     "fans_qnty": "3",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "73644",
     "addon_stainless_body": "18373",
     "basiс_grille_price": "12512",
@@ -7164,7 +7585,8 @@ export default [
     "height": "140",
     "length": "1900",
     "fans_qnty": "3",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "76420",
     "addon_stainless_body": "19345",
     "basiс_grille_price": "13205",
@@ -7181,7 +7603,8 @@ export default [
     "height": "140",
     "length": "2000",
     "fans_qnty": "4",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "86248",
     "addon_stainless_body": "20317",
     "basiс_grille_price": "13901",
@@ -7198,7 +7621,8 @@ export default [
     "height": "140",
     "length": "2100",
     "fans_qnty": "4",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "88366",
     "addon_stainless_body": "21058",
     "basiс_grille_price": "14595",
@@ -7215,7 +7639,8 @@ export default [
     "height": "140",
     "length": "2200",
     "fans_qnty": "4",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "90483",
     "addon_stainless_body": "21799",
     "basiс_grille_price": "15288",
@@ -7232,7 +7657,8 @@ export default [
     "height": "140",
     "length": "2300",
     "fans_qnty": "4",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "93697",
     "addon_stainless_body": "22924",
     "basiс_grille_price": "15984",
@@ -7249,7 +7675,8 @@ export default [
     "height": "140",
     "length": "2400",
     "fans_qnty": "4",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "96913",
     "addon_stainless_body": "24050",
     "basiс_grille_price": "16680",
@@ -7266,7 +7693,8 @@ export default [
     "height": "140",
     "length": "2500",
     "fans_qnty": "4",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "102289",
     "addon_stainless_body": "25931",
     "basiс_grille_price": "17374",
@@ -7283,7 +7711,8 @@ export default [
     "height": "140",
     "length": "2600",
     "fans_qnty": "4",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "107669",
     "addon_stainless_body": "27814",
     "basiс_grille_price": "18070",
@@ -7300,7 +7729,8 @@ export default [
     "height": "140",
     "length": "2700",
     "fans_qnty": "4",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "109923",
     "addon_stainless_body": "28603",
     "basiс_grille_price": "18766",
@@ -7317,7 +7747,8 @@ export default [
     "height": "140",
     "length": "2800",
     "fans_qnty": "4",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "112179",
     "addon_stainless_body": "29393",
     "basiс_grille_price": "19459",
@@ -7334,7 +7765,8 @@ export default [
     "height": "140",
     "length": "2900",
     "fans_qnty": "4",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "114888",
     "addon_stainless_body": "30341",
     "basiс_grille_price": "20156",
@@ -7351,7 +7783,8 @@ export default [
     "height": "140",
     "length": "3000",
     "fans_qnty": "4",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "117600",
     "addon_stainless_body": "31290",
     "basiс_grille_price": "20852",
@@ -7368,7 +7801,8 @@ export default [
     "height": "140",
     "length": "3100",
     "fans_qnty": "5",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "127428",
     "addon_stainless_body": "32262",
     "basiс_grille_price": "21545",
@@ -7385,7 +7819,8 @@ export default [
     "height": "140",
     "length": "3200",
     "fans_qnty": "6",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "137258",
     "addon_stainless_body": "33235",
     "basiс_grille_price": "22241",
@@ -7402,7 +7837,8 @@ export default [
     "height": "140",
     "length": "3300",
     "fans_qnty": "6",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "139948",
     "addon_stainless_body": "34177",
     "basiс_grille_price": "22937",
@@ -7419,7 +7855,8 @@ export default [
     "height": "140",
     "length": "3400",
     "fans_qnty": "6",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "142642",
     "addon_stainless_body": "35120",
     "basiс_grille_price": "23631",
@@ -7436,7 +7873,8 @@ export default [
     "height": "140",
     "length": "3500",
     "fans_qnty": "6",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "145750",
     "addon_stainless_body": "36208",
     "basiс_grille_price": "24327",
@@ -7453,7 +7891,8 @@ export default [
     "height": "140",
     "length": "3600",
     "fans_qnty": "6",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "148858",
     "addon_stainless_body": "37295",
     "basiс_grille_price": "25023",
@@ -7470,7 +7909,8 @@ export default [
     "height": "140",
     "length": "3700",
     "fans_qnty": "6",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "150784",
     "addon_stainless_body": "37969",
     "basiс_grille_price": "25717",
@@ -7487,7 +7927,8 @@ export default [
     "height": "140",
     "length": "3800",
     "fans_qnty": "6",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "152707",
     "addon_stainless_body": "38642",
     "basiс_grille_price": "26413",
@@ -7504,7 +7945,8 @@ export default [
     "height": "140",
     "length": "3900",
     "fans_qnty": "7",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "162469",
     "addon_stainless_body": "39592",
     "basiс_grille_price": "27106",
@@ -7521,7 +7963,8 @@ export default [
     "height": "140",
     "length": "4000",
     "fans_qnty": "8",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "172231",
     "addon_stainless_body": "40541",
     "basiс_grille_price": "27800",
@@ -7538,7 +7981,8 @@ export default [
     "height": "140",
     "length": "4100",
     "fans_qnty": "8",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "174413",
     "addon_stainless_body": "41305",
     "basiс_grille_price": "28496",
@@ -7555,7 +7999,8 @@ export default [
     "height": "140",
     "length": "4200",
     "fans_qnty": "8",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "176597",
     "addon_stainless_body": "42069",
     "basiс_grille_price": "29192",
@@ -7572,7 +8017,8 @@ export default [
     "height": "140",
     "length": "4300",
     "fans_qnty": "8",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "178781",
     "addon_stainless_body": "42833",
     "basiс_grille_price": "29885",
@@ -7589,7 +8035,8 @@ export default [
     "height": "140",
     "length": "4400",
     "fans_qnty": "8",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "180967",
     "addon_stainless_body": "43598",
     "basiс_grille_price": "30581",
@@ -7606,7 +8053,8 @@ export default [
     "height": "140",
     "length": "4500",
     "fans_qnty": "8",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "184181",
     "addon_stainless_body": "44723",
     "basiс_grille_price": "31275",
@@ -7623,7 +8071,8 @@ export default [
     "height": "140",
     "length": "4600",
     "fans_qnty": "8",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "187397",
     "addon_stainless_body": "45849",
     "basiс_grille_price": "31971",
@@ -7640,7 +8089,8 @@ export default [
     "height": "140",
     "length": "4700",
     "fans_qnty": "8",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "190612",
     "addon_stainless_body": "46974",
     "basiс_grille_price": "32667",
@@ -7657,7 +8107,8 @@ export default [
     "height": "140",
     "length": "4800",
     "fans_qnty": "8",
-    "related_items": "kvu-350-140-90,kvu-350-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-350-140-90,kvu-350-140-135",
+
     "price": "193826",
     "addon_stainless_body": "48099",
     "basiс_grille_price": "33361",
@@ -7674,7 +8125,8 @@ export default [
     "height": "140",
     "length": "800",
     "fans_qnty": "1",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "36949",
     "addon_stainless_body": "10465",
     "basiс_grille_price": "6820",
@@ -7691,7 +8143,8 @@ export default [
     "height": "140",
     "length": "900",
     "fans_qnty": "1",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "39881",
     "addon_stainless_body": "11491",
     "basiс_grille_price": "7674",
@@ -7708,7 +8161,8 @@ export default [
     "height": "140",
     "length": "1000",
     "fans_qnty": "1",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "42813",
     "addon_stainless_body": "12517",
     "basiс_grille_price": "8529",
@@ -7725,7 +8179,8 @@ export default [
     "height": "140",
     "length": "1100",
     "fans_qnty": "1",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "45680",
     "addon_stainless_body": "13521",
     "basiс_grille_price": "9380",
@@ -7742,7 +8197,8 @@ export default [
     "height": "140",
     "length": "1200",
     "fans_qnty": "2",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "55598",
     "addon_stainless_body": "14524",
     "basiс_grille_price": "10232",
@@ -7759,7 +8215,8 @@ export default [
     "height": "140",
     "length": "1300",
     "fans_qnty": "2",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "58824",
     "addon_stainless_body": "15653",
     "basiс_grille_price": "11087",
@@ -7776,7 +8233,8 @@ export default [
     "height": "140",
     "length": "1400",
     "fans_qnty": "2",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "62050",
     "addon_stainless_body": "16783",
     "basiс_grille_price": "11941",
@@ -7793,7 +8251,8 @@ export default [
     "height": "140",
     "length": "1500",
     "fans_qnty": "2",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "65086",
     "addon_stainless_body": "17845",
     "basiс_grille_price": "12793",
@@ -7810,7 +8269,8 @@ export default [
     "height": "140",
     "length": "1600",
     "fans_qnty": "3",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "75170",
     "addon_stainless_body": "18907",
     "basiс_grille_price": "13642",
@@ -7827,7 +8287,8 @@ export default [
     "height": "140",
     "length": "1700",
     "fans_qnty": "3",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "77854",
     "addon_stainless_body": "19846",
     "basiс_grille_price": "14496",
@@ -7844,7 +8305,8 @@ export default [
     "height": "140",
     "length": "1800",
     "fans_qnty": "3",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "80538",
     "addon_stainless_body": "20786",
     "basiс_grille_price": "15351",
@@ -7861,7 +8323,8 @@ export default [
     "height": "140",
     "length": "1900",
     "fans_qnty": "3",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "83531",
     "addon_stainless_body": "21833",
     "basiс_grille_price": "16205",
@@ -7878,7 +8341,8 @@ export default [
     "height": "140",
     "length": "2000",
     "fans_qnty": "4",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "93573",
     "addon_stainless_body": "22881",
     "basiс_grille_price": "17060",
@@ -7895,7 +8359,8 @@ export default [
     "height": "140",
     "length": "2100",
     "fans_qnty": "4",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "96265",
     "addon_stainless_body": "23823",
     "basiс_grille_price": "17912",
@@ -7912,7 +8377,8 @@ export default [
     "height": "140",
     "length": "2200",
     "fans_qnty": "4",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "98959",
     "addon_stainless_body": "24766",
     "basiс_grille_price": "18763",
@@ -7929,7 +8395,8 @@ export default [
     "height": "140",
     "length": "2300",
     "fans_qnty": "4",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "102093",
     "addon_stainless_body": "25863",
     "basiс_grille_price": "19618",
@@ -7946,7 +8413,8 @@ export default [
     "height": "140",
     "length": "2400",
     "fans_qnty": "4",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "105231",
     "addon_stainless_body": "26961",
     "basiс_grille_price": "20472",
@@ -7963,7 +8431,8 @@ export default [
     "height": "140",
     "length": "2500",
     "fans_qnty": "4",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "111607",
     "addon_stainless_body": "29192",
     "basiс_grille_price": "21321",
@@ -7980,7 +8449,8 @@ export default [
     "height": "140",
     "length": "2600",
     "fans_qnty": "4",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "117982",
     "addon_stainless_body": "31424",
     "basiс_grille_price": "22173",
@@ -7997,7 +8467,8 @@ export default [
     "height": "140",
     "length": "2700",
     "fans_qnty": "4",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "120664",
     "addon_stainless_body": "32362",
     "basiс_grille_price": "23028",
@@ -8014,7 +8485,8 @@ export default [
     "height": "140",
     "length": "2800",
     "fans_qnty": "4",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "123350",
     "addon_stainless_body": "33303",
     "basiс_grille_price": "23882",
@@ -8031,7 +8503,8 @@ export default [
     "height": "140",
     "length": "2900",
     "fans_qnty": "4",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "126342",
     "addon_stainless_body": "34350",
     "basiс_grille_price": "24737",
@@ -8048,7 +8521,8 @@ export default [
     "height": "140",
     "length": "3000",
     "fans_qnty": "4",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "129336",
     "addon_stainless_body": "35398",
     "basiс_grille_price": "25591",
@@ -8065,7 +8539,8 @@ export default [
     "height": "140",
     "length": "3100",
     "fans_qnty": "5",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "139254",
     "addon_stainless_body": "36401",
     "basiс_grille_price": "26443",
@@ -8082,7 +8557,8 @@ export default [
     "height": "140",
     "length": "3200",
     "fans_qnty": "6",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "149172",
     "addon_stainless_body": "37405",
     "basiс_grille_price": "27292",
@@ -8099,7 +8575,8 @@ export default [
     "height": "140",
     "length": "3300",
     "fans_qnty": "6",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "152397",
     "addon_stainless_body": "38534",
     "basiс_grille_price": "28146",
@@ -8116,7 +8593,8 @@ export default [
     "height": "140",
     "length": "3400",
     "fans_qnty": "6",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "155625",
     "addon_stainless_body": "39664",
     "basiс_grille_price": "29001",
@@ -8133,7 +8611,8 @@ export default [
     "height": "140",
     "length": "3500",
     "fans_qnty": "6",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "158659",
     "addon_stainless_body": "40726",
     "basiс_grille_price": "29853",
@@ -8150,7 +8629,8 @@ export default [
     "height": "140",
     "length": "3600",
     "fans_qnty": "6",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "161695",
     "addon_stainless_body": "41788",
     "basiс_grille_price": "30704",
@@ -8167,7 +8647,8 @@ export default [
     "height": "140",
     "length": "3700",
     "fans_qnty": "6",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "164377",
     "addon_stainless_body": "42727",
     "basiс_grille_price": "31559",
@@ -8184,7 +8665,8 @@ export default [
     "height": "140",
     "length": "3800",
     "fans_qnty": "6",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "167063",
     "addon_stainless_body": "43667",
     "basiс_grille_price": "32413",
@@ -8201,7 +8683,8 @@ export default [
     "height": "140",
     "length": "3900",
     "fans_qnty": "7",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "177105",
     "addon_stainless_body": "44714",
     "basiс_grille_price": "33268",
@@ -8218,7 +8701,8 @@ export default [
     "height": "140",
     "length": "4000",
     "fans_qnty": "8",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "187149",
     "addon_stainless_body": "45762",
     "basiс_grille_price": "34122",
@@ -8235,7 +8719,8 @@ export default [
     "height": "140",
     "length": "4100",
     "fans_qnty": "8",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "189838",
     "addon_stainless_body": "46703",
     "basiс_grille_price": "34974",
@@ -8252,7 +8737,8 @@ export default [
     "height": "140",
     "length": "4200",
     "fans_qnty": "8",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "192534",
     "addon_stainless_body": "47647",
     "basiс_grille_price": "35823",
@@ -8269,7 +8755,8 @@ export default [
     "height": "140",
     "length": "4300",
     "fans_qnty": "8",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "195226",
     "addon_stainless_body": "48589",
     "basiс_grille_price": "36675",
@@ -8286,7 +8773,8 @@ export default [
     "height": "140",
     "length": "4400",
     "fans_qnty": "8",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "197918",
     "addon_stainless_body": "49531",
     "basiс_grille_price": "37524",
@@ -8303,7 +8791,8 @@ export default [
     "height": "140",
     "length": "4500",
     "fans_qnty": "8",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "201054",
     "addon_stainless_body": "50629",
     "basiс_grille_price": "38378",
@@ -8320,7 +8809,8 @@ export default [
     "height": "140",
     "length": "4600",
     "fans_qnty": "8",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "204188",
     "addon_stainless_body": "51726",
     "basiс_grille_price": "39233",
@@ -8337,7 +8827,8 @@ export default [
     "height": "140",
     "length": "4700",
     "fans_qnty": "8",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "207324",
     "addon_stainless_body": "52823",
     "basiс_grille_price": "40087",
@@ -8354,7 +8845,8 @@ export default [
     "height": "140",
     "length": "4800",
     "fans_qnty": "8",
-    "related_items": "kvu-420-140-90,kvu-420-140-135",
+    "related_items": "wh-wt,wh-bk,wh-gd,brt-500,kvu-420-140-90,kvu-420-140-135",
+
     "price": "210460",
     "addon_stainless_body": "53921",
     "basiс_grille_price": "40942",
