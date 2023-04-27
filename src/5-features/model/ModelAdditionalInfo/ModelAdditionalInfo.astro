@@ -16,7 +16,11 @@ const { Content: ModelAdditionalInfo } = modelAdditionalInfo
 
 {
   ModelAdditionalInfo && (
-    <div class='prose-sm mt-10'>
+    <div
+      id='model-additional-info'
+      class='prose-sm mt-10'
+      aria-label={`Дополнительная информация о Velar ${model.name}`}
+    >
       <ModelAdditionalInfo />
     </div>
   )

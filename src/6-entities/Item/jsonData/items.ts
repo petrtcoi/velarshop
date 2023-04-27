@@ -2,6 +2,42 @@ import type { ItemJson } from '../types/Item.type'
 
 export const itemsJsonData: ItemJson[] = [
   {
+    "id": "wh-wt",
+    "slug": "wh-wt",
+    "mdx_slug": "wh",
+    "image_slug": "wh-wt",
+    "prefix": "Термостат",
+    "title": "WH, белый",
+    "price": "7100"
+  },
+  {
+    "id": "wh-bk",
+    "slug": "wh-bk",
+    "mdx_slug": "wh",
+    "image_slug": "wh-bk",
+    "prefix": "Термостат",
+    "title": "WH, черный",
+    "price": "7100"
+  },
+  {
+    "id": "wh-gd",
+    "slug": "wh-gd",
+    "mdx_slug": "wh",
+    "image_slug": "wh-gd",
+    "prefix": "Термостат",
+    "title": "WH, золото",
+    "price": "7100"
+  },
+  {
+    "id": "brt-500",
+    "slug": "brt-500",
+    "mdx_slug": "brt-500",
+    "image_slug": "brt-500",
+    "prefix": "Блок регулирования",
+    "title": "БРТ 500",
+    "price": "8800"
+  },
+  {
     "id": "kvu-150-65-90",
     "slug": "kvu-150-65-90",
     "mdx_slug": "kvu90",
