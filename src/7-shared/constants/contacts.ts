@@ -9,7 +9,7 @@ export const contacts = {
   email: 'mail@velarshop.ru',
   emailFrom: 'VelarShop.ru <mail@velarshop.ru>',
   instagram: 'mouseliteru',
-  vk: "ooomouselite",
+  vk: "lovehomekomfort",
   telegram: "mouselite",
   emailNotifications: 'mail@velarshop.ru',
   mouseliteWebsite: 'https://mouselite.ru',
