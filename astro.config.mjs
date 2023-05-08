@@ -10,5 +10,12 @@ import robotsTxt from "astro-robots-txt"
 // https://astro.build/config
 export default defineConfig( {
   site: 'https://velarshop.ru',
-  integrations: [ tailwind(), image(), mdx(), preact(), sitemap(), robotsTxt() ]
+  integrations: [
+    tailwind(),
+    image(),
+    mdx(),
+    preact(),
+    sitemap(),
+    robotsTxt( { sitemap: [ "https://velarshop.ru/sitemap-index.xml" ] } )
+  ]
 } )
