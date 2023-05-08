@@ -5,10 +5,10 @@ import mdx from "@astrojs/mdx"
 import preact from "@astrojs/preact"
 import sitemap from '@astrojs/sitemap'
 
-
+import robotsTxt from "astro-robots-txt"
 
 // https://astro.build/config
 export default defineConfig( {
   site: 'https://velarshop.ru',
-  integrations: [ tailwind(), image(), mdx(), preact(), sitemap() ],
+  integrations: [ tailwind(), image(), mdx(), preact(), sitemap(), robotsTxt() ]
 } )
