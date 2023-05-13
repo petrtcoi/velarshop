@@ -4,7 +4,6 @@ import { computed } from 'nanostores'
 
 const version = await import.meta.env.PUBLIC_LOCAL_STORAGE_VERSION
 
-
 const ironcastColorId = persistentAtom<string>(`velarshop_ironcast_color_active/${ version }`, "")
 
 const ironcastColor = computed(ironcastColorId, (colorId) => {
@@ -20,7 +19,6 @@ const ironcastColorPricePerSection = computed(ironcastColor, (color) => {
   if (!color) return 0
   return parseInt(color.price_section)
 })
-
 
 export {
   ironcastColorId,

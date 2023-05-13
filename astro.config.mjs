@@ -6,7 +6,6 @@ import preact from "@astrojs/preact"
 import sitemap from '@astrojs/sitemap'
 import robotsTxt from "astro-robots-txt"
 
-import compress from "astro-compress"
 
 // https://astro.build/config
 export default defineConfig( {
