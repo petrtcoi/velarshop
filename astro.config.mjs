@@ -13,8 +13,5 @@ export default defineConfig( {
   site: 'https://velarshop.ru',
   integrations: [ tailwind(), image(), mdx(), preact(), sitemap(), robotsTxt( {
     sitemap: [ "https://velarshop.ru/sitemap-index.xml" ]
-  } ), compress( {
-    css: true,
-    html: true,
   } ) ],
 } )

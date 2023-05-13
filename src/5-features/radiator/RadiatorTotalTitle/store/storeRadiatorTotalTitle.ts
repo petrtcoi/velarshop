@@ -5,7 +5,6 @@ import type { RadiatorJson } from "@entities/Radiator"
 import { radiatorConnPostfix } from "@features/options/SelectConnection"
 import { convectorGrillPostfix } from "@features/options/SelectConvectorGrill"
 import { ironcastColorPostfix } from "@features/options/SelectIroncastColor"
-import { useStore } from "@nanostores/preact"
 import { getRadiatorTitle } from "@shared/utils/getRadiatorTitle"
 import { addonPostfix } from "@features/options/SelectAddons"
 
