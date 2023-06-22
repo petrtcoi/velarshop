@@ -8,9 +8,8 @@ export const contacts = {
   website: 'www.velarshop.ru',
   email: 'mail@velarshop.ru',
   emailFrom: 'VelarShop.ru <mail@velarshop.ru>',
-  instagram: 'mouseliteru',
   vk: "lovehomekomfort",
-  telegram: "mouselite",
+  telegram: "https://t.me/mouselite",
   emailNotifications: 'mail@velarshop.ru',
-  mouseliteWebsite: 'https://mouselite.ru',
+  homekomfortWebsite: 'https://homekomfort.ru',
 }
