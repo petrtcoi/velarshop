@@ -118,9 +118,33 @@ export const modelsJsonData: ModelJson[] = [
     "prefix": "Дизайн-радиатор",
     "orientation": "horizontal",
     "connections": "lat,l50,r50,050,lr",
-    "related_models": "q80h,p30v",
+    "related_models": "q80h,p30h",
     "related_items": "",
     "short_comment": "Горизонтальный радиатор. Секции имеют квадратное сечение 40х40 мм"
+  },
+  {
+    "id": "q60h",
+    "slug": "q60h",
+    "name": "Q 60 H",
+    "type": "design",
+    "prefix": "Дизайн-радиатор",
+    "orientation": "horizontal",
+    "connections": "lat,l50,r50,050,lr",
+    "related_models": "q40h,q80h,p30h",
+    "related_items": "",
+    "short_comment": "Горизонтальный радиатор. Секции имеют квадратное сечение 60х60 мм"
+  },
+  {
+    "id": "q60v",
+    "slug": "q60v",
+    "name": "Q 60 V",
+    "type": "design",
+    "prefix": "Дизайн-радиатор",
+    "orientation": "vertical",
+    "connections": "lat,l50,r50,050,lr",
+    "related_models": "q40v,q80v,p30v,qt1v,qt2v",
+    "related_items": "",
+    "short_comment": "Вертикальный радиатор. Секции имеют квадратное сечение 60х60 мм"
   },
   {
     "id": "q80v",

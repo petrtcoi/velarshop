@@ -23,6 +23,7 @@ type RadiatorJson = {
   related_items?: string
 
   addon_design_radiators_legs?: string
+  addon_design_radiators_legs_v?: string
   addon_stainless_body?: string
 
   anod_color_grille_price?: string
