@@ -53,7 +53,7 @@ const { model, radiator } = Astro.props as Props;
     radiator={radiator}
   />
   <div class='mt-10'>
-    <ModelDescription slug={model.slug} />
+    <ModelDescription slug={model.slug} isColumns={model.type === 'columns'}/>
   </div>
   <ModelDownloadSchema model={model} />
   <ModelAdditionalInfo model={model} />
