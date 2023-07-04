@@ -12,10 +12,11 @@ const { slug, name, prefix } = model;
   class='mt-0 mb-1'
   aria-label='Breadcrumb'
 >
+<span class="text-xs font-thin">модель: </span>
   <a
     href={`/model/${slug}`}
     aria-label='Перейти на страницу модели'
-    class='text-xs hover:underline'
+    class='text-xs text-red-500 hover:underline'
   >
     {prefix}
     {name}
