@@ -12,7 +12,7 @@ export const modelsJsonData: ModelJson[] = [
     "connections": "lat,l50,r50,050,lr",
     "related_models": "q40v,r32v,spv,q80v",
     "related_items": "",
-    "short_comment": "Классический вертикальный радиатор с прямоугольным сечением труб 30х60 мм"
+    "short_comment": "Классический вертикальный радиатор с прямоугольным сечением труб 30х60 мм."
   },
   {
     "id": "p30h",
@@ -24,7 +24,7 @@ export const modelsJsonData: ModelJson[] = [
     "connections": "lat,l50,r50,050,lr",
     "related_models": "q40h,sph,q80h",
     "related_items": "",
-    "short_comment": "Горизонтальная версия популярной модели.  Для установки под  окна"
+    "short_comment": "Горизонтальная версия популярной модели.  Для установки под  окна."
   },
   {
     "id": "p60v",
@@ -36,7 +36,7 @@ export const modelsJsonData: ModelJson[] = [
     "connections": "lat,l50,r50,050,lr",
     "related_models": "spv,q80v",
     "related_items": "",
-    "short_comment": "Плоский дизайн-радиатор с вертикальным расопложением труб. Сечение 30х60 мм"
+    "short_comment": "Плоский дизайн-радиатор с вертикальным расопложением труб. Сечение 30х60 мм."
   },
   {
     "id": "p60h",
@@ -48,7 +48,7 @@ export const modelsJsonData: ModelJson[] = [
     "connections": "lat,l50,r50,050,lr",
     "related_models": "sph,q80h",
     "related_items": "",
-    "short_comment": "Горизонтальный радиатор. Плоские трубы, расположенные параллельно стене"
+    "short_comment": "Горизонтальный радиатор. Плоские трубы, расположенные параллельно стене."
   },
   {
     "id": "sv",
@@ -60,7 +60,7 @@ export const modelsJsonData: ModelJson[] = [
     "connections": "lat,l50,r50,050,lr",
     "related_models": "p30v,spv,rt1v,r32v",
     "related_items": "",
-    "short_comment": "Вертикальный радиатор выполнен из стального профиля овальной формы"
+    "short_comment": "Вертикальный радиатор выполнен из стального профиля овальной формы."
   },
   {
     "id": "sh",
@@ -72,7 +72,7 @@ export const modelsJsonData: ModelJson[] = [
     "connections": "lat,l50,r50,050,lr",
     "related_models": "p30h,sph,r32h",
     "related_items": "",
-    "short_comment": "Овальное сечение труб 30х50 мм. Горизонтальное расположение"
+    "short_comment": "Овальное сечение труб 30х50 мм. Горизонтальное расположение."
   },
   {
     "id": "spv",
@@ -84,7 +84,7 @@ export const modelsJsonData: ModelJson[] = [
     "connections": "lat,l50,r50,050,lr",
     "related_models": "p30v,q40v,r32v",
     "related_items": "",
-    "short_comment": "Вертикальный радиатор с секциями овальной формы, расположенными вдоль стены"
+    "short_comment": "Вертикальный радиатор с секциями овальной формы, расположенными вдоль стены."
   },
   {
     "id": "sph",
@@ -96,7 +96,7 @@ export const modelsJsonData: ModelJson[] = [
     "connections": "lat,l50,r50,050,lr",
     "related_models": "p30h,q40h,r32h",
     "related_items": "",
-    "short_comment": "Горизонтальный радиатор с секциями овальной формы, расположенными вдоль стены"
+    "short_comment": "Горизонтальный радиатор с секциями овальной формы, расположенными вдоль стены."
   },
   {
     "id": "q40v",
@@ -108,7 +108,7 @@ export const modelsJsonData: ModelJson[] = [
     "connections": "lat,l50,r50,050,lr",
     "related_models": "q80v,p30v,qt1v,qt2v",
     "related_items": "",
-    "short_comment": "Вертикальный радиатор. Секции имеют квадратное сечение 40х40 мм"
+    "short_comment": "Вертикальный радиатор. Секции имеют квадратное сечение 40х40 мм."
   },
   {
     "id": "q40h",
@@ -120,7 +120,19 @@ export const modelsJsonData: ModelJson[] = [
     "connections": "lat,l50,r50,050,lr",
     "related_models": "q80h,p30h",
     "related_items": "",
-    "short_comment": "Горизонтальный радиатор. Секции имеют квадратное сечение 40х40 мм"
+    "short_comment": "Горизонтальный радиатор. Секции имеют квадратное сечение 40х40 мм."
+  },
+  {
+    "id": "q60v",
+    "slug": "q60v",
+    "name": "Q 60 V",
+    "type": "design",
+    "prefix": "Дизайн-радиатор",
+    "orientation": "vertical",
+    "connections": "lat,l50,r50,050,lr",
+    "related_models": "q40v,p80v,qt1v,qt2v",
+    "related_items": "",
+    "short_comment": "Вертикальный радиатор. Секции имеют квадратное сечение 60х60 мм."
   },
   {
     "id": "q60h",
@@ -132,19 +144,7 @@ export const modelsJsonData: ModelJson[] = [
     "connections": "lat,l50,r50,050,lr",
     "related_models": "q40h,q80h,p30h",
     "related_items": "",
-    "short_comment": "Горизонтальный радиатор. Секции имеют квадратное сечение 60х60 мм"
-  },
-  {
-    "id": "q60v",
-    "slug": "q60v",
-    "name": "Q 60 V",
-    "type": "design",
-    "prefix": "Дизайн-радиатор",
-    "orientation": "vertical",
-    "connections": "lat,l50,r50,050,lr",
-    "related_models": "q40v,q80v,p30v,qt1v,qt2v",
-    "related_items": "",
-    "short_comment": "Вертикальный радиатор. Секции имеют квадратное сечение 60х60 мм"
+    "short_comment": "Горизонтальный радиатор. Секции имеют квадратное сечение 60х60 мм."
   },
   {
     "id": "q80v",
@@ -154,9 +154,9 @@ export const modelsJsonData: ModelJson[] = [
     "prefix": "Дизайн-радиатор",
     "orientation": "vertical",
     "connections": "lat,l50,r50,050,lr",
-    "related_models": "q40v,p30v,qt1v,qt2v",
+    "related_models": "q40v,p30v,q60v,qt1v,qt2v",
     "related_items": "",
-    "short_comment": "Вертикальный радиатор. Секции имеют квадратное сечение 80х80 мм"
+    "short_comment": "Вертикальный радиатор. Секции имеют квадратное сечение 80х80 мм."
   },
   {
     "id": "q80h",
@@ -166,9 +166,9 @@ export const modelsJsonData: ModelJson[] = [
     "prefix": "Дизайн-радиатор",
     "orientation": "horizontal",
     "connections": "lat,l50,r50,050,lr",
-    "related_models": "q40h,p30h",
+    "related_models": "q40h,q60h,p30h",
     "related_items": "",
-    "short_comment": "Горизонтальный радиатор. Секции имеют квадратное сечение 80х80 мм"
+    "short_comment": "Горизонтальный радиатор. Секции имеют квадратное сечение 80х80 мм."
   },
   {
     "id": "r32v",
@@ -252,7 +252,7 @@ export const modelsJsonData: ModelJson[] = [
     "connections": "lat,l50,r50,050,lr",
     "related_models": "rt1v,qt1v",
     "related_items": "",
-    "short_comment": "Оригинальный вевртикальный радиатор. Диаметр секций 32 мм"
+    "short_comment": "Оригинальный вевртикальный радиатор. Диаметр секций 32 мм."
   },
   {
     "id": "qt1v",
@@ -300,7 +300,7 @@ export const modelsJsonData: ModelJson[] = [
     "connections": "lat,l50,r50,lr",
     "related_models": "p300,q500",
     "related_items": "",
-    "short_comment": "Напольный радиатор высотой 191 мм. Подходит для установки перед панорамными окнами"
+    "short_comment": "Напольный радиатор высотой 191 мм. Подходит для установки перед панорамными окнами."
   },
   {
     "id": "p300",
@@ -312,7 +312,7 @@ export const modelsJsonData: ModelJson[] = [
     "connections": "lat,l50,r50,lr",
     "related_models": "p200,q500",
     "related_items": "",
-    "short_comment": "Напольный радиатор высотой 191 мм. Подходит для установки перед панорамными окнами"
+    "short_comment": "Напольный радиатор высотой 191 мм. Подходит для установки перед панорамными окнами."
   },
   {
     "id": "kwh",
@@ -324,7 +324,7 @@ export const modelsJsonData: ModelJson[] = [
     "connections": "",
     "related_models": "kwhv",
     "related_items": "",
-    "short_comment": "Естественная конвекция. Ширина 150-420 мм. Высота 65-140 мм"
+    "short_comment": "Естественная конвекция. Ширина 150-420 мм. Высота 65-140 мм."
   },
   {
     "id": "kwhv",
@@ -336,7 +336,7 @@ export const modelsJsonData: ModelJson[] = [
     "connections": "",
     "related_models": "kwh",
     "related_items": "",
-    "short_comment": "Принудительная конвекция. Ширина 250-420 мм. Высота 85-140 мм"
+    "short_comment": "Принудительная конвекция. Ширина 250-420 мм. Высота 85-140 мм."
   },
   {
     "id": "nostalgia500",
@@ -361,5 +361,389 @@ export const modelsJsonData: ModelJson[] = [
     "related_models": "nostalgia500",
     "related_items": "",
     "short_comment": "Чугунный радиатор без орнамента. Отлично подходит для интерьеров в стиле лофт"
+  },
+  {
+    "id": "2030",
+    "slug": "2030",
+    "name": "2030",
+    "type": "columns",
+    "prefix": "Трубчатый радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "3030,2037,3037",
+    "related_items": "",
+    "short_comment": "Двух-трубчатый радиатор высотой 300 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 34.7 Вт."
+  },
+  {
+    "id": "3030",
+    "slug": "3030",
+    "name": "3030",
+    "type": "columns",
+    "prefix": "Трубчатый радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "2030,3037",
+    "related_items": "",
+    "short_comment": "Трех-трубчатый радиатор высотой 300 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 41.1 Вт."
+  },
+  {
+    "id": "2037",
+    "slug": "2037",
+    "name": "2037",
+    "type": "columns",
+    "prefix": "Трубчатый радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "3037,2030,2040",
+    "related_items": "",
+    "short_comment": "Двух-трубчатый радиатор высотой 376 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 42.5 Вт."
+  },
+  {
+    "id": "3037",
+    "slug": "3037",
+    "name": "3037",
+    "type": "columns",
+    "prefix": "Трубчатый радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "2037,3030,3040",
+    "related_items": "",
+    "short_comment": "Трех-трубчатый радиатор высотой 376 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 49.5 Вт."
+  },
+  {
+    "id": "2040",
+    "slug": "2040",
+    "name": "2040",
+    "type": "columns",
+    "prefix": "Трубчатый радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "3040,2037,2045",
+    "related_items": "",
+    "short_comment": "Двух-трубчатый радиатор высотой 400 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 45.8 Вт."
+  },
+  {
+    "id": "3040",
+    "slug": "3040",
+    "name": "3040",
+    "type": "columns",
+    "prefix": "Трубчатый радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "2040,3037,3045",
+    "related_items": "",
+    "short_comment": "Трех-трубчатый радиатор высотой 400 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 53.7 Вт."
+  },
+  {
+    "id": "2045",
+    "slug": "2045",
+    "name": "2045",
+    "type": "columns",
+    "prefix": "Трубчатый радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "3045,2040,2050",
+    "related_items": "",
+    "short_comment": "Двух-трубчатый радиатор высотой 450 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 51 Вт."
+  },
+  {
+    "id": "3045",
+    "slug": "3045",
+    "name": "3045",
+    "type": "columns",
+    "prefix": "Трубчатый радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "2045,3040,3050",
+    "related_items": "",
+    "short_comment": "Трех-трубчатый радиатор высотой 450 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 59.9 Вт."
+  },
+  {
+    "id": "2050",
+    "slug": "2050",
+    "name": "2050",
+    "type": "columns",
+    "prefix": "Трубчатый радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "3050,2045,2057",
+    "related_items": "",
+    "short_comment": "Двух-трубчатый радиатор высотой 500 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 56.5 Вт."
+  },
+  {
+    "id": "3050",
+    "slug": "3050",
+    "name": "3050",
+    "type": "columns",
+    "prefix": "Трубчатый радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "2050,3045,3057",
+    "related_items": "",
+    "short_comment": "Трех-трубчатый радиатор высотой 500 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 66 Вт."
+  },
+  {
+    "id": "2055",
+    "slug": "2055",
+    "name": "2055",
+    "type": "columns",
+    "prefix": "Трубчатый радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "3055,2050,2057",
+    "related_items": "",
+    "short_comment": "Двух-трубчатый радиатор высотой 550 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 61.3 Вт."
+  },
+  {
+    "id": "3055",
+    "slug": "3055",
+    "name": "3055",
+    "type": "columns",
+    "prefix": "Трубчатый радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "2055,3050,3057",
+    "related_items": "",
+    "short_comment": "Трех-трубчатый радиатор высотой 550 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 72 Вт."
+  },
+  {
+    "id": "2057",
+    "slug": "2057",
+    "name": "2057",
+    "type": "columns",
+    "prefix": "Трубчатый радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "3057,2055,2060",
+    "related_items": "",
+    "short_comment": "Двух-трубчатый радиатор высотой 576 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 62.7 Вт."
+  },
+  {
+    "id": "3057",
+    "slug": "3057",
+    "name": "3057",
+    "type": "columns",
+    "prefix": "Трубчатый радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "2057,3055,3060",
+    "related_items": "",
+    "short_comment": "Трех-трубчатый радиатор высотой 576 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 73.9 Вт."
+  },
+  {
+    "id": "2060",
+    "slug": "2060",
+    "name": "2060",
+    "type": "columns",
+    "prefix": "Трубчатый радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "3060,2057,2075",
+    "related_items": "",
+    "short_comment": "Двух-трубчатый радиатор высотой 600 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 66.1 Вт."
+  },
+  {
+    "id": "3060",
+    "slug": "3060",
+    "name": "3060",
+    "type": "columns",
+    "prefix": "Трубчатый радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "2060,3057,3075",
+    "related_items": "",
+    "short_comment": "Трех-трубчатый радиатор высотой 600 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 77.9 Вт."
+  },
+  {
+    "id": "2075",
+    "slug": "2075",
+    "name": "2075",
+    "type": "columns",
+    "prefix": "Трубчатый радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "3075,2060,2090",
+    "related_items": "",
+    "short_comment": "Двух-трубчатый радиатор высотой 750 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 80 Вт."
+  },
+  {
+    "id": "3075",
+    "slug": "3075",
+    "name": "3075",
+    "type": "columns",
+    "prefix": "Трубчатый радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "2075,3060,3090",
+    "related_items": "",
+    "short_comment": "Трех-трубчатый радиатор высотой 750 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 94.8 Вт."
+  },
+  {
+    "id": "2090",
+    "slug": "2090",
+    "name": "2090",
+    "type": "columns",
+    "prefix": "Трубчатый радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "3090,2075,2100",
+    "related_items": "",
+    "short_comment": "Двух-трубчатый радиатор высотой 900 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 92.7 Вт."
+  },
+  {
+    "id": "3090",
+    "slug": "3090",
+    "name": "3090",
+    "type": "columns",
+    "prefix": "Трубчатый радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "2090,3075,3100",
+    "related_items": "",
+    "short_comment": "Трех-трубчатый радиатор высотой 900 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 110.8 Вт."
+  },
+  {
+    "id": "2100",
+    "slug": "2100",
+    "name": "2100",
+    "type": "columns",
+    "prefix": "Трубчатый радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "3100,2090,2110",
+    "related_items": "",
+    "short_comment": "Двух-трубчатый радиатор высотой 1000 мм. Число секций от 4 до 20. Мощность секции (ΔT60): 100.5 Вт."
+  },
+  {
+    "id": "3100",
+    "slug": "3100",
+    "name": "3100",
+    "type": "columns",
+    "prefix": "Трубчатый радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "2100,3090,3110",
+    "related_items": "",
+    "short_comment": "Трех-трубчатый радиатор высотой 1000 мм. Число секций от 4 до 20. Мощность секции (ΔT60): 120.9 Вт."
+  },
+  {
+    "id": "2110",
+    "slug": "2110",
+    "name": "2110",
+    "type": "columns",
+    "prefix": "Трубчатый радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "3110,2100,2120",
+    "related_items": "",
+    "short_comment": "Двух-трубчатый радиатор высотой 1100 мм. Число секций от 4 до 20. Мощность секции (ΔT60): 107.8 Вт."
+  },
+  {
+    "id": "3110",
+    "slug": "3110",
+    "name": "3110",
+    "type": "columns",
+    "prefix": "Трубчатый радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "2110,3100,3120",
+    "related_items": "",
+    "short_comment": "Трех-трубчатый радиатор высотой 1100 мм. Число секций от 4 до 20. Мощность секции (ΔT60): 130.6 Вт."
+  },
+  {
+    "id": "2120",
+    "slug": "2120",
+    "name": "2120",
+    "type": "columns",
+    "prefix": "Трубчатый радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "3120,2110,2150",
+    "related_items": "",
+    "short_comment": "Двух-трубчатый радиатор высотой 1200 мм. Число секций от 4 до 20. Мощность секции (ΔT60): 122.9 Вт."
+  },
+  {
+    "id": "3120",
+    "slug": "3120",
+    "name": "3120",
+    "type": "columns",
+    "prefix": "Трубчатый радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "2120,3110,3150",
+    "related_items": "",
+    "short_comment": "Трех-трубчатый радиатор высотой 1200 мм. Число секций от 4 до 20. Мощность секции (ΔT60): 148.7 Вт."
+  },
+  {
+    "id": "2150",
+    "slug": "2150",
+    "name": "2150",
+    "type": "columns",
+    "prefix": "Трубчатый радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "3150,2120,2180",
+    "related_items": "",
+    "short_comment": "Двух-трубчатый радиатор высотой 1500 мм. Число секций от 4 до 20. Мощность секции (ΔT60): 153.9 Вт."
+  },
+  {
+    "id": "3150",
+    "slug": "3150",
+    "name": "3150",
+    "type": "columns",
+    "prefix": "Трубчатый радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "2150,3120,3180",
+    "related_items": "",
+    "short_comment": "Трех-трубчатый радиатор высотой 1500 мм. Число секций от 4 до 20. Мощность секции (ΔT60): 181.9 Вт."
+  },
+  {
+    "id": "2180",
+    "slug": "2180",
+    "name": "2180",
+    "type": "columns",
+    "prefix": "Трубчатый радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "3180,2150,2200",
+    "related_items": "",
+    "short_comment": "Двух-трубчатый радиатор высотой 1800 мм. Число секций от 4 до 20. Мощность секции (ΔT60): 184.1 Вт."
+  },
+  {
+    "id": "3180",
+    "slug": "3180",
+    "name": "3180",
+    "type": "columns",
+    "prefix": "Трубчатый радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "2180,3150,3200",
+    "related_items": "",
+    "short_comment": "Трех-трубчатый радиатор высотой 1800 мм. Число секций от 4 до 20. Мощность секции (ΔT60): 215.1 Вт."
+  },
+  {
+    "id": "2200",
+    "slug": "2200",
+    "name": "2200",
+    "type": "columns",
+    "prefix": "Трубчатый радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "3200,2180",
+    "related_items": "",
+    "short_comment": "Двух-трубчатый радиатор высотой 2000 мм. Число секций от 4 до 20. Мощность секции (ΔT60): 203.8 Вт."
+  },
+  {
+    "id": "3200",
+    "slug": "3200",
+    "name": "3200",
+    "type": "columns",
+    "prefix": "Трубчатый радиатор",
+    "orientation": "",
+    "connections": "",
+    "related_models": "2200,3180",
+    "related_items": "",
+    "short_comment": "Трех-трубчатый радиатор высотой 2000 мм. Число секций от 4 до 20. Мощность секции (ΔT60): 237.3 Вт."
   }
-]
+ ]

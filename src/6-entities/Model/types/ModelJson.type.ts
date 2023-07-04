@@ -1,7 +1,7 @@
 
 
 type Orientation = 'vertical' | 'horizontal' | ''
-type ModelType = 'design' | 'floor' | 'convector' | 'ironcast'
+type ModelType = 'design' | 'floor' | 'convector' | 'ironcast' | 'columns'
 
 type ModelJson = {
   id: string
