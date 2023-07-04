@@ -18,9 +18,9 @@ type Props = {
 };
 
 const { model } = Astro.props as Props;
-const { name, prefix, slug } = model;
+const { name, prefix, slug, type } = model;
 
-const imagePath = getModelMainImagePath(model.slug);
+const imagePath = getModelMainImagePath(model.slug, model.type === 'columns' );
 
 const minPrice =
   radiatorsJsonData

@@ -35,13 +35,13 @@ export function getColumnRadiators(): RadiatorJson[] {
         return {
           ...model,
           price: (parseInt(price) * sections).toString(),
-          dt50: (parseInt(dt50) * sections).toFixed(2),
-          dt60: (parseInt(dt60) * sections).toFixed(2),
-          dt70: (parseInt(dt70) * sections).toFixed(2),
+          dt50: (parseInt(dt50) * sections).toFixed(0),
+          dt60: (parseInt(dt60) * sections).toFixed(0),
+          dt70: (parseInt(dt70) * sections).toFixed(0),
           weight: (parseFloat(weight) * sections).toFixed(2),
           volume: (parseFloat(volume) * sections).toFixed(2),
           sections: sections.toString(),
-          length: (parseInt(length) * sections).toFixed(2),
+          length: (parseInt(length) * sections).toFixed(0),
         }
       })
     })

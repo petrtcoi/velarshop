@@ -18,7 +18,9 @@ const models = modelsJsonData.filter((m) => m.type === type);
   {
     models.map((m, i) => {
       const title = `${m.prefix} Velar ${m.name}`;
-      const imgPath = `/images/models/${m.slug}/main.jpg`;
+      const imgPath = type !== 'columns' // TODO: remove this columns hack :(
+      ? `/images/models/${m.slug}/main.jpg`
+      : `/images/models/columns/main${m.id[0]}.jpg`
       const modelHref = `/model/${m.slug}`;
 
       return (

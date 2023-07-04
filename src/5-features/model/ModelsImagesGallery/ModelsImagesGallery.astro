@@ -19,7 +19,8 @@ const _images = await Promise.all(
       const modelId = arr.at(-2);
       if (modelId !== model.id) return false;
       const fileName = arr.at(-1);
-      if (ignoreMain === true && fileName === "main.jpg") return false;
+      if (!fileName) return false;
+      if (ignoreMain === true && fileName.includes("main")) return false;
       return true;
     })
     .map(([_, value]) => value())
