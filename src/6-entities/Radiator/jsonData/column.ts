@@ -28,7 +28,7 @@ export function getColumnRadiators(): RadiatorJson[] {
           weight: (parseFloat(weight) * sections).toFixed(2),
           volume: (parseFloat(volume) * sections).toFixed(2),
           sections: sections.toString(),
-          length: (parseInt(length) * sections).toFixed(0),
+          length: (parseInt(length) * sections + 18).toFixed(0),
         }
       })
     })
