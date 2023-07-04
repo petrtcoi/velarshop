@@ -30,7 +30,9 @@ const relatedModels =
       <div class='flex flex-row flex-wrap items-top gap-8 justify-start'>
         {relatedModels.map((m) => {
           const title = `${m.prefix} Velar ${m.name}`;
-          const imgPath = `/images/models/${m.slug}/main.jpg`;
+          const imgPath = model.type !== 'columns' // TODO: remove columns type hack
+          ? `/images/models/${m.slug}/main.jpg`
+          : `/images/models/columns/main${m.slug[0]}.jpg`
           const modelHref = `/model/${m.slug}`;
 
           return (
