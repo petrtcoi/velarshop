@@ -8,6 +8,10 @@ import { getConvectorGrillPrice } from "@shared/utils/getConvectorGrillPrice"
 
 import type { ModelJson } from "@entities/Model"
 import type { RadiatorJson } from "@entities/Radiator"
+import {
+  columnColor,
+  columnColorPriceMultiplicate,
+} from "@features/options/SelectColumnColor"
 
 const getGrillCost = computed(
   convectorGrill,
@@ -33,15 +37,42 @@ const getAddonCost = computed(
     addonId ? parseInt(radiator[addonId as keyof RadiatorJson] || "0") : 0
 )
 
+const getColumnColorCostMultiplicate = computed(
+  columnColorPriceMultiplicate,
+  columnColorPriceMultiplicate => (model: ModelJson) =>
+    model.type !== "columns" ? 1 : columnColorPriceMultiplicate
+)
+
+const getColumnConnectionCost = computed(
+  columnConn,
+  columnConn => (model: ModelJson) =>
+    model.type !== "columns" || !columnConn ? 0 : columnConn.priceRub || 0
+)
+
 const getRadiatorTotalCost = computed(
-  [getGrillCost, getIronCastCost, getAddonCost, columnConn],
-  (getGrillCost, getIronCastCost, getAddonCost, columnConn) =>
+  [
+    getGrillCost,
+    getIronCastCost,
+    getAddonCost,
+    columnConn,
+    getColumnColorCostMultiplicate,
+    getColumnConnectionCost,
+  ],
+  (
+      getGrillCost,
+      getIronCastCost,
+      getAddonCost,
+      columnConn,
+      getColumnColorCostMultiplicate,
+      getColumnConnectionCost
+    ) =>
     (model: ModelJson, radiator: RadiatorJson) =>
-      parseInt(radiator.price) +
-      getGrillCost(model, radiator) +
-      getIronCastCost(model, radiator) +
-      getAddonCost(radiator) +
-      (columnConn ? columnConn.priceRub || 0 : 0)
+      getColumnColorCostMultiplicate(model) *
+      (parseInt(radiator.price) +
+        getGrillCost(model, radiator) +
+        getIronCastCost(model, radiator) +
+        getAddonCost(radiator) +
+        getColumnConnectionCost(model))
 )
 
 export { getRadiatorTotalCost }
