@@ -22,7 +22,7 @@ const columnConn = computed(columnConnId, connId => {
 
 const columnConnPostfix = computed(columnConn, connection => {
   if (!connection) return ""
-  return `, ${connection.code}`
+  return `, ${connection.code.toLowerCase()}`
 })
 
 export { columnConnId, columnConn, columnConnPostfix, columnConnIdBackup }

@@ -15,7 +15,7 @@ const columnColor = computed(columnColorId, colorId => {
 
 const columnColorPostfix = computed(columnColor, color => {
   if (!color) return ""
-  return `, ${color.title.toLowerCase()}`
+  return `, ${color.shortName.toLowerCase()}`
 })
 
 const columnColorPriceMultiplicate = computed(columnColor, color => {

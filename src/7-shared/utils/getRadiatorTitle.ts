@@ -23,7 +23,7 @@ export function getRadiatorTitle({ model, radiator }: Props): string {
   if (model.type === "columns") {
     const modelTitle = model.name
     const sectionsPrefix =
-      parseInt(radiator.sections || "1") > 9
+      parseInt(radiator.sections || "1") < 10
         ? `0${radiator.sections}`
         : `${radiator.sections}`
 

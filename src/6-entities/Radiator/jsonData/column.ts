@@ -20,6 +20,7 @@ export function getColumnRadiators(): RadiatorJson[] {
 
         return {
           ...model,
+          slug: `${model.slug}-${sections}`,
           price: (parseInt(price) * sections).toString(),
           dt50: (parseInt(dt50) * sections).toFixed(0),
           dt60: (parseInt(dt60) * sections).toFixed(0),

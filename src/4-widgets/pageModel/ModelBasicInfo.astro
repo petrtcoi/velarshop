@@ -53,7 +53,7 @@ const minPrice =
         minPrice={minPrice}
         client:only='preact'
       />
-      <ModelDescription slug={slug} />
+      <ModelDescription slug={slug} isColumns={model.type === 'columns'}/>
       <ModelDownloadSchema model={model} />
     </div>
   </LeftRightBlock4555>

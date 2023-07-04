@@ -1,20 +1,20 @@
 ---
 import { getEntryBySlug } from "astro:content";
 
-type Props = { slug: string };
-const { slug } = Astro.props satisfies Props;
+type Props = { slug: string, isColumns?: boolean };
+const { slug, isColumns = false } = Astro.props satisfies Props;
 
-const modelDescription = await getEntryBySlug("modelDescriptions", slug);
+const modelDescription = await getEntryBySlug("modelDescriptions", isColumns ? "columns" : slug);
 
-const { Content: ModelDescription } = modelDescription
+const { Content } = modelDescription
   ? await modelDescription.render()
   : { Content: null };
 ---
 
 {
-  ModelDescription !== null && (
+  Content !== null && (
     <div class='prose-sm'>
-      <ModelDescription />
+      <Content />
     </div>
   )
 }
