@@ -1,4 +1,4 @@
-import { computed } from 'nanostores'
+import { computed } from "nanostores"
 
 import type { ModelJson } from "@entities/Model"
 import type { RadiatorJson } from "@entities/Radiator"
@@ -8,33 +8,27 @@ import { ironcastColorPostfix } from "@features/options/SelectIroncastColor"
 import { getRadiatorTitle } from "@shared/utils/getRadiatorTitle"
 import { addonPostfix } from "@features/options/SelectAddons"
 
-
-
 const postfix = computed(
-  [ radiatorConnPostfix, ironcastColorPostfix, convectorGrillPostfix ],
+  [radiatorConnPostfix, ironcastColorPostfix, convectorGrillPostfix],
   (radiatorConnPostfix, ironcastColorPostfix, convectorGrillPostfix) =>
     (model: ModelJson) =>
-      (model.type === 'design' || model.type === 'floor')
+      model.type === "design" || model.type === "floor"
         ? radiatorConnPostfix
-        : model.type === 'ironcast'
-          ? ironcastColorPostfix
-          : model.type === 'convector'
-            ? convectorGrillPostfix
-            : ''
+        : model.type === "ironcast"
+        ? ironcastColorPostfix
+        : model.type === "convector"
+        ? convectorGrillPostfix
+        : model.type === "columns"
+        ? "Подключение"
+        : ""
 )
 
 const radiatorTotalTitle = computed(
-  [ postfix, addonPostfix ],
-  (postfix, addonPostfix) =>
-    (model: ModelJson, radiator: RadiatorJson) => {
-      const radiatorTitle = getRadiatorTitle({ model, radiator })
-      return `${ radiatorTitle }${ postfix(model) }${ addonPostfix }`
-    }
+  [postfix, addonPostfix],
+  (postfix, addonPostfix) => (model: ModelJson, radiator: RadiatorJson) => {
+    const radiatorTitle = getRadiatorTitle({ model, radiator })
+    return `${radiatorTitle}${postfix(model)}${addonPostfix}`
+  }
 )
 
 export { radiatorTotalTitle }
-
-
-
-
-
