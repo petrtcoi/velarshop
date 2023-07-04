@@ -27,7 +27,7 @@ export function getRadiatorTitle({ model, radiator }: Props): string {
         ? `0${radiator.sections}`
         : `${radiator.sections}`
 
-    return `Velar ${modelTitle}, ${sectionsPrefix} сек. `
+    return `Velar ${modelTitle}, ${sectionsPrefix} сек.`
   }
 
   if (model.type === "floor") {

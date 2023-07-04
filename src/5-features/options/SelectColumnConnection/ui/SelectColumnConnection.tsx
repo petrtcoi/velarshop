@@ -15,14 +15,11 @@ type Props = {
   model: ModelJson
 }
 
-function SelectConnection({ model }: Props) {
+function SelectColumnConnection({ model }: Props) {
   const columnConnIdBackup = useStore(storeColumnConnIdBackup)
   const columnConnId = useStore(storeColumnConnId)
 
-  const modelConnections = model.connections.split(",")
-  const connections = columnConnections.filter(conn =>
-    modelConnections.includes(conn.id)
-  )
+  const connections = columnConnections
 
   const options = connections.map(conn => ({
     id: conn.id,
@@ -64,4 +61,4 @@ function SelectConnection({ model }: Props) {
   )
 }
 
-export default SelectConnection
+export default SelectColumnConnection

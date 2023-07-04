@@ -3,14 +3,25 @@ import { computed } from "nanostores"
 import type { ModelJson } from "@entities/Model"
 import type { RadiatorJson } from "@entities/Radiator"
 import { radiatorConnPostfix } from "@features/options/SelectConnection"
+import { columnConnPostfix } from "@features/options/SelectColumnConnection"
 import { convectorGrillPostfix } from "@features/options/SelectConvectorGrill"
 import { ironcastColorPostfix } from "@features/options/SelectIroncastColor"
 import { getRadiatorTitle } from "@shared/utils/getRadiatorTitle"
 import { addonPostfix } from "@features/options/SelectAddons"
 
 const postfix = computed(
-  [radiatorConnPostfix, ironcastColorPostfix, convectorGrillPostfix],
-  (radiatorConnPostfix, ironcastColorPostfix, convectorGrillPostfix) =>
+  [
+    radiatorConnPostfix,
+    ironcastColorPostfix,
+    columnConnPostfix,
+    convectorGrillPostfix,
+  ],
+  (
+      radiatorConnPostfix,
+      ironcastColorPostfix,
+      columnConnPostfix,
+      convectorGrillPostfix
+    ) =>
     (model: ModelJson) =>
       model.type === "design" || model.type === "floor"
         ? radiatorConnPostfix
@@ -19,7 +30,7 @@ const postfix = computed(
         : model.type === "convector"
         ? convectorGrillPostfix
         : model.type === "columns"
-        ? "Подключение"
+        ? columnConnPostfix
         : ""
 )
 
