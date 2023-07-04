@@ -1,2 +1,6 @@
-export { radiatorConnections } from './jsonData/radiatorConnections'
-export type { RadiatorConnection } from './types/RadiatorConnection.type'
+export { radiatorConnections } from "./jsonData/radiatorConnections"
+export { columnConnections } from "./jsonData/columnConnections"
+export type {
+  RadiatorConnection,
+  ColumnRadiatorConnection,
+} from "./types/RadiatorConnection.type"
