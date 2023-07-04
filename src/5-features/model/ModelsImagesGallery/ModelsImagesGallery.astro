@@ -17,16 +17,20 @@ const _images = await Promise.all(
     .filter(([key, _]) => {
       const arr = key.split("/");
       const modelId = arr.at(-2);
-      if (modelId !== model.id) return false;
       const fileName = arr.at(-1);
       if (!fileName) return false;
-      if (ignoreMain === true && fileName.includes("main")) return false;
+      if (ignoreMain === true && fileName.includes("main")) return false
+
+      if (modelId === 'columns' && model.type === 'columns') return true; // TODO remove columns type hack
+      if (modelId !== model.id) return false;
+      
       return true;
     })
     .map(([_, value]) => value())
 );
 // @ts-ignore
 const images = _images.map((file) => file.default);
+console.log(images)
 
 //TODO: Add show / hide images toggle link or button
 ---
@@ -41,7 +45,7 @@ const images = _images.map((file) => file.default);
       </div>
       <div class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto'>
         {images.map((image) => (
-          <div>
+          <div class="mx-auto">
             <Picture
               src={image}
               alt={`${model.prefix} Velar ${model.name}`}

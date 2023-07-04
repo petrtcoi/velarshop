@@ -4,20 +4,6 @@ import type { RadiatorJson } from "../types/RadiatorJson.type"
 const MIN_SECTIONS = 4
 
 export function getColumnRadiators(): RadiatorJson[] {
-  //   const {
-  //     model_id,
-  //     slug,
-  //     sections,
-  //     n_spacing,
-  //     width,
-  //     height,
-  //     length,
-  //     price,
-  //     dt70,
-  //     weight,
-  //     volume,
-  //   } = model
-  //   return columnModels
   return columnModels
     .map(model => {
       const { sections, length, price, dt50, dt60, dt70, weight, volume } =
