@@ -73,6 +73,14 @@ function RadiatorList(props: Props) {
   }
 
   useEffect(() => {
+    const radiator = radiators.find(
+      r =>
+        (selectedHeight === ALL || r.height === selectedHeight) &&
+        (selectedWidth === ALL || r.width === selectedWidth) &&
+        (selectedLength === ALL || r.length === selectedLength)
+    )
+    if (radiator) return
+
     const escapeRadiator = radiators.find(
       r =>
         (selectedHeight === ALL ||
@@ -85,6 +93,8 @@ function RadiatorList(props: Props) {
           lastFilterUpdate !== "length" ||
           r.length === selectedLength)
     )
+    // console.log(lastFilterUpdate, selectedHeight, selectedWidth)
+    // console.log("escapeRadiator", escapeRadiator)
     if (escapeRadiator) {
       if (lastFilterUpdate !== "height" && selectedHeight !== ALL)
         setSelectedHeight(escapeRadiator.height)
