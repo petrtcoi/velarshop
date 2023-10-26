@@ -10,7 +10,7 @@ import type { ItemJson } from "@entities/Item";
 import type { RadiatorJson } from "@entities/Radiator";
 
 export async function getStaticPaths() {
-  return itemsJsonData.map((item) => {
+  return itemsJsonData.map(item => {
     return {
       params: { item: item.slug },
       props: { item },
@@ -29,7 +29,7 @@ const metaTitle = `${itemTitle} купить в магазине VelarShop.ru`;
 ---
 
 <Layout title={metaTitle}>
-  <h1 class='text-2xl'>{itemTitle}</h1>
+  <h1 class="text-2xl">{itemTitle}</h1>
   <ItemBasicInfo item={item} />
   <RalatedRadiators itemId={item.id} />
 </Layout>

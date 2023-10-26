@@ -6,15 +6,15 @@ const { slug } = Astro.props as Props;
 
 const itemDescription = await getEntryBySlug("itemDescriptions", slug);
 
-const { Content: ItemDescription } = itemDescription
+const { Content } = itemDescription
   ? await itemDescription.render()
   : { Content: null };
 ---
 
 {
-  ItemDescription !== null && (
-    <div class='prose-sm'>
-      <ItemDescription />
+  Content !== null && (
+    <div class="prose-sm">
+      <Content />
     </div>
   )
 }
