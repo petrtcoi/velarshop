@@ -15,7 +15,7 @@ import { getModelMetaTitle } from "@shared/utils/getModelMetaTitle";
 import type { ModelJson } from "@entities/Model";
 
 export async function getStaticPaths() {
-  return modelsJsonData.map((model) => ({
+  return modelsJsonData.map(model => ({
     params: { model: model.slug },
     props: { model: model },
   }));
@@ -28,14 +28,19 @@ const { model } = Astro.props as Props;
 ---
 
 <Layout title={getModelMetaTitle(model)}>
-  <ModelTitle {...model} />
-  <ModelBasicInfo model={model} />
-  <RadiatorList model={model} />
-  <ModelsImagesGallery
-    title={`Дополнительные изображения Velar ${model.name}`}
-    ignoreMain={true}
-    model={model}
-  />
-  <ModelAdditionalInfo model={model} />
-  <RelatedModels model={model} />
+  <span
+    itemscope
+    itemtype="https://schema.org/Product"
+  >
+    <ModelTitle {...model} />
+    <ModelBasicInfo model={model} />
+    <RadiatorList model={model} />
+    <ModelsImagesGallery
+      title={`Дополнительные изображения Velar ${model.name}`}
+      ignoreMain={true}
+      model={model}
+    />
+    <ModelAdditionalInfo model={model} />
+    <RelatedModels model={model} />
+  </span>
 </Layout>

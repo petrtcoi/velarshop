@@ -6,4 +6,9 @@ type Props = {
 const { name, prefix } = Astro.props as Props;
 ---
 
-<h1 class='text-2xl mt-5 md:mt-2'>{prefix} Velar {name}</h1>
+<h1
+  class="text-2xl mt-5 md:mt-2"
+  itemprop="name"
+>
+  {prefix} Velar {name}
+</h1>

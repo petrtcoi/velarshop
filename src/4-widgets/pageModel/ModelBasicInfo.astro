@@ -20,40 +20,44 @@ type Props = {
 const { model } = Astro.props as Props;
 const { name, prefix, slug, type } = model;
 
-const imagePath = getModelMainImagePath(model.slug, model.type === 'columns' );
+const imagePath = getModelMainImagePath(model.slug, model.type === "columns");
 
 const minPrice =
   radiatorsJsonData
-    .filter((r) => r.model_id === model.id)
+    .filter(r => r.model_id === model.id)
     .sort((a, b) => parseInt(a.price) - parseInt(b.price))
     .at(0)?.price || NO_PRICE;
 ---
 
-<div class='mt-5'>
+<div class="mt-5">
   <LeftRightBlock4555>
     <div
-      slot='left'
-      class='mx-auto md:mx-0'
+      slot="left"
+      class="mx-auto md:mx-0"
     >
       <Picture
         src={imagePath}
         alt={`${prefix} Velar ${name}`}
         title={`${prefix} Velar ${name}`}
-        loading='eager'
-        aspectRatio='1:1'
+        loading="eager"
+        aspectRatio="1:1"
         widths={[430, 620]}
         width={430}
         height={430}
-        sizes='430px'
+        sizes="430px"
+        itemprop="image"
       />
     </div>
 
-    <div slot='right'>
+    <div slot="right">
       <ModelPrice
         minPrice={minPrice}
-        client:only='preact'
+        client:only="preact"
       />
-      <ModelDescription slug={slug} isColumns={model.type === 'columns'}/>
+      <ModelDescription
+        slug={slug}
+        isColumns={model.type === "columns"}
+      />
       <ModelDownloadSchema model={model} />
     </div>
   </LeftRightBlock4555>

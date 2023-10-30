@@ -9,19 +9,19 @@ const { model } = Astro.props as Props;
 const { slug } = model;
 
 const modelAdditionalInfo = await getEntryBySlug("modelAdditionalInfos", slug);
-const { Content: ModelAdditionalInfo } = modelAdditionalInfo
+const { Content } = modelAdditionalInfo
   ? await modelAdditionalInfo.render()
   : { Content: null };
 ---
 
 {
-  ModelAdditionalInfo && (
+  Content && (
     <div
-      id='model-additional-info'
-      class='prose-sm mt-10'
+      id="model-additional-info"
+      class="prose-sm mt-10"
       aria-label={`Дополнительная информация о Velar ${model.name}`}
     >
-      <ModelAdditionalInfo />
+      <Content />
     </div>
   )
 }
