@@ -30,67 +30,71 @@ const {
 </script>
 
 <nav>
-  <div class='bg-teal-600 mx-auto p-4 shadow-lg z-50'>
+  <div
+    class="bg-teal-600 mx-auto p-4 shadow-lg z-50"
+    itemscope
+    itemtype="https://schema.org/SiteNavigationElement"
+  >
     <!-- LOGO -->
-    <div class='container mx-auto flex items-center justify-between relative'>
+    <div class="container mx-auto flex items-center justify-between relative">
       <a
-        href='/'
-        data-testid='velar_logo'
-        class='lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:top-2 hover:opacity-50 transition-opacity w-1/3'
-        aria-label='Ссылка на главную страницу'
+        href="/"
+        data-testid="velar_logo"
+        class="lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:top-2 hover:opacity-50 transition-opacity w-1/3"
+        aria-label="Ссылка на главную страницу"
       >
         <Picture
-          loading='eager'
+          loading="eager"
           widths={[100, 140, 200, 300]}
           width={140}
           height={34}
-          sizes='(max-width: 640px) 140px,  176px'
-          aspectRatio='1052:255'
-          src='/images/logo.png'
-          class='w-38 w-38 md:w-44 lg:hidden'
-          alt='Логотип Velar'
+          sizes="(max-width: 640px) 140px,  176px"
+          aspectRatio="1052:255"
+          src="/images/logo.png"
+          class="w-38 w-38 md:w-44 lg:hidden"
+          alt="Логотип Velar"
         />
       </a>
 
       <!-- Phones -->
       <div
-        class='lg:hidden flex flex-col gap-3'
-        aria-label='Телефоны для связи'
+        class="lg:hidden flex flex-col gap-3"
+        aria-label="Телефоны для связи"
       >
         <a
           href={`tel:${phone495}`}
-          aria-label='Московский номер'
-          class='text-xs text-neutral-900 font-light hover:text-neutral-700'
+          aria-label="Московский номер"
+          class="text-xs text-neutral-900 font-light hover:text-neutral-700"
           >{phone495String}
         </a>
         <a
           href={`tel:${phone812}`}
-          aria-label='Санкт-Петербургский номер'
-          class='text-xs text-neutral-900 font-light hover:text-neutral-700'
+          aria-label="Санкт-Петербургский номер"
+          class="text-xs text-neutral-900 font-light hover:text-neutral-700"
           >{phone812String}
         </a>
       </div>
 
       <!-- Burger -->
       <button
-        id='top_nav_burger_menu'
-        data-testid='burger_menu'
-        aria-label='Открыть меню'
-        aria-expanded='false'
-        class='lg:hidden text-neutral-900 hover:text-neutral-700 rounded-sm focus:outline-none focus-visible:ring-2 ring-neutral-900 transition-colors'
+        id="top_nav_burger_menu"
+        data-testid="burger_menu"
+        aria-label="Открыть меню"
+        aria-expanded="false"
+        class="lg:hidden text-neutral-900 hover:text-neutral-700 rounded-sm focus:outline-none focus-visible:ring-2 ring-neutral-900 transition-colors"
       >
         <svg
-          xmlns='http://www.w3.org/2000/svg'
-          fill='none'
-          viewBox='0 0 24 24'
-          stroke-width='1.5'
-          stroke='currentColor'
-          class='w-8 h-8'
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-8 h-8"
         >
           <path
-            stroke-linecap='round'
-            stroke-linejoin='round'
-            d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
           ></path>
         </svg>
       </button>
@@ -98,78 +102,82 @@ const {
 
     <!-- MENU BAR -->
     <div
-      role='menubar'
-      aria-label='Главное меню'
-      class='hidden flex-col gap-4 relative left-0 items-center right-0 top-18 p-6 text-center text-md pb-10 bg-teal-600 lg:py-2 lg:flex-row lg:static lg:shadow-none lg:justify-center lg:w-full lg:flex'
+      role="menubar"
+      aria-label="Главное меню"
+      class="hidden flex-col gap-4 relative left-0 items-center right-0 top-18 p-6 text-center text-md pb-10 bg-teal-600 lg:py-2 lg:flex-row lg:static lg:shadow-none lg:justify-center lg:w-full lg:flex"
     >
-      <div class='my-2 flex flex-row gap-20 justify-between lg:hidden z-50'>
+      <div class="my-2 flex flex-row gap-20 justify-between lg:hidden z-50">
         <a
           href={`https://vk.com/${vk}`}
-          role='menuitem'
-          rel='noopener noreferrer nofollow'
-          aria-label='Наша страница Вконтакте'
-          target='_blank'
+          role="menuitem"
+          rel="noopener noreferrer nofollow"
+          aria-label="Наша страница Вконтакте"
+          target="_blank"
         >
           <img
-            src='/images/social-icons/vk.svg'
-            alt='vk'
-            class='w-8 h-8 opacity-75 hover:opacity-100 transition-opacity'
+            src="/images/social-icons/vk.svg"
+            alt="vk"
+            class="w-8 h-8 opacity-75 hover:opacity-100 transition-opacity"
           />
         </a>
         <a
           href={`https://wa.me/${whatsApp}`}
-          role='menuitem'
-          rel='noopener noreferrer nofollow'
-          aria-label='Наш WhatsApp для связи'
-          target='_blank'
+          role="menuitem"
+          rel="noopener noreferrer nofollow"
+          aria-label="Наш WhatsApp для связи"
+          target="_blank"
         >
           <img
-            src='/images/social-icons/whatsapp.svg'
-            alt='whatsapp'
-            class='w-8 h-8 opacity-75 hover:opacity-100 transition-opacity'
+            src="/images/social-icons/whatsapp.svg"
+            alt="whatsapp"
+            class="w-8 h-8 opacity-75 hover:opacity-100 transition-opacity"
           />
         </a>
         <a
           href={`${telegram}`}
-          role='menuitem'
-          rel='noopener noreferrer nofollow'
-          target='_blank'
-          aria-label='Наш Телеграм'
+          role="menuitem"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+          aria-label="Наш Телеграм"
         >
           <img
-            src='/images/social-icons/telegram.svg'
-            alt='whatsapp'
-            class='w-8 h-8 opacity-75 hover:opacity-100 transition-opacity'
+            src="/images/social-icons/telegram.svg"
+            alt="whatsapp"
+            class="w-8 h-8 opacity-75 hover:opacity-100 transition-opacity"
           />
         </a>
       </div>
 
       <a
-        href='/design'
-        class='text-sm my-1 mx-auto transition-colors hover:text-neutral-700 lg:hidden'
-        role='menuitem'
+        href="/design"
+        class="text-sm my-1 mx-auto transition-colors hover:text-neutral-700 lg:hidden"
+        role="menuitem"
+        itemprop="url"
       >
         Дизайн-радиаторы
       </a>
       <a
-      href='/columns'
-      class='text-sm my-1 mx-auto transition-colors hover:text-neutral-700 lg:hidden'
-      role='menuitem'
-    >
-      Трубчатые радиаторы
-    </a>
+        href="/columns"
+        class="text-sm my-1 mx-auto transition-colors hover:text-neutral-700 lg:hidden"
+        role="menuitem"
+        itemprop="url"
+      >
+        Трубчатые радиаторы
+      </a>
       <a
-        href='/floor'
-        class='text-sm my-1 mx-auto transition-colors hover:text-neutral-700 lg:hidden'
-        role='menuitem'
+        href="/floor"
+        class="text-sm my-1 mx-auto transition-colors hover:text-neutral-700 lg:hidden"
+        role="menuitem"
+        itemprop="url"
       >
         Напольные радиаторы
       </a>
-   
+
       <a
-        href='/retro'
-        class='text-sm my-1 mx-auto transition-colors hover:text-neutral-700 lg:hidden'
-        role='menuitem'
+        href="/retro"
+        class="text-sm my-1 mx-auto transition-colors hover:text-neutral-700 lg:hidden"
+        role="menuitem"
+        itemprop="url"
       >
         Ретро-радиаторы
       </a>
@@ -180,62 +188,68 @@ const {
         Полотенцесушители
       </a> -->
       <a
-        href='/convector'
-        class='text-sm my-1 mx-auto transition-colors hover:text-neutral-700 lg:hidden'
-        role='menuitem'
+        href="/convector"
+        class="text-sm my-1 mx-auto transition-colors hover:text-neutral-700 lg:hidden"
+        role="menuitem"
+        itemprop="url"
       >
         Внутрипольные конвекторы
       </a>
-      <div class='border-emerald-700 border-b w-full lg:hidden'></div>
+      <div class="border-emerald-700 border-b w-full lg:hidden"></div>
       <a
-        href='/about'
-        class='text-sm lg:text-xs my-1 mx-auto transition-colors hover:text-neutral-700'
-        role='menuitem'
+        href="/about"
+        class="text-sm lg:text-xs my-1 mx-auto transition-colors hover:text-neutral-700"
+        role="menuitem"
+        itemprop="url"
       >
         О магазине
       </a>
       <a
-        href='/delivery'
-        class='text-sm lg:text-xs my-1 hover:text-neutral-700 mx-auto transition-colors'
-        role='menuitem'
+        href="/delivery"
+        class="text-sm lg:text-xs my-1 hover:text-neutral-700 mx-auto transition-colors"
+        role="menuitem"
+        itemprop="url"
       >
         Доставка и оплата
       </a>
       <a
-        href='/'
-        data-testid='velar_logo'
-        class='hidden lg:block lg:w-48 hover:opacity-50 transition-opacity'
-        aria-label='Ссылка на главную страницу'
-        role='menuitem'
+        href="/"
+        data-testid="velar_logo"
+        class="hidden lg:block lg:w-48 hover:opacity-50 transition-opacity"
+        aria-label="Ссылка на главную страницу"
+        role="menuitem"
       >
         <Picture
-          loading='eager'
+          loading="eager"
           widths={[192, 384]}
           width={192}
           height={47}
-          sizes='192px'
-          aspectRatio='1052:255'
-          src='/images/logo.png'
-          alt='Логотип Velar'
+          sizes="192px"
+          aspectRatio="1052:255"
+          src="/images/logo.png"
+          alt="Логотип Velar"
         />
       </a>
       <a
-        href='/guarantees'
-        class='lg:hidden text-sm lg:text-xs my-1 hover:text-neutral-700 mx-auto transition-colors'
-        role='menuitem'
+        href="/guarantees"
+        class="lg:hidden text-sm lg:text-xs my-1 hover:text-neutral-700 mx-auto transition-colors"
+        role="menuitem"
+        itemprop="url"
         >Сертификаты и гарантии</a
       >
       <a
-        href='/request'
-        class='text-sm lg:text-xs my-1 hover:text-neutral-700 mx-auto transition-colors'
-        role='menuitem'
+        href="/request"
+        class="text-sm lg:text-xs my-1 hover:text-neutral-700 mx-auto transition-colors"
+        role="menuitem"
+        itemprop="url"
       >
         Сделать запрос
       </a>
       <a
-        href='/info'
-        class='text-sm lg:text-xs my-1 hover:text-neutral-700 mx-auto transition-colors'
-        role='menuitem'
+        href="/info"
+        class="text-sm lg:text-xs my-1 hover:text-neutral-700 mx-auto transition-colors"
+        role="menuitem"
+        itemprop="url"
       >
         Полезная информация
       </a>
@@ -244,31 +258,31 @@ const {
 
   <!-- Large Screen Catalog Menu -->
   <div
-    aria-label='Разделы каталога продукции'
-    role='navigation'
-    class='container hidden lg:flex flex-row justify-center gap-8 items-center my-4 mx-auto'
+    aria-label="Разделы каталога продукции"
+    role="navigation"
+    class="container hidden lg:flex flex-row justify-center gap-8 items-center my-4 mx-auto"
   >
     <a
-      href='/design'
-      class='text-xs text-neutral-900 font-light hover:underline'
+      href="/design"
+      class="text-xs text-neutral-900 font-light hover:underline"
     >
       Дизайн-радиаторы
     </a>
     <a
-      href='/columns'
-      class='text-xs text-neutral-900 font-light hover:underline'
+      href="/columns"
+      class="text-xs text-neutral-900 font-light hover:underline"
     >
       Трубчатые радиаторы
     </a>
     <a
-      href='/floor'
-      class='text-xs text-neutral-900 font-light hover:underline'
+      href="/floor"
+      class="text-xs text-neutral-900 font-light hover:underline"
     >
       Напольные радиаторы
     </a>
     <a
-      href='/retro'
-      class='text-xs text-neutral-900 font-light hover:underline'
+      href="/retro"
+      class="text-xs text-neutral-900 font-light hover:underline"
     >
       Ретро-радиаторы
     </a>
@@ -279,8 +293,8 @@ const {
       Полотенцесушители
     </a> -->
     <a
-      href='/convector'
-      class='text-xs text-neutral-900 font-light hover:underline'
+      href="/convector"
+      class="text-xs text-neutral-900 font-light hover:underline"
     >
       Внутрипольные конвекторы
     </a>

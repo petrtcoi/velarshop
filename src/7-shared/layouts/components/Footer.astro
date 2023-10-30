@@ -13,54 +13,54 @@ const {
 } = contacts;
 ---
 
-<footer class='my-16'>
+<footer class="my-16">
   <div
-    class='max-w-6xl border-t py-5 px-10 mx-auto flex flex-row flex-wrap justify-between items-start wrap text-xs'
+    class="max-w-6xl border-t py-5 px-10 mx-auto flex flex-row flex-wrap justify-between items-start wrap text-xs"
   >
     <div
-      class='w-full mx-auto sm:w-1/2 md:w-1/3 mt-10'
-      role='navigation'
+      class="w-full mx-auto sm:w-1/2 md:w-1/3 mt-10"
+      role="navigation"
     >
-      <h2 class='text-neutral-900 font-semibold'>Полезные ссылки</h2>
-      <div class='flex flex-col gap-3 pt-4 font-light'>
+      <h2 class="text-neutral-900 font-semibold">Полезные ссылки</h2>
+      <div class="flex flex-col gap-3 pt-4 font-light">
         <a
-          href='/about'
-          class='hover:underline'
+          href="/about"
+          class="hover:underline"
           >О магазине</a
         >
         <a
-          href='/delivery'
-          class='hover:underline'
+          href="/delivery"
+          class="hover:underline"
           >Доставка и оплата</a
         >
         <a
-          href='/guarantees'
-          class='hover:underline'
+          href="/guarantees"
+          class="hover:underline"
           >Сертификаты и гарантии</a
         >
         <a
-          href='/info'
-          class='hover:underline'
+          href="/info"
+          class="hover:underline"
           >Полезная информация</a
         >
       </div>
     </div>
     <div
-      class='w-full mx-auto sm:w-1/2 md:w-1/3 mt-10'
-      aria-label='Каталог товаров'
-      role='navigation'
+      class="w-full mx-auto sm:w-1/2 md:w-1/3 mt-10"
+      aria-label="Каталог товаров"
+      role="navigation"
     >
-      <h2 class='text-neutral-900 font-semibold'>Каталог продукции</h2>
-      <div class='flex flex-col gap-3 pt-4 font-light'>
+      <h2 class="text-neutral-900 font-semibold">Каталог продукции</h2>
+      <div class="flex flex-col gap-3 pt-4 font-light">
         <a
-          href='/design'
-          class='hover:underline'
+          href="/design"
+          class="hover:underline"
         >
           Дизайн-радиаторы
         </a>
         <a
-          href='/floor'
-          class='hover:underline'
+          href="/floor"
+          class="hover:underline"
         >
           Напольные радиаторы
         </a>
@@ -71,8 +71,8 @@ const {
           Трубчатые радиаторы
         </a> -->
         <a
-          href='/'
-          class='hover:underline'
+          href="/"
+          class="hover:underline"
         >
           Чугунные радиаторы ретро</a
         >
@@ -82,91 +82,102 @@ const {
           >Полотенцесушители</a
         > -->
         <a
-          href='/convector'
-          class='hover:underline'
+          href="/convector"
+          class="hover:underline"
           >Внутрипольные конвекторы</a
         >
       </div>
     </div>
-    <div class='w-full mx-auto md:w-1/3 mt-10'>
-      <h2 class='text-neutral-900 font-semibold'>Контактная информация</h2>
-      <div class='flex flex-col gap-3 pt-4 font-light'>
+    <div
+      class="w-full mx-auto md:w-1/3 mt-10"
+      itemscope
+      itemtype="https://schema.org/Organization"
+    >
+      <meta
+        name="image"
+        content="/images/logo.png"
+      />
+      <h2 class="text-neutral-900 font-semibold">Контактная информация</h2>
+      <div class="flex flex-col gap-3 pt-4 font-light">
         <a
           href={homekomfortWebsite}
-          rel='noopener noreferrer nofollow'
-          aria-label='Ссылка на сайт компании ООО ХОУМ КОМФОРТ'
-          target='_blank'
-          class='text-xs text-neutral-900 font-light hover:underline'
+          rel="noopener noreferrer nofollow"
+          aria-label="Ссылка на сайт компании ООО ХОУМ КОМФОРТ"
+          target="_blank"
+          class="text-xs text-neutral-900 font-light hover:underline"
+          itemprop="name"
           >ООО ХОУМ КОМФОРТ
         </a>
         <a
           href={`tel:${phone495}`}
-          aria-label='Московский номер'
-          class='text-xs text-neutral-900 font-light hover:underline'
+          aria-label="Московский номер"
+          class="text-xs text-neutral-900 font-light hover:underline"
+          itemprop="telephone"
           >{phone495String}
         </a>
         <a
           href={`tel:${phone812}`}
-          aria-label='Санкт-Петербургский номер'
-          class='text-xs text-neutral-900 font-light hover:underline'
+          aria-label="Санкт-Петербургский номер"
+          class="text-xs text-neutral-900 font-light hover:underline"
+          itemprop="telephone"
           >{phone812String}
         </a>
         <a
           href={`mailto:${email}`}
-          aria-label='Электронная почта'
-          class='text-xs text-neutral-900 font-light hover:underline'
+          aria-label="Электронная почта"
+          class="text-xs text-neutral-900 font-light hover:underline"
           >{email}
         </a>
         <a
           href={`https://vk.com/${vk}`}
-          rel='noopener noreferrer nofollow'
-          aria-label='Наша страница Вконтакте'
-          target='_blank'
-          class='text-xs text-neutral-900 font-light hover:underline'
+          rel="noopener noreferrer nofollow"
+          aria-label="Наша страница Вконтакте"
+          target="_blank"
+          class="text-xs text-neutral-900 font-light hover:underline"
           >Вконтакте
         </a>
         <a
           href={`${telegram}`}
-          rel='noopener noreferrer nofollow'
-          target='_blank'
-          aria-label='Наш Телеграм'
-          class='text-xs text-neutral-900 font-light hover:underline'
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+          aria-label="Наш Телеграм"
+          class="text-xs text-neutral-900 font-light hover:underline"
           >Телеграм
         </a>
         <a
           href={`https://wa.me/${whatsApp}`}
-          rel='noopener noreferrer nofollow'
-          aria-label='Наш WhatsApp для связи'
-          target='_blank'
-          class='text-xs text-neutral-900 font-light hover:underline'
+          rel="noopener noreferrer nofollow"
+          aria-label="Наш WhatsApp для связи"
+          target="_blank"
+          class="text-xs text-neutral-900 font-light hover:underline"
           >Whatsapp
         </a>
       </div>
     </div>
   </div>
-  <div class='max-w-6xl border-t pt-6 px-10 mx-auto text-xs text-neutral-600'>
+  <div class="max-w-6xl border-t pt-6 px-10 mx-auto text-xs text-neutral-600">
     <div
-      class='flex flex-col md:flex-row gap-5 font-light md:justify-center'
-      role='menubar'
+      class="flex flex-col md:flex-row gap-5 font-light md:justify-center"
+      role="menubar"
     >
       <a
-        href='/privacy'
-        class='hover:underline'
-        role='menuitem'
+        href="/privacy"
+        class="hover:underline"
+        role="menuitem"
         >Политика конфиденциальности</a
       >
-      <div class='text-neutral-500 hidden md:block'>|</div>
+      <div class="text-neutral-500 hidden md:block">|</div>
       <a
-        href='/oferta'
-        class='hover:underline'
-        role='menuitem'
+        href="/oferta"
+        class="hover:underline"
+        role="menuitem"
         >Публичная оферта</a
       >
-      <div class='text-neutral-500 hidden md:block'>|</div>
+      <div class="text-neutral-500 hidden md:block">|</div>
       <a
-        href='/agreement'
-        class='hover:underline'
-        role='menuitem'
+        href="/agreement"
+        class="hover:underline"
+        role="menuitem"
         >Пользовательское соглашение</a
       >
     </div>
