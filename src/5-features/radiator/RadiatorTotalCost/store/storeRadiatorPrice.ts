@@ -1,17 +1,17 @@
-import { computed } from "nanostores"
+import { computed } from 'nanostores';
 
-import { addonId } from "@features/options/SelectAddons"
-import { convectorGrill } from "@features/options/SelectConvectorGrill"
-import { ironcastColorPricePerSection } from "@features/options/SelectIroncastColor"
-import { columnConn } from "@features/options/SelectColumnConnection"
-import { getConvectorGrillPrice } from "@shared/utils/getConvectorGrillPrice"
+import { addonId } from '@features/options/SelectAddons';
+import { convectorGrill } from '@features/options/SelectConvectorGrill';
+import { ironcastColorPricePerSection } from '@features/options/SelectIroncastColor';
+import { columnConn } from '@features/options/SelectColumnConnection';
+import { getConvectorGrillPrice } from '@shared/utils/getConvectorGrillPrice';
 
-import type { ModelJson } from "@entities/Model"
-import type { RadiatorJson } from "@entities/Radiator"
+import type { ModelJson } from '@entities/Model';
+import type { RadiatorJson } from '@entities/Radiator';
 import {
   columnColor,
   columnColorPriceMultiplicate,
-} from "@features/options/SelectColumnColor"
+} from '@features/options/SelectColumnColor';
 
 const getGrillCost = computed(
   convectorGrill,
@@ -21,33 +21,33 @@ const getGrillCost = computed(
       radiator,
       grill: convectorGrill,
     })
-)
+);
 
 const getIronCastCost = computed(
   ironcastColorPricePerSection,
   ironcastColorPricePerSection => (model: ModelJson, radiator: RadiatorJson) =>
-    model.type !== "ironcast"
+    model.type !== 'ironcast'
       ? 0
-      : ironcastColorPricePerSection * parseInt(radiator?.sections || "0")
-)
+      : ironcastColorPricePerSection * parseInt(radiator?.sections || '0')
+);
 
 const getAddonCost = computed(
   addonId,
   addonId => (radiator: RadiatorJson) =>
-    addonId ? parseInt(radiator[addonId as keyof RadiatorJson] || "0") : 0
-)
+    addonId ? parseInt(radiator[addonId as keyof RadiatorJson] || '0') : 0
+);
 
 const getColumnColorCostMultiplicate = computed(
   columnColorPriceMultiplicate,
   columnColorPriceMultiplicate => (model: ModelJson) =>
-    model.type !== "columns" ? 1 : columnColorPriceMultiplicate
-)
+    model.type !== 'columns' ? 1 : columnColorPriceMultiplicate
+);
 
 const getColumnConnectionCost = computed(
   columnConn,
   columnConn => (model: ModelJson) =>
-    model.type !== "columns" || !columnConn ? 0 : columnConn.priceRub || 0
-)
+    model.type !== 'columns' || !columnConn ? 0 : columnConn.priceRub || 0
+);
 
 const getRadiatorTotalCost = computed(
   [
@@ -67,12 +67,14 @@ const getRadiatorTotalCost = computed(
       getColumnConnectionCost
     ) =>
     (model: ModelJson, radiator: RadiatorJson) =>
-      getColumnColorCostMultiplicate(model) *
-      (parseInt(radiator.price) +
-        getGrillCost(model, radiator) +
-        getIronCastCost(model, radiator) +
-        getAddonCost(radiator) +
-        getColumnConnectionCost(model))
-)
+      Math.round(
+        getColumnColorCostMultiplicate(model) *
+          (parseInt(radiator.price) +
+            getGrillCost(model, radiator) +
+            getIronCastCost(model, radiator) +
+            getAddonCost(radiator) +
+            getColumnConnectionCost(model))
+      )
+);
 
-export { getRadiatorTotalCost }
+export { getRadiatorTotalCost };
