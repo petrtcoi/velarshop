@@ -1,17 +1,26 @@
 ---
-import Layout from "@shared/layouts/Layout.astro";
-import ModelList from "@widgets/ModelList.astro";
+import Layout from '@shared/layouts/Layout.astro';
+import ModelList from '@widgets/ModelList.astro';
 ---
 
-<Layout title='Дизайн-радиаторы Velar | полный каталог | VelarShop.ru'>
-  <h1 class='text-3xl font-bold mt-7 md:mt-5'>Дизайн-радиаторы Velar</h1>
-  <div class='text-sm max-w-xl mt-3 leading-6'>
+<Layout title="Дизайн-радиаторы Velar | полный каталог | VelarShop.ru">
+  <h1 class="text-3xl font-bold mt-7 md:mt-5">Дизайн-радиаторы Velar</h1>
+  <div class="text-sm max-w-xl mt-3 leading-6">
     Конструкция радиаторов Velar имеет универсальное трубчатое строение.
     Благодаря этому возможно большое количество вариантов радиаторов, отличных
     друг от друга по высоте и длине. Такой радиатор станет гармоничным элементом
     интерьера любой ванной или жилой комнаты. Вы можете выбрать любой цвет по
     шкале RAL. Все радиаторы Velar могут быть укомплектованы электрическими
-    тэнами.
+    тэнами. Срок производства дизайн-радиаторов составляет <span
+      class="font-bold">4 недели</span
+    ><sup>*</sup>.
   </div>
-  <ModelList type='design' />
+
+  <ModelList type="design" />
+
+  <div class="mt-[40px] text-xs font-light max-w-[500px]">
+    <sup>*</sup> Указан срок производства без учета времени доставки. В некоторых
+    случаях срок производства дизайн-радиаторов может быть увеличен, в зависимости
+    от загруженности производства. Актуальные сроки уточняйте у менеджера.
+  </div>
 </Layout>
