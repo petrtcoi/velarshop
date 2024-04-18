@@ -1,23 +1,23 @@
 ---
-import type { ModelJson } from "@entities/Model";
+import type { ModelJson } from '@entities/Model';
 
-type Props = { model: Pick<ModelJson, "slug" | "id" | "name"> };
+type Props = { model: Pick<ModelJson, 'slug' | 'id' | 'name'> };
 const { model } = Astro.props as Props;
 
-const schemas = import.meta.glob("../../../public/docs/schemas/*.pdf");
-const isShemaExist = !!Object.keys(schemas).find((file) =>
+const schemas = import.meta.glob('../../../../public/docs/*/*.*');
+const isShemaExist = !!Object.keys(schemas).find(file =>
   file.includes(`/docs/schemas/${model.slug}.pdf`)
 );
 ---
 
 {
   isShemaExist && (
-    <div class='mt-4 text-xs hover:text-red-600 transition-colors duration-300'>
+    <div class="mt-4 text-xs hover:text-red-600 transition-colors duration-300">
       <a
         href={`/docs/schemas/${model.id}.pdf`}
-        target='_blank'
+        target="_blank"
         aria-label={`Скачать схему монтажа для Velar ${model.name} в формате PDF`}
-      >
+        class="font-light text-red-600 hover:underline duration-300">
         Скачать схему монтажа
       </a>
     </div>

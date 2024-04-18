@@ -1,16 +1,17 @@
 ---
-import Layout from "@shared/layouts/Layout.astro";
-import BuyFromUs from "@widgets/pageMain/BuyFromUs.astro";
-import Hero from "@widgets/pageMain/Hero.astro";
-import WhyVelar from "@widgets/pageMain/WhyVelar.astro";
+import Layout from '@shared/layouts/Layout.astro';
+import BuyFromUs from '@widgets/pageMain/BuyFromUs.astro';
+import Docs from '@widgets/pageMain/Docs.astro';
+import Hero from '@widgets/pageMain/Hero.astro';
+import WhyVelar from '@widgets/pageMain/WhyVelar.astro';
 ---
 
 <Layout
-  title='Velar дизайн-радиаторы отоления | VelarShop.ru'
-  description='Магазин продукции Velar: дизайн-радиаторы, конвекторы и полотенецсушители. Ведущий российский производитель. Официальная гарантия на всю продукцию. '
-  paddings={false}
->
+  title="Velar дизайн-радиаторы отоления | VelarShop.ru"
+  description="Магазин продукции Velar: дизайн-радиаторы, конвекторы и полотенецсушители. Ведущий российский производитель. Официальная гарантия на всю продукцию. "
+  paddings={false}>
   <Hero />
   <WhyVelar />
+  <Docs />
   <BuyFromUs />
 </Layout>

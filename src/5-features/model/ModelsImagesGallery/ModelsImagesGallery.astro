@@ -1,6 +1,6 @@
 ---
-import { Picture } from "@astrojs/image/components";
-import type { ModelJson } from "@entities/Model";
+import { Picture } from '@astrojs/image/components';
+import type { ModelJson } from '@entities/Model';
 
 type Props = {
   title: string;
@@ -10,26 +10,27 @@ type Props = {
 const { ignoreMain = true, model, title } = Astro.props as Props;
 
 const imagePromises = import.meta.glob(
-  "../../../../public/images/models/*/*.*"
+  '../../../../public/images/models/*/*.*'
 );
+
 const _images = await Promise.all(
   Object.entries(imagePromises)
     .filter(([key, _]) => {
-      const arr = key.split("/");
+      const arr = key.split('/');
       const modelId = arr.at(-2);
       const fileName = arr.at(-1);
       if (!fileName) return false;
-      if (ignoreMain === true && fileName.includes("main")) return false
+      if (ignoreMain === true && fileName.includes('main')) return false;
 
       if (modelId === 'columns' && model.type === 'columns') return true; // TODO remove columns type hack
       if (modelId !== model.id) return false;
-      
+
       return true;
     })
     .map(([_, value]) => value())
 );
 // @ts-ignore
-const images = _images.map((file) => file.default);
+const images = _images.map(file => file.default);
 
 //TODO: Add show / hide images toggle link or button
 ---
@@ -37,13 +38,13 @@ const images = _images.map((file) => file.default);
 {
   images.length !== 0 && (
     <div>
-      <h2 class='mt-14 mb-1'>{title}</h2>
-      <div class='mb-4 font-thin text-xs'>
+      <h2 class="mt-14 mb-1">{title}</h2>
+      <div class="mb-4 font-thin text-xs">
         Обращаем ваше внимание на то, что реальный внешний вид может отличаться
         от изображений на экране.
       </div>
-      <div class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto'>
-        {images.map((image) => (
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
+        {images.map(image => (
           <div class="mx-auto">
             <Picture
               src={image}
@@ -53,8 +54,8 @@ const images = _images.map((file) => file.default);
               widths={[400, 600]}
               width={400}
               height={400 * (image.height / image.width)}
-              sizes='400px '
-              loading='lazy'
+              sizes="400px "
+              loading="lazy"
             />
           </div>
         ))}
