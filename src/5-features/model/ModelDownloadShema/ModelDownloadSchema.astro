@@ -1,12 +1,17 @@
 ---
 import type { ModelJson } from '@entities/Model';
 
-type Props = { model: Pick<ModelJson, 'slug' | 'id' | 'name'> };
+type Props = { model: Pick<ModelJson, 'slug' | 'id' | 'name' | 'type'> };
 const { model } = Astro.props as Props;
 
 const schemas = import.meta.glob('../../../../public/docs/*/*.*');
 const isShemaExist = !!Object.keys(schemas).find(file =>
   file.includes(`/docs/schemas/${model.slug}.pdf`)
+);
+
+const passports = import.meta.glob('../../../../public/docs/*/*.*');
+const isPassportExist = !!Object.keys(passports).find(file =>
+  file.includes(`/docs/passports/passport-${model.slug}.pdf`)
 );
 ---
 
@@ -19,6 +24,58 @@ const isShemaExist = !!Object.keys(schemas).find(file =>
         aria-label={`Скачать схему монтажа для Velar ${model.name} в формате PDF`}
         class="font-light text-red-600 hover:underline duration-300">
         Скачать схему монтажа
+      </a>
+    </div>
+  )
+}
+{
+  isPassportExist && (
+    <div class="mt-4 text-xs hover:text-red-600 transition-colors duration-300">
+      <a
+        href={`/docs/passports/passport-${model.id}.pdf`}
+        target="_blank"
+        aria-label={`Скачать паспорт Velar ${model.name} в формате PDF`}
+        class="font-light text-red-600 hover:underline duration-300">
+        Скачать паспорт
+      </a>
+    </div>
+  )
+}
+{
+  model.type === 'columns' && (
+    <div class="mt-4 text-xs hover:text-red-600 transition-colors duration-300">
+      <a
+        href={`/docs/passports/passport-columns.pdf`}
+        target="_blank"
+        aria-label={`Скачать паспорт Velar ${model.name} в формате PDF`}
+        class="font-light text-red-600 hover:underline duration-300">
+        Скачать паспорт
+      </a>
+    </div>
+  )
+}
+{
+  model.type === 'ironcast' && (
+    <div class="mt-4 text-xs hover:text-red-600 transition-colors duration-300">
+      <a
+        href={`/docs/passports/passport-retro.pdf`}
+        target="_blank"
+        aria-label={`Скачать паспорт Velar ${model.name} в формате PDF`}
+        class="font-light text-red-600 hover:underline duration-300">
+        Скачать паспорт
+      </a>
+    </div>
+  )
+}
+{
+  model.type === 'convector' && (
+    <div class="mt-4 text-xs hover:text-red-600 transition-colors duration-300">
+      <a
+        href={`/docs/passports/passport-kwh-kwhv.pdf`}
+        target="_blank"
+        aria-label={`Скачать паспорт Velar ${model.name} в формате PDF`}
+        class="font-light text-red-600 hover:underline duration-300">
+        Скачать паспорт
       </a>
     </div>
   )

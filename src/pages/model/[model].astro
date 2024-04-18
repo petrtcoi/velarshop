@@ -1,18 +1,19 @@
 ---
-import Layout from "@shared/layouts/Layout.astro";
+import Layout from '@shared/layouts/Layout.astro';
 
-import ModelTitle from "@widgets/pageModel/ModelTitle.astro";
-import RadiatorList from "@widgets/pageModel/RadiatorList/RadiatorList.astro";
-import ModelBasicInfo from "@widgets/pageModel/ModelBasicInfo.astro";
+import ModelTitle from '@widgets/pageModel/ModelTitle.astro';
+import RadiatorList from '@widgets/pageModel/RadiatorList/RadiatorList.astro';
+import ModelBasicInfo from '@widgets/pageModel/ModelBasicInfo.astro';
 
-import RelatedModels from "@features/model/RelatedModels/RelatedModels.astro";
-import ModelsImagesGallery from "@features/model/ModelsImagesGallery/ModelsImagesGallery.astro";
-import ModelAdditionalInfo from "@features/model/ModelAdditionalInfo/ModelAdditionalInfo.astro";
+import RelatedModels from '@features/model/RelatedModels/RelatedModels.astro';
+import ModelsImagesGallery from '@features/model/ModelsImagesGallery/ModelsImagesGallery.astro';
+import ModelAdditionalInfo from '@features/model/ModelAdditionalInfo/ModelAdditionalInfo.astro';
 
-import { modelsJsonData } from "@entities/Model";
-import { getModelMetaTitle } from "@shared/utils/getModelMetaTitle";
+import { modelsJsonData } from '@entities/Model';
+import { getModelMetaTitle } from '@shared/utils/getModelMetaTitle';
 
-import type { ModelJson } from "@entities/Model";
+import type { ModelJson } from '@entities/Model';
+import ModelDownloadSchema from '@features/model/ModelDownloadShema/ModelDownloadSchema.astro';
 
 export async function getStaticPaths() {
   return modelsJsonData.map(model => ({
@@ -30,8 +31,7 @@ const { model } = Astro.props as Props;
 <Layout title={getModelMetaTitle(model)}>
   <span
     itemscope
-    itemtype="https://schema.org/ProductModel"
-  >
+    itemtype="https://schema.org/ProductModel">
     <ModelTitle {...model} />
     <ModelBasicInfo model={model} />
     <RadiatorList model={model} />
@@ -40,6 +40,7 @@ const { model } = Astro.props as Props;
       ignoreMain={true}
       model={model}
     />
+    <ModelDownloadSchema model={model} />
     <ModelAdditionalInfo model={model} />
     <RelatedModels model={model} />
   </span>
