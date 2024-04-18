@@ -1,4 +1,5 @@
 ---
+import { Picture } from '@astrojs/image/components';
 import LeftRightBlock5050 from '@shared/components/LeftRightBlock5050.astro';
 ---
 
@@ -18,27 +19,74 @@ import LeftRightBlock5050 from '@shared/components/LeftRightBlock5050.astro';
     гарантии указывается в паспорте изделия.
   </div>
 
-  <LeftRightBlock5050>
-    <div
-      slot="left"
-      class="mt-5 text-sm leading-7">
-      Мы работаем с 2009 года и за это время накопили огромный опыт работы. Он
-      позволяет нам подобрать оптимальный вариант для каждого заказчика, исходя
-      из его предпочтений, желаемого бюджета и технических особенностей
-      строительного объекта. Среди наших клиентов есть как частные лица, так и
-      организации: строительные компании, рестораны, государственные учреждения.
+  <div class="mt-8 grid gap-9 grid-cols-2 md:grid-cols-4">
+    <div>
+      <a
+        href={'/docs/certs/velar_cert_1.jpg'}
+        target="_blank">
+        <Picture
+          src={'/docs/certs/velar_cert_1.jpg'}
+          alt={'Сертификат соответствия'}
+          title={'Сертификат соответствия отопительных приборов Velar'}
+          loading={'eager'}
+          aspectRatio="1346:1920"
+          widths={[290, 400, 600]}
+          width={290}
+          sizes="290px"
+          class="border-[1px] border-slate-300 rounded-lg opacity-100 md:opacity-75 hover:opacity-100 hover:shadow-lg transition-opacity duration-300"
+        />
+      </a>
     </div>
-    <div slot="right">
-      <div class="text-sm leading-7 mt-5 sm:pl-2 md:pl-7">
-        <ul class="list-disc">
-          <li>Расчет и подбор радиаторов</li>
-          <li>Доставка в любую точку России</li>
-          <li>Популярные модели в наличии</li>
-          <li>Заказные радиаторы по индивидуальным требованиям</li>
-          <li>Работаем как с физическими, так и юридическими лицами</li>
-          <li>Сотрудничаем с дизайнерами и строителями</li>
-        </ul>
-      </div>
+    <div>
+      <a
+        href={'/docs/certs/velar_cert_2.jpg'}
+        target="_blank">
+        <Picture
+          src={'/docs/certs/velar_cert_2.jpg'}
+          alt={'Сертификат соответствия'}
+          title={'Сертификат соответствия отопительных приборов Velar'}
+          loading={'eager'}
+          aspectRatio="1346:1920"
+          widths={[290, 400, 600]}
+          width={290}
+          sizes="290px"
+          class="border-[1px] border-slate-300 rounded-lg opacity-100 md:opacity-75 hover:opacity-100 hover:shadow-lg transition-opacity duration-300"
+        />
+      </a>
     </div>
-  </LeftRightBlock5050>
+    <div>
+      <a
+        href={'/docs/certs/velar_cert_3.jpg'}
+        target="_blank">
+        <Picture
+          src={'/docs/certs/velar_cert_3.jpg'}
+          alt={'Сертификат соответствия'}
+          title={'Сертификат соответствия отопительных приборов Velar'}
+          loading={'eager'}
+          aspectRatio="1346:1920"
+          widths={[290, 400, 600]}
+          width={290}
+          sizes="290px"
+          class="border-[1px] border-slate-300 rounded-lg opacity-100 md:opacity-75 hover:opacity-100 hover:shadow-lg transition-opacity duration-300"
+        />
+      </a>
+    </div>
+    <div>
+      <a
+        href={'/docs/certs/velar_cert_4.jpg'}
+        target="_blank">
+        <Picture
+          src={'/docs/certs/velar_cert_4.jpg'}
+          alt={'Сертификат соответствия'}
+          title={'Сертификат соответствия отопительных приборов Velar'}
+          loading={'eager'}
+          aspectRatio="1346:1920"
+          widths={[290, 400, 600]}
+          width={290}
+          sizes="290px"
+          class="border-[1px] border-slate-300 rounded-lg opacity-100 md:opacity-75 hover:opacity-100 hover:shadow-lg transition-opacity duration-300"
+        />
+      </a>
+    </div>
+  </div>
 </section>
