@@ -1,10 +1,14 @@
 ---
 import Layout from '@shared/layouts/Layout.astro';
 import ModelList from '@widgets/ModelList.astro';
+import ColumnsBenefits from '@widgets/pageColumns/ColumnsBenefits.astro';
+import ColumnsExamples from '@widgets/pageColumns/ColumnsExamples.astro';
 ---
 
-<Layout title="Трубчатые радиаторы Velar | полный каталог | VelarShop.ru">
-  <h1 class="text-3xl font-bold mt-7 md:mt-5">Трубчатые радиаторы Velar</h1>
+<Layout
+  title="Трубчатые радиаторы Velar WH | купить | VelarShop.ru"
+  description="Большой выбор трубчатых радиаторов.2-х, 3-х и 4-х трубчатые модели. В наличии и под заказ (4 недели). Высота до 2 м. Подходят для многоквартирных домов. Доставка по России.">
+  <h1 class="text-3xl font-bold mt-7 md:mt-5">Трубчатые радиаторы Velar WH</h1>
   <div class="text-sm max-w-xl mt-3 leading-6">
     Трубчатые радиаторы Velar WH – стальные секционные радиаторы колончатого
     типа. Идеально закругленная форма радиатора Velar WH выделяет среди
@@ -23,4 +27,8 @@ import ModelList from '@widgets/ModelList.astro';
     случаях срок производства трубчатых радиаторов может быть увеличен, в зависимости
     от загруженности производства. Актуальные сроки уточняйте у менеджера.
   </div>
+
+  <ColumnsBenefits />
+
+  <ColumnsExamples />
 </Layout>
