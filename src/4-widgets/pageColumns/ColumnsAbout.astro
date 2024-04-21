@@ -29,6 +29,18 @@ import { Picture } from '@astrojs/image/components';
       веществ в составе.
     </p>
 
+    <Picture
+      src={'/images/columns/about.jpg'}
+      alt={'Трубчатый радиатор зеленного цвета'}
+      title={'Трубчатый радиатор зеленного цвета'}
+      loading={'lazy'}
+      aspectRatio="100:78"
+      widths={[500, 800, 1000]}
+      width={1000}
+      sizes="(max-width: 360px) 360px, (max-width: 720px) 720px 1000px"
+      class="mx-auto my-10"
+    />
+
     <p class="mt-4">
       На рынке трубчатые радиаторы занимают нишу дизайнерских отопительных
       приборов премиум-класса. Их можно использовать как элемент декора,
