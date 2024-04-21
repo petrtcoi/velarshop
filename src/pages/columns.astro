@@ -1,8 +1,10 @@
 ---
 import Layout from '@shared/layouts/Layout.astro';
 import ModelList from '@widgets/ModelList.astro';
+import ColumnsAbout from '@widgets/pageColumns/ColumnsAbout.astro';
 import ColumnsBenefits from '@widgets/pageColumns/ColumnsBenefits.astro';
 import ColumnsExamples from '@widgets/pageColumns/ColumnsExamples.astro';
+import ColumnsModels from '@widgets/pageColumns/ColumnsModels.astro';
 ---
 
 <Layout
@@ -27,6 +29,10 @@ import ColumnsExamples from '@widgets/pageColumns/ColumnsExamples.astro';
     случаях срок производства трубчатых радиаторов может быть увеличен, в зависимости
     от загруженности производства. Актуальные сроки уточняйте у менеджера.
   </div>
+
+  <ColumnsAbout />
+
+  <ColumnsModels />
 
   <ColumnsBenefits />
 
