@@ -3,6 +3,7 @@ import Layout from '@shared/layouts/Layout.astro';
 import BuyFromUs from '@widgets/pageMain/BuyFromUs.astro';
 import Docs from '@widgets/pageMain/Docs.astro';
 import Hero from '@widgets/pageMain/Hero.astro';
+import News from '@widgets/pageMain/News.astro';
 import WhyVelar from '@widgets/pageMain/WhyVelar.astro';
 ---
 
@@ -13,5 +14,12 @@ import WhyVelar from '@widgets/pageMain/WhyVelar.astro';
   <Hero />
   <WhyVelar />
   <Docs />
+  <section
+    id="news"
+    aria-label="Новости о радиаторах и дайзн-ради аторах"
+    class="justify-center max-w-6xl mx-auto px-5 md:px-10 mt-10">
+    <h2 class="text-3xl font-bold text-left">Новости</h2>
+    <News mainPage={true} />
+  </section>
   <BuyFromUs />
 </Layout>

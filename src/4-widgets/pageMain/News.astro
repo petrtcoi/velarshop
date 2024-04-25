@@ -1,0 +1,72 @@
+---
+import { Picture } from '@astrojs/image/components';
+import { getCollection } from 'astro:content';
+
+export interface Props {
+  mainPage: boolean;
+}
+
+const { mainPage = false } = Astro.props as Props as Props;
+
+const news = await getCollection('news');
+
+const displayNews = mainPage ? news.slice(0, 3) : news;
+
+console.log(news);
+---
+
+<div
+  id="articles_list"
+  aria-label="Список статей"
+  class="mt-6 flex flex-row flex-wrap items-top gap-8 justify-start">
+  {
+    news
+      .sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
+      .map(a => {
+        const { title, slug, date, short_description, thumbnail } = a.data;
+
+        const imgPath =
+          thumbnail.length > 0
+            ? `/images/news/${thumbnail}`
+            : '/images/news/empty.jpg';
+        const articleHref = `/news/${slug}`;
+
+        return (
+          <div class="group w-72 mx-auto sm:mx-0 mt-5">
+            <a href={articleHref}>
+              <Picture
+                src={imgPath}
+                alt={title}
+                title={title}
+                loading="lazy"
+                aspectRatio="1:1"
+                widths={[290, 500]}
+                width={290}
+                height={290}
+                sizes="290px"
+                class="rounded-lg opacity-100 md:opacity-75 group-hover:opacity-100 group-hover:shadow-lg transition-opacity duration-300"
+              />
+              <div class="mt-1 text-xs text-slate-700 font-light">{date}</div>
+              <div class="text-sm mt-1 group-hover:text-red-600 transition-colors duration-300">
+                {title}
+              </div>
+              <div class="text-xs mt-1 text-neutral-600 group-hover:text-neutral-900">
+                {short_description}
+              </div>
+            </a>
+          </div>
+        );
+      })
+  }
+</div>
+{
+  mainPage && (
+    <div class="mt-[20px]">
+      <a href={'/news'}>
+        <div class="text-sm font-light text-red-600  hover:underline transition-all duration-300">
+          все новости
+        </div>
+      </a>
+    </div>
+  )
+}
