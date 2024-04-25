@@ -1,0 +1,87 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '@shared/layouts/Layout.astro';
+import type { CollectionEntry } from 'astro:content';
+import { Picture } from '@astrojs/image/components';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('news');
+  return articles.map(article => ({
+    params: { article: article.slug },
+    props: { article },
+  }));
+}
+
+type Props = {
+  article: CollectionEntry<'articles'>;
+};
+const { article } = Astro.props as Props;
+const { Content } = await article.render();
+const { title, short_description, thumbnail, date } = article.data;
+
+const imgPath = thumbnail.length > 0 ? `/images/news/${thumbnail}` : null;
+---
+
+<Layout
+  title={`${title} | VelarShop.ru`}
+  description={short_description}>
+  <a
+    href="/news"
+    class="text-xs hover:text-red-500">
+    <div class="flex flex-row gap-1 items-center">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width={1}
+        stroke="currentColor"
+        class="w-4 h-4">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M15.75 19.5L8.25 12l7.5-7.5"
+        ></path>
+      </svg>
+
+      к другим новостям
+    </div>
+  </a>
+  <article
+    class="container mx-auto p-5 md:px-10 max-w-4xl prose-sm"
+    itemscope
+    itemtype="https://schema.org/NewsArticle">
+    <h1 itemprop="headline">{title}</h1>
+    <meta
+      itemprop="image"
+      content={`${date}T08:00:00+08:00`}
+    />
+    <meta
+      itemprop="datePublished"
+      content={imgPath}
+    />
+    <div class="mt-1 mb-1 text-xs font-light">
+      {date}
+    </div>
+    <Content />
+
+    {
+      imgPath && (
+        <Picture
+          src={imgPath}
+          alt={title}
+          title={title}
+          loading="lazy"
+          aspectRatio="1:1"
+          widths={[400, 800]}
+          width={800}
+          height={800}
+          sizes="800"
+          class="rounded-lg"
+        />
+      )
+    }
+    <span class="text-xs text-slate-600"
+      >Использованы материалы с сайта https://velarwh.ru</span
+    >
+  </article>
+</Layout>

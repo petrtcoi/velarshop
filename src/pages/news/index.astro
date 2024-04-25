@@ -1,25 +1,23 @@
 ---
 import { Picture } from '@astrojs/image/components';
+import Layout from '@shared/layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
-const news = await getCollection('news');
+const articles = await getCollection('news');
 ---
 
-<section
-  id="news"
-  aria-label="Новости о радиаторах и дайзн-ради аторах"
-  class="justify-center max-w-6xl mx-auto px-5 md:px-10 mt-10">
-  <h2 class="text-3xl font-bold text-left">Новости</h2>
+<Layout title="Новости | дизайн радиаторы и конвекторы | VelarShop.ru">
+  <h1 class="text-2xl">Новости</h1>
   <div
     id="articles_list"
     aria-label="Список статей"
     class="mt-6 flex flex-row flex-wrap items-top gap-8 justify-start">
     {
-      news
+      articles
         .sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
-        .slice(0, 3)
-        .map(a => {
-          const { title, slug, date, short_description, thumbnail } = a.data;
+        .map(article => {
+          const { title, short_description, slug, thumbnail, date } =
+            article.data;
 
           const imgPath =
             thumbnail.length > 0
@@ -42,26 +40,17 @@ const news = await getCollection('news');
                   sizes="290px"
                   class="rounded-lg opacity-100 md:opacity-75 group-hover:opacity-100 group-hover:shadow-lg transition-opacity duration-300"
                 />
-                <div class="mt-1 text-xs text-slate-700 font-light">{date}</div>
-                <div class="text-sm mt-1 group-hover:text-red-600 transition-colors duration-300">
+                <div class="text-sm mt-2 group-hover:text-red-600 transition-colors duration-300">
                   {title}
                 </div>
                 <div class="text-xs mt-1 text-neutral-600 group-hover:text-neutral-900">
                   {short_description}
                 </div>
+                <div class="mt-2 text-xs text-slate-700 font-light">{date}</div>
               </a>
             </div>
           );
         })
     }
   </div>
-
-  <div class="mt-[20px]">
-    <a href={'/news'}>
-      <div
-        class="text-xs font-light text-red-600 hover:underline transition-all duration-300">
-        все новости
-      </div>
-    </a>
-  </div>
-</section>
+</Layout>
