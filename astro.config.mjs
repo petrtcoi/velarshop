@@ -17,6 +17,13 @@ export default defineConfig({
     sitemap(),
     robotsTxt({
       sitemap: ['https://velarshop.ru/sitemap-index.xml'],
+      policy: [
+        {
+          userAgent: '*',
+          allow: '/',
+          disallow: ['/model/*/*'],
+        },
+      ],
     }),
   ],
 });
