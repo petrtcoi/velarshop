@@ -21,7 +21,7 @@ export default defineConfig({
         {
           userAgent: '*',
           allow: '/',
-          disallow: ['/model/*/*'],
+          disallow: ['/model/*/*/'],
         },
       ],
     }),
