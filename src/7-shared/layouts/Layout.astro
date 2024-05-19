@@ -118,6 +118,22 @@ const {
       </div></noscript
     >
     <!-- /Yandex.Metrika counter -->
+
+    <!-- JivoSite -->
+    <script>
+      // Функция для динамической загрузки скрипта
+      function loadScript() {
+        var script = document.createElement('script');
+        script.src = '//code-ya.jivosite.com/widget/KG1YzLxvje';
+        script.async = true;
+        document.body.appendChild(script);
+      }
+
+      // Устанавливаем таймер для загрузки скрипта через 5 секунд после загрузки страницы
+      window.addEventListener('load', function () {
+        setTimeout(loadScript, 5000);
+      });
+    </script>
   </head>
   <body
     class="text-neutral-900 dark:text-neutral-200 bg-white dark:bg-neutral-800">
