@@ -1,127 +1,128 @@
 ---
-import { Picture } from '@astrojs/image/components';
+import { Picture } from '@astrojs/image/components'
 ---
 
 <section
-  id="column-characteristics"
-  aria-label="Характеристики трубчатых радиаторов Velar WH"
-  class="justify-center max-w-6xl mx-auto px-5 md:px-10 mt-20">
-  <h2 class="text-3xl font-light text-left">
-    Характеристики трубчатых радиаторов Velar WH
-  </h2>
+	id='column-characteristics'
+	aria-label='Характеристики трубчатых радиаторов Velar WH'
+	class='justify-center max-w-6xl mx-auto px-5 md:px-10 mt-20'
+>
+	<h2 class='text-3xl font-light text-left'>
+		Характеристики трубчатых радиаторов Velar WH
+	</h2>
 
-  <div class="mt-5 text-sm leading-relaxed max-w-3xl">
-    Velar WH могут иметь в секции от 2 до 4 трубок. Модели отличаются друг от
-    друга только глубиной и мощностью одной секции. Таким образом, вы можете
-    выбрать батарею требуемой мощности, не меняя число секций и высоту.
-    Двух-трубчатые модели являются самыми плоскими в линейке, имеют максимальную
-    долю теплового излучения, но и меньшую тепловую мощность. 4-трубчатые
-    модели, наоборот, самые мощные, но за это приходится платить большей долей
-    конвекционного тепла и дополнительными сложностями во время уборки.
-    Трехтрубчатые радиаторы — золотая середина.
-  </div>
+	<div class='mt-5 text-sm leading-relaxed max-w-3xl'>
+		Velar WH могут иметь в секции от 2 до 4 трубок. Модели отличаются друг от
+		друга только глубиной и мощностью одной секции. Таким образом, вы можете
+		выбрать батарею требуемой мощности, не меняя число секций и высоту.
+		Двух-трубчатые модели являются самыми плоскими в линейке, имеют максимальную
+		долю теплового излучения, но и меньшую тепловую мощность. 4-трубчатые
+		модели, наоборот, самые мощные, но за это приходится платить большей долей
+		конвекционного тепла и дополнительными сложностями во время уборки.
+		Трехтрубчатые радиаторы — золотая середина.
+	</div>
 
-  <div class="mt-8 grid gap-10 grid-cols-1 md:grid-cols-3 md:divide-x-[1px]">
-    <div class="flex flex-col gap-5">
-      <h3 class="font-semibold text-xl text-center">2-х трубчатые</h3>
-      <Picture
-        src={'/images/columns/2columns.jpg'}
-        alt={'Схема 2-х трубчатого радиатора'}
-        title={'Схема 2-х трубчатого радиатора'}
-        loading={'lazy'}
-        aspectRatio="260:476"
-        widths={[137, 200, 300, 400]}
-        width={137}
-        sizes="137px"
-        class="mx-auto"
-      />
+	<div class='mt-8 grid gap-10 grid-cols-1 md:grid-cols-3 md:divide-x-[1px]'>
+		<div class='flex flex-col gap-5'>
+			<h3 class='font-semibold text-xl text-center'>2-х трубчатые</h3>
+			<Picture
+				src={'/images/columns/2columns.jpg'}
+				alt={'Схема 2-х трубчатого радиатора'}
+				title={'Схема 2-х трубчатого радиатора'}
+				loading={'lazy'}
+				aspectRatio='260:476'
+				widths={[137, 200, 300, 400]}
+				width={137}
+				sizes='137px'
+				class='mx-auto'
+			/>
 
-      <div class="flex flex-col gap-4 mx-auto max-w-[300px]">
-        <div>
-          <div class="font-thin text-sm">глубина * длина * высота</div>
-          <div class="text-sm">70 мм * 45мм * 300-2000 мм</div>
-        </div>
-        <div>
-          <div class="font-thin text-sm">минимальное кол-во секций</div>
-          <div class="text-sm">2</div>
-        </div>
-        <div>
-          <div class="font-thin text-sm">максимальное кол-во секций</div>
-          <div class="text-sm">для высоты до 1000 мм — 50 секций</div>
-          <div class="text-sm">для высоты 1000 и более мм — 20 секций</div>
-        </div>
-        <div>
-          <div class="font-thin text-sm">толщина стенки</div>
-          <div class="text-sm">1,6 мм</div>
-        </div>
-      </div>
-    </div>
-    <div class="flex flex-col gap-5">
-      <h3 class="font-semibold text-xl text-center">3-х трубчатые</h3>
-      <Picture
-        src={'/images/columns/3columns.jpg'}
-        alt={'Схема 3-х трубчатого радиатора'}
-        title={'Схема 3-х трубчатого радиатора'}
-        loading={'lazy'}
-        aspectRatio="311:480"
-        widths={[170, 200, 350, 500]}
-        width={162}
-        sizes="162px"
-        class="mx-auto"
-      />
+			<div class='flex flex-col gap-4 mx-auto max-w-[300px]'>
+				<div>
+					<div class='font-thin text-sm'>глубина * длина * высота</div>
+					<div class='text-sm'>70 мм * 45мм * 300-2000 мм</div>
+				</div>
+				<div>
+					<div class='font-thin text-sm'>минимальное кол-во секций</div>
+					<div class='text-sm'>2</div>
+				</div>
+				<div>
+					<div class='font-thin text-sm'>максимальное кол-во секций</div>
+					<div class='text-sm'>для высоты до 1000 мм — 50 секций</div>
+					<div class='text-sm'>для высоты 1000 и более мм — 20 секций</div>
+				</div>
+				<div>
+					<div class='font-thin text-sm'>толщина стенки</div>
+					<div class='text-sm'>1,6 мм</div>
+				</div>
+			</div>
+		</div>
+		<div class='flex flex-col gap-5'>
+			<h3 class='font-semibold text-xl text-center'>3-х трубчатые</h3>
+			<Picture
+				src={'/images/columns/3columns.jpg'}
+				alt={'Схема 3-х трубчатого радиатора'}
+				title={'Схема 3-х трубчатого радиатора'}
+				loading={'lazy'}
+				aspectRatio='311:480'
+				widths={[170, 200, 350, 500]}
+				width={162}
+				sizes='162px'
+				class='mx-auto'
+			/>
 
-      <div class="flex flex-col gap-4 mx-auto max-w-[300px]">
-        <div>
-          <div class="font-thin text-sm">глубина * длина * высота</div>
-          <div class="text-sm">140 мм * 45мм * 300-2000 мм</div>
-        </div>
-        <div>
-          <div class="font-thin text-sm">минимальное кол-во секций</div>
-          <div class="text-sm">2</div>
-        </div>
-        <div>
-          <div class="font-thin text-sm">максимальное кол-во секций</div>
-          <div class="text-sm">для высоты до 1000 мм — 50 секций</div>
-          <div class="text-sm">для высоты 1000 и более мм — 20 секций</div>
-        </div>
-        <div>
-          <div class="font-thin text-sm">толщина стенки</div>
-          <div class="text-sm">1,6 мм</div>
-        </div>
-      </div>
-    </div>
-    <div class="flex flex-col gap-5">
-      <h3 class="font-semibold text-xl text-center">4-х трубчатые</h3>
-      <Picture
-        src={'/images/columns/4columns.jpg'}
-        alt={'Схема 4-х трубчатого радиатора'}
-        title={'Схема 4-х трубчатого радиатора'}
-        loading={'lazy'}
-        aspectRatio="301:480"
-        widths={[170, 200, 350, 500]}
-        width={157}
-        sizes="157px"
-        class="mx-auto"
-      />
-      <div class="flex flex-col gap-4 mx-auto max-w-[300px]">
-        <div>
-          <div class="font-thin text-sm">глубина * длина * высота</div>
-          <div class="text-sm">140 мм * 45мм * 300-2000 мм</div>
-        </div>
-        <div>
-          <div class="font-thin text-sm">минимальное кол-во секций</div>
-          <div class="text-sm">2</div>
-        </div>
-        <div>
-          <div class="font-thin text-sm">максимальное кол-во секций</div>
-          <div class="text-sm">для высоты до 1000 мм — 50 секций</div>
-          <div class="text-sm">для высоты 1000 и более мм — 20 секций</div>
-        </div>
-        <div>
-          <div class="font-thin text-sm">толщина стенки</div>
-          <div class="text-sm">1,6 мм</div>
-        </div>
-      </div>
-    </div>
-  </div>
+			<div class='flex flex-col gap-4 mx-auto max-w-[300px]'>
+				<div>
+					<div class='font-thin text-sm'>глубина * длина * высота</div>
+					<div class='text-sm'>140 мм * 45мм * 300-2000 мм</div>
+				</div>
+				<div>
+					<div class='font-thin text-sm'>минимальное кол-во секций</div>
+					<div class='text-sm'>2</div>
+				</div>
+				<div>
+					<div class='font-thin text-sm'>максимальное кол-во секций</div>
+					<div class='text-sm'>для высоты до 1000 мм — 50 секций</div>
+					<div class='text-sm'>для высоты 1000 и более мм — 20 секций</div>
+				</div>
+				<div>
+					<div class='font-thin text-sm'>толщина стенки</div>
+					<div class='text-sm'>1,6 мм</div>
+				</div>
+			</div>
+		</div>
+		<div class='flex flex-col gap-5'>
+			<h3 class='font-semibold text-xl text-center'>4-х трубчатые</h3>
+			<Picture
+				src={'/images/columns/4columns.jpg'}
+				alt={'Схема 4-х трубчатого радиатора'}
+				title={'Схема 4-х трубчатого радиатора'}
+				loading={'lazy'}
+				aspectRatio='301:480'
+				widths={[170, 200, 350, 500]}
+				width={157}
+				sizes='157px'
+				class='mx-auto'
+			/>
+			<div class='flex flex-col gap-4 mx-auto max-w-[300px]'>
+				<div>
+					<div class='font-thin text-sm'>глубина * длина * высота</div>
+					<div class='text-sm'>140 мм * 45мм * 300-2000 мм</div>
+				</div>
+				<div>
+					<div class='font-thin text-sm'>минимальное кол-во секций</div>
+					<div class='text-sm'>2</div>
+				</div>
+				<div>
+					<div class='font-thin text-sm'>максимальное кол-во секций</div>
+					<div class='text-sm'>для высоты до 1000 мм — 50 секций</div>
+					<div class='text-sm'>для высоты 1000 и более мм — 20 секций</div>
+				</div>
+				<div>
+					<div class='font-thin text-sm'>толщина стенки</div>
+					<div class='text-sm'>1,6 мм</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>

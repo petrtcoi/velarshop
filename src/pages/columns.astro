@@ -1,43 +1,47 @@
 ---
-import Layout from '@shared/layouts/Layout.astro';
-import ModelList from '@widgets/ModelList.astro';
-import ColumnsAbout from '@widgets/pageColumns/ColumnsAbout.astro';
-import ColumnsBenefits from '@widgets/pageColumns/ColumnsBenefits.astro';
-import ColumnsExamples from '@widgets/pageColumns/ColumnsExamples.astro';
-import ColumnsFaq from '@widgets/pageColumns/ColumnsFaq.astro';
-import ColumnsModels from '@widgets/pageColumns/ColumnsModels.astro';
+import Layout from '@shared/layouts/Layout.astro'
+import BuyerInfo from '@widgets/buyerInfo/BuyerInfo.astro'
+import ModelList from '@widgets/ModelList.astro'
+import ColumnsAbout from '@widgets/pageColumns/ColumnsAbout.astro'
+import ColumnsBenefits from '@widgets/pageColumns/ColumnsBenefits.astro'
+import ColumnsExamples from '@widgets/pageColumns/ColumnsExamples.astro'
+import ColumnsFaq from '@widgets/pageColumns/ColumnsFaq.astro'
+import ColumnsModels from '@widgets/pageColumns/ColumnsModels.astro'
 ---
 
 <Layout
-  title="Трубчатые радиаторы Velar WH | купить | VelarShop.ru"
-  description="Большой выбор трубчатых радиаторов.2-х, 3-х и 4-х трубчатые модели. В наличии и под заказ (4 недели). Высота до 2 м. Подходят для многоквартирных домов. Доставка по России.">
-  <h1 class="text-3xl font-bold mt-7 md:mt-5">Трубчатые радиаторы Velar WH</h1>
-  <div class="text-sm max-w-xl mt-3 leading-6">
-    Трубчатые радиаторы Velar WH – стальные секционные радиаторы колончатого
-    типа. Идеально закругленная форма радиатора Velar WH выделяет среди
-    остальных, его специальная модульная конструкция очень надежна и эффективна,
-    подходит, как для модернизации старых, так и для новых отопительных систем,
-    экологически чистые и энерго сберегающие радиаторы Velar это идеальный выбор
-    для каждого дома. Срок производства стальных трубчатых радиаторов составляет <span
-      class="font-bold">4 недели</span
-    ><sup>*</sup>.
-  </div>
+	title='Трубчатые радиаторы Velar WH | купить | VelarShop.ru'
+	description='Большой выбор трубчатых радиаторов.2-х, 3-х и 4-х трубчатые модели. В наличии и под заказ (4 недели). Высота до 2 м. Подходят для многоквартирных домов. Доставка по России.'
+>
+	<h1 class='text-3xl font-bold mt-7 md:mt-5'>Трубчатые радиаторы Velar WH</h1>
+	<div class='text-sm max-w-xl mt-3 leading-6'>
+		Трубчатые радиаторы Velar WH – стальные секционные радиаторы колончатого
+		типа. Идеально закругленная форма радиатора Velar WH выделяет среди
+		остальных, его специальная модульная конструкция очень надежна и эффективна,
+		подходит, как для модернизации старых, так и для новых отопительных систем,
+		экологически чистые и энерго сберегающие радиаторы Velar это идеальный выбор
+		для каждого дома. Срок производства стальных трубчатых радиаторов составляет <span
+			class='font-bold'>4 недели</span
+		><sup>*</sup>.
+	</div>
 
-  <ModelList type="columns" />
+	<ModelList type='columns' />
 
-  <div class="mt-[40px] text-xs font-light max-w-[500px]">
-    <sup>*</sup> Указан срок производства без учета времени доставки. В некоторых
-    случаях срок производства трубчатых радиаторов может быть увеличен, в зависимости
-    от загруженности производства. Актуальные сроки уточняйте у менеджера.
-  </div>
+	<div class='mt-[40px] text-xs font-light max-w-[500px]'>
+		<sup>*</sup> Указан срок производства без учета времени доставки. В некоторых
+		случаях срок производства трубчатых радиаторов может быть увеличен, в зависимости
+		от загруженности производства. Актуальные сроки уточняйте у менеджера.
+	</div>
 
-  <ColumnsAbout />
+	<ColumnsAbout />
 
-  <ColumnsModels />
+	<ColumnsModels />
 
-  <ColumnsBenefits />
+	<ColumnsBenefits />
 
-  <ColumnsExamples />
+	<ColumnsExamples />
 
-  <ColumnsFaq />
+	<ColumnsFaq />
+
+	<BuyerInfo productTitle='стальные трубчатые радиаторы Velar' />
 </Layout>

@@ -1,46 +1,49 @@
 ---
-import Layout from '@shared/layouts/Layout.astro';
+import Layout from '@shared/layouts/Layout.astro'
 
-import ModelTitle from '@widgets/pageModel/ModelTitle.astro';
-import RadiatorList from '@widgets/pageModel/RadiatorList/RadiatorList.astro';
-import ModelBasicInfo from '@widgets/pageModel/ModelBasicInfo.astro';
+import ModelTitle from '@widgets/pageModel/ModelTitle.astro'
+import RadiatorList from '@widgets/pageModel/RadiatorList/RadiatorList.astro'
+import ModelBasicInfo from '@widgets/pageModel/ModelBasicInfo.astro'
 
-import RelatedModels from '@features/model/RelatedModels/RelatedModels.astro';
-import ModelsImagesGallery from '@features/model/ModelsImagesGallery/ModelsImagesGallery.astro';
-import ModelAdditionalInfo from '@features/model/ModelAdditionalInfo/ModelAdditionalInfo.astro';
+import RelatedModels from '@features/model/RelatedModels/RelatedModels.astro'
+import ModelsImagesGallery from '@features/model/ModelsImagesGallery/ModelsImagesGallery.astro'
+import ModelAdditionalInfo from '@features/model/ModelAdditionalInfo/ModelAdditionalInfo.astro'
 
-import { modelsJsonData } from '@entities/Model';
-import { getModelMetaTitle } from '@shared/utils/getModelMetaTitle';
+import { modelsJsonData } from '@entities/Model'
+import { getModelMetaTitle } from '@shared/utils/getModelMetaTitle'
 
-import type { ModelJson } from '@entities/Model';
-import ModelDownloadSchema from '@features/model/ModelDownloadShema/ModelDownloadSchema.astro';
+import type { ModelJson } from '@entities/Model'
+import BuyerInfo from '@widgets/buyerInfo/BuyerInfo.astro'
 
 export async function getStaticPaths() {
-  return modelsJsonData.map(model => ({
-    params: { model: model.slug },
-    props: { model: model },
-  }));
+	return modelsJsonData.map(model => ({
+		params: { model: model.slug },
+		props: { model: model },
+	}))
 }
 
 export type Props = {
-  model: ModelJson;
-};
-const { model } = Astro.props as Props;
+	model: ModelJson
+}
+const { model } = Astro.props as Props
 ---
 
 <Layout title={getModelMetaTitle(model)}>
-  <span
-    itemscope
-    itemtype="https://schema.org/ProductModel">
-    <ModelTitle {...model} />
-    <ModelBasicInfo model={model} />
-    <RadiatorList model={model} />
-    <ModelsImagesGallery
-      title={`Дополнительные изображения Velar ${model.name}`}
-      ignoreMain={true}
-      model={model}
-    />
-    <ModelAdditionalInfo model={model} />
-    <RelatedModels model={model} />
-  </span>
+	<span
+		itemscope
+		itemtype='https://schema.org/ProductModel'
+	>
+		<ModelTitle {...model} />
+		<ModelBasicInfo model={model} />
+		<RadiatorList model={model} />
+		<ModelsImagesGallery
+			title={`Дополнительные изображения Velar ${model.name}`}
+			ignoreMain={true}
+			model={model}
+		/>
+		<ModelAdditionalInfo model={model} />
+		<RelatedModels model={model} />
+
+		<BuyerInfo productTitle='радиаторы и конвекторы Velar' />
+	</span>
 </Layout>
