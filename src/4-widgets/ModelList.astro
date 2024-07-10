@@ -79,10 +79,11 @@ const models = modelsJsonData.filter(m => m.type === type)
 									itemprop='priceCurrency'
 									content='RUB'
 								/>
-								Цена от:{' '}
-								<span itemprop='price minPrice'>
-									{minPrice.toLocaleString('ru-RU')}
-								</span>{' '}
+								<meta
+									itemprop='price minPrice'
+									content={`${Number(minPrice)}`}
+								/>
+								Цена от: {minPrice.toLocaleString('ru-RU')}
 								руб.
 							</div>
 						</div>
