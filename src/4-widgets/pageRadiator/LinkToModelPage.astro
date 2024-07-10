@@ -1,14 +1,9 @@
 ---
-function getModelSlug(
-	model: Pick<ModelJson, 'slug' | 'name' | 'prefix'>
-): string | URL | null | undefined {
-	throw new Error('Function not implemented.')
-}
-
 import type { ModelJson } from '@entities/Model'
+import { getModelSlug } from '@shared/utils/getModelSlug'
 
 type Props = {
-	model: Pick<ModelJson, 'slug' | 'name' | 'prefix'>
+	model: Pick<ModelJson, 'slug' | 'name' | 'prefix' | 'type'>
 }
 const { model } = Astro.props as Props
 const { slug, name, prefix } = model
