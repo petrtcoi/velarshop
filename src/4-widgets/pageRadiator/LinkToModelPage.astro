@@ -1,24 +1,30 @@
 ---
-import type { ModelJson } from "@entities/Model";
+function getModelSlug(
+	model: Pick<ModelJson, 'slug' | 'name' | 'prefix'>
+): string | URL | null | undefined {
+	throw new Error('Function not implemented.')
+}
+
+import type { ModelJson } from '@entities/Model'
 
 type Props = {
-  model: Pick<ModelJson, "slug" | "name" | "prefix">;
-};
-const { model } = Astro.props as Props;
-const { slug, name, prefix } = model;
+	model: Pick<ModelJson, 'slug' | 'name' | 'prefix'>
+}
+const { model } = Astro.props as Props
+const { slug, name, prefix } = model
 ---
 
 <div
-  class='mt-0 mb-1'
-  aria-label='Breadcrumb'
+	class='mt-0 mb-1'
+	aria-label='Breadcrumb'
 >
-<span class="text-xs font-thin">модель: </span>
-  <a
-    href={`/model/${slug}`}
-    aria-label='Перейти на страницу модели'
-    class='text-xs text-red-500 hover:underline'
-  >
-    {prefix}
-    {name}
-  </a>
+	<span class='text-xs font-thin'>модель:</span>
+	<a
+		href={getModelSlug(model)}
+		aria-label='Перейти на страницу модели'
+		class='text-xs text-red-500 hover:underline'
+	>
+		{prefix}
+		{name}
+	</a>
 </div>

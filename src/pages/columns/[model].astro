@@ -17,7 +17,7 @@ import BuyerInfo from '@widgets/buyerInfo/BuyerInfo.astro'
 
 export async function getStaticPaths() {
 	return modelsJsonData
-		.filter(model => model.type !== 'columns')
+		.filter(model => model.type === 'columns')
 		.map(model => ({
 			params: { model: model.slug },
 			props: { model: model },

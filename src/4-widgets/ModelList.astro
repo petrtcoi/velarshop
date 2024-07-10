@@ -1,6 +1,7 @@
 ---
 import { Picture } from '@astrojs/image/components'
 import { ModelType, modelsJsonData } from '@entities/Model'
+import { getModelSlug } from '@shared/utils/getModelSlug'
 
 type Props = {
 	type: ModelType
@@ -22,7 +23,7 @@ const models = modelsJsonData.filter(m => m.type === type)
 				type !== 'columns' // TODO: remove this columns hack :(
 					? `/images/models/${m.slug}/main.jpg`
 					: `/images/models/columns/main${m.id[0]}.jpg`
-			const modelHref = `/model/${m.slug}`
+			const modelHref = getModelSlug(m)
 
 			return (
 				<div class='group w-72 mx-auto sm:mx-0 '>

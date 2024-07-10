@@ -1,117 +1,118 @@
 ---
-import { Picture } from "@astrojs/image/components";
-import { radiatorsJsonData } from "@entities/Radiator";
-import { modelsJsonData } from "@entities/Model";
+import { Picture } from '@astrojs/image/components'
+import { radiatorsJsonData } from '@entities/Radiator'
+import { modelsJsonData } from '@entities/Model'
 
-import { getModelMainImagePath } from "@shared/utils/getModelMainImagePath";
-import { getRadiatorTitle } from "@shared/utils/getRadiatorTitle";
-import { isNonNunnable } from "@shared/utils/isNonNunnable";
+import { getModelMainImagePath } from '@shared/utils/getModelMainImagePath'
+import { getRadiatorTitle } from '@shared/utils/getRadiatorTitle'
+import { isNonNunnable } from '@shared/utils/isNonNunnable'
 
-import type { ItemJson } from "@entities/Item";
+import type { ItemJson } from '@entities/Item'
+import { getModelSlug } from '@shared/utils/getModelSlug'
 
-const MAX_MODELS_QNTY = 25;
+const MAX_MODELS_QNTY = 25
 
 type Props = {
-  itemId: ItemJson["id"];
-};
-const { itemId } = Astro.props as Props;
+	itemId: ItemJson['id']
+}
+const { itemId } = Astro.props as Props
 
 const relatedRadiators =
-  radiatorsJsonData.filter(
-    (radiator) =>
-      !!radiator?.related_items && radiator.related_items.includes(itemId)
-  ) || [];
+	radiatorsJsonData.filter(
+		radiator =>
+			!!radiator?.related_items && radiator.related_items.includes(itemId)
+	) || []
 
-const relatedModelIds = [...new Set(relatedRadiators.map((r) => r.model_id))];
+const relatedModelIds = [...new Set(relatedRadiators.map(r => r.model_id))]
 const relatedModels = relatedModelIds
-  .map((id) => modelsJsonData.find((model) => model.id === id))
-  .filter(isNonNunnable);
+	.map(id => modelsJsonData.find(model => model.id === id))
+	.filter(isNonNunnable)
 ---
 
 {
-  relatedRadiators.length > 0 && relatedRadiators.length < MAX_MODELS_QNTY && (
-    <>
-      <h2 class='mt-14 mb-1'>Подходит для</h2>
-      <div class='mb-4 font-thin text-xs'>
-        Данный товар подходит для следующих отопительных приборов:
-      </div>
-      <div class='flex flex-row flex-wrap items-top gap-8 justify-start'>
-        {relatedRadiators.map((radiator) => {
-          const model = modelsJsonData.find(
-            (model) => model.id === radiator.model_id
-          );
-          if (!model) return null;
+	relatedRadiators.length > 0 && relatedRadiators.length < MAX_MODELS_QNTY && (
+		<>
+			<h2 class='mt-14 mb-1'>Подходит для</h2>
+			<div class='mb-4 font-thin text-xs'>
+				Данный товар подходит для следующих отопительных приборов:
+			</div>
+			<div class='flex flex-row flex-wrap items-top gap-8 justify-start'>
+				{relatedRadiators.map(radiator => {
+					const model = modelsJsonData.find(
+						model => model.id === radiator.model_id
+					)
+					if (!model) return null
 
-          const title = `${model.prefix} Velar ${getRadiatorTitle({
-            model,
-            radiator,
-          })}`;
-          const imagePath = getModelMainImagePath(model.slug);
-          const itemHref = `/model/${model.slug}/${radiator.slug}`;
+					const title = `${model.prefix} Velar ${getRadiatorTitle({
+						model,
+						radiator,
+					})}`
+					const imagePath = getModelMainImagePath(model.slug)
+					const itemHref = `/model/${model.slug}/${radiator.slug}`
 
-          return (
-            <div class='group w-52 mx-auto sm:mx-0'>
-              <a href={itemHref}>
-                <Picture
-                  src={imagePath}
-                  alt={title}
-                  title={title}
-                  loading='lazy'
-                  aspectRatio='1:1'
-                  widths={[260, 400]}
-                  width={260}
-                  height={260}
-                  sizes='260px'
-                  class='rounded-lg opacity-100 md:opacity-50 group-hover:opacity-100 transition-opacity duration-300'
-                />
-                <div class='text-xs mt-2 group-hover:text-red-600 transition-colors duration-300'>
-                  {title}
-                </div>
-              </a>
-            </div>
-          );
-        })}
-      </div>
-    </>
-  )
+					return (
+						<div class='group w-52 mx-auto sm:mx-0'>
+							<a href={itemHref}>
+								<Picture
+									src={imagePath}
+									alt={title}
+									title={title}
+									loading='lazy'
+									aspectRatio='1:1'
+									widths={[260, 400]}
+									width={260}
+									height={260}
+									sizes='260px'
+									class='rounded-lg opacity-100 md:opacity-50 group-hover:opacity-100 transition-opacity duration-300'
+								/>
+								<div class='text-xs mt-2 group-hover:text-red-600 transition-colors duration-300'>
+									{title}
+								</div>
+							</a>
+						</div>
+					)
+				})}
+			</div>
+		</>
+	)
 }
 
 {
-  relatedRadiators.length >= MAX_MODELS_QNTY && relatedModels.length > 0 && (
-    <>
-      <h2 class='mt-14 mb-1'>Подходит для</h2>
-      <div class='mb-4 font-thin text-xs'>
-        Данный товар подходит для следующих моделей:
-      </div>
-      <div class='flex flex-row flex-wrap items-top gap-8 justify-start'>
-        {relatedModels.map((model) => {
-          const title = `${model.prefix} Velar ${model.name}`;
-          const imagePath = getModelMainImagePath(model.slug);
-          const itemHref = `/model/${model.slug}`;
+	relatedRadiators.length >= MAX_MODELS_QNTY && relatedModels.length > 0 && (
+		<>
+			<h2 class='mt-14 mb-1'>Подходит для</h2>
+			<div class='mb-4 font-thin text-xs'>
+				Данный товар подходит для следующих моделей:
+			</div>
+			<div class='flex flex-row flex-wrap items-top gap-8 justify-start'>
+				{relatedModels.map(model => {
+					const title = `${model.prefix} Velar ${model.name}`
+					const imagePath = getModelMainImagePath(model.slug)
+					const itemHref = getModelSlug(model)
 
-          return (
-            <div class='group w-52 mx-auto sm:mx-0'>
-              <a href={itemHref}>
-                <Picture
-                  src={imagePath}
-                  alt={title}
-                  title={title}
-                  loading='lazy'
-                  aspectRatio='1:1'
-                  widths={[260, 400]}
-                  width={260}
-                  height={260}
-                  sizes='260px'
-                  class='rounded-lg opacity-100 md:opacity-50 group-hover:opacity-100 transition-opacity duration-300'
-                />
-                <div class='text-xs mt-2 group-hover:text-red-600 transition-colors duration-300'>
-                  {title}
-                </div>
-              </a>
-            </div>
-          );
-        })}
-      </div>
-    </>
-  )
+					return (
+						<div class='group w-52 mx-auto sm:mx-0'>
+							<a href={itemHref}>
+								<Picture
+									src={imagePath}
+									alt={title}
+									title={title}
+									loading='lazy'
+									aspectRatio='1:1'
+									widths={[260, 400]}
+									width={260}
+									height={260}
+									sizes='260px'
+									class='rounded-lg opacity-100 md:opacity-50 group-hover:opacity-100 transition-opacity duration-300'
+								/>
+								<div class='text-xs mt-2 group-hover:text-red-600 transition-colors duration-300'>
+									{title}
+								</div>
+							</a>
+						</div>
+					)
+				})}
+			</div>
+		</>
+	)
 }
