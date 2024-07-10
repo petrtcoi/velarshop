@@ -1,6 +1,7 @@
 ---
 import { Picture } from '@astrojs/image/components'
 import { ModelType, modelsJsonData } from '@entities/Model'
+import { radiatorsJsonData } from '@entities/Radiator'
 import { getModelSlug } from '@shared/utils/getModelSlug'
 
 type Props = {
@@ -15,6 +16,8 @@ const models = modelsJsonData.filter(m => m.type === type)
 	id='model_list'
 	aria-label='Список моделей'
 	class='mt-10 flex flex-row flex-wrap items-top gap-8 justify-center'
+	itemscope
+	itemtype='https://schema.org/ItemList'
 >
 	{
 		models.map((m, i) => {
@@ -25,10 +28,19 @@ const models = modelsJsonData.filter(m => m.type === type)
 					: `/images/models/columns/main${m.id[0]}.jpg`
 			const modelHref = getModelSlug(m)
 
+			const radiators = radiatorsJsonData.filter(r => r.model_id === m.id)
+			const minPrice = Math.min(...radiators.map(r => Number(r.price)))
+
 			return (
-				<div class='group w-72 mx-auto sm:mx-0 '>
+				<div
+					class='group w-72 mx-auto sm:mx-0 '
+					itemprop='itemListElement'
+					itemscope
+					itemtype='https://schema.org/Product'
+				>
 					<a href={modelHref}>
 						<Picture
+							itemprop='image'
 							src={imgPath}
 							alt={title}
 							title={title}
@@ -40,11 +52,39 @@ const models = modelsJsonData.filter(m => m.type === type)
 							sizes='290px'
 							class='rounded-lg opacity-100 md:opacity-75 group-hover:opacity-100 group-hover:shadow-lg transition-opacity duration-300'
 						/>
-						<div class='text-sm mt-2 group-hover:text-red-600 transition-colors duration-300'>
+						<div
+							itemprop='name'
+							class='text-sm mt-2 group-hover:text-red-600 transition-colors duration-300'
+						>
 							{title}
 						</div>
-						<div class='text-xs mt-1 text-neutral-600 group-hover:text-neutral-900'>
+						<div
+							itemprop='description'
+							class='text-xs mt-1 text-neutral-600 group-hover:text-neutral-900'
+						>
 							{m.short_comment}
+						</div>
+						<div
+							itemprop='offers'
+							itemscope
+							itemtype='https://schema.org/Offer'
+							class='text-xs mt-1 text-neutral-600 group-hover:text-red-600'
+						>
+							<div
+								itemprop='priceSpecification'
+								itemscope
+								itemtype='http://schema.org/PriceSpecification'
+							>
+								<meta
+									itemprop='priceCurrency'
+									content='RUB'
+								/>
+								Цена от:{' '}
+								<span itemprop='price minPrice'>
+									{minPrice.toLocaleString('ru-RU')}
+								</span>{' '}
+								руб.
+							</div>
 						</div>
 					</a>
 				</div>
