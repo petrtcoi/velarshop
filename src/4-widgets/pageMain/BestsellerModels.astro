@@ -1,0 +1,95 @@
+---
+import { Picture } from '@astrojs/image/components'
+import { ModelJson } from '@entities/Model'
+import { radiatorsJsonData } from '@entities/Radiator'
+import { getModelSlug } from '@shared/utils/getModelSlug'
+
+type Props = {
+	models: ModelJson[]
+}
+
+const { models } = Astro.props as Props
+const type = models[0].type
+---
+
+<div
+	id='model_list'
+	aria-label='Список моделей'
+	class='mt-10 flex flex-row flex-wrap items-top gap-8 justify-center'
+	itemscope
+	itemtype='https://schema.org/ItemList'
+>
+	{
+		models.map((m, i) => {
+			const title = `${m.prefix} Velar ${m.name}`
+			const imgPath =
+				type !== 'columns' // TODO: remove this columns hack :(
+					? `/images/models/${m.slug}/main.jpg`
+					: `/images/models/columns/main${m.id[0]}.jpg`
+			const modelHref = getModelSlug(m)
+
+			const radiators = radiatorsJsonData.filter(r => r.model_id === m.id)
+			const minPrice = Math.min(...radiators.map(r => Number(r.price)))
+
+			return (
+				<div
+					class='group w-72 mx-auto sm:mx-0 '
+					itemprop='itemListElement'
+					itemscope
+					itemtype='https://schema.org/Product'
+				>
+					<a href={modelHref}>
+						<Picture
+							itemprop='image'
+							src={imgPath}
+							alt={title}
+							title={title}
+							loading={i > 6 ? 'lazy' : 'eager'}
+							aspectRatio='1:1'
+							widths={[290, 400]}
+							width={290}
+							height={290}
+							sizes='290px'
+							class='rounded-lg opacity-100 md:opacity-75 group-hover:opacity-100 group-hover:shadow-lg transition-opacity duration-300'
+						/>
+						<div
+							itemprop='name'
+							class='text-sm mt-2 group-hover:text-red-600 transition-colors duration-300'
+						>
+							{title}
+						</div>
+						<div
+							itemprop='description'
+							class='text-xs mt-1 text-neutral-600 group-hover:text-neutral-900'
+						>
+							{m.short_comment}
+						</div>
+						<div
+							itemprop='offers'
+							itemscope
+							itemtype='https://schema.org/Offer'
+							class='text-xs mt-1 text-neutral-600 group-hover:text-red-600'
+						>
+							<div
+								itemprop='priceSpecification'
+								itemscope
+								itemtype='http://schema.org/PriceSpecification'
+							>
+								<meta
+									itemprop='priceCurrency'
+									content='RUB'
+								/>
+								<meta
+									itemprop='price minPrice'
+									content={`${Number(minPrice)}`}
+								/>
+								Цена от: {minPrice.toLocaleString('ru-RU')}
+								руб.
+							</div>
+						</div>
+					</a>
+				</div>
+			)
+		})
+	}
+</div>

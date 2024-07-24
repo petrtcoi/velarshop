@@ -1,0 +1,28 @@
+---
+import { Picture } from '@astrojs/image/components'
+import { modelsJsonData } from '@entities/Model'
+import ModelList from '@widgets/ModelList.astro'
+import BestsellerModels from './BestsellerModels.astro'
+
+const columnModels = ['2180', '3180', '3057', '3030']
+
+const columns = modelsJsonData.filter(m => columnModels.includes(m.id))
+---
+
+<section
+	id='bestsellers'
+	aria-label='Популярные омдели в категориях'
+	class='justify-center max-w-6xl mx-auto px-5 md:px-10 mt-[70px] mb-[80px]'
+>
+	<h2 class='text-3xl font-bold text-left'>Трубчатые радиаторы</h2>
+
+	<div class='mt-5 text-sm leading-7 max-w-3xl'>
+		Стальные трубчатые радиаторы - набирающий популярность в России тип
+		отопительных приборов. Они сочетают в себе высокую надежность, большую
+		вариативность в типоразмерах и прекрасный внешний вид. Дизайн трубчатых
+		радиаторов является универсальным: они подойдут как для современных
+		интерьеров, так и для интерьеров в стиле лофт или ретро.
+	</div>
+	<h3 class='mt-5 font-semibold'>Популярные модели трубчатых радиаторов:</h3>
+	<BestsellerModels models={columns} />
+</section>
