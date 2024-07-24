@@ -15,7 +15,7 @@ const type = models[0].type
 <div
 	id='model_list'
 	aria-label='Список моделей'
-	class='mt-10 flex flex-row flex-wrap items-top gap-8 justify-center'
+	class='mt-10 items-top gap-8 justify-center grid grid-cols-2 md:grid-cols-4 space-x-4'
 	itemscope
 	itemtype='https://schema.org/ItemList'
 >
@@ -33,7 +33,7 @@ const type = models[0].type
 
 			return (
 				<div
-					class='group w-72 mx-auto sm:mx-0 '
+					class='group w-full mx-auto sm:mx-0 '
 					itemprop='itemListElement'
 					itemscope
 					itemtype='https://schema.org/Product'
@@ -47,20 +47,20 @@ const type = models[0].type
 							loading={i > 6 ? 'lazy' : 'eager'}
 							aspectRatio='1:1'
 							widths={[290, 400]}
-							width={290}
-							height={290}
-							sizes='290px'
+							width={200}
+							height={200}
+							sizes='200px'
 							class='rounded-lg opacity-100 md:opacity-75 group-hover:opacity-100 group-hover:shadow-lg transition-opacity duration-300'
 						/>
 						<div
 							itemprop='name'
-							class='text-sm mt-2 group-hover:text-red-600 transition-colors duration-300'
+							class='text-xs font-bold mt-2 group-hover:text-red-600 transition-colors duration-300'
 						>
 							{title}
 						</div>
 						<div
 							itemprop='description'
-							class='text-xs mt-1 text-neutral-600 group-hover:text-neutral-900'
+							class='text-[10px] mt-1 text-neutral-600 group-hover:text-neutral-900'
 						>
 							{m.short_comment}
 						</div>
@@ -68,7 +68,7 @@ const type = models[0].type
 							itemprop='offers'
 							itemscope
 							itemtype='https://schema.org/Offer'
-							class='text-xs mt-1 text-neutral-600 group-hover:text-red-600'
+							class='text-[12px] mt-1 text-neutral-600 group-hover:text-red-600'
 						>
 							<div
 								itemprop='priceSpecification'
