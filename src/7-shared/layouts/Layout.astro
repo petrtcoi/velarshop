@@ -1,151 +1,206 @@
 ---
-import ShoppingCartWidget from '@widgets/order/ShoppingCartWidget';
-import Footer from './components/Footer.astro';
-import Navigation from './components/Navigation.astro';
-import '@shared/styles/global.css';
+import ShoppingCartWidget from '@widgets/order/ShoppingCartWidget'
+import Footer from './components/Footer.astro'
+import Navigation from './components/Navigation.astro'
+import '@shared/styles/global.css'
 
 export interface Props {
-  title?: string;
-  description?: string;
-  paddings?: boolean;
-  hideShoppingCartWidgt?: boolean;
+	title?: string
+	description?: string
+	paddings?: boolean
+	hideShoppingCartWidgt?: boolean
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 
 const {
-  title = 'Velar дизайн-радиаторы отопления | VelarShop.ru',
-  description = 'Фирменный магазин дизайнерских радиаторов отопления Velar. Доставка по России. Официальная гарантия. Полный модельный ряд и быстрые сроки производства.',
-  paddings = true,
-  hideShoppingCartWidgt = false,
-} = Astro.props as Props as Props;
+	title = 'Velar дизайн-радиаторы отопления | VelarShop.ru',
+	description = 'Фирменный магазин дизайнерских радиаторов отопления Velar. Доставка по России. Официальная гарантия. Полный модельный ряд и быстрые сроки производства.',
+	paddings = true,
+	hideShoppingCartWidgt = false,
+} = Astro.props as Props as Props
 ---
 
 <!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <link
-      rel={'canonical'}
-      href={canonicalURL.toString().split('?')[0].split('#')[0]}
-    />
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="120x120"
-      href="/favicons/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/favicons/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/favicons/favicon-16x16.png"
-    />
-    <link
-      rel="icon"
-      href="/favicons/safari-pinned-tab.svg"
-      type="image/x-icon"
-    />
-    <meta
-      name="msapplication-TileColor"
-      content="#da532c"
-    />
-    <meta
-      name="theme-color"
-      content="#ffffff"
-    />
-    <meta
-      name="generator"
-      content={Astro.generator}
-    />
+<html lang='ru'>
+	<head>
+		<link
+			rel={'canonical'}
+			href={canonicalURL.toString().split('?')[0].split('#')[0]}
+		/>
+		<meta charset='UTF-8' />
+		<meta
+			name='viewport'
+			content='width=device-width'
+		/>
+		<link
+			rel='apple-touch-icon'
+			sizes='120x120'
+			href='/favicons/apple-touch-icon.png'
+		/>
+		<link
+			rel='icon'
+			type='image/png'
+			sizes='32x32'
+			href='/favicons/favicon-32x32.png'
+		/>
+		<link
+			rel='icon'
+			type='image/png'
+			sizes='16x16'
+			href='/favicons/favicon-16x16.png'
+		/>
+		<link
+			rel='icon'
+			href='/favicons/safari-pinned-tab.svg'
+			type='image/x-icon'
+		/>
+		<meta
+			name='msapplication-TileColor'
+			content='#da532c'
+		/>
+		<meta
+			name='theme-color'
+			content='#ffffff'
+		/>
+		<meta
+			name='generator'
+			content={Astro.generator}
+		/>
 
-    <title>{title}</title>
-    <meta
-      name="description"
-      content={description}
-    />
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-      setTimeout(() => {
-        (function (m, e, t, r, i, k, a) {
-          m[i] =
-            m[i] ||
-            function () {
-              (m[i].a = m[i].a || []).push(arguments);
-            };
-          m[i].l = 1 * new Date();
-          for (var j = 0; j < document.scripts.length; j++) {
-            if (document.scripts[j].src === r) {
-              return;
-            }
-          }
-          (k = e.createElement(t)),
-            (a = e.getElementsByTagName(t)[0]),
-            (k.async = 1),
-            (k.src = r),
-            a.parentNode.insertBefore(k, a);
-        })(
-          window,
-          document,
-          'script',
-          'https://mc.yandex.ru/metrika/tag.js',
-          'ym'
-        );
+		<title>{title}</title>
+		<meta
+			name='description'
+			content={description}
+		/>
+		<!-- Yandex.Metrika counter -->
+		<script type='text/javascript'>
+			setTimeout(() => {
+				;(function (m, e, t, r, i, k, a) {
+					m[i] =
+						m[i] ||
+						function () {
+							;(m[i].a = m[i].a || []).push(arguments)
+						}
+					m[i].l = 1 * new Date()
+					for (var j = 0; j < document.scripts.length; j++) {
+						if (document.scripts[j].src === r) {
+							return
+						}
+					}
+					;(k = e.createElement(t)),
+						(a = e.getElementsByTagName(t)[0]),
+						(k.async = 1),
+						(k.src = r),
+						a.parentNode.insertBefore(k, a)
+				})(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym')
 
-        ym(93362045, 'init', {
-          clickmap: true,
-          trackLinks: true,
-          accurateTrackBounce: true,
-        });
-      }, 5000);
-    </script>
-    <noscript
-      ><div>
-        <img
-          src="https://mc.yandex.ru/watch/93362045"
-          style="position:absolute; left:-9999px;"
-          alt="yandex"
-        />
-      </div></noscript
-    >
-    <!-- /Yandex.Metrika counter -->
+				ym(93362045, 'init', {
+					clickmap: true,
+					trackLinks: true,
+					accurateTrackBounce: true,
+				})
+			}, 5000)
+		</script>
+		<noscript
+			><div>
+				<img
+					src='https://mc.yandex.ru/watch/93362045'
+					style='position:absolute; left:-9999px;'
+					alt='yandex'
+				/>
+			</div></noscript
+		>
+		<!-- Top.Mail.Ru counter -->
+		<script>
+			setTimeout(function () {
+				var _tmr = window._tmr || (window._tmr = [])
+				_tmr.push({ id: '{{counterId}}', type: 'pageView', start: new Date().getTime() })
+				;(function (d, w, id) {
+					if (d.getElementById(id)) return
+					var ts = d.createElement('script')
+					ts.type = 'text/javascript'
+					ts.async = true
+					ts.id = id
+					ts.src = 'https://top-fwz1.mail.ru/js/code.js'
+					var f = function () {
+						var s = d.getElementsByTagName('script')[0]
+						s.parentNode.insertBefore(ts, s)
+					}
+					if (w.opera == '[object Opera]') {
+						d.addEventListener('DOMContentLoaded', f, false)
+					} else {
+						f()
+					}
+				})(document, window, 'tmr-code')
+			}, 3000)
+		</script>
+		<noscript
+			><div>
+				<img
+					src={`https://top-fwz1.mail.ru/counter?id=${counterId};js=na`}
+					style='position:absolute;left:-9999px;'
+					alt='Top.Mail.Ru'
+				/>
+			</div></noscript
+		>
+		<!-- /Top.Mail.Ru counter -->
 
-    <!-- JivoSite -->
-    <script>
-      // Функция для динамической загрузки скрипта
-      function loadScript() {
-        var script = document.createElement('script');
-        script.src = '//code-ya.jivosite.com/widget/KG1YzLxvje';
-        script.async = true;
-        document.body.appendChild(script);
-      }
+		<!-- Top.Mail.Ru counter -->
+		<script type='text/javascript'>
+			var _tmr = window._tmr || (window._tmr = [])
+			_tmr.push({ id: '3549752', type: 'pageView', start: new Date().getTime() })
+			;(function (d, w, id) {
+				if (d.getElementById(id)) return
+				var ts = d.createElement('script')
+				ts.type = 'text/javascript'
+				ts.async = true
+				ts.id = id
+				ts.src = 'https://top-fwz1.mail.ru/js/code.js'
+				var f = function () {
+					var s = d.getElementsByTagName('script')[0]
+					s.parentNode.insertBefore(ts, s)
+				}
+				if (w.opera == '[object Opera]') {
+					d.addEventListener('DOMContentLoaded', f, false)
+				} else {
+					f()
+				}
+			})(document, window, 'tmr-code')
+		</script>
+		<noscript
+			><div>
+				<img
+					src='https://top-fwz1.mail.ru/counter?id=3549752;js=na'
+					style='position:absolute;left:-9999px;'
+					alt='Top.Mail.Ru'
+				/>
+			</div></noscript
+		>
+		<!-- /Top.Mail.Ru counter -->
 
-      // Устанавливаем таймер для загрузки скрипта через 5 секунд после загрузки страницы
-      window.addEventListener('load', function () {
-        setTimeout(loadScript, 5000);
-      });
-    </script>
-  </head>
-  <body
-    class="text-neutral-900 dark:text-neutral-200 bg-white dark:bg-neutral-800">
-    {hideShoppingCartWidgt === false && <ShoppingCartWidget client:load />}
-    <Navigation />
-    <main
-      class:list={[
-        { 'max-w-6xl mx-auto p-3 md:p-5 lg:px-10 xl:px-0': paddings },
-        { 'p-0 m-0': !paddings },
-      ]}>
-      <slot />
-    </main>
-    <Footer />
-  </body>
+		<!-- JivoSite -->
+		<script>
+			// Функция для динамической загрузки скрипта
+			function loadScript() {
+				var script = document.createElement('script')
+				script.src = '//code-ya.jivosite.com/widget/KG1YzLxvje'
+				script.async = true
+				document.body.appendChild(script)
+			}
+
+			// Устанавливаем таймер для загрузки скрипта через 5 секунд после загрузки страницы
+			window.addEventListener('load', function () {
+				setTimeout(loadScript, 5000)
+			})
+		</script>
+	</head>
+	<body class='text-neutral-900 dark:text-neutral-200 bg-white dark:bg-neutral-800'>
+		{hideShoppingCartWidgt === false && <ShoppingCartWidget client:load />}
+		<Navigation />
+		<main class:list={[{ 'max-w-6xl mx-auto p-3 md:p-5 lg:px-10 xl:px-0': paddings }, { 'p-0 m-0': !paddings }]}>
+			<slot />
+		</main>
+		<Footer />
+	</body>
 </html>
