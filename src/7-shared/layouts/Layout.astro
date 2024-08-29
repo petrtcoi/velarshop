@@ -115,7 +115,9 @@ const {
 		<script>
 			setTimeout(function () {
 				var _tmr = window._tmr || (window._tmr = [])
-				_tmr.push({ id: '{{counterId}}', type: 'pageView', start: new Date().getTime() })
+				var counterId = '{{counterId}}' || 'defaultCounterId' // Задайте значение по умолчанию
+				_tmr.push({ id: counterId, type: 'pageView', start: new Date().getTime() })
+
 				;(function (d, w, id) {
 					if (d.getElementById(id)) return
 					var ts = d.createElement('script')
