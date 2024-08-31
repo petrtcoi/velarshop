@@ -147,49 +147,32 @@ const {
 		>
 		<!-- /Top.Mail.Ru counter -->
 
-		<!-- <script>
-			;(function (a, m, o, c, r, s) {
-				// заменил вторую 'm2' на 's'
-				a[m] = {
-					id: '414230',
-					hash: 'c0c75c3d5e1dcd0e0d52e9dd2041023fa0f94c612ab22920224c6282215c9d6e',
-					locale: 'ru',
-					inline: false,
-					setMeta: function (p) {
-						this.params = (this.params || []).concat([p])
-					},
-				}
-				a[o] =
-					a[o] ||
-					function () {
-						;(a[o].q = a[o].q || []).push(arguments)
-					}
-				var d = a.document,
-					s = d.createElement('script')
-				s.async = true
-				s.id = m + '_script'
-				s.src = 'https://gso.amocrm.ru/js/button.js'
-				d.head && d.head.appendChild(s)
-			})(window, 'amoSocialButton', 'amoSocialFunction', 0, 0, 'amoSocialScript')
-		</script> -->
-
-		<!-- JivoSite -->
+		<!-- Google Tag Manager -->
 		<script>
-			// Функция для динамической загрузки скрипта
-			function loadScript() {
-				var script = document.createElement('script')
-				script.src = '//code-ya.jivosite.com/widget/KG1YzLxvje'
-				script.async = true
-				document.body.appendChild(script)
-			}
-
-			// Устанавливаем таймер для загрузки скрипта через 5 секунд после загрузки страницы
-			window.addEventListener('load', function () {
-				setTimeout(loadScript, 5000)
-			})
+			;(function (w, d, s, l, i) {
+				w[l] = w[l] || []
+				w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != 'dataLayer' ? '&l=' + l : ''
+				j.async = true
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+				f.parentNode.insertBefore(j, f)
+			})(window, document, 'script', 'dataLayer', 'GTM-WXHQCMD7')
 		</script>
+		<!-- End Google Tag Manager -->
 	</head>
 	<body class='text-neutral-900 dark:text-neutral-200 bg-white dark:bg-neutral-800'>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript
+			><iframe
+				src='https://www.googletagmanager.com/ns.html?id=GTM-WXHQCMD7'
+				height='0'
+				width='0'
+				style='display:none;visibility:hidden'
+			></iframe></noscript
+		>
+		<!-- End Google Tag Manager (noscript) -->
 		{hideShoppingCartWidgt === false && <ShoppingCartWidget client:load />}
 		<Navigation />
 		<main class:list={[{ 'max-w-6xl mx-auto p-3 md:p-5 lg:px-10 xl:px-0': paddings }, { 'p-0 m-0': !paddings }]}>
