@@ -11,8 +11,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: 'lat,l50,r50,050,lr',
 		related_models: 'q40v,r32v,spv,q80v',
 		related_items: '',
-		short_comment:
-			'Классический вертикальный радиатор с прямоугольным сечением труб 30х60 мм.',
+		short_comment: 'Классический вертикальный радиатор с прямоугольным сечением труб 30х60 мм.',
 	},
 	{
 		id: 'p30h',
@@ -24,8 +23,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: 'lat,l50,r50,050,lr',
 		related_models: 'q40h,sph,q80h',
 		related_items: '',
-		short_comment:
-			'Горизонтальная версия популярной модели.  Для установки под  окна.',
+		short_comment: 'Горизонтальная версия популярной модели.  Для установки под  окна.',
 	},
 	{
 		id: 'p60v',
@@ -37,8 +35,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: 'lat,l50,r50,050,lr',
 		related_models: 'spv,q80v',
 		related_items: '',
-		short_comment:
-			'Плоский дизайн-радиатор с вертикальным расопложением труб. Сечение 30х60 мм.',
+		short_comment: 'Плоский дизайн-радиатор с вертикальным расопложением труб. Сечение 30х60 мм.',
 	},
 	{
 		id: 'p60h',
@@ -50,8 +47,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: 'lat,l50,r50,050,lr',
 		related_models: 'sph,q80h',
 		related_items: '',
-		short_comment:
-			'Горизонтальный радиатор. Плоские трубы, расположенные параллельно стене.',
+		short_comment: 'Горизонтальный радиатор. Плоские трубы, расположенные параллельно стене.',
 	},
 	{
 		id: 'sv',
@@ -63,8 +59,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: 'lat,l50,r50,050,lr',
 		related_models: 'p30v,spv,rt1v,r32v',
 		related_items: '',
-		short_comment:
-			'Вертикальный радиатор выполнен из стального профиля овальной формы.',
+		short_comment: 'Вертикальный радиатор выполнен из стального профиля овальной формы.',
 	},
 	{
 		id: 'sh',
@@ -76,8 +71,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: 'lat,l50,r50,050,lr',
 		related_models: 'p30h,sph,r32h',
 		related_items: '',
-		short_comment:
-			'Овальное сечение труб 30х50 мм. Горизонтальное расположение.',
+		short_comment: 'Овальное сечение труб 30х50 мм. Горизонтальное расположение.',
 	},
 	{
 		id: 'spv',
@@ -89,8 +83,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: 'lat,l50,r50,050,lr',
 		related_models: 'p30v,q40v,r32v',
 		related_items: '',
-		short_comment:
-			'Вертикальный радиатор с секциями овальной формы, расположенными вдоль стены.',
+		short_comment: 'Вертикальный радиатор с секциями овальной формы, расположенными вдоль стены.',
 	},
 	{
 		id: 'sph',
@@ -102,8 +95,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: 'lat,l50,r50,050,lr',
 		related_models: 'p30h,q40h,r32h',
 		related_items: '',
-		short_comment:
-			'Горизонтальный радиатор с секциями овальной формы, расположенными вдоль стены.',
+		short_comment: 'Горизонтальный радиатор с секциями овальной формы, расположенными вдоль стены.',
 	},
 	{
 		id: 'q40v',
@@ -115,8 +107,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: 'lat,l50,r50,050,lr',
 		related_models: 'q80v,p30v,qt1v,qt2v',
 		related_items: '',
-		short_comment:
-			'Вертикальный радиатор. Секции имеют квадратное сечение 40х40 мм.',
+		short_comment: 'Вертикальный радиатор. Секции имеют квадратное сечение 40х40 мм.',
 	},
 	{
 		id: 'q40h',
@@ -128,8 +119,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: 'lat,l50,r50,050,lr',
 		related_models: 'q80h,p30h',
 		related_items: '',
-		short_comment:
-			'Горизонтальный радиатор. Секции имеют квадратное сечение 40х40 мм.',
+		short_comment: 'Горизонтальный радиатор. Секции имеют квадратное сечение 40х40 мм.',
 	},
 	{
 		id: 'q60v',
@@ -141,8 +131,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: 'lat,l50,r50,050,lr',
 		related_models: 'q40v,p80v,qt1v,qt2v',
 		related_items: '',
-		short_comment:
-			'Вертикальный радиатор. Секции имеют квадратное сечение 60х60 мм.',
+		short_comment: 'Вертикальный радиатор. Секции имеют квадратное сечение 60х60 мм.',
 	},
 	{
 		id: 'q60h',
@@ -154,8 +143,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: 'lat,l50,r50,050,lr',
 		related_models: 'q40h,q80h,p30h',
 		related_items: '',
-		short_comment:
-			'Горизонтальный радиатор. Секции имеют квадратное сечение 60х60 мм.',
+		short_comment: 'Горизонтальный радиатор. Секции имеют квадратное сечение 60х60 мм.',
 	},
 	{
 		id: 'q80v',
@@ -167,8 +155,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: 'lat,l50,r50,050,lr',
 		related_models: 'q40v,p30v,q60v,qt1v,qt2v',
 		related_items: '',
-		short_comment:
-			'Вертикальный радиатор. Секции имеют квадратное сечение 80х80 мм.',
+		short_comment: 'Вертикальный радиатор. Секции имеют квадратное сечение 80х80 мм.',
 	},
 	{
 		id: 'q80h',
@@ -180,8 +167,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: 'lat,l50,r50,050,lr',
 		related_models: 'q40h,q60h,p30h',
 		related_items: '',
-		short_comment:
-			'Горизонтальный радиатор. Секции имеют квадратное сечение 80х80 мм.',
+		short_comment: 'Горизонтальный радиатор. Секции имеют квадратное сечение 80х80 мм.',
 	},
 	{
 		id: 'r32v',
@@ -265,8 +251,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: 'lat,l50,r50,050,lr',
 		related_models: 'rt2v,qt1v,rt1wv',
 		related_items: '',
-		short_comment:
-			'Однорядный вертикальный радиатор. Секции круглой формы диаметром 32 мм',
+		short_comment: 'Однорядный вертикальный радиатор. Секции круглой формы диаметром 32 мм',
 	},
 	{
 		id: 'rt2v',
@@ -278,8 +263,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: 'lat,l50,r50,050,lr',
 		related_models: 'rt1v,qtv',
 		related_items: '',
-		short_comment:
-			'Двухрядный вертикальный радиатор. Секции круглой формы диаметром 32 мм',
+		short_comment: 'Двухрядный вертикальный радиатор. Секции круглой формы диаметром 32 мм',
 	},
 	{
 		id: 'rt1wv',
@@ -303,8 +287,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: 'lat,l50,r50,050,lr',
 		related_models: 'qt2v,rt1v,rt1wv',
 		related_items: '',
-		short_comment:
-			'Однорядный вертикальный радиатор. Секции квадратного сечения 40х40 мм',
+		short_comment: 'Однорядный вертикальный радиатор. Секции квадратного сечения 40х40 мм',
 	},
 	{
 		id: 'qt2v',
@@ -316,8 +299,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: 'lat,l50,r50,050,lr',
 		related_models: 'qt1v,rt2v',
 		related_items: '',
-		short_comment:
-			'Двухрядный вертикальный радиатор. Секции квадратного сечения 40х40 мм',
+		short_comment: 'Двухрядный вертикальный радиатор. Секции квадратного сечения 40х40 мм',
 	},
 	{
 		id: 'q500',
@@ -329,8 +311,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: 'lat,l50,r50,lr',
 		related_models: 'p200,p300',
 		related_items: '',
-		short_comment:
-			'Радиатор-скамейка устанавливается в прихожих, гостиных, входных группах и т.д.',
+		short_comment: 'Радиатор-скамейка устанавливается в прихожих, гостиных, входных группах и т.д.',
 	},
 	{
 		id: 'p200',
@@ -342,8 +323,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: 'lat,l50,r50,lr',
 		related_models: 'p300,q500',
 		related_items: '',
-		short_comment:
-			'Напольный радиатор высотой 191 мм. Подходит для установки перед панорамными окнами.',
+		short_comment: 'Напольный радиатор высотой 191 мм. Подходит для установки перед панорамными окнами.',
 	},
 	{
 		id: 'p300',
@@ -355,8 +335,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: 'lat,l50,r50,lr',
 		related_models: 'p200,q500',
 		related_items: '',
-		short_comment:
-			'Напольный радиатор высотой 191 мм. Подходит для установки перед панорамными окнами.',
+		short_comment: 'Напольный радиатор высотой 191 мм. Подходит для установки перед панорамными окнами.',
 	},
 	{
 		id: 'kwh',
@@ -368,8 +347,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: '',
 		related_models: 'kwhv',
 		related_items: '',
-		short_comment:
-			'Естественная конвекция. Ширина 150-420 мм. Высота 65-140 мм.',
+		short_comment: 'Естественная конвекция. Ширина 150-420 мм. Высота 65-140 мм.',
 	},
 	{
 		id: 'kwhv',
@@ -381,8 +359,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: '',
 		related_models: 'kwh',
 		related_items: '',
-		short_comment:
-			'Принудительная конвекция. Ширина 250-420 мм. Высота 85-140 мм.',
+		short_comment: 'Принудительная конвекция. Ширина 250-420 мм. Высота 85-140 мм.',
 	},
 	{
 		id: 'nostalgia500',
@@ -394,8 +371,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: '',
 		related_models: 'historic500,nostalgia300',
 		related_items: '',
-		short_comment:
-			'Чугунный ретро-радиатор в стиле ретро. Украшен цветочным орнаментом',
+		short_comment: 'Чугунный ретро-радиатор в стиле ретро. Украшен цветочным орнаментом',
 	},
 	{
 		id: 'historic500',
@@ -407,8 +383,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: '',
 		related_models: 'nostalgia500,historic300',
 		related_items: '',
-		short_comment:
-			'Чугунный радиатор без орнамента. Отлично подходит для интерьеров в стиле лофт',
+		short_comment: 'Чугунный радиатор без орнамента. Отлично подходит для интерьеров в стиле лофт',
 	},
 	{
 		id: 'nostalgia300',
@@ -420,8 +395,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: '',
 		related_models: 'historic300,nostalgia300',
 		related_items: '',
-		short_comment:
-			'Чугунный ретро-радиатор в стиле ретро. Украшен цветочным орнаментом',
+		short_comment: 'Чугунный ретро-радиатор в стиле ретро. Украшен цветочным орнаментом',
 	},
 	{
 		id: 'historic300',
@@ -433,8 +407,19 @@ export const modelsJsonData: ModelJson[] = [
 		connections: '',
 		related_models: 'nostalgia300,historic500',
 		related_items: '',
-		short_comment:
-			'Чугунный радиатор без орнамента. Отлично подходит для интерьеров в стиле лофт',
+		short_comment: 'Чугунный радиатор без орнамента. Отлично подходит для интерьеров в стиле лофт',
+	},
+	{
+		id: '3020',
+		slug: '3020',
+		name: '3020',
+		type: 'columns',
+		prefix: 'Трубчатый радиатор',
+		orientation: '',
+		connections: '',
+		related_models: '2030,4030,3030',
+		related_items: '',
+		short_comment: 'Трех-трубчатый радиатор высотой 190 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 28.7 Вт.',
 	},
 	{
 		id: '2030',
@@ -446,8 +431,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: '',
 		related_models: '3030,4030,2037,3037',
 		related_items: '',
-		short_comment:
-			'Двух-трубчатый радиатор высотой 300 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 34.7 Вт.',
+		short_comment: 'Двух-трубчатый радиатор высотой 300 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 34.7 Вт.',
 	},
 	{
 		id: '3030',
@@ -459,8 +443,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: '',
 		related_models: '2030,4030,3037',
 		related_items: '',
-		short_comment:
-			'Трех-трубчатый радиатор высотой 300 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 41.1 Вт.',
+		short_comment: 'Трех-трубчатый радиатор высотой 300 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 41.1 Вт.',
 	},
 	{
 		id: '4030',
@@ -485,8 +468,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: '',
 		related_models: '3037,4037,2030,2040',
 		related_items: '',
-		short_comment:
-			'Двух-трубчатый радиатор высотой 376 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 42.5 Вт.',
+		short_comment: 'Двух-трубчатый радиатор высотой 376 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 42.5 Вт.',
 	},
 	{
 		id: '3037',
@@ -498,8 +480,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: '',
 		related_models: '2037,4037,3030,3040',
 		related_items: '',
-		short_comment:
-			'Трех-трубчатый радиатор высотой 376 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 49.5 Вт.',
+		short_comment: 'Трех-трубчатый радиатор высотой 376 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 49.5 Вт.',
 	},
 	{
 		id: '4037',
@@ -524,8 +505,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: '',
 		related_models: '3040,4040,2037,2045',
 		related_items: '',
-		short_comment:
-			'Двух-трубчатый радиатор высотой 400 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 45.8 Вт.',
+		short_comment: 'Двух-трубчатый радиатор высотой 400 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 45.8 Вт.',
 	},
 	{
 		id: '3040',
@@ -537,8 +517,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: '',
 		related_models: '2040,4040,3037,3045',
 		related_items: '',
-		short_comment:
-			'Трех-трубчатый радиатор высотой 400 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 53.7 Вт.',
+		short_comment: 'Трех-трубчатый радиатор высотой 400 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 53.7 Вт.',
 	},
 	{
 		id: '4040',
@@ -563,8 +542,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: '',
 		related_models: '3045,4045,2040,2050',
 		related_items: '',
-		short_comment:
-			'Двух-трубчатый радиатор высотой 450 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 51 Вт.',
+		short_comment: 'Двух-трубчатый радиатор высотой 450 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 51 Вт.',
 	},
 	{
 		id: '3045',
@@ -576,8 +554,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: '',
 		related_models: '2045,4045,3040,3050',
 		related_items: '',
-		short_comment:
-			'Трех-трубчатый радиатор высотой 450 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 59.9 Вт.',
+		short_comment: 'Трех-трубчатый радиатор высотой 450 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 59.9 Вт.',
 	},
 	{
 		id: '4045',
@@ -602,8 +579,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: '',
 		related_models: '3050,4050,2045,2057',
 		related_items: '',
-		short_comment:
-			'Двух-трубчатый радиатор высотой 500 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 56.5 Вт.',
+		short_comment: 'Двух-трубчатый радиатор высотой 500 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 56.5 Вт.',
 	},
 	{
 		id: '3050',
@@ -615,8 +591,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: '',
 		related_models: '2050,4050,3045,3057',
 		related_items: '',
-		short_comment:
-			'Трех-трубчатый радиатор высотой 500 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 66 Вт.',
+		short_comment: 'Трех-трубчатый радиатор высотой 500 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 66 Вт.',
 	},
 	{
 		id: '4050',
@@ -641,8 +616,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: '',
 		related_models: '3055,4055,2050,2057',
 		related_items: '',
-		short_comment:
-			'Двух-трубчатый радиатор высотой 550 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 61.3 Вт.',
+		short_comment: 'Двух-трубчатый радиатор высотой 550 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 61.3 Вт.',
 	},
 	{
 		id: '3055',
@@ -654,8 +628,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: '',
 		related_models: '2055,4055,3050,3057',
 		related_items: '',
-		short_comment:
-			'Трех-трубчатый радиатор высотой 550 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 72 Вт.',
+		short_comment: 'Трех-трубчатый радиатор высотой 550 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 72 Вт.',
 	},
 	{
 		id: '4055',
@@ -680,8 +653,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: '',
 		related_models: '3057,4057,2055,2060',
 		related_items: '',
-		short_comment:
-			'Двух-трубчатый радиатор высотой 576 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 62.7 Вт.',
+		short_comment: 'Двух-трубчатый радиатор высотой 576 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 62.7 Вт.',
 	},
 	{
 		id: '3057',
@@ -693,8 +665,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: '',
 		related_models: '2057,4057,3055,3060',
 		related_items: '',
-		short_comment:
-			'Трех-трубчатый радиатор высотой 576 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 73.9 Вт.',
+		short_comment: 'Трех-трубчатый радиатор высотой 576 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 73.9 Вт.',
 	},
 	{
 		id: '4057',
@@ -719,8 +690,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: '',
 		related_models: '3060,4060,2057,2075',
 		related_items: '',
-		short_comment:
-			'Двух-трубчатый радиатор высотой 600 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 66.1 Вт.',
+		short_comment: 'Двух-трубчатый радиатор высотой 600 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 66.1 Вт.',
 	},
 	{
 		id: '3060',
@@ -732,8 +702,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: '',
 		related_models: '2060,4060,3057,3075',
 		related_items: '',
-		short_comment:
-			'Трех-трубчатый радиатор высотой 600 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 77.9 Вт.',
+		short_comment: 'Трех-трубчатый радиатор высотой 600 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 77.9 Вт.',
 	},
 	{
 		id: '4060',
@@ -758,8 +727,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: '',
 		related_models: '3075,4075,2060,2090',
 		related_items: '',
-		short_comment:
-			'Двух-трубчатый радиатор высотой 750 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 80 Вт.',
+		short_comment: 'Двух-трубчатый радиатор высотой 750 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 80 Вт.',
 	},
 	{
 		id: '3075',
@@ -771,8 +739,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: '',
 		related_models: '2075,4075,3060,3090',
 		related_items: '',
-		short_comment:
-			'Трех-трубчатый радиатор высотой 750 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 94.8 Вт.',
+		short_comment: 'Трех-трубчатый радиатор высотой 750 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 94.8 Вт.',
 	},
 	{
 		id: '4075',
@@ -797,8 +764,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: '',
 		related_models: '3090,4090,2075,2100',
 		related_items: '',
-		short_comment:
-			'Двух-трубчатый радиатор высотой 900 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 92.7 Вт.',
+		short_comment: 'Двух-трубчатый радиатор высотой 900 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 92.7 Вт.',
 	},
 	{
 		id: '3090',
@@ -810,8 +776,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: '',
 		related_models: '2090,4090,3075,3100',
 		related_items: '',
-		short_comment:
-			'Трех-трубчатый радиатор высотой 900 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 110.8 Вт.',
+		short_comment: 'Трех-трубчатый радиатор высотой 900 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 110.8 Вт.',
 	},
 	{
 		id: '4090',
