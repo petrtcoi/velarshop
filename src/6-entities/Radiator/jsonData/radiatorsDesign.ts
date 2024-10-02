@@ -51364,7 +51364,7 @@ export default [
 		d_spacing: '71',
 		n_spacing: '92',
 		width: '1750',
-		height: '17509',
+		height: '1750',
 		length: '427',
 		price: '10.1',
 		dt70: '3.9',
