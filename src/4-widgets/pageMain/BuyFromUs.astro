@@ -1,5 +1,7 @@
 ---
 import LeftRightBlock5050 from '@shared/components/LeftRightBlock5050.astro';
+import { Picture } from '@astrojs/image/components'
+
 ---
 
 <section
@@ -8,8 +10,9 @@ import LeftRightBlock5050 from '@shared/components/LeftRightBlock5050.astro';
   class="justify-center max-w-6xl mx-auto px-5 md:px-10 mt-14">
   <h2 class="text-3xl font-bold text-left">Покупайте у профессионалов</h2>
   <LeftRightBlock5050>
+    <div   slot="left" class="flex flex-col gap-5">
     <div
-      slot="left"
+    
       class="mt-5 text-sm leading-7">
       Мы работаем с 2009 года и за это время накопили огромный опыт работы. Он
       позволяет нам подобрать оптимальный вариант для каждого заказчика, исходя
@@ -17,6 +20,20 @@ import LeftRightBlock5050 from '@shared/components/LeftRightBlock5050.astro';
       строительного объекта. Среди наших клиентов есть как частные лица, так и
       организации: строительные компании, рестораны, государственные учреждения.
     </div>
+    <a href="/docs/cert.pdf" target="_blank" >
+      <Picture
+      class="rounded-lg"
+        src={'/docs/cert.jpg'}
+        alt={`Сертификат Официального дилера Velar`}
+        title={`Сертификат Официального дилера Velar`}
+        aspectRatio={10/7}
+        widths={[400, 600]}
+        width={400}
+        sizes="400px "
+        loading="lazy"
+      />
+    </a>
+    </div>  
     <div slot="right">
       <div class="text-sm leading-7 mt-5 sm:pl-2 md:pl-7">
         <ul class="list-disc">
