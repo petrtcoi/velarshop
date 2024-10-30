@@ -3,7 +3,7 @@ export const contacts = {
 	phone812: '+78124093505',
 	phone495String: '(495) 128-85-05',
 	phone495: '+74951288505',
-	whatsAppString: '+1 (218) 516-15-29',
+	whatsAppString: '+79006522658',
 	whatsApp: '79006522658',
 	website: 'www.velarshop.ru',
 	email: 'mail@velarshop.ru',
