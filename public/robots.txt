@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /model/*/*/
+Allow: /
+
+User-agent: Yandex
+Clean-param: etext
+
+Sitemap: https://velarshop.ru/sitemap-index.xml
+
