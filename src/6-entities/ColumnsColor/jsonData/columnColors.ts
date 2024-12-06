@@ -11,7 +11,7 @@ export const columnColors: ColumnColor[] = [
 		id: 'ral_9016_matte',
 		title: 'Белый RAL 9016 матовый',
 		shortName: 'RAL 9016 мат.',
-		multiplicate: 1.3,
+		multiplicate: 1,
 	},
 	{
 		id: 'ral_9005_gloss',
