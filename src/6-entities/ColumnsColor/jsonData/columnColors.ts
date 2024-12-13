@@ -29,6 +29,30 @@ export const columnColors: ColumnColor[] = [
 		id: 'ral_any',
 		title: 'По шкале RAL',
 		shortName: 'свой RAL',
+		multiplicate: 1.2,
+	},
+	{
+		id: 'metallic',
+		title: 'Цвета Металлик',
+		shortName: 'Цвета Металлик',
 		multiplicate: 1.3,
+	},
+	{
+		id: 'bronze',
+		title: 'Bronze',
+		shortName: 'Bronze',
+		multiplicate: 1.5,
+	},
+	{
+		id: 'gold',
+		title: 'Gold',
+		shortName: 'Gold',
+		multiplicate: 1.5,
+	},
+	{
+		id: 'old_gold',
+		title: 'Old Gold',
+		shortName: 'Old Gold',
+		multiplicate: 1.5,
 	},
 ]
