@@ -55,4 +55,28 @@ export const columnColors: ColumnColor[] = [
 		shortName: 'Old Gold',
 		multiplicate: 1.5,
 	},
+	{
+		id: 'lak_copper',
+		title: 'Лак медь',
+		shortName: 'Лак медь',
+		multiplicate: 1.3,
+	},
+	{
+		id: 'lak_bronze',
+		title: 'Лак бронза',
+		shortName: 'Лак бронза',
+		multiplicate: 1.3,
+	},
+	{
+		id: 'lak_tl',
+		title: 'Лак технолак',
+		shortName: 'Лак технолак',
+		multiplicate: 1.3,
+	},
+	{
+		id: 'lak_lat',
+		title: 'Лак латунь',
+		shortName: 'Лак латунь',
+		multiplicate: 1.3,
+	},
 ]
