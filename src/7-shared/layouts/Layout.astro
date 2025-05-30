@@ -184,7 +184,7 @@ const {
 		<!-- START Cookie-Alert -->
 <style>
 			#cookie_note {
-				display: flex;
+				display: none;
 				position: fixed;
 				gap: 10px;
 				z-index: 100;
@@ -196,6 +196,10 @@ const {
 				background-color: white;
 				border-radius: 4px;
 				box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.4);
+			}
+			#cookie_note.show {
+				display: flex;
+	
 			}
 			#cookie_note p {
 				margin: 0;
@@ -271,7 +275,7 @@ const {
 
         // При клике на кнопку устанавливаем куку cookies_policy на один год
         cookieBtnAccept.addEventListener('click', function () {
-            setCookie('cookies_policy', 'true', 365);
+					setCookie('cookies_policy', 'accepted', 365);
             cookieNote.classList.remove('show');
         });
     }
