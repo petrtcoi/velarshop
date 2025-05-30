@@ -179,5 +179,69 @@ const {
 			<slot />
 		</main>
 		<Footer />
+
+
+		<!-- START Cookie-Alert -->
+<style>
+	#cookie_note {
+    display: none;position: fixed;z-index:100;
+    bottom: 15px;left: 50%; max-width: 90%;transform: translateX(-50%);
+    padding: 20px;background-color: white;
+    border-radius: 4px;box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.4);	
+	}
+	#cookie_note p{margin: 0;font-size: 0.7rem;text-align: left;color: black;}
+
+	.cookie_accept {min-width: 100px; font-size: 0.8rem; border: 1px solid black; border-radius: 8px; padding: 5px 10px; }
+	.cookie_accept:hover {background-color: black; color: white; border: 1px solid black;}
+	.privacy_link {text-decoration: underline;}
+	.privacy_link:hover {color: black; text-decoration: none;}
+	@media (min-width: 576px){#cookie_note.show{display: flex;}}
+	@media (max-width: 575px){#cookie_note.show{display: none;text-align: left;}}
+</style>
+
+<div id="cookie_note">
+    <p>Мы используем файлы cookies для улучшения работы сайта. Оставаясь на нашем сайте, вы соглашаетесь с условиями
+        использования файлов cookies. Чтобы ознакомиться с нашими Положениями о конфиденциальности, сборе персональных данных и об использовании
+        файлов cookie, <a href="/privacy" target="_blank" class="privacy_link">нажмите здесь</a>.</p>
+    <button class="cookie_accept">Я согласен</button>
+</div>
+
+<script>
+    function setCookie(name: string, value: string, days: number) {
+        let expires = "";
+        if (days) {
+            let date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+    function getCookie(name: string) {
+        let matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+        return matches ? decodeURIComponent(matches[1]) : undefined;
+    }
+    function checkCookies() {
+        let cookieNote = document.getElementById('cookie_note');
+				if (!cookieNote) return
+        let cookieBtnAccept = cookieNote.querySelector('.cookie_accept');
+				if (!cookieBtnAccept) return
+
+        // Если куки cookies_policy нет или она просрочена, то показываем уведомление
+        if (!getCookie('cookies_policy')) {
+            cookieNote.classList.add('show');
+        }
+
+        // При клике на кнопку устанавливаем куку cookies_policy на один год
+        cookieBtnAccept.addEventListener('click', function () {
+            setCookie('cookies_policy', 'true', 365);
+            cookieNote.classList.remove('show');
+        });
+    }
+    checkCookies();
+</script>
+
+
+
+<!-- END Cookie-Alert -->
 	</body>
 </html>
