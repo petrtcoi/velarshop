@@ -183,21 +183,59 @@ const {
 
 		<!-- START Cookie-Alert -->
 <style>
-	#cookie_note {
-    display: none;position: fixed;z-index:100;
-    bottom: 15px;left: 50%; max-width: 90%;transform: translateX(-50%);
-    padding: 20px;background-color: white;
-    border-radius: 4px;box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.4);	
-	}
-	#cookie_note p{margin: 0;font-size: 0.7rem;text-align: left;color: black;}
+			#cookie_note {
+				display: flex;
+				position: fixed;
+				gap: 10px;
+				z-index: 100;
+				bottom: 15px;
+				left: 50%;
+				max-width: 80%;
+				transform: translateX(-50%);
+				padding: 20px;
+				background-color: white;
+				border-radius: 4px;
+				box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.4);
+			}
+			#cookie_note p {
+				margin: 0;
+				font-size: 0.7rem;
+				text-align: left;
+				color: black;
+			}
 
-	.cookie_accept {min-width: 100px; font-size: 0.8rem; border: 1px solid black; border-radius: 8px; padding: 5px 10px; }
-	.cookie_accept:hover {background-color: black; color: white; border: 1px solid black;}
-	.privacy_link {text-decoration: underline;}
-	.privacy_link:hover {color: black; text-decoration: none;}
-	@media (min-width: 576px){#cookie_note.show{display: flex;}}
-	@media (max-width: 575px){#cookie_note.show{display: none;text-align: left;}}
-</style>
+			.cookie_accept {
+				min-width: 100px;
+				font-size: 0.8rem;
+				border: 1px solid black;
+				border-radius: 8px;
+				padding: 5px 10px;
+			}
+			.cookie_accept:hover {
+				background-color: black;
+				color: white;
+				border: 1px solid black;
+			}
+			.privacy_link {
+				text-decoration: underline;
+			}
+			.privacy_link:hover {
+				color: black;
+				text-decoration: none;
+			}
+			@media (max-width: 700px) {
+				#cookie_note.show {
+					width: 100%;
+					min-width: 100%;
+				}
+			}
+			@media (max-width: 960px) {
+				#cookie_note.show {
+					width: 80%;
+					min-width: 80%;
+				}
+			}
+		</style>
 
 <div id="cookie_note">
     <p>Мы используем файлы cookies для улучшения работы сайта. Оставаясь на нашем сайте, вы соглашаетесь с условиями
