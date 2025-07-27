@@ -139,7 +139,7 @@ function OrderForm() {
 					<input
 						type='checkbox'
 						checked={checked}
-						className='border border-gray-300 mr-2 mt-1'
+						className={'border border-gray-300 mr-2 mt-1'}
 						onChange={e => (checked.value = e.currentTarget.checked)}
 					/>
 					<div>
