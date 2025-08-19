@@ -112,6 +112,17 @@ if (model.type === "convector") {
       )
     }
     {
+      radiator.n_spacing  && (
+        <>
+          <div class='text-xs font-thin'>М/о при боковом подключении:</div>
+          <div class='text-xs'>
+            {radiator.n_spacing}
+            <span class='font-thin'>мм</span>
+          </div>
+        </>
+      )
+    }
+    {
       powerDescription && (
         <>
           <div />
