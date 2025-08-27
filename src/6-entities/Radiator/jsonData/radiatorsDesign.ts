@@ -8,7 +8,7 @@ export default [
 		n_spacing: '200',
 		width: '90',
 		height: '270',
-		length: '80',
+		length: '84',
 		price: '10652',
 		dt70: '73',
 		dt60: '',
@@ -17,7 +17,6 @@ export default [
 		volume: '0.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -28,7 +27,7 @@ export default [
 		n_spacing: '350',
 		width: '90',
 		height: '420',
-		length: '80',
+		length: '84',
 		price: '11498',
 		dt70: '112',
 		dt60: '',
@@ -37,7 +36,6 @@ export default [
 		volume: '1.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -48,7 +46,7 @@ export default [
 		n_spacing: '430',
 		width: '90',
 		height: '500',
-		length: '80',
+		length: '84',
 		price: '12440',
 		dt70: '146',
 		dt60: '',
@@ -57,7 +55,6 @@ export default [
 		volume: '1.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -68,7 +65,7 @@ export default [
 		n_spacing: '480',
 		width: '90',
 		height: '550',
-		length: '80',
+		length: '84',
 		price: '13382',
 		dt70: '159',
 		dt60: '',
@@ -77,7 +74,6 @@ export default [
 		volume: '1.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -88,7 +84,7 @@ export default [
 		n_spacing: '500',
 		width: '90',
 		height: '570',
-		length: '80',
+		length: '84',
 		price: '13380',
 		dt70: '166',
 		dt60: '',
@@ -97,7 +93,6 @@ export default [
 		volume: '1.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -108,7 +103,7 @@ export default [
 		n_spacing: '680',
 		width: '90',
 		height: '750',
-		length: '80',
+		length: '84',
 		price: '14689',
 		dt70: '215',
 		dt60: '',
@@ -117,7 +112,6 @@ export default [
 		volume: '2.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -128,7 +122,7 @@ export default [
 		n_spacing: '930',
 		width: '90',
 		height: '1000',
-		length: '80',
+		length: '84',
 		price: '15549',
 		dt70: '290',
 		dt60: '',
@@ -137,7 +131,6 @@ export default [
 		volume: '2.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -148,7 +141,7 @@ export default [
 		n_spacing: '1180',
 		width: '90',
 		height: '1250',
-		length: '80',
+		length: '84',
 		price: '17021',
 		dt70: '360',
 		dt60: '',
@@ -157,7 +150,6 @@ export default [
 		volume: '3.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -168,7 +160,7 @@ export default [
 		n_spacing: '1430',
 		width: '90',
 		height: '1500',
-		length: '80',
+		length: '84',
 		price: '17467',
 		dt70: '434',
 		dt60: '',
@@ -177,7 +169,6 @@ export default [
 		volume: '4.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -188,7 +179,7 @@ export default [
 		n_spacing: '1680',
 		width: '90',
 		height: '1750',
-		length: '80',
+		length: '84',
 		price: '18527',
 		dt70: '503',
 		dt60: '',
@@ -197,7 +188,6 @@ export default [
 		volume: '4.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -208,7 +198,7 @@ export default [
 		n_spacing: '1930',
 		width: '90',
 		height: '2000',
-		length: '80',
+		length: '84',
 		price: '19030',
 		dt70: '581',
 		dt60: '',
@@ -217,7 +207,6 @@ export default [
 		volume: '5.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -228,7 +217,7 @@ export default [
 		n_spacing: '2130',
 		width: '90',
 		height: '2200',
-		length: '80',
+		length: '84',
 		price: '19800',
 		dt70: '638',
 		dt60: '',
@@ -237,7 +226,6 @@ export default [
 		volume: '6.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -248,7 +236,7 @@ export default [
 		n_spacing: '2180',
 		width: '90',
 		height: '2250',
-		length: '80',
+		length: '84',
 		price: '19910',
 		dt70: '649',
 		dt60: '',
@@ -257,7 +245,6 @@ export default [
 		volume: '6.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -268,7 +255,7 @@ export default [
 		n_spacing: '2430',
 		width: '90',
 		height: '2500',
-		length: '80',
+		length: '84',
 		price: '20680',
 		dt70: '727',
 		dt60: '',
@@ -277,7 +264,6 @@ export default [
 		volume: '7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -288,7 +274,7 @@ export default [
 		n_spacing: '2930',
 		width: '90',
 		height: '3000',
-		length: '80',
+		length: '84',
 		price: '31460',
 		dt70: '871',
 		dt60: '',
@@ -297,7 +283,6 @@ export default [
 		volume: '8.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -308,7 +293,7 @@ export default [
 		n_spacing: '200',
 		width: '90',
 		height: '270',
-		length: '130',
+		length: '134',
 		price: '12437',
 		dt70: '108',
 		dt60: '',
@@ -317,7 +302,6 @@ export default [
 		volume: '1.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -328,7 +312,7 @@ export default [
 		n_spacing: '350',
 		width: '90',
 		height: '420',
-		length: '130',
+		length: '134',
 		price: '13482',
 		dt70: '169',
 		dt60: '',
@@ -337,7 +321,6 @@ export default [
 		volume: '2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -348,7 +331,7 @@ export default [
 		n_spacing: '430',
 		width: '90',
 		height: '500',
-		length: '130',
+		length: '134',
 		price: '14650',
 		dt70: '218',
 		dt60: '',
@@ -357,7 +340,6 @@ export default [
 		volume: '2.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -368,7 +350,7 @@ export default [
 		n_spacing: '480',
 		width: '90',
 		height: '550',
-		length: '130',
+		length: '134',
 		price: '15802',
 		dt70: '240',
 		dt60: '',
@@ -377,7 +359,6 @@ export default [
 		volume: '2.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -388,7 +369,7 @@ export default [
 		n_spacing: '500',
 		width: '90',
 		height: '570',
-		length: '130',
+		length: '134',
 		price: '15804',
 		dt70: '248',
 		dt60: '',
@@ -397,7 +378,6 @@ export default [
 		volume: '2.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -408,7 +388,7 @@ export default [
 		n_spacing: '680',
 		width: '90',
 		height: '750',
-		length: '130',
+		length: '134',
 		price: '17545',
 		dt70: '323',
 		dt60: '',
@@ -417,7 +397,6 @@ export default [
 		volume: '3.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -428,7 +407,7 @@ export default [
 		n_spacing: '930',
 		width: '90',
 		height: '1000',
-		length: '130',
+		length: '134',
 		price: '18984',
 		dt70: '436',
 		dt60: '',
@@ -437,7 +416,6 @@ export default [
 		volume: '4.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -448,7 +426,7 @@ export default [
 		n_spacing: '1180',
 		width: '90',
 		height: '1250',
-		length: '130',
+		length: '134',
 		price: '20350',
 		dt70: '541',
 		dt60: '',
@@ -457,7 +435,6 @@ export default [
 		volume: '5.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -468,7 +445,7 @@ export default [
 		n_spacing: '1430',
 		width: '90',
 		height: '1500',
-		length: '130',
+		length: '134',
 		price: '21615',
 		dt70: '650',
 		dt60: '',
@@ -477,7 +454,6 @@ export default [
 		volume: '6.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -488,7 +464,7 @@ export default [
 		n_spacing: '1680',
 		width: '90',
 		height: '1750',
-		length: '130',
+		length: '134',
 		price: '22990',
 		dt70: '755',
 		dt60: '',
@@ -497,7 +473,6 @@ export default [
 		volume: '7.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -508,7 +483,7 @@ export default [
 		n_spacing: '1930',
 		width: '90',
 		height: '2000',
-		length: '130',
+		length: '134',
 		price: '24310',
 		dt70: '871',
 		dt60: '',
@@ -517,7 +492,6 @@ export default [
 		volume: '8.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -528,7 +502,7 @@ export default [
 		n_spacing: '2130',
 		width: '90',
 		height: '2200',
-		length: '130',
+		length: '134',
 		price: '25410',
 		dt70: '958',
 		dt60: '',
@@ -537,7 +511,6 @@ export default [
 		volume: '9.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -548,7 +521,7 @@ export default [
 		n_spacing: '2180',
 		width: '90',
 		height: '2250',
-		length: '130',
+		length: '134',
 		price: '25520',
 		dt70: '973',
 		dt60: '',
@@ -557,7 +530,6 @@ export default [
 		volume: '9.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -568,7 +540,7 @@ export default [
 		n_spacing: '2430',
 		width: '90',
 		height: '2500',
-		length: '130',
+		length: '134',
 		price: '26730',
 		dt70: '1089',
 		dt60: '',
@@ -577,7 +549,6 @@ export default [
 		volume: '10.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -588,7 +559,7 @@ export default [
 		n_spacing: '2930',
 		width: '90',
 		height: '3000',
-		length: '130',
+		length: '134',
 		price: '41140',
 		dt70: '1307',
 		dt60: '',
@@ -597,7 +568,6 @@ export default [
 		volume: '12.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -608,7 +578,7 @@ export default [
 		n_spacing: '200',
 		width: '90',
 		height: '270',
-		length: '180',
+		length: '184',
 		price: '14224',
 		dt70: '145',
 		dt60: '',
@@ -617,7 +587,6 @@ export default [
 		volume: '1.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -628,7 +597,7 @@ export default [
 		n_spacing: '350',
 		width: '90',
 		height: '420',
-		length: '180',
+		length: '184',
 		price: '15468',
 		dt70: '225',
 		dt60: '',
@@ -637,7 +606,6 @@ export default [
 		volume: '2.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -648,7 +616,7 @@ export default [
 		n_spacing: '430',
 		width: '90',
 		height: '500',
-		length: '180',
+		length: '184',
 		price: '16550',
 		dt70: '290',
 		dt60: '',
@@ -657,7 +625,6 @@ export default [
 		volume: '3.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -668,7 +635,7 @@ export default [
 		n_spacing: '480',
 		width: '90',
 		height: '550',
-		length: '180',
+		length: '184',
 		price: '18231',
 		dt70: '320',
 		dt60: '',
@@ -677,7 +644,6 @@ export default [
 		volume: '3.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -688,7 +654,7 @@ export default [
 		n_spacing: '500',
 		width: '90',
 		height: '570',
-		length: '180',
+		length: '184',
 		price: '17330',
 		dt70: '332',
 		dt60: '',
@@ -697,7 +663,6 @@ export default [
 		volume: '3.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -708,7 +673,7 @@ export default [
 		n_spacing: '680',
 		width: '90',
 		height: '750',
-		length: '180',
+		length: '184',
 		price: '19800',
 		dt70: '431',
 		dt60: '',
@@ -717,7 +682,6 @@ export default [
 		volume: '4.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -728,7 +692,7 @@ export default [
 		n_spacing: '930',
 		width: '90',
 		height: '1000',
-		length: '180',
+		length: '184',
 		price: '21780',
 		dt70: '581',
 		dt60: '',
@@ -737,7 +701,6 @@ export default [
 		volume: '5.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -748,7 +711,7 @@ export default [
 		n_spacing: '1180',
 		width: '90',
 		height: '1250',
-		length: '180',
+		length: '184',
 		price: '23540',
 		dt70: '721',
 		dt60: '',
@@ -757,7 +720,6 @@ export default [
 		volume: '7.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -768,7 +730,7 @@ export default [
 		n_spacing: '1430',
 		width: '90',
 		height: '1500',
-		length: '180',
+		length: '184',
 		price: '25300',
 		dt70: '866',
 		dt60: '',
@@ -777,7 +739,6 @@ export default [
 		volume: '8.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -788,7 +749,7 @@ export default [
 		n_spacing: '1680',
 		width: '90',
 		height: '1750',
-		length: '180',
+		length: '184',
 		price: '27060',
 		dt70: '1006',
 		dt60: '',
@@ -797,7 +758,6 @@ export default [
 		volume: '9.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -808,7 +768,7 @@ export default [
 		n_spacing: '1930',
 		width: '90',
 		height: '2000',
-		length: '180',
+		length: '184',
 		price: '29425',
 		dt70: '1162',
 		dt60: '',
@@ -817,7 +777,6 @@ export default [
 		volume: '11.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -828,7 +787,7 @@ export default [
 		n_spacing: '2130',
 		width: '90',
 		height: '2200',
-		length: '180',
+		length: '184',
 		price: '31020',
 		dt70: '1278',
 		dt60: '',
@@ -837,7 +796,6 @@ export default [
 		volume: '12.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -848,7 +806,7 @@ export default [
 		n_spacing: '2180',
 		width: '90',
 		height: '2250',
-		length: '180',
+		length: '184',
 		price: '31130',
 		dt70: '1297',
 		dt60: '',
@@ -857,7 +815,6 @@ export default [
 		volume: '12.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -868,7 +825,7 @@ export default [
 		n_spacing: '2430',
 		width: '90',
 		height: '2500',
-		length: '180',
+		length: '184',
 		price: '32780',
 		dt70: '1452',
 		dt60: '',
@@ -877,7 +834,6 @@ export default [
 		volume: '14.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -888,7 +844,7 @@ export default [
 		n_spacing: '2930',
 		width: '90',
 		height: '3000',
-		length: '180',
+		length: '184',
 		price: '50710',
 		dt70: '1742',
 		dt60: '',
@@ -897,7 +853,6 @@ export default [
 		volume: '16.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -908,7 +863,7 @@ export default [
 		n_spacing: '200',
 		width: '90',
 		height: '270',
-		length: '230',
+		length: '234',
 		price: '16016',
 		dt70: '180',
 		dt60: '',
@@ -917,7 +872,6 @@ export default [
 		volume: '2.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -928,7 +882,7 @@ export default [
 		n_spacing: '350',
 		width: '90',
 		height: '420',
-		length: '230',
+		length: '234',
 		price: '17458',
 		dt70: '282',
 		dt60: '',
@@ -937,7 +891,6 @@ export default [
 		volume: '3.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -948,7 +901,7 @@ export default [
 		n_spacing: '430',
 		width: '90',
 		height: '500',
-		length: '230',
+		length: '234',
 		price: '18450',
 		dt70: '363',
 		dt60: '',
@@ -957,7 +910,6 @@ export default [
 		volume: '3.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -968,7 +920,7 @@ export default [
 		n_spacing: '480',
 		width: '90',
 		height: '550',
-		length: '230',
+		length: '234',
 		price: '20665',
 		dt70: '399',
 		dt60: '',
@@ -977,7 +929,6 @@ export default [
 		volume: '4.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -988,7 +939,7 @@ export default [
 		n_spacing: '500',
 		width: '90',
 		height: '570',
-		length: '230',
+		length: '234',
 		price: '20665',
 		dt70: '416',
 		dt60: '',
@@ -997,7 +948,6 @@ export default [
 		volume: '4.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1008,7 +958,7 @@ export default [
 		n_spacing: '680',
 		width: '90',
 		height: '750',
-		length: '230',
+		length: '234',
 		price: '22110',
 		dt70: '538',
 		dt60: '',
@@ -1017,7 +967,6 @@ export default [
 		volume: '5.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1028,7 +977,7 @@ export default [
 		n_spacing: '930',
 		width: '90',
 		height: '1000',
-		length: '230',
+		length: '234',
 		price: '24585',
 		dt70: '727',
 		dt60: '',
@@ -1037,7 +986,6 @@ export default [
 		volume: '7.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1048,7 +996,7 @@ export default [
 		n_spacing: '1180',
 		width: '90',
 		height: '1250',
-		length: '230',
+		length: '234',
 		price: '26785',
 		dt70: '902',
 		dt60: '',
@@ -1057,7 +1005,6 @@ export default [
 		volume: '9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1068,7 +1015,7 @@ export default [
 		n_spacing: '1430',
 		width: '90',
 		height: '1500',
-		length: '230',
+		length: '234',
 		price: '28930',
 		dt70: '1083',
 		dt60: '',
@@ -1077,7 +1024,6 @@ export default [
 		volume: '10.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1088,7 +1034,7 @@ export default [
 		n_spacing: '1680',
 		width: '90',
 		height: '1750',
-		length: '230',
+		length: '234',
 		price: '31130',
 		dt70: '1258',
 		dt60: '',
@@ -1097,7 +1043,6 @@ export default [
 		volume: '12.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1108,7 +1053,7 @@ export default [
 		n_spacing: '1930',
 		width: '90',
 		height: '2000',
-		length: '230',
+		length: '234',
 		price: '34650',
 		dt70: '1452',
 		dt60: '',
@@ -1117,7 +1062,6 @@ export default [
 		volume: '14.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1128,7 +1072,7 @@ export default [
 		n_spacing: '2130',
 		width: '90',
 		height: '2200',
-		length: '230',
+		length: '234',
 		price: '36740',
 		dt70: '1598',
 		dt60: '',
@@ -1137,7 +1081,6 @@ export default [
 		volume: '15.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1148,7 +1091,7 @@ export default [
 		n_spacing: '2180',
 		width: '90',
 		height: '2250',
-		length: '230',
+		length: '234',
 		price: '36850',
 		dt70: '1622',
 		dt60: '',
@@ -1157,7 +1100,6 @@ export default [
 		volume: '15.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1168,7 +1110,7 @@ export default [
 		n_spacing: '2430',
 		width: '90',
 		height: '2500',
-		length: '230',
+		length: '234',
 		price: '38720',
 		dt70: '1815',
 		dt60: '',
@@ -1177,7 +1119,6 @@ export default [
 		volume: '17.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1188,7 +1129,7 @@ export default [
 		n_spacing: '2930',
 		width: '90',
 		height: '3000',
-		length: '230',
+		length: '234',
 		price: '60390',
 		dt70: '2179',
 		dt60: '',
@@ -1197,7 +1138,6 @@ export default [
 		volume: '21',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1208,7 +1148,7 @@ export default [
 		n_spacing: '200',
 		width: '90',
 		height: '270',
-		length: '280',
+		length: '284',
 		price: '17811',
 		dt70: '215',
 		dt60: '',
@@ -1217,7 +1157,6 @@ export default [
 		volume: '2.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1228,7 +1167,7 @@ export default [
 		n_spacing: '350',
 		width: '90',
 		height: '420',
-		length: '280',
+		length: '284',
 		price: '19454',
 		dt70: '336',
 		dt60: '',
@@ -1237,7 +1176,6 @@ export default [
 		volume: '3.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1248,7 +1186,7 @@ export default [
 		n_spacing: '430',
 		width: '90',
 		height: '500',
-		length: '280',
+		length: '284',
 		price: '20350',
 		dt70: '436',
 		dt60: '',
@@ -1257,7 +1195,6 @@ export default [
 		volume: '4.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1268,7 +1205,7 @@ export default [
 		n_spacing: '480',
 		width: '90',
 		height: '550',
-		length: '280',
+		length: '284',
 		price: '23102',
 		dt70: '479',
 		dt60: '',
@@ -1277,7 +1214,6 @@ export default [
 		volume: '5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1288,7 +1224,7 @@ export default [
 		n_spacing: '500',
 		width: '90',
 		height: '570',
-		length: '280',
+		length: '284',
 		price: '23103',
 		dt70: '496',
 		dt60: '',
@@ -1297,7 +1233,6 @@ export default [
 		volume: '5.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1308,7 +1243,7 @@ export default [
 		n_spacing: '680',
 		width: '90',
 		height: '750',
-		length: '280',
+		length: '284',
 		price: '24310',
 		dt70: '646',
 		dt60: '',
@@ -1317,7 +1252,6 @@ export default [
 		volume: '6.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1328,7 +1262,7 @@ export default [
 		n_spacing: '930',
 		width: '90',
 		height: '1000',
-		length: '280',
+		length: '284',
 		price: '27390',
 		dt70: '871',
 		dt60: '',
@@ -1337,7 +1271,6 @@ export default [
 		volume: '8.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1348,7 +1281,7 @@ export default [
 		n_spacing: '1180',
 		width: '90',
 		height: '1250',
-		length: '280',
+		length: '284',
 		price: '29975',
 		dt70: '1081',
 		dt60: '',
@@ -1357,7 +1290,6 @@ export default [
 		volume: '10.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1368,7 +1300,7 @@ export default [
 		n_spacing: '1430',
 		width: '90',
 		height: '1500',
-		length: '280',
+		length: '284',
 		price: '32560',
 		dt70: '1299',
 		dt60: '',
@@ -1377,7 +1309,6 @@ export default [
 		volume: '12.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1388,7 +1319,7 @@ export default [
 		n_spacing: '1680',
 		width: '90',
 		height: '1750',
-		length: '280',
+		length: '284',
 		price: '35200',
 		dt70: '1510',
 		dt60: '',
@@ -1397,7 +1328,6 @@ export default [
 		volume: '14.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1408,7 +1338,7 @@ export default [
 		n_spacing: '1930',
 		width: '90',
 		height: '2000',
-		length: '280',
+		length: '284',
 		price: '39820',
 		dt70: '1742',
 		dt60: '',
@@ -1417,7 +1347,6 @@ export default [
 		volume: '17',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1428,7 +1357,7 @@ export default [
 		n_spacing: '2130',
 		width: '90',
 		height: '2200',
-		length: '280',
+		length: '284',
 		price: '42130',
 		dt70: '1916',
 		dt60: '',
@@ -1437,7 +1366,6 @@ export default [
 		volume: '18.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1448,7 +1376,7 @@ export default [
 		n_spacing: '2180',
 		width: '90',
 		height: '2250',
-		length: '280',
+		length: '284',
 		price: '42240',
 		dt70: '1946',
 		dt60: '',
@@ -1457,7 +1385,6 @@ export default [
 		volume: '19',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1468,7 +1395,7 @@ export default [
 		n_spacing: '2430',
 		width: '90',
 		height: '2500',
-		length: '280',
+		length: '284',
 		price: '44770',
 		dt70: '2177',
 		dt60: '',
@@ -1477,7 +1404,6 @@ export default [
 		volume: '21.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1488,7 +1414,7 @@ export default [
 		n_spacing: '2930',
 		width: '90',
 		height: '3000',
-		length: '280',
+		length: '284',
 		price: '70070',
 		dt70: '2614',
 		dt60: '',
@@ -1497,7 +1423,6 @@ export default [
 		volume: '25.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1508,7 +1433,7 @@ export default [
 		n_spacing: '200',
 		width: '90',
 		height: '270',
-		length: '330',
+		length: '334',
 		price: '19610',
 		dt70: '252',
 		dt60: '',
@@ -1517,7 +1442,6 @@ export default [
 		volume: '3.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1528,7 +1452,7 @@ export default [
 		n_spacing: '350',
 		width: '90',
 		height: '420',
-		length: '330',
+		length: '334',
 		price: '21452',
 		dt70: '392',
 		dt60: '',
@@ -1537,7 +1461,6 @@ export default [
 		volume: '4.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1548,7 +1471,7 @@ export default [
 		n_spacing: '430',
 		width: '90',
 		height: '500',
-		length: '330',
+		length: '334',
 		price: '22250',
 		dt70: '509',
 		dt60: '',
@@ -1557,7 +1480,6 @@ export default [
 		volume: '5.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1568,7 +1490,7 @@ export default [
 		n_spacing: '480',
 		width: '90',
 		height: '550',
-		length: '330',
+		length: '334',
 		price: '25333',
 		dt70: '559',
 		dt60: '',
@@ -1577,7 +1499,6 @@ export default [
 		volume: '5.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1588,7 +1509,7 @@ export default [
 		n_spacing: '500',
 		width: '90',
 		height: '570',
-		length: '330',
+		length: '334',
 		price: '25333',
 		dt70: '579',
 		dt60: '',
@@ -1597,7 +1518,6 @@ export default [
 		volume: '6.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1608,7 +1528,7 @@ export default [
 		n_spacing: '680',
 		width: '90',
 		height: '750',
-		length: '330',
+		length: '334',
 		price: '26565',
 		dt70: '753',
 		dt60: '',
@@ -1617,7 +1537,6 @@ export default [
 		volume: '7.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1628,7 +1547,7 @@ export default [
 		n_spacing: '930',
 		width: '90',
 		height: '1000',
-		length: '330',
+		length: '334',
 		price: '30140',
 		dt70: '1017',
 		dt60: '',
@@ -1637,7 +1556,6 @@ export default [
 		volume: '10.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1648,7 +1566,7 @@ export default [
 		n_spacing: '1180',
 		width: '90',
 		height: '1250',
-		length: '330',
+		length: '334',
 		price: '33220',
 		dt70: '1262',
 		dt60: '',
@@ -1657,7 +1575,6 @@ export default [
 		volume: '12.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1668,7 +1585,7 @@ export default [
 		n_spacing: '1430',
 		width: '90',
 		height: '1500',
-		length: '330',
+		length: '334',
 		price: '36300',
 		dt70: '1516',
 		dt60: '',
@@ -1677,7 +1594,6 @@ export default [
 		volume: '15',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1688,7 +1604,7 @@ export default [
 		n_spacing: '1680',
 		width: '90',
 		height: '1750',
-		length: '330',
+		length: '334',
 		price: '39380',
 		dt70: '1761',
 		dt60: '',
@@ -1697,7 +1613,6 @@ export default [
 		volume: '17.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1708,7 +1623,7 @@ export default [
 		n_spacing: '1930',
 		width: '90',
 		height: '2000',
-		length: '330',
+		length: '334',
 		price: '44990',
 		dt70: '2033',
 		dt60: '',
@@ -1717,7 +1632,6 @@ export default [
 		volume: '19.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1728,7 +1642,7 @@ export default [
 		n_spacing: '2130',
 		width: '90',
 		height: '2200',
-		length: '330',
+		length: '334',
 		price: '47740',
 		dt70: '2235',
 		dt60: '',
@@ -1737,7 +1651,6 @@ export default [
 		volume: '21.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1748,7 +1661,7 @@ export default [
 		n_spacing: '2180',
 		width: '90',
 		height: '2250',
-		length: '330',
+		length: '334',
 		price: '47850',
 		dt70: '2270',
 		dt60: '',
@@ -1757,7 +1670,6 @@ export default [
 		volume: '22.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1768,7 +1680,7 @@ export default [
 		n_spacing: '2430',
 		width: '90',
 		height: '2500',
-		length: '330',
+		length: '334',
 		price: '50710',
 		dt70: '2540',
 		dt60: '',
@@ -1777,7 +1689,6 @@ export default [
 		volume: '24.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1788,7 +1699,7 @@ export default [
 		n_spacing: '2930',
 		width: '90',
 		height: '3000',
-		length: '330',
+		length: '334',
 		price: '79860',
 		dt70: '3050',
 		dt60: '',
@@ -1797,7 +1708,6 @@ export default [
 		volume: '29.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1808,7 +1718,7 @@ export default [
 		n_spacing: '200',
 		width: '90',
 		height: '270',
-		length: '380',
+		length: '384',
 		price: '21413',
 		dt70: '288',
 		dt60: '',
@@ -1817,7 +1727,6 @@ export default [
 		volume: '3.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1828,7 +1737,7 @@ export default [
 		n_spacing: '350',
 		width: '90',
 		height: '420',
-		length: '380',
+		length: '384',
 		price: '23455',
 		dt70: '448',
 		dt60: '',
@@ -1837,7 +1746,6 @@ export default [
 		volume: '5.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1848,7 +1756,7 @@ export default [
 		n_spacing: '430',
 		width: '90',
 		height: '500',
-		length: '380',
+		length: '384',
 		price: '24150',
 		dt70: '581',
 		dt60: '',
@@ -1857,7 +1765,6 @@ export default [
 		volume: '6.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1868,7 +1775,7 @@ export default [
 		n_spacing: '480',
 		width: '90',
 		height: '550',
-		length: '380',
+		length: '384',
 		price: '27423',
 		dt70: '638',
 		dt60: '',
@@ -1877,7 +1784,6 @@ export default [
 		volume: '6.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1888,7 +1794,7 @@ export default [
 		n_spacing: '500',
 		width: '90',
 		height: '570',
-		length: '380',
+		length: '384',
 		price: '27423',
 		dt70: '661',
 		dt60: '',
@@ -1897,7 +1803,6 @@ export default [
 		volume: '6.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1908,7 +1813,7 @@ export default [
 		n_spacing: '680',
 		width: '90',
 		height: '750',
-		length: '380',
+		length: '384',
 		price: '28875',
 		dt70: '860',
 		dt60: '',
@@ -1917,7 +1822,6 @@ export default [
 		volume: '8.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1928,7 +1832,7 @@ export default [
 		n_spacing: '930',
 		width: '90',
 		height: '1000',
-		length: '380',
+		length: '384',
 		price: '32890',
 		dt70: '1162',
 		dt60: '',
@@ -1937,7 +1841,6 @@ export default [
 		volume: '11.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1948,7 +1851,7 @@ export default [
 		n_spacing: '1180',
 		width: '90',
 		height: '1250',
-		length: '380',
+		length: '384',
 		price: '36410',
 		dt70: '1443',
 		dt60: '',
@@ -1957,7 +1860,6 @@ export default [
 		volume: '14.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1968,7 +1870,7 @@ export default [
 		n_spacing: '1430',
 		width: '90',
 		height: '1500',
-		length: '380',
+		length: '384',
 		price: '39875',
 		dt70: '1733',
 		dt60: '',
@@ -1977,7 +1879,6 @@ export default [
 		volume: '17.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -1988,7 +1889,7 @@ export default [
 		n_spacing: '1680',
 		width: '90',
 		height: '1750',
-		length: '380',
+		length: '384',
 		price: '43450',
 		dt70: '2014',
 		dt60: '',
@@ -1997,7 +1898,6 @@ export default [
 		volume: '19.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2008,7 +1908,7 @@ export default [
 		n_spacing: '1930',
 		width: '90',
 		height: '2000',
-		length: '380',
+		length: '384',
 		price: '50160',
 		dt70: '2323',
 		dt60: '',
@@ -2017,7 +1917,6 @@ export default [
 		volume: '22.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2028,7 +1927,7 @@ export default [
 		n_spacing: '2130',
 		width: '90',
 		height: '2200',
-		length: '380',
+		length: '384',
 		price: '53350',
 		dt70: '2556',
 		dt60: '',
@@ -2037,7 +1936,6 @@ export default [
 		volume: '24.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2048,7 +1946,7 @@ export default [
 		n_spacing: '2180',
 		width: '90',
 		height: '2250',
-		length: '380',
+		length: '384',
 		price: '53460',
 		dt70: '2595',
 		dt60: '',
@@ -2057,7 +1955,6 @@ export default [
 		volume: '25.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2068,7 +1965,7 @@ export default [
 		n_spacing: '2430',
 		width: '90',
 		height: '2500',
-		length: '380',
+		length: '384',
 		price: '56760',
 		dt70: '2904',
 		dt60: '',
@@ -2077,7 +1974,6 @@ export default [
 		volume: '28.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2088,7 +1984,7 @@ export default [
 		n_spacing: '2930',
 		width: '90',
 		height: '3000',
-		length: '380',
+		length: '384',
 		price: '89540',
 		dt70: '3485',
 		dt60: '',
@@ -2097,7 +1993,6 @@ export default [
 		volume: '33.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2108,7 +2003,7 @@ export default [
 		n_spacing: '200',
 		width: '90',
 		height: '270',
-		length: '430',
+		length: '434',
 		price: '23219',
 		dt70: '325',
 		dt60: '',
@@ -2117,7 +2012,6 @@ export default [
 		volume: '4.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2128,7 +2022,7 @@ export default [
 		n_spacing: '350',
 		width: '90',
 		height: '420',
-		length: '430',
+		length: '434',
 		price: '25462',
 		dt70: '506',
 		dt60: '',
@@ -2137,7 +2031,6 @@ export default [
 		volume: '5.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2148,7 +2041,7 @@ export default [
 		n_spacing: '430',
 		width: '90',
 		height: '500',
-		length: '430',
+		length: '434',
 		price: '26050',
 		dt70: '653',
 		dt60: '',
@@ -2157,7 +2050,6 @@ export default [
 		volume: '6.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2168,7 +2060,7 @@ export default [
 		n_spacing: '480',
 		width: '90',
 		height: '550',
-		length: '430',
+		length: '434',
 		price: '29513',
 		dt70: '719',
 		dt60: '',
@@ -2177,7 +2069,6 @@ export default [
 		volume: '7.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2188,7 +2079,7 @@ export default [
 		n_spacing: '500',
 		width: '90',
 		height: '570',
-		length: '430',
+		length: '434',
 		price: '29513',
 		dt70: '745',
 		dt60: '',
@@ -2197,7 +2088,6 @@ export default [
 		volume: '7.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2208,7 +2098,7 @@ export default [
 		n_spacing: '680',
 		width: '90',
 		height: '750',
-		length: '430',
+		length: '434',
 		price: '31130',
 		dt70: '969',
 		dt60: '',
@@ -2217,7 +2107,6 @@ export default [
 		volume: '10',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2228,7 +2117,7 @@ export default [
 		n_spacing: '930',
 		width: '90',
 		height: '1000',
-		length: '430',
+		length: '434',
 		price: '35695',
 		dt70: '1307',
 		dt60: '',
@@ -2237,7 +2126,6 @@ export default [
 		volume: '13.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2248,7 +2136,7 @@ export default [
 		n_spacing: '1180',
 		width: '90',
 		height: '1250',
-		length: '430',
+		length: '434',
 		price: '39710',
 		dt70: '1623',
 		dt60: '',
@@ -2257,7 +2145,6 @@ export default [
 		volume: '16.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2268,7 +2155,7 @@ export default [
 		n_spacing: '1430',
 		width: '90',
 		height: '1500',
-		length: '430',
+		length: '434',
 		price: '43560',
 		dt70: '1950',
 		dt60: '',
@@ -2277,7 +2164,6 @@ export default [
 		volume: '19.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2288,7 +2174,7 @@ export default [
 		n_spacing: '1680',
 		width: '90',
 		height: '1750',
-		length: '430',
+		length: '434',
 		price: '47520',
 		dt70: '2266',
 		dt60: '',
@@ -2297,7 +2183,6 @@ export default [
 		volume: '22.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2308,7 +2193,7 @@ export default [
 		n_spacing: '1930',
 		width: '90',
 		height: '2000',
-		length: '430',
+		length: '434',
 		price: '55330',
 		dt70: '2614',
 		dt60: '',
@@ -2317,7 +2202,6 @@ export default [
 		volume: '25.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2328,7 +2212,7 @@ export default [
 		n_spacing: '2130',
 		width: '90',
 		height: '2200',
-		length: '430',
+		length: '434',
 		price: '58960',
 		dt70: '2875',
 		dt60: '',
@@ -2337,7 +2221,6 @@ export default [
 		volume: '28',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2348,7 +2231,7 @@ export default [
 		n_spacing: '2180',
 		width: '90',
 		height: '2250',
-		length: '430',
+		length: '434',
 		price: '59070',
 		dt70: '2919',
 		dt60: '',
@@ -2357,7 +2240,6 @@ export default [
 		volume: '28.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2368,7 +2250,7 @@ export default [
 		n_spacing: '2430',
 		width: '90',
 		height: '2500',
-		length: '430',
+		length: '434',
 		price: '62700',
 		dt70: '3267',
 		dt60: '',
@@ -2377,7 +2259,6 @@ export default [
 		volume: '31.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2388,7 +2269,7 @@ export default [
 		n_spacing: '2930',
 		width: '90',
 		height: '3000',
-		length: '430',
+		length: '434',
 		price: '99330',
 		dt70: '3921',
 		dt60: '',
@@ -2397,7 +2278,6 @@ export default [
 		volume: '37.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2408,7 +2288,7 @@ export default [
 		n_spacing: '200',
 		width: '90',
 		height: '270',
-		length: '480',
+		length: '484',
 		price: '25029',
 		dt70: '360',
 		dt60: '',
@@ -2417,7 +2297,6 @@ export default [
 		volume: '4.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2428,7 +2307,7 @@ export default [
 		n_spacing: '350',
 		width: '90',
 		height: '420',
-		length: '480',
+		length: '484',
 		price: '27474',
 		dt70: '561',
 		dt60: '',
@@ -2437,7 +2316,6 @@ export default [
 		volume: '6.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2448,7 +2326,7 @@ export default [
 		n_spacing: '430',
 		width: '90',
 		height: '500',
-		length: '480',
+		length: '484',
 		price: '27950',
 		dt70: '727',
 		dt60: '',
@@ -2457,7 +2335,6 @@ export default [
 		volume: '7.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2468,7 +2345,7 @@ export default [
 		n_spacing: '480',
 		width: '90',
 		height: '550',
-		length: '480',
+		length: '484',
 		price: '31603',
 		dt70: '799',
 		dt60: '',
@@ -2477,7 +2354,6 @@ export default [
 		volume: '8.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2488,7 +2364,7 @@ export default [
 		n_spacing: '500',
 		width: '90',
 		height: '570',
-		length: '480',
+		length: '484',
 		price: '31603',
 		dt70: '827',
 		dt60: '',
@@ -2497,7 +2373,6 @@ export default [
 		volume: '8.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2508,7 +2383,7 @@ export default [
 		n_spacing: '680',
 		width: '90',
 		height: '750',
-		length: '480',
+		length: '484',
 		price: '33385',
 		dt70: '1077',
 		dt60: '',
@@ -2517,7 +2392,6 @@ export default [
 		volume: '11.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2528,7 +2402,7 @@ export default [
 		n_spacing: '930',
 		width: '90',
 		height: '1000',
-		length: '480',
+		length: '484',
 		price: '38500',
 		dt70: '1452',
 		dt60: '',
@@ -2537,7 +2411,6 @@ export default [
 		volume: '14.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2548,7 +2421,7 @@ export default [
 		n_spacing: '1180',
 		width: '90',
 		height: '1250',
-		length: '480',
+		length: '484',
 		price: '42900',
 		dt70: '1803',
 		dt60: '',
@@ -2557,7 +2430,6 @@ export default [
 		volume: '18',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2568,7 +2440,7 @@ export default [
 		n_spacing: '1430',
 		width: '90',
 		height: '1500',
-		length: '480',
+		length: '484',
 		price: '47190',
 		dt70: '2167',
 		dt60: '',
@@ -2577,7 +2449,6 @@ export default [
 		volume: '21.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2588,7 +2459,7 @@ export default [
 		n_spacing: '1680',
 		width: '90',
 		height: '1750',
-		length: '480',
+		length: '484',
 		price: '51590',
 		dt70: '2517',
 		dt60: '',
@@ -2597,7 +2468,6 @@ export default [
 		volume: '24.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2608,7 +2478,7 @@ export default [
 		n_spacing: '1930',
 		width: '90',
 		height: '2000',
-		length: '480',
+		length: '484',
 		price: '60610',
 		dt70: '2904',
 		dt60: '',
@@ -2617,7 +2487,6 @@ export default [
 		volume: '28.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2628,7 +2497,7 @@ export default [
 		n_spacing: '2130',
 		width: '90',
 		height: '2200',
-		length: '480',
+		length: '484',
 		price: '64570',
 		dt70: '3194',
 		dt60: '',
@@ -2637,7 +2506,6 @@ export default [
 		volume: '31.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2648,7 +2516,7 @@ export default [
 		n_spacing: '2180',
 		width: '90',
 		height: '2250',
-		length: '480',
+		length: '484',
 		price: '64680',
 		dt70: '3243',
 		dt60: '',
@@ -2657,7 +2525,6 @@ export default [
 		volume: '31.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2668,7 +2535,7 @@ export default [
 		n_spacing: '2430',
 		width: '90',
 		height: '2500',
-		length: '480',
+		length: '484',
 		price: '68750',
 		dt70: '3631',
 		dt60: '',
@@ -2677,7 +2544,6 @@ export default [
 		volume: '35.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2688,7 +2554,7 @@ export default [
 		n_spacing: '2930',
 		width: '90',
 		height: '3000',
-		length: '480',
+		length: '484',
 		price: '109120',
 		dt70: '4356',
 		dt60: '',
@@ -2697,7 +2563,6 @@ export default [
 		volume: '42.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2708,7 +2573,7 @@ export default [
 		n_spacing: '200',
 		width: '90',
 		height: '270',
-		length: '530',
+		length: '534',
 		price: '26841',
 		dt70: '396',
 		dt60: '',
@@ -2717,7 +2582,6 @@ export default [
 		volume: '5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2728,7 +2592,7 @@ export default [
 		n_spacing: '350',
 		width: '90',
 		height: '420',
-		length: '530',
+		length: '534',
 		price: '29487',
 		dt70: '616',
 		dt60: '',
@@ -2737,7 +2601,6 @@ export default [
 		volume: '7.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2748,7 +2611,7 @@ export default [
 		n_spacing: '430',
 		width: '90',
 		height: '500',
-		length: '530',
+		length: '534',
 		price: '29850',
 		dt70: '799',
 		dt60: '',
@@ -2757,7 +2620,6 @@ export default [
 		volume: '8.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2768,7 +2630,7 @@ export default [
 		n_spacing: '480',
 		width: '90',
 		height: '550',
-		length: '530',
+		length: '534',
 		price: '33704',
 		dt70: '878',
 		dt60: '',
@@ -2777,7 +2639,6 @@ export default [
 		volume: '9.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2788,7 +2649,7 @@ export default [
 		n_spacing: '500',
 		width: '90',
 		height: '570',
-		length: '530',
+		length: '534',
 		price: '33704',
 		dt70: '910',
 		dt60: '',
@@ -2797,7 +2658,6 @@ export default [
 		volume: '9.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2808,7 +2668,7 @@ export default [
 		n_spacing: '680',
 		width: '90',
 		height: '750',
-		length: '530',
+		length: '534',
 		price: '35640',
 		dt70: '1184',
 		dt60: '',
@@ -2817,7 +2677,6 @@ export default [
 		volume: '12.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2828,7 +2687,7 @@ export default [
 		n_spacing: '930',
 		width: '90',
 		height: '1000',
-		length: '530',
+		length: '534',
 		price: '41250',
 		dt70: '1598',
 		dt60: '',
@@ -2837,7 +2696,6 @@ export default [
 		volume: '16',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2848,7 +2706,7 @@ export default [
 		n_spacing: '1180',
 		width: '90',
 		height: '1250',
-		length: '530',
+		length: '534',
 		price: '46090',
 		dt70: '1983',
 		dt60: '',
@@ -2857,7 +2715,6 @@ export default [
 		volume: '19.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2868,7 +2725,7 @@ export default [
 		n_spacing: '1430',
 		width: '90',
 		height: '1500',
-		length: '530',
+		length: '534',
 		price: '50820',
 		dt70: '2382',
 		dt60: '',
@@ -2877,7 +2734,6 @@ export default [
 		volume: '23.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2888,7 +2744,7 @@ export default [
 		n_spacing: '1680',
 		width: '90',
 		height: '1750',
-		length: '530',
+		length: '534',
 		price: '55660',
 		dt70: '2769',
 		dt60: '',
@@ -2897,7 +2753,6 @@ export default [
 		volume: '27.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2908,7 +2763,7 @@ export default [
 		n_spacing: '1930',
 		width: '90',
 		height: '2000',
-		length: '530',
+		length: '534',
 		price: '65780',
 		dt70: '3194',
 		dt60: '',
@@ -2917,7 +2772,6 @@ export default [
 		volume: '31.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2928,7 +2782,7 @@ export default [
 		n_spacing: '2130',
 		width: '90',
 		height: '2200',
-		length: '530',
+		length: '534',
 		price: '70180',
 		dt70: '3514',
 		dt60: '',
@@ -2937,7 +2791,6 @@ export default [
 		volume: '34.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2948,7 +2801,7 @@ export default [
 		n_spacing: '2180',
 		width: '90',
 		height: '2250',
-		length: '530',
+		length: '534',
 		price: '70290',
 		dt70: '3568',
 		dt60: '',
@@ -2957,7 +2810,6 @@ export default [
 		volume: '34.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2968,7 +2820,7 @@ export default [
 		n_spacing: '2430',
 		width: '90',
 		height: '2500',
-		length: '530',
+		length: '534',
 		price: '74800',
 		dt70: '3993',
 		dt60: '',
@@ -2977,7 +2829,6 @@ export default [
 		volume: '38.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -2988,7 +2839,7 @@ export default [
 		n_spacing: '2930',
 		width: '90',
 		height: '3000',
-		length: '530',
+		length: '534',
 		price: '118800',
 		dt70: '4792',
 		dt60: '',
@@ -2997,7 +2848,6 @@ export default [
 		volume: '46.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3008,7 +2858,7 @@ export default [
 		n_spacing: '200',
 		width: '90',
 		height: '270',
-		length: '580',
+		length: '584',
 		price: '28632',
 		dt70: '433',
 		dt60: '',
@@ -3017,7 +2867,6 @@ export default [
 		volume: '5.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3028,7 +2877,7 @@ export default [
 		n_spacing: '350',
 		width: '90',
 		height: '420',
-		length: '580',
+		length: '584',
 		price: '31477',
 		dt70: '673',
 		dt60: '',
@@ -3037,7 +2886,6 @@ export default [
 		volume: '7.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3048,7 +2896,7 @@ export default [
 		n_spacing: '430',
 		width: '90',
 		height: '500',
-		length: '580',
+		length: '584',
 		price: '31850',
 		dt70: '871',
 		dt60: '',
@@ -3057,7 +2905,6 @@ export default [
 		volume: '9.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3068,7 +2915,7 @@ export default [
 		n_spacing: '480',
 		width: '90',
 		height: '550',
-		length: '580',
+		length: '584',
 		price: '35695',
 		dt70: '958',
 		dt60: '',
@@ -3077,7 +2924,6 @@ export default [
 		volume: '10.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3088,7 +2934,7 @@ export default [
 		n_spacing: '500',
 		width: '90',
 		height: '570',
-		length: '580',
+		length: '584',
 		price: '35695',
 		dt70: '993',
 		dt60: '',
@@ -3097,7 +2943,6 @@ export default [
 		volume: '10.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3108,7 +2953,7 @@ export default [
 		n_spacing: '680',
 		width: '90',
 		height: '750',
-		length: '580',
+		length: '584',
 		price: '37950',
 		dt70: '1293',
 		dt60: '',
@@ -3117,7 +2962,6 @@ export default [
 		volume: '13.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3128,7 +2972,7 @@ export default [
 		n_spacing: '930',
 		width: '90',
 		height: '1000',
-		length: '580',
+		length: '584',
 		price: '44110',
 		dt70: '1742',
 		dt60: '',
@@ -3137,7 +2981,6 @@ export default [
 		volume: '17.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3148,7 +2991,7 @@ export default [
 		n_spacing: '1180',
 		width: '90',
 		height: '1250',
-		length: '580',
+		length: '584',
 		price: '49280',
 		dt70: '2164',
 		dt60: '',
@@ -3157,7 +3000,6 @@ export default [
 		volume: '21.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3168,7 +3010,7 @@ export default [
 		n_spacing: '1430',
 		width: '90',
 		height: '1500',
-		length: '580',
+		length: '584',
 		price: '54560',
 		dt70: '2599',
 		dt60: '',
@@ -3177,7 +3019,6 @@ export default [
 		volume: '25.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3188,7 +3029,7 @@ export default [
 		n_spacing: '1680',
 		width: '90',
 		height: '1750',
-		length: '580',
+		length: '584',
 		price: '59785',
 		dt70: '3020',
 		dt60: '',
@@ -3197,7 +3038,6 @@ export default [
 		volume: '29.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3208,7 +3048,7 @@ export default [
 		n_spacing: '1930',
 		width: '90',
 		height: '2000',
-		length: '580',
+		length: '584',
 		price: '71170',
 		dt70: '3485',
 		dt60: '',
@@ -3217,7 +3057,6 @@ export default [
 		volume: '34',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3228,7 +3067,7 @@ export default [
 		n_spacing: '2130',
 		width: '90',
 		height: '2200',
-		length: '580',
+		length: '584',
 		price: '75735',
 		dt70: '3834',
 		dt60: '',
@@ -3237,7 +3076,6 @@ export default [
 		volume: '37.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3248,7 +3086,7 @@ export default [
 		n_spacing: '2180',
 		width: '90',
 		height: '2250',
-		length: '580',
+		length: '584',
 		price: '75845',
 		dt70: '3892',
 		dt60: '',
@@ -3257,7 +3095,6 @@ export default [
 		volume: '38.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3268,7 +3105,7 @@ export default [
 		n_spacing: '2430',
 		width: '90',
 		height: '2500',
-		length: '580',
+		length: '584',
 		price: '80740',
 		dt70: '4356',
 		dt60: '',
@@ -3277,7 +3114,6 @@ export default [
 		volume: '42.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3288,7 +3124,7 @@ export default [
 		n_spacing: '2930',
 		width: '90',
 		height: '3000',
-		length: '580',
+		length: '584',
 		price: '128480',
 		dt70: '5227',
 		dt60: '',
@@ -3297,7 +3133,6 @@ export default [
 		volume: '50.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3308,7 +3143,7 @@ export default [
 		n_spacing: '200',
 		width: '90',
 		height: '270',
-		length: '630',
+		length: '634',
 		price: '30424',
 		dt70: '469',
 		dt60: '',
@@ -3317,7 +3152,6 @@ export default [
 		volume: '5.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3328,7 +3162,7 @@ export default [
 		n_spacing: '350',
 		width: '90',
 		height: '420',
-		length: '630',
+		length: '634',
 		price: '33468',
 		dt70: '728',
 		dt60: '',
@@ -3337,7 +3171,6 @@ export default [
 		volume: '8.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3348,7 +3181,7 @@ export default [
 		n_spacing: '430',
 		width: '90',
 		height: '500',
-		length: '630',
+		length: '634',
 		price: '33850',
 		dt70: '943',
 		dt60: '',
@@ -3357,7 +3190,6 @@ export default [
 		volume: '10',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3368,7 +3200,7 @@ export default [
 		n_spacing: '480',
 		width: '90',
 		height: '550',
-		length: '630',
+		length: '634',
 		price: '37785',
 		dt70: '1038',
 		dt60: '',
@@ -3377,7 +3209,6 @@ export default [
 		volume: '10.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3388,7 +3219,7 @@ export default [
 		n_spacing: '500',
 		width: '90',
 		height: '570',
-		length: '630',
+		length: '634',
 		price: '37785',
 		dt70: '1076',
 		dt60: '',
@@ -3397,7 +3228,6 @@ export default [
 		volume: '11.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3408,7 +3238,7 @@ export default [
 		n_spacing: '680',
 		width: '90',
 		height: '750',
-		length: '630',
+		length: '634',
 		price: '40205',
 		dt70: '1400',
 		dt60: '',
@@ -3417,7 +3247,6 @@ export default [
 		volume: '14.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3428,7 +3257,7 @@ export default [
 		n_spacing: '930',
 		width: '90',
 		height: '1000',
-		length: '630',
+		length: '634',
 		price: '46805',
 		dt70: '1888',
 		dt60: '',
@@ -3437,7 +3266,6 @@ export default [
 		volume: '19',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3448,7 +3276,7 @@ export default [
 		n_spacing: '1180',
 		width: '90',
 		height: '1250',
-		length: '630',
+		length: '634',
 		price: '52580',
 		dt70: '2343',
 		dt60: '',
@@ -3457,7 +3285,6 @@ export default [
 		volume: '23.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3468,7 +3295,7 @@ export default [
 		n_spacing: '1430',
 		width: '90',
 		height: '1500',
-		length: '630',
+		length: '634',
 		price: '58190',
 		dt70: '2816',
 		dt60: '',
@@ -3477,7 +3304,6 @@ export default [
 		volume: '27.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3488,7 +3314,7 @@ export default [
 		n_spacing: '1680',
 		width: '90',
 		height: '1750',
-		length: '630',
+		length: '634',
 		price: '64680',
 		dt70: '3272',
 		dt60: '',
@@ -3497,7 +3323,6 @@ export default [
 		volume: '32.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3508,7 +3333,7 @@ export default [
 		n_spacing: '1930',
 		width: '90',
 		height: '2000',
-		length: '630',
+		length: '634',
 		price: '76780',
 		dt70: '3775',
 		dt60: '',
@@ -3517,7 +3342,6 @@ export default [
 		volume: '36.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3528,7 +3352,7 @@ export default [
 		n_spacing: '2130',
 		width: '90',
 		height: '2200',
-		length: '630',
+		length: '634',
 		price: '86790',
 		dt70: '4153',
 		dt60: '',
@@ -3537,7 +3361,6 @@ export default [
 		volume: '40.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3548,7 +3371,7 @@ export default [
 		n_spacing: '2180',
 		width: '90',
 		height: '2250',
-		length: '630',
+		length: '634',
 		price: '86900',
 		dt70: '4215',
 		dt60: '',
@@ -3557,7 +3380,6 @@ export default [
 		volume: '41.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3568,7 +3390,7 @@ export default [
 		n_spacing: '2430',
 		width: '90',
 		height: '2500',
-		length: '630',
+		length: '634',
 		price: '90640',
 		dt70: '4719',
 		dt60: '',
@@ -3577,7 +3399,6 @@ export default [
 		volume: '45.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3588,7 +3409,7 @@ export default [
 		n_spacing: '2930',
 		width: '90',
 		height: '3000',
-		length: '630',
+		length: '634',
 		price: '138160',
 		dt70: '5663',
 		dt60: '',
@@ -3597,7 +3418,6 @@ export default [
 		volume: '54.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3608,7 +3428,7 @@ export default [
 		n_spacing: '200',
 		width: '90',
 		height: '270',
-		length: '680',
+		length: '684',
 		price: '32397',
 		dt70: '506',
 		dt60: '',
@@ -3617,7 +3437,6 @@ export default [
 		volume: '6.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3628,7 +3447,7 @@ export default [
 		n_spacing: '350',
 		width: '90',
 		height: '420',
-		length: '680',
+		length: '684',
 		price: '35660',
 		dt70: '785',
 		dt60: '',
@@ -3637,7 +3456,6 @@ export default [
 		volume: '9.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3648,7 +3466,7 @@ export default [
 		n_spacing: '430',
 		width: '90',
 		height: '500',
-		length: '680',
+		length: '684',
 		price: '35850',
 		dt70: '1017',
 		dt60: '',
@@ -3657,7 +3475,6 @@ export default [
 		volume: '10.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3668,7 +3485,7 @@ export default [
 		n_spacing: '480',
 		width: '90',
 		height: '550',
-		length: '680',
+		length: '684',
 		price: '39875',
 		dt70: '1117',
 		dt60: '',
@@ -3677,7 +3494,6 @@ export default [
 		volume: '11.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3688,7 +3504,7 @@ export default [
 		n_spacing: '500',
 		width: '90',
 		height: '570',
-		length: '680',
+		length: '684',
 		price: '39875',
 		dt70: '1159',
 		dt60: '',
@@ -3697,7 +3513,6 @@ export default [
 		volume: '12.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3708,7 +3523,7 @@ export default [
 		n_spacing: '680',
 		width: '90',
 		height: '750',
-		length: '680',
+		length: '684',
 		price: '42460',
 		dt70: '1508',
 		dt60: '',
@@ -3717,7 +3532,6 @@ export default [
 		volume: '15.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3728,7 +3542,7 @@ export default [
 		n_spacing: '930',
 		width: '90',
 		height: '1000',
-		length: '680',
+		length: '684',
 		price: '49610',
 		dt70: '2033',
 		dt60: '',
@@ -3737,7 +3551,6 @@ export default [
 		volume: '20.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3748,7 +3561,7 @@ export default [
 		n_spacing: '1180',
 		width: '90',
 		height: '1250',
-		length: '680',
+		length: '684',
 		price: '55770',
 		dt70: '2524',
 		dt60: '',
@@ -3757,7 +3570,6 @@ export default [
 		volume: '25.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3768,7 +3580,7 @@ export default [
 		n_spacing: '1430',
 		width: '90',
 		height: '1500',
-		length: '680',
+		length: '684',
 		price: '61820',
 		dt70: '3032',
 		dt60: '',
@@ -3777,7 +3589,6 @@ export default [
 		volume: '30.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3788,7 +3599,7 @@ export default [
 		n_spacing: '1680',
 		width: '90',
 		height: '1750',
-		length: '680',
+		length: '684',
 		price: '69520',
 		dt70: '3524',
 		dt60: '',
@@ -3797,7 +3608,6 @@ export default [
 		volume: '34.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3808,7 +3618,7 @@ export default [
 		n_spacing: '1930',
 		width: '90',
 		height: '2000',
-		length: '680',
+		length: '684',
 		price: '82390',
 		dt70: '4066',
 		dt60: '',
@@ -3817,7 +3627,6 @@ export default [
 		volume: '39.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3828,7 +3637,7 @@ export default [
 		n_spacing: '2130',
 		width: '90',
 		height: '2200',
-		length: '680',
+		length: '684',
 		price: '97680',
 		dt70: '4472',
 		dt60: '',
@@ -3837,7 +3646,6 @@ export default [
 		volume: '43.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3848,7 +3656,7 @@ export default [
 		n_spacing: '2180',
 		width: '90',
 		height: '2250',
-		length: '680',
+		length: '684',
 		price: '97790',
 		dt70: '4541',
 		dt60: '',
@@ -3857,7 +3665,6 @@ export default [
 		volume: '44.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3868,7 +3675,7 @@ export default [
 		n_spacing: '2430',
 		width: '90',
 		height: '2500',
-		length: '680',
+		length: '684',
 		price: '100540',
 		dt70: '5083',
 		dt60: '',
@@ -3877,7 +3684,6 @@ export default [
 		volume: '49.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3888,7 +3694,7 @@ export default [
 		n_spacing: '2930',
 		width: '90',
 		height: '3000',
-		length: '680',
+		length: '684',
 		price: '147840',
 		dt70: '6098',
 		dt60: '',
@@ -3897,7 +3703,6 @@ export default [
 		volume: '58.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3908,7 +3713,7 @@ export default [
 		n_spacing: '200',
 		width: '90',
 		height: '270',
-		length: '730',
+		length: '734',
 		price: '34206',
 		dt70: '542',
 		dt60: '',
@@ -3917,7 +3722,6 @@ export default [
 		volume: '6.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3928,7 +3732,7 @@ export default [
 		n_spacing: '350',
 		width: '90',
 		height: '420',
-		length: '730',
+		length: '734',
 		price: '37672',
 		dt70: '840',
 		dt60: '',
@@ -3937,7 +3741,6 @@ export default [
 		volume: '9.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3948,7 +3751,7 @@ export default [
 		n_spacing: '430',
 		width: '90',
 		height: '500',
-		length: '730',
+		length: '734',
 		price: '38250',
 		dt70: '1089',
 		dt60: '',
@@ -3957,7 +3760,6 @@ export default [
 		volume: '11.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3968,7 +3770,7 @@ export default [
 		n_spacing: '480',
 		width: '90',
 		height: '550',
-		length: '730',
+		length: '734',
 		price: '42636',
 		dt70: '1197',
 		dt60: '',
@@ -3977,7 +3779,6 @@ export default [
 		volume: '12.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -3988,7 +3789,7 @@ export default [
 		n_spacing: '500',
 		width: '90',
 		height: '570',
-		length: '730',
+		length: '734',
 		price: '42636',
 		dt70: '1242',
 		dt60: '',
@@ -3997,7 +3798,6 @@ export default [
 		volume: '13',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4008,7 +3808,7 @@ export default [
 		n_spacing: '200',
 		width: '90',
 		height: '270',
-		length: '780',
+		length: '784',
 		price: '36015',
 		dt70: '578',
 		dt60: '',
@@ -4017,7 +3817,6 @@ export default [
 		volume: '7.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4028,7 +3827,7 @@ export default [
 		n_spacing: '350',
 		width: '90',
 		height: '420',
-		length: '780',
+		length: '784',
 		price: '39684',
 		dt70: '895',
 		dt60: '',
@@ -4037,7 +3836,6 @@ export default [
 		volume: '10.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4048,7 +3846,7 @@ export default [
 		n_spacing: '430',
 		width: '90',
 		height: '500',
-		length: '780',
+		length: '784',
 		price: '40650',
 		dt70: '1161',
 		dt60: '',
@@ -4057,7 +3855,6 @@ export default [
 		volume: '12.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4068,7 +3865,7 @@ export default [
 		n_spacing: '480',
 		width: '90',
 		height: '550',
-		length: '780',
+		length: '784',
 		price: '45397',
 		dt70: '1276',
 		dt60: '',
@@ -4077,7 +3874,6 @@ export default [
 		volume: '13.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4088,7 +3884,7 @@ export default [
 		n_spacing: '500',
 		width: '90',
 		height: '570',
-		length: '780',
+		length: '784',
 		price: '45397',
 		dt70: '1324',
 		dt60: '',
@@ -4097,7 +3893,6 @@ export default [
 		volume: '13.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4108,7 +3903,7 @@ export default [
 		n_spacing: '200',
 		width: '90',
 		height: '270',
-		length: '830',
+		length: '834',
 		price: '37824',
 		dt70: '614',
 		dt60: '',
@@ -4117,7 +3912,6 @@ export default [
 		volume: '7.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4128,7 +3922,7 @@ export default [
 		n_spacing: '350',
 		width: '90',
 		height: '420',
-		length: '830',
+		length: '834',
 		price: '41694',
 		dt70: '950',
 		dt60: '',
@@ -4137,7 +3931,6 @@ export default [
 		volume: '11.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4148,7 +3941,7 @@ export default [
 		n_spacing: '430',
 		width: '90',
 		height: '500',
-		length: '830',
+		length: '834',
 		price: '43050',
 		dt70: '1232',
 		dt60: '',
@@ -4157,7 +3950,6 @@ export default [
 		volume: '13.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4168,7 +3960,7 @@ export default [
 		n_spacing: '480',
 		width: '90',
 		height: '550',
-		length: '830',
+		length: '834',
 		price: '48158',
 		dt70: '1356',
 		dt60: '',
@@ -4177,7 +3969,6 @@ export default [
 		volume: '14.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4188,7 +3979,7 @@ export default [
 		n_spacing: '500',
 		width: '90',
 		height: '570',
-		length: '830',
+		length: '834',
 		price: '48158',
 		dt70: '1407',
 		dt60: '',
@@ -4197,7 +3988,6 @@ export default [
 		volume: '14.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4208,7 +3998,7 @@ export default [
 		n_spacing: '200',
 		width: '90',
 		height: '270',
-		length: '880',
+		length: '884',
 		price: '39633',
 		dt70: '650',
 		dt60: '',
@@ -4217,7 +4007,6 @@ export default [
 		volume: '8.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4228,7 +4017,7 @@ export default [
 		n_spacing: '350',
 		width: '90',
 		height: '420',
-		length: '880',
+		length: '884',
 		price: '43706',
 		dt70: '1005',
 		dt60: '',
@@ -4237,7 +4026,6 @@ export default [
 		volume: '11.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4248,7 +4036,7 @@ export default [
 		n_spacing: '430',
 		width: '90',
 		height: '500',
-		length: '880',
+		length: '884',
 		price: '45450',
 		dt70: '1304',
 		dt60: '',
@@ -4257,7 +4045,6 @@ export default [
 		volume: '13.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4268,7 +4055,7 @@ export default [
 		n_spacing: '480',
 		width: '90',
 		height: '550',
-		length: '880',
+		length: '884',
 		price: '50919',
 		dt70: '1435',
 		dt60: '',
@@ -4277,7 +4064,6 @@ export default [
 		volume: '15',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4288,7 +4074,7 @@ export default [
 		n_spacing: '500',
 		width: '90',
 		height: '570',
-		length: '880',
+		length: '884',
 		price: '50919',
 		dt70: '1490',
 		dt60: '',
@@ -4297,7 +4083,6 @@ export default [
 		volume: '15.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4308,7 +4093,7 @@ export default [
 		n_spacing: '200',
 		width: '90',
 		height: '270',
-		length: '930',
+		length: '934',
 		price: '41441',
 		dt70: '686',
 		dt60: '',
@@ -4317,7 +4102,6 @@ export default [
 		volume: '8.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4328,7 +4112,7 @@ export default [
 		n_spacing: '350',
 		width: '90',
 		height: '420',
-		length: '930',
+		length: '934',
 		price: '45717',
 		dt70: '1060',
 		dt60: '',
@@ -4337,7 +4121,6 @@ export default [
 		volume: '12.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4348,7 +4131,7 @@ export default [
 		n_spacing: '430',
 		width: '90',
 		height: '500',
-		length: '930',
+		length: '934',
 		price: '47850',
 		dt70: '1376',
 		dt60: '',
@@ -4357,7 +4140,6 @@ export default [
 		volume: '14.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4368,7 +4150,7 @@ export default [
 		n_spacing: '480',
 		width: '90',
 		height: '550',
-		length: '930',
+		length: '934',
 		price: '53680',
 		dt70: '1515',
 		dt60: '',
@@ -4377,7 +4159,6 @@ export default [
 		volume: '15.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4388,7 +4169,7 @@ export default [
 		n_spacing: '500',
 		width: '90',
 		height: '570',
-		length: '930',
+		length: '934',
 		price: '53680',
 		dt70: '1572',
 		dt60: '',
@@ -4397,7 +4178,6 @@ export default [
 		volume: '16.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4408,7 +4188,7 @@ export default [
 		n_spacing: '200',
 		width: '90',
 		height: '270',
-		length: '980',
+		length: '984',
 		price: '43251',
 		dt70: '721',
 		dt60: '',
@@ -4417,7 +4197,6 @@ export default [
 		volume: '9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4428,7 +4207,7 @@ export default [
 		n_spacing: '350',
 		width: '90',
 		height: '420',
-		length: '980',
+		length: '984',
 		price: '47729',
 		dt70: '1115',
 		dt60: '',
@@ -4437,7 +4216,6 @@ export default [
 		volume: '13.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4448,7 +4226,7 @@ export default [
 		n_spacing: '430',
 		width: '90',
 		height: '500',
-		length: '980',
+		length: '984',
 		price: '50250',
 		dt70: '1447',
 		dt60: '',
@@ -4457,7 +4235,6 @@ export default [
 		volume: '15.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4468,7 +4245,7 @@ export default [
 		n_spacing: '480',
 		width: '90',
 		height: '550',
-		length: '980',
+		length: '984',
 		price: '56441',
 		dt70: '1593',
 		dt60: '',
@@ -4477,7 +4254,6 @@ export default [
 		volume: '16.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4488,7 +4264,7 @@ export default [
 		n_spacing: '500',
 		width: '90',
 		height: '570',
-		length: '980',
+		length: '984',
 		price: '56441',
 		dt70: '1653',
 		dt60: '',
@@ -4497,7 +4273,6 @@ export default [
 		volume: '17.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4508,7 +4283,7 @@ export default [
 		n_spacing: '200',
 		width: '90',
 		height: '270',
-		length: '1080',
+		length: '1084',
 		price: '46869',
 		dt70: '791',
 		dt60: '',
@@ -4517,7 +4292,6 @@ export default [
 		volume: '10',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4528,7 +4302,7 @@ export default [
 		n_spacing: '350',
 		width: '90',
 		height: '420',
-		length: '1080',
+		length: '1084',
 		price: '51752',
 		dt70: '1223',
 		dt60: '',
@@ -4537,7 +4311,6 @@ export default [
 		volume: '14.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4548,7 +4321,7 @@ export default [
 		n_spacing: '430',
 		width: '90',
 		height: '500',
-		length: '1080',
+		length: '1084',
 		price: '55050',
 		dt70: '1586',
 		dt60: '',
@@ -4557,7 +4330,6 @@ export default [
 		volume: '17',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4568,7 +4340,7 @@ export default [
 		n_spacing: '480',
 		width: '90',
 		height: '550',
-		length: '1080',
+		length: '1084',
 		price: '61963',
 		dt70: '1750',
 		dt60: '',
@@ -4577,7 +4349,6 @@ export default [
 		volume: '18.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4588,7 +4359,7 @@ export default [
 		n_spacing: '500',
 		width: '90',
 		height: '570',
-		length: '1080',
+		length: '1084',
 		price: '61963',
 		dt70: '1814',
 		dt60: '',
@@ -4597,7 +4368,6 @@ export default [
 		volume: '19',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4608,7 +4378,7 @@ export default [
 		n_spacing: '200',
 		width: '90',
 		height: '270',
-		length: '1180',
+		length: '1184',
 		price: '50487',
 		dt70: '861',
 		dt60: '',
@@ -4617,7 +4387,6 @@ export default [
 		volume: '11',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4628,7 +4397,7 @@ export default [
 		n_spacing: '350',
 		width: '90',
 		height: '420',
-		length: '1180',
+		length: '1184',
 		price: '55774',
 		dt70: '1331',
 		dt60: '',
@@ -4637,7 +4406,6 @@ export default [
 		volume: '15.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4648,7 +4416,7 @@ export default [
 		n_spacing: '430',
 		width: '90',
 		height: '500',
-		length: '1180',
+		length: '1184',
 		price: '59850',
 		dt70: '1725',
 		dt60: '',
@@ -4657,7 +4425,6 @@ export default [
 		volume: '18.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4668,7 +4435,7 @@ export default [
 		n_spacing: '480',
 		width: '90',
 		height: '550',
-		length: '1180',
+		length: '1184',
 		price: '67485',
 		dt70: '1906',
 		dt60: '',
@@ -4677,7 +4444,6 @@ export default [
 		volume: '20.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4688,7 +4454,7 @@ export default [
 		n_spacing: '500',
 		width: '90',
 		height: '570',
-		length: '1180',
+		length: '1184',
 		price: '67485',
 		dt70: '1975',
 		dt60: '',
@@ -4697,7 +4463,6 @@ export default [
 		volume: '20.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4708,7 +4473,7 @@ export default [
 		n_spacing: '200',
 		width: '90',
 		height: '270',
-		length: '1280',
+		length: '1284',
 		price: '54105',
 		dt70: '931',
 		dt60: '',
@@ -4717,7 +4482,6 @@ export default [
 		volume: '11.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4728,7 +4492,7 @@ export default [
 		n_spacing: '350',
 		width: '90',
 		height: '420',
-		length: '1280',
+		length: '1284',
 		price: '59797',
 		dt70: '1439',
 		dt60: '',
@@ -4737,7 +4501,6 @@ export default [
 		volume: '17.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4748,7 +4511,7 @@ export default [
 		n_spacing: '430',
 		width: '90',
 		height: '500',
-		length: '1280',
+		length: '1284',
 		price: '64650',
 		dt70: '1865',
 		dt60: '',
@@ -4757,7 +4520,6 @@ export default [
 		volume: '20',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4768,7 +4530,7 @@ export default [
 		n_spacing: '480',
 		width: '90',
 		height: '550',
-		length: '1280',
+		length: '1284',
 		price: '73007',
 		dt70: '2063',
 		dt60: '',
@@ -4777,7 +4539,6 @@ export default [
 		volume: '21.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4788,7 +4549,7 @@ export default [
 		n_spacing: '500',
 		width: '90',
 		height: '570',
-		length: '1280',
+		length: '1284',
 		price: '73007',
 		dt70: '2136',
 		dt60: '',
@@ -4797,7 +4558,6 @@ export default [
 		volume: '22.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4808,7 +4568,7 @@ export default [
 		n_spacing: '200',
 		width: '90',
 		height: '270',
-		length: '1380',
+		length: '1384',
 		price: '57723',
 		dt70: '1001',
 		dt60: '',
@@ -4817,7 +4577,6 @@ export default [
 		volume: '12.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4828,7 +4587,7 @@ export default [
 		n_spacing: '350',
 		width: '90',
 		height: '420',
-		length: '1380',
+		length: '1384',
 		price: '63820',
 		dt70: '1547',
 		dt60: '',
@@ -4837,7 +4596,6 @@ export default [
 		volume: '18.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4848,7 +4606,7 @@ export default [
 		n_spacing: '430',
 		width: '90',
 		height: '500',
-		length: '1380',
+		length: '1384',
 		price: '69450',
 		dt70: '2004',
 		dt60: '',
@@ -4857,7 +4615,6 @@ export default [
 		volume: '21.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4868,7 +4625,7 @@ export default [
 		n_spacing: '480',
 		width: '90',
 		height: '550',
-		length: '1380',
+		length: '1384',
 		price: '78529',
 		dt70: '2220',
 		dt60: '',
@@ -4877,7 +4634,6 @@ export default [
 		volume: '23.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4888,7 +4644,7 @@ export default [
 		n_spacing: '500',
 		width: '90',
 		height: '570',
-		length: '1380',
+		length: '1384',
 		price: '78529',
 		dt70: '2297',
 		dt60: '',
@@ -4897,7 +4653,6 @@ export default [
 		volume: '24.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4908,7 +4663,7 @@ export default [
 		n_spacing: '200',
 		width: '90',
 		height: '270',
-		length: '1480',
+		length: '1484',
 		price: '61340',
 		dt70: '1070',
 		dt60: '',
@@ -4917,7 +4672,6 @@ export default [
 		volume: '13.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4928,7 +4682,7 @@ export default [
 		n_spacing: '350',
 		width: '90',
 		height: '420',
-		length: '1480',
+		length: '1484',
 		price: '67843',
 		dt70: '1654',
 		dt60: '',
@@ -4937,7 +4691,6 @@ export default [
 		volume: '19.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4948,7 +4701,7 @@ export default [
 		n_spacing: '430',
 		width: '90',
 		height: '500',
-		length: '1480',
+		length: '1484',
 		price: '74250',
 		dt70: '2141',
 		dt60: '',
@@ -4957,7 +4710,6 @@ export default [
 		volume: '23.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4968,7 +4720,7 @@ export default [
 		n_spacing: '480',
 		width: '90',
 		height: '550',
-		length: '1480',
+		length: '1484',
 		price: '84051',
 		dt70: '2375',
 		dt60: '',
@@ -4977,7 +4729,6 @@ export default [
 		volume: '25.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -4988,7 +4739,7 @@ export default [
 		n_spacing: '500',
 		width: '90',
 		height: '570',
-		length: '1480',
+		length: '1484',
 		price: '84051',
 		dt70: '2458',
 		dt60: '',
@@ -4997,7 +4748,6 @@ export default [
 		volume: '26.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -5008,7 +4758,7 @@ export default [
 		n_spacing: '200',
 		width: '90',
 		height: '270',
-		length: '1580',
+		length: '1584',
 		price: '64958',
 		dt70: '1138',
 		dt60: '',
@@ -5017,7 +4767,6 @@ export default [
 		volume: '14.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -5028,7 +4777,7 @@ export default [
 		n_spacing: '350',
 		width: '90',
 		height: '420',
-		length: '1580',
+		length: '1584',
 		price: '71865',
 		dt70: '1760',
 		dt60: '',
@@ -5037,7 +4786,6 @@ export default [
 		volume: '21.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -5048,7 +4796,7 @@ export default [
 		n_spacing: '430',
 		width: '90',
 		height: '500',
-		length: '1580',
+		length: '1584',
 		price: '79050',
 		dt70: '2276',
 		dt60: '',
@@ -5057,7 +4805,6 @@ export default [
 		volume: '24.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -5068,7 +4815,7 @@ export default [
 		n_spacing: '480',
 		width: '90',
 		height: '550',
-		length: '1580',
+		length: '1584',
 		price: '89573',
 		dt70: '2530',
 		dt60: '',
@@ -5077,7 +4824,6 @@ export default [
 		volume: '26.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -5088,7 +4834,7 @@ export default [
 		n_spacing: '500',
 		width: '90',
 		height: '570',
-		length: '1580',
+		length: '1584',
 		price: '89573',
 		dt70: '2615',
 		dt60: '',
@@ -5097,7 +4843,6 @@ export default [
 		volume: '27.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -5108,7 +4853,7 @@ export default [
 		n_spacing: '200',
 		width: '90',
 		height: '270',
-		length: '1680',
+		length: '1684',
 		price: '68576',
 		dt70: '1206',
 		dt60: '',
@@ -5117,7 +4862,6 @@ export default [
 		volume: '15.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -5128,7 +4872,7 @@ export default [
 		n_spacing: '350',
 		width: '90',
 		height: '420',
-		length: '1680',
+		length: '1684',
 		price: '75888',
 		dt70: '1866',
 		dt60: '',
@@ -5137,7 +4881,6 @@ export default [
 		volume: '22.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -5148,7 +4891,7 @@ export default [
 		n_spacing: '430',
 		width: '90',
 		height: '500',
-		length: '1680',
+		length: '1684',
 		price: '83800',
 		dt70: '2411',
 		dt60: '',
@@ -5157,7 +4900,6 @@ export default [
 		volume: '26.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -5168,7 +4910,7 @@ export default [
 		n_spacing: '480',
 		width: '90',
 		height: '550',
-		length: '1680',
+		length: '1684',
 		price: '95095',
 		dt70: '2684',
 		dt60: '',
@@ -5177,7 +4919,6 @@ export default [
 		volume: '28.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -5188,7 +4929,7 @@ export default [
 		n_spacing: '500',
 		width: '90',
 		height: '570',
-		length: '1680',
+		length: '1684',
 		price: '95095',
 		dt70: '2771',
 		dt60: '',
@@ -5197,7 +4938,6 @@ export default [
 		volume: '29.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -5208,7 +4948,7 @@ export default [
 		n_spacing: '200',
 		width: '90',
 		height: '270',
-		length: '1780',
+		length: '1784',
 		price: '72194',
 		dt70: '1274',
 		dt60: '',
@@ -5217,7 +4957,6 @@ export default [
 		volume: '16.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -5228,7 +4967,7 @@ export default [
 		n_spacing: '350',
 		width: '90',
 		height: '420',
-		length: '1780',
+		length: '1784',
 		price: '79911',
 		dt70: '1972',
 		dt60: '',
@@ -5237,7 +4976,6 @@ export default [
 		volume: '23.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -5248,7 +4986,7 @@ export default [
 		n_spacing: '430',
 		width: '90',
 		height: '500',
-		length: '1780',
+		length: '1784',
 		price: '88200',
 		dt70: '2546',
 		dt60: '',
@@ -5257,7 +4995,6 @@ export default [
 		volume: '27.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -5268,7 +5005,7 @@ export default [
 		n_spacing: '480',
 		width: '90',
 		height: '550',
-		length: '1780',
+		length: '1784',
 		price: '100617',
 		dt70: '2839',
 		dt60: '',
@@ -5277,7 +5014,6 @@ export default [
 		volume: '30.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -5288,7 +5024,7 @@ export default [
 		n_spacing: '500',
 		width: '90',
 		height: '570',
-		length: '1780',
+		length: '1784',
 		price: '100617',
 		dt70: '2928',
 		dt60: '',
@@ -5297,7 +5033,6 @@ export default [
 		volume: '31.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -5308,7 +5043,7 @@ export default [
 		n_spacing: '200',
 		width: '90',
 		height: '270',
-		length: '1880',
+		length: '1884',
 		price: '75812',
 		dt70: '1342',
 		dt60: '',
@@ -5317,7 +5052,6 @@ export default [
 		volume: '17.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -5328,7 +5062,7 @@ export default [
 		n_spacing: '350',
 		width: '90',
 		height: '420',
-		length: '1880',
+		length: '1884',
 		price: '83933',
 		dt70: '2078',
 		dt60: '',
@@ -5337,7 +5071,6 @@ export default [
 		volume: '25.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -5348,7 +5081,7 @@ export default [
 		n_spacing: '430',
 		width: '90',
 		height: '500',
-		length: '1880',
+		length: '1884',
 		price: '92700',
 		dt70: '2681',
 		dt60: '',
@@ -5357,7 +5090,6 @@ export default [
 		volume: '29.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -5368,7 +5100,7 @@ export default [
 		n_spacing: '480',
 		width: '90',
 		height: '550',
-		length: '1880',
+		length: '1884',
 		price: '106139',
 		dt70: '2993',
 		dt60: '',
@@ -5377,7 +5109,6 @@ export default [
 		volume: '32',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30v',
@@ -5388,7 +5119,7 @@ export default [
 		n_spacing: '500',
 		width: '90',
 		height: '570',
-		length: '1880',
+		length: '1884',
 		price: '106139',
 		dt70: '3085',
 		dt60: '',
@@ -5397,7 +5128,6 @@ export default [
 		volume: '32.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -5417,7 +5147,6 @@ export default [
 		volume: '0.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -5437,7 +5166,6 @@ export default [
 		volume: '1.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -5457,7 +5185,6 @@ export default [
 		volume: '1.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -5477,7 +5204,6 @@ export default [
 		volume: '1.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -5497,7 +5223,6 @@ export default [
 		volume: '1.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -5517,7 +5242,6 @@ export default [
 		volume: '2.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -5537,7 +5261,6 @@ export default [
 		volume: '2.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -5557,7 +5280,6 @@ export default [
 		volume: '3.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -5577,7 +5299,6 @@ export default [
 		volume: '4.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -5597,7 +5318,6 @@ export default [
 		volume: '4.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -5617,7 +5337,6 @@ export default [
 		volume: '5.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -5637,7 +5356,6 @@ export default [
 		volume: '6.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -5657,7 +5375,6 @@ export default [
 		volume: '6.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -5677,7 +5394,6 @@ export default [
 		volume: '7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -5697,7 +5413,6 @@ export default [
 		volume: '8.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -5717,7 +5432,6 @@ export default [
 		volume: '1.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -5737,7 +5451,6 @@ export default [
 		volume: '2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -5757,7 +5470,6 @@ export default [
 		volume: '2.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -5777,7 +5489,6 @@ export default [
 		volume: '2.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -5797,7 +5508,6 @@ export default [
 		volume: '2.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -5817,7 +5527,6 @@ export default [
 		volume: '3.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -5837,7 +5546,6 @@ export default [
 		volume: '4.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -5857,7 +5565,6 @@ export default [
 		volume: '5.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -5877,7 +5584,6 @@ export default [
 		volume: '6.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -5897,7 +5603,6 @@ export default [
 		volume: '7.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -5917,7 +5622,6 @@ export default [
 		volume: '8.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -5937,7 +5641,6 @@ export default [
 		volume: '9.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -5957,7 +5660,6 @@ export default [
 		volume: '9.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -5977,7 +5679,6 @@ export default [
 		volume: '10.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -5997,7 +5698,6 @@ export default [
 		volume: '12.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6017,7 +5717,6 @@ export default [
 		volume: '1.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6037,7 +5736,6 @@ export default [
 		volume: '2.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6057,7 +5755,6 @@ export default [
 		volume: '3.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6077,7 +5774,6 @@ export default [
 		volume: '3.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6097,7 +5793,6 @@ export default [
 		volume: '3.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6117,7 +5812,6 @@ export default [
 		volume: '4.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6137,7 +5831,6 @@ export default [
 		volume: '5.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6157,7 +5850,6 @@ export default [
 		volume: '7.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6177,7 +5869,6 @@ export default [
 		volume: '8.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6197,7 +5888,6 @@ export default [
 		volume: '9.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6217,7 +5907,6 @@ export default [
 		volume: '11.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6237,7 +5926,6 @@ export default [
 		volume: '12.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6257,7 +5945,6 @@ export default [
 		volume: '12.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6277,7 +5964,6 @@ export default [
 		volume: '14.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6297,7 +5983,6 @@ export default [
 		volume: '16.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6317,7 +6002,6 @@ export default [
 		volume: '2.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6337,7 +6021,6 @@ export default [
 		volume: '3.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6357,7 +6040,6 @@ export default [
 		volume: '3.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6377,7 +6059,6 @@ export default [
 		volume: '4.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6397,7 +6078,6 @@ export default [
 		volume: '4.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6417,7 +6097,6 @@ export default [
 		volume: '5.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6437,7 +6116,6 @@ export default [
 		volume: '7.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6457,7 +6135,6 @@ export default [
 		volume: '9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6477,7 +6154,6 @@ export default [
 		volume: '10.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6497,7 +6173,6 @@ export default [
 		volume: '12.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6517,7 +6192,6 @@ export default [
 		volume: '14.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6537,7 +6211,6 @@ export default [
 		volume: '15.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6557,7 +6230,6 @@ export default [
 		volume: '15.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6577,7 +6249,6 @@ export default [
 		volume: '17.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6597,7 +6268,6 @@ export default [
 		volume: '21',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6617,7 +6287,6 @@ export default [
 		volume: '2.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6637,7 +6306,6 @@ export default [
 		volume: '3.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6657,7 +6325,6 @@ export default [
 		volume: '4.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6677,7 +6344,6 @@ export default [
 		volume: '5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6697,7 +6363,6 @@ export default [
 		volume: '5.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6717,7 +6382,6 @@ export default [
 		volume: '6.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6737,7 +6401,6 @@ export default [
 		volume: '8.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6757,7 +6420,6 @@ export default [
 		volume: '10.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6777,7 +6439,6 @@ export default [
 		volume: '12.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6797,7 +6458,6 @@ export default [
 		volume: '14.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6817,7 +6477,6 @@ export default [
 		volume: '17',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6837,7 +6496,6 @@ export default [
 		volume: '18.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6857,7 +6515,6 @@ export default [
 		volume: '19',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6877,7 +6534,6 @@ export default [
 		volume: '21.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6897,7 +6553,6 @@ export default [
 		volume: '25.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6917,7 +6572,6 @@ export default [
 		volume: '3.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6937,7 +6591,6 @@ export default [
 		volume: '4.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6957,7 +6610,6 @@ export default [
 		volume: '5.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6977,7 +6629,6 @@ export default [
 		volume: '5.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -6997,7 +6648,6 @@ export default [
 		volume: '6.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7017,7 +6667,6 @@ export default [
 		volume: '7.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7037,7 +6686,6 @@ export default [
 		volume: '10.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7057,7 +6705,6 @@ export default [
 		volume: '12.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7077,7 +6724,6 @@ export default [
 		volume: '15',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7097,7 +6743,6 @@ export default [
 		volume: '17.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7117,7 +6762,6 @@ export default [
 		volume: '19.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7137,7 +6781,6 @@ export default [
 		volume: '21.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7157,7 +6800,6 @@ export default [
 		volume: '22.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7177,7 +6819,6 @@ export default [
 		volume: '24.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7197,7 +6838,6 @@ export default [
 		volume: '29.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7217,7 +6857,6 @@ export default [
 		volume: '3.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7237,7 +6876,6 @@ export default [
 		volume: '5.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7257,7 +6895,6 @@ export default [
 		volume: '6.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7277,7 +6914,6 @@ export default [
 		volume: '6.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7297,7 +6933,6 @@ export default [
 		volume: '6.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7317,7 +6952,6 @@ export default [
 		volume: '8.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7337,7 +6971,6 @@ export default [
 		volume: '11.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7357,7 +6990,6 @@ export default [
 		volume: '14.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7377,7 +7009,6 @@ export default [
 		volume: '17.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7397,7 +7028,6 @@ export default [
 		volume: '19.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7417,7 +7047,6 @@ export default [
 		volume: '22.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7437,7 +7066,6 @@ export default [
 		volume: '24.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7457,7 +7085,6 @@ export default [
 		volume: '25.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7477,7 +7104,6 @@ export default [
 		volume: '28.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7497,7 +7123,6 @@ export default [
 		volume: '33.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7517,7 +7142,6 @@ export default [
 		volume: '4.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7537,7 +7161,6 @@ export default [
 		volume: '5.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7557,7 +7180,6 @@ export default [
 		volume: '6.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7577,7 +7199,6 @@ export default [
 		volume: '7.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7597,7 +7218,6 @@ export default [
 		volume: '7.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7617,7 +7237,6 @@ export default [
 		volume: '10',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7637,7 +7256,6 @@ export default [
 		volume: '13.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7657,7 +7275,6 @@ export default [
 		volume: '16.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7677,7 +7294,6 @@ export default [
 		volume: '19.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7697,7 +7313,6 @@ export default [
 		volume: '22.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7717,7 +7332,6 @@ export default [
 		volume: '25.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7737,7 +7351,6 @@ export default [
 		volume: '28',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7757,7 +7370,6 @@ export default [
 		volume: '28.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7777,7 +7389,6 @@ export default [
 		volume: '31.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7797,7 +7408,6 @@ export default [
 		volume: '37.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7817,7 +7427,6 @@ export default [
 		volume: '4.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7837,7 +7446,6 @@ export default [
 		volume: '6.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7857,7 +7465,6 @@ export default [
 		volume: '7.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7877,7 +7484,6 @@ export default [
 		volume: '8.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7897,7 +7503,6 @@ export default [
 		volume: '8.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7917,7 +7522,6 @@ export default [
 		volume: '11.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7937,7 +7541,6 @@ export default [
 		volume: '14.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7957,7 +7560,6 @@ export default [
 		volume: '18',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7977,7 +7579,6 @@ export default [
 		volume: '21.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -7997,7 +7598,6 @@ export default [
 		volume: '24.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8017,7 +7617,6 @@ export default [
 		volume: '28.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8037,7 +7636,6 @@ export default [
 		volume: '31.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8057,7 +7655,6 @@ export default [
 		volume: '31.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8077,7 +7674,6 @@ export default [
 		volume: '35.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8097,7 +7693,6 @@ export default [
 		volume: '42.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8117,7 +7712,6 @@ export default [
 		volume: '5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8137,7 +7731,6 @@ export default [
 		volume: '7.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8157,7 +7750,6 @@ export default [
 		volume: '8.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8177,7 +7769,6 @@ export default [
 		volume: '9.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8197,7 +7788,6 @@ export default [
 		volume: '9.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8217,7 +7807,6 @@ export default [
 		volume: '12.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8237,7 +7826,6 @@ export default [
 		volume: '16',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8257,7 +7845,6 @@ export default [
 		volume: '19.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8277,7 +7864,6 @@ export default [
 		volume: '23.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8297,7 +7883,6 @@ export default [
 		volume: '27.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8317,7 +7902,6 @@ export default [
 		volume: '31.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8337,7 +7921,6 @@ export default [
 		volume: '34.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8357,7 +7940,6 @@ export default [
 		volume: '34.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8377,7 +7959,6 @@ export default [
 		volume: '38.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8397,7 +7978,6 @@ export default [
 		volume: '46.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8417,7 +7997,6 @@ export default [
 		volume: '5.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8437,7 +8016,6 @@ export default [
 		volume: '7.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8457,7 +8035,6 @@ export default [
 		volume: '9.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8477,7 +8054,6 @@ export default [
 		volume: '10.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8497,7 +8073,6 @@ export default [
 		volume: '10.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8517,7 +8092,6 @@ export default [
 		volume: '13.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8537,7 +8111,6 @@ export default [
 		volume: '17.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8557,7 +8130,6 @@ export default [
 		volume: '21.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8577,7 +8149,6 @@ export default [
 		volume: '25.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8597,7 +8168,6 @@ export default [
 		volume: '29.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8617,7 +8187,6 @@ export default [
 		volume: '34',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8637,7 +8206,6 @@ export default [
 		volume: '37.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8657,7 +8225,6 @@ export default [
 		volume: '38.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8677,7 +8244,6 @@ export default [
 		volume: '42.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8697,7 +8263,6 @@ export default [
 		volume: '50.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8717,7 +8282,6 @@ export default [
 		volume: '5.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8737,7 +8301,6 @@ export default [
 		volume: '8.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8757,7 +8320,6 @@ export default [
 		volume: '10',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8777,7 +8339,6 @@ export default [
 		volume: '10.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8797,7 +8358,6 @@ export default [
 		volume: '11.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8817,7 +8377,6 @@ export default [
 		volume: '14.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8837,7 +8396,6 @@ export default [
 		volume: '19',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8857,7 +8415,6 @@ export default [
 		volume: '23.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8877,7 +8434,6 @@ export default [
 		volume: '27.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8897,7 +8453,6 @@ export default [
 		volume: '32.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8917,7 +8472,6 @@ export default [
 		volume: '36.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8937,7 +8491,6 @@ export default [
 		volume: '40.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8957,7 +8510,6 @@ export default [
 		volume: '41.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8977,7 +8529,6 @@ export default [
 		volume: '45.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -8997,7 +8548,6 @@ export default [
 		volume: '54.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -9017,7 +8567,6 @@ export default [
 		volume: '6.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -9037,7 +8586,6 @@ export default [
 		volume: '9.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -9057,7 +8605,6 @@ export default [
 		volume: '10.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -9077,7 +8624,6 @@ export default [
 		volume: '11.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -9097,7 +8643,6 @@ export default [
 		volume: '12.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -9117,7 +8662,6 @@ export default [
 		volume: '15.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -9137,7 +8681,6 @@ export default [
 		volume: '20.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -9157,7 +8700,6 @@ export default [
 		volume: '25.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -9177,7 +8719,6 @@ export default [
 		volume: '30.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -9197,7 +8738,6 @@ export default [
 		volume: '34.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -9217,7 +8757,6 @@ export default [
 		volume: '39.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -9237,7 +8776,6 @@ export default [
 		volume: '43.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -9257,7 +8795,6 @@ export default [
 		volume: '44.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -9277,7 +8814,6 @@ export default [
 		volume: '49.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p60v',
@@ -9297,7 +8833,6 @@ export default [
 		volume: '58.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9317,7 +8852,6 @@ export default [
 		volume: '0.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9337,7 +8871,6 @@ export default [
 		volume: '1.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9357,7 +8890,6 @@ export default [
 		volume: '1.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9377,7 +8909,6 @@ export default [
 		volume: '1.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9397,7 +8928,6 @@ export default [
 		volume: '1.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9417,7 +8947,6 @@ export default [
 		volume: '1.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9437,7 +8966,6 @@ export default [
 		volume: '2.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9457,7 +8985,6 @@ export default [
 		volume: '3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9477,7 +9004,6 @@ export default [
 		volume: '3.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9497,7 +9023,6 @@ export default [
 		volume: '4.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9517,7 +9042,6 @@ export default [
 		volume: '4.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9537,7 +9061,6 @@ export default [
 		volume: '5.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9557,7 +9080,6 @@ export default [
 		volume: '5.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9577,7 +9099,6 @@ export default [
 		volume: '5.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9597,7 +9118,6 @@ export default [
 		volume: '6.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9617,7 +9137,6 @@ export default [
 		volume: '1.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9637,7 +9156,6 @@ export default [
 		volume: '1.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9657,7 +9175,6 @@ export default [
 		volume: '1.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9677,7 +9194,6 @@ export default [
 		volume: '2.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9697,7 +9213,6 @@ export default [
 		volume: '2.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9717,7 +9232,6 @@ export default [
 		volume: '2.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9737,7 +9251,6 @@ export default [
 		volume: '3.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9757,7 +9270,6 @@ export default [
 		volume: '4.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9777,7 +9289,6 @@ export default [
 		volume: '5.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9797,7 +9308,6 @@ export default [
 		volume: '6.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9817,7 +9327,6 @@ export default [
 		volume: '7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9837,7 +9346,6 @@ export default [
 		volume: '7.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9857,7 +9365,6 @@ export default [
 		volume: '7.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9877,7 +9384,6 @@ export default [
 		volume: '8.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9897,7 +9403,6 @@ export default [
 		volume: '10.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9917,7 +9422,6 @@ export default [
 		volume: '1.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9937,7 +9441,6 @@ export default [
 		volume: '2.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9957,7 +9460,6 @@ export default [
 		volume: '2.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9977,7 +9479,6 @@ export default [
 		volume: '2.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -9997,7 +9498,6 @@ export default [
 		volume: '2.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10017,7 +9517,6 @@ export default [
 		volume: '3.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10037,7 +9536,6 @@ export default [
 		volume: '4.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10057,7 +9555,6 @@ export default [
 		volume: '5.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10077,7 +9574,6 @@ export default [
 		volume: '7.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10097,7 +9593,6 @@ export default [
 		volume: '8.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10117,7 +9612,6 @@ export default [
 		volume: '9.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10137,7 +9631,6 @@ export default [
 		volume: '10.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10157,7 +9650,6 @@ export default [
 		volume: '10.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10177,7 +9669,6 @@ export default [
 		volume: '11.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10197,7 +9688,6 @@ export default [
 		volume: '13.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10217,7 +9707,6 @@ export default [
 		volume: '1.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10237,7 +9726,6 @@ export default [
 		volume: '2.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10257,7 +9745,6 @@ export default [
 		volume: '3.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10277,7 +9764,6 @@ export default [
 		volume: '3.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10297,7 +9783,6 @@ export default [
 		volume: '3.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10317,7 +9802,6 @@ export default [
 		volume: '4.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10337,7 +9821,6 @@ export default [
 		volume: '6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10357,7 +9840,6 @@ export default [
 		volume: '7.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10377,7 +9859,6 @@ export default [
 		volume: '8.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10397,7 +9878,6 @@ export default [
 		volume: '10.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10417,7 +9897,6 @@ export default [
 		volume: '11.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10437,7 +9916,6 @@ export default [
 		volume: '12.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10457,7 +9935,6 @@ export default [
 		volume: '13.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10477,7 +9954,6 @@ export default [
 		volume: '14.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10497,7 +9973,6 @@ export default [
 		volume: '17.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10517,7 +9992,6 @@ export default [
 		volume: '2.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10537,7 +10011,6 @@ export default [
 		volume: '3.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10557,7 +10030,6 @@ export default [
 		volume: '3.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10577,7 +10049,6 @@ export default [
 		volume: '4.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10597,7 +10068,6 @@ export default [
 		volume: '4.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10617,7 +10087,6 @@ export default [
 		volume: '5.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10637,7 +10106,6 @@ export default [
 		volume: '7.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10657,7 +10125,6 @@ export default [
 		volume: '8.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10677,7 +10144,6 @@ export default [
 		volume: '10.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10697,7 +10163,6 @@ export default [
 		volume: '12.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10717,7 +10182,6 @@ export default [
 		volume: '14',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10737,7 +10201,6 @@ export default [
 		volume: '15.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10757,7 +10220,6 @@ export default [
 		volume: '15.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10777,7 +10239,6 @@ export default [
 		volume: '17.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10797,7 +10258,6 @@ export default [
 		volume: '20.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10817,7 +10277,6 @@ export default [
 		volume: '2.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10837,7 +10296,6 @@ export default [
 		volume: '3.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10857,7 +10315,6 @@ export default [
 		volume: '4.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10877,7 +10334,6 @@ export default [
 		volume: '4.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10897,7 +10353,6 @@ export default [
 		volume: '5.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10917,7 +10372,6 @@ export default [
 		volume: '6.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10937,7 +10391,6 @@ export default [
 		volume: '8.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10957,7 +10410,6 @@ export default [
 		volume: '10.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10977,7 +10429,6 @@ export default [
 		volume: '12.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -10997,7 +10448,6 @@ export default [
 		volume: '14.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11017,7 +10467,6 @@ export default [
 		volume: '16.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11037,7 +10486,6 @@ export default [
 		volume: '17.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11057,7 +10505,6 @@ export default [
 		volume: '18.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11077,7 +10524,6 @@ export default [
 		volume: '20.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11097,7 +10543,6 @@ export default [
 		volume: '24.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11117,7 +10562,6 @@ export default [
 		volume: '3.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11137,7 +10581,6 @@ export default [
 		volume: '4.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11157,7 +10600,6 @@ export default [
 		volume: '5.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11177,7 +10619,6 @@ export default [
 		volume: '5.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11197,7 +10638,6 @@ export default [
 		volume: '5.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11217,7 +10657,6 @@ export default [
 		volume: '7.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11237,7 +10676,6 @@ export default [
 		volume: '9.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11257,7 +10695,6 @@ export default [
 		volume: '11.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11277,7 +10714,6 @@ export default [
 		volume: '14.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11297,7 +10733,6 @@ export default [
 		volume: '16.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11317,7 +10752,6 @@ export default [
 		volume: '18.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11337,7 +10771,6 @@ export default [
 		volume: '20.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11357,7 +10790,6 @@ export default [
 		volume: '20.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11377,7 +10809,6 @@ export default [
 		volume: '23.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11397,7 +10828,6 @@ export default [
 		volume: '27.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11417,7 +10847,6 @@ export default [
 		volume: '3.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11437,7 +10866,6 @@ export default [
 		volume: '5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11457,7 +10885,6 @@ export default [
 		volume: '5.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11477,7 +10904,6 @@ export default [
 		volume: '6.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11497,7 +10923,6 @@ export default [
 		volume: '6.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11517,7 +10942,6 @@ export default [
 		volume: '8.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11537,7 +10961,6 @@ export default [
 		volume: '10.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11557,7 +10980,6 @@ export default [
 		volume: '13.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11577,7 +10999,6 @@ export default [
 		volume: '15.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11597,7 +11018,6 @@ export default [
 		volume: '18.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11617,7 +11037,6 @@ export default [
 		volume: '21',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11637,7 +11056,6 @@ export default [
 		volume: '23',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11657,7 +11075,6 @@ export default [
 		volume: '23.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11677,7 +11094,6 @@ export default [
 		volume: '26.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11697,7 +11113,6 @@ export default [
 		volume: '31.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11717,7 +11132,6 @@ export default [
 		volume: '3.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11737,7 +11151,6 @@ export default [
 		volume: '5.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11757,7 +11170,6 @@ export default [
 		volume: '6.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11777,7 +11189,6 @@ export default [
 		volume: '7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11797,7 +11208,6 @@ export default [
 		volume: '7.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11817,7 +11227,6 @@ export default [
 		volume: '9.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11837,7 +11246,6 @@ export default [
 		volume: '12.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11857,7 +11265,6 @@ export default [
 		volume: '14.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11877,7 +11284,6 @@ export default [
 		volume: '17.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11897,7 +11303,6 @@ export default [
 		volume: '20.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11917,7 +11322,6 @@ export default [
 		volume: '23.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11937,7 +11341,6 @@ export default [
 		volume: '25.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11957,7 +11360,6 @@ export default [
 		volume: '26.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11977,7 +11379,6 @@ export default [
 		volume: '29',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -11997,7 +11398,6 @@ export default [
 		volume: '34.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12017,7 +11417,6 @@ export default [
 		volume: '4.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12037,7 +11436,6 @@ export default [
 		volume: '6.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12057,7 +11455,6 @@ export default [
 		volume: '7.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12077,7 +11474,6 @@ export default [
 		volume: '7.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12097,7 +11493,6 @@ export default [
 		volume: '8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12117,7 +11512,6 @@ export default [
 		volume: '10.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12137,7 +11531,6 @@ export default [
 		volume: '13.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12157,7 +11550,6 @@ export default [
 		volume: '16.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12177,7 +11569,6 @@ export default [
 		volume: '19.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12197,7 +11588,6 @@ export default [
 		volume: '22.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12217,7 +11607,6 @@ export default [
 		volume: '25.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12237,7 +11626,6 @@ export default [
 		volume: '28.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12257,7 +11645,6 @@ export default [
 		volume: '28.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12277,7 +11664,6 @@ export default [
 		volume: '31.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12297,7 +11683,6 @@ export default [
 		volume: '38.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12317,7 +11702,6 @@ export default [
 		volume: '4.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12337,7 +11721,6 @@ export default [
 		volume: '6.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12357,7 +11740,6 @@ export default [
 		volume: '7.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12377,7 +11759,6 @@ export default [
 		volume: '8.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12397,7 +11778,6 @@ export default [
 		volume: '8.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12417,7 +11797,6 @@ export default [
 		volume: '11.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12437,7 +11816,6 @@ export default [
 		volume: '14.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12457,7 +11835,6 @@ export default [
 		volume: '17.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12477,7 +11854,6 @@ export default [
 		volume: '21.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12497,7 +11873,6 @@ export default [
 		volume: '24.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12517,7 +11892,6 @@ export default [
 		volume: '28',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12537,7 +11911,6 @@ export default [
 		volume: '30.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12557,7 +11930,6 @@ export default [
 		volume: '31.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12577,7 +11949,6 @@ export default [
 		volume: '34.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12597,7 +11968,6 @@ export default [
 		volume: '41.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12617,7 +11987,6 @@ export default [
 		volume: '5.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12637,7 +12006,6 @@ export default [
 		volume: '7.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12657,7 +12025,6 @@ export default [
 		volume: '8.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12677,7 +12044,6 @@ export default [
 		volume: '9.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12697,7 +12063,6 @@ export default [
 		volume: '9.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12717,7 +12082,6 @@ export default [
 		volume: '12.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12737,7 +12101,6 @@ export default [
 		volume: '15.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12757,7 +12120,6 @@ export default [
 		volume: '19.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12777,7 +12139,6 @@ export default [
 		volume: '23',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12797,7 +12158,6 @@ export default [
 		volume: '26.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12817,7 +12177,6 @@ export default [
 		volume: '30.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12837,7 +12196,6 @@ export default [
 		volume: '33.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12857,7 +12215,6 @@ export default [
 		volume: '34',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12877,7 +12234,6 @@ export default [
 		volume: '37.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12897,7 +12253,6 @@ export default [
 		volume: '45',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12917,7 +12272,6 @@ export default [
 		volume: '5.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12937,7 +12291,6 @@ export default [
 		volume: '7.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12957,7 +12310,6 @@ export default [
 		volume: '9.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12977,7 +12329,6 @@ export default [
 		volume: '9.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -12997,7 +12348,6 @@ export default [
 		volume: '10.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -13017,7 +12367,6 @@ export default [
 		volume: '13',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -13037,7 +12386,6 @@ export default [
 		volume: '16.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -13057,7 +12405,6 @@ export default [
 		volume: '20.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -13077,7 +12424,6 @@ export default [
 		volume: '24.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -13097,7 +12443,6 @@ export default [
 		volume: '28.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -13117,7 +12462,6 @@ export default [
 		volume: '32.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -13137,7 +12481,6 @@ export default [
 		volume: '35.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -13157,7 +12500,6 @@ export default [
 		volume: '36.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -13177,7 +12519,6 @@ export default [
 		volume: '40.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'sv',
@@ -13197,7 +12538,6 @@ export default [
 		volume: '48.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13217,7 +12557,6 @@ export default [
 		volume: '0.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13237,7 +12576,6 @@ export default [
 		volume: '1.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13257,7 +12595,6 @@ export default [
 		volume: '1.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13277,7 +12614,6 @@ export default [
 		volume: '1.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13297,7 +12633,6 @@ export default [
 		volume: '1.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13317,7 +12652,6 @@ export default [
 		volume: '1.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13337,7 +12671,6 @@ export default [
 		volume: '2.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13357,7 +12690,6 @@ export default [
 		volume: '3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13377,7 +12709,6 @@ export default [
 		volume: '3.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13397,7 +12728,6 @@ export default [
 		volume: '4.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13417,7 +12747,6 @@ export default [
 		volume: '4.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13437,7 +12766,6 @@ export default [
 		volume: '5.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13457,7 +12785,6 @@ export default [
 		volume: '5.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13477,7 +12804,6 @@ export default [
 		volume: '5.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13497,7 +12823,6 @@ export default [
 		volume: '6.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13517,7 +12842,6 @@ export default [
 		volume: '1.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13537,7 +12861,6 @@ export default [
 		volume: '1.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13557,7 +12880,6 @@ export default [
 		volume: '1.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13577,7 +12899,6 @@ export default [
 		volume: '2.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13597,7 +12918,6 @@ export default [
 		volume: '2.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13617,7 +12937,6 @@ export default [
 		volume: '2.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13637,7 +12956,6 @@ export default [
 		volume: '3.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13657,7 +12975,6 @@ export default [
 		volume: '4.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13677,7 +12994,6 @@ export default [
 		volume: '5.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13697,7 +13013,6 @@ export default [
 		volume: '6.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13717,7 +13032,6 @@ export default [
 		volume: '7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13737,7 +13051,6 @@ export default [
 		volume: '7.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13757,7 +13070,6 @@ export default [
 		volume: '7.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13777,7 +13089,6 @@ export default [
 		volume: '8.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13797,7 +13108,6 @@ export default [
 		volume: '10.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13817,7 +13127,6 @@ export default [
 		volume: '1.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13837,7 +13146,6 @@ export default [
 		volume: '2.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13857,7 +13165,6 @@ export default [
 		volume: '2.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13877,7 +13184,6 @@ export default [
 		volume: '2.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13897,7 +13203,6 @@ export default [
 		volume: '2.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13917,7 +13222,6 @@ export default [
 		volume: '3.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13937,7 +13241,6 @@ export default [
 		volume: '4.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13957,7 +13260,6 @@ export default [
 		volume: '5.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13977,7 +13279,6 @@ export default [
 		volume: '7.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -13997,7 +13298,6 @@ export default [
 		volume: '8.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14017,7 +13317,6 @@ export default [
 		volume: '9.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14037,7 +13336,6 @@ export default [
 		volume: '10.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14057,7 +13355,6 @@ export default [
 		volume: '10.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14077,7 +13374,6 @@ export default [
 		volume: '11.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14097,7 +13393,6 @@ export default [
 		volume: '13.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14117,7 +13412,6 @@ export default [
 		volume: '1.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14137,7 +13431,6 @@ export default [
 		volume: '2.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14157,7 +13450,6 @@ export default [
 		volume: '3.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14177,7 +13469,6 @@ export default [
 		volume: '3.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14197,7 +13488,6 @@ export default [
 		volume: '3.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14217,7 +13507,6 @@ export default [
 		volume: '4.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14237,7 +13526,6 @@ export default [
 		volume: '6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14257,7 +13545,6 @@ export default [
 		volume: '7.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14277,7 +13564,6 @@ export default [
 		volume: '8.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14297,7 +13583,6 @@ export default [
 		volume: '10.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14317,7 +13602,6 @@ export default [
 		volume: '11.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14337,7 +13621,6 @@ export default [
 		volume: '12.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14357,7 +13640,6 @@ export default [
 		volume: '13.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14377,7 +13659,6 @@ export default [
 		volume: '14.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14397,7 +13678,6 @@ export default [
 		volume: '17.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14417,7 +13697,6 @@ export default [
 		volume: '2.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14437,7 +13716,6 @@ export default [
 		volume: '3.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14457,7 +13735,6 @@ export default [
 		volume: '3.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14477,7 +13754,6 @@ export default [
 		volume: '4.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14497,7 +13773,6 @@ export default [
 		volume: '4.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14517,7 +13792,6 @@ export default [
 		volume: '5.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14537,7 +13811,6 @@ export default [
 		volume: '7.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14557,7 +13830,6 @@ export default [
 		volume: '8.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14577,7 +13849,6 @@ export default [
 		volume: '10.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14597,7 +13868,6 @@ export default [
 		volume: '12.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14617,7 +13887,6 @@ export default [
 		volume: '14',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14637,7 +13906,6 @@ export default [
 		volume: '15.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14657,7 +13925,6 @@ export default [
 		volume: '15.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14677,7 +13944,6 @@ export default [
 		volume: '17.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14697,7 +13963,6 @@ export default [
 		volume: '20.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14717,7 +13982,6 @@ export default [
 		volume: '2.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14737,7 +14001,6 @@ export default [
 		volume: '3.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14757,7 +14020,6 @@ export default [
 		volume: '4.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14777,7 +14039,6 @@ export default [
 		volume: '4.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14797,7 +14058,6 @@ export default [
 		volume: '5.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14817,7 +14077,6 @@ export default [
 		volume: '6.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14837,7 +14096,6 @@ export default [
 		volume: '8.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14857,7 +14115,6 @@ export default [
 		volume: '10.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14877,7 +14134,6 @@ export default [
 		volume: '12.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14897,7 +14153,6 @@ export default [
 		volume: '14.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14917,7 +14172,6 @@ export default [
 		volume: '16.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14937,7 +14191,6 @@ export default [
 		volume: '17.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14957,7 +14210,6 @@ export default [
 		volume: '18.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14977,7 +14229,6 @@ export default [
 		volume: '20.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -14997,7 +14248,6 @@ export default [
 		volume: '24.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15017,7 +14267,6 @@ export default [
 		volume: '3.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15037,7 +14286,6 @@ export default [
 		volume: '4.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15057,7 +14305,6 @@ export default [
 		volume: '5.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15077,7 +14324,6 @@ export default [
 		volume: '5.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15097,7 +14343,6 @@ export default [
 		volume: '5.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15117,7 +14362,6 @@ export default [
 		volume: '7.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15137,7 +14381,6 @@ export default [
 		volume: '9.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15157,7 +14400,6 @@ export default [
 		volume: '11.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15177,7 +14419,6 @@ export default [
 		volume: '14.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15197,7 +14438,6 @@ export default [
 		volume: '16.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15217,7 +14457,6 @@ export default [
 		volume: '18.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15237,7 +14476,6 @@ export default [
 		volume: '20.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15257,7 +14495,6 @@ export default [
 		volume: '20.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15277,7 +14514,6 @@ export default [
 		volume: '23.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15297,7 +14533,6 @@ export default [
 		volume: '27.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15317,7 +14552,6 @@ export default [
 		volume: '3.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15337,7 +14571,6 @@ export default [
 		volume: '5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15357,7 +14590,6 @@ export default [
 		volume: '5.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15377,7 +14609,6 @@ export default [
 		volume: '6.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15397,7 +14628,6 @@ export default [
 		volume: '6.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15417,7 +14647,6 @@ export default [
 		volume: '8.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15437,7 +14666,6 @@ export default [
 		volume: '10.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15457,7 +14685,6 @@ export default [
 		volume: '13.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15477,7 +14704,6 @@ export default [
 		volume: '15.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15497,7 +14723,6 @@ export default [
 		volume: '18.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15517,7 +14742,6 @@ export default [
 		volume: '21',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15537,7 +14761,6 @@ export default [
 		volume: '23',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15557,7 +14780,6 @@ export default [
 		volume: '23.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15577,7 +14799,6 @@ export default [
 		volume: '26.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15597,7 +14818,6 @@ export default [
 		volume: '31.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15617,7 +14837,6 @@ export default [
 		volume: '3.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15637,7 +14856,6 @@ export default [
 		volume: '5.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15657,7 +14875,6 @@ export default [
 		volume: '6.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15677,7 +14894,6 @@ export default [
 		volume: '7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15697,7 +14913,6 @@ export default [
 		volume: '7.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15717,7 +14932,6 @@ export default [
 		volume: '9.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15737,7 +14951,6 @@ export default [
 		volume: '12.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15757,7 +14970,6 @@ export default [
 		volume: '14.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15777,7 +14989,6 @@ export default [
 		volume: '17.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15797,7 +15008,6 @@ export default [
 		volume: '20.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15817,7 +15027,6 @@ export default [
 		volume: '23.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15837,7 +15046,6 @@ export default [
 		volume: '25.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15857,7 +15065,6 @@ export default [
 		volume: '26.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15877,7 +15084,6 @@ export default [
 		volume: '29',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15897,7 +15103,6 @@ export default [
 		volume: '34.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15917,7 +15122,6 @@ export default [
 		volume: '4.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15937,7 +15141,6 @@ export default [
 		volume: '6.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15957,7 +15160,6 @@ export default [
 		volume: '7.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15977,7 +15179,6 @@ export default [
 		volume: '7.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -15997,7 +15198,6 @@ export default [
 		volume: '8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16017,7 +15217,6 @@ export default [
 		volume: '10.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16037,7 +15236,6 @@ export default [
 		volume: '13.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16057,7 +15255,6 @@ export default [
 		volume: '16.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16077,7 +15274,6 @@ export default [
 		volume: '19.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16097,7 +15293,6 @@ export default [
 		volume: '22.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16117,7 +15312,6 @@ export default [
 		volume: '25.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16137,7 +15331,6 @@ export default [
 		volume: '28.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16157,7 +15350,6 @@ export default [
 		volume: '28.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16177,7 +15369,6 @@ export default [
 		volume: '31.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16197,7 +15388,6 @@ export default [
 		volume: '38.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16217,7 +15407,6 @@ export default [
 		volume: '4.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16237,7 +15426,6 @@ export default [
 		volume: '6.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16257,7 +15445,6 @@ export default [
 		volume: '7.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16277,7 +15464,6 @@ export default [
 		volume: '8.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16297,7 +15483,6 @@ export default [
 		volume: '8.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16317,7 +15502,6 @@ export default [
 		volume: '11.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16337,7 +15521,6 @@ export default [
 		volume: '14.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16357,7 +15540,6 @@ export default [
 		volume: '17.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16377,7 +15559,6 @@ export default [
 		volume: '21.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16397,7 +15578,6 @@ export default [
 		volume: '24.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16417,7 +15597,6 @@ export default [
 		volume: '28',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16437,7 +15616,6 @@ export default [
 		volume: '30.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16457,7 +15635,6 @@ export default [
 		volume: '31.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16477,7 +15654,6 @@ export default [
 		volume: '34.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16497,7 +15673,6 @@ export default [
 		volume: '41.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16517,7 +15692,6 @@ export default [
 		volume: '5.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16537,7 +15711,6 @@ export default [
 		volume: '7.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16557,7 +15730,6 @@ export default [
 		volume: '8.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16577,7 +15749,6 @@ export default [
 		volume: '9.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16597,7 +15768,6 @@ export default [
 		volume: '9.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16617,7 +15787,6 @@ export default [
 		volume: '12.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16637,7 +15806,6 @@ export default [
 		volume: '15.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16657,7 +15825,6 @@ export default [
 		volume: '19.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16677,7 +15844,6 @@ export default [
 		volume: '23',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16697,7 +15863,6 @@ export default [
 		volume: '26.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16717,7 +15882,6 @@ export default [
 		volume: '30.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16737,7 +15901,6 @@ export default [
 		volume: '33.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16757,7 +15920,6 @@ export default [
 		volume: '34',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16777,7 +15939,6 @@ export default [
 		volume: '37.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16797,7 +15958,6 @@ export default [
 		volume: '45',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16817,7 +15977,6 @@ export default [
 		volume: '5.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16837,7 +15996,6 @@ export default [
 		volume: '7.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16857,7 +16015,6 @@ export default [
 		volume: '9.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16877,7 +16034,6 @@ export default [
 		volume: '9.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16897,7 +16053,6 @@ export default [
 		volume: '10.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16917,7 +16072,6 @@ export default [
 		volume: '13',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16937,7 +16091,6 @@ export default [
 		volume: '16.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16957,7 +16110,6 @@ export default [
 		volume: '20.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16977,7 +16129,6 @@ export default [
 		volume: '24.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -16997,7 +16148,6 @@ export default [
 		volume: '28.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -17017,7 +16167,6 @@ export default [
 		volume: '32.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -17037,7 +16186,6 @@ export default [
 		volume: '35.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -17057,7 +16205,6 @@ export default [
 		volume: '36.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -17077,7 +16224,6 @@ export default [
 		volume: '40.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'spv',
@@ -17097,7 +16243,6 @@ export default [
 		volume: '48.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17117,7 +16262,6 @@ export default [
 		volume: '0.80',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17137,7 +16281,6 @@ export default [
 		volume: '1.20',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17157,7 +16300,6 @@ export default [
 		volume: '1.40',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17177,7 +16319,6 @@ export default [
 		volume: '1.50',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17197,7 +16338,6 @@ export default [
 		volume: '1.50',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17217,7 +16357,6 @@ export default [
 		volume: '2.00',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17237,7 +16376,6 @@ export default [
 		volume: '2.60',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17257,7 +16395,6 @@ export default [
 		volume: '3.20',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17277,7 +16414,6 @@ export default [
 		volume: '3.80',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17297,7 +16433,6 @@ export default [
 		volume: '4.40',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17317,7 +16452,6 @@ export default [
 		volume: '5.00',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17337,7 +16471,6 @@ export default [
 		volume: '5.50',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17357,7 +16490,6 @@ export default [
 		volume: '5.60',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17377,7 +16509,6 @@ export default [
 		volume: '6.30',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17397,7 +16528,6 @@ export default [
 		volume: '7.50',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17417,7 +16547,6 @@ export default [
 		volume: '1.20',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17437,7 +16566,6 @@ export default [
 		volume: '1.80',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17457,7 +16585,6 @@ export default [
 		volume: '2.10',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17477,7 +16604,6 @@ export default [
 		volume: '2.20',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17497,7 +16623,6 @@ export default [
 		volume: '2.30',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17517,7 +16642,6 @@ export default [
 		volume: '3.00',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17537,7 +16661,6 @@ export default [
 		volume: '3.90',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17557,7 +16680,6 @@ export default [
 		volume: '4.80',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17577,7 +16699,6 @@ export default [
 		volume: '5.70',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17597,7 +16718,6 @@ export default [
 		volume: '6.70',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17617,7 +16737,6 @@ export default [
 		volume: '7.60',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17637,7 +16756,6 @@ export default [
 		volume: '8.30',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17657,7 +16775,6 @@ export default [
 		volume: '8.50',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17677,7 +16794,6 @@ export default [
 		volume: '9.40',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17697,7 +16813,6 @@ export default [
 		volume: '11.20',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17717,7 +16832,6 @@ export default [
 		volume: '1.60',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17737,7 +16851,6 @@ export default [
 		volume: '2.40',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17757,7 +16870,6 @@ export default [
 		volume: '2.80',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17777,7 +16889,6 @@ export default [
 		volume: '3.00',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17797,7 +16908,6 @@ export default [
 		volume: '3.10',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17817,7 +16927,6 @@ export default [
 		volume: '4.00',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17837,7 +16946,6 @@ export default [
 		volume: '5.20',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17857,7 +16965,6 @@ export default [
 		volume: '6.40',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17877,7 +16984,6 @@ export default [
 		volume: '7.70',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17897,7 +17003,6 @@ export default [
 		volume: '8.90',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17917,7 +17022,6 @@ export default [
 		volume: '10.10',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17937,7 +17041,6 @@ export default [
 		volume: '11.10',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17957,7 +17060,6 @@ export default [
 		volume: '11.30',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17977,7 +17079,6 @@ export default [
 		volume: '12.60',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -17997,7 +17098,6 @@ export default [
 		volume: '15.00',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18017,7 +17117,6 @@ export default [
 		volume: '2.10',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18037,7 +17136,6 @@ export default [
 		volume: '3.00',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18057,7 +17155,6 @@ export default [
 		volume: '3.50',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18077,7 +17174,6 @@ export default [
 		volume: '3.80',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18097,7 +17193,6 @@ export default [
 		volume: '3.90',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18117,7 +17212,6 @@ export default [
 		volume: '5.00',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18137,7 +17231,6 @@ export default [
 		volume: '6.50',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18157,7 +17250,6 @@ export default [
 		volume: '8.10',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18177,7 +17269,6 @@ export default [
 		volume: '9.60',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18197,7 +17288,6 @@ export default [
 		volume: '11.10',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18217,7 +17307,6 @@ export default [
 		volume: '12.70',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18237,7 +17326,6 @@ export default [
 		volume: '13.90',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18257,7 +17345,6 @@ export default [
 		volume: '14.20',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18277,7 +17364,6 @@ export default [
 		volume: '15.70',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18297,7 +17383,6 @@ export default [
 		volume: '18.80',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18317,7 +17402,6 @@ export default [
 		volume: '2.50',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18337,7 +17421,6 @@ export default [
 		volume: '3.60',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18357,7 +17440,6 @@ export default [
 		volume: '4.20',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18377,7 +17459,6 @@ export default [
 		volume: '4.50',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18397,7 +17478,6 @@ export default [
 		volume: '4.70',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18417,7 +17497,6 @@ export default [
 		volume: '6.00',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18437,7 +17516,6 @@ export default [
 		volume: '7.80',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18457,7 +17535,6 @@ export default [
 		volume: '9.70',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18477,7 +17554,6 @@ export default [
 		volume: '11.50',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18497,7 +17573,6 @@ export default [
 		volume: '13.40',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18517,7 +17592,6 @@ export default [
 		volume: '15.20',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18537,7 +17611,6 @@ export default [
 		volume: '16.70',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18557,7 +17630,6 @@ export default [
 		volume: '17.00',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18577,7 +17649,6 @@ export default [
 		volume: '18.90',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18597,7 +17668,6 @@ export default [
 		volume: '22.50',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18617,7 +17687,6 @@ export default [
 		volume: '2.90',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18637,7 +17706,6 @@ export default [
 		volume: '4.20',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18657,7 +17725,6 @@ export default [
 		volume: '4.90',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18677,7 +17744,6 @@ export default [
 		volume: '5.30',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18697,7 +17763,6 @@ export default [
 		volume: '5.50',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18717,7 +17782,6 @@ export default [
 		volume: '7.00',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18737,7 +17801,6 @@ export default [
 		volume: '9.20',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18757,7 +17820,6 @@ export default [
 		volume: '11.30',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18777,7 +17839,6 @@ export default [
 		volume: '13.40',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18797,7 +17858,6 @@ export default [
 		volume: '15.60',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18817,7 +17877,6 @@ export default [
 		volume: '17.70',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18837,7 +17896,6 @@ export default [
 		volume: '19.40',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18857,7 +17915,6 @@ export default [
 		volume: '19.90',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18877,7 +17934,6 @@ export default [
 		volume: '22.00',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18897,7 +17953,6 @@ export default [
 		volume: '26.30',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18917,7 +17972,6 @@ export default [
 		volume: '3.30',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18937,7 +17991,6 @@ export default [
 		volume: '4.80',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18957,7 +18010,6 @@ export default [
 		volume: '5.60',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18977,7 +18029,6 @@ export default [
 		volume: '6.10',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -18997,7 +18048,6 @@ export default [
 		volume: '6.20',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19017,7 +18067,6 @@ export default [
 		volume: '8.00',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19037,7 +18086,6 @@ export default [
 		volume: '10.50',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19057,7 +18105,6 @@ export default [
 		volume: '12.90',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19077,7 +18124,6 @@ export default [
 		volume: '15.40',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19097,7 +18143,6 @@ export default [
 		volume: '17.80',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19117,7 +18162,6 @@ export default [
 		volume: '20.30',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19137,7 +18181,6 @@ export default [
 		volume: '22.20',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19157,7 +18200,6 @@ export default [
 		volume: '22.70',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19177,7 +18219,6 @@ export default [
 		volume: '25.20',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19197,7 +18238,6 @@ export default [
 		volume: '30.10',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19217,7 +18257,6 @@ export default [
 		volume: '3.70',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19237,7 +18276,6 @@ export default [
 		volume: '5.40',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19257,7 +18295,6 @@ export default [
 		volume: '6.30',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19277,7 +18314,6 @@ export default [
 		volume: '6.80',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19297,7 +18333,6 @@ export default [
 		volume: '7.00',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19317,7 +18352,6 @@ export default [
 		volume: '9.00',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19337,7 +18371,6 @@ export default [
 		volume: '11.80',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19357,7 +18390,6 @@ export default [
 		volume: '14.50',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19377,7 +18409,6 @@ export default [
 		volume: '17.30',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19397,7 +18428,6 @@ export default [
 		volume: '20.00',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19417,7 +18447,6 @@ export default [
 		volume: '22.80',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19437,7 +18466,6 @@ export default [
 		volume: '25.00',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19457,7 +18485,6 @@ export default [
 		volume: '25.60',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19477,7 +18504,6 @@ export default [
 		volume: '28.30',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19497,7 +18523,6 @@ export default [
 		volume: '33.80',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19517,7 +18542,6 @@ export default [
 		volume: '4.10',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19537,7 +18561,6 @@ export default [
 		volume: '6.00',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19557,7 +18580,6 @@ export default [
 		volume: '7.00',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19577,7 +18599,6 @@ export default [
 		volume: '7.60',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19597,7 +18618,6 @@ export default [
 		volume: '7.80',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19617,7 +18637,6 @@ export default [
 		volume: '10.00',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19637,7 +18656,6 @@ export default [
 		volume: '13.10',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19657,7 +18675,6 @@ export default [
 		volume: '16.20',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19677,7 +18694,6 @@ export default [
 		volume: '19.20',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19697,7 +18713,6 @@ export default [
 		volume: '22.30',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19717,7 +18732,6 @@ export default [
 		volume: '25.30',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19737,7 +18751,6 @@ export default [
 		volume: '27.80',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19757,7 +18770,6 @@ export default [
 		volume: '28.40',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19777,7 +18789,6 @@ export default [
 		volume: '31.50',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19797,7 +18808,6 @@ export default [
 		volume: '37.60',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19817,7 +18827,6 @@ export default [
 		volume: '4.60',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19837,7 +18846,6 @@ export default [
 		volume: '6.60',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19857,7 +18865,6 @@ export default [
 		volume: '7.70',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19877,7 +18884,6 @@ export default [
 		volume: '8.30',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19897,7 +18903,6 @@ export default [
 		volume: '8.60',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19917,7 +18922,6 @@ export default [
 		volume: '11.00',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19937,7 +18941,6 @@ export default [
 		volume: '14.40',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19957,7 +18960,6 @@ export default [
 		volume: '17.80',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19977,7 +18979,6 @@ export default [
 		volume: '21.10',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -19997,7 +18998,6 @@ export default [
 		volume: '24.50',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20017,7 +19017,6 @@ export default [
 		volume: '27.90',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20037,7 +19036,6 @@ export default [
 		volume: '30.60',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20057,7 +19055,6 @@ export default [
 		volume: '31.20',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20077,7 +19074,6 @@ export default [
 		volume: '34.60',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20097,7 +19093,6 @@ export default [
 		volume: '41.40',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20117,7 +19112,6 @@ export default [
 		volume: '5.00',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20137,7 +19131,6 @@ export default [
 		volume: '7.20',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20157,7 +19150,6 @@ export default [
 		volume: '8.40',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20177,7 +19169,6 @@ export default [
 		volume: '9.10',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20197,7 +19188,6 @@ export default [
 		volume: '9.40',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20217,7 +19207,6 @@ export default [
 		volume: '12.00',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20237,7 +19226,6 @@ export default [
 		volume: '15.70',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20257,7 +19245,6 @@ export default [
 		volume: '19.40',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20277,7 +19264,6 @@ export default [
 		volume: '23.10',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20297,7 +19283,6 @@ export default [
 		volume: '26.70',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20317,7 +19302,6 @@ export default [
 		volume: '30.40',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20337,7 +19321,6 @@ export default [
 		volume: '33.40',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20357,7 +19340,6 @@ export default [
 		volume: '34.10',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20377,7 +19359,6 @@ export default [
 		volume: '37.80',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20397,7 +19378,6 @@ export default [
 		volume: '45.10',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20417,7 +19397,6 @@ export default [
 		volume: '5.40',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20437,7 +19416,6 @@ export default [
 		volume: '7.80',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20457,7 +19435,6 @@ export default [
 		volume: '9.10',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20477,7 +19454,6 @@ export default [
 		volume: '9.90',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20497,7 +19473,6 @@ export default [
 		volume: '10.20',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20517,7 +19492,6 @@ export default [
 		volume: '13.00',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20537,7 +19511,6 @@ export default [
 		volume: '17.00',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20557,7 +19530,6 @@ export default [
 		volume: '21.00',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20577,7 +19549,6 @@ export default [
 		volume: '25.00',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20597,7 +19568,6 @@ export default [
 		volume: '29.00',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20617,7 +19587,6 @@ export default [
 		volume: '33.00',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20637,7 +19606,6 @@ export default [
 		volume: '36.10',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20657,7 +19625,6 @@ export default [
 		volume: '36.90',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20677,7 +19644,6 @@ export default [
 		volume: '40.90',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20697,7 +19663,6 @@ export default [
 		volume: '48.90',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20717,7 +19682,6 @@ export default [
 		volume: '5.80',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20737,7 +19701,6 @@ export default [
 		volume: '8.40',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20757,7 +19720,6 @@ export default [
 		volume: '9.80',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20777,7 +19739,6 @@ export default [
 		volume: '10.60',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20797,7 +19758,6 @@ export default [
 		volume: '11.00',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20817,7 +19777,6 @@ export default [
 		volume: '14.10',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20837,7 +19796,6 @@ export default [
 		volume: '18.30',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20857,7 +19815,6 @@ export default [
 		volume: '22.60',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20877,7 +19834,6 @@ export default [
 		volume: '26.90',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20897,7 +19853,6 @@ export default [
 		volume: '31.20',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20917,7 +19872,6 @@ export default [
 		volume: '35.50',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20937,7 +19891,6 @@ export default [
 		volume: '38.90',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20957,7 +19910,6 @@ export default [
 		volume: '39.80',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20977,7 +19929,6 @@ export default [
 		volume: '44.10',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q40v',
@@ -20997,7 +19948,6 @@ export default [
 		volume: '52.60',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21017,7 +19967,6 @@ export default [
 		volume: '3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21037,7 +19986,6 @@ export default [
 		volume: '4.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21057,7 +20005,6 @@ export default [
 		volume: '5.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21077,7 +20024,6 @@ export default [
 		volume: '7.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21097,7 +20043,6 @@ export default [
 		volume: '8.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21117,7 +20062,6 @@ export default [
 		volume: '10.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21137,7 +20081,6 @@ export default [
 		volume: '11.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21157,7 +20100,6 @@ export default [
 		volume: '13.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21177,7 +20119,6 @@ export default [
 		volume: '14.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21197,7 +20138,6 @@ export default [
 		volume: '17.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21217,7 +20157,6 @@ export default [
 		volume: '4.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21237,7 +20176,6 @@ export default [
 		volume: '6.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21257,7 +20195,6 @@ export default [
 		volume: '8.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21277,7 +20214,6 @@ export default [
 		volume: '11.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21297,7 +20233,6 @@ export default [
 		volume: '13.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21317,7 +20252,6 @@ export default [
 		volume: '15.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21337,7 +20271,6 @@ export default [
 		volume: '17.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21357,7 +20290,6 @@ export default [
 		volume: '19.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21377,7 +20309,6 @@ export default [
 		volume: '22.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21397,7 +20328,6 @@ export default [
 		volume: '26.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21417,7 +20347,6 @@ export default [
 		volume: '6.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21437,7 +20366,6 @@ export default [
 		volume: '9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21457,7 +20385,6 @@ export default [
 		volume: '11.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21477,7 +20404,6 @@ export default [
 		volume: '14.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21497,7 +20423,6 @@ export default [
 		volume: '17.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21517,7 +20442,6 @@ export default [
 		volume: '20.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21537,7 +20461,6 @@ export default [
 		volume: '23.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21557,7 +20480,6 @@ export default [
 		volume: '26.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21577,7 +20499,6 @@ export default [
 		volume: '29.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21597,7 +20518,6 @@ export default [
 		volume: '35.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21617,7 +20537,6 @@ export default [
 		volume: '7.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21637,7 +20556,6 @@ export default [
 		volume: '11.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21657,7 +20575,6 @@ export default [
 		volume: '14.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21677,7 +20594,6 @@ export default [
 		volume: '18.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21697,7 +20613,6 @@ export default [
 		volume: '22.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21717,7 +20632,6 @@ export default [
 		volume: '25.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21737,7 +20651,6 @@ export default [
 		volume: '29.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21757,7 +20670,6 @@ export default [
 		volume: '33.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21777,7 +20689,6 @@ export default [
 		volume: '36.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21797,7 +20708,6 @@ export default [
 		volume: '44.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21817,7 +20727,6 @@ export default [
 		volume: '9.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21837,7 +20746,6 @@ export default [
 		volume: '13.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21857,7 +20765,6 @@ export default [
 		volume: '17.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21877,7 +20784,6 @@ export default [
 		volume: '22.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21897,7 +20803,6 @@ export default [
 		volume: '26.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21917,7 +20822,6 @@ export default [
 		volume: '31',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21937,7 +20841,6 @@ export default [
 		volume: '35.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21957,7 +20860,6 @@ export default [
 		volume: '39.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21977,7 +20879,6 @@ export default [
 		volume: '44.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -21997,7 +20898,6 @@ export default [
 		volume: '52.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22017,7 +20917,6 @@ export default [
 		volume: '10.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22037,7 +20936,6 @@ export default [
 		volume: '15.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22057,7 +20955,6 @@ export default [
 		volume: '20.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22077,7 +20974,6 @@ export default [
 		volume: '26',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22097,7 +20993,6 @@ export default [
 		volume: '31.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22117,7 +21012,6 @@ export default [
 		volume: '36.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22137,7 +21031,6 @@ export default [
 		volume: '41.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22157,7 +21050,6 @@ export default [
 		volume: '46.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22177,7 +21069,6 @@ export default [
 		volume: '12.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22197,7 +21088,6 @@ export default [
 		volume: '18.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22217,7 +21107,6 @@ export default [
 		volume: '23.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22237,7 +21126,6 @@ export default [
 		volume: '29.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22257,7 +21145,6 @@ export default [
 		volume: '35.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22277,7 +21164,6 @@ export default [
 		volume: '41.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22297,7 +21183,6 @@ export default [
 		volume: '47.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22317,7 +21202,6 @@ export default [
 		volume: '53.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22337,7 +21221,6 @@ export default [
 		volume: '13.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22357,7 +21240,6 @@ export default [
 		volume: '20.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22377,7 +21259,6 @@ export default [
 		volume: '26.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22397,7 +21278,6 @@ export default [
 		volume: '33.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22417,7 +21297,6 @@ export default [
 		volume: '40',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22437,7 +21316,6 @@ export default [
 		volume: '46.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22457,7 +21335,6 @@ export default [
 		volume: '53.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22477,7 +21354,6 @@ export default [
 		volume: '15.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22497,7 +21373,6 @@ export default [
 		volume: '22.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22517,7 +21392,6 @@ export default [
 		volume: '29.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22537,7 +21411,6 @@ export default [
 		volume: '37.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22557,7 +21430,6 @@ export default [
 		volume: '44.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22577,7 +21449,6 @@ export default [
 		volume: '51.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22597,7 +21468,6 @@ export default [
 		volume: '59.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22617,7 +21487,6 @@ export default [
 		volume: '16.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22637,7 +21506,6 @@ export default [
 		volume: '24.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22657,7 +21525,6 @@ export default [
 		volume: '32.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22677,7 +21544,6 @@ export default [
 		volume: '40.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22697,7 +21563,6 @@ export default [
 		volume: '48.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22717,7 +21582,6 @@ export default [
 		volume: '56.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22737,7 +21601,6 @@ export default [
 		volume: '18.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22757,7 +21620,6 @@ export default [
 		volume: '27.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22777,7 +21639,6 @@ export default [
 		volume: '35.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22797,7 +21658,6 @@ export default [
 		volume: '44.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22817,7 +21677,6 @@ export default [
 		volume: '53.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q60v',
@@ -22837,7 +21696,6 @@ export default [
 		volume: '62.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -22857,7 +21715,6 @@ export default [
 		volume: '5.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -22877,7 +21734,6 @@ export default [
 		volume: '6.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -22897,7 +21753,6 @@ export default [
 		volume: '8.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -22917,7 +21772,6 @@ export default [
 		volume: '11',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -22937,7 +21791,6 @@ export default [
 		volume: '13.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -22957,7 +21810,6 @@ export default [
 		volume: '16.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -22977,7 +21829,6 @@ export default [
 		volume: '19.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -22997,7 +21848,6 @@ export default [
 		volume: '22',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23017,7 +21867,6 @@ export default [
 		volume: '24.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23037,7 +21886,6 @@ export default [
 		volume: '24.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23057,7 +21905,6 @@ export default [
 		volume: '27.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23077,7 +21924,6 @@ export default [
 		volume: '32.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23097,7 +21943,6 @@ export default [
 		volume: '8.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23117,7 +21962,6 @@ export default [
 		volume: '9.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23137,7 +21981,6 @@ export default [
 		volume: '12.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23157,7 +22000,6 @@ export default [
 		volume: '16.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23177,7 +22019,6 @@ export default [
 		volume: '20.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23197,7 +22038,6 @@ export default [
 		volume: '24.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23217,7 +22057,6 @@ export default [
 		volume: '28.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23237,7 +22076,6 @@ export default [
 		volume: '33',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23257,7 +22095,6 @@ export default [
 		volume: '36.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23277,7 +22114,6 @@ export default [
 		volume: '37.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23297,7 +22133,6 @@ export default [
 		volume: '41.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23317,7 +22152,6 @@ export default [
 		volume: '49.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23337,7 +22171,6 @@ export default [
 		volume: '11.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23357,7 +22190,6 @@ export default [
 		volume: '12.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23377,7 +22209,6 @@ export default [
 		volume: '16.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23397,7 +22228,6 @@ export default [
 		volume: '22.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23417,7 +22247,6 @@ export default [
 		volume: '27.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23437,7 +22266,6 @@ export default [
 		volume: '33.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23457,7 +22285,6 @@ export default [
 		volume: '38.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23477,7 +22304,6 @@ export default [
 		volume: '44',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23497,7 +22323,6 @@ export default [
 		volume: '48.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23517,7 +22342,6 @@ export default [
 		volume: '49.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23537,7 +22361,6 @@ export default [
 		volume: '55',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23557,7 +22380,6 @@ export default [
 		volume: '14',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23577,7 +22399,6 @@ export default [
 		volume: '15.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23597,7 +22418,6 @@ export default [
 		volume: '20.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23617,7 +22437,6 @@ export default [
 		volume: '27.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23637,7 +22456,6 @@ export default [
 		volume: '34.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23657,7 +22475,6 @@ export default [
 		volume: '41.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23677,7 +22494,6 @@ export default [
 		volume: '48.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23697,7 +22513,6 @@ export default [
 		volume: '55',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23717,7 +22532,6 @@ export default [
 		volume: '60.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23737,7 +22551,6 @@ export default [
 		volume: '61.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23757,7 +22570,6 @@ export default [
 		volume: '16.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23777,7 +22589,6 @@ export default [
 		volume: '18.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23797,7 +22608,6 @@ export default [
 		volume: '25',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23817,7 +22627,6 @@ export default [
 		volume: '33.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23837,7 +22646,6 @@ export default [
 		volume: '41.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23857,7 +22665,6 @@ export default [
 		volume: '49.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23877,7 +22684,6 @@ export default [
 		volume: '57.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23897,7 +22703,6 @@ export default [
 		volume: '19.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23917,7 +22722,6 @@ export default [
 		volume: '21.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23937,7 +22741,6 @@ export default [
 		volume: '29.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23957,7 +22760,6 @@ export default [
 		volume: '38.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23977,7 +22779,6 @@ export default [
 		volume: '48.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -23997,7 +22798,6 @@ export default [
 		volume: '57.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -24017,7 +22817,6 @@ export default [
 		volume: '22.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -24037,7 +22836,6 @@ export default [
 		volume: '24.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -24057,7 +22855,6 @@ export default [
 		volume: '33.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -24077,7 +22874,6 @@ export default [
 		volume: '44.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'q80v',
@@ -24097,7 +22893,6 @@ export default [
 		volume: '55.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24117,7 +22912,6 @@ export default [
 		volume: '0.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24137,7 +22931,6 @@ export default [
 		volume: '0.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24157,7 +22950,6 @@ export default [
 		volume: '1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24177,7 +22969,6 @@ export default [
 		volume: '1.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24197,7 +22988,6 @@ export default [
 		volume: '1.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24217,7 +23007,6 @@ export default [
 		volume: '1.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24237,7 +23026,6 @@ export default [
 		volume: '2.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24257,7 +23045,6 @@ export default [
 		volume: '2.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24277,7 +23064,6 @@ export default [
 		volume: '2.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24297,7 +23083,6 @@ export default [
 		volume: '2.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24317,7 +23102,6 @@ export default [
 		volume: '2.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24337,7 +23121,6 @@ export default [
 		volume: '3.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24357,7 +23140,6 @@ export default [
 		volume: '1.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24377,7 +23159,6 @@ export default [
 		volume: '1.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24397,7 +23178,6 @@ export default [
 		volume: '1.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24417,7 +23197,6 @@ export default [
 		volume: '1.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24437,7 +23216,6 @@ export default [
 		volume: '2.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24457,7 +23235,6 @@ export default [
 		volume: '2.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24477,7 +23254,6 @@ export default [
 		volume: '3.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24497,7 +23273,6 @@ export default [
 		volume: '3.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24517,7 +23292,6 @@ export default [
 		volume: '3.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24537,7 +23311,6 @@ export default [
 		volume: '3.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24557,7 +23330,6 @@ export default [
 		volume: '4.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24577,7 +23349,6 @@ export default [
 		volume: '5.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24597,7 +23368,6 @@ export default [
 		volume: '1.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24617,7 +23387,6 @@ export default [
 		volume: '1.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24637,7 +23406,6 @@ export default [
 		volume: '2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24657,7 +23425,6 @@ export default [
 		volume: '2.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24677,7 +23444,6 @@ export default [
 		volume: '3.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24697,7 +23463,6 @@ export default [
 		volume: '3.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24717,7 +23482,6 @@ export default [
 		volume: '4.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24737,7 +23501,6 @@ export default [
 		volume: '4.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24757,7 +23520,6 @@ export default [
 		volume: '5.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24777,7 +23539,6 @@ export default [
 		volume: '5.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24797,7 +23558,6 @@ export default [
 		volume: '5.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24817,7 +23577,6 @@ export default [
 		volume: '6.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24837,7 +23596,6 @@ export default [
 		volume: '1.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24857,7 +23615,6 @@ export default [
 		volume: '1.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24877,7 +23634,6 @@ export default [
 		volume: '2.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24897,7 +23653,6 @@ export default [
 		volume: '3.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24917,7 +23672,6 @@ export default [
 		volume: '3.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24937,7 +23691,6 @@ export default [
 		volume: '4.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24957,7 +23710,6 @@ export default [
 		volume: '5.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24977,7 +23729,6 @@ export default [
 		volume: '5.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -24997,7 +23748,6 @@ export default [
 		volume: '6.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25017,7 +23767,6 @@ export default [
 		volume: '6.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25037,7 +23786,6 @@ export default [
 		volume: '7.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25057,7 +23805,6 @@ export default [
 		volume: '8.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25077,7 +23824,6 @@ export default [
 		volume: '2.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25097,7 +23843,6 @@ export default [
 		volume: '2.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25117,7 +23862,6 @@ export default [
 		volume: '3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25137,7 +23881,6 @@ export default [
 		volume: '3.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25157,7 +23900,6 @@ export default [
 		volume: '4.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25177,7 +23919,6 @@ export default [
 		volume: '5.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25197,7 +23938,6 @@ export default [
 		volume: '6.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25217,7 +23957,6 @@ export default [
 		volume: '7.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25237,7 +23976,6 @@ export default [
 		volume: '7.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25257,7 +23995,6 @@ export default [
 		volume: '7.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25277,7 +24014,6 @@ export default [
 		volume: '8.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25297,7 +24033,6 @@ export default [
 		volume: '10.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25317,7 +24052,6 @@ export default [
 		volume: '2.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25337,7 +24071,6 @@ export default [
 		volume: '2.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25357,7 +24090,6 @@ export default [
 		volume: '3.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25377,7 +24109,6 @@ export default [
 		volume: '4.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25397,7 +24128,6 @@ export default [
 		volume: '5.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25417,7 +24147,6 @@ export default [
 		volume: '6.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25437,7 +24166,6 @@ export default [
 		volume: '7.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25457,7 +24185,6 @@ export default [
 		volume: '8.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25477,7 +24204,6 @@ export default [
 		volume: '9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25497,7 +24223,6 @@ export default [
 		volume: '9.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25517,7 +24242,6 @@ export default [
 		volume: '10.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25537,7 +24261,6 @@ export default [
 		volume: '12.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25557,7 +24280,6 @@ export default [
 		volume: '2.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25577,7 +24299,6 @@ export default [
 		volume: '3.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25597,7 +24318,6 @@ export default [
 		volume: '4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25617,7 +24337,6 @@ export default [
 		volume: '5.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25637,7 +24356,6 @@ export default [
 		volume: '6.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25657,7 +24375,6 @@ export default [
 		volume: '7.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25677,7 +24394,6 @@ export default [
 		volume: '8.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25697,7 +24413,6 @@ export default [
 		volume: '9.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25717,7 +24432,6 @@ export default [
 		volume: '10.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25737,7 +24451,6 @@ export default [
 		volume: '10.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25757,7 +24470,6 @@ export default [
 		volume: '11.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25777,7 +24489,6 @@ export default [
 		volume: '13.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25797,7 +24508,6 @@ export default [
 		volume: '3.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25817,7 +24527,6 @@ export default [
 		volume: '3.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25837,7 +24546,6 @@ export default [
 		volume: '4.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25857,7 +24565,6 @@ export default [
 		volume: '5.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25877,7 +24584,6 @@ export default [
 		volume: '6.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25897,7 +24603,6 @@ export default [
 		volume: '8.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25917,7 +24622,6 @@ export default [
 		volume: '9.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25937,7 +24641,6 @@ export default [
 		volume: '10.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25957,7 +24660,6 @@ export default [
 		volume: '11.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25977,7 +24679,6 @@ export default [
 		volume: '11.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -25997,7 +24698,6 @@ export default [
 		volume: '13.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26017,7 +24717,6 @@ export default [
 		volume: '15.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26037,7 +24736,6 @@ export default [
 		volume: '3.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26057,7 +24755,6 @@ export default [
 		volume: '3.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26077,7 +24774,6 @@ export default [
 		volume: '5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26097,7 +24793,6 @@ export default [
 		volume: '6.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26117,7 +24812,6 @@ export default [
 		volume: '7.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26137,7 +24831,6 @@ export default [
 		volume: '9.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26157,7 +24850,6 @@ export default [
 		volume: '10.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26177,7 +24869,6 @@ export default [
 		volume: '11.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26197,7 +24888,6 @@ export default [
 		volume: '12.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26217,7 +24907,6 @@ export default [
 		volume: '13.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26237,7 +24926,6 @@ export default [
 		volume: '14.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26257,7 +24945,6 @@ export default [
 		volume: '17.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26277,7 +24964,6 @@ export default [
 		volume: '4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26297,7 +24983,6 @@ export default [
 		volume: '4.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26317,7 +25002,6 @@ export default [
 		volume: '5.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26337,7 +25021,6 @@ export default [
 		volume: '7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26357,7 +25040,6 @@ export default [
 		volume: '8.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26377,7 +25059,6 @@ export default [
 		volume: '10',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26397,7 +25078,6 @@ export default [
 		volume: '11.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26417,7 +25097,6 @@ export default [
 		volume: '13',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26437,7 +25116,6 @@ export default [
 		volume: '14.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26457,7 +25135,6 @@ export default [
 		volume: '14.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26477,7 +25154,6 @@ export default [
 		volume: '16',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26497,7 +25173,6 @@ export default [
 		volume: '19',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26517,7 +25192,6 @@ export default [
 		volume: '4.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26537,7 +25211,6 @@ export default [
 		volume: '4.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26557,7 +25230,6 @@ export default [
 		volume: '6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26577,7 +25249,6 @@ export default [
 		volume: '7.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26597,7 +25268,6 @@ export default [
 		volume: '9.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26617,7 +25287,6 @@ export default [
 		volume: '10.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26637,7 +25306,6 @@ export default [
 		volume: '12.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26657,7 +25325,6 @@ export default [
 		volume: '14.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26677,7 +25344,6 @@ export default [
 		volume: '15.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26697,7 +25363,6 @@ export default [
 		volume: '15.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26717,7 +25382,6 @@ export default [
 		volume: '17.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26737,7 +25401,6 @@ export default [
 		volume: '20.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26757,7 +25420,6 @@ export default [
 		volume: '4.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26777,7 +25439,6 @@ export default [
 		volume: '5.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26797,7 +25458,6 @@ export default [
 		volume: '6.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26817,7 +25477,6 @@ export default [
 		volume: '8.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26837,7 +25496,6 @@ export default [
 		volume: '10',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26857,7 +25515,6 @@ export default [
 		volume: '11.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26877,7 +25534,6 @@ export default [
 		volume: '13.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26897,7 +25553,6 @@ export default [
 		volume: '15.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26917,7 +25572,6 @@ export default [
 		volume: '16.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26937,7 +25591,6 @@ export default [
 		volume: '17.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26957,7 +25610,6 @@ export default [
 		volume: '18.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26977,7 +25629,6 @@ export default [
 		volume: '22.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -26997,7 +25648,6 @@ export default [
 		volume: '5.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -27017,7 +25667,6 @@ export default [
 		volume: '5.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -27037,7 +25686,6 @@ export default [
 		volume: '7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -27057,7 +25705,6 @@ export default [
 		volume: '8.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -27077,7 +25724,6 @@ export default [
 		volume: '10.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -27097,7 +25743,6 @@ export default [
 		volume: '12.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -27117,7 +25762,6 @@ export default [
 		volume: '14.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -27137,7 +25781,6 @@ export default [
 		volume: '16.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -27157,7 +25800,6 @@ export default [
 		volume: '18.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -27177,7 +25819,6 @@ export default [
 		volume: '18.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -27197,7 +25838,6 @@ export default [
 		volume: '20.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r32v',
@@ -27217,7 +25857,6 @@ export default [
 		volume: '24.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27237,7 +25876,6 @@ export default [
 		volume: '5.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27257,7 +25895,6 @@ export default [
 		volume: '6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27277,7 +25914,6 @@ export default [
 		volume: '8.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27297,7 +25933,6 @@ export default [
 		volume: '10.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27317,7 +25952,6 @@ export default [
 		volume: '13.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27337,7 +25971,6 @@ export default [
 		volume: '16.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27357,7 +25990,6 @@ export default [
 		volume: '19',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27377,7 +26009,6 @@ export default [
 		volume: '21.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27397,7 +26028,6 @@ export default [
 		volume: '23.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27417,7 +26047,6 @@ export default [
 		volume: '24.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27437,7 +26066,6 @@ export default [
 		volume: '27.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27457,7 +26085,6 @@ export default [
 		volume: '32.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27477,7 +26104,6 @@ export default [
 		volume: '8.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27497,7 +26123,6 @@ export default [
 		volume: '9.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27517,7 +26142,6 @@ export default [
 		volume: '12.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27537,7 +26161,6 @@ export default [
 		volume: '16.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27557,7 +26180,6 @@ export default [
 		volume: '20.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27577,7 +26199,6 @@ export default [
 		volume: '24.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27597,7 +26218,6 @@ export default [
 		volume: '28.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27617,7 +26237,6 @@ export default [
 		volume: '32.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27637,7 +26256,6 @@ export default [
 		volume: '35.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27657,7 +26275,6 @@ export default [
 		volume: '36.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27677,7 +26294,6 @@ export default [
 		volume: '40.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27697,7 +26313,6 @@ export default [
 		volume: '48.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27717,7 +26332,6 @@ export default [
 		volume: '11',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27737,7 +26351,6 @@ export default [
 		volume: '12.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27757,7 +26370,6 @@ export default [
 		volume: '16.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27777,7 +26389,6 @@ export default [
 		volume: '21.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27797,7 +26408,6 @@ export default [
 		volume: '27.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27817,7 +26427,6 @@ export default [
 		volume: '32.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27837,7 +26446,6 @@ export default [
 		volume: '38.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27857,7 +26465,6 @@ export default [
 		volume: '43.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27877,7 +26484,6 @@ export default [
 		volume: '47.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27897,7 +26503,6 @@ export default [
 		volume: '48.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27917,7 +26522,6 @@ export default [
 		volume: '27.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27937,7 +26541,6 @@ export default [
 		volume: '13.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27957,7 +26560,6 @@ export default [
 		volume: '15.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27977,7 +26579,6 @@ export default [
 		volume: '20.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -27997,7 +26598,6 @@ export default [
 		volume: '27.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -28017,7 +26617,6 @@ export default [
 		volume: '34.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -28037,7 +26636,6 @@ export default [
 		volume: '40.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -28057,7 +26655,6 @@ export default [
 		volume: '47.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -28077,7 +26674,6 @@ export default [
 		volume: '54.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -28097,7 +26693,6 @@ export default [
 		volume: '16.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -28117,7 +26712,6 @@ export default [
 		volume: '18.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -28137,7 +26731,6 @@ export default [
 		volume: '24.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -28157,7 +26750,6 @@ export default [
 		volume: '32.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -28177,7 +26769,6 @@ export default [
 		volume: '40.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -28197,7 +26788,6 @@ export default [
 		volume: '49',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -28217,7 +26807,6 @@ export default [
 		volume: '57.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -28237,7 +26826,6 @@ export default [
 		volume: '19.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -28257,7 +26845,6 @@ export default [
 		volume: '21.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -28277,7 +26864,6 @@ export default [
 		volume: '28.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -28297,7 +26883,6 @@ export default [
 		volume: '38.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -28317,7 +26902,6 @@ export default [
 		volume: '47.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -28337,7 +26921,6 @@ export default [
 		volume: '57.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -28357,7 +26940,6 @@ export default [
 		volume: '22.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -28377,7 +26959,6 @@ export default [
 		volume: '24.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -28397,7 +26978,6 @@ export default [
 		volume: '32.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -28417,7 +26997,6 @@ export default [
 		volume: '43.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'r89v',
@@ -28437,7 +27016,6 @@ export default [
 		volume: '54.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1v',
@@ -28457,7 +27035,6 @@ export default [
 		volume: '4.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1v',
@@ -28477,7 +27054,6 @@ export default [
 		volume: '5.0',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1v',
@@ -28497,7 +27073,6 @@ export default [
 		volume: '5.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1v',
@@ -28517,7 +27092,6 @@ export default [
 		volume: '6.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1v',
@@ -28537,7 +27111,6 @@ export default [
 		volume: '6.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1v',
@@ -28557,7 +27130,6 @@ export default [
 		volume: '7.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1v',
@@ -28577,7 +27149,6 @@ export default [
 		volume: '8.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1v',
@@ -28597,7 +27168,6 @@ export default [
 		volume: '9.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1v',
@@ -28617,7 +27187,6 @@ export default [
 		volume: '9.0',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1v',
@@ -28637,7 +27206,6 @@ export default [
 		volume: '10.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1v',
@@ -28657,7 +27225,6 @@ export default [
 		volume: '11.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1v',
@@ -28677,7 +27244,6 @@ export default [
 		volume: '12.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1v',
@@ -28697,7 +27263,6 @@ export default [
 		volume: '11.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1v',
@@ -28717,7 +27282,6 @@ export default [
 		volume: '12.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1v',
@@ -28737,7 +27301,6 @@ export default [
 		volume: '14.0',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1v',
@@ -28757,7 +27320,6 @@ export default [
 		volume: '15.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1v',
@@ -28777,7 +27339,6 @@ export default [
 		volume: '13.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1v',
@@ -28797,7 +27358,6 @@ export default [
 		volume: '15.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1v',
@@ -28817,7 +27377,6 @@ export default [
 		volume: '16.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1v',
@@ -28837,7 +27396,6 @@ export default [
 		volume: '18.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1v',
@@ -28857,7 +27415,6 @@ export default [
 		volume: '15.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1v',
@@ -28877,7 +27434,6 @@ export default [
 		volume: '17.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1v',
@@ -28897,7 +27453,6 @@ export default [
 		volume: '19.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1v',
@@ -28917,7 +27472,6 @@ export default [
 		volume: '21.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt2v',
@@ -28937,7 +27491,6 @@ export default [
 		volume: '9.0',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt2v',
@@ -28957,7 +27510,6 @@ export default [
 		volume: '10.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt2v',
@@ -28977,7 +27529,6 @@ export default [
 		volume: '11.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt2v',
@@ -28997,7 +27548,6 @@ export default [
 		volume: '12.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt2v',
@@ -29017,7 +27567,6 @@ export default [
 		volume: '13.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt2v',
@@ -29037,7 +27586,6 @@ export default [
 		volume: '15.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt2v',
@@ -29057,7 +27605,6 @@ export default [
 		volume: '16.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt2v',
@@ -29077,7 +27624,6 @@ export default [
 		volume: '18.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt2v',
@@ -29097,7 +27643,6 @@ export default [
 		volume: '18.0',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt2v',
@@ -29117,7 +27662,6 @@ export default [
 		volume: '20.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt2v',
@@ -29137,7 +27681,6 @@ export default [
 		volume: '22.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt2v',
@@ -29157,7 +27700,6 @@ export default [
 		volume: '24.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt2v',
@@ -29177,7 +27719,6 @@ export default [
 		volume: '22.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt2v',
@@ -29197,7 +27738,6 @@ export default [
 		volume: '25.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt2v',
@@ -29217,7 +27757,6 @@ export default [
 		volume: '28.0',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt2v',
@@ -29237,7 +27776,6 @@ export default [
 		volume: '30.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1wv',
@@ -29257,7 +27795,6 @@ export default [
 		volume: '4.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1wv',
@@ -29277,7 +27814,6 @@ export default [
 		volume: '5.0',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1wv',
@@ -29297,7 +27833,6 @@ export default [
 		volume: '5.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1wv',
@@ -29317,7 +27852,6 @@ export default [
 		volume: '6.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1wv',
@@ -29337,7 +27871,6 @@ export default [
 		volume: '6.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1wv',
@@ -29357,7 +27890,6 @@ export default [
 		volume: '7.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1wv',
@@ -29377,7 +27909,6 @@ export default [
 		volume: '8.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1wv',
@@ -29397,7 +27928,6 @@ export default [
 		volume: '9.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1wv',
@@ -29417,7 +27947,6 @@ export default [
 		volume: '9.0',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1wv',
@@ -29437,7 +27966,6 @@ export default [
 		volume: '10.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1wv',
@@ -29457,7 +27985,6 @@ export default [
 		volume: '11.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1wv',
@@ -29477,7 +28004,6 @@ export default [
 		volume: '12.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1wv',
@@ -29497,7 +28023,6 @@ export default [
 		volume: '11.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1wv',
@@ -29517,7 +28042,6 @@ export default [
 		volume: '12.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1wv',
@@ -29537,7 +28061,6 @@ export default [
 		volume: '14.0',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1wv',
@@ -29557,7 +28080,6 @@ export default [
 		volume: '15.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1wv',
@@ -29577,7 +28099,6 @@ export default [
 		volume: '13.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1wv',
@@ -29597,7 +28118,6 @@ export default [
 		volume: '15.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1wv',
@@ -29617,7 +28137,6 @@ export default [
 		volume: '16.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1wv',
@@ -29637,7 +28156,6 @@ export default [
 		volume: '18.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1wv',
@@ -29657,7 +28175,6 @@ export default [
 		volume: '15.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1wv',
@@ -29677,7 +28194,6 @@ export default [
 		volume: '17.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1wv',
@@ -29697,7 +28213,6 @@ export default [
 		volume: '19.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'rt1wv',
@@ -29717,7 +28232,6 @@ export default [
 		volume: '21.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt1v',
@@ -29737,7 +28251,6 @@ export default [
 		volume: '9.0',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt1v',
@@ -29757,7 +28270,6 @@ export default [
 		volume: '10.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt1v',
@@ -29777,7 +28289,6 @@ export default [
 		volume: '11.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt1v',
@@ -29797,7 +28308,6 @@ export default [
 		volume: '12.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt1v',
@@ -29817,7 +28327,6 @@ export default [
 		volume: '13.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt1v',
@@ -29837,7 +28346,6 @@ export default [
 		volume: '15.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt1v',
@@ -29857,7 +28365,6 @@ export default [
 		volume: '17.1',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt1v',
@@ -29877,7 +28384,6 @@ export default [
 		volume: '19.0',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt1v',
@@ -29897,7 +28403,6 @@ export default [
 		volume: '17.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt1v',
@@ -29917,7 +28422,6 @@ export default [
 		volume: '20.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt1v',
@@ -29937,7 +28441,6 @@ export default [
 		volume: '22.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt1v',
@@ -29957,7 +28460,6 @@ export default [
 		volume: '25.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt1v',
@@ -29977,7 +28479,6 @@ export default [
 		volume: '22.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt1v',
@@ -29997,7 +28498,6 @@ export default [
 		volume: '25.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt1v',
@@ -30017,7 +28517,6 @@ export default [
 		volume: '28.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt1v',
@@ -30037,7 +28536,6 @@ export default [
 		volume: '31.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt1v',
@@ -30057,7 +28555,6 @@ export default [
 		volume: '26.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt1v',
@@ -30077,7 +28574,6 @@ export default [
 		volume: '30.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt1v',
@@ -30097,7 +28593,6 @@ export default [
 		volume: '34.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt1v',
@@ -30117,7 +28612,6 @@ export default [
 		volume: '37.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt1v',
@@ -30137,7 +28631,6 @@ export default [
 		volume: '31.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt1v',
@@ -30157,7 +28650,6 @@ export default [
 		volume: '35.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt1v',
@@ -30177,7 +28669,6 @@ export default [
 		volume: '39.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt1v',
@@ -30197,7 +28688,6 @@ export default [
 		volume: '44.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt2v',
@@ -30217,7 +28707,6 @@ export default [
 		volume: '17.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt2v',
@@ -30237,7 +28726,6 @@ export default [
 		volume: '20.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt2v',
@@ -30257,7 +28745,6 @@ export default [
 		volume: '22.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt2v',
@@ -30277,7 +28764,6 @@ export default [
 		volume: '25.3',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt2v',
@@ -30297,7 +28783,6 @@ export default [
 		volume: '26.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt2v',
@@ -30317,7 +28802,6 @@ export default [
 		volume: '30.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt2v',
@@ -30337,7 +28821,6 @@ export default [
 		volume: '34.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt2v',
@@ -30357,7 +28840,6 @@ export default [
 		volume: '37.9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt2v',
@@ -30377,7 +28859,6 @@ export default [
 		volume: '35.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt2v',
@@ -30397,7 +28878,6 @@ export default [
 		volume: '40.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt2v',
@@ -30417,7 +28897,6 @@ export default [
 		volume: '45.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt2v',
@@ -30437,7 +28916,6 @@ export default [
 		volume: '50.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt2v',
@@ -30457,7 +28935,6 @@ export default [
 		volume: '44.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt2v',
@@ -30477,7 +28954,6 @@ export default [
 		volume: '50.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt2v',
@@ -30497,7 +28973,6 @@ export default [
 		volume: '57.0',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'qt2v',
@@ -30517,7 +28992,6 @@ export default [
 		volume: '63.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '3450',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -30527,7 +29001,7 @@ export default [
 		d_spacing: '225',
 		n_spacing: '50',
 		width: '87',
-		height: '80',
+		height: '84',
 		length: '500',
 		price: '12440',
 		dt70: '146',
@@ -30537,7 +29011,6 @@ export default [
 		volume: '1.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -30547,7 +29020,7 @@ export default [
 		d_spacing: '250',
 		n_spacing: '50',
 		width: '87',
-		height: '80',
+		height: '84',
 		length: '550',
 		price: '13382',
 		dt70: '159',
@@ -30557,7 +29030,6 @@ export default [
 		volume: '1.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -30567,7 +29039,7 @@ export default [
 		d_spacing: '350',
 		n_spacing: '50',
 		width: '87',
-		height: '80',
+		height: '84',
 		length: '750',
 		price: '14689',
 		dt70: '215',
@@ -30577,7 +29049,6 @@ export default [
 		volume: '2.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -30587,7 +29058,7 @@ export default [
 		d_spacing: '475',
 		n_spacing: '50',
 		width: '87',
-		height: '80',
+		height: '84',
 		length: '1000',
 		price: '15549',
 		dt70: '290',
@@ -30597,7 +29068,6 @@ export default [
 		volume: '2.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -30607,7 +29077,7 @@ export default [
 		d_spacing: '600',
 		n_spacing: '50',
 		width: '87',
-		height: '80',
+		height: '84',
 		length: '1250',
 		price: '17021',
 		dt70: '360',
@@ -30617,7 +29087,6 @@ export default [
 		volume: '3.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -30627,7 +29096,7 @@ export default [
 		d_spacing: '725',
 		n_spacing: '50',
 		width: '87',
-		height: '80',
+		height: '84',
 		length: '1500',
 		price: '17467',
 		dt70: '434',
@@ -30637,7 +29106,6 @@ export default [
 		volume: '4.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -30647,7 +29115,7 @@ export default [
 		d_spacing: '850',
 		n_spacing: '50',
 		width: '87',
-		height: '80',
+		height: '84',
 		length: '1750',
 		price: '18527',
 		dt70: '503',
@@ -30657,7 +29125,6 @@ export default [
 		volume: '4.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -30667,7 +29134,7 @@ export default [
 		d_spacing: '975',
 		n_spacing: '50',
 		width: '87',
-		height: '80',
+		height: '84',
 		length: '2000',
 		price: '19030',
 		dt70: '581',
@@ -30677,7 +29144,6 @@ export default [
 		volume: '5.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -30687,7 +29153,7 @@ export default [
 		d_spacing: '1075',
 		n_spacing: '50',
 		width: '87',
-		height: '80',
+		height: '84',
 		length: '2200',
 		price: '19800',
 		dt70: '638',
@@ -30697,7 +29163,6 @@ export default [
 		volume: '6.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -30707,7 +29172,7 @@ export default [
 		d_spacing: '1100',
 		n_spacing: '50',
 		width: '87',
-		height: '80',
+		height: '84',
 		length: '2250',
 		price: '19910',
 		dt70: '649',
@@ -30717,7 +29182,6 @@ export default [
 		volume: '6.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -30727,7 +29191,7 @@ export default [
 		d_spacing: '1225',
 		n_spacing: '50',
 		width: '87',
-		height: '80',
+		height: '84',
 		length: '2500',
 		price: '20680',
 		dt70: '727',
@@ -30737,7 +29201,6 @@ export default [
 		volume: '7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -30747,7 +29210,7 @@ export default [
 		d_spacing: '1475',
 		n_spacing: '50',
 		width: '87',
-		height: '80',
+		height: '84',
 		length: '3000',
 		price: '31460',
 		dt70: '871',
@@ -30757,7 +29220,6 @@ export default [
 		volume: '8.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -30767,7 +29229,7 @@ export default [
 		d_spacing: '225',
 		n_spacing: '100',
 		width: '87',
-		height: '130',
+		height: '134',
 		length: '500',
 		price: '14650',
 		dt70: '218',
@@ -30777,7 +29239,6 @@ export default [
 		volume: '2.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -30787,7 +29248,7 @@ export default [
 		d_spacing: '250',
 		n_spacing: '100',
 		width: '87',
-		height: '130',
+		height: '134',
 		length: '550',
 		price: '15802',
 		dt70: '240',
@@ -30797,7 +29258,6 @@ export default [
 		volume: '2.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -30807,7 +29267,7 @@ export default [
 		d_spacing: '350',
 		n_spacing: '100',
 		width: '87',
-		height: '130',
+		height: '134',
 		length: '750',
 		price: '17545',
 		dt70: '323',
@@ -30817,7 +29277,6 @@ export default [
 		volume: '3.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -30827,7 +29286,7 @@ export default [
 		d_spacing: '475',
 		n_spacing: '100',
 		width: '87',
-		height: '130',
+		height: '134',
 		length: '1000',
 		price: '18984',
 		dt70: '436',
@@ -30837,7 +29296,6 @@ export default [
 		volume: '4.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -30847,7 +29305,7 @@ export default [
 		d_spacing: '600',
 		n_spacing: '100',
 		width: '87',
-		height: '130',
+		height: '134',
 		length: '1250',
 		price: '20350',
 		dt70: '541',
@@ -30857,7 +29315,6 @@ export default [
 		volume: '5.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -30867,7 +29324,7 @@ export default [
 		d_spacing: '725',
 		n_spacing: '100',
 		width: '87',
-		height: '130',
+		height: '134',
 		length: '1500',
 		price: '21615',
 		dt70: '650',
@@ -30877,7 +29334,6 @@ export default [
 		volume: '6.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -30887,7 +29343,7 @@ export default [
 		d_spacing: '850',
 		n_spacing: '100',
 		width: '87',
-		height: '130',
+		height: '134',
 		length: '1750',
 		price: '22990',
 		dt70: '755',
@@ -30897,7 +29353,6 @@ export default [
 		volume: '7.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -30907,7 +29362,7 @@ export default [
 		d_spacing: '975',
 		n_spacing: '100',
 		width: '87',
-		height: '130',
+		height: '134',
 		length: '2000',
 		price: '24310',
 		dt70: '871',
@@ -30917,7 +29372,6 @@ export default [
 		volume: '8.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -30927,7 +29381,7 @@ export default [
 		d_spacing: '1075',
 		n_spacing: '100',
 		width: '87',
-		height: '130',
+		height: '134',
 		length: '2200',
 		price: '25410',
 		dt70: '958',
@@ -30937,7 +29391,6 @@ export default [
 		volume: '9.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -30947,7 +29400,7 @@ export default [
 		d_spacing: '1100',
 		n_spacing: '100',
 		width: '87',
-		height: '130',
+		height: '134',
 		length: '2250',
 		price: '25520',
 		dt70: '973',
@@ -30957,7 +29410,6 @@ export default [
 		volume: '9.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -30967,7 +29419,7 @@ export default [
 		d_spacing: '1225',
 		n_spacing: '100',
 		width: '87',
-		height: '130',
+		height: '134',
 		length: '2500',
 		price: '26730',
 		dt70: '1089',
@@ -30977,7 +29429,6 @@ export default [
 		volume: '10.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -30987,7 +29438,7 @@ export default [
 		d_spacing: '1475',
 		n_spacing: '100',
 		width: '87',
-		height: '130',
+		height: '134',
 		length: '3000',
 		price: '41140',
 		dt70: '1307',
@@ -30997,7 +29448,6 @@ export default [
 		volume: '12.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31007,7 +29457,7 @@ export default [
 		d_spacing: '225',
 		n_spacing: '150',
 		width: '87',
-		height: '180',
+		height: '184',
 		length: '500',
 		price: '16550',
 		dt70: '290',
@@ -31017,7 +29467,6 @@ export default [
 		volume: '3.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31027,7 +29476,7 @@ export default [
 		d_spacing: '250',
 		n_spacing: '150',
 		width: '87',
-		height: '180',
+		height: '184',
 		length: '550',
 		price: '18231',
 		dt70: '320',
@@ -31037,7 +29486,6 @@ export default [
 		volume: '3.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31047,7 +29495,7 @@ export default [
 		d_spacing: '350',
 		n_spacing: '150',
 		width: '87',
-		height: '180',
+		height: '184',
 		length: '750',
 		price: '19800',
 		dt70: '431',
@@ -31057,7 +29505,6 @@ export default [
 		volume: '4.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31067,7 +29514,7 @@ export default [
 		d_spacing: '475',
 		n_spacing: '150',
 		width: '87',
-		height: '180',
+		height: '184',
 		length: '1000',
 		price: '21780',
 		dt70: '581',
@@ -31077,7 +29524,6 @@ export default [
 		volume: '5.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31087,7 +29533,7 @@ export default [
 		d_spacing: '600',
 		n_spacing: '150',
 		width: '87',
-		height: '180',
+		height: '184',
 		length: '1250',
 		price: '23540',
 		dt70: '721',
@@ -31097,7 +29543,6 @@ export default [
 		volume: '7.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31107,7 +29552,7 @@ export default [
 		d_spacing: '725',
 		n_spacing: '150',
 		width: '87',
-		height: '180',
+		height: '184',
 		length: '1500',
 		price: '25300',
 		dt70: '866',
@@ -31117,7 +29562,6 @@ export default [
 		volume: '8.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31127,7 +29571,7 @@ export default [
 		d_spacing: '850',
 		n_spacing: '150',
 		width: '87',
-		height: '180',
+		height: '184',
 		length: '1750',
 		price: '27060',
 		dt70: '1006',
@@ -31137,7 +29581,6 @@ export default [
 		volume: '9.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31147,7 +29590,7 @@ export default [
 		d_spacing: '975',
 		n_spacing: '150',
 		width: '87',
-		height: '180',
+		height: '184',
 		length: '2000',
 		price: '29425',
 		dt70: '1162',
@@ -31157,7 +29600,6 @@ export default [
 		volume: '11.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31167,7 +29609,7 @@ export default [
 		d_spacing: '1075',
 		n_spacing: '150',
 		width: '87',
-		height: '180',
+		height: '184',
 		length: '2200',
 		price: '31020',
 		dt70: '1278',
@@ -31177,7 +29619,6 @@ export default [
 		volume: '12.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31187,7 +29628,7 @@ export default [
 		d_spacing: '1100',
 		n_spacing: '150',
 		width: '87',
-		height: '180',
+		height: '184',
 		length: '2250',
 		price: '31130',
 		dt70: '1297',
@@ -31197,7 +29638,6 @@ export default [
 		volume: '12.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31207,7 +29647,7 @@ export default [
 		d_spacing: '1225',
 		n_spacing: '150',
 		width: '87',
-		height: '180',
+		height: '184',
 		length: '2500',
 		price: '32780',
 		dt70: '1452',
@@ -31217,7 +29657,6 @@ export default [
 		volume: '14.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31227,7 +29666,7 @@ export default [
 		d_spacing: '1475',
 		n_spacing: '150',
 		width: '87',
-		height: '180',
+		height: '184',
 		length: '3000',
 		price: '50710',
 		dt70: '1742',
@@ -31237,7 +29676,6 @@ export default [
 		volume: '16.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31247,7 +29685,7 @@ export default [
 		d_spacing: '225',
 		n_spacing: '200',
 		width: '87',
-		height: '230',
+		height: '234',
 		length: '500',
 		price: '18450',
 		dt70: '363',
@@ -31257,7 +29695,6 @@ export default [
 		volume: '3.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31267,7 +29704,7 @@ export default [
 		d_spacing: '250',
 		n_spacing: '200',
 		width: '87',
-		height: '230',
+		height: '234',
 		length: '550',
 		price: '20665',
 		dt70: '399',
@@ -31277,7 +29714,6 @@ export default [
 		volume: '4.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31287,7 +29723,7 @@ export default [
 		d_spacing: '350',
 		n_spacing: '200',
 		width: '87',
-		height: '230',
+		height: '234',
 		length: '750',
 		price: '22110',
 		dt70: '538',
@@ -31297,7 +29733,6 @@ export default [
 		volume: '5.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31307,7 +29742,7 @@ export default [
 		d_spacing: '475',
 		n_spacing: '200',
 		width: '87',
-		height: '230',
+		height: '234',
 		length: '1000',
 		price: '24585',
 		dt70: '727',
@@ -31317,7 +29752,6 @@ export default [
 		volume: '7.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31327,7 +29761,7 @@ export default [
 		d_spacing: '600',
 		n_spacing: '200',
 		width: '87',
-		height: '230',
+		height: '234',
 		length: '1250',
 		price: '26785',
 		dt70: '902',
@@ -31337,7 +29771,6 @@ export default [
 		volume: '9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31347,7 +29780,7 @@ export default [
 		d_spacing: '725',
 		n_spacing: '200',
 		width: '87',
-		height: '230',
+		height: '234',
 		length: '1500',
 		price: '28930',
 		dt70: '1083',
@@ -31357,7 +29790,6 @@ export default [
 		volume: '10.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31367,7 +29799,7 @@ export default [
 		d_spacing: '850',
 		n_spacing: '200',
 		width: '87',
-		height: '230',
+		height: '234',
 		length: '1750',
 		price: '31130',
 		dt70: '1258',
@@ -31377,7 +29809,6 @@ export default [
 		volume: '12.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31387,7 +29818,7 @@ export default [
 		d_spacing: '975',
 		n_spacing: '200',
 		width: '87',
-		height: '230',
+		height: '234',
 		length: '2000',
 		price: '34650',
 		dt70: '1452',
@@ -31397,7 +29828,6 @@ export default [
 		volume: '14.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31407,7 +29837,7 @@ export default [
 		d_spacing: '1075',
 		n_spacing: '200',
 		width: '87',
-		height: '230',
+		height: '234',
 		length: '2200',
 		price: '36740',
 		dt70: '1598',
@@ -31417,7 +29847,6 @@ export default [
 		volume: '15.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31427,7 +29856,7 @@ export default [
 		d_spacing: '1100',
 		n_spacing: '200',
 		width: '87',
-		height: '230',
+		height: '234',
 		length: '2250',
 		price: '36850',
 		dt70: '1622',
@@ -31437,7 +29866,6 @@ export default [
 		volume: '15.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31447,7 +29875,7 @@ export default [
 		d_spacing: '1225',
 		n_spacing: '200',
 		width: '87',
-		height: '230',
+		height: '234',
 		length: '2500',
 		price: '38720',
 		dt70: '1815',
@@ -31457,7 +29885,6 @@ export default [
 		volume: '17.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31467,7 +29894,7 @@ export default [
 		d_spacing: '1475',
 		n_spacing: '200',
 		width: '87',
-		height: '230',
+		height: '234',
 		length: '3000',
 		price: '60390',
 		dt70: '2179',
@@ -31477,7 +29904,6 @@ export default [
 		volume: '21',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31487,7 +29913,7 @@ export default [
 		d_spacing: '225',
 		n_spacing: '250',
 		width: '87',
-		height: '280',
+		height: '284',
 		length: '500',
 		price: '20350',
 		dt70: '436',
@@ -31497,7 +29923,6 @@ export default [
 		volume: '4.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31507,7 +29932,7 @@ export default [
 		d_spacing: '250',
 		n_spacing: '250',
 		width: '87',
-		height: '280',
+		height: '284',
 		length: '550',
 		price: '23102',
 		dt70: '479',
@@ -31517,7 +29942,6 @@ export default [
 		volume: '5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31527,7 +29951,7 @@ export default [
 		d_spacing: '350',
 		n_spacing: '250',
 		width: '87',
-		height: '280',
+		height: '284',
 		length: '750',
 		price: '24310',
 		dt70: '646',
@@ -31537,7 +29961,6 @@ export default [
 		volume: '6.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31547,7 +29970,7 @@ export default [
 		d_spacing: '475',
 		n_spacing: '250',
 		width: '87',
-		height: '280',
+		height: '284',
 		length: '1000',
 		price: '27390',
 		dt70: '871',
@@ -31557,7 +29980,6 @@ export default [
 		volume: '8.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31567,7 +29989,7 @@ export default [
 		d_spacing: '600',
 		n_spacing: '250',
 		width: '87',
-		height: '280',
+		height: '284',
 		length: '1250',
 		price: '29975',
 		dt70: '1081',
@@ -31577,7 +29999,6 @@ export default [
 		volume: '10.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31587,7 +30008,7 @@ export default [
 		d_spacing: '725',
 		n_spacing: '250',
 		width: '87',
-		height: '280',
+		height: '284',
 		length: '1500',
 		price: '32560',
 		dt70: '1299',
@@ -31597,7 +30018,6 @@ export default [
 		volume: '12.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31607,7 +30027,7 @@ export default [
 		d_spacing: '850',
 		n_spacing: '250',
 		width: '87',
-		height: '280',
+		height: '284',
 		length: '1750',
 		price: '35200',
 		dt70: '1510',
@@ -31617,7 +30037,6 @@ export default [
 		volume: '14.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31627,7 +30046,7 @@ export default [
 		d_spacing: '975',
 		n_spacing: '250',
 		width: '87',
-		height: '280',
+		height: '284',
 		length: '2000',
 		price: '39820',
 		dt70: '1742',
@@ -31637,7 +30056,6 @@ export default [
 		volume: '17',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31647,7 +30065,7 @@ export default [
 		d_spacing: '1075',
 		n_spacing: '250',
 		width: '87',
-		height: '280',
+		height: '284',
 		length: '2200',
 		price: '42130',
 		dt70: '1916',
@@ -31657,7 +30075,6 @@ export default [
 		volume: '18.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31667,7 +30084,7 @@ export default [
 		d_spacing: '1100',
 		n_spacing: '250',
 		width: '87',
-		height: '280',
+		height: '284',
 		length: '2250',
 		price: '42240',
 		dt70: '1946',
@@ -31677,7 +30094,6 @@ export default [
 		volume: '19',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31687,7 +30103,7 @@ export default [
 		d_spacing: '1225',
 		n_spacing: '250',
 		width: '87',
-		height: '280',
+		height: '284',
 		length: '2500',
 		price: '44770',
 		dt70: '2177',
@@ -31697,7 +30113,6 @@ export default [
 		volume: '21.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31707,7 +30122,7 @@ export default [
 		d_spacing: '1475',
 		n_spacing: '250',
 		width: '87',
-		height: '280',
+		height: '284',
 		length: '3000',
 		price: '70070',
 		dt70: '2614',
@@ -31717,7 +30132,6 @@ export default [
 		volume: '25.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31727,7 +30141,7 @@ export default [
 		d_spacing: '225',
 		n_spacing: '300',
 		width: '87',
-		height: '330',
+		height: '334',
 		length: '500',
 		price: '22250',
 		dt70: '509',
@@ -31737,7 +30151,6 @@ export default [
 		volume: '5.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31747,7 +30160,7 @@ export default [
 		d_spacing: '250',
 		n_spacing: '300',
 		width: '87',
-		height: '330',
+		height: '334',
 		length: '550',
 		price: '25333',
 		dt70: '559',
@@ -31757,7 +30170,6 @@ export default [
 		volume: '5.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31767,7 +30179,7 @@ export default [
 		d_spacing: '350',
 		n_spacing: '300',
 		width: '87',
-		height: '330',
+		height: '334',
 		length: '750',
 		price: '26565',
 		dt70: '753',
@@ -31777,7 +30189,6 @@ export default [
 		volume: '7.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31787,7 +30198,7 @@ export default [
 		d_spacing: '475',
 		n_spacing: '300',
 		width: '87',
-		height: '330',
+		height: '334',
 		length: '1000',
 		price: '30140',
 		dt70: '1017',
@@ -31797,7 +30208,6 @@ export default [
 		volume: '10.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31807,7 +30217,7 @@ export default [
 		d_spacing: '600',
 		n_spacing: '300',
 		width: '87',
-		height: '330',
+		height: '334',
 		length: '1250',
 		price: '33220',
 		dt70: '1262',
@@ -31817,7 +30227,6 @@ export default [
 		volume: '12.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31827,7 +30236,7 @@ export default [
 		d_spacing: '725',
 		n_spacing: '300',
 		width: '87',
-		height: '330',
+		height: '334',
 		length: '1500',
 		price: '36300',
 		dt70: '1516',
@@ -31837,7 +30246,6 @@ export default [
 		volume: '15',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31847,7 +30255,7 @@ export default [
 		d_spacing: '850',
 		n_spacing: '300',
 		width: '87',
-		height: '330',
+		height: '334',
 		length: '1750',
 		price: '39380',
 		dt70: '1761',
@@ -31857,7 +30265,6 @@ export default [
 		volume: '17.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31867,7 +30274,7 @@ export default [
 		d_spacing: '975',
 		n_spacing: '300',
 		width: '87',
-		height: '330',
+		height: '334',
 		length: '2000',
 		price: '44990',
 		dt70: '2033',
@@ -31877,7 +30284,6 @@ export default [
 		volume: '19.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31887,7 +30293,7 @@ export default [
 		d_spacing: '1075',
 		n_spacing: '300',
 		width: '87',
-		height: '330',
+		height: '334',
 		length: '2200',
 		price: '47740',
 		dt70: '2235',
@@ -31897,7 +30303,6 @@ export default [
 		volume: '21.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31907,7 +30312,7 @@ export default [
 		d_spacing: '1100',
 		n_spacing: '300',
 		width: '87',
-		height: '330',
+		height: '334',
 		length: '2250',
 		price: '47850',
 		dt70: '2270',
@@ -31917,7 +30322,6 @@ export default [
 		volume: '22.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31927,7 +30331,7 @@ export default [
 		d_spacing: '1225',
 		n_spacing: '300',
 		width: '87',
-		height: '330',
+		height: '334',
 		length: '2500',
 		price: '50710',
 		dt70: '2540',
@@ -31937,7 +30341,6 @@ export default [
 		volume: '24.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31947,7 +30350,7 @@ export default [
 		d_spacing: '1475',
 		n_spacing: '300',
 		width: '87',
-		height: '330',
+		height: '334',
 		length: '3000',
 		price: '79860',
 		dt70: '3050',
@@ -31957,7 +30360,6 @@ export default [
 		volume: '29.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31967,7 +30369,7 @@ export default [
 		d_spacing: '225',
 		n_spacing: '350',
 		width: '87',
-		height: '380',
+		height: '384',
 		length: '500',
 		price: '24150',
 		dt70: '581',
@@ -31977,7 +30379,6 @@ export default [
 		volume: '6.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -31987,7 +30388,7 @@ export default [
 		d_spacing: '250',
 		n_spacing: '350',
 		width: '87',
-		height: '380',
+		height: '384',
 		length: '550',
 		price: '27423',
 		dt70: '638',
@@ -31997,7 +30398,6 @@ export default [
 		volume: '6.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32007,7 +30407,7 @@ export default [
 		d_spacing: '350',
 		n_spacing: '350',
 		width: '87',
-		height: '380',
+		height: '384',
 		length: '750',
 		price: '28875',
 		dt70: '860',
@@ -32017,7 +30417,6 @@ export default [
 		volume: '8.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32027,7 +30426,7 @@ export default [
 		d_spacing: '475',
 		n_spacing: '350',
 		width: '87',
-		height: '380',
+		height: '384',
 		length: '1000',
 		price: '32890',
 		dt70: '1162',
@@ -32037,7 +30436,6 @@ export default [
 		volume: '11.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32047,7 +30445,7 @@ export default [
 		d_spacing: '600',
 		n_spacing: '350',
 		width: '87',
-		height: '380',
+		height: '384',
 		length: '1250',
 		price: '36410',
 		dt70: '1443',
@@ -32057,7 +30455,6 @@ export default [
 		volume: '14.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32067,7 +30464,7 @@ export default [
 		d_spacing: '725',
 		n_spacing: '350',
 		width: '87',
-		height: '380',
+		height: '384',
 		length: '1500',
 		price: '39875',
 		dt70: '1733',
@@ -32077,7 +30474,6 @@ export default [
 		volume: '17.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32087,7 +30483,7 @@ export default [
 		d_spacing: '850',
 		n_spacing: '350',
 		width: '87',
-		height: '380',
+		height: '384',
 		length: '1750',
 		price: '43450',
 		dt70: '2014',
@@ -32097,7 +30493,6 @@ export default [
 		volume: '19.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32107,7 +30502,7 @@ export default [
 		d_spacing: '975',
 		n_spacing: '350',
 		width: '87',
-		height: '380',
+		height: '384',
 		length: '2000',
 		price: '50160',
 		dt70: '2323',
@@ -32117,7 +30512,6 @@ export default [
 		volume: '22.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32127,7 +30521,7 @@ export default [
 		d_spacing: '1075',
 		n_spacing: '350',
 		width: '87',
-		height: '380',
+		height: '384',
 		length: '2200',
 		price: '53350',
 		dt70: '2556',
@@ -32137,7 +30531,6 @@ export default [
 		volume: '24.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32147,7 +30540,7 @@ export default [
 		d_spacing: '1100',
 		n_spacing: '350',
 		width: '87',
-		height: '380',
+		height: '384',
 		length: '2250',
 		price: '53460',
 		dt70: '2595',
@@ -32157,7 +30550,6 @@ export default [
 		volume: '25.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32167,7 +30559,7 @@ export default [
 		d_spacing: '1225',
 		n_spacing: '350',
 		width: '87',
-		height: '380',
+		height: '384',
 		length: '2500',
 		price: '56760',
 		dt70: '2904',
@@ -32177,7 +30569,6 @@ export default [
 		volume: '28.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32187,7 +30578,7 @@ export default [
 		d_spacing: '1475',
 		n_spacing: '350',
 		width: '87',
-		height: '380',
+		height: '384',
 		length: '3000',
 		price: '89540',
 		dt70: '3485',
@@ -32197,7 +30588,6 @@ export default [
 		volume: '33.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32207,7 +30597,7 @@ export default [
 		d_spacing: '225',
 		n_spacing: '400',
 		width: '87',
-		height: '430',
+		height: '434',
 		length: '500',
 		price: '26050',
 		dt70: '653',
@@ -32217,7 +30607,6 @@ export default [
 		volume: '6.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32227,7 +30616,7 @@ export default [
 		d_spacing: '250',
 		n_spacing: '400',
 		width: '87',
-		height: '430',
+		height: '434',
 		length: '550',
 		price: '29513',
 		dt70: '719',
@@ -32237,7 +30626,6 @@ export default [
 		volume: '7.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32247,7 +30635,7 @@ export default [
 		d_spacing: '350',
 		n_spacing: '400',
 		width: '87',
-		height: '430',
+		height: '434',
 		length: '750',
 		price: '31130',
 		dt70: '969',
@@ -32257,7 +30645,6 @@ export default [
 		volume: '10',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32267,7 +30654,7 @@ export default [
 		d_spacing: '475',
 		n_spacing: '400',
 		width: '87',
-		height: '430',
+		height: '434',
 		length: '1000',
 		price: '35695',
 		dt70: '1307',
@@ -32277,7 +30664,6 @@ export default [
 		volume: '13.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32287,7 +30673,7 @@ export default [
 		d_spacing: '600',
 		n_spacing: '400',
 		width: '87',
-		height: '430',
+		height: '434',
 		length: '1250',
 		price: '39710',
 		dt70: '1623',
@@ -32297,7 +30683,6 @@ export default [
 		volume: '16.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32307,7 +30692,7 @@ export default [
 		d_spacing: '725',
 		n_spacing: '400',
 		width: '87',
-		height: '430',
+		height: '434',
 		length: '1500',
 		price: '43560',
 		dt70: '1950',
@@ -32317,7 +30702,6 @@ export default [
 		volume: '19.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32327,7 +30711,7 @@ export default [
 		d_spacing: '850',
 		n_spacing: '400',
 		width: '87',
-		height: '430',
+		height: '434',
 		length: '1750',
 		price: '47520',
 		dt70: '2266',
@@ -32337,7 +30721,6 @@ export default [
 		volume: '22.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32347,7 +30730,7 @@ export default [
 		d_spacing: '975',
 		n_spacing: '400',
 		width: '87',
-		height: '430',
+		height: '434',
 		length: '2000',
 		price: '55330',
 		dt70: '2614',
@@ -32357,7 +30740,6 @@ export default [
 		volume: '25.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32367,7 +30749,7 @@ export default [
 		d_spacing: '1075',
 		n_spacing: '400',
 		width: '87',
-		height: '430',
+		height: '434',
 		length: '2200',
 		price: '58960',
 		dt70: '2875',
@@ -32377,7 +30759,6 @@ export default [
 		volume: '28',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32387,7 +30768,7 @@ export default [
 		d_spacing: '1100',
 		n_spacing: '400',
 		width: '87',
-		height: '430',
+		height: '434',
 		length: '2250',
 		price: '59070',
 		dt70: '2919',
@@ -32397,7 +30778,6 @@ export default [
 		volume: '28.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32407,7 +30787,7 @@ export default [
 		d_spacing: '1225',
 		n_spacing: '400',
 		width: '87',
-		height: '430',
+		height: '434',
 		length: '2500',
 		price: '62700',
 		dt70: '3267',
@@ -32417,7 +30797,6 @@ export default [
 		volume: '31.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32427,7 +30806,7 @@ export default [
 		d_spacing: '1475',
 		n_spacing: '400',
 		width: '87',
-		height: '430',
+		height: '434',
 		length: '3000',
 		price: '99330',
 		dt70: '3921',
@@ -32437,7 +30816,6 @@ export default [
 		volume: '37.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32447,7 +30825,7 @@ export default [
 		d_spacing: '225',
 		n_spacing: '450',
 		width: '87',
-		height: '480',
+		height: '484',
 		length: '500',
 		price: '27950',
 		dt70: '727',
@@ -32457,7 +30835,6 @@ export default [
 		volume: '7.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32467,7 +30844,7 @@ export default [
 		d_spacing: '250',
 		n_spacing: '450',
 		width: '87',
-		height: '480',
+		height: '484',
 		length: '550',
 		price: '31603',
 		dt70: '799',
@@ -32477,7 +30854,6 @@ export default [
 		volume: '8.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32487,7 +30863,7 @@ export default [
 		d_spacing: '350',
 		n_spacing: '450',
 		width: '87',
-		height: '480',
+		height: '484',
 		length: '750',
 		price: '33385',
 		dt70: '1077',
@@ -32497,7 +30873,6 @@ export default [
 		volume: '11.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32507,7 +30882,7 @@ export default [
 		d_spacing: '475',
 		n_spacing: '450',
 		width: '87',
-		height: '480',
+		height: '484',
 		length: '1000',
 		price: '38500',
 		dt70: '1452',
@@ -32517,7 +30892,6 @@ export default [
 		volume: '14.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32527,7 +30901,7 @@ export default [
 		d_spacing: '600',
 		n_spacing: '450',
 		width: '87',
-		height: '480',
+		height: '484',
 		length: '1250',
 		price: '42900',
 		dt70: '1803',
@@ -32537,7 +30911,6 @@ export default [
 		volume: '18',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32547,7 +30920,7 @@ export default [
 		d_spacing: '725',
 		n_spacing: '450',
 		width: '87',
-		height: '480',
+		height: '484',
 		length: '1500',
 		price: '47190',
 		dt70: '2167',
@@ -32557,7 +30930,6 @@ export default [
 		volume: '21.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32567,7 +30939,7 @@ export default [
 		d_spacing: '850',
 		n_spacing: '450',
 		width: '87',
-		height: '480',
+		height: '484',
 		length: '1750',
 		price: '51590',
 		dt70: '2517',
@@ -32577,7 +30949,6 @@ export default [
 		volume: '24.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32587,7 +30958,7 @@ export default [
 		d_spacing: '975',
 		n_spacing: '450',
 		width: '87',
-		height: '480',
+		height: '484',
 		length: '2000',
 		price: '60610',
 		dt70: '2904',
@@ -32597,7 +30968,6 @@ export default [
 		volume: '28.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32607,7 +30977,7 @@ export default [
 		d_spacing: '1075',
 		n_spacing: '450',
 		width: '87',
-		height: '480',
+		height: '484',
 		length: '2200',
 		price: '64570',
 		dt70: '3194',
@@ -32617,7 +30987,6 @@ export default [
 		volume: '31.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32627,7 +30996,7 @@ export default [
 		d_spacing: '1100',
 		n_spacing: '450',
 		width: '87',
-		height: '480',
+		height: '484',
 		length: '2250',
 		price: '64680',
 		dt70: '3243',
@@ -32637,7 +31006,6 @@ export default [
 		volume: '31.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32647,7 +31015,7 @@ export default [
 		d_spacing: '1225',
 		n_spacing: '450',
 		width: '87',
-		height: '480',
+		height: '484',
 		length: '2500',
 		price: '68750',
 		dt70: '3631',
@@ -32657,7 +31025,6 @@ export default [
 		volume: '35.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32667,7 +31034,7 @@ export default [
 		d_spacing: '1475',
 		n_spacing: '450',
 		width: '87',
-		height: '480',
+		height: '484',
 		length: '3000',
 		price: '109120',
 		dt70: '4356',
@@ -32677,7 +31044,6 @@ export default [
 		volume: '42.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32687,7 +31053,7 @@ export default [
 		d_spacing: '225',
 		n_spacing: '500',
 		width: '87',
-		height: '530',
+		height: '534',
 		length: '500',
 		price: '29850',
 		dt70: '799',
@@ -32697,7 +31063,6 @@ export default [
 		volume: '8.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32707,7 +31072,7 @@ export default [
 		d_spacing: '250',
 		n_spacing: '500',
 		width: '87',
-		height: '530',
+		height: '534',
 		length: '550',
 		price: '33704',
 		dt70: '878',
@@ -32717,7 +31082,6 @@ export default [
 		volume: '9.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32727,7 +31091,7 @@ export default [
 		d_spacing: '350',
 		n_spacing: '500',
 		width: '87',
-		height: '530',
+		height: '534',
 		length: '750',
 		price: '35640',
 		dt70: '1184',
@@ -32737,7 +31101,6 @@ export default [
 		volume: '12.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32747,7 +31110,7 @@ export default [
 		d_spacing: '475',
 		n_spacing: '500',
 		width: '87',
-		height: '530',
+		height: '534',
 		length: '1000',
 		price: '41250',
 		dt70: '1598',
@@ -32757,7 +31120,6 @@ export default [
 		volume: '16',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32767,7 +31129,7 @@ export default [
 		d_spacing: '600',
 		n_spacing: '500',
 		width: '87',
-		height: '530',
+		height: '534',
 		length: '1250',
 		price: '46090',
 		dt70: '1983',
@@ -32777,7 +31139,6 @@ export default [
 		volume: '19.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32787,7 +31148,7 @@ export default [
 		d_spacing: '725',
 		n_spacing: '500',
 		width: '87',
-		height: '530',
+		height: '534',
 		length: '1500',
 		price: '50820',
 		dt70: '2382',
@@ -32797,7 +31158,6 @@ export default [
 		volume: '23.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32807,7 +31167,7 @@ export default [
 		d_spacing: '850',
 		n_spacing: '500',
 		width: '87',
-		height: '530',
+		height: '534',
 		length: '1750',
 		price: '55660',
 		dt70: '2769',
@@ -32817,7 +31177,6 @@ export default [
 		volume: '27.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32827,7 +31186,7 @@ export default [
 		d_spacing: '975',
 		n_spacing: '500',
 		width: '87',
-		height: '530',
+		height: '534',
 		length: '2000',
 		price: '65780',
 		dt70: '3194',
@@ -32837,7 +31196,6 @@ export default [
 		volume: '31.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32847,7 +31205,7 @@ export default [
 		d_spacing: '1075',
 		n_spacing: '500',
 		width: '87',
-		height: '530',
+		height: '534',
 		length: '2200',
 		price: '70180',
 		dt70: '3514',
@@ -32857,7 +31215,6 @@ export default [
 		volume: '34.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32867,7 +31224,7 @@ export default [
 		d_spacing: '1100',
 		n_spacing: '500',
 		width: '87',
-		height: '530',
+		height: '534',
 		length: '2250',
 		price: '70290',
 		dt70: '3568',
@@ -32877,7 +31234,6 @@ export default [
 		volume: '34.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32887,7 +31243,7 @@ export default [
 		d_spacing: '1225',
 		n_spacing: '500',
 		width: '87',
-		height: '530',
+		height: '534',
 		length: '2500',
 		price: '74800',
 		dt70: '3993',
@@ -32897,7 +31253,6 @@ export default [
 		volume: '38.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32907,7 +31262,7 @@ export default [
 		d_spacing: '1475',
 		n_spacing: '500',
 		width: '87',
-		height: '530',
+		height: '534',
 		length: '3000',
 		price: '118800',
 		dt70: '4792',
@@ -32917,7 +31272,6 @@ export default [
 		volume: '46.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32927,7 +31281,7 @@ export default [
 		d_spacing: '225',
 		n_spacing: '550',
 		width: '87',
-		height: '580',
+		height: '584',
 		length: '500',
 		price: '31850',
 		dt70: '871',
@@ -32937,7 +31291,6 @@ export default [
 		volume: '9.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32947,7 +31300,7 @@ export default [
 		d_spacing: '250',
 		n_spacing: '550',
 		width: '87',
-		height: '580',
+		height: '584',
 		length: '550',
 		price: '35695',
 		dt70: '958',
@@ -32957,7 +31310,6 @@ export default [
 		volume: '10.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32967,7 +31319,7 @@ export default [
 		d_spacing: '350',
 		n_spacing: '550',
 		width: '87',
-		height: '580',
+		height: '584',
 		length: '750',
 		price: '37950',
 		dt70: '1293',
@@ -32977,7 +31329,6 @@ export default [
 		volume: '13.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -32987,7 +31338,7 @@ export default [
 		d_spacing: '475',
 		n_spacing: '550',
 		width: '87',
-		height: '580',
+		height: '584',
 		length: '1000',
 		price: '44110',
 		dt70: '1742',
@@ -32997,7 +31348,6 @@ export default [
 		volume: '17.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -33007,7 +31357,7 @@ export default [
 		d_spacing: '600',
 		n_spacing: '550',
 		width: '87',
-		height: '580',
+		height: '584',
 		length: '1250',
 		price: '49280',
 		dt70: '2164',
@@ -33017,7 +31367,6 @@ export default [
 		volume: '21.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -33027,7 +31376,7 @@ export default [
 		d_spacing: '725',
 		n_spacing: '550',
 		width: '87',
-		height: '580',
+		height: '584',
 		length: '1500',
 		price: '54560',
 		dt70: '2599',
@@ -33037,7 +31386,6 @@ export default [
 		volume: '25.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -33047,7 +31395,7 @@ export default [
 		d_spacing: '850',
 		n_spacing: '550',
 		width: '87',
-		height: '580',
+		height: '584',
 		length: '1750',
 		price: '59785',
 		dt70: '3020',
@@ -33057,7 +31405,6 @@ export default [
 		volume: '29.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -33067,7 +31414,7 @@ export default [
 		d_spacing: '975',
 		n_spacing: '550',
 		width: '87',
-		height: '580',
+		height: '584',
 		length: '2000',
 		price: '71170',
 		dt70: '3485',
@@ -33077,7 +31424,6 @@ export default [
 		volume: '34',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -33087,7 +31433,7 @@ export default [
 		d_spacing: '1075',
 		n_spacing: '550',
 		width: '87',
-		height: '580',
+		height: '584',
 		length: '2200',
 		price: '75735',
 		dt70: '3834',
@@ -33097,7 +31443,6 @@ export default [
 		volume: '37.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -33107,7 +31452,7 @@ export default [
 		d_spacing: '1100',
 		n_spacing: '550',
 		width: '87',
-		height: '580',
+		height: '584',
 		length: '2250',
 		price: '75845',
 		dt70: '3892',
@@ -33117,7 +31462,6 @@ export default [
 		volume: '38.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -33127,7 +31471,7 @@ export default [
 		d_spacing: '1225',
 		n_spacing: '550',
 		width: '87',
-		height: '580',
+		height: '584',
 		length: '2500',
 		price: '80740',
 		dt70: '4356',
@@ -33137,7 +31481,6 @@ export default [
 		volume: '42.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -33147,7 +31490,7 @@ export default [
 		d_spacing: '1475',
 		n_spacing: '550',
 		width: '87',
-		height: '580',
+		height: '584',
 		length: '3000',
 		price: '128480',
 		dt70: '5227',
@@ -33157,7 +31500,6 @@ export default [
 		volume: '50.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -33167,7 +31509,7 @@ export default [
 		d_spacing: '225',
 		n_spacing: '600',
 		width: '87',
-		height: '630',
+		height: '634',
 		length: '500',
 		price: '33850',
 		dt70: '943',
@@ -33177,7 +31519,6 @@ export default [
 		volume: '10',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -33187,7 +31528,7 @@ export default [
 		d_spacing: '250',
 		n_spacing: '600',
 		width: '87',
-		height: '630',
+		height: '634',
 		length: '550',
 		price: '37785',
 		dt70: '1038',
@@ -33197,7 +31538,6 @@ export default [
 		volume: '10.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -33207,7 +31547,7 @@ export default [
 		d_spacing: '350',
 		n_spacing: '600',
 		width: '87',
-		height: '630',
+		height: '634',
 		length: '750',
 		price: '40205',
 		dt70: '1400',
@@ -33217,7 +31557,6 @@ export default [
 		volume: '14.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -33227,7 +31566,7 @@ export default [
 		d_spacing: '475',
 		n_spacing: '600',
 		width: '87',
-		height: '630',
+		height: '634',
 		length: '1000',
 		price: '46805',
 		dt70: '1888',
@@ -33237,7 +31576,6 @@ export default [
 		volume: '19',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -33247,7 +31585,7 @@ export default [
 		d_spacing: '600',
 		n_spacing: '600',
 		width: '87',
-		height: '630',
+		height: '634',
 		length: '1250',
 		price: '52580',
 		dt70: '2343',
@@ -33257,7 +31595,6 @@ export default [
 		volume: '23.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -33267,7 +31604,7 @@ export default [
 		d_spacing: '725',
 		n_spacing: '600',
 		width: '87',
-		height: '630',
+		height: '634',
 		length: '1500',
 		price: '58190',
 		dt70: '2816',
@@ -33277,7 +31614,6 @@ export default [
 		volume: '27.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -33287,7 +31623,7 @@ export default [
 		d_spacing: '850',
 		n_spacing: '600',
 		width: '87',
-		height: '630',
+		height: '634',
 		length: '1750',
 		price: '64680',
 		dt70: '3272',
@@ -33297,7 +31633,6 @@ export default [
 		volume: '32.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -33307,7 +31642,7 @@ export default [
 		d_spacing: '975',
 		n_spacing: '600',
 		width: '87',
-		height: '630',
+		height: '634',
 		length: '2000',
 		price: '76780',
 		dt70: '3775',
@@ -33317,7 +31652,6 @@ export default [
 		volume: '36.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -33327,7 +31661,7 @@ export default [
 		d_spacing: '1075',
 		n_spacing: '600',
 		width: '87',
-		height: '630',
+		height: '634',
 		length: '2200',
 		price: '86790',
 		dt70: '4153',
@@ -33337,7 +31671,6 @@ export default [
 		volume: '40.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -33347,7 +31680,7 @@ export default [
 		d_spacing: '1100',
 		n_spacing: '600',
 		width: '87',
-		height: '630',
+		height: '634',
 		length: '2250',
 		price: '86900',
 		dt70: '4215',
@@ -33357,7 +31690,6 @@ export default [
 		volume: '41.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -33367,7 +31699,7 @@ export default [
 		d_spacing: '1225',
 		n_spacing: '600',
 		width: '87',
-		height: '630',
+		height: '634',
 		length: '2500',
 		price: '90640',
 		dt70: '4719',
@@ -33377,7 +31709,6 @@ export default [
 		volume: '45.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -33387,7 +31718,7 @@ export default [
 		d_spacing: '1475',
 		n_spacing: '600',
 		width: '87',
-		height: '630',
+		height: '634',
 		length: '3000',
 		price: '138160',
 		dt70: '5663',
@@ -33397,7 +31728,6 @@ export default [
 		volume: '54.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -33407,7 +31737,7 @@ export default [
 		d_spacing: '225',
 		n_spacing: '650',
 		width: '87',
-		height: '680',
+		height: '684',
 		length: '500',
 		price: '35850',
 		dt70: '1017',
@@ -33417,7 +31747,6 @@ export default [
 		volume: '10.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -33427,7 +31756,7 @@ export default [
 		d_spacing: '250',
 		n_spacing: '650',
 		width: '87',
-		height: '680',
+		height: '684',
 		length: '550',
 		price: '39875',
 		dt70: '1117',
@@ -33437,7 +31766,6 @@ export default [
 		volume: '11.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -33447,7 +31775,7 @@ export default [
 		d_spacing: '350',
 		n_spacing: '650',
 		width: '87',
-		height: '680',
+		height: '684',
 		length: '750',
 		price: '42460',
 		dt70: '1508',
@@ -33457,7 +31785,6 @@ export default [
 		volume: '15.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -33467,7 +31794,7 @@ export default [
 		d_spacing: '475',
 		n_spacing: '650',
 		width: '87',
-		height: '680',
+		height: '684',
 		length: '1000',
 		price: '49610',
 		dt70: '2033',
@@ -33477,7 +31804,6 @@ export default [
 		volume: '20.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -33487,7 +31813,7 @@ export default [
 		d_spacing: '600',
 		n_spacing: '650',
 		width: '87',
-		height: '680',
+		height: '684',
 		length: '1250',
 		price: '55770',
 		dt70: '2524',
@@ -33497,7 +31823,6 @@ export default [
 		volume: '25.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -33507,7 +31832,7 @@ export default [
 		d_spacing: '725',
 		n_spacing: '650',
 		width: '87',
-		height: '680',
+		height: '684',
 		length: '1500',
 		price: '61820',
 		dt70: '3032',
@@ -33517,7 +31842,6 @@ export default [
 		volume: '30.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -33527,7 +31851,7 @@ export default [
 		d_spacing: '850',
 		n_spacing: '650',
 		width: '87',
-		height: '680',
+		height: '684',
 		length: '1750',
 		price: '69520',
 		dt70: '3524',
@@ -33537,7 +31861,6 @@ export default [
 		volume: '34.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -33547,7 +31870,7 @@ export default [
 		d_spacing: '975',
 		n_spacing: '650',
 		width: '87',
-		height: '680',
+		height: '684',
 		length: '2000',
 		price: '82390',
 		dt70: '4066',
@@ -33557,7 +31880,6 @@ export default [
 		volume: '39.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -33567,7 +31889,7 @@ export default [
 		d_spacing: '1075',
 		n_spacing: '650',
 		width: '87',
-		height: '680',
+		height: '684',
 		length: '2200',
 		price: '97680',
 		dt70: '4472',
@@ -33577,7 +31899,6 @@ export default [
 		volume: '43.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -33587,7 +31908,7 @@ export default [
 		d_spacing: '1100',
 		n_spacing: '650',
 		width: '87',
-		height: '680',
+		height: '684',
 		length: '2250',
 		price: '97790',
 		dt70: '4541',
@@ -33597,7 +31918,6 @@ export default [
 		volume: '44.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -33607,7 +31927,7 @@ export default [
 		d_spacing: '1225',
 		n_spacing: '650',
 		width: '87',
-		height: '680',
+		height: '684',
 		length: '2500',
 		price: '100540',
 		dt70: '5083',
@@ -33617,7 +31937,6 @@ export default [
 		volume: '49.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p30h',
@@ -33627,7 +31946,7 @@ export default [
 		d_spacing: '1475',
 		n_spacing: '650',
 		width: '87',
-		height: '680',
+		height: '684',
 		length: '3000',
 		price: '147840',
 		dt70: '6098',
@@ -33637,7 +31956,6 @@ export default [
 		volume: '58.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -33657,7 +31975,6 @@ export default [
 		volume: '1.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -33677,7 +31994,6 @@ export default [
 		volume: '1.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -33697,7 +32013,6 @@ export default [
 		volume: '2.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -33717,7 +32032,6 @@ export default [
 		volume: '2.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -33737,7 +32051,6 @@ export default [
 		volume: '3.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -33757,7 +32070,6 @@ export default [
 		volume: '4.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -33777,7 +32089,6 @@ export default [
 		volume: '4.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -33797,7 +32108,6 @@ export default [
 		volume: '5.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -33817,7 +32127,6 @@ export default [
 		volume: '6.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -33837,7 +32146,6 @@ export default [
 		volume: '6.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -33857,7 +32165,6 @@ export default [
 		volume: '7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -33877,7 +32184,6 @@ export default [
 		volume: '8.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -33897,7 +32203,6 @@ export default [
 		volume: '2.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -33917,7 +32222,6 @@ export default [
 		volume: '2.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -33937,7 +32241,6 @@ export default [
 		volume: '3.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -33957,7 +32260,6 @@ export default [
 		volume: '4.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -33977,7 +32279,6 @@ export default [
 		volume: '5.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -33997,7 +32298,6 @@ export default [
 		volume: '6.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34017,7 +32317,6 @@ export default [
 		volume: '7.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34037,7 +32336,6 @@ export default [
 		volume: '8.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34057,7 +32355,6 @@ export default [
 		volume: '9.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34077,7 +32374,6 @@ export default [
 		volume: '9.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34097,7 +32393,6 @@ export default [
 		volume: '10.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34117,7 +32412,6 @@ export default [
 		volume: '12.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34137,7 +32431,6 @@ export default [
 		volume: '3.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34157,7 +32450,6 @@ export default [
 		volume: '3.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34177,7 +32469,6 @@ export default [
 		volume: '4.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34197,7 +32488,6 @@ export default [
 		volume: '5.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34217,7 +32507,6 @@ export default [
 		volume: '7.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34237,7 +32526,6 @@ export default [
 		volume: '8.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34257,7 +32545,6 @@ export default [
 		volume: '9.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34277,7 +32564,6 @@ export default [
 		volume: '11.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34297,7 +32583,6 @@ export default [
 		volume: '12.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34317,7 +32602,6 @@ export default [
 		volume: '12.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34337,7 +32621,6 @@ export default [
 		volume: '14.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34357,7 +32640,6 @@ export default [
 		volume: '16.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34377,7 +32659,6 @@ export default [
 		volume: '3.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34397,7 +32678,6 @@ export default [
 		volume: '4.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34417,7 +32697,6 @@ export default [
 		volume: '5.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34437,7 +32716,6 @@ export default [
 		volume: '7.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34457,7 +32735,6 @@ export default [
 		volume: '9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34477,7 +32754,6 @@ export default [
 		volume: '10.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34497,7 +32773,6 @@ export default [
 		volume: '12.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34517,7 +32792,6 @@ export default [
 		volume: '14.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34537,7 +32811,6 @@ export default [
 		volume: '15.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34557,7 +32830,6 @@ export default [
 		volume: '15.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34577,7 +32849,6 @@ export default [
 		volume: '17.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34597,7 +32868,6 @@ export default [
 		volume: '21',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34617,7 +32887,6 @@ export default [
 		volume: '4.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34637,7 +32906,6 @@ export default [
 		volume: '5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34657,7 +32925,6 @@ export default [
 		volume: '6.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34677,7 +32944,6 @@ export default [
 		volume: '8.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34697,7 +32963,6 @@ export default [
 		volume: '10.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34717,7 +32982,6 @@ export default [
 		volume: '12.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34737,7 +33001,6 @@ export default [
 		volume: '14.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34757,7 +33020,6 @@ export default [
 		volume: '17',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34777,7 +33039,6 @@ export default [
 		volume: '18.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34797,7 +33058,6 @@ export default [
 		volume: '19',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34817,7 +33077,6 @@ export default [
 		volume: '21.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34837,7 +33096,6 @@ export default [
 		volume: '25.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34857,7 +33115,6 @@ export default [
 		volume: '5.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34877,7 +33134,6 @@ export default [
 		volume: '5.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34897,7 +33153,6 @@ export default [
 		volume: '7.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34917,7 +33172,6 @@ export default [
 		volume: '10.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34937,7 +33191,6 @@ export default [
 		volume: '12.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34957,7 +33210,6 @@ export default [
 		volume: '15',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34977,7 +33229,6 @@ export default [
 		volume: '17.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -34997,7 +33248,6 @@ export default [
 		volume: '19.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35017,7 +33267,6 @@ export default [
 		volume: '21.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35037,7 +33286,6 @@ export default [
 		volume: '22.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35057,7 +33305,6 @@ export default [
 		volume: '24.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35077,7 +33324,6 @@ export default [
 		volume: '29.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35097,7 +33343,6 @@ export default [
 		volume: '6.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35117,7 +33362,6 @@ export default [
 		volume: '6.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35137,7 +33381,6 @@ export default [
 		volume: '8.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35157,7 +33400,6 @@ export default [
 		volume: '11.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35177,7 +33419,6 @@ export default [
 		volume: '14.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35197,7 +33438,6 @@ export default [
 		volume: '17.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35217,7 +33457,6 @@ export default [
 		volume: '19.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35237,7 +33476,6 @@ export default [
 		volume: '22.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35257,7 +33495,6 @@ export default [
 		volume: '24.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35277,7 +33514,6 @@ export default [
 		volume: '25.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35297,7 +33533,6 @@ export default [
 		volume: '28.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35317,7 +33552,6 @@ export default [
 		volume: '33.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35337,7 +33571,6 @@ export default [
 		volume: '6.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35357,7 +33590,6 @@ export default [
 		volume: '7.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35377,7 +33609,6 @@ export default [
 		volume: '10',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35397,7 +33628,6 @@ export default [
 		volume: '13.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35417,7 +33647,6 @@ export default [
 		volume: '16.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35437,7 +33666,6 @@ export default [
 		volume: '19.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35457,7 +33685,6 @@ export default [
 		volume: '22.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35477,7 +33704,6 @@ export default [
 		volume: '25.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35497,7 +33723,6 @@ export default [
 		volume: '28',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35517,7 +33742,6 @@ export default [
 		volume: '28.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35537,7 +33761,6 @@ export default [
 		volume: '31.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35557,7 +33780,6 @@ export default [
 		volume: '37.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35577,7 +33799,6 @@ export default [
 		volume: '7.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35597,7 +33818,6 @@ export default [
 		volume: '8.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35617,7 +33837,6 @@ export default [
 		volume: '11.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35637,7 +33856,6 @@ export default [
 		volume: '14.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35657,7 +33875,6 @@ export default [
 		volume: '18',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35677,7 +33894,6 @@ export default [
 		volume: '21.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35697,7 +33913,6 @@ export default [
 		volume: '24.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35717,7 +33932,6 @@ export default [
 		volume: '28.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35737,7 +33951,6 @@ export default [
 		volume: '31.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35757,7 +33970,6 @@ export default [
 		volume: '31.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35777,7 +33989,6 @@ export default [
 		volume: '35.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35797,7 +34008,6 @@ export default [
 		volume: '42.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35817,7 +34027,6 @@ export default [
 		volume: '8.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35837,7 +34046,6 @@ export default [
 		volume: '9.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35857,7 +34065,6 @@ export default [
 		volume: '12.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35877,7 +34084,6 @@ export default [
 		volume: '16',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35897,7 +34103,6 @@ export default [
 		volume: '19.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35917,7 +34122,6 @@ export default [
 		volume: '23.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35937,7 +34141,6 @@ export default [
 		volume: '27.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35957,7 +34160,6 @@ export default [
 		volume: '31.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35977,7 +34179,6 @@ export default [
 		volume: '34.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -35997,7 +34198,6 @@ export default [
 		volume: '34.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36017,7 +34217,6 @@ export default [
 		volume: '38.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36037,7 +34236,6 @@ export default [
 		volume: '46.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36057,7 +34255,6 @@ export default [
 		volume: '9.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36077,7 +34274,6 @@ export default [
 		volume: '10.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36097,7 +34293,6 @@ export default [
 		volume: '13.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36117,7 +34312,6 @@ export default [
 		volume: '17.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36137,7 +34331,6 @@ export default [
 		volume: '21.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36157,7 +34350,6 @@ export default [
 		volume: '25.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36177,7 +34369,6 @@ export default [
 		volume: '29.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36197,7 +34388,6 @@ export default [
 		volume: '34',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36217,7 +34407,6 @@ export default [
 		volume: '37.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36237,7 +34426,6 @@ export default [
 		volume: '38.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36257,7 +34445,6 @@ export default [
 		volume: '42.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36277,7 +34464,6 @@ export default [
 		volume: '50.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36297,7 +34483,6 @@ export default [
 		volume: '10',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36317,7 +34502,6 @@ export default [
 		volume: '10.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36337,7 +34521,6 @@ export default [
 		volume: '14.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36357,7 +34540,6 @@ export default [
 		volume: '19',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36377,7 +34559,6 @@ export default [
 		volume: '23.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36397,7 +34578,6 @@ export default [
 		volume: '27.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36417,7 +34597,6 @@ export default [
 		volume: '32.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36437,7 +34616,6 @@ export default [
 		volume: '36.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36457,7 +34635,6 @@ export default [
 		volume: '40.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36477,7 +34654,6 @@ export default [
 		volume: '41.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36497,7 +34673,6 @@ export default [
 		volume: '45.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36517,7 +34692,6 @@ export default [
 		volume: '54.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36537,7 +34711,6 @@ export default [
 		volume: '10.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36557,7 +34730,6 @@ export default [
 		volume: '11.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36577,7 +34749,6 @@ export default [
 		volume: '15.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36597,7 +34768,6 @@ export default [
 		volume: '20.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36617,7 +34787,6 @@ export default [
 		volume: '25.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36637,7 +34806,6 @@ export default [
 		volume: '30.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36657,7 +34825,6 @@ export default [
 		volume: '34.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36677,7 +34844,6 @@ export default [
 		volume: '39.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36697,7 +34863,6 @@ export default [
 		volume: '43.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36717,7 +34882,6 @@ export default [
 		volume: '44.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36737,7 +34901,6 @@ export default [
 		volume: '49.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p60h',
@@ -36757,7 +34920,6 @@ export default [
 		volume: '58.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -36777,7 +34939,6 @@ export default [
 		volume: '1.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -36797,7 +34958,6 @@ export default [
 		volume: '1.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -36817,7 +34977,6 @@ export default [
 		volume: '1.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -36837,7 +34996,6 @@ export default [
 		volume: '2.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -36857,7 +35015,6 @@ export default [
 		volume: '3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -36877,7 +35034,6 @@ export default [
 		volume: '3.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -36897,7 +35053,6 @@ export default [
 		volume: '4.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -36917,7 +35072,6 @@ export default [
 		volume: '4.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -36937,7 +35091,6 @@ export default [
 		volume: '5.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -36957,7 +35110,6 @@ export default [
 		volume: '5.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -36977,7 +35129,6 @@ export default [
 		volume: '5.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -36997,7 +35148,6 @@ export default [
 		volume: '6.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37017,7 +35167,6 @@ export default [
 		volume: '1.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37037,7 +35186,6 @@ export default [
 		volume: '2.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37057,7 +35205,6 @@ export default [
 		volume: '2.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37077,7 +35224,6 @@ export default [
 		volume: '3.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37097,7 +35243,6 @@ export default [
 		volume: '4.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37117,7 +35262,6 @@ export default [
 		volume: '5.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37137,7 +35281,6 @@ export default [
 		volume: '6.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37157,7 +35300,6 @@ export default [
 		volume: '7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37177,7 +35319,6 @@ export default [
 		volume: '7.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37197,7 +35338,6 @@ export default [
 		volume: '7.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37217,7 +35357,6 @@ export default [
 		volume: '8.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37237,7 +35376,6 @@ export default [
 		volume: '10.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37257,7 +35395,6 @@ export default [
 		volume: '2.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37277,7 +35414,6 @@ export default [
 		volume: '2.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37297,7 +35433,6 @@ export default [
 		volume: '3.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37317,7 +35452,6 @@ export default [
 		volume: '4.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37337,7 +35471,6 @@ export default [
 		volume: '5.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37357,7 +35490,6 @@ export default [
 		volume: '7.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37377,7 +35509,6 @@ export default [
 		volume: '8.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37397,7 +35528,6 @@ export default [
 		volume: '9.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37417,7 +35547,6 @@ export default [
 		volume: '10.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37437,7 +35566,6 @@ export default [
 		volume: '10.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37457,7 +35585,6 @@ export default [
 		volume: '11.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37477,7 +35604,6 @@ export default [
 		volume: '13.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37497,7 +35623,6 @@ export default [
 		volume: '3.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37517,7 +35642,6 @@ export default [
 		volume: '3.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37537,7 +35661,6 @@ export default [
 		volume: '4.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37557,7 +35680,6 @@ export default [
 		volume: '6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37577,7 +35699,6 @@ export default [
 		volume: '7.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37597,7 +35718,6 @@ export default [
 		volume: '8.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37617,7 +35737,6 @@ export default [
 		volume: '10.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37637,7 +35756,6 @@ export default [
 		volume: '11.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37657,7 +35775,6 @@ export default [
 		volume: '12.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37677,7 +35794,6 @@ export default [
 		volume: '13.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37697,7 +35813,6 @@ export default [
 		volume: '14.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37717,7 +35832,6 @@ export default [
 		volume: '17.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37737,7 +35851,6 @@ export default [
 		volume: '3.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37757,7 +35870,6 @@ export default [
 		volume: '4.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37777,7 +35889,6 @@ export default [
 		volume: '5.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37797,7 +35908,6 @@ export default [
 		volume: '7.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37817,7 +35927,6 @@ export default [
 		volume: '8.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37837,7 +35946,6 @@ export default [
 		volume: '10.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37857,7 +35965,6 @@ export default [
 		volume: '12.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37877,7 +35984,6 @@ export default [
 		volume: '14',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37897,7 +36003,6 @@ export default [
 		volume: '15.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37917,7 +36022,6 @@ export default [
 		volume: '15.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37937,7 +36041,6 @@ export default [
 		volume: '17.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37957,7 +36060,6 @@ export default [
 		volume: '20.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37977,7 +36079,6 @@ export default [
 		volume: '4.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -37997,7 +36098,6 @@ export default [
 		volume: '4.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38017,7 +36117,6 @@ export default [
 		volume: '6.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38037,7 +36136,6 @@ export default [
 		volume: '8.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38057,7 +36155,6 @@ export default [
 		volume: '10.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38077,7 +36174,6 @@ export default [
 		volume: '12.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38097,7 +36193,6 @@ export default [
 		volume: '14.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38117,7 +36212,6 @@ export default [
 		volume: '16.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38137,7 +36231,6 @@ export default [
 		volume: '17.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38157,7 +36250,6 @@ export default [
 		volume: '18.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38177,7 +36269,6 @@ export default [
 		volume: '20.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38197,7 +36288,6 @@ export default [
 		volume: '24.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38217,7 +36307,6 @@ export default [
 		volume: '5.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38237,7 +36326,6 @@ export default [
 		volume: '5.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38257,7 +36345,6 @@ export default [
 		volume: '7.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38277,7 +36364,6 @@ export default [
 		volume: '9.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38297,7 +36383,6 @@ export default [
 		volume: '11.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38317,7 +36402,6 @@ export default [
 		volume: '14.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38337,7 +36421,6 @@ export default [
 		volume: '16.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38357,7 +36440,6 @@ export default [
 		volume: '18.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38377,7 +36459,6 @@ export default [
 		volume: '20.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38397,7 +36478,6 @@ export default [
 		volume: '20.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38417,7 +36497,6 @@ export default [
 		volume: '23.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38437,7 +36516,6 @@ export default [
 		volume: '27.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38457,7 +36535,6 @@ export default [
 		volume: '5.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38477,7 +36554,6 @@ export default [
 		volume: '6.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38497,7 +36573,6 @@ export default [
 		volume: '8.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38517,7 +36592,6 @@ export default [
 		volume: '10.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38537,7 +36611,6 @@ export default [
 		volume: '13.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38557,7 +36630,6 @@ export default [
 		volume: '15.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38577,7 +36649,6 @@ export default [
 		volume: '18.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38597,7 +36668,6 @@ export default [
 		volume: '21',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38617,7 +36687,6 @@ export default [
 		volume: '23',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38637,7 +36706,6 @@ export default [
 		volume: '23.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38657,7 +36725,6 @@ export default [
 		volume: '26.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38677,7 +36744,6 @@ export default [
 		volume: '31.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38697,7 +36763,6 @@ export default [
 		volume: '6.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38717,7 +36782,6 @@ export default [
 		volume: '7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38737,7 +36801,6 @@ export default [
 		volume: '9.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38757,7 +36820,6 @@ export default [
 		volume: '12.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38777,7 +36839,6 @@ export default [
 		volume: '14.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38797,7 +36858,6 @@ export default [
 		volume: '17.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38817,7 +36877,6 @@ export default [
 		volume: '20.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38837,7 +36896,6 @@ export default [
 		volume: '23.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38857,7 +36915,6 @@ export default [
 		volume: '25.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38877,7 +36934,6 @@ export default [
 		volume: '26.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38897,7 +36953,6 @@ export default [
 		volume: '29',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38917,7 +36972,6 @@ export default [
 		volume: '34.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38937,7 +36991,6 @@ export default [
 		volume: '7.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38957,7 +37010,6 @@ export default [
 		volume: '7.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38977,7 +37029,6 @@ export default [
 		volume: '10.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -38997,7 +37048,6 @@ export default [
 		volume: '13.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39017,7 +37067,6 @@ export default [
 		volume: '16.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39037,7 +37086,6 @@ export default [
 		volume: '19.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39057,7 +37105,6 @@ export default [
 		volume: '22.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39077,7 +37124,6 @@ export default [
 		volume: '25.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39097,7 +37143,6 @@ export default [
 		volume: '28.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39117,7 +37162,6 @@ export default [
 		volume: '28.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39137,7 +37181,6 @@ export default [
 		volume: '31.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39157,7 +37200,6 @@ export default [
 		volume: '38.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39177,7 +37219,6 @@ export default [
 		volume: '7.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39197,7 +37238,6 @@ export default [
 		volume: '8.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39217,7 +37257,6 @@ export default [
 		volume: '11.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39237,7 +37276,6 @@ export default [
 		volume: '14.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39257,7 +37295,6 @@ export default [
 		volume: '17.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39277,7 +37314,6 @@ export default [
 		volume: '21.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39297,7 +37333,6 @@ export default [
 		volume: '24.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39317,7 +37352,6 @@ export default [
 		volume: '28',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39337,7 +37371,6 @@ export default [
 		volume: '30.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39357,7 +37390,6 @@ export default [
 		volume: '31.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39377,7 +37409,6 @@ export default [
 		volume: '34.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39397,7 +37428,6 @@ export default [
 		volume: '41.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39417,7 +37447,6 @@ export default [
 		volume: '8.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39437,7 +37466,6 @@ export default [
 		volume: '9.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39457,7 +37485,6 @@ export default [
 		volume: '12.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39477,7 +37504,6 @@ export default [
 		volume: '15.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39497,7 +37523,6 @@ export default [
 		volume: '19.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39517,7 +37542,6 @@ export default [
 		volume: '23',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39537,7 +37561,6 @@ export default [
 		volume: '26.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39557,7 +37580,6 @@ export default [
 		volume: '30.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39577,7 +37599,6 @@ export default [
 		volume: '33.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39597,7 +37618,6 @@ export default [
 		volume: '34',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39617,7 +37637,6 @@ export default [
 		volume: '37.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39637,7 +37656,6 @@ export default [
 		volume: '45',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39657,7 +37675,6 @@ export default [
 		volume: '9.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39677,7 +37694,6 @@ export default [
 		volume: '9.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39697,7 +37713,6 @@ export default [
 		volume: '13',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39717,7 +37732,6 @@ export default [
 		volume: '16.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39737,7 +37751,6 @@ export default [
 		volume: '20.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39757,7 +37770,6 @@ export default [
 		volume: '24.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39777,7 +37789,6 @@ export default [
 		volume: '28.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39797,7 +37808,6 @@ export default [
 		volume: '32.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39817,7 +37827,6 @@ export default [
 		volume: '35.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39837,7 +37846,6 @@ export default [
 		volume: '36.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39857,7 +37865,6 @@ export default [
 		volume: '40.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sh',
@@ -39877,7 +37884,6 @@ export default [
 		volume: '48.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -39897,7 +37903,6 @@ export default [
 		volume: '1.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -39917,7 +37922,6 @@ export default [
 		volume: '1.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -39937,7 +37941,6 @@ export default [
 		volume: '1.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -39957,7 +37960,6 @@ export default [
 		volume: '2.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -39977,7 +37979,6 @@ export default [
 		volume: '3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -39997,7 +37998,6 @@ export default [
 		volume: '3.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40017,7 +38017,6 @@ export default [
 		volume: '4.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40037,7 +38036,6 @@ export default [
 		volume: '4.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40057,7 +38055,6 @@ export default [
 		volume: '5.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40077,7 +38074,6 @@ export default [
 		volume: '5.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40097,7 +38093,6 @@ export default [
 		volume: '5.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40117,7 +38112,6 @@ export default [
 		volume: '6.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40137,7 +38131,6 @@ export default [
 		volume: '1.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40157,7 +38150,6 @@ export default [
 		volume: '2.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40177,7 +38169,6 @@ export default [
 		volume: '2.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40197,7 +38188,6 @@ export default [
 		volume: '3.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40217,7 +38207,6 @@ export default [
 		volume: '4.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40237,7 +38226,6 @@ export default [
 		volume: '5.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40257,7 +38245,6 @@ export default [
 		volume: '6.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40277,7 +38264,6 @@ export default [
 		volume: '7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40297,7 +38283,6 @@ export default [
 		volume: '7.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40317,7 +38302,6 @@ export default [
 		volume: '7.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40337,7 +38321,6 @@ export default [
 		volume: '8.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40357,7 +38340,6 @@ export default [
 		volume: '10.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40377,7 +38359,6 @@ export default [
 		volume: '2.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40397,7 +38378,6 @@ export default [
 		volume: '2.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40417,7 +38397,6 @@ export default [
 		volume: '3.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40437,7 +38416,6 @@ export default [
 		volume: '4.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40457,7 +38435,6 @@ export default [
 		volume: '5.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40477,7 +38454,6 @@ export default [
 		volume: '7.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40497,7 +38473,6 @@ export default [
 		volume: '8.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40517,7 +38492,6 @@ export default [
 		volume: '9.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40537,7 +38511,6 @@ export default [
 		volume: '10.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40557,7 +38530,6 @@ export default [
 		volume: '10.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40577,7 +38549,6 @@ export default [
 		volume: '11.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40597,7 +38568,6 @@ export default [
 		volume: '13.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40617,7 +38587,6 @@ export default [
 		volume: '3.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40637,7 +38606,6 @@ export default [
 		volume: '3.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40657,7 +38625,6 @@ export default [
 		volume: '4.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40677,7 +38644,6 @@ export default [
 		volume: '6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40697,7 +38663,6 @@ export default [
 		volume: '7.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40717,7 +38682,6 @@ export default [
 		volume: '8.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40737,7 +38701,6 @@ export default [
 		volume: '10.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40757,7 +38720,6 @@ export default [
 		volume: '11.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40777,7 +38739,6 @@ export default [
 		volume: '12.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40797,7 +38758,6 @@ export default [
 		volume: '13.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40817,7 +38777,6 @@ export default [
 		volume: '14.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40837,7 +38796,6 @@ export default [
 		volume: '17.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40857,7 +38815,6 @@ export default [
 		volume: '3.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40877,7 +38834,6 @@ export default [
 		volume: '4.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40897,7 +38853,6 @@ export default [
 		volume: '5.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40917,7 +38872,6 @@ export default [
 		volume: '7.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40937,7 +38891,6 @@ export default [
 		volume: '8.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40957,7 +38910,6 @@ export default [
 		volume: '10.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40977,7 +38929,6 @@ export default [
 		volume: '12.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -40997,7 +38948,6 @@ export default [
 		volume: '14',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41017,7 +38967,6 @@ export default [
 		volume: '15.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41037,7 +38986,6 @@ export default [
 		volume: '15.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41057,7 +39005,6 @@ export default [
 		volume: '17.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41077,7 +39024,6 @@ export default [
 		volume: '20.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41097,7 +39043,6 @@ export default [
 		volume: '4.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41117,7 +39062,6 @@ export default [
 		volume: '4.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41137,7 +39081,6 @@ export default [
 		volume: '6.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41157,7 +39100,6 @@ export default [
 		volume: '8.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41177,7 +39119,6 @@ export default [
 		volume: '10.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41197,7 +39138,6 @@ export default [
 		volume: '12.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41217,7 +39157,6 @@ export default [
 		volume: '14.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41237,7 +39176,6 @@ export default [
 		volume: '16.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41257,7 +39195,6 @@ export default [
 		volume: '17.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41277,7 +39214,6 @@ export default [
 		volume: '18.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41297,7 +39233,6 @@ export default [
 		volume: '20.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41317,7 +39252,6 @@ export default [
 		volume: '24.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41337,7 +39271,6 @@ export default [
 		volume: '5.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41357,7 +39290,6 @@ export default [
 		volume: '5.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41377,7 +39309,6 @@ export default [
 		volume: '7.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41397,7 +39328,6 @@ export default [
 		volume: '9.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41417,7 +39347,6 @@ export default [
 		volume: '11.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41437,7 +39366,6 @@ export default [
 		volume: '14.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41457,7 +39385,6 @@ export default [
 		volume: '16.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41477,7 +39404,6 @@ export default [
 		volume: '18.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41497,7 +39423,6 @@ export default [
 		volume: '20.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41517,7 +39442,6 @@ export default [
 		volume: '20.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41537,7 +39461,6 @@ export default [
 		volume: '23.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41557,7 +39480,6 @@ export default [
 		volume: '27.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41577,7 +39499,6 @@ export default [
 		volume: '5.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41597,7 +39518,6 @@ export default [
 		volume: '6.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41617,7 +39537,6 @@ export default [
 		volume: '8.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41637,7 +39556,6 @@ export default [
 		volume: '10.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41657,7 +39575,6 @@ export default [
 		volume: '13.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41677,7 +39594,6 @@ export default [
 		volume: '15.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41697,7 +39613,6 @@ export default [
 		volume: '18.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41717,7 +39632,6 @@ export default [
 		volume: '21',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41737,7 +39651,6 @@ export default [
 		volume: '23',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41757,7 +39670,6 @@ export default [
 		volume: '23.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41777,7 +39689,6 @@ export default [
 		volume: '26.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41797,7 +39708,6 @@ export default [
 		volume: '31.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41817,7 +39727,6 @@ export default [
 		volume: '6.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41837,7 +39746,6 @@ export default [
 		volume: '7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41857,7 +39765,6 @@ export default [
 		volume: '9.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41877,7 +39784,6 @@ export default [
 		volume: '12.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41897,7 +39803,6 @@ export default [
 		volume: '14.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41917,7 +39822,6 @@ export default [
 		volume: '17.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41937,7 +39841,6 @@ export default [
 		volume: '20.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41957,7 +39860,6 @@ export default [
 		volume: '23.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41977,7 +39879,6 @@ export default [
 		volume: '25.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -41997,7 +39898,6 @@ export default [
 		volume: '26.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42017,7 +39917,6 @@ export default [
 		volume: '29',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42037,7 +39936,6 @@ export default [
 		volume: '34.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42057,7 +39955,6 @@ export default [
 		volume: '7.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42077,7 +39974,6 @@ export default [
 		volume: '7.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42097,7 +39993,6 @@ export default [
 		volume: '10.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42117,7 +40012,6 @@ export default [
 		volume: '13.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42137,7 +40031,6 @@ export default [
 		volume: '16.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42157,7 +40050,6 @@ export default [
 		volume: '19.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42177,7 +40069,6 @@ export default [
 		volume: '22.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42197,7 +40088,6 @@ export default [
 		volume: '25.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42217,7 +40107,6 @@ export default [
 		volume: '28.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42237,7 +40126,6 @@ export default [
 		volume: '28.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42257,7 +40145,6 @@ export default [
 		volume: '31.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42277,7 +40164,6 @@ export default [
 		volume: '38.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42297,7 +40183,6 @@ export default [
 		volume: '7.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42317,7 +40202,6 @@ export default [
 		volume: '8.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42337,7 +40221,6 @@ export default [
 		volume: '11.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42357,7 +40240,6 @@ export default [
 		volume: '14.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42377,7 +40259,6 @@ export default [
 		volume: '17.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42397,7 +40278,6 @@ export default [
 		volume: '21.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42417,7 +40297,6 @@ export default [
 		volume: '24.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42437,7 +40316,6 @@ export default [
 		volume: '28',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42457,7 +40335,6 @@ export default [
 		volume: '30.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42477,7 +40354,6 @@ export default [
 		volume: '31.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42497,7 +40373,6 @@ export default [
 		volume: '34.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42517,7 +40392,6 @@ export default [
 		volume: '41.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42537,7 +40411,6 @@ export default [
 		volume: '8.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42557,7 +40430,6 @@ export default [
 		volume: '9.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42577,7 +40449,6 @@ export default [
 		volume: '12.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42597,7 +40468,6 @@ export default [
 		volume: '15.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42617,7 +40487,6 @@ export default [
 		volume: '19.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42637,7 +40506,6 @@ export default [
 		volume: '23',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42657,7 +40525,6 @@ export default [
 		volume: '26.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42677,7 +40544,6 @@ export default [
 		volume: '30.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42697,7 +40563,6 @@ export default [
 		volume: '33.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42717,7 +40582,6 @@ export default [
 		volume: '34',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42737,7 +40601,6 @@ export default [
 		volume: '37.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42757,7 +40620,6 @@ export default [
 		volume: '45',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42777,7 +40639,6 @@ export default [
 		volume: '9.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42797,7 +40658,6 @@ export default [
 		volume: '9.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42817,7 +40677,6 @@ export default [
 		volume: '13',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42837,7 +40696,6 @@ export default [
 		volume: '16.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42857,7 +40715,6 @@ export default [
 		volume: '20.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42877,7 +40734,6 @@ export default [
 		volume: '24.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42897,7 +40753,6 @@ export default [
 		volume: '28.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42917,7 +40772,6 @@ export default [
 		volume: '32.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42937,7 +40791,6 @@ export default [
 		volume: '35.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42957,7 +40810,6 @@ export default [
 		volume: '36.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42977,7 +40829,6 @@ export default [
 		volume: '40.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'sph',
@@ -42997,7 +40848,6 @@ export default [
 		volume: '48.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43017,7 +40867,6 @@ export default [
 		volume: '1.40',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43037,7 +40886,6 @@ export default [
 		volume: '1.50',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43057,7 +40905,6 @@ export default [
 		volume: '2.00',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43077,7 +40924,6 @@ export default [
 		volume: '2.60',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43097,7 +40943,6 @@ export default [
 		volume: '3.20',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43117,7 +40962,6 @@ export default [
 		volume: '3.80',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43137,7 +40981,6 @@ export default [
 		volume: '4.40',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43157,7 +41000,6 @@ export default [
 		volume: '5.00',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43177,7 +41019,6 @@ export default [
 		volume: '5.50',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43197,7 +41038,6 @@ export default [
 		volume: '5.60',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43217,7 +41057,6 @@ export default [
 		volume: '6.30',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43237,7 +41076,6 @@ export default [
 		volume: '7.50',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43257,7 +41095,6 @@ export default [
 		volume: '2.10',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43277,7 +41114,6 @@ export default [
 		volume: '2.20',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43297,7 +41133,6 @@ export default [
 		volume: '3.00',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43317,7 +41152,6 @@ export default [
 		volume: '3.90',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43337,7 +41171,6 @@ export default [
 		volume: '4.80',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43357,7 +41190,6 @@ export default [
 		volume: '5.70',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43377,7 +41209,6 @@ export default [
 		volume: '6.70',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43397,7 +41228,6 @@ export default [
 		volume: '7.60',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43417,7 +41247,6 @@ export default [
 		volume: '8.30',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43437,7 +41266,6 @@ export default [
 		volume: '8.50',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43457,7 +41285,6 @@ export default [
 		volume: '9.40',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43477,7 +41304,6 @@ export default [
 		volume: '11.20',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43497,7 +41323,6 @@ export default [
 		volume: '2.80',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43517,7 +41342,6 @@ export default [
 		volume: '3.00',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43537,7 +41361,6 @@ export default [
 		volume: '4.00',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43557,7 +41380,6 @@ export default [
 		volume: '5.20',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43577,7 +41399,6 @@ export default [
 		volume: '6.40',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43597,7 +41418,6 @@ export default [
 		volume: '7.70',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43617,7 +41437,6 @@ export default [
 		volume: '8.90',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43637,7 +41456,6 @@ export default [
 		volume: '10.10',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43657,7 +41475,6 @@ export default [
 		volume: '11.10',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43677,7 +41494,6 @@ export default [
 		volume: '11.30',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43697,7 +41513,6 @@ export default [
 		volume: '12.60',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43717,7 +41532,6 @@ export default [
 		volume: '15.00',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43737,7 +41551,6 @@ export default [
 		volume: '3.50',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43757,7 +41570,6 @@ export default [
 		volume: '3.80',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43777,7 +41589,6 @@ export default [
 		volume: '5.00',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43797,7 +41608,6 @@ export default [
 		volume: '6.50',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43817,7 +41627,6 @@ export default [
 		volume: '8.10',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43837,7 +41646,6 @@ export default [
 		volume: '9.60',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43857,7 +41665,6 @@ export default [
 		volume: '11.10',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43877,7 +41684,6 @@ export default [
 		volume: '12.70',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43897,7 +41703,6 @@ export default [
 		volume: '13.90',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43917,7 +41722,6 @@ export default [
 		volume: '14.20',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43937,7 +41741,6 @@ export default [
 		volume: '15.70',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43957,7 +41760,6 @@ export default [
 		volume: '18.80',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43977,7 +41779,6 @@ export default [
 		volume: '4.20',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -43997,7 +41798,6 @@ export default [
 		volume: '4.50',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44017,7 +41817,6 @@ export default [
 		volume: '6.00',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44037,7 +41836,6 @@ export default [
 		volume: '7.80',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44057,7 +41855,6 @@ export default [
 		volume: '9.70',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44077,7 +41874,6 @@ export default [
 		volume: '11.50',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44097,7 +41893,6 @@ export default [
 		volume: '13.40',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44117,7 +41912,6 @@ export default [
 		volume: '15.20',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44137,7 +41931,6 @@ export default [
 		volume: '16.70',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44157,7 +41950,6 @@ export default [
 		volume: '17.00',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44177,7 +41969,6 @@ export default [
 		volume: '18.90',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44197,7 +41988,6 @@ export default [
 		volume: '22.50',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44217,7 +42007,6 @@ export default [
 		volume: '4.90',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44237,7 +42026,6 @@ export default [
 		volume: '5.30',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44257,7 +42045,6 @@ export default [
 		volume: '7.00',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44277,7 +42064,6 @@ export default [
 		volume: '9.20',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44297,7 +42083,6 @@ export default [
 		volume: '11.30',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44317,7 +42102,6 @@ export default [
 		volume: '13.40',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44337,7 +42121,6 @@ export default [
 		volume: '15.60',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44357,7 +42140,6 @@ export default [
 		volume: '17.70',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44377,7 +42159,6 @@ export default [
 		volume: '19.40',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44397,7 +42178,6 @@ export default [
 		volume: '19.90',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44417,7 +42197,6 @@ export default [
 		volume: '22.00',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44437,7 +42216,6 @@ export default [
 		volume: '26.30',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44457,7 +42235,6 @@ export default [
 		volume: '5.60',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44477,7 +42254,6 @@ export default [
 		volume: '6.10',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44497,7 +42273,6 @@ export default [
 		volume: '8.00',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44517,7 +42292,6 @@ export default [
 		volume: '10.50',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44537,7 +42311,6 @@ export default [
 		volume: '12.90',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44557,7 +42330,6 @@ export default [
 		volume: '15.40',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44577,7 +42349,6 @@ export default [
 		volume: '17.80',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44597,7 +42368,6 @@ export default [
 		volume: '20.30',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44617,7 +42387,6 @@ export default [
 		volume: '22.20',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44637,7 +42406,6 @@ export default [
 		volume: '22.70',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44657,7 +42425,6 @@ export default [
 		volume: '25.20',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44677,7 +42444,6 @@ export default [
 		volume: '30.10',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44697,7 +42463,6 @@ export default [
 		volume: '6.30',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44717,7 +42482,6 @@ export default [
 		volume: '6.80',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44737,7 +42501,6 @@ export default [
 		volume: '9.00',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44757,7 +42520,6 @@ export default [
 		volume: '11.80',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44777,7 +42539,6 @@ export default [
 		volume: '14.50',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44797,7 +42558,6 @@ export default [
 		volume: '17.30',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44817,7 +42577,6 @@ export default [
 		volume: '20.00',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44837,7 +42596,6 @@ export default [
 		volume: '22.80',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44857,7 +42615,6 @@ export default [
 		volume: '25.00',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44877,7 +42634,6 @@ export default [
 		volume: '25.60',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44897,7 +42653,6 @@ export default [
 		volume: '28.30',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44917,7 +42672,6 @@ export default [
 		volume: '33.80',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44937,7 +42691,6 @@ export default [
 		volume: '7.00',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44957,7 +42710,6 @@ export default [
 		volume: '7.60',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44977,7 +42729,6 @@ export default [
 		volume: '10.00',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -44997,7 +42748,6 @@ export default [
 		volume: '13.10',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45017,7 +42767,6 @@ export default [
 		volume: '16.20',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45037,7 +42786,6 @@ export default [
 		volume: '19.20',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45057,7 +42805,6 @@ export default [
 		volume: '22.30',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45077,7 +42824,6 @@ export default [
 		volume: '25.30',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45097,7 +42843,6 @@ export default [
 		volume: '27.80',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45117,7 +42862,6 @@ export default [
 		volume: '28.40',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45137,7 +42881,6 @@ export default [
 		volume: '31.50',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45157,7 +42900,6 @@ export default [
 		volume: '37.60',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45177,7 +42919,6 @@ export default [
 		volume: '7.70',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45197,7 +42938,6 @@ export default [
 		volume: '8.30',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45217,7 +42957,6 @@ export default [
 		volume: '11.00',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45237,7 +42976,6 @@ export default [
 		volume: '14.40',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45257,7 +42995,6 @@ export default [
 		volume: '17.80',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45277,7 +43014,6 @@ export default [
 		volume: '21.10',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45297,7 +43033,6 @@ export default [
 		volume: '24.50',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45317,7 +43052,6 @@ export default [
 		volume: '27.90',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45337,7 +43071,6 @@ export default [
 		volume: '30.60',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45357,7 +43090,6 @@ export default [
 		volume: '31.20',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45377,7 +43109,6 @@ export default [
 		volume: '34.60',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45397,7 +43128,6 @@ export default [
 		volume: '41.40',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45417,7 +43147,6 @@ export default [
 		volume: '8.40',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45437,7 +43166,6 @@ export default [
 		volume: '9.10',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45457,7 +43185,6 @@ export default [
 		volume: '12.00',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45477,7 +43204,6 @@ export default [
 		volume: '15.70',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45497,7 +43223,6 @@ export default [
 		volume: '19.40',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45517,7 +43242,6 @@ export default [
 		volume: '23.10',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45537,7 +43261,6 @@ export default [
 		volume: '26.70',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45557,7 +43280,6 @@ export default [
 		volume: '30.40',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45577,7 +43299,6 @@ export default [
 		volume: '33.40',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45597,7 +43318,6 @@ export default [
 		volume: '34.10',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45617,7 +43337,6 @@ export default [
 		volume: '37.80',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45637,7 +43356,6 @@ export default [
 		volume: '45.10',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45657,7 +43375,6 @@ export default [
 		volume: '9.10',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45677,7 +43394,6 @@ export default [
 		volume: '9.90',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45697,7 +43413,6 @@ export default [
 		volume: '13.00',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45717,7 +43432,6 @@ export default [
 		volume: '17.00',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45737,7 +43451,6 @@ export default [
 		volume: '21.00',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45757,7 +43470,6 @@ export default [
 		volume: '25.00',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45777,7 +43489,6 @@ export default [
 		volume: '29.00',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45797,7 +43508,6 @@ export default [
 		volume: '33.00',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45817,7 +43527,6 @@ export default [
 		volume: '36.10',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45837,7 +43546,6 @@ export default [
 		volume: '36.90',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45857,7 +43565,6 @@ export default [
 		volume: '40.90',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45877,7 +43584,6 @@ export default [
 		volume: '48.90',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45897,7 +43603,6 @@ export default [
 		volume: '9.80',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45917,7 +43622,6 @@ export default [
 		volume: '10.60',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45937,7 +43641,6 @@ export default [
 		volume: '14.10',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45957,7 +43660,6 @@ export default [
 		volume: '18.30',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45977,7 +43679,6 @@ export default [
 		volume: '22.60',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -45997,7 +43698,6 @@ export default [
 		volume: '26.90',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -46017,7 +43717,6 @@ export default [
 		volume: '31.20',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -46037,7 +43736,6 @@ export default [
 		volume: '35.50',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -46057,7 +43755,6 @@ export default [
 		volume: '38.90',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -46077,7 +43774,6 @@ export default [
 		volume: '39.80',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -46097,7 +43793,6 @@ export default [
 		volume: '44.10',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q40h',
@@ -46117,7 +43812,6 @@ export default [
 		volume: '52.60',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46137,7 +43831,6 @@ export default [
 		volume: '3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46157,7 +43850,6 @@ export default [
 		volume: '4.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46177,7 +43869,6 @@ export default [
 		volume: '5.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46197,7 +43888,6 @@ export default [
 		volume: '7.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46217,7 +43907,6 @@ export default [
 		volume: '8.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46237,7 +43926,6 @@ export default [
 		volume: '10.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46257,7 +43945,6 @@ export default [
 		volume: '11.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46277,7 +43964,6 @@ export default [
 		volume: '13.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46297,7 +43983,6 @@ export default [
 		volume: '14.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46317,7 +44002,6 @@ export default [
 		volume: '17.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46337,7 +44021,6 @@ export default [
 		volume: '4.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46357,7 +44040,6 @@ export default [
 		volume: '6.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46377,7 +44059,6 @@ export default [
 		volume: '8.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46397,7 +44078,6 @@ export default [
 		volume: '11.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46417,7 +44097,6 @@ export default [
 		volume: '13.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46437,7 +44116,6 @@ export default [
 		volume: '15.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46457,7 +44135,6 @@ export default [
 		volume: '17.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46477,7 +44154,6 @@ export default [
 		volume: '19.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46497,7 +44173,6 @@ export default [
 		volume: '22.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46517,7 +44192,6 @@ export default [
 		volume: '26.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46537,7 +44211,6 @@ export default [
 		volume: '6.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46557,7 +44230,6 @@ export default [
 		volume: '9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46577,7 +44249,6 @@ export default [
 		volume: '11.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46597,7 +44268,6 @@ export default [
 		volume: '14.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46617,7 +44287,6 @@ export default [
 		volume: '17.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46637,7 +44306,6 @@ export default [
 		volume: '20.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46657,7 +44325,6 @@ export default [
 		volume: '23.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46677,7 +44344,6 @@ export default [
 		volume: '26.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46697,7 +44363,6 @@ export default [
 		volume: '29.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46717,7 +44382,6 @@ export default [
 		volume: '35.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46737,7 +44401,6 @@ export default [
 		volume: '7.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46757,7 +44420,6 @@ export default [
 		volume: '11.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46777,7 +44439,6 @@ export default [
 		volume: '14.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46797,7 +44458,6 @@ export default [
 		volume: '18.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46817,7 +44477,6 @@ export default [
 		volume: '22.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46837,7 +44496,6 @@ export default [
 		volume: '25.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46857,7 +44515,6 @@ export default [
 		volume: '29.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46877,7 +44534,6 @@ export default [
 		volume: '33.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46897,7 +44553,6 @@ export default [
 		volume: '36.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46917,7 +44572,6 @@ export default [
 		volume: '44.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46937,7 +44591,6 @@ export default [
 		volume: '9.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46957,7 +44610,6 @@ export default [
 		volume: '13.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46977,7 +44629,6 @@ export default [
 		volume: '17.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -46997,7 +44648,6 @@ export default [
 		volume: '22.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47017,7 +44667,6 @@ export default [
 		volume: '26.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47037,7 +44686,6 @@ export default [
 		volume: '31',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47057,7 +44705,6 @@ export default [
 		volume: '35.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47077,7 +44724,6 @@ export default [
 		volume: '39.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47097,7 +44743,6 @@ export default [
 		volume: '44.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47117,7 +44762,6 @@ export default [
 		volume: '52.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47137,7 +44781,6 @@ export default [
 		volume: '10.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47157,7 +44800,6 @@ export default [
 		volume: '15.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47177,7 +44819,6 @@ export default [
 		volume: '20.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47197,7 +44838,6 @@ export default [
 		volume: '26',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47217,7 +44857,6 @@ export default [
 		volume: '31.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47237,7 +44876,6 @@ export default [
 		volume: '36.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47257,7 +44895,6 @@ export default [
 		volume: '41.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47277,7 +44914,6 @@ export default [
 		volume: '46.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47297,7 +44933,6 @@ export default [
 		volume: '12.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47317,7 +44952,6 @@ export default [
 		volume: '18.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47337,7 +44971,6 @@ export default [
 		volume: '23.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47357,7 +44990,6 @@ export default [
 		volume: '29.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47377,7 +45009,6 @@ export default [
 		volume: '35.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47397,7 +45028,6 @@ export default [
 		volume: '41.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47417,7 +45047,6 @@ export default [
 		volume: '47.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47437,7 +45066,6 @@ export default [
 		volume: '53.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47457,7 +45085,6 @@ export default [
 		volume: '13.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47477,7 +45104,6 @@ export default [
 		volume: '20.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47497,7 +45123,6 @@ export default [
 		volume: '26.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47517,7 +45142,6 @@ export default [
 		volume: '33.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47537,7 +45161,6 @@ export default [
 		volume: '40',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47557,7 +45180,6 @@ export default [
 		volume: '46.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47577,7 +45199,6 @@ export default [
 		volume: '53.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47597,7 +45218,6 @@ export default [
 		volume: '15.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47617,7 +45237,6 @@ export default [
 		volume: '22.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47637,7 +45256,6 @@ export default [
 		volume: '29.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47657,7 +45275,6 @@ export default [
 		volume: '37.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47677,7 +45294,6 @@ export default [
 		volume: '44.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47697,7 +45313,6 @@ export default [
 		volume: '51.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47717,7 +45332,6 @@ export default [
 		volume: '59.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47737,7 +45351,6 @@ export default [
 		volume: '16.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47757,7 +45370,6 @@ export default [
 		volume: '24.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47777,7 +45389,6 @@ export default [
 		volume: '32.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47797,7 +45408,6 @@ export default [
 		volume: '40.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47817,7 +45427,6 @@ export default [
 		volume: '48.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47837,7 +45446,6 @@ export default [
 		volume: '56.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47857,7 +45465,6 @@ export default [
 		volume: '18.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47877,7 +45484,6 @@ export default [
 		volume: '27.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47897,7 +45503,6 @@ export default [
 		volume: '35.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47917,7 +45522,6 @@ export default [
 		volume: '44.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47937,7 +45541,6 @@ export default [
 		volume: '53.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q60h',
@@ -47957,7 +45560,6 @@ export default [
 		volume: '62.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -47977,7 +45579,6 @@ export default [
 		volume: '5.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -47997,7 +45598,6 @@ export default [
 		volume: '6.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48017,7 +45617,6 @@ export default [
 		volume: '8.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48037,7 +45636,6 @@ export default [
 		volume: '11',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48057,7 +45655,6 @@ export default [
 		volume: '13.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48077,7 +45674,6 @@ export default [
 		volume: '16.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48097,7 +45693,6 @@ export default [
 		volume: '19.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48117,7 +45712,6 @@ export default [
 		volume: '22',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48137,7 +45731,6 @@ export default [
 		volume: '24.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48157,7 +45750,6 @@ export default [
 		volume: '24.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48177,7 +45769,6 @@ export default [
 		volume: '27.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48197,7 +45788,6 @@ export default [
 		volume: '32.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48217,7 +45807,6 @@ export default [
 		volume: '8.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48237,7 +45826,6 @@ export default [
 		volume: '9.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48257,7 +45845,6 @@ export default [
 		volume: '12.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48277,7 +45864,6 @@ export default [
 		volume: '16.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48297,7 +45883,6 @@ export default [
 		volume: '20.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48317,7 +45902,6 @@ export default [
 		volume: '24.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48337,7 +45921,6 @@ export default [
 		volume: '28.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48357,7 +45940,6 @@ export default [
 		volume: '33',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48377,7 +45959,6 @@ export default [
 		volume: '36.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48397,7 +45978,6 @@ export default [
 		volume: '37.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48417,7 +45997,6 @@ export default [
 		volume: '41.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48437,7 +46016,6 @@ export default [
 		volume: '49.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48457,7 +46035,6 @@ export default [
 		volume: '11.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48477,7 +46054,6 @@ export default [
 		volume: '12.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48497,7 +46073,6 @@ export default [
 		volume: '16.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48517,7 +46092,6 @@ export default [
 		volume: '22.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48537,7 +46111,6 @@ export default [
 		volume: '27.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48557,7 +46130,6 @@ export default [
 		volume: '33.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48577,7 +46149,6 @@ export default [
 		volume: '38.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48597,7 +46168,6 @@ export default [
 		volume: '44',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48617,7 +46187,6 @@ export default [
 		volume: '48.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48637,7 +46206,6 @@ export default [
 		volume: '49.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48657,7 +46225,6 @@ export default [
 		volume: '55',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48677,7 +46244,6 @@ export default [
 		volume: '14',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48697,7 +46263,6 @@ export default [
 		volume: '15.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48717,7 +46282,6 @@ export default [
 		volume: '20.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48737,7 +46301,6 @@ export default [
 		volume: '27.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48757,7 +46320,6 @@ export default [
 		volume: '34.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48777,7 +46339,6 @@ export default [
 		volume: '41.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48797,7 +46358,6 @@ export default [
 		volume: '48.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48817,7 +46377,6 @@ export default [
 		volume: '55',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48837,7 +46396,6 @@ export default [
 		volume: '60.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48857,7 +46415,6 @@ export default [
 		volume: '61.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48877,7 +46434,6 @@ export default [
 		volume: '16.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48897,7 +46453,6 @@ export default [
 		volume: '18.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48917,7 +46472,6 @@ export default [
 		volume: '25',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48937,7 +46491,6 @@ export default [
 		volume: '33.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48957,7 +46510,6 @@ export default [
 		volume: '41.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48977,7 +46529,6 @@ export default [
 		volume: '49.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -48997,7 +46548,6 @@ export default [
 		volume: '57.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -49017,7 +46567,6 @@ export default [
 		volume: '19.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -49037,7 +46586,6 @@ export default [
 		volume: '21.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -49057,7 +46605,6 @@ export default [
 		volume: '29.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -49077,7 +46624,6 @@ export default [
 		volume: '38.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -49097,7 +46643,6 @@ export default [
 		volume: '48.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -49117,7 +46662,6 @@ export default [
 		volume: '57.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -49137,7 +46681,6 @@ export default [
 		volume: '22.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -49157,7 +46700,6 @@ export default [
 		volume: '24.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -49177,7 +46719,6 @@ export default [
 		volume: '33.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -49197,7 +46738,6 @@ export default [
 		volume: '44.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q80h',
@@ -49217,7 +46757,6 @@ export default [
 		volume: '55.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49237,7 +46776,6 @@ export default [
 		volume: '0.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49257,7 +46795,6 @@ export default [
 		volume: '0.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49277,7 +46814,6 @@ export default [
 		volume: '1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49297,7 +46833,6 @@ export default [
 		volume: '1.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49317,7 +46852,6 @@ export default [
 		volume: '1.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49337,7 +46871,6 @@ export default [
 		volume: '1.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49357,7 +46890,6 @@ export default [
 		volume: '2.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49377,7 +46909,6 @@ export default [
 		volume: '2.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49397,7 +46928,6 @@ export default [
 		volume: '2.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49417,7 +46947,6 @@ export default [
 		volume: '2.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49437,7 +46966,6 @@ export default [
 		volume: '2.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49457,7 +46985,6 @@ export default [
 		volume: '3.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49477,7 +47004,6 @@ export default [
 		volume: '1.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49497,7 +47023,6 @@ export default [
 		volume: '1.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49517,7 +47042,6 @@ export default [
 		volume: '1.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49537,7 +47061,6 @@ export default [
 		volume: '1.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49557,7 +47080,6 @@ export default [
 		volume: '2.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49577,7 +47099,6 @@ export default [
 		volume: '2.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49597,7 +47118,6 @@ export default [
 		volume: '3.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49617,7 +47137,6 @@ export default [
 		volume: '3.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49637,7 +47156,6 @@ export default [
 		volume: '3.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49657,7 +47175,6 @@ export default [
 		volume: '3.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49677,7 +47194,6 @@ export default [
 		volume: '4.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49697,7 +47213,6 @@ export default [
 		volume: '5.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49717,7 +47232,6 @@ export default [
 		volume: '1.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49737,7 +47251,6 @@ export default [
 		volume: '1.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49757,7 +47270,6 @@ export default [
 		volume: '2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49777,7 +47289,6 @@ export default [
 		volume: '2.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49797,7 +47308,6 @@ export default [
 		volume: '3.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49817,7 +47327,6 @@ export default [
 		volume: '3.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49837,7 +47346,6 @@ export default [
 		volume: '4.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49857,7 +47365,6 @@ export default [
 		volume: '4.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49877,7 +47384,6 @@ export default [
 		volume: '5.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49897,7 +47403,6 @@ export default [
 		volume: '5.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49917,7 +47422,6 @@ export default [
 		volume: '5.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49937,7 +47441,6 @@ export default [
 		volume: '6.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49957,7 +47460,6 @@ export default [
 		volume: '1.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49977,7 +47479,6 @@ export default [
 		volume: '1.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -49997,7 +47498,6 @@ export default [
 		volume: '2.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50017,7 +47517,6 @@ export default [
 		volume: '3.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50037,7 +47536,6 @@ export default [
 		volume: '3.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50057,7 +47555,6 @@ export default [
 		volume: '4.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50077,7 +47574,6 @@ export default [
 		volume: '5.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50097,7 +47593,6 @@ export default [
 		volume: '5.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50117,7 +47612,6 @@ export default [
 		volume: '6.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50137,7 +47631,6 @@ export default [
 		volume: '6.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50157,7 +47650,6 @@ export default [
 		volume: '7.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50177,7 +47669,6 @@ export default [
 		volume: '8.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50197,7 +47688,6 @@ export default [
 		volume: '2.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50217,7 +47707,6 @@ export default [
 		volume: '2.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50237,7 +47726,6 @@ export default [
 		volume: '3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50257,7 +47745,6 @@ export default [
 		volume: '3.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50277,7 +47764,6 @@ export default [
 		volume: '4.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50297,7 +47783,6 @@ export default [
 		volume: '5.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50317,7 +47802,6 @@ export default [
 		volume: '6.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50337,7 +47821,6 @@ export default [
 		volume: '7.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50357,7 +47840,6 @@ export default [
 		volume: '7.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50377,7 +47859,6 @@ export default [
 		volume: '7.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50397,7 +47878,6 @@ export default [
 		volume: '8.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50417,7 +47897,6 @@ export default [
 		volume: '10.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50437,7 +47916,6 @@ export default [
 		volume: '2.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50457,7 +47935,6 @@ export default [
 		volume: '2.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50477,7 +47954,6 @@ export default [
 		volume: '3.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50497,7 +47973,6 @@ export default [
 		volume: '4.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50517,7 +47992,6 @@ export default [
 		volume: '5.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50537,7 +48011,6 @@ export default [
 		volume: '6.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50557,7 +48030,6 @@ export default [
 		volume: '7.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50577,7 +48049,6 @@ export default [
 		volume: '8.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50597,7 +48068,6 @@ export default [
 		volume: '9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50617,7 +48087,6 @@ export default [
 		volume: '9.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50637,7 +48106,6 @@ export default [
 		volume: '10.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50657,7 +48125,6 @@ export default [
 		volume: '12.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50677,7 +48144,6 @@ export default [
 		volume: '2.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50697,7 +48163,6 @@ export default [
 		volume: '3.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50717,7 +48182,6 @@ export default [
 		volume: '4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50737,7 +48201,6 @@ export default [
 		volume: '5.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50757,7 +48220,6 @@ export default [
 		volume: '6.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50777,7 +48239,6 @@ export default [
 		volume: '7.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50797,7 +48258,6 @@ export default [
 		volume: '8.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50817,7 +48277,6 @@ export default [
 		volume: '9.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50837,7 +48296,6 @@ export default [
 		volume: '10.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50857,7 +48315,6 @@ export default [
 		volume: '10.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50877,7 +48334,6 @@ export default [
 		volume: '11.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50897,7 +48353,6 @@ export default [
 		volume: '13.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50917,7 +48372,6 @@ export default [
 		volume: '3.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50937,7 +48391,6 @@ export default [
 		volume: '3.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50957,7 +48410,6 @@ export default [
 		volume: '4.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50977,7 +48429,6 @@ export default [
 		volume: '5.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -50997,7 +48448,6 @@ export default [
 		volume: '6.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51017,7 +48467,6 @@ export default [
 		volume: '8.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51037,7 +48486,6 @@ export default [
 		volume: '9.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51057,7 +48505,6 @@ export default [
 		volume: '10.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51077,7 +48524,6 @@ export default [
 		volume: '11.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51097,7 +48543,6 @@ export default [
 		volume: '11.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51117,7 +48562,6 @@ export default [
 		volume: '13.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51137,7 +48581,6 @@ export default [
 		volume: '15.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51157,7 +48600,6 @@ export default [
 		volume: '3.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51177,7 +48619,6 @@ export default [
 		volume: '3.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51197,7 +48638,6 @@ export default [
 		volume: '5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51217,7 +48657,6 @@ export default [
 		volume: '6.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51237,7 +48676,6 @@ export default [
 		volume: '7.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51257,7 +48695,6 @@ export default [
 		volume: '9.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51277,7 +48714,6 @@ export default [
 		volume: '10.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51297,7 +48733,6 @@ export default [
 		volume: '11.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51317,7 +48752,6 @@ export default [
 		volume: '12.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51337,7 +48771,6 @@ export default [
 		volume: '13.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51357,7 +48790,6 @@ export default [
 		volume: '14.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51377,7 +48809,6 @@ export default [
 		volume: '17.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51397,7 +48828,6 @@ export default [
 		volume: '4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51417,7 +48847,6 @@ export default [
 		volume: '4.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51437,7 +48866,6 @@ export default [
 		volume: '5.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51457,7 +48885,6 @@ export default [
 		volume: '7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51477,7 +48904,6 @@ export default [
 		volume: '8.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51497,7 +48923,6 @@ export default [
 		volume: '10',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51517,7 +48942,6 @@ export default [
 		volume: '11.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51537,7 +48961,6 @@ export default [
 		volume: '13',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51557,7 +48980,6 @@ export default [
 		volume: '14.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51577,7 +48999,6 @@ export default [
 		volume: '14.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51597,7 +49018,6 @@ export default [
 		volume: '16',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51617,7 +49037,6 @@ export default [
 		volume: '19',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51637,7 +49056,6 @@ export default [
 		volume: '4.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51657,7 +49075,6 @@ export default [
 		volume: '4.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51677,7 +49094,6 @@ export default [
 		volume: '6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51697,7 +49113,6 @@ export default [
 		volume: '7.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51717,7 +49132,6 @@ export default [
 		volume: '9.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51737,7 +49151,6 @@ export default [
 		volume: '10.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51757,7 +49170,6 @@ export default [
 		volume: '12.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51777,7 +49189,6 @@ export default [
 		volume: '14.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51797,7 +49208,6 @@ export default [
 		volume: '15.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51817,7 +49227,6 @@ export default [
 		volume: '15.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51837,7 +49246,6 @@ export default [
 		volume: '17.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51857,7 +49265,6 @@ export default [
 		volume: '20.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51877,7 +49284,6 @@ export default [
 		volume: '4.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51897,7 +49303,6 @@ export default [
 		volume: '5.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51917,7 +49322,6 @@ export default [
 		volume: '6.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51937,7 +49341,6 @@ export default [
 		volume: '8.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51957,7 +49360,6 @@ export default [
 		volume: '10',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51977,7 +49379,6 @@ export default [
 		volume: '11.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -51997,7 +49398,6 @@ export default [
 		volume: '13.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -52017,7 +49417,6 @@ export default [
 		volume: '15.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -52037,7 +49436,6 @@ export default [
 		volume: '16.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -52057,7 +49455,6 @@ export default [
 		volume: '17.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -52077,7 +49474,6 @@ export default [
 		volume: '18.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -52097,7 +49493,6 @@ export default [
 		volume: '22.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -52117,7 +49512,6 @@ export default [
 		volume: '5.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -52137,7 +49531,6 @@ export default [
 		volume: '5.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -52157,7 +49550,6 @@ export default [
 		volume: '7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -52177,7 +49569,6 @@ export default [
 		volume: '8.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -52197,7 +49588,6 @@ export default [
 		volume: '10.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -52217,7 +49607,6 @@ export default [
 		volume: '12.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -52237,7 +49626,6 @@ export default [
 		volume: '14.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -52257,7 +49645,6 @@ export default [
 		volume: '16.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -52277,7 +49664,6 @@ export default [
 		volume: '18.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -52297,7 +49683,6 @@ export default [
 		volume: '18.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -52317,7 +49702,6 @@ export default [
 		volume: '20.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r32h',
@@ -52337,7 +49721,6 @@ export default [
 		volume: '24.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52357,7 +49740,6 @@ export default [
 		volume: '5.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52377,7 +49759,6 @@ export default [
 		volume: '6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52397,7 +49778,6 @@ export default [
 		volume: '8.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52417,7 +49797,6 @@ export default [
 		volume: '10.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52437,7 +49816,6 @@ export default [
 		volume: '13.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52457,7 +49835,6 @@ export default [
 		volume: '16.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52477,7 +49854,6 @@ export default [
 		volume: '19',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52497,7 +49873,6 @@ export default [
 		volume: '21.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52517,7 +49892,6 @@ export default [
 		volume: '23.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52537,7 +49911,6 @@ export default [
 		volume: '24.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52557,7 +49930,6 @@ export default [
 		volume: '27.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52577,7 +49949,6 @@ export default [
 		volume: '32.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52597,7 +49968,6 @@ export default [
 		volume: '8.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52617,7 +49987,6 @@ export default [
 		volume: '9.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52637,7 +50006,6 @@ export default [
 		volume: '12.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52657,7 +50025,6 @@ export default [
 		volume: '16.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52677,7 +50044,6 @@ export default [
 		volume: '20.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52697,7 +50063,6 @@ export default [
 		volume: '24.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52717,7 +50082,6 @@ export default [
 		volume: '28.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52737,7 +50101,6 @@ export default [
 		volume: '32.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52757,7 +50120,6 @@ export default [
 		volume: '35.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52777,7 +50139,6 @@ export default [
 		volume: '36.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52797,7 +50158,6 @@ export default [
 		volume: '40.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52817,7 +50177,6 @@ export default [
 		volume: '48.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52837,7 +50196,6 @@ export default [
 		volume: '11',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52857,7 +50215,6 @@ export default [
 		volume: '12.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52877,7 +50234,6 @@ export default [
 		volume: '16.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52897,7 +50253,6 @@ export default [
 		volume: '21.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52917,7 +50272,6 @@ export default [
 		volume: '27.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52937,7 +50291,6 @@ export default [
 		volume: '32.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52957,7 +50310,6 @@ export default [
 		volume: '38.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52977,7 +50329,6 @@ export default [
 		volume: '43.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -52997,7 +50348,6 @@ export default [
 		volume: '47.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -53017,7 +50367,6 @@ export default [
 		volume: '48.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -53037,7 +50386,6 @@ export default [
 		volume: '27.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -53057,7 +50405,6 @@ export default [
 		volume: '13.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -53077,7 +50424,6 @@ export default [
 		volume: '15.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -53097,7 +50443,6 @@ export default [
 		volume: '20.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -53117,7 +50462,6 @@ export default [
 		volume: '27.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -53137,7 +50481,6 @@ export default [
 		volume: '34.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -53157,7 +50500,6 @@ export default [
 		volume: '40.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -53177,7 +50519,6 @@ export default [
 		volume: '47.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -53197,7 +50538,6 @@ export default [
 		volume: '54.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -53217,7 +50557,6 @@ export default [
 		volume: '16.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -53237,7 +50576,6 @@ export default [
 		volume: '18.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -53257,7 +50595,6 @@ export default [
 		volume: '24.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -53277,7 +50614,6 @@ export default [
 		volume: '32.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -53297,7 +50633,6 @@ export default [
 		volume: '40.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -53317,7 +50652,6 @@ export default [
 		volume: '49',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -53337,7 +50671,6 @@ export default [
 		volume: '57.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -53357,7 +50690,6 @@ export default [
 		volume: '19.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -53377,7 +50709,6 @@ export default [
 		volume: '21.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -53397,7 +50728,6 @@ export default [
 		volume: '28.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -53417,7 +50747,6 @@ export default [
 		volume: '38.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -53437,7 +50766,6 @@ export default [
 		volume: '47.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -53457,7 +50785,6 @@ export default [
 		volume: '57.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -53477,7 +50804,6 @@ export default [
 		volume: '22.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -53497,7 +50823,6 @@ export default [
 		volume: '24.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -53517,7 +50842,6 @@ export default [
 		volume: '32.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -53537,7 +50861,6 @@ export default [
 		volume: '43.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r89h',
@@ -53557,7 +50880,6 @@ export default [
 		volume: '54.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q500',
@@ -53577,7 +50899,6 @@ export default [
 		volume: '13.0',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q500',
@@ -53597,7 +50918,6 @@ export default [
 		volume: '16.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q500',
@@ -53617,7 +50937,6 @@ export default [
 		volume: '20.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'q500',
@@ -53637,7 +50956,6 @@ export default [
 		volume: '24',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p200',
@@ -53657,7 +50975,6 @@ export default [
 		volume: '5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p200',
@@ -53677,7 +50994,6 @@ export default [
 		volume: '6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p200',
@@ -53697,7 +51013,6 @@ export default [
 		volume: '7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p200',
@@ -53717,7 +51032,6 @@ export default [
 		volume: '9',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p200',
@@ -53737,7 +51051,6 @@ export default [
 		volume: '10',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p200',
@@ -53757,7 +51070,6 @@ export default [
 		volume: '11.4',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p200',
@@ -53777,7 +51089,6 @@ export default [
 		volume: '12.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p200',
@@ -53797,7 +51108,6 @@ export default [
 		volume: '14.2',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p300',
@@ -53817,7 +51127,6 @@ export default [
 		volume: '10',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p300',
@@ -53837,7 +51146,6 @@ export default [
 		volume: '13',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p300',
@@ -53857,7 +51165,6 @@ export default [
 		volume: '16',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p300',
@@ -53877,7 +51184,6 @@ export default [
 		volume: '19',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p300',
@@ -53897,7 +51203,6 @@ export default [
 		volume: '22.5',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p300',
@@ -53917,7 +51222,6 @@ export default [
 		volume: '25.6',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p300',
@@ -53937,7 +51241,6 @@ export default [
 		volume: '28.7',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'p300',
@@ -53957,7 +51260,6 @@ export default [
 		volume: '31.8',
 		addon_design_radiators_legs: '',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -53977,7 +51279,6 @@ export default [
 		volume: '1.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -53997,7 +51298,6 @@ export default [
 		volume: '1.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54017,7 +51317,6 @@ export default [
 		volume: '2.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54037,7 +51336,6 @@ export default [
 		volume: '2.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54057,7 +51355,6 @@ export default [
 		volume: '3.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54077,7 +51374,6 @@ export default [
 		volume: '3.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54097,7 +51393,6 @@ export default [
 		volume: '4.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54117,7 +51412,6 @@ export default [
 		volume: '5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54137,7 +51431,6 @@ export default [
 		volume: '5.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54157,7 +51450,6 @@ export default [
 		volume: '6.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54177,7 +51469,6 @@ export default [
 		volume: '1.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54197,7 +51488,6 @@ export default [
 		volume: '2.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54217,7 +51507,6 @@ export default [
 		volume: '3.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54237,7 +51526,6 @@ export default [
 		volume: '4.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54257,7 +51545,6 @@ export default [
 		volume: '5.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54277,7 +51564,6 @@ export default [
 		volume: '5.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54297,7 +51583,6 @@ export default [
 		volume: '6.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54317,7 +51602,6 @@ export default [
 		volume: '7.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54337,7 +51621,6 @@ export default [
 		volume: '8.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54357,7 +51640,6 @@ export default [
 		volume: '9.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54377,7 +51659,6 @@ export default [
 		volume: '2.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54397,7 +51678,6 @@ export default [
 		volume: '3.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54417,7 +51697,6 @@ export default [
 		volume: '4.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54437,7 +51716,6 @@ export default [
 		volume: '5.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54457,7 +51735,6 @@ export default [
 		volume: '6.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54477,7 +51754,6 @@ export default [
 		volume: '7.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54497,7 +51773,6 @@ export default [
 		volume: '8.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54517,7 +51792,6 @@ export default [
 		volume: '10',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54537,7 +51811,6 @@ export default [
 		volume: '11.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54557,7 +51830,6 @@ export default [
 		volume: '13.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54577,7 +51849,6 @@ export default [
 		volume: '3.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54597,7 +51868,6 @@ export default [
 		volume: '4.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54617,7 +51887,6 @@ export default [
 		volume: '5.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54637,7 +51906,6 @@ export default [
 		volume: '7.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54657,7 +51925,6 @@ export default [
 		volume: '8.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54677,7 +51944,6 @@ export default [
 		volume: '9.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54697,7 +51963,6 @@ export default [
 		volume: '11.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54717,7 +51982,6 @@ export default [
 		volume: '12.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54737,7 +52001,6 @@ export default [
 		volume: '13.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54757,7 +52020,6 @@ export default [
 		volume: '16.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54777,7 +52039,6 @@ export default [
 		volume: '3.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54797,7 +52058,6 @@ export default [
 		volume: '5.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54817,7 +52077,6 @@ export default [
 		volume: '6.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54837,7 +52096,6 @@ export default [
 		volume: '8.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54857,7 +52115,6 @@ export default [
 		volume: '10.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54877,7 +52134,6 @@ export default [
 		volume: '11.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54897,7 +52153,6 @@ export default [
 		volume: '13.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54917,7 +52172,6 @@ export default [
 		volume: '15',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54937,7 +52191,6 @@ export default [
 		volume: '16.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54957,7 +52210,6 @@ export default [
 		volume: '19.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54977,7 +52229,6 @@ export default [
 		volume: '4.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -54997,7 +52248,6 @@ export default [
 		volume: '6.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55017,7 +52267,6 @@ export default [
 		volume: '8.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55037,7 +52286,6 @@ export default [
 		volume: '10',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55057,7 +52305,6 @@ export default [
 		volume: '11.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55077,7 +52324,6 @@ export default [
 		volume: '13.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55097,7 +52343,6 @@ export default [
 		volume: '15.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55117,7 +52362,6 @@ export default [
 		volume: '17.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55137,7 +52381,6 @@ export default [
 		volume: '19.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55157,7 +52400,6 @@ export default [
 		volume: '23.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55177,7 +52419,6 @@ export default [
 		volume: '5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55197,7 +52438,6 @@ export default [
 		volume: '7.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55217,7 +52457,6 @@ export default [
 		volume: '9.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55237,7 +52476,6 @@ export default [
 		volume: '11.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55257,7 +52495,6 @@ export default [
 		volume: '13.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55277,7 +52514,6 @@ export default [
 		volume: '15.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55297,7 +52533,6 @@ export default [
 		volume: '17.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55317,7 +52552,6 @@ export default [
 		volume: '20',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55337,7 +52571,6 @@ export default [
 		volume: '22.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55357,7 +52590,6 @@ export default [
 		volume: '26.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55377,7 +52609,6 @@ export default [
 		volume: '5.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55397,7 +52628,6 @@ export default [
 		volume: '8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55417,7 +52647,6 @@ export default [
 		volume: '10.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55437,7 +52666,6 @@ export default [
 		volume: '12.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55457,7 +52685,6 @@ export default [
 		volume: '15.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55477,7 +52704,6 @@ export default [
 		volume: '17.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55497,7 +52723,6 @@ export default [
 		volume: '20.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55517,7 +52742,6 @@ export default [
 		volume: '22.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55537,7 +52761,6 @@ export default [
 		volume: '24.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55557,7 +52780,6 @@ export default [
 		volume: '29.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55577,7 +52799,6 @@ export default [
 		volume: '6.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55597,7 +52818,6 @@ export default [
 		volume: '8.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55617,7 +52837,6 @@ export default [
 		volume: '11.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55637,7 +52856,6 @@ export default [
 		volume: '14.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55657,7 +52875,6 @@ export default [
 		volume: '17',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55677,7 +52894,6 @@ export default [
 		volume: '19.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55697,7 +52913,6 @@ export default [
 		volume: '22.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55717,7 +52932,6 @@ export default [
 		volume: '25',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55737,7 +52951,6 @@ export default [
 		volume: '27.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55757,7 +52970,6 @@ export default [
 		volume: '33.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55777,7 +52989,6 @@ export default [
 		volume: '6.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55797,7 +53008,6 @@ export default [
 		volume: '9.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55817,7 +53027,6 @@ export default [
 		volume: '12.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55837,7 +53046,6 @@ export default [
 		volume: '15.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55857,7 +53065,6 @@ export default [
 		volume: '18.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55877,7 +53084,6 @@ export default [
 		volume: '21.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55897,7 +53103,6 @@ export default [
 		volume: '24.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55917,7 +53122,6 @@ export default [
 		volume: '27.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55937,7 +53141,6 @@ export default [
 		volume: '30.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55957,7 +53160,6 @@ export default [
 		volume: '36.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55977,7 +53179,6 @@ export default [
 		volume: '7.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -55997,7 +53198,6 @@ export default [
 		volume: '10.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -56017,7 +53217,6 @@ export default [
 		volume: '13.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -56037,7 +53236,6 @@ export default [
 		volume: '17.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -56057,7 +53255,6 @@ export default [
 		volume: '20.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -56077,7 +53274,6 @@ export default [
 		volume: '23.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -56097,7 +53293,6 @@ export default [
 		volume: '26.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -56117,7 +53312,6 @@ export default [
 		volume: '30',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -56137,7 +53331,6 @@ export default [
 		volume: '33.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -56157,7 +53350,6 @@ export default [
 		volume: '39.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -56177,7 +53369,6 @@ export default [
 		volume: '8.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -56197,7 +53388,6 @@ export default [
 		volume: '11.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -56217,7 +53407,6 @@ export default [
 		volume: '15.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -56237,7 +53426,6 @@ export default [
 		volume: '18.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -56257,7 +53445,6 @@ export default [
 		volume: '22.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -56277,7 +53464,6 @@ export default [
 		volume: '25.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -56297,7 +53483,6 @@ export default [
 		volume: '29.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -56317,7 +53502,6 @@ export default [
 		volume: '32.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -56337,7 +53521,6 @@ export default [
 		volume: '36',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -56357,7 +53540,6 @@ export default [
 		volume: '43',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -56377,7 +53559,6 @@ export default [
 		volume: '8.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -56397,7 +53578,6 @@ export default [
 		volume: '12.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -56417,7 +53597,6 @@ export default [
 		volume: '16.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -56437,7 +53616,6 @@ export default [
 		volume: '20',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -56457,7 +53635,6 @@ export default [
 		volume: '23.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -56477,7 +53654,6 @@ export default [
 		volume: '27.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -56497,7 +53673,6 @@ export default [
 		volume: '31.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -56517,7 +53692,6 @@ export default [
 		volume: '35.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -56537,7 +53711,6 @@ export default [
 		volume: '38.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42h',
@@ -56557,7 +53730,6 @@ export default [
 		volume: '46.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -56577,7 +53749,6 @@ export default [
 		volume: '1.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -56597,7 +53768,6 @@ export default [
 		volume: '1.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -56617,7 +53787,6 @@ export default [
 		volume: '2.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -56637,7 +53806,6 @@ export default [
 		volume: '2.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -56657,7 +53825,6 @@ export default [
 		volume: '3.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -56677,7 +53844,6 @@ export default [
 		volume: '3.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -56697,7 +53863,6 @@ export default [
 		volume: '4.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -56717,7 +53882,6 @@ export default [
 		volume: '5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -56737,7 +53901,6 @@ export default [
 		volume: '5.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -56757,7 +53920,6 @@ export default [
 		volume: '6.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -56777,7 +53939,6 @@ export default [
 		volume: '1.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -56797,7 +53958,6 @@ export default [
 		volume: '2.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -56817,7 +53977,6 @@ export default [
 		volume: '3.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -56837,7 +53996,6 @@ export default [
 		volume: '4.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -56857,7 +54015,6 @@ export default [
 		volume: '5.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -56877,7 +54034,6 @@ export default [
 		volume: '5.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -56897,7 +54053,6 @@ export default [
 		volume: '6.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -56917,7 +54072,6 @@ export default [
 		volume: '7.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -56937,7 +54091,6 @@ export default [
 		volume: '8.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -56957,7 +54110,6 @@ export default [
 		volume: '9.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -56977,7 +54129,6 @@ export default [
 		volume: '2.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -56997,7 +54148,6 @@ export default [
 		volume: '3.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57017,7 +54167,6 @@ export default [
 		volume: '4.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57037,7 +54186,6 @@ export default [
 		volume: '5.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57057,7 +54205,6 @@ export default [
 		volume: '6.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57077,7 +54224,6 @@ export default [
 		volume: '7.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57097,7 +54243,6 @@ export default [
 		volume: '8.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57117,7 +54262,6 @@ export default [
 		volume: '10',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57137,7 +54281,6 @@ export default [
 		volume: '11.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57157,7 +54300,6 @@ export default [
 		volume: '13.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57177,7 +54319,6 @@ export default [
 		volume: '3.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57197,7 +54338,6 @@ export default [
 		volume: '4.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57217,7 +54357,6 @@ export default [
 		volume: '5.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57237,7 +54376,6 @@ export default [
 		volume: '7.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57257,7 +54395,6 @@ export default [
 		volume: '8.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57277,7 +54414,6 @@ export default [
 		volume: '9.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57297,7 +54433,6 @@ export default [
 		volume: '11.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57317,7 +54452,6 @@ export default [
 		volume: '12.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57337,7 +54471,6 @@ export default [
 		volume: '13.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57357,7 +54490,6 @@ export default [
 		volume: '16.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57377,7 +54509,6 @@ export default [
 		volume: '3.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57397,7 +54528,6 @@ export default [
 		volume: '5.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57417,7 +54547,6 @@ export default [
 		volume: '6.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57437,7 +54566,6 @@ export default [
 		volume: '8.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57457,7 +54585,6 @@ export default [
 		volume: '10.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57477,7 +54604,6 @@ export default [
 		volume: '11.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57497,7 +54623,6 @@ export default [
 		volume: '13.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57517,7 +54642,6 @@ export default [
 		volume: '15',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57537,7 +54661,6 @@ export default [
 		volume: '16.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57557,7 +54680,6 @@ export default [
 		volume: '19.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57577,7 +54699,6 @@ export default [
 		volume: '4.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57597,7 +54718,6 @@ export default [
 		volume: '6.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57617,7 +54737,6 @@ export default [
 		volume: '8.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57637,7 +54756,6 @@ export default [
 		volume: '10',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57657,7 +54775,6 @@ export default [
 		volume: '11.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57677,7 +54794,6 @@ export default [
 		volume: '13.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57697,7 +54813,6 @@ export default [
 		volume: '15.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57717,7 +54832,6 @@ export default [
 		volume: '17.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57737,7 +54851,6 @@ export default [
 		volume: '19.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57757,7 +54870,6 @@ export default [
 		volume: '23.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57777,7 +54889,6 @@ export default [
 		volume: '5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57797,7 +54908,6 @@ export default [
 		volume: '7.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57817,7 +54927,6 @@ export default [
 		volume: '9.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57837,7 +54946,6 @@ export default [
 		volume: '11.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57857,7 +54965,6 @@ export default [
 		volume: '13.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57877,7 +54984,6 @@ export default [
 		volume: '15.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57897,7 +55003,6 @@ export default [
 		volume: '17.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57917,7 +55022,6 @@ export default [
 		volume: '20',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57937,7 +55041,6 @@ export default [
 		volume: '22.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57957,7 +55060,6 @@ export default [
 		volume: '26.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57977,7 +55079,6 @@ export default [
 		volume: '5.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -57997,7 +55098,6 @@ export default [
 		volume: '8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58017,7 +55117,6 @@ export default [
 		volume: '10.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58037,7 +55136,6 @@ export default [
 		volume: '12.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58057,7 +55155,6 @@ export default [
 		volume: '15.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58077,7 +55174,6 @@ export default [
 		volume: '17.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58097,7 +55193,6 @@ export default [
 		volume: '20.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58117,7 +55212,6 @@ export default [
 		volume: '22.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58137,7 +55231,6 @@ export default [
 		volume: '24.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58157,7 +55250,6 @@ export default [
 		volume: '29.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58177,7 +55269,6 @@ export default [
 		volume: '6.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58197,7 +55288,6 @@ export default [
 		volume: '8.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58217,7 +55307,6 @@ export default [
 		volume: '11.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58237,7 +55326,6 @@ export default [
 		volume: '14.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58257,7 +55345,6 @@ export default [
 		volume: '17',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58277,7 +55364,6 @@ export default [
 		volume: '19.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58297,7 +55383,6 @@ export default [
 		volume: '22.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58317,7 +55402,6 @@ export default [
 		volume: '25',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58337,7 +55421,6 @@ export default [
 		volume: '27.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58357,7 +55440,6 @@ export default [
 		volume: '33.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58377,7 +55459,6 @@ export default [
 		volume: '6.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58397,7 +55478,6 @@ export default [
 		volume: '9.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58417,7 +55497,6 @@ export default [
 		volume: '12.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58437,7 +55516,6 @@ export default [
 		volume: '15.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58457,7 +55535,6 @@ export default [
 		volume: '18.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58477,7 +55554,6 @@ export default [
 		volume: '21.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58497,7 +55573,6 @@ export default [
 		volume: '24.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58517,7 +55592,6 @@ export default [
 		volume: '27.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58537,7 +55611,6 @@ export default [
 		volume: '30.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58557,7 +55630,6 @@ export default [
 		volume: '36.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58577,7 +55649,6 @@ export default [
 		volume: '7.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58597,7 +55668,6 @@ export default [
 		volume: '10.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58617,7 +55687,6 @@ export default [
 		volume: '13.9',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58637,7 +55706,6 @@ export default [
 		volume: '17.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58657,7 +55725,6 @@ export default [
 		volume: '20.4',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58677,7 +55744,6 @@ export default [
 		volume: '23.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58697,7 +55763,6 @@ export default [
 		volume: '26.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58717,7 +55782,6 @@ export default [
 		volume: '30',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58737,7 +55801,6 @@ export default [
 		volume: '33.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58757,7 +55820,6 @@ export default [
 		volume: '39.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58777,7 +55839,6 @@ export default [
 		volume: '8.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58797,7 +55858,6 @@ export default [
 		volume: '11.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58817,7 +55877,6 @@ export default [
 		volume: '15.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58837,7 +55896,6 @@ export default [
 		volume: '18.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58857,7 +55915,6 @@ export default [
 		volume: '22.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58877,7 +55934,6 @@ export default [
 		volume: '25.6',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58897,7 +55953,6 @@ export default [
 		volume: '29.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58917,7 +55972,6 @@ export default [
 		volume: '32.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58937,7 +55991,6 @@ export default [
 		volume: '36',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58957,7 +56010,6 @@ export default [
 		volume: '43',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58977,7 +56029,6 @@ export default [
 		volume: '8.7',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -58997,7 +56048,6 @@ export default [
 		volume: '12.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -59017,7 +56067,6 @@ export default [
 		volume: '16.2',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -59037,7 +56086,6 @@ export default [
 		volume: '20',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -59057,7 +56105,6 @@ export default [
 		volume: '23.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -59077,7 +56124,6 @@ export default [
 		volume: '27.5',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -59097,7 +56143,6 @@ export default [
 		volume: '31.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -59117,7 +56162,6 @@ export default [
 		volume: '35.1',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -59137,7 +56181,6 @@ export default [
 		volume: '38.8',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 	{
 		model_id: 'r42v',
@@ -59157,6 +56200,5 @@ export default [
 		volume: '46.3',
 		addon_design_radiators_legs: '4600',
 		addon_design_radiators_legs_v: '',
-		'': '',
 	},
 ]
