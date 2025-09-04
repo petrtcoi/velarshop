@@ -25,7 +25,7 @@ const models = modelsJsonData.filter(m => m.type === type)
 			const imgPath =
 				type !== 'columns' // TODO: remove this columns hack :(
 					? `/images/models/${m.slug}/main.jpg`
-					: `/images/models/columns/main${m.id[0]}.jpg`
+					: `/images/models/columns/main${m.id[0]}b.jpg`
 			const modelHref = getModelSlug(m)
 
 			const radiators = radiatorsJsonData.filter(r => r.model_id === m.id)
