@@ -112,67 +112,13 @@ const {
 			</div></noscript
 		>
 
-		<!-- /Top.Mail.Ru counter -->
 
-		<!-- Top.Mail.Ru counter -->
-		<script type='text/javascript'>
-			var _tmr = window._tmr || (window._tmr = [])
-			_tmr.push({ id: '3549752', type: 'pageView', start: new Date().getTime() })
-			;(function (d, w, id) {
-				if (d.getElementById(id)) return
-				var ts = d.createElement('script')
-				ts.type = 'text/javascript'
-				ts.async = true
-				ts.id = id
-				ts.src = 'https://top-fwz1.mail.ru/js/code.js'
-				var f = function () {
-					var s = d.getElementsByTagName('script')[0]
-					s.parentNode.insertBefore(ts, s)
-				}
-				if (w.opera == '[object Opera]') {
-					d.addEventListener('DOMContentLoaded', f, false)
-				} else {
-					f()
-				}
-			})(document, window, 'tmr-code')
-		</script>
-		<noscript
-			><div>
-				<img
-					src='https://top-fwz1.mail.ru/counter?id=3549752;js=na'
-					style='position:absolute;left:-9999px;'
-					alt='Top.Mail.Ru'
-				/>
-			</div></noscript
-		>
-		<!-- /Top.Mail.Ru counter -->
+		
 
-		<!-- Google Tag Manager -->
-		<script>
-			;(function (w, d, s, l, i) {
-				w[l] = w[l] || []
-				w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
-				var f = d.getElementsByTagName(s)[0],
-					j = d.createElement(s),
-					dl = l != 'dataLayer' ? '&l=' + l : ''
-				j.async = true
-				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
-				f.parentNode.insertBefore(j, f)
-			})(window, document, 'script', 'dataLayer', 'GTM-WXHQCMD7')
-		</script>
-		<!-- End Google Tag Manager -->
+		
 	</head>
 	<body class='text-neutral-900 dark:text-neutral-200 bg-white dark:bg-neutral-800'>
-		<!-- Google Tag Manager (noscript) -->
-		<noscript
-			><iframe
-				src='https://www.googletagmanager.com/ns.html?id=GTM-WXHQCMD7'
-				height='0'
-				width='0'
-				style='display:none;visibility:hidden'
-			></iframe></noscript
-		>
-		<!-- End Google Tag Manager (noscript) -->
+		
 		{hideShoppingCartWidgt === false && <ShoppingCartWidget client:load />}
 		<Navigation />
 		<main class:list={[{ 'max-w-6xl mx-auto p-3 md:p-5 lg:px-10 xl:px-0': paddings }, { 'p-0 m-0': !paddings }]}>
