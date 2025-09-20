@@ -14,6 +14,7 @@ import { getModelMetaTitle } from '@shared/utils/getModelMetaTitle'
 
 import type { ModelJson } from '@entities/Model'
 import BuyerInfo from '@widgets/buyerInfo/BuyerInfo.astro'
+import { getModelMetaDescription } from '@shared/utils/getModelMetaDescription';
 
 export async function getStaticPaths() {
 	return modelsJsonData
@@ -28,9 +29,13 @@ export type Props = {
 	model: ModelJson
 }
 const { model } = Astro.props as Props
+
+const modelTitle = getModelMetaTitle(model)
+const metaDescription = getModelMetaDescription(model)
+
 ---
 
-<Layout title={getModelMetaTitle(model)}>
+<Layout title={modelTitle} description={metaDescription}>
 	<span
 		itemscope
 		itemtype='https://schema.org/ProductModel'

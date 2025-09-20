@@ -6,7 +6,7 @@ type Props = {
 	model: Pick<ModelJson, 'slug' | 'name' | 'prefix' | 'type'>
 }
 const { model } = Astro.props as Props
-const { slug, name, prefix } = model
+const { name, prefix } = model
 ---
 
 <div

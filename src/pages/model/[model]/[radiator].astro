@@ -18,6 +18,7 @@ import { radiatorsJsonData } from '@entities/Radiator'
 import type { ModelJson } from '@entities/Model'
 import type { RadiatorJson } from '@entities/Radiator'
 import { getRadiatorTitle } from '@shared/utils/getRadiatorTitle'
+import { getModelSlug } from '@shared/utils/getModelSlug';
 
 export async function getStaticPaths() {
 	return radiatorsJsonData.map(radiator => {
@@ -35,13 +36,20 @@ export type Props = {
 	radiator: RadiatorJson
 }
 const { model, radiator } = Astro.props as Props
+
+const radiatorName = `${model.prefix} Velar ${getRadiatorTitle({
+			model,
+			radiator,
+	})}`
+
+const description = `Купить ${radiatorName} c доставкой по России. Официальная гарантия. Полный модельный ряд и быстрые сроки производства. https://velarshop.ru${getModelSlug(model)}`
+const canonicalUrl = `https://velarshop.ru${getModelSlug(model)}`
 ---
 
 <Layout
-	title={`${model.prefix} Velar ${getRadiatorTitle({
-		model,
-		radiator,
-	})} купить в VelarShop.ru`}
+		title={`${radiatorName} купить в VelarShop.ru`}
+		description={description}
+	canonicalUrl={canonicalUrl}
 >
 	<LinkToModelPage model={model} />
 	<RadiatorTitle
