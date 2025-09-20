@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: /model/*/*/
 Allow: /
 
 User-agent: Yandex

@@ -21567,7 +21567,7 @@ export default [
 	{
 		model_id: 'q60v',
 		slug: 'q60v-12-1750-860',
-		sections: '12',
+		sections: '11',
 		e_spacing: '770',
 		d_spacing: '365/445',
 		n_spacing: '1680',
