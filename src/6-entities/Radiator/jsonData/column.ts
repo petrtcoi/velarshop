@@ -52,7 +52,7 @@ const columnModels: RadiatorJson[] = [
 	{
 		model_id: '2030',
 		slug: '2030',
-		sections: '50',
+		sections: '46',
 		n_spacing: '224',
 		width: '70',
 		height: '300',
@@ -82,7 +82,7 @@ const columnModels: RadiatorJson[] = [
 	{
 		model_id: '4030',
 		slug: '4030',
-		sections: '50',
+		sections: '46',
 		n_spacing: '224',
 		width: '140',
 		height: '300',
@@ -97,7 +97,7 @@ const columnModels: RadiatorJson[] = [
 	{
 		model_id: '2037',
 		slug: '2037',
-		sections: '50',
+		sections: '46',
 		n_spacing: '300',
 		width: '70',
 		height: '376',
@@ -127,7 +127,7 @@ const columnModels: RadiatorJson[] = [
 	{
 		model_id: '4037',
 		slug: '4037',
-		sections: '50',
+		sections: '46',
 		n_spacing: '300',
 		width: '140',
 		height: '376',
@@ -142,7 +142,7 @@ const columnModels: RadiatorJson[] = [
 	{
 		model_id: '2040',
 		slug: '2040',
-		sections: '50',
+		sections: '46',
 		n_spacing: '324',
 		width: '70',
 		height: '400',
@@ -172,7 +172,7 @@ const columnModels: RadiatorJson[] = [
 	{
 		model_id: '4040',
 		slug: '4040',
-		sections: '50',
+		sections: '46',
 		n_spacing: '324',
 		width: '140',
 		height: '400',
@@ -187,7 +187,7 @@ const columnModels: RadiatorJson[] = [
 	{
 		model_id: '2045',
 		slug: '2045',
-		sections: '50',
+		sections: '46',
 		n_spacing: '374',
 		width: '70',
 		height: '450',
@@ -217,7 +217,7 @@ const columnModels: RadiatorJson[] = [
 	{
 		model_id: '4045',
 		slug: '4045',
-		sections: '50',
+		sections: '46',
 		n_spacing: '374',
 		width: '140',
 		height: '450',
@@ -232,7 +232,7 @@ const columnModels: RadiatorJson[] = [
 	{
 		model_id: '2050',
 		slug: '2050',
-		sections: '50',
+		sections: '46',
 		n_spacing: '424',
 		width: '70',
 		height: '500',
@@ -262,7 +262,7 @@ const columnModels: RadiatorJson[] = [
 	{
 		model_id: '4050',
 		slug: '4050',
-		sections: '50',
+		sections: '46',
 		n_spacing: '424',
 		width: '140',
 		height: '500',
@@ -277,7 +277,7 @@ const columnModels: RadiatorJson[] = [
 	{
 		model_id: '2055',
 		slug: '2055',
-		sections: '50',
+		sections: '46',
 		n_spacing: '474',
 		width: '70',
 		height: '550',
@@ -307,7 +307,7 @@ const columnModels: RadiatorJson[] = [
 	{
 		model_id: '4055',
 		slug: '4055',
-		sections: '50',
+		sections: '46',
 		n_spacing: '474',
 		width: '140',
 		height: '550',
@@ -322,7 +322,7 @@ const columnModels: RadiatorJson[] = [
 	{
 		model_id: '2057',
 		slug: '2057',
-		sections: '50',
+		sections: '46',
 		n_spacing: '500',
 		width: '70',
 		height: '576',
@@ -352,7 +352,7 @@ const columnModels: RadiatorJson[] = [
 	{
 		model_id: '4057',
 		slug: '4057',
-		sections: '50',
+		sections: '46',
 		n_spacing: '500',
 		width: '140',
 		height: '576',
@@ -367,7 +367,7 @@ const columnModels: RadiatorJson[] = [
 	{
 		model_id: '2060',
 		slug: '2060',
-		sections: '50',
+		sections: '46',
 		n_spacing: '524',
 		width: '70',
 		height: '600',
@@ -397,7 +397,7 @@ const columnModels: RadiatorJson[] = [
 	{
 		model_id: '4060',
 		slug: '4060',
-		sections: '50',
+		sections: '46',
 		n_spacing: '524',
 		width: '140',
 		height: '600',
@@ -412,7 +412,7 @@ const columnModels: RadiatorJson[] = [
 	{
 		model_id: '2075',
 		slug: '2075',
-		sections: '50',
+		sections: '46',
 		n_spacing: '674',
 		width: '70',
 		height: '750',
@@ -442,7 +442,7 @@ const columnModels: RadiatorJson[] = [
 	{
 		model_id: '4075',
 		slug: '4075',
-		sections: '50',
+		sections: '46',
 		n_spacing: '674',
 		width: '140',
 		height: '750',
@@ -457,7 +457,7 @@ const columnModels: RadiatorJson[] = [
 	{
 		model_id: '2090',
 		slug: '2090',
-		sections: '50',
+		sections: '46',
 		n_spacing: '824',
 		width: '70',
 		height: '900',
@@ -487,7 +487,7 @@ const columnModels: RadiatorJson[] = [
 	{
 		model_id: '4090',
 		slug: '4090',
-		sections: '50',
+		sections: '46',
 		n_spacing: '824',
 		width: '140',
 		height: '900',
