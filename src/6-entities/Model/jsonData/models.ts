@@ -446,6 +446,18 @@ export const modelsJsonData: ModelJson[] = [
 		short_comment: 'Чугунный радиатор без орнамента. Отлично подходит для интерьеров в стиле лофт',
 	},
 	{
+		id: '3020',
+		slug: '3020',
+		name: '3020',
+		type: 'columns',
+		prefix: 'Трубчатый радиатор',
+		orientation: '',
+		connections: '',
+		related_models: '2030,4030',
+		related_items: '',
+		short_comment: 'Трех-трубчатый радиатор высотой 190 мм. Число секций от 4 до 50. Мощность секции (ΔT60): 28.7 Вт.',
+	},
+	{
 		id: '2030',
 		slug: '2030',
 		name: '2030',
