@@ -1,12 +1,21 @@
 ---
 import { Picture } from "@astrojs/image/components";
 import Layout from "@shared/layouts/Layout.astro";
+import Breadcrumbs from '@widgets/breadcrumbs/Breadcrumbs.astro';
 import { getCollection } from "astro:content";
 
 const articles = await getCollection("articles");
+
+const crumbs = [
+	{title: 'Главная', url: '/'},
+	{title: 'Полезные материалы', url: '/info'},
+]
 ---
 
 <Layout title='Полезная информация | радиаторы и конвекторы | VelarShop.ru'>
+  <section class="mb-3">
+<Breadcrumbs items={crumbs} />
+</section>
   <h1 class='text-2xl'>Полезные материалы</h1>
   <div
     id='articles_list'

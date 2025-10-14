@@ -1,10 +1,18 @@
 ---
 import Layout from '@shared/layouts/Layout.astro'
+import Breadcrumbs from '@widgets/breadcrumbs/Breadcrumbs.astro';
 import BuyerInfo from '@widgets/buyerInfo/BuyerInfo.astro'
 import ModelList from '@widgets/ModelList.astro'
+
+const crumbs = [
+	{title: 'Главная', url: '/'},
+	{title: 'Дизайн-радиаторы', url: '/design'},
+]
 ---
 
 <Layout title='Дизайн-радиаторы Velar | полный каталог | VelarShop.ru'>
+<Breadcrumbs items={crumbs} />
+
 	<h1 class='text-3xl font-bold mt-7 md:mt-5'>Дизайн-радиаторы Velar</h1>
 	<div class='text-sm max-w-xl mt-3 leading-6'>
 		Конструкция радиаторов Velar имеет универсальное трубчатое строение.

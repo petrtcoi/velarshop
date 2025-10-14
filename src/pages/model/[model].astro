@@ -15,6 +15,7 @@ import { getModelMetaTitle } from '@shared/utils/getModelMetaTitle'
 import type { ModelJson } from '@entities/Model'
 import BuyerInfo from '@widgets/buyerInfo/BuyerInfo.astro'
 import { getModelMetaDescription } from '@shared/utils/getModelMetaDescription';
+import Breadcrumbs from '@widgets/breadcrumbs/Breadcrumbs.astro';
 
 export async function getStaticPaths() {
 	return modelsJsonData
@@ -32,6 +33,31 @@ const { model } = Astro.props as Props
 
 const modelTitle = getModelMetaTitle(model)
 const metaDescription = getModelMetaDescription(model)
+
+let modelCrumbTitle = 'Дизайн-радиаторы'
+let modelCrumbUrl = '/design'
+
+if (model.type === 'columns') {
+	modelCrumbTitle = 'Трубчатые радиаторы'
+	modelCrumbUrl = '/columns'
+}
+if (model.type === 'convector') {
+	modelCrumbTitle = 'Внутрипольные конвекторы'
+		modelCrumbUrl = '/convector'
+}
+if (model.type === 'floor') {
+	modelCrumbTitle = 'Напольные радиаторы'
+		modelCrumbUrl = '/floor'
+}	
+if (model.type === 'ironcast') {
+	modelCrumbTitle = 'Чугунные ретро-радиаторы'
+		modelCrumbUrl = '/retro'
+}
+const crumbs = [
+	{title: 'Главная', url: '/'},
+	{title: modelCrumbTitle, url: modelCrumbUrl},
+	{title: `Velar ${model.name}`, url: `/model/${model.slug}`},
+]
 ---
 
 <Layout title={modelTitle} description={metaDescription}>
@@ -39,6 +65,8 @@ const metaDescription = getModelMetaDescription(model)
 		itemscope
 		itemtype='https://schema.org/ProductModel'
 	>
+		<Breadcrumbs items={crumbs} />
+
 		<ModelTitle {...model} />
 		<ModelBasicInfo model={model} />
 		<RadiatorList model={model} />

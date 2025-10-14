@@ -2,7 +2,6 @@
 import Layout from '@shared/layouts/Layout.astro'
 
 import RadiatorTitle from '@widgets/pageRadiator/RadiatorTitle.astro'
-import LinkToModelPage from '@widgets/pageRadiator/LinkToModelPage.astro'
 import RadiatorBasicInfo from '@widgets/pageRadiator/RadiatorBasicInfo.astro'
 import ModelDownloadSchema from '@features/model/ModelDownloadShema/ModelDownloadSchema.astro'
 
@@ -19,6 +18,7 @@ import type { ModelJson } from '@entities/Model'
 import type { RadiatorJson } from '@entities/Radiator'
 import { getRadiatorTitle } from '@shared/utils/getRadiatorTitle'
 import { getModelSlug } from '@shared/utils/getModelSlug';
+import Breadcrumbs from '@widgets/breadcrumbs/Breadcrumbs.astro';
 
 export async function getStaticPaths() {
 	return radiatorsJsonData.map(radiator => {
@@ -44,6 +44,38 @@ const radiatorName = `${model.prefix} Velar ${getRadiatorTitle({
 
 const description = `Купить ${radiatorName} c доставкой по России. Официальная гарантия. Полный модельный ряд и быстрые сроки производства. https://velarshop.ru${getModelSlug(model)}`
 const canonicalUrl = `https://velarshop.ru${getModelSlug(model)}`
+
+
+
+let modelCrumbTitle = 'Дизайн-радиаторы'
+let modelCrumbUrl = '/design'
+
+if (model.type === 'columns') {
+	modelCrumbTitle = 'Трубчатые радиаторы'
+	modelCrumbUrl = '/columns'
+}
+if (model.type === 'convector') {
+	modelCrumbTitle = 'Внутрипольные конвекторы'
+		modelCrumbUrl = '/convector'
+}
+if (model.type === 'floor') {
+	modelCrumbTitle = 'Напольные радиаторы'
+		modelCrumbUrl = '/floor'
+}	
+if (model.type === 'ironcast') {
+	modelCrumbTitle = 'Чугунные ретро-радиаторы'
+		modelCrumbUrl = '/retro'
+}
+const radiatorCrumbTitle =getRadiatorTitle({
+			model,
+			radiator,
+	})
+const crumbs = [
+	{title: 'Главная', url: '/'},
+	{title: modelCrumbTitle, url: modelCrumbUrl},
+	{title: `Velar ${model.name}`, url: `/model/${model.slug}`},
+	{title: `${radiatorCrumbTitle}`, url: `/model/${model.slug}/${radiator.slug}`},
+]
 ---
 
 <Layout
@@ -51,7 +83,11 @@ const canonicalUrl = `https://velarshop.ru${getModelSlug(model)}`
 		description={description}
 	canonicalUrl={canonicalUrl}
 >
-	<LinkToModelPage model={model} />
+<section class="mb-3">
+		<Breadcrumbs items={crumbs} />
+</section>
+
+	<!-- <LinkToModelPage model={model} /> -->
 	<RadiatorTitle
 		model={model}
 		radiator={radiator}
