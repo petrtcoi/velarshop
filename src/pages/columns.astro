@@ -1,5 +1,6 @@
 ---
 import Layout from '@shared/layouts/Layout.astro'
+import Breadcrumbs from '@widgets/breadcrumbs/Breadcrumbs.astro';
 import BuyerInfo from '@widgets/buyerInfo/BuyerInfo.astro'
 import ModelList from '@widgets/ModelList.astro'
 import ColumnsAbout from '@widgets/pageColumns/ColumnsAbout.astro'
@@ -7,12 +8,19 @@ import ColumnsBenefits from '@widgets/pageColumns/ColumnsBenefits.astro'
 import ColumnsExamples from '@widgets/pageColumns/ColumnsExamples.astro'
 import ColumnsFaq from '@widgets/pageColumns/ColumnsFaq.astro'
 import ColumnsModels from '@widgets/pageColumns/ColumnsModels.astro'
+
+const crumbs = [
+	{title: 'Главная', url: '/'},
+	{title: 'Трубчатые радиаторы отопления', url: '/columns'},
+]
 ---
 
 <Layout
 	title='Трубчатые радиаторы отопления Velar WH | купить | VelarShop.ru'
 	description='Большой выбор трубчатых радиаторов отопления.2-х, 3-х и 4-х трубчатые модели. В наличии и под заказ (4 недели). Высота до 2 м. Подходят для многоквартирных домов. Доставка по России.'
 >
+	<Breadcrumbs items={crumbs} />
+
 	<h1 class='text-3xl font-bold mt-7 md:mt-5'>Трубчатые радиаторы отопления Velar WH</h1>
 	<div class='text-sm max-w-xl mt-3 leading-6'>
 		Трубчатые радиаторы Velar WH – стальные секционные радиаторы колончатого

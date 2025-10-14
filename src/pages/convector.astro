@@ -1,10 +1,18 @@
 ---
 import Layout from '@shared/layouts/Layout.astro'
+import Breadcrumbs from '@widgets/breadcrumbs/Breadcrumbs.astro';
 import BuyerInfo from '@widgets/buyerInfo/BuyerInfo.astro'
 import ModelList from '@widgets/ModelList.astro'
+
+
+const crumbs = [
+	{title: 'Главная', url: '/'},
+	{title: 'Внутрипольные конвекторы Velar', url: '/convector'},
+]
 ---
 
 <Layout title='Встраиваемые в пол конвекторы Velar | KWH и KWHV | VelarShop.ru'>
+	<Breadcrumbs items={crumbs} />
 	<h1 class='text-3xl font-bold mt-7 md:mt-5'>
 		Внутрипольные конвекторы Velar
 	</h1>

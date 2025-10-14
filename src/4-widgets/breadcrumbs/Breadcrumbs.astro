@@ -1,0 +1,69 @@
+---
+// src/components/Breadcrumbs.astro
+type Crumb = {
+  title: string;
+  url: string; // можно относительный или абсолютный
+}
+
+ type Props = {
+  items: Crumb[];
+  separator?: string; // например, ">" или "›"
+  class?: string;
+}
+
+const { items = [], separator = ">", class: className = "" } = Astro.props;
+const lastIndex = items.length - 1;
+
+const toAbs = (u: string) => {
+  try {
+    // Astro.site берётся из astro.config.mjs → site: 'https://example.com'
+    const base = Astro.site ?? Astro.url; // Astro.url — текущий URL страницы
+    return new URL(u, base).toString();
+  } catch {
+    return u; // на крайний случай
+  }
+};
+
+// JSON-LD для BreadcrumbList
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": items.map((c, i) => {
+    const abs = toAbs(c.url);
+    return {
+      "@type": "ListItem",
+      "position": i + 1,
+      "item": {
+        "@type": "WebPage",
+        "@id": abs,     // <— НИКОГДА не 'id', только '@id'
+        "name": c.title
+      }
+    };
+  })
+};
+---
+
+{items.length > 0 && (
+  <nav aria-label="Breadcrumb" class={`${className}`}>
+    <ol class="w-full text-xs flex flex-row flex-wrap items-center gap-1">
+      {items.map((c, i) => (
+        <li>
+          {i < lastIndex ? (
+            <a href={c.url} class="font-light hover:underline">{c.title}</a>
+          ) : (
+            <span aria-current="page" class="font-light text-zinc-700">{c.title}</span>
+          )}
+          {i < lastIndex && <span  aria-hidden="true" class="font-light ml-1">{separator}</span>}
+        </li>
+      ))}
+    </ol>
+  </nav>
+)}
+
+<script
+	type='application/ld+json'
+	is:inline
+	set:html={JSON.stringify(jsonLd)}
+/>
+
+
