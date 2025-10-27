@@ -11,6 +11,9 @@ const {
   homekomfortWebsite,
   whatsApp,
 } = contacts;
+
+const year = new Date().getFullYear()
+
 ---
 
 <footer class="my-16">
@@ -155,8 +158,49 @@ const {
           >Whatsapp
         </a>
       </div>
+      
     </div>
   </div>
+
+  <div class='flex flex-row justify-center gap-10 mt-0 mb-4 text-xs font-light'>
+				<a
+					href='https://teletype.in/@velarshop'
+					target='_blank'
+					rel='noopener'
+					class='text-gray-900 font-light hover:underline'
+					>Teletype
+				</a>
+				<a
+					href='https://medium.com/@velarshop'
+					target='_blank'
+					rel='noopener'
+					class='text-gray-900 font-light hover:underline'
+					>Medium
+				</a>
+				<a
+					href='https://ru.pinterest.com/velarshop/'
+					target='_blank'
+					rel='noopener'
+					class='text-gray-900 font-light hover:underline'
+					>Pinterest
+				</a>
+				<a
+					href='https://vc.ru/id5395157'
+					target='_blank'
+					rel='noopener'
+					class='text-gray-900 font-light hover:underline'
+					>VC.ru
+				</a>
+				<a
+					href='https://dzen.ru/velarshop'
+					target='_blank'
+					rel='noopener'
+					class='text-gray-900 font-light hover:underline'
+					>Дзен
+				</a>
+			</div>
+
+
   <div class="max-w-6xl border-t pt-6 px-10 mx-auto text-xs text-neutral-600">
     <div
       class="flex flex-col md:flex-row gap-5 font-light md:justify-center"
@@ -182,5 +226,55 @@ const {
         >Пользовательское соглашение</a
       >
     </div>
+    	<div class='px-6 py-10 mx-auto text-xs text-gray-500'>
+		© {year} VelarShop. ООО «Хоум Комфорт». Продажа и доставка по всей России.
+	</div>
   </div>
 </footer>
+
+
+<script type='application/ld+json' is:inline>
+	{
+		"@context": "https://schema.org",
+		"@type": "Organization",
+		"name": "VelarShop",
+		"url": "https://velarshop.ru/",
+		"logo": "https://velarshop.ru/logo-velar.png",
+		"email": "mail@velarshop.ru",
+		"telephone": ["+7 (495) 128-85-05", "+7 (812) 409-35-05"],
+		"contactPoint": [
+			{
+				"@type": "ContactPoint",
+				"telephone": "+7 (495) 128-85-05",
+				"contactType": "sales",
+				"areaServed": "RU",
+				"availableLanguage": ["Russian"]
+			}
+		],
+		"address": {
+			"@type": "PostalAddress",
+			"streetAddress": "пр. Обуховской Обороны, д. 7, литера С, офис 6",
+			"addressLocality": "Санкт-Петербург",
+			"postalCode": "192019",
+			"addressCountry": "RU"
+		},
+		"areaServed": [
+			{
+				"@type": "Country",
+				"name": "Russia"
+			}
+		],
+		"parentOrganization": {
+			"@type": "Organization",
+			"name": "ООО «ХОУМ КОМФОРТ»",
+			"url": "https://homekomfort.ru"
+		},
+		"sameAs": [
+			"https://medium.com/@velarshop",
+			"https://ru.pinterest.com/velarshop/",
+			"https://vc.ru/id5395157",
+			"https://dzen.ru/velarshop",
+			"https://teletype.in/@velarshop"
+		]
+	}
+</script>
