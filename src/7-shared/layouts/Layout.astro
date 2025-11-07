@@ -13,6 +13,11 @@ export interface Props {
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+let canonicalPath = canonicalURL.pathname
+if (canonicalPath.length > 1 && canonicalPath.endsWith('/')) {
+	canonicalPath = canonicalPath.slice(0, -1)
+}
+canonicalURL.pathname = canonicalPath
 
 const {
 	title = 'Velar дизайн-радиаторы отопления | VelarShop.ru',
