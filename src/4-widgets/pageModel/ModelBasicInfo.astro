@@ -12,6 +12,7 @@ import { radiatorsJsonData } from "@entities/Radiator";
 
 import type { ModelJson } from "@entities/Model";
 import { NO_PRICE } from "./constants/noPrice";
+import GoToFormBlock from '@shared/components/GoToFormBlock.astro';
 
 type Props = {
   model: ModelJson;
@@ -58,6 +59,9 @@ const minPrice =
         slug={slug}
         isColumns={model.type === "columns"}
       />
+
+      <GoToFormBlock />
+
       <ModelDownloadSchema model={model} />
     </div>
   </LeftRightBlock4555>
