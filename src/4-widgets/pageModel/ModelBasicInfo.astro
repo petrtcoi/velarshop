@@ -55,12 +55,15 @@ const minPrice =
         minPrice={minPrice}
         client:only="preact"
       />
+
+            <GoToFormBlock />
+
+
       <ModelDescription
         slug={slug}
         isColumns={model.type === "columns"}
       />
 
-      <GoToFormBlock />
 
       <ModelDownloadSchema model={model} />
     </div>

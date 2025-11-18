@@ -134,7 +134,7 @@ const {
 		<Navigation />
 
 
-		<main class:list={[{ 'max-w-6xl mx-auto p-3 md:p-5 lg:px-10 xl:px-0': paddings }, { 'p-0 m-0': !paddings }]}>
+		<main class:list={[{ 'max-w-6xl mx-auto p-3 md:p-5 lg:px-10 xl:px-0 pt-[64px] md:pt-[64px] lg:pt-3': paddings }, { 'p-0 m-0': !paddings }]}>
 			<slot />
 					<GoToFormButton client:load/>
 							{hideShoppingCartWidgt === false && <ShoppingCartWidget client:load />}

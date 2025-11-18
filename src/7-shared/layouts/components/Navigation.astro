@@ -15,18 +15,30 @@ const {
 
 <script>
   const menuButton = document.querySelector("#top_nav_burger_menu");
+    const menuButton2 = document.querySelector("#top_nav_burger_menu2");
+
   const closeMenu = document.querySelector("#top_nav_close_menu");
-  const menuBar = document.querySelector('[role="menubar"]');
+  const menuBar = document.querySelector('#menubar');
+  const popupNav = document.querySelector('#popup_nav');
 
   menuButton?.addEventListener("click", () => {
     menuBar?.classList.remove("hidden");
-    menuBar?.classList.toggle("flex");
+    menuBar?.classList.add("flex");
+    closeMenu?.classList.remove("hidden");
+    document.body.classList.add("overflow-hidden");
+  });
+  menuButton2?.addEventListener("click", () => {
+    menuBar?.classList.remove("hidden");
+    menuBar?.classList.add("flex");
+    closeMenu?.classList.remove("hidden");
     document.body.classList.add("overflow-hidden");
   });
 
   closeMenu?.addEventListener("click", () => {
     menuBar?.classList.add("hidden");
     menuBar?.classList.toggle("flex");
+        closeMenu?.classList.add("hidden");
+
     document.body.classList.remove("overflow-hidden");
 
   });
@@ -34,61 +46,290 @@ const {
   if (event.key === "Escape") {
     menuBar?.classList.add("hidden");
     menuBar?.classList.remove("flex"); // лучше remove, а не toggle
+            closeMenu?.classList.add("hidden");
+
     document.body.classList.remove("overflow-hidden");
   }
+
 });
+
+
+function onScroll() {
+  const y = window.scrollY;
+  if (!popupNav) return;
+
+  if (y > 200) {
+    popupNav.classList.remove("-translate-y-full", "opacity-0", "pointer-events-none");
+    popupNav.classList.add("translate-y-0", "opacity-100");
+  } else {
+    popupNav.classList.add("-translate-y-full", "opacity-0", "pointer-events-none");
+    popupNav.classList.remove("translate-y-0", "opacity-100");
+
+    setTimeout(() => {
+      if (window.scrollY <= 200) {
+        popupNav.classList.add("hidden");
+      }
+    }, 300);
+  }
+  
+}
+window.addEventListener("scroll", onScroll);
+onScroll();
 </script>
 
 <nav
   itemscope
   itemtype="https://schema.org/SiteNavigationElement"
 >
-  <div class="bg-teal-600 mx-auto p-4 shadow-lg z-50">
-    <!-- LOGO -->
-    <div class="container mx-auto flex items-center justify-between relative">
+
+<!-- Large Nav -->
+  <div class="hidden lg:block bg-teal-600 mx-auto p-2  z-50 ">
+    
+  
+    <!-- MENU BAR -->
+    <div
+      role="menubar"
+      aria-label="Главное меню"
+      class="gap-4 relative items-center  px-6 text-center text-md  py-2 flex-row shadow-none justify-center w-full flex"
+    >
+      <a
+        href="/about"
+        class="text-xs my-1 mx-auto transition-colors hover:text-neutral-700"
+        role="menuitem"
+        itemprop="url"
+      >
+        <meta
+          name="name"
+          content="О магазине"
+        />
+        О магазине
+      </a>
+      <a
+        href="/delivery"
+        class="text-xs my-1 hover:text-neutral-700 mx-auto transition-colors"
+        role="menuitem"
+        itemprop="url"
+      >
+        <meta
+          name="name"
+          content="Доставка и оплата"
+        />
+        Доставка и оплата
+      </a>
       <a
         href="/"
         data-testid="velar_logo"
-        class="lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:top-2 hover:opacity-50 transition-opacity w-1/3"
+        class="block w-48 hover:opacity-50 transition-opacity"
+        aria-label="Ссылка на главную страницу"
+        role="menuitem"
+      >
+        <Picture
+          loading="eager"
+          widths={[192, 384]}
+          width={163}
+          height={40}
+          sizes="160px"
+          aspectRatio="1052:255"
+          src="/images/logo.png"
+          alt="Логотип Velar"
+        />
+      </a>
+      <a
+        href="/request"
+        class="text-xs my-1 hover:text-neutral-700 mx-auto transition-colors"
+        role="menuitem"
+        itemprop="url"
+        ><meta
+          name="name"
+          content="Сделать запрос"
+        />
+        Сделать запрос
+      </a>
+      <a
+        href="/info"
+        class="text-sm lg:text-xs my-1 hover:text-neutral-700 mx-auto transition-colors"
+        role="menuitem"
+        itemprop="url"
+        ><meta
+          name="name"
+          content="Полезная информация"
+        />
+        Полезная информация
+      </a>
+    </div>
+
+ 
+
+  </div>
+
+  
+   <div class="hidden lg:flex flex-row justify-center items-center my-2 gap-6 m-auto">
+        <a
+        href="/design"
+        class="text-xs my-1  transition-colors hover:text-red-600 "
+        role="menuitem"
+        itemprop="url"
+      >
+        <meta
+          name="name"
+          content="Дизайн-радиаторы"
+        />
+        Дизайн-радиаторы
+      </a>
+      <a
+        href="/columns"
+        class="text-xs my-1  transition-colors hover:text-red-600 "
+        role="menuitem"
+        itemprop="url"
+      >
+        <meta
+          name="name"
+          content="Трубчатые радиаторы"
+        />
+        Трубчатые радиаторы
+      </a>
+      <a
+        href="/floor"
+        class="text-xs my-1  transition-colors hover:text-red-600"
+        role="menuitem"
+        itemprop="url"
+      >
+        <meta
+          name="name"
+          content="Напольные радиаторы"
+        />
+        Напольные радиаторы
+      </a>
+
+      <a
+        href="/retro"
+        class="text-xs my-1  transition-colors hover:text-red-600"
+        role="menuitem"
+        itemprop="url"
+      >
+        <meta
+          name="name"
+          content="Ретро-радиаторы"
+        />
+        Ретро-радиаторы
+      </a>
+      <a
+        href="/convector"
+        class="text-xs my-1  transition-colors hover:text-red-600"
+        role="menuitem"
+        itemprop="url"
+      >
+        <meta
+          name="name"
+          content="Внутрипольные конвекторы"
+        />
+        Внутрипольные конвекторы
+      </a>
+
+   </div>
+
+
+  <!-- Popup Nav -->
+  <div 
+   id="popup_nav"
+    class="fixed top-0 left-0 right-0 z-[1000] bg-white shadow-md border-b-[1px] border-neutral-300 
+         hidden lg:flex lg:justify-between lg:items-center lg:px-8 lg:py-3
+         -translate-y-full opacity-0 pointer-events-none
+          transition-all duration-300">
+    <!-- LOGO -->
+     <!-- Logo -->
+      <a
+        href="/"
+        data-testid="velar_logo"
+        class="hover:opacity-50 transition-opacity"
         aria-label="Ссылка на главную страницу"
       >
         <Picture
           loading="eager"
           widths={[100, 140, 200, 300]}
-          width={115}
-          height={28}
+          width={90}
+          height={22}
           sizes="(max-width: 640px) 140px,  176px"
           aspectRatio="1052:255"
           src="/images/logo.png"
-          class="w-38 w-38 md:w-44 lg:hidden"
+          class="w-28 md:w-34"
           alt="Логотип Velar"
         />
       </a>
 
-      <!-- Phones -->
-      <div
-        class="lg:hidden flex flex-col gap-1"
-        aria-label="Телефоны для связи"
+      <!-- Categories -->
+
+      <div class="flex flex-row justify-start items-center gap-6">
+        <a
+        href="/design"
+        class="text-xs my-1 mx-auto transition-colors hover:text-neutral-700 "
+        role="menuitem"
+        itemprop="url"
       >
-        <a
-          href={`tel:${phone495}`}
-          aria-label="Московский номер"
-          class="text-xs text-neutral-900 font-light hover:text-neutral-700"
-          >{phone495String}
-        </a>
-        <a
-          href={`tel:${phone812}`}
-          aria-label="Санкт-Петербургский номер"
-          class="text-xs text-neutral-900 font-light hover:text-neutral-700"
-          >{phone812String}
-        </a>
+        <meta
+          name="name"
+          content="Дизайн-радиаторы"
+        />
+        Дизайн-радиаторы
+      </a>
+      <a
+        href="/columns"
+        class="text-xs my-1 mx-auto transition-colors hover:text-neutral-700 "
+        role="menuitem"
+        itemprop="url"
+      >
+        <meta
+          name="name"
+          content="Трубчатые радиаторы"
+        />
+        Трубчатые радиаторы
+      </a>
+      <a
+        href="/floor"
+        class="text-xs my-1 mx-auto transition-colors hover:text-neutral-700 "
+        role="menuitem"
+        itemprop="url"
+      >
+        <meta
+          name="name"
+          content="Напольные радиаторы"
+        />
+        Напольные радиаторы
+      </a>
+
+      <a
+        href="/retro"
+        class="text-xs my-1 mx-auto transition-colors hover:text-neutral-700 "
+        role="menuitem"
+        itemprop="url"
+      >
+        <meta
+          name="name"
+          content="Ретро-радиаторы"
+        />
+        Ретро-радиаторы
+      </a>
+      <a
+        href="/convector"
+        class="text-xs my-1 mx-auto transition-colors hover:text-neutral-700"
+        role="menuitem"
+        itemprop="url"
+      >
+        <meta
+          name="name"
+          content="Внутрипольные конвекторы"
+        />
+        Внутрипольные конвекторы
+      </a>
+
       </div>
+
+ 
 
       <!-- Burger -->
       <button
-        id="top_nav_burger_menu"
-        data-testid="burger_menu"
-        class="lg:hidden text-neutral-900 hover:text-neutral-700 rounded-sm focus:outline-none focus-visible:ring-2 ring-neutral-900 transition-colors"
+        id="top_nav_burger_menu2"
+        class="cursor-pointer flex flex-row justify-end items-center gap-1 text-neutral-900 hover:text-neutral-700 rounded-sm focus:outline-none focus-visible:ring-2 ring-neutral-900 transition-colors"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -104,19 +345,145 @@ const {
             d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
           ></path>
         </svg>
+        <div class="text-xs font-light">
+        МЕНЮ</div>
       </button>
-    </div>
 
-    <!-- MENU BAR -->
+  
+  </div>
+
+  <!-- Small Nav -->
+  <div class="bg-white w-full fixed flex top-0 flex-row px-4 py-1 shadow-sm border-b-[1px] border-neutral-300 z-50 lg:hidden justify-between items-center">
+    <!-- LOGO -->
+     <!-- Logo -->
+      <a
+        href="/"
+        data-testid="velar_logo"
+        class="hover:opacity-50 transition-opacity w-1/3"
+        aria-label="Ссылка на главную страницу"
+      >
+        <Picture
+          loading="eager"
+          widths={[100, 140, 200, 300]}
+          width={74}
+          height={18}
+          sizes="(max-width: 640px) 140px,  176px"
+          aspectRatio="1052:255"
+          src="/images/logo.png"
+          class="w-28 md:w-34 lg:hidden"
+          alt="Логотип Velar"
+        />
+      </a>
+
+      
+
+      <!-- Burger -->
+      <button
+        id="top_nav_burger_menu"
+        class="flex flex-row justify-end items-center gap-1 text-neutral-900 hover:text-neutral-700 rounded-sm focus:outline-none focus-visible:ring-2 ring-neutral-900 transition-colors"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-8 h-8"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          ></path>
+        </svg>
+        <div class="text-xs">
+        МЕНЮ
+        </div>
+      </button>
+
+   
+  </div>
+
+   <!-- MENU BAR -->
     <div
-      role="menubar"
+      id="menubar"
       aria-label="Главное меню"
-      class="hidden flex-col gap-4 fixed left-0  right-0 top-0 bottom-0 items-center  p-6 text-center text-md pb-10 bg-teal-600 lg:py-2 lg:flex-row lg:static lg:shadow-none lg:justify-center lg:w-full lg:flex"
+      class="hidden flex-col gap-4 fixed z-[2000] left-0  right-0 top-0 bottom-0 items-center  p-6  text-center text-md pb-10 bg-white "
     >
-     <div class="fixed right-[20px] top-[20px]" id="top_nav_close_menu">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+   
+     <div 
+      id="top_nav_close_menu"
+      class="hidden fixed right-4 md:right-8 top-[12px] text-neutral-900 hover:text-neutral-700 cursor-pointer" 
+     >
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
       </div>
-      <div class="my-2 flex flex-row gap-20 justify-between lg:hidden z-50">
+      
+
+      <a
+        href="/design"
+        class="text-sm my-1 mx-auto transition-colors hover:text-red-600 "
+        role="menuitem"
+        itemprop="url"
+      >
+        <meta
+          name="name"
+          content="Дизайн-радиаторы"
+        />
+        Дизайн-радиаторы
+      </a>
+      <a
+        href="/columns"
+        class="text-sm my-1 mx-auto transition-colors hover:text-red-600"
+        role="menuitem"
+        itemprop="url"
+      >
+        <meta
+          name="name"
+          content="Трубчатые радиаторы"
+        />
+        Трубчатые радиаторы
+      </a>
+      <a
+        href="/floor"
+        class="text-sm my-1 mx-auto transition-colors hover:text-red-600"
+        role="menuitem"
+        itemprop="url"
+      >
+        <meta
+          name="name"
+          content="Напольные радиаторы"
+        />
+        Напольные радиаторы
+      </a>
+
+      <a
+        href="/retro"
+        class="text-sm my-1 mx-auto transition-colors hover:text-red-600"
+        role="menuitem"
+        itemprop="url"
+      >
+        <meta
+          name="name"
+          content="Ретро-радиаторы"
+        />
+        Ретро-радиаторы
+      </a>
+      <a
+        href="/convector"
+        class="text-sm my-1 mx-auto transition-colors hover:text-red-600"
+        role="menuitem"
+        itemprop="url"
+      >
+        <meta
+          name="name"
+          content="Внутрипольные конвекторы"
+        />
+        Внутрипольные конвекторы
+      </a>
+      <div class="border-emerald-700 border-b w-full"></div>
+
+
+<div class="my-2 flex flex-row gap-20 justify-between z-50">
         <a
           href={`https://vk.com/${vk}`}
           role="menuitem"
@@ -158,71 +525,28 @@ const {
         </a>
       </div>
 
-      <a
-        href="/design"
-        class="text-sm my-1 mx-auto transition-colors hover:text-neutral-700 lg:hidden"
-        role="menuitem"
-        itemprop="url"
+<!-- Phones -->
+      <div
+        class="flex flex-col gap-1"
+        aria-label="Телефоны для связи"
       >
-        <meta
-          name="name"
-          content="Дизайн-радиаторы"
-        />
-        Дизайн-радиаторы
-      </a>
-      <a
-        href="/columns"
-        class="text-sm my-1 mx-auto transition-colors hover:text-neutral-700 lg:hidden"
-        role="menuitem"
-        itemprop="url"
-      >
-        <meta
-          name="name"
-          content="Трубчатые радиаторы"
-        />
-        Трубчатые радиаторы
-      </a>
-      <a
-        href="/floor"
-        class="text-sm my-1 mx-auto transition-colors hover:text-neutral-700 lg:hidden"
-        role="menuitem"
-        itemprop="url"
-      >
-        <meta
-          name="name"
-          content="Напольные радиаторы"
-        />
-        Напольные радиаторы
-      </a>
+        <a
+          href={`tel:${phone495}`}
+          aria-label="Московский номер"
+          class="text-xs text-neutral-900 font-light hover:text-neutral-700"
+          >{phone495String}
+        </a>
+        <a
+          href={`tel:${phone812}`}
+          aria-label="Санкт-Петербургский номер"
+          class="text-xs text-neutral-900 font-light hover:text-neutral-700"
+          >{phone812String}
+        </a>
+      </div>
 
       <a
-        href="/retro"
-        class="text-sm my-1 mx-auto transition-colors hover:text-neutral-700 lg:hidden"
-        role="menuitem"
-        itemprop="url"
-      >
-        <meta
-          name="name"
-          content="Ретро-радиаторы"
-        />
-        Ретро-радиаторы
-      </a>
-      <a
-        href="/convector"
-        class="text-sm my-1 mx-auto transition-colors hover:text-neutral-700 lg:hidden"
-        role="menuitem"
-        itemprop="url"
-      >
-        <meta
-          name="name"
-          content="Внутрипольные конвекторы"
-        />
-        Внутрипольные конвекторы
-      </a>
-      <div class="border-emerald-700 border-b w-full lg:hidden"></div>
-      <a
         href="/about"
-        class="text-sm lg:text-xs my-1 mx-auto transition-colors hover:text-neutral-700"
+        class="text-sm lg:text-xs my-1 mx-auto transition-colors hover:text-red-600"
         role="menuitem"
         itemprop="url"
       >
@@ -234,7 +558,7 @@ const {
       </a>
       <a
         href="/delivery"
-        class="text-sm lg:text-xs my-1 hover:text-neutral-700 mx-auto transition-colors"
+        class="text-sm lg:text-xs my-1 hover:text-red-600 mx-auto transition-colors"
         role="menuitem"
         itemprop="url"
       >
@@ -245,26 +569,8 @@ const {
         Доставка и оплата
       </a>
       <a
-        href="/"
-        data-testid="velar_logo"
-        class="hidden lg:block lg:w-48 hover:opacity-50 transition-opacity"
-        aria-label="Ссылка на главную страницу"
-        role="menuitem"
-      >
-        <Picture
-          loading="eager"
-          widths={[192, 384]}
-          width={192}
-          height={47}
-          sizes="192px"
-          aspectRatio="1052:255"
-          src="/images/logo.png"
-          alt="Логотип Velar"
-        />
-      </a>
-      <a
         href="/guarantees"
-        class="lg:hidden text-sm lg:text-xs my-1 hover:text-neutral-700 mx-auto transition-colors"
+        class="lg:hidden text-sm lg:text-xs my-1 hover:text-red-600 mx-auto transition-colors"
         role="menuitem"
         itemprop="url"
       >
@@ -275,7 +581,7 @@ const {
       >
       <a
         href="/request"
-        class="text-sm lg:text-xs my-1 hover:text-neutral-700 mx-auto transition-colors"
+        class="text-sm lg:text-xs my-1 hover:text-red-600 mx-auto transition-colors"
         role="menuitem"
         itemprop="url"
         ><meta
@@ -286,7 +592,7 @@ const {
       </a>
       <a
         href="/info"
-        class="text-sm lg:text-xs my-1 hover:text-neutral-700 mx-auto transition-colors"
+        class="text-sm lg:text-xs my-1 hover:text-red-600 mx-auto transition-colors"
         role="menuitem"
         itemprop="url"
         ><meta
@@ -296,69 +602,6 @@ const {
         Полезная информация
       </a>
     </div>
-  </div>
 
-  <!-- Large Screen Catalog Menu -->
-  <div
-    aria-label="Разделы каталога продукции"
-    role="navigation"
-    class="container hidden lg:flex flex-row justify-center gap-8 items-center my-4 mx-auto"
-  >
-    <a
-      href="/design"
-      class="text-xs text-neutral-900 font-light hover:underline"
-      itemprop="url"
-      ><meta
-        name="name"
-        content="Дизайн-радиаторы"
-      />
-      Дизайн-радиаторы
-    </a>
-    <a
-      href="/columns"
-      class="text-xs text-neutral-900 font-light hover:underline"
-      itemprop="url"
-      ><meta
-        name="name"
-        content="Трубчатые радиаторы"
-      />
-      Трубчатые радиаторы
-    </a>
-    <a
-      href="/floor"
-      class="text-xs text-neutral-900 font-light hover:underline"
-      itemprop="url"
-      ><meta
-        name="name"
-        content="Напольные радиаторы"
-      />
-      Напольные радиаторы
-    </a>
-    <a
-      href="/retro"
-      class="text-xs text-neutral-900 font-light hover:underline"
-      itemprop="url"
-      ><meta
-        name="name"
-        content="Ретро-радиаторы"
-      />
-      Ретро-радиаторы
-    </a>
-    <!-- <a
-      href='/columns'
-      class='text-xs text-neutral-900 font-light hover:underline'
-    >
-      Полотенцесушители
-    </a> -->
-    <a
-      href="/convector"
-      class="text-xs text-neutral-900 font-light hover:underline"
-      itemprop="url"
-      ><meta
-        name="name"
-        content="Внутрипольные конвекторы"
-      />
-      Внутрипольные конвекторы
-    </a>
-  </div>
+  
 </nav>
