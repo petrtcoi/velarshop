@@ -15,18 +15,28 @@ const {
 
 <script>
   const menuButton = document.querySelector("#top_nav_burger_menu");
+  const closeMenu = document.querySelector("#top_nav_close_menu");
   const menuBar = document.querySelector('[role="menubar"]');
 
   menuButton?.addEventListener("click", () => {
-    const isMenuExpanded = menuButton.getAttribute("aria-expanded") === "true";
-    menuButton.setAttribute("aria-expanded", isMenuExpanded ? "true" : "false");
-    menuButton.setAttribute(
-      "aria-label",
-      isMenuExpanded ? "Закрыть меню" : "Открыть меню"
-    );
-    menuBar?.classList.toggle("hidden");
+    menuBar?.classList.remove("hidden");
     menuBar?.classList.toggle("flex");
+    document.body.classList.add("overflow-hidden");
   });
+
+  closeMenu?.addEventListener("click", () => {
+    menuBar?.classList.add("hidden");
+    menuBar?.classList.toggle("flex");
+    document.body.classList.remove("overflow-hidden");
+
+  });
+  document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    menuBar?.classList.add("hidden");
+    menuBar?.classList.remove("flex"); // лучше remove, а не toggle
+    document.body.classList.remove("overflow-hidden");
+  }
+});
 </script>
 
 <nav
@@ -45,8 +55,8 @@ const {
         <Picture
           loading="eager"
           widths={[100, 140, 200, 300]}
-          width={140}
-          height={34}
+          width={115}
+          height={28}
           sizes="(max-width: 640px) 140px,  176px"
           aspectRatio="1052:255"
           src="/images/logo.png"
@@ -57,7 +67,7 @@ const {
 
       <!-- Phones -->
       <div
-        class="lg:hidden flex flex-col gap-3"
+        class="lg:hidden flex flex-col gap-1"
         aria-label="Телефоны для связи"
       >
         <a
@@ -78,8 +88,6 @@ const {
       <button
         id="top_nav_burger_menu"
         data-testid="burger_menu"
-        aria-label="Открыть меню"
-        aria-expanded="false"
         class="lg:hidden text-neutral-900 hover:text-neutral-700 rounded-sm focus:outline-none focus-visible:ring-2 ring-neutral-900 transition-colors"
       >
         <svg
@@ -103,8 +111,11 @@ const {
     <div
       role="menubar"
       aria-label="Главное меню"
-      class="hidden flex-col gap-4 relative left-0 items-center right-0 top-18 p-6 text-center text-md pb-10 bg-teal-600 lg:py-2 lg:flex-row lg:static lg:shadow-none lg:justify-center lg:w-full lg:flex"
+      class="hidden flex-col gap-4 fixed left-0  right-0 top-0 bottom-0 items-center  p-6 text-center text-md pb-10 bg-teal-600 lg:py-2 lg:flex-row lg:static lg:shadow-none lg:justify-center lg:w-full lg:flex"
     >
+     <div class="fixed right-[20px] top-[20px]" id="top_nav_close_menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </div>
       <div class="my-2 flex flex-row gap-20 justify-between lg:hidden z-50">
         <a
           href={`https://vk.com/${vk}`}
@@ -196,12 +207,6 @@ const {
         />
         Ретро-радиаторы
       </a>
-      <!-- <a
-        href='/'
-        class='text-sm my-1 mx-auto transition-colors hover:text-neutral-700 lg:hidden'
-      >
-        Полотенцесушители
-      </a> -->
       <a
         href="/convector"
         class="text-sm my-1 mx-auto transition-colors hover:text-neutral-700 lg:hidden"
