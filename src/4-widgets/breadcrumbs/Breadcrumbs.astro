@@ -17,7 +17,7 @@ const lastIndex = items.length - 1;
 const toAbs = (u: string) => {
   try {
     // Astro.site берётся из astro.config.mjs → site: 'https://example.com'
-    const base = Astro.site ?? Astro.url; // Astro.url — текущий URL страницы
+    const base = Astro.site ?? Astro.url; // Astro.url - текущий URL страницы
     return new URL(u, base).toString();
   } catch {
     return u; // на крайний случай
@@ -35,7 +35,7 @@ const jsonLd = {
       "position": i + 1,
       "item": {
         "@type": "WebPage",
-        "@id": abs,     // <— НИКОГДА не 'id', только '@id'
+        "@id": abs,     // <- НИКОГДА не 'id', только '@id'
         "name": c.title
       }
     };
