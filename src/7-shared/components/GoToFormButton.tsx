@@ -24,8 +24,8 @@ export function GoToFormButton() {
 			class='hover:opacity-90 z-100'
 		>
 			<div class='bg-teal-600 z-100 fixed bottom-0 left-0 right-0  md:w-[320px] flex flex-col gap-[2px] h-[48px] items-center justify-center md:rounded-tr-xl text-white'>
-				<div class='text-[12px] leading-[13px] font-light'>🔥 Получить расчёт за 1 день</div>
-				<div class='text-[10px] leading-[10px font-light'>Пришлем предложение на почту или в мессенджер</div>
+				<div class='text-[12px] leading-[13px] font-light'>🔥 Узнать цену под мои параметры</div>
+				<div class='text-[10px] leading-[10px font-light'>В мессенджере • в течение дня • без звонков</div>
 			</div>
 		</a>
 	)
