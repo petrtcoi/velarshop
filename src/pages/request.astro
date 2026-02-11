@@ -7,18 +7,26 @@ import Layout from "@shared/layouts/Layout.astro";
   title='🔥 Расчёт радиаторов и конвекторов | VelarShop.ru'
   hideShoppingCartWidgt={true}
 >
-  <div>
-   <h1 class='mt-6 mb-1 text-4xl tracking-tight'>Получите персональный расчёт радиаторов Velar</h1>
+<div class='flex flex-col mx-auto p-5 md:px-10 max-w-4xl'>
+  <h1 class='mt-6 mb-1 text-4xl tracking-tight'>Запрос на подбор радиаторов Rifar Tubog</h1>
 
-		<div class='mt-6 text-sm text-justify font-light mb-6 m-auto max-w-[800px] leading-relaxed'>
-			Опишите ваш проект ниже, и наши специалисты оперативно подготовят полный тепловой расчет и финальную смету (с
-			учетом скидки и доставки). Мы отправим результат в выбранный Вами мессенджер или на почту в течение дня. Мы
-			уважаем Ваше время и <span class='font-[700] text-teal-600'>не будем звонить без Вашего прямого запроса</span>.
-		</div>
-    <div class='border-[1px] border-neutral-500 rounded-lg py-2 border-t-[1px] border-dotted'>
-      <div class='uCalc_472580'></div>
-    </div>
+  <div class='mt-2 mb-8 leading-relaxed text-sm font-light'>
+    Пожалуйста, заполните форму ниже. Мы подготовим расчет цены и подберем подходящий радиатор Rifar Tubog под ваш
+    объект.
   </div>
+
+  <div id='leadWidget'></div>
+  <script
+    src='/widgets/lead-widget.js'
+    data-mount='#leadWidget'
+    data-store='VelarShop.ru'
+    data-primary='#0d9488'
+    data-border='#0d9488'
+    data-success-url='/success'
+    data-privacy-url='/privacy'
+    defer
+  ></script>
+</div>
 </Layout>
 
 <script>
