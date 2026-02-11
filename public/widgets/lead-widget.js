@@ -13,7 +13,7 @@
 		radius: Number(script.dataset.radius || 18),
 		maxWidth: Number(script.dataset.maxWidth || 980),
 		maxFileMb: 5,
-		required: (script.dataset.required || 'name,email,city,wishes').split(',').map(x => x.trim()),
+		required: (script.dataset.required || 'name,email,wishes').split(',').map(x => x.trim()),
 		privacyUrl: script.dataset.privacyUrl || '#',
 	}
 
