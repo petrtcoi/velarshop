@@ -26,7 +26,7 @@ const getOrderConfirmationEmailHtml = ({ formData }: Props): string => {
   if (formData.name.length) html += `<span style="white-space:pre">Имя:&#9; ${ formData.name }</span><br>`
   if (formData.city.length) html += `<span style="white-space:pre">Город:&#9; ${ formData.city }</span><br>`
   if (formData.phone?.length) html += `<span style="white-space:pre">Тел:&#9;&#9; ${ formData.phone }</span><br>`
-  if (formData.email?.length) html += `<span style="white-space:pre">Email:&#9; ${ formData.email }</span><br>`
+  if (formData.email?.length) html += `<span style="white-space:pre">Электронная почта:&#9; ${ formData.email }</span><br>`
   // html += '</ul>'
   if (formData.comments?.length) html += `<p>Комментарий к заказу:<br/>${ formData.comments }</p>`
 
@@ -41,7 +41,7 @@ const getOrderConfirmationEmailHtml = ({ formData }: Props): string => {
 
   if (items.length > 0) html += `<p>Итого: <strong>${ cartTotalPrice.toLocaleString() } руб.</strong></p > `
 
-  html += `<br/><br/><hr/ > <p>С уважением, <br/>Магазин дизайн-радиаторов Velar - velarshop.ru<br/ > <br/>сайт: ${ contacts.website }<br/ > тел.: +7 ${ contacts.phone495String } <br/>тел.: +7 ${ contacts.phone812String }<br/ > email: ${ contacts.email } </p>`
+  html += `<br/><br/><hr/ > <p>С уважением, <br/>Магазин дизайн-радиаторов Velar - velarshop.ru<br/ > <br/>сайт: ${ contacts.website }<br/ > тел.: +7 ${ contacts.phone495String } <br/>тел.: +7 ${ contacts.phone812String }<br/ > электронная почта: ${ contacts.email } </p>`
   html += '<img src="https://velarshop.ru/images/logo.jpg" height="50px" width="auto"/>'
 
   return html

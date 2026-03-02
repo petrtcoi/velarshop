@@ -27,7 +27,7 @@ const errors = computed(() => {
 	if (!name.value.trim()) errs.name = 'Пожалуйста, укажите ваше имя'
 	if (!city.value.trim()) errs.city = 'Пожалуйста, укажите, куда требуется доставка'
 	if (!phone.value.trim() && !email.value.trim())
-		errs.contacts = 'Пожалуйста, как можно с вами связаться: телефон и/или email'
+		errs.contacts = 'Пожалуйста, как можно с вами связаться: телефон и/или электронная почта'
 	return errs
 })
 const isErrors = computed(() => !!Object.keys(errors.value).length)

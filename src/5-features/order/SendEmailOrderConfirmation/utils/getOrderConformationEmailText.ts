@@ -23,7 +23,7 @@ const getOrderConfirmationEmailText = ({ formData }: Props): string =>
   if (formData.name.length) text += `Имя:\t ${ formData.name }\n`
   if (formData.city.length) text += `Город:\t ${ formData.city }\n`
   if (formData.phone?.length) text += `Тел:\t\t ${ formData.phone }\n`
-  if (formData.email?.length) text += `Email:\t ${ formData.email }\n`
+  if (formData.email?.length) text += `Электронная почта:\t ${ formData.email }\n`
   if (formData.comments?.length) text += `Комментарий: ${ formData.comments }\n`
 
   if (items.length > 0) text += `\n\nЗАКАЗ:\n\n`

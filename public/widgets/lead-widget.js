@@ -165,7 +165,7 @@
       <div class="checks" id="contactMethods">
         <label class="check"><input type="checkbox" name="channels" value="whatsapp" checked> WhatsApp</label>
         <label class="check"><input type="checkbox" name="channels" value="telegram" checked> Telegram</label>
-        <label class="check"><input type="checkbox" name="channels" value="email"> Email</label>
+        <label class="check"><input type="checkbox" name="channels" value="email"> Электронная почта</label>
       </div>
 
       <div class="sectionTitle">Ваши пожелания</div>
@@ -189,7 +189,7 @@
         </div>
         <div class="field">
           <label>Ваша электронная почта<span class="reqMark">*</span></label>
-          <input type="email" name="email" placeholder="Email" />
+          <input type="email" name="email" placeholder="name@example.com" />
         </div>
       </div>
 
