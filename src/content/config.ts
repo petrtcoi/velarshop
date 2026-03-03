@@ -15,6 +15,8 @@ const articleSchema = defineCollection({
     slug: z.string(),
     thumbnail: z.string(),
     sortRank: z.number(),
+    metaTitle: z.string().optional(),
+    metaDescription: z.string().optional(),
   }),
 });
 

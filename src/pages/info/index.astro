@@ -27,10 +27,11 @@ const crumbs = [
         .sort((a, b) => b.data.sortRank - a.data.sortRank)
         .map((article) => {
           const { title, short_description, slug, thumbnail } = article.data;
+          const safeThumbnail = thumbnail ?? "";
 
           const imgPath =
-            thumbnail.length > 0
-              ? `/images/articles/${thumbnail}`
+            safeThumbnail.length > 0
+              ? `/images/articles/${safeThumbnail}`
               : "/images/articles/empty.jpg";
           const articleHref = `/info/${slug}`;
 
