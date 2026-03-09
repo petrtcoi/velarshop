@@ -1,0 +1,31 @@
+
+> velar_shop@0.0.1 build
+> astro build
+
+ error   `astro sync` command failed to generate content collection types: end of the stream or a document separator is expected
+  Hint:
+    Browser APIs are not available on the server.
+    
+    If the code is in a framework component, try to access these objects after rendering using lifecycle methods or use a `client:only` directive to make the component exclusively run on the client.
+    
+    See https://docs.astro.build/en/guides/troubleshooting/#document-or-window-is-not-defined for more information.
+    		
+  File:
+    /Users/petrtcoi/Desktop/_code/velarshop/node_modules/astro/dist/core/sync/index.js:77:11
+  Code:
+    76 |     }
+    > 77 |     throw new AstroError(
+         |           ^
+      78 |       {
+      79 |         ...AstroErrorData.GenerateContentTypesError,
+      80 |         message: AstroErrorData.GenerateContentTypesError.message(safeError.message)
+  Stacktrace:
+GenerateContentTypesError: `astro sync` command failed to generate content collection types: end of the stream or a document separator is expected
+    at syncInternal (file:///Users/petrtcoi/Desktop/_code/velarshop/node_modules/astro/dist/core/sync/index.js:77:11)
+    at async AstroBuilder.setup (file:///Users/petrtcoi/Desktop/_code/velarshop/node_modules/astro/dist/core/build/index.js:79:21)
+    at async AstroBuilder.run (file:///Users/petrtcoi/Desktop/_code/velarshop/node_modules/astro/dist/core/build/index.js:150:23)
+    at async build (file:///Users/petrtcoi/Desktop/_code/velarshop/node_modules/astro/dist/core/build/index.js:37:3)
+    at async build (file:///Users/petrtcoi/Desktop/_code/velarshop/node_modules/astro/dist/cli/build/index.js:20:3)
+    at async runCommand (file:///Users/petrtcoi/Desktop/_code/velarshop/node_modules/astro/dist/cli/index.js:110:7)
+    at async cli (file:///Users/petrtcoi/Desktop/_code/velarshop/node_modules/astro/dist/cli/index.js:148:5)
+
