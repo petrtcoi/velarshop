@@ -9,24 +9,32 @@ export interface Props {
 	title?: string
 	description?: string
 	canonicalUrl?: string
+	robots?: string
+	ogImageUrl?: string
 	paddings?: boolean
 	hideShoppingCartWidgt?: boolean
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
-let canonicalPath = canonicalURL.pathname
-if (canonicalPath.length > 1 && canonicalPath.endsWith('/')) {
-	canonicalPath = canonicalPath.slice(0, -1)
-}
-canonicalURL.pathname = canonicalPath
 
 const {
 	title = 'Velar дизайн-радиаторы отопления | VelarShop.ru',
 	description = 'Фирменный магазин дизайнерских радиаторов отопления Velar. Доставка по России. Официальная гарантия. Полный модельный ряд и быстрые сроки производства.',
+	robots,
+	ogImageUrl = '/images/logo-black.png',
 	paddings = true,
 	hideShoppingCartWidgt = false,
 	canonicalUrl
 } = Astro.props as Props as Props
+
+const baseUrl = Astro.site ?? Astro.url
+const canonicalHref = (
+	canonicalUrl ? new URL(canonicalUrl, baseUrl) : canonicalURL
+)
+	.toString()
+	.split('?')[0]
+	.split('#')[0]
+const ogImageHref = new URL(ogImageUrl, baseUrl).toString()
 ---
 
 <!DOCTYPE html>
@@ -34,7 +42,7 @@ const {
 	<head>
 		<link
 			rel={'canonical'}
-			href={canonicalUrl || canonicalURL.toString().split('?')[0].split('#')[0]}
+			href={canonicalHref}
 		/>
 		<meta charset='UTF-8' />
 		<meta
@@ -81,6 +89,56 @@ const {
 		<meta
 			name='description'
 			content={description}
+		/>
+		{robots && (
+			<meta
+				name='robots'
+				content={robots}
+			/>
+		)}
+		<meta
+			property='og:type'
+			content='website'
+		/>
+		<meta
+			property='og:site_name'
+			content='VelarShop.ru'
+		/>
+		<meta
+			property='og:locale'
+			content='ru_RU'
+		/>
+		<meta
+			property='og:url'
+			content={canonicalHref}
+		/>
+		<meta
+			property='og:title'
+			content={title}
+		/>
+		<meta
+			property='og:description'
+			content={description}
+		/>
+		<meta
+			property='og:image'
+			content={ogImageHref}
+		/>
+		<meta
+			name='twitter:card'
+			content='summary_large_image'
+		/>
+		<meta
+			name='twitter:title'
+			content={title}
+		/>
+		<meta
+			name='twitter:description'
+			content={description}
+		/>
+		<meta
+			name='twitter:image'
+			content={ogImageHref}
 		/>
 		<!-- Yandex.Metrika counter -->
 		<script type='text/javascript'>

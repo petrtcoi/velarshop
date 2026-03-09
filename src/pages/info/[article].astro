@@ -17,7 +17,7 @@ type Props = {
 };
 const { article } = Astro.props as Props;
 const { Content } = await article.render();
-const { title, short_description } = article.data;
+const { title, short_description, metaTitle, metaDescription } = article.data;
 
 const crumbs = [
 	{title: 'Главная', url: '/'},
@@ -27,8 +27,8 @@ const crumbs = [
 ---
 
 <Layout
-  title={`${title} | VelarShop.ru`}
-  description={short_description}
+  title={metaTitle || `${title} | VelarShop.ru`}
+  description={metaDescription || short_description}
 >
    <section class="mb-3">
 <Breadcrumbs items={crumbs} />

@@ -21,6 +21,7 @@ const { Content } = await page.render();
 <Layout
   title={page.data.title}
   description={page.data.description}
+  robots={page.data.noindex ? "noindex,follow" : undefined}
 >
   <article class='container mx-auto p-5 md:px-10 max-w-4xl prose-sm'>
     <Content />

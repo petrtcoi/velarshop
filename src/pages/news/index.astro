@@ -6,7 +6,10 @@ import { getCollection } from 'astro:content';
 const articles = await getCollection('news');
 ---
 
-<Layout title="Новости | дизайн радиаторы и конвекторы | VelarShop.ru">
+<Layout
+  title="Новости | дизайн радиаторы и конвекторы | VelarShop.ru"
+  description="Новости Velar: обновления продукции, цены, сроки производства и события компании."
+>
   <h1 class="text-2xl">Новости</h1>
   <div
     id="articles_list"

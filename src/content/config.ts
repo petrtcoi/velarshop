@@ -5,6 +5,7 @@ const pageSchema = defineCollection({
     title: z.string(),
     slug: z.string(),
     description: z.string().optional(),
+    noindex: z.boolean().optional(),
   }),
 });
 

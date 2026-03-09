@@ -43,7 +43,7 @@ const radiatorName = `${model.prefix} Velar ${getRadiatorTitle({
 	})}`
 
 const description = `Купить ${radiatorName} c доставкой по России. Официальная гарантия. Полный модельный ряд и быстрые сроки производства. https://velarshop.ru${getModelSlug(model)}`
-const canonicalUrl = `https://velarshop.ru${getModelSlug(model)}`
+const canonicalUrl = `https://velarshop.ru${getModelSlug(model)}/`
 
 
 
@@ -73,7 +73,7 @@ const radiatorCrumbTitle =getRadiatorTitle({
 const crumbs = [
 	{title: 'Главная', url: '/'},
 	{title: modelCrumbTitle, url: modelCrumbUrl},
-	{title: `Velar ${model.name}`, url: `/model/${model.slug}`},
+	{title: `Velar ${model.name}`, url: getModelSlug(model)},
 	{title: `${radiatorCrumbTitle}`, url: `/model/${model.slug}/${radiator.slug}`},
 ]
 ---
@@ -81,6 +81,7 @@ const crumbs = [
 <Layout
 		title={`${radiatorName} купить в VelarShop.ru`}
 		description={description}
+	robots='noindex,follow'
 	canonicalUrl={canonicalUrl}
 >
 <section class="mb-3">
