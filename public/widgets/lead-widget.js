@@ -6,7 +6,7 @@
 		mount: script.dataset.mount || '#leadWidget',
 		webhook: 'https://arufefet.beget.app/webhook/calc-notify',
 		successUrl: script.dataset.successUrl || 'https://homekomfort.ru/thanks', // УКАЖИ АДРЕС ТУТ
-		store: script.dataset.store || 'MG-Radiators.ru',
+		store: script.dataset.store || 'Arbonia-Store.ru',
 		primary: script.dataset.primary || '#018ed2',
 		border: script.dataset.border || '#1e1e1e',
 		borderWidth: Number(script.dataset.borderWidth || 3),
@@ -18,6 +18,9 @@
 	}
 
 	const mountEl = document.querySelector(cfg.mount) || script.previousElementSibling || document.body
+	if (mountEl.dataset.leadWidgetMounted === '1') return
+	mountEl.dataset.leadWidgetMounted = '1'
+
 	const host = document.createElement('div')
 	mountEl.appendChild(host)
 	const shadow = host.attachShadow({ mode: 'open' })
@@ -189,7 +192,7 @@
         </div>
         <div class="field">
           <label>Ваша электронная почта<span class="reqMark">*</span></label>
-          <input type="email" name="email" placeholder="name@example.com" />
+          <input type="email" name="email" placeholder="Электронная почта" />
         </div>
       </div>
 
