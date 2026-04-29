@@ -66,7 +66,7 @@ const catalogLinks = [
 			/>
 		</a>
 
-		<div class='desktop-menu'>
+		<div class='desktop-menu tracking-tight!'>
 			<div class='catalog-dropdown'>
 				<a href='/#catalog' class='menu-link' itemprop='url'>
 					Каталог <span aria-hidden='true'>▾</span>
@@ -82,7 +82,7 @@ const catalogLinks = [
 			</div>
 			<a href='/delivery' class='menu-link' itemprop='url'>Доставка и оплата</a>
 			<a href='/about' class='menu-link' itemprop='url'>О магазине</a>
-			<a href='/info' class='menu-link' itemprop='url'>Полезная информация</a>
+			<a href='/info' class='menu-link' itemprop='url'>Информация</a>
 		</div>
 
 		<div class='desktop-right'>
@@ -169,8 +169,8 @@ const catalogLinks = [
 		display: flex;
 		align-items: center;
 		gap: 30px;
-		font-size: 15px;
-		font-weight: 500;
+		font-size: 13px;
+		font-weight: 300;
 		line-height: 1;
 		color: #181818;
 	}
@@ -221,13 +221,13 @@ const catalogLinks = [
 	}
 
 	.catalog-item:hover {
-		background: #fef2f2;
+		/* background: #fef2f2; */
 		color: #a30f19;
 	}
 
 	.catalog-item-title {
 		display: block;
-		font-size: 15px;
+		font-size: 13px;
 		font-weight: 600;
 		line-height: 1.2;
 	}
@@ -235,7 +235,7 @@ const catalogLinks = [
 	.catalog-item-text {
 		display: block;
 		margin-top: 5px;
-		font-size: 12px;
+		font-size: 13px;
 		line-height: 1.3;
 		color: #666;
 	}
@@ -247,7 +247,7 @@ const catalogLinks = [
 	}
 
 	.phone-link {
-		font-size: 17px;
+		font-size: 14px;
 		font-weight: 600;
 		line-height: 1;
 		white-space: nowrap;
@@ -260,12 +260,12 @@ const catalogLinks = [
 	}
 
 	.header-cta {
-		background: #c1121f;
-		color: #fff;
-		border-radius: 12px;
+		border: 1px solid #c1121f;
+		color: #c1121f;
+		border-radius: 3px;
 		padding: 12px 22px;
-		font-size: 15px;
-		font-weight: 600;
+		font-size: 13px;
+		font-weight: 300 !important;
 		line-height: 1;
 		height: 48px;
 		display: inline-flex;
@@ -275,7 +275,9 @@ const catalogLinks = [
 	}
 
 	.header-cta:hover {
-		background: #a30f19;
+		background: #c1121f;
+		color: #fff;
+		font-weight: 200 !important;
 	}
 
 	.mobile-right {

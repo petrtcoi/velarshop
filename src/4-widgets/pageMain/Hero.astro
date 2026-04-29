@@ -30,12 +30,7 @@ const cards = [
 	},
 ]
 
-const features = [
-	{ label: 'Производство под заказ', icon: 'hammer' },
-	{ label: 'Цвета RAL', icon: 'palette' },
-	{ label: 'Гарантия 10 лет', icon: 'shield' },
-	{ label: 'Доставка по России', icon: 'truck' },
-]
+
 ---
 
 <section id='hero' class='hero'>
@@ -45,13 +40,13 @@ const features = [
 	</picture>
 	<div class='hero-overlay'></div>
 
-	<div class='hero-content'>
-		<div class='hero-left'>
+	<div class='hero-content items-stretch'>
+		<div class='hero-left flex flex-col justify-between h-full'>
+			<div>
 			<h1>
-				Дизайнерские радиаторы,
-				которые становятся частью интерьера
+				Радиаторы Velar — дизайнерские решения для интерьера
 			</h1>
-			<p>
+			<p class="font-thin!">
 				Подберём решение под ваш проект: по мощности, размерам,
 				цвету и стилю помещения
 			</p>
@@ -59,11 +54,32 @@ const features = [
 				<a href='/request' class='hero-btn hero-btn-primary'>Подобрать радиатор</a>
 				<a href='#catalog' class='hero-btn hero-btn-secondary'>Смотреть каталог</a>
 			</div>
+			</div>
+
+			<div class="grid grid-cols-4 space-x-4 text-[16px] text-white opacity-80 font-thin!">
+				<div class="flex flex-row justify-start items-center gap-3">
+					<svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-factory-icon lucide-factory shrink-0"><path d="M12 16h.01"/><path d="M16 16h.01"/><path d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.769-.422l-4.462 2.844A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.769-.422L9.77 10.922A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/><path d="M8 16h.01"/></svg>
+					<div>Производство под заказ</div>
+				</div>
+				<div class="flex flex-row justify-start items-center gap-3">
+					<svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-palette-icon lucide-palette shrink-0"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/></svg>
+					<div>Цвета RAL</div>
+				</div>
+				<div class="flex flex-row justify-start items-center gap-3">
+					<svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-icon lucide-shield shrink-0"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+					<div>Гарантия до 10 лет</div>
+				</div>
+				<div class="flex flex-row justify-start items-center gap-3">
+					<svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-truck-icon lucide-truck shrink-0"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+					<div>Доставка по России</div>
+				</div>
+			</div>
 		</div>
 
 		<div class='hero-cards'>
 			{cards.map(card => (
-				<a href={card.href} class='hero-card'>
+				<a href={card.href} class='bg-white/90 hover:bg-white flex flex-row w-[320px] rounded-[3px] p-[16px] gap-6 items-center'>
+				<div class="flex flex-col justify-center items-start gap-2">
 					<div class='hero-card-icon' aria-hidden='true'>
 						{card.icon === 'tubular' && (
 							<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'>
@@ -105,51 +121,14 @@ const features = [
 						<div class='hero-card-title'>{card.title}</div>
 						<div class='hero-card-desc'>{card.desc}</div>
 					</div>
+					</div>
 					<img src={card.image} alt={card.title} class='hero-card-image' loading='eager' />
 				</a>
 			))}
 		</div>
 	</div>
 
-	<div class='hero-features'>
-		{features.map((feature, index) => (
-			<div class={`hero-feature ${index === 0 ? 'hero-feature-first' : ''}`}>
-				<span class='hero-feature-icon' aria-hidden='true'>
-					{feature.icon === 'hammer' && (
-						<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'>
-							<path d='M14 12L4 22' />
-							<path d='M18 8l3-3a1.4 1.4 0 0 0-2-2l-3 3' />
-							<path d='M15 5l4 4' />
-							<path d='M2 12l10 10' />
-						</svg>
-					)}
-					{feature.icon === 'palette' && (
-						<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'>
-							<path d='M12 22a10 10 0 1 1 0-20 8 8 0 0 1 0 16h-1a2 2 0 0 0 0 4h1z' />
-							<circle cx='7.5' cy='10.5' r='1' />
-							<circle cx='12' cy='7.5' r='1' />
-							<circle cx='16.5' cy='10.5' r='1' />
-						</svg>
-					)}
-					{feature.icon === 'shield' && (
-						<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'>
-							<path d='M12 2l8 4v6c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V6l8-4z' />
-							<path d='m9 12 2 2 4-4' />
-						</svg>
-					)}
-					{feature.icon === 'truck' && (
-						<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'>
-							<path d='M10 17H6a2 2 0 0 1-2-2V7h10v10h-1' />
-							<path d='M14 10h4l3 3v4h-1' />
-							<circle cx='7.5' cy='17.5' r='1.5' />
-							<circle cx='17.5' cy='17.5' r='1.5' />
-						</svg>
-					)}
-				</span>
-				<span>{feature.label}</span>
-			</div>
-		))}
-	</div>
+	
 </section>
 
 <section class='category-entry-section'>
@@ -208,7 +187,7 @@ const features = [
 		z-index: 2;
 		max-width: 1180px;
 		margin: 0 auto;
-		padding: 86px 20px 32px;
+		padding: 70px 20px 32px;
 		display: grid;
 		grid-template-columns: minmax(0, 1fr) 380px;
 		gap: 56px;
@@ -217,10 +196,10 @@ const features = [
 
 	.hero-left h1 {
 		font-family: 'Playfair Display', serif;
-		font-size: 54px;
-		line-height: 1.08;
-		font-weight: 600;
-		letter-spacing: -0.02em;
+		font-size: 42px;
+		line-height: 1.2;
+		font-weight: 300 !important;
+		/* letter-spacing: -0.02em; */
 		color: #fff;
 		max-width: 620px;
 		margin: 0 0 28px;
@@ -229,7 +208,7 @@ const features = [
 	.hero-left p {
 		font-size: 18px;
 		line-height: 1.55;
-		font-weight: 400;
+		font-weight: 200 !important;
 		color: rgba(255, 255, 255, 0.88);
 		max-width: 560px;
 		margin: 0 0 36px;
@@ -244,13 +223,16 @@ const features = [
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		border-radius: 12px;
+		border-radius: 3px;
 		padding: 16px 28px;
-		font-size: 16px;
-		font-weight: 600;
+		font-size: 13px;
+		font-weight: 300;
 		min-width: 210px;
 		text-decoration: none;
 		transition: background 0.2s, border-color 0.2s;
+	}
+	.hero-btn:hover {
+		opacity: 0.8;
 	}
 
 	.hero-btn-primary {
@@ -273,12 +255,13 @@ const features = [
 	.hero-cards {
 		display: flex;
 		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-end;
 		gap: 12px;
-		padding-top: 70px;
 	}
 
 	.hero-card {
-		min-height: 92px;
+		min-height: 142px;
 		background: rgba(255, 255, 255, 0.96);
 		border: 1px solid rgba(255, 255, 255, 0.7);
 		border-radius: 14px;
@@ -308,7 +291,7 @@ const features = [
 	}
 
 	.hero-card-title {
-		font-size: 17px;
+		font-size: 14px;
 		line-height: 1.2;
 		font-weight: 700;
 		color: #111;
@@ -316,14 +299,15 @@ const features = [
 
 	.hero-card-desc {
 		margin-top: 6px;
-		font-size: 14px;
+		font-size: 12px;
+		font-weight: 300;
 		line-height: 1.35;
 		color: #666;
 	}
 
 	.hero-card-image {
-		width: 76px;
-		height: 58px;
+		width: 100px;
+		height: 100px;
 		border-radius: 8px;
 		object-fit: cover;
 	}
@@ -473,11 +457,12 @@ const features = [
 
 		.hero-left {
 			max-width: 340px;
+	
 		}
 
 		.hero-left h1 {
-			font-size: 32px;
-			line-height: 1.08;
+			font-size: 26px;
+			line-height: 1.2;
 			max-width: 320px;
 			margin-bottom: 18px;
 		}
