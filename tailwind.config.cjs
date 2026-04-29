@@ -3,7 +3,12 @@ module.exports = {
   content: [ './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}' ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: [ 'Inter', 'system-ui', 'sans-serif' ],
+        heading: [ 'Geist', 'Geist Sans', 'system-ui', 'sans-serif' ],
+      },
+    },
   },
   plugins: [
     require( '@tailwindcss/typography' ),

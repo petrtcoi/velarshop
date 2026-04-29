@@ -16,7 +16,7 @@ const cards = [
 	},
 	{
 		title: 'Конвекторы',
-		desc: 'Для панорамных окон',
+		desc: 'Для панорамных окон. С вентиляторами и без',
 		href: '/convector',
 		image: '/images/articles/convector.jpeg',
 		icon: 'convector',
@@ -41,12 +41,12 @@ const cards = [
 	<div class='hero-overlay'></div>
 
 	<div class='hero-content items-stretch'>
-		<div class='hero-left flex flex-col justify-between h-full'>
+		<div class='hero-left flex flex-col justify-between h-full min-h-[460px]'>
 			<div>
 			<h1>
-				Радиаторы Velar — дизайнерские решения для интерьера
+				Радиаторы Velar - дизайнерские решения для интерьера
 			</h1>
-			<p class="font-thin!">
+			<p class="font-[300]!">
 				Подберём решение под ваш проект: по мощности, размерам,
 				цвету и стилю помещения
 			</p>
@@ -78,7 +78,7 @@ const cards = [
 
 		<div class='hero-cards'>
 			{cards.map(card => (
-				<a href={card.href} class='bg-white/90 hover:bg-white flex flex-row w-[320px] rounded-[3px] p-[16px] gap-6 items-center'>
+				<a href={card.href} class='bg-white/95 hover:bg-white flex flex-row w-[320px] rounded-[3px] p-[16px] gap-6 items-center justify-between'>
 				<div class="flex flex-col justify-center items-start gap-2">
 					<div class='hero-card-icon' aria-hidden='true'>
 						{card.icon === 'tubular' && (
@@ -153,9 +153,10 @@ const cards = [
 	.hero {
 		position: relative;
 		width: 100%;
-		min-height: 720px;
+		min-height: 520px;
 		overflow: hidden;
 	}
+
 
 	.hero-picture {
 		position: absolute;
@@ -187,7 +188,7 @@ const cards = [
 		z-index: 2;
 		max-width: 1180px;
 		margin: 0 auto;
-		padding: 70px 20px 32px;
+		padding: 70px 20px 48px;
 		display: grid;
 		grid-template-columns: minmax(0, 1fr) 380px;
 		gap: 56px;
@@ -195,11 +196,11 @@ const cards = [
 	}
 
 	.hero-left h1 {
-		font-family: 'Playfair Display', serif;
-		font-size: 42px;
-		line-height: 1.2;
-		font-weight: 300 !important;
-		/* letter-spacing: -0.02em; */
+		font-family: var(--font-heading);
+		font-size: 58px;
+		line-height: 1.05;
+		font-weight: 300;
+		letter-spacing: -0.04em;
 		color: #fff;
 		max-width: 620px;
 		margin: 0 0 28px;
@@ -362,7 +363,7 @@ const cards = [
 	}
 
 	.category-entry-title {
-		font-family: 'Playfair Display', serif;
+		font-family: var(--font-heading);
 		font-size: 28px;
 		line-height: 1.15;
 		color: #111;
@@ -418,6 +419,7 @@ const cards = [
 		.category-entry-section {
 			display: none;
 		}
+
 	}
 
 	@media (max-width: 1024px) {
