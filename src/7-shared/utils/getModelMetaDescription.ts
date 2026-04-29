@@ -12,7 +12,7 @@ export const getModelMetaDescription = (model: ModelJson): string => {
 			orientation === 'horizontal' ? 'горизонтальная модель' : orientation === 'vertical' ? 'вертикальная модель' : ''
 	}
 
-	const description = `Купить ${prefix} Velar ${name} с доставкой по России. Официальная гарантия. Полный модельный ряд и быстрые сроки производства.`
+	const description = `Купить ${prefix} Velar ${name} с доставкой по России. Поможем подобрать модель, подключение и рассчитать мощность.`
 
 	return description
 }

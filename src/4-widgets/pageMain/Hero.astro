@@ -1,39 +1,527 @@
 ---
-import { Picture } from "@astrojs/image/components";
-import LeftRightBlock5050 from "@shared/components/LeftRightBlock5050.astro";
+const cards = [
+	{
+		title: 'Трубчатые радиаторы',
+		desc: 'Классические модели для квартиры и дома',
+		href: '/columns',
+		image: '/images/columns/about.jpg',
+		icon: 'tubular',
+	},
+	{
+		title: 'Дизайн радиаторы',
+		desc: 'Вертикальные и интерьерные решения',
+		href: '/design',
+		image: '/images/articles/design.jpg',
+		icon: 'design',
+	},
+	{
+		title: 'Конвекторы',
+		desc: 'Для панорамных окон',
+		href: '/convector',
+		image: '/images/articles/convector.jpeg',
+		icon: 'convector',
+	},
+	{
+		title: 'Ретро радиаторы',
+		desc: 'Чугунные модели в классическом стиле',
+		href: '/retro',
+		image: '/images/articles/retro.jpg',
+		icon: 'retro',
+	},
+]
+
+const features = [
+	{ label: 'Производство под заказ', icon: 'hammer' },
+	{ label: 'Цвета RAL', icon: 'palette' },
+	{ label: 'Гарантия 10 лет', icon: 'shield' },
+	{ label: 'Доставка по России', icon: 'truck' },
+]
 ---
 
-<section
-  id='hero'
-  class='flex flex-row justify-center max-w-6xl mx-auto px-5 md:px-10 mt-20'
->
-  <LeftRightBlock5050>
-    <div slot='left'>
-      <h1 class='text-5xl font-bold text-left'>Радиаторы Velar</h1>
-      <p class='mt-5 leading-8'>
-        <span class='text-red-600'>Velar</span> - это бренд высококачественных приборов
-        отопления, не уступающих европейсим аналогам. С 2015 года на производственных
-        мощностях завода выпускаются внутрипольные конвекторы, профильные дизайн-радиаторы,
-        колончатые стальные радиаторы, чугунные радиаторы, полотенцесушители.
-      </p>
-    </div>
-    <div
-      slot='right'
-      class='h-full'
-    >
-      <Picture
-        src='/images/main/main0.jpg'
-        alt='Горизонтальный дизайн-радиатор Velar P красного цвета'
-        title='Горизонтальный дизайн-радиатор Velar P красного цвета'
-        aspectRatio='719:254'
-        widths={[400, 650, 900, 1200, 1500]}
-        width={640}
-        height={226}
-        sizes='(max-width: 640px) 640px,  800px'
-        class='object-cover -ml-2 sm:ml-0 sm:h-3/4 sm:mt-10 md:h-3/4 overflow-hidden'
-        style={{ objectPosition: "left center" }}
-        loading='eager'
-      />
-    </div>
-  </LeftRightBlock5050>
+<section id='hero' class='hero'>
+	<picture class='hero-picture'>
+		<source srcset='/main/hero.avif' type='image/avif' />
+		<img src='/main/hero.jpg' alt='' aria-hidden='true' class='hero-bg' loading='eager' />
+	</picture>
+	<div class='hero-overlay'></div>
+
+	<div class='hero-content'>
+		<div class='hero-left'>
+			<h1>
+				Дизайнерские радиаторы,
+				которые становятся частью интерьера
+			</h1>
+			<p>
+				Подберём решение под ваш проект: по мощности, размерам,
+				цвету и стилю помещения
+			</p>
+			<div class='hero-actions'>
+				<a href='/request' class='hero-btn hero-btn-primary'>Подобрать радиатор</a>
+				<a href='#catalog' class='hero-btn hero-btn-secondary'>Смотреть каталог</a>
+			</div>
+		</div>
+
+		<div class='hero-cards'>
+			{cards.map(card => (
+				<a href={card.href} class='hero-card'>
+					<div class='hero-card-icon' aria-hidden='true'>
+						{card.icon === 'tubular' && (
+							<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'>
+								<path d='M3 6h18' />
+								<path d='M3 12h18' />
+								<path d='M3 18h18' />
+								<path d='M6 4v16' />
+								<path d='M12 4v16' />
+								<path d='M18 4v16' />
+							</svg>
+						)}
+						{card.icon === 'design' && (
+							<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'>
+								<path d='M12 2l2.1 5.9L20 10l-5.9 2.1L12 18l-2.1-5.9L4 10l5.9-2.1L12 2z' />
+								<path d='M20 3v4' />
+								<path d='M22 5h-4' />
+							</svg>
+						)}
+						{card.icon === 'convector' && (
+							<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'>
+								<path d='M3 8h11a2 2 0 1 0-2-2' />
+								<path d='M3 12h16a2 2 0 1 1-2 2' />
+								<path d='M3 16h9a2 2 0 1 1-2 2' />
+							</svg>
+						)}
+						{card.icon === 'retro' && (
+							<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'>
+								<path d='M3 22h18' />
+								<path d='M4 10h16' />
+								<path d='M6 22V10' />
+								<path d='M10 22V10' />
+								<path d='M14 22V10' />
+								<path d='M18 22V10' />
+								<path d='M12 3l8 4H4l8-4z' />
+							</svg>
+						)}
+					</div>
+					<div>
+						<div class='hero-card-title'>{card.title}</div>
+						<div class='hero-card-desc'>{card.desc}</div>
+					</div>
+					<img src={card.image} alt={card.title} class='hero-card-image' loading='eager' />
+				</a>
+			))}
+		</div>
+	</div>
+
+	<div class='hero-features'>
+		{features.map((feature, index) => (
+			<div class={`hero-feature ${index === 0 ? 'hero-feature-first' : ''}`}>
+				<span class='hero-feature-icon' aria-hidden='true'>
+					{feature.icon === 'hammer' && (
+						<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'>
+							<path d='M14 12L4 22' />
+							<path d='M18 8l3-3a1.4 1.4 0 0 0-2-2l-3 3' />
+							<path d='M15 5l4 4' />
+							<path d='M2 12l10 10' />
+						</svg>
+					)}
+					{feature.icon === 'palette' && (
+						<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'>
+							<path d='M12 22a10 10 0 1 1 0-20 8 8 0 0 1 0 16h-1a2 2 0 0 0 0 4h1z' />
+							<circle cx='7.5' cy='10.5' r='1' />
+							<circle cx='12' cy='7.5' r='1' />
+							<circle cx='16.5' cy='10.5' r='1' />
+						</svg>
+					)}
+					{feature.icon === 'shield' && (
+						<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'>
+							<path d='M12 2l8 4v6c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V6l8-4z' />
+							<path d='m9 12 2 2 4-4' />
+						</svg>
+					)}
+					{feature.icon === 'truck' && (
+						<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'>
+							<path d='M10 17H6a2 2 0 0 1-2-2V7h10v10h-1' />
+							<path d='M14 10h4l3 3v4h-1' />
+							<circle cx='7.5' cy='17.5' r='1.5' />
+							<circle cx='17.5' cy='17.5' r='1.5' />
+						</svg>
+					)}
+				</span>
+				<span>{feature.label}</span>
+			</div>
+		))}
+	</div>
 </section>
+
+<section class='category-entry-section'>
+	<div class='category-entry-wrap'>
+		<h2 class='category-entry-title'>Выберите тип радиатора</h2>
+		<div class='category-entry-grid'>
+			{cards.map(card => (
+				<a href={card.href} class='category-entry-card'>
+					<img src={card.image} alt={card.title} class='category-entry-image' loading='eager' />
+					<div>
+						<div class='category-entry-card-title'>{card.title}</div>
+						<div class='category-entry-card-desc'>{card.desc}</div>
+					</div>
+					<span class='category-entry-arrow' aria-hidden='true'>›</span>
+				</a>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.hero {
+		position: relative;
+		width: 100%;
+		min-height: 720px;
+		overflow: hidden;
+	}
+
+	.hero-picture {
+		position: absolute;
+		inset: 0;
+		display: block;
+	}
+
+	.hero-bg {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center center;
+	}
+
+	.hero-overlay {
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(
+			90deg,
+			rgba(0, 0, 0, 0.72) 0%,
+			rgba(0, 0, 0, 0.58) 32%,
+			rgba(0, 0, 0, 0.22) 58%,
+			rgba(0, 0, 0, 0.08) 100%
+		);
+	}
+
+	.hero-content {
+		position: relative;
+		z-index: 2;
+		max-width: 1180px;
+		margin: 0 auto;
+		padding: 86px 20px 32px;
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) 380px;
+		gap: 56px;
+		align-items: start;
+	}
+
+	.hero-left h1 {
+		font-family: 'Playfair Display', serif;
+		font-size: 54px;
+		line-height: 1.08;
+		font-weight: 600;
+		letter-spacing: -0.02em;
+		color: #fff;
+		max-width: 620px;
+		margin: 0 0 28px;
+	}
+
+	.hero-left p {
+		font-size: 18px;
+		line-height: 1.55;
+		font-weight: 400;
+		color: rgba(255, 255, 255, 0.88);
+		max-width: 560px;
+		margin: 0 0 36px;
+	}
+
+	.hero-actions {
+		display: flex;
+		gap: 16px;
+	}
+
+	.hero-btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 12px;
+		padding: 16px 28px;
+		font-size: 16px;
+		font-weight: 600;
+		min-width: 210px;
+		text-decoration: none;
+		transition: background 0.2s, border-color 0.2s;
+	}
+
+	.hero-btn-primary {
+		background: #c1121f;
+		color: #fff;
+		border: 1px solid #c1121f;
+	}
+
+	.hero-btn-primary:hover {
+		background: #a30f19;
+		border-color: #a30f19;
+	}
+
+	.hero-btn-secondary {
+		background: rgba(255, 255, 255, 0.04);
+		color: #fff;
+		border: 1px solid rgba(255, 255, 255, 0.65);
+	}
+
+	.hero-cards {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		padding-top: 70px;
+	}
+
+	.hero-card {
+		min-height: 92px;
+		background: rgba(255, 255, 255, 0.96);
+		border: 1px solid rgba(255, 255, 255, 0.7);
+		border-radius: 14px;
+		padding: 16px;
+		display: grid;
+		grid-template-columns: 34px 1fr 76px;
+		gap: 14px;
+		align-items: center;
+		box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+		text-decoration: none;
+	}
+
+	.hero-card-icon {
+		width: 34px;
+		height: 34px;
+		border-radius: 999px;
+		border: 1px solid rgba(193, 18, 31, 0.22);
+		color: #c1121f;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.hero-card-icon svg {
+		width: 18px;
+		height: 18px;
+	}
+
+	.hero-card-title {
+		font-size: 17px;
+		line-height: 1.2;
+		font-weight: 700;
+		color: #111;
+	}
+
+	.hero-card-desc {
+		margin-top: 6px;
+		font-size: 14px;
+		line-height: 1.35;
+		color: #666;
+	}
+
+	.hero-card-image {
+		width: 76px;
+		height: 58px;
+		border-radius: 8px;
+		object-fit: cover;
+	}
+
+	.hero-features {
+		position: relative;
+		z-index: 2;
+		max-width: 1180px;
+		margin: 0 auto;
+		padding: 0 20px 28px;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	.hero-feature {
+		min-height: 78px;
+		padding: 0 22px;
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		color: #fff;
+		border-left: 1px solid rgba(255, 255, 255, 0.28);
+		font-size: 16px;
+		line-height: 1.3;
+	}
+
+	.hero-feature-first {
+		border-left: 0;
+	}
+
+	.hero-feature-icon {
+		width: 22px;
+		height: 22px;
+		display: inline-flex;
+		color: #fff;
+		opacity: 0.95;
+	}
+
+	.hero-feature-icon svg {
+		width: 22px;
+		height: 22px;
+	}
+
+	.category-entry-section {
+		background: #fff;
+		padding: 28px 20px 36px;
+	}
+
+	.category-entry-wrap {
+		max-width: 1180px;
+		margin: 0 auto;
+	}
+
+	.category-entry-title {
+		font-family: 'Playfair Display', serif;
+		font-size: 28px;
+		line-height: 1.15;
+		color: #111;
+		margin-bottom: 18px;
+	}
+
+	.category-entry-grid {
+		display: grid;
+		gap: 12px;
+	}
+
+	.category-entry-card {
+		display: grid;
+		grid-template-columns: 96px 1fr 24px;
+		gap: 14px;
+		align-items: center;
+		min-height: 96px;
+		padding: 12px;
+		border: 1px solid #e5e5e5;
+		border-radius: 14px;
+		background: #fff;
+		text-decoration: none;
+	}
+
+	.category-entry-image {
+		width: 96px;
+		height: 72px;
+		border-radius: 10px;
+		object-fit: cover;
+	}
+
+	.category-entry-card-title {
+		font-size: 18px;
+		line-height: 1.2;
+		font-weight: 700;
+		color: #111;
+	}
+
+	.category-entry-card-desc {
+		margin-top: 6px;
+		font-size: 14px;
+		line-height: 1.35;
+		color: #666;
+	}
+
+	.category-entry-arrow {
+		font-size: 22px;
+		line-height: 1;
+		color: #777;
+	}
+
+	@media (min-width: 1025px) {
+		.category-entry-section {
+			display: none;
+		}
+	}
+
+	@media (max-width: 1024px) {
+		.hero-cards {
+			display: none;
+		}
+
+		.hero-content {
+			grid-template-columns: 1fr;
+			gap: 0;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.hero {
+			min-height: auto;
+		}
+
+		.hero-bg {
+			object-position: 66% center;
+		}
+
+		.hero-overlay {
+			background: linear-gradient(
+				180deg,
+				rgba(0, 0, 0, 0.45) 0%,
+				rgba(0, 0, 0, 0.55) 45%,
+				rgba(0, 0, 0, 0.72) 100%
+			);
+		}
+
+		.hero-content {
+			display: block;
+			max-width: none;
+			padding: 44px 24px 28px;
+		}
+
+		.hero-left {
+			max-width: 340px;
+		}
+
+		.hero-left h1 {
+			font-size: 32px;
+			line-height: 1.08;
+			max-width: 320px;
+			margin-bottom: 18px;
+		}
+
+		.hero-left p {
+			font-size: 15px;
+			line-height: 1.55;
+			max-width: 300px;
+			margin-bottom: 28px;
+		}
+
+		.hero-actions {
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
+			max-width: 100%;
+		}
+
+		.hero-actions a {
+			width: 100%;
+			justify-content: center;
+		}
+
+		.hero-features {
+			max-width: none;
+			padding: 0 24px 28px;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 0;
+		}
+
+		.hero-feature {
+			min-height: 72px;
+			padding: 12px 10px;
+			border-left: 0;
+			border-top: 1px solid rgba(255, 255, 255, 0.18);
+			font-size: 14px;
+		}
+
+		.hero-feature:nth-child(even) {
+			border-left: 1px solid rgba(255, 255, 255, 0.18);
+		}
+
+		.category-entry-section {
+			padding: 28px 20px 36px;
+		}
+	}
+</style>

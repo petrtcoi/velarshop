@@ -1,7 +1,7 @@
 ---
 import ShoppingCartWidget from '@widgets/order/ShoppingCartWidget'
 import Footer from './components/Footer.astro'
-import Navigation from './components/Navigation.astro'
+import Header from '../../components/layout/Header.astro'
 import '@shared/styles/global.css'
 import { GoToFormButton } from '@shared/components/GoToFormButton';
 
@@ -19,9 +19,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 
 const {
 	title = 'Velar дизайн-радиаторы отопления | VelarShop.ru',
-	description = 'Фирменный магазин дизайнерских радиаторов отопления Velar. Доставка по России. Официальная гарантия. Полный модельный ряд и быстрые сроки производства.',
+	description = 'Интернет-магазин радиаторов отопления Velar. Подбор модели, расчет мощности и доставка по России.',
 	robots,
-	ogImageUrl = '/images/logo-black.png',
+	ogImageUrl = '/images/logo.png',
 	paddings = true,
 	hideShoppingCartWidgt = false,
 	canonicalUrl
@@ -83,6 +83,19 @@ const ogImageHref = new URL(ogImageUrl, baseUrl).toString()
 		<meta
 			name='generator'
 			content={Astro.generator}
+		/>
+		<link
+			rel='preconnect'
+			href='https://fonts.googleapis.com'
+		/>
+		<link
+			rel='preconnect'
+			href='https://fonts.gstatic.com'
+			crossorigin
+		/>
+		<link
+			href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap'
+			rel='stylesheet'
 		/>
 
 		<title>{title}</title>
@@ -189,10 +202,10 @@ const ogImageHref = new URL(ogImageUrl, baseUrl).toString()
 	<body class='text-neutral-900 dark:text-neutral-200 bg-white dark:bg-neutral-800'>
 
 		
-		<Navigation />
+		<Header />
 
 
-		<main class:list={[{ 'max-w-6xl mx-auto p-3 md:p-5 lg:px-10 xl:px-0 pt-[64px] md:pt-[64px] lg:pt-3': paddings }, { 'p-0 m-0': !paddings }]}>
+		<main class:list={[{ 'max-w-6xl mx-auto p-3 md:p-5 lg:px-10 xl:px-0': paddings }, { 'p-0 m-0': !paddings }]}>
 			<slot />
 					<GoToFormButton client:load/>
 							{hideShoppingCartWidgt === false && <ShoppingCartWidget client:load />}

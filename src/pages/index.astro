@@ -2,21 +2,27 @@
 import Layout from '@shared/layouts/Layout.astro'
 import BestSellers from '@widgets/pageMain/BestSellers.astro'
 import BuyFromUs from '@widgets/pageMain/BuyFromUs.astro'
+import Catalog from '@widgets/pageMain/Catalog.astro'
 import Docs from '@widgets/pageMain/Docs.astro'
 import Hero from '@widgets/pageMain/Hero.astro'
+import HowToOrder from '@widgets/pageMain/HowToOrder.astro'
 import News from '@widgets/pageMain/News.astro'
+import QuickChoice from '@widgets/pageMain/QuickChoice.astro'
 import WhyVelar from '@widgets/pageMain/WhyVelar.astro'
 ---
 
 <Layout
-	title='Дизайнерские радиаторы Velar | VelarShop.ru'
-	description='Магазин радиаторов Velar. Дизайнерские профильные, трубчатые и чугунные радиаторы. Внутрипольные конвекторы. Официальная гарантия. Доставка по России.'
+	title='Радиаторы Velar — купить дизайнерские радиаторы'
+	description='Каталог радиаторов Velar. Поможем подобрать модель под интерьер и рассчитать мощность. Доставка по России.'
 	paddings={false}
 >
 	<Hero />
+	<QuickChoice />
+	<Catalog />
 	<BestSellers />
 	<WhyVelar />
 	<Docs />
 	<News />
 	<BuyFromUs />
+	<HowToOrder />
 </Layout>

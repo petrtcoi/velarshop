@@ -1,0 +1,52 @@
+---
+const categories = [
+	{
+		title: 'Дизайн-радиаторы',
+		url: '/design',
+		text: 'Вертикальные и горизонтальные радиаторы для современных интерьеров.',
+	},
+	{
+		title: 'Трубчатые радиаторы',
+		url: '/columns',
+		text: 'Стальные секционные радиаторы разных размеров и мощности.',
+	},
+	{
+		title: 'Напольные радиаторы',
+		url: '/floor',
+		text: 'Радиаторы для панорамных окон и открытых пространств.',
+	},
+	{
+		title: 'Ретро-радиаторы',
+		url: '/retro',
+		text: 'Чугунные радиаторы в классическом стиле с декоративной отделкой.',
+	},
+	{
+		title: 'Внутрипольные конвекторы',
+		url: '/convector',
+		text: 'Конвекторы для панорамного остекления и современных проектов.',
+	},
+]
+---
+
+<section
+	id='catalog'
+	class='justify-center max-w-6xl mx-auto px-5 md:px-10 mb-16 md:mb-20'
+>
+	<h2 class='text-3xl font-bold text-left'>Каталог радиаторов Velar</h2>
+	<div class='mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5'>
+		{
+			categories.map(category => (
+				<a
+					href={category.url}
+					class='block min-h-[160px] border border-neutral-200 rounded-2xl bg-white p-6 transition-colors hover:border-red-700 hover:bg-red-50'
+				>
+					<h3 class='text-lg font-semibold'>{category.title}</h3>
+					<p class='mt-3 text-sm leading-6 text-neutral-700'>{category.text}</p>
+					<span class='mt-5 inline-block text-sm font-semibold text-red-700'>
+						Смотреть
+					</span>
+				</a>
+			))
+		}
+	</div>
+</section>

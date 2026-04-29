@@ -12,6 +12,7 @@ import SelectColumnColor from "@features/options/SelectColumnColor"
 import SelectColumnConnection from "@features/options/SelectColumnConnection"
 
 import LeftRightBlock4555 from "@shared/components/LeftRightBlock4555.astro";
+import ChoiceHelpBlock from "@shared/components/ChoiceHelpBlock.astro";
 import { getModelMainImagePath } from "@shared/utils/getModelMainImagePath";
 
 import type { ModelJson } from "@entities/Model";
@@ -72,6 +73,7 @@ const imagePath = getModelMainImagePath(model.slug, model.type === 'columns');
         model={model}
         radiator={radiator}
       />
+      <ChoiceHelpBlock />
       <!-- TODO save addon selects for Radiator Page not for Models page -->
     </div>
   </LeftRightBlock4555>

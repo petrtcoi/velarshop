@@ -1,0 +1,24 @@
+---
+const choices = [
+	{ title: 'Радиатор под окно', url: '/columns' },
+	{ title: 'Вертикальный радиатор на стену', url: '/design' },
+	{ title: 'Радиатор для ванной', url: '/design' },
+	{ title: 'Решение для панорамных окон', url: '/convector' },
+	{ title: 'Ретро-радиатор для классического интерьера', url: '/retro' },
+	{ title: 'Внутрипольный конвектор', url: '/convector' },
+]
+---
+
+<section class='max-w-6xl mx-auto px-5 md:px-10 mb-16 md:mb-20'>
+	<h2 class='text-3xl font-bold text-left'>Что нужно подобрать?</h2>
+	<div class='mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
+		{choices.map(choice => (
+			<a
+				href={choice.url}
+				class='rounded-2xl border border-neutral-200 bg-white p-5 text-base font-semibold transition-colors hover:border-red-700 hover:bg-red-50 hover:text-red-700'
+			>
+				{choice.title}
+			</a>
+		))}
+	</div>
+</section>

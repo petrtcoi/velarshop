@@ -2,6 +2,7 @@
 import { Picture } from "@astrojs/image/components";
 
 import LeftRightBlock4555 from "@shared/components/LeftRightBlock4555.astro";
+import ChoiceHelpBlock from "@shared/components/ChoiceHelpBlock.astro";
 import ItemDescription from "./ItemDescription.astro";
 import BuyItemBlock from "./BuyItemBlock.astro";
 
@@ -39,6 +40,7 @@ const imagePath = `/images/items/${item.image_slug || "empty"}/main.jpg`;
     <div slot='right'>
       <ItemDescription slug={mdx_slug} />
       <BuyItemBlock item={item} />
+      <ChoiceHelpBlock />
     </div>
   </LeftRightBlock4555>
 </div>

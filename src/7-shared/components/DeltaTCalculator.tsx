@@ -65,7 +65,7 @@ export default function DeltaTPowerCalculator() {
 				</div>
 
 				<input
-					class='w-full accent-teal-600'
+					class='w-full accent-red-700'
 					type='range'
 					min={MIN_DT}
 					max={MAX_DT}

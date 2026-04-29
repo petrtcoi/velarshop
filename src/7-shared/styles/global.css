@@ -4,3 +4,24 @@
   padding: 0;
   scroll-behavior: smooth;
 }
+
+:root {
+  --color-bg: #ffffff;
+  --color-text: #111111;
+  --color-muted: #6b7280;
+  --color-primary: #B91C1C;
+  --color-primary-hover: #991B1B;
+  --color-border: #e5e7eb;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+h1,
+h2,
+.section-title {
+  font-family: 'Playfair Display', serif;
+}

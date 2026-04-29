@@ -1,0 +1,23 @@
+---
+const steps = [
+	'Выберите категорию или модель',
+	'Отправьте параметры помещения',
+	'Получите подбор и расчет',
+	'Согласуйте цвет, размер и подключение',
+	'Подтвердите заказ',
+	'Получите радиатор после производства',
+]
+---
+
+<section class='justify-center max-w-6xl mx-auto px-5 md:px-10 mt-16 mb-20'>
+	<h2 class='text-3xl font-bold text-left'>Как заказать радиаторы Velar</h2>
+	<ol class='mt-5 list-decimal list-inside text-sm leading-8 text-neutral-800'>
+		{steps.map(step => <li>{step}</li>)}
+	</ol>
+	<a
+		href='/request'
+		class='inline-flex mt-6 items-center justify-center rounded-xl bg-red-700 px-6 py-4 text-base font-semibold text-white transition-colors hover:bg-red-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-700 focus-visible:ring-offset-2'
+	>
+		Получить расчет
+	</a>
+</section>

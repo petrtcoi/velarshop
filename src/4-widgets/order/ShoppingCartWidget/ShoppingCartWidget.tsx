@@ -25,7 +25,7 @@ function ShoppingCartWidget () {
 
   return (
     <a href="/cart" aria-label="Перейти в корзину покупок" aria-live="polite" rel="nofollow">
-      <div class='fixed bottom-0 right-0 pr-6 h-[60px]  rounded-tl-[50px] bg-teal-600 flex flex-row gap-2 items-center pl-[30px] cursor-pointer  group hover:shadow-2xl hover:shadow-teal-800 hover:bg-teal-700 transition-all'>
+      <div class='fixed bottom-0 right-0 pr-6 h-[60px]  rounded-tl-[50px] bg-red-700 flex flex-row gap-2 items-center pl-[30px] cursor-pointer  group hover:shadow-2xl hover:shadow-red-900 hover:bg-red-800 transition-all'>
         <ShoppingCartIcon />
         <div class="flex flex-col justify-start ">
           <div class="text-xs font-thin text-neutral-100 group-hover:text-white transition-colors">в корзине { cartTotalQnty } { qntyPostfix }</div>

@@ -14,68 +14,59 @@ const horizontals = modelsJsonData.filter(m => horizontal.includes(m.id))
 
 <section
 	id='bestsellers'
-	aria-label='Популярные омдели в категориях'
-	class='justify-center max-w-6xl mx-auto px-5 md:px-10 mt-[70px] mb-[80px]'
+	aria-label='Популярные модели'
+	class='justify-center max-w-6xl mx-auto px-5 md:px-10 mb-20'
 >
-	<h2 class='text-3xl font-bold text-left'>Трубчатые радиаторы</h2>
+	<h2 class='text-3xl font-bold text-left'>Популярные модели</h2>
+
+	<h3 class='mt-8 text-2xl font-bold text-left'>Трубчатые радиаторы</h3>
 
 	<div class='mt-2 text-sm leading-7 max-w-3xl'>
-		Стальные трубчатые радиаторы - набирающий популярность в России тип
-		отопительных приборов. Они сочетают в себе высокую надежность, большую
-		вариативность в типоразмерах и прекрасный внешний вид. Дизайн трубчатых
-		радиаторов является универсальным: они подойдут как для современных
-		интерьеров, так и для интерьеров в стиле лофт или ретро.
+		Стальные радиаторы для квартир, домов и современных интерьеров.
 	</div>
-	<h3 class='mt-5 font-thin uppercase'>
+	<div class='mt-5 font-thin uppercase'>
 		Популярные модели трубчатых радиаторов:
-	</h3>
+	</div>
 	<BestsellerModels models={columns} />
 	<div
-		class='text-xs mt-[20px] hover:text-red-600 transition-colors duration-300'
+		class='text-xs mt-[20px] hover:text-red-700 transition-colors duration-300'
 	>
-		<a href='/columns/'>Все трубчатые радиаторы</a>
+		<a href='/columns'>Все трубчатые радиаторы</a>
 	</div>
 
 	<!-- ------------- -->
 
-	<h2 class='mt-[50px] text-3xl font-bold text-left'>
+	<h3 class='mt-[50px] text-2xl font-bold text-left'>
 		Вертикальные дизайн-радиаторы
-	</h2>
-	<div class='mt-5 text-sm leading-7 max-w-3xl'>
-		Вертикальные дизайн-радиаторы сочетают в себе высокую теплоотдачу и стильный
-		внешний вид. Производитель предлагает широкий выбор моделей, которые
-		подойдут для любого интерьера. Вертикальные радиаторы устанавливаются в
-		помещениях с ограниченным пространством, так как они занимают меньше места,
-		чем горизонтальные аналоги.
-	</div>
-	<h3 class='mt-5 font-thin uppercase'>
-		Популярные модели вертикальных дизайн-радиаторов:
 	</h3>
+	<div class='mt-5 text-sm leading-7 max-w-3xl'>
+		Модели для узких стен, гостиных, ванных комнат и интерьерных акцентов.
+	</div>
+	<div class='mt-5 font-thin uppercase'>
+		Популярные модели вертикальных дизайн-радиаторов:
+	</div>
 	<BestsellerModels models={verticals} />
 	<div
-		class='text-xs mt-[20px] hover:text-red-600 transition-colors duration-300'
+		class='text-xs mt-[20px] hover:text-red-700 transition-colors duration-300'
 	>
-		<a href='/design/'>Все дизайн-радиаторы</a>
+		<a href='/design'>Все вертикальные дизайн-радиаторы</a>
 	</div>
 
 	<!-- ------------- -->
 
-	<h2 class='mt-[50px] text-3xl font-bold text-left'>
+	<h3 class='mt-[50px] text-2xl font-bold text-left'>
 		Горизонтальные дизайн-радиаторы
-	</h2>
-	<div class='mt-5 text-sm leading-7 max-w-3xl'>
-		Горизонтальные дизайн-радиаторы устанавливаются под окна - самое эффективное
-		с точки зрения теплоотдачи место. Все горизонтальные модели имеют
-		вертикальный аналог, что позволяет выдержать единый стиль в оформлении всего
-		дома.
-	</div>
-	<h3 class='mt-5 font-thin uppercase'>
-		Популярные модели горизонтальных дизайн-радиаторов:
 	</h3>
+	<div class='mt-5 text-sm leading-7 max-w-3xl'>
+		Решения для установки под окнами и вдоль стен.
+	</div>
+	<div class='mt-5 font-thin uppercase'>
+		Популярные модели горизонтальных дизайн-радиаторов:
+	</div>
 	<BestsellerModels models={horizontals} />
 	<div
-		class='text-xs mt-[20px] hover:text-red-600 transition-colors duration-300'
+		class='text-xs mt-[20px] hover:text-red-700 transition-colors duration-300'
 	>
-		<a href='/design/'>Все дизайн-радиаторы</a>
+		<a href='/design'>Все горизонтальные дизайн-радиаторы</a>
 	</div>
 </section>

@@ -1,0 +1,413 @@
+---
+import { Picture } from '@astrojs/image/components'
+import { contacts } from '@shared/constants/contacts'
+
+const { phone495, phone495String } = contacts
+
+const catalogLinks = [
+	{
+		title: 'Дизайн-радиаторы',
+		url: '/design',
+		text: 'Вертикальные и горизонтальные модели',
+	},
+	{
+		title: 'Трубчатые радиаторы',
+		url: '/columns',
+		text: 'Стальные секционные радиаторы',
+	},
+	{
+		title: 'Напольные радиаторы',
+		url: '/floor',
+		text: 'Решения для панорамных окон',
+	},
+	{
+		title: 'Ретро-радиаторы',
+		url: '/retro',
+		text: 'Чугунные модели в классическом стиле',
+	},
+	{
+		title: 'Внутрипольные конвекторы',
+		url: '/convector',
+		text: 'Конвекторы для остекления в пол',
+	},
+]
+---
+
+<div class='topbar'>
+	<div class='flex flex-row items-center justify-end gap-8 max-w-[1180px] mx-auto px-5 h-full text-xs text-white'>
+		<div class="opacity-80 flex flex-row justify-between items-center gap-2 leading-1">
+			<div><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-factory-icon lucide-factory"><path d="M12 16h.01"/><path d="M16 16h.01"/><path d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.769-.422l-4.462 2.844A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.769-.422L9.77 10.922A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/><path d="M8 16h.01"/></svg></div>
+			<div>Производство под заказ</div>
+		</div>
+		<div class="opacity-80 flex flex-row justify-between items-center gap-2">
+			<div><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-truck-icon lucide-truck"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></div>
+			<div>Доставка по России</div>
+		</div>
+		<div class="opacity-80 flex flex-row justify-between items-center gap-2">
+			<div><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-icon lucide-shield"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></div>
+			<div>Гарантия 10 лет</div>
+		</div>
+	</div>
+</div>
+
+<header class='site-header'>
+	<nav itemscope itemtype='https://schema.org/SiteNavigationElement' class='header-container'>
+		<a href='/' class='logo-link' aria-label='VelarShop' itemprop='url'>
+			<Picture
+				loading='eager'
+				widths={[122, 170, 260]}
+				width={170}
+				height={41}
+				sizes='(max-width: 768px) 300px, 500px'
+				aspectRatio='1052:255'
+				src='/images/logo.png'
+				alt='VelarShop'
+				class='logo-img'
+			/>
+		</a>
+
+		<div class='desktop-menu'>
+			<div class='catalog-dropdown'>
+				<a href='/#catalog' class='menu-link' itemprop='url'>
+					Каталог <span aria-hidden='true'>▾</span>
+				</a>
+				<div class='catalog-panel'>
+					{catalogLinks.map(link => (
+						<a href={link.url} class='catalog-item' itemprop='url'>
+							<span class='catalog-item-title'>{link.title}</span>
+							<span class='catalog-item-text'>{link.text}</span>
+						</a>
+					))}
+				</div>
+			</div>
+			<a href='/delivery' class='menu-link' itemprop='url'>Доставка и оплата</a>
+			<a href='/about' class='menu-link' itemprop='url'>О магазине</a>
+			<a href='/info' class='menu-link' itemprop='url'>Полезная информация</a>
+		</div>
+
+		<div class='desktop-right'>
+			<a href={`tel:${phone495}`} class='phone-link'>{phone495String}</a>
+			<a href='/request' class='header-cta'>Получить расчет</a>
+		</div>
+
+		<div class='mobile-right'>
+			<a href='/request' class='mobile-calc-btn'>Расчет</a>
+			<details class='mobile-menu'>
+				<summary class='mobile-menu-btn'>Меню</summary>
+				<div class='mobile-menu-panel'>
+					<div class='mobile-menu-title'>Каталог</div>
+					<div class='mobile-links'>
+						{catalogLinks.map(link => (
+							<a href={link.url} class='mobile-link'>
+								<span class='mobile-link-title'>{link.title}</span>
+								<span class='mobile-link-text'>{link.text}</span>
+							</a>
+						))}
+					</div>
+					<div class='mobile-extra-links'>
+						<a href='/about'>О магазине</a>
+						<a href='/delivery'>Доставка и оплата</a>
+						<a href='/info'>Полезная информация</a>
+						<a href='/request' class='mobile-extra-cta'>Сделать запрос</a>
+					</div>
+				</div>
+			</details>
+		</div>
+	</nav>
+</header>
+
+<style>
+	.topbar {
+		height: 32px;
+		background: #080808;
+		color: #fff;
+		font-size: 12px;
+		font-weight: 200!important;
+	}
+
+	.topbar-container {
+		max-width: 1180px;
+		margin: 0 auto;
+		padding: 0 20px;
+		height: 100%;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		gap: 34px;
+	}
+
+	.site-header {
+		position: sticky;
+		top: 0;
+		z-index: 50;
+		height: 76px;
+		background: #fff;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+	}
+
+	.header-container {
+		max-width: 1180px;
+		margin: 0 auto;
+		padding: 0 20px;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 28px;
+	}
+
+	.logo-link {
+		flex-shrink: 0;
+	}
+
+	.logo-img {
+		width: 170px;
+		height: auto;
+	}
+
+	.desktop-menu {
+		display: flex;
+		align-items: center;
+		gap: 30px;
+		font-size: 15px;
+		font-weight: 500;
+		line-height: 1;
+		color: #181818;
+	}
+
+	.menu-link {
+		text-decoration: none;
+		color: #181818;
+		display: inline-flex;
+		align-items: center;
+		gap: 5px;
+		height: 76px;
+	}
+
+	.menu-link:hover {
+		color: #a30f19;
+	}
+
+	.catalog-dropdown {
+		position: relative;
+	}
+
+	.catalog-panel {
+		position: absolute;
+		left: 0;
+		top: calc(100% + 2px);
+		width: 360px;
+		padding: 10px;
+		border-radius: 14px;
+		border: 1px solid #e5e7eb;
+		background: #fff;
+		box-shadow: 0 16px 40px rgba(0, 0, 0, 0.16);
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.2s;
+	}
+
+	.catalog-dropdown:hover .catalog-panel {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.catalog-item {
+		display: block;
+		padding: 10px 12px;
+		border-radius: 10px;
+		text-decoration: none;
+		color: #111;
+	}
+
+	.catalog-item:hover {
+		background: #fef2f2;
+		color: #a30f19;
+	}
+
+	.catalog-item-title {
+		display: block;
+		font-size: 15px;
+		font-weight: 600;
+		line-height: 1.2;
+	}
+
+	.catalog-item-text {
+		display: block;
+		margin-top: 5px;
+		font-size: 12px;
+		line-height: 1.3;
+		color: #666;
+	}
+
+	.desktop-right {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+	}
+
+	.phone-link {
+		font-size: 17px;
+		font-weight: 600;
+		line-height: 1;
+		white-space: nowrap;
+		color: #181818;
+		text-decoration: none;
+	}
+
+	.phone-link:hover {
+		color: #a30f19;
+	}
+
+	.header-cta {
+		background: #c1121f;
+		color: #fff;
+		border-radius: 12px;
+		padding: 12px 22px;
+		font-size: 15px;
+		font-weight: 600;
+		line-height: 1;
+		height: 48px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		text-decoration: none;
+	}
+
+	.header-cta:hover {
+		background: #a30f19;
+	}
+
+	.mobile-right {
+		display: none;
+		align-items: center;
+		gap: 10px;
+	}
+
+	.mobile-calc-btn {
+		background: #c1121f;
+		color: #fff;
+		border-radius: 12px;
+		padding: 10px 16px;
+		font-size: 14px;
+		font-weight: 600;
+		line-height: 1;
+		text-decoration: none;
+	}
+
+	.mobile-calc-btn:hover {
+		background: #a30f19;
+	}
+
+	.mobile-menu-btn {
+		list-style: none;
+		background: #fff;
+		color: #111;
+		border: 1px solid #d4d4d4;
+		border-radius: 12px;
+		padding: 10px 16px;
+		font-size: 14px;
+		font-weight: 600;
+		line-height: 1;
+		cursor: pointer;
+	}
+
+	.mobile-menu-panel {
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 72px;
+		max-height: calc(100vh - 72px);
+		overflow-y: auto;
+		background: #fff;
+		border-top: 1px solid #eee;
+		border-bottom: 1px solid #ddd;
+		padding: 18px 20px 24px;
+		box-shadow: 0 16px 30px rgba(0, 0, 0, 0.16);
+	}
+
+	.mobile-menu-title {
+		font-size: 12px;
+		font-weight: 700;
+		color: #666;
+		text-transform: uppercase;
+		letter-spacing: 0.03em;
+	}
+
+	.mobile-links {
+		margin-top: 10px;
+		display: grid;
+		gap: 8px;
+	}
+
+	.mobile-link {
+		display: block;
+		padding: 10px 12px;
+		border: 1px solid #e5e7eb;
+		border-radius: 10px;
+		text-decoration: none;
+		color: #111;
+	}
+
+	.mobile-link-title {
+		display: block;
+		font-size: 14px;
+		font-weight: 600;
+		line-height: 1.2;
+	}
+
+	.mobile-link-text {
+		display: block;
+		margin-top: 4px;
+		font-size: 12px;
+		line-height: 1.3;
+		color: #666;
+	}
+
+	.mobile-extra-links {
+		margin-top: 14px;
+		display: grid;
+		gap: 8px;
+	}
+
+	.mobile-extra-links a {
+		text-decoration: none;
+		color: #222;
+		font-size: 14px;
+	}
+
+	.mobile-extra-cta {
+		color: #a30f19 !important;
+		font-weight: 600;
+	}
+
+	@media (max-width: 1024px) {
+		.desktop-menu,
+		.desktop-right {
+			display: none;
+		}
+
+		.mobile-right {
+			display: flex;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.topbar {
+			display: none;
+		}
+
+		.site-header {
+			height: 72px;
+		}
+
+		.header-container {
+			padding: 0 16px;
+			gap: 14px;
+		}
+
+		.logo-img {
+			width: 122px;
+		}
+	}
+</style>

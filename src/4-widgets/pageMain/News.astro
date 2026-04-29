@@ -8,7 +8,7 @@ const news = await getCollection('news');
 <section
   id="news"
   aria-label="Новости о радиаторах и дайзн-ради аторах"
-  class="justify-center max-w-6xl mx-auto px-5 md:px-10 mt-10">
+  class="justify-center max-w-6xl mx-auto px-5 md:px-10 mb-20">
   <h2 class="text-3xl font-bold text-left">Новости</h2>
   <div
     id="articles_list"
@@ -43,7 +43,7 @@ const news = await getCollection('news');
                   class="rounded-lg opacity-100 md:opacity-75 group-hover:opacity-100 group-hover:shadow-lg transition-opacity duration-300"
                 />
                 <div class="mt-1 text-xs text-slate-700 font-light">{date}</div>
-                <div class="text-sm mt-1 group-hover:text-red-600 transition-colors duration-300">
+                <div class="text-sm mt-1 group-hover:text-red-700 transition-colors duration-300">
                   {title}
                 </div>
                 <div class="text-xs mt-1 text-neutral-600 group-hover:text-neutral-900">
@@ -59,7 +59,7 @@ const news = await getCollection('news');
   <div class="mt-[20px]">
     <a href={'/news'}>
       <div
-        class="text-xs font-light text-red-600 hover:underline transition-all duration-300">
+        class="text-xs font-light text-red-700 hover:underline transition-all duration-300">
         все новости
       </div>
     </a>
