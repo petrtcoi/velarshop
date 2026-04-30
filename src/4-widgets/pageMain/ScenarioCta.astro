@@ -4,7 +4,7 @@
 <section class='scenario-cta-section'>
 	<div class='scenario-cta-wrap'>
 		<div class='scenario-cta-copy'>
-			<h2 class='scenario-cta-title'>Поможем подобрать радиатор под ваш проект</h2>
+			<h2 class='scenario-cta-title'>Подберем радиатор под ваш проект</h2>
 			<p class='scenario-cta-text'>
 				Подберем модель под:
 				<br />
@@ -15,7 +15,7 @@
 				— интерьер и стиль
 				<br />
 				<br />
-				Ответим на вопросы и рассчитаем стоимость.
+				Рассчитаем стоимость и предложим оптимальное решение.
 			</p>
 		</div>
 		<a href='/request' class='scenario-cta-button'>Получить расчет</a>
@@ -31,7 +31,8 @@
 	.scenario-cta-wrap {
 		max-width: 1180px;
 		margin: 0 auto;
-		border: 1px solid #d9d9d9;
+		border: 1px solid #d4d4d4;
+		border-left: 3px solid #c1121f;
 		border-radius: 16px;
 		background: #fafafa;
 		padding: 20px;
@@ -39,7 +40,7 @@
 	}
 
 	.scenario-cta-copy {
-		max-width: 720px;
+		max-width: 600px;
 	}
 
 	.scenario-cta-title {
@@ -88,7 +89,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-			gap: 24px;
+			gap: 16px;
 		}
 
 		.scenario-cta-button {
@@ -111,6 +112,12 @@
 
 		.scenario-cta-text {
 			font-size: 13px;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.scenario-cta-button {
+			font-size: 16px;
 		}
 	}
 </style>
