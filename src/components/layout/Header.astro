@@ -180,6 +180,7 @@ const mobileIconSvg: Record<MobileIconName, string> = {
 		</div>
 
 			<div class='mobile-right'>
+				<a href='/request' class='mobile-calc-button'>Расчет</a>
 				<details class='mobile-menu'>
 					<summary class='mobile-burger' aria-label='Открыть меню'>
 					<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><line x1='4' y1='12' x2='20' y2='12'></line><line x1='4' y1='6' x2='20' y2='6'></line><line x1='4' y1='18' x2='20' y2='18'></line></svg>
@@ -236,11 +237,10 @@ const mobileIconSvg: Record<MobileIconName, string> = {
 						<a href={`tel:${phone495}`} class='mobile-sheet-phone' data-close-sheet-link>
 							{phone495String}
 						</a>
-					</div>
-					</div>
-				</details>
-				<a href='/request' class='mobile-calc-button'>Расчет</a>
-			</div>
+						</div>
+						</div>
+					</details>
+				</div>
 	</nav>
 </header>
 
@@ -481,7 +481,7 @@ const mobileIconSvg: Record<MobileIconName, string> = {
 		width: min(88vw, 380px);
 		background: #fff;
 		border-left: 1px solid #ececec;
-		padding: 0;
+		padding: 0 0 50px;
 		transform: translateX(100%);
 		transition: transform 0.25s ease;
 		z-index: 70;
