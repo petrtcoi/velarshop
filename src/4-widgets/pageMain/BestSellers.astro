@@ -72,8 +72,10 @@ const horizontals = horizontal
 <style>
 	.bestsellers {
 		max-width: 1180px;
-		margin: 0 auto 72px;
+		margin: 0 auto;
 		padding: 0 16px;
+		padding-top: 40px;
+		padding-bottom: 40px;
 	}
 
 	.bestsellers-title {
@@ -166,7 +168,8 @@ const horizontals = horizontal
 	@media (max-width: 768px) {
 		.bestsellers {
 			padding: 0 16px;
-			margin-bottom: 56px;
+			padding-top: 40px;
+			padding-bottom: 40px;
 		}
 
 		.bestsellers-title {
@@ -194,9 +197,23 @@ const horizontals = horizontal
 			align-items: flex-start;
 		}
 
-		.bestsellers-cta-btn {
-			width: 100%;
-			height: 46px;
+			.bestsellers-cta-btn {
+				width: 100%;
+				height: 46px;
+			}
+		}
+
+	@media (min-width: 769px) {
+		.bestsellers {
+			padding-top: 64px;
+			padding-bottom: 64px;
+		}
+	}
+
+	@media (min-width: 1280px) {
+		.bestsellers {
+			padding-top: 80px;
+			padding-bottom: 80px;
 		}
 	}
 </style>
