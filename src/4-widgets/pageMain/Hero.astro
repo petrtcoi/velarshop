@@ -44,7 +44,11 @@ const cards = [
 		<div class='hero-left flex flex-col justify-between h-full min-h-[460px]'>
 			<div>
 			<h1 class='hero-title'>
-				Радиаторы Velar - дизайнерские решения для интерьера
+				Радиаторы Velar —
+				<br />
+				дизайнерские решения
+				<br />
+				для интерьера
 			</h1>
 			<p class='hero-subtitle'>
 				Подберём решение под ваш проект: по мощности, размерам,
@@ -454,16 +458,16 @@ const cards = [
 		.hero-overlay {
 			background: linear-gradient(
 				180deg,
-				rgba(0, 0, 0, 0.42) 0%,
-				rgba(0, 0, 0, 0.58) 45%,
-				rgba(0, 0, 0, 0.78) 100%
+				rgba(0, 0, 0, 0.28) 0%,
+				rgba(0, 0, 0, 0.45) 45%,
+				rgba(0, 0, 0, 0.65) 100%
 			);
 		}
 
 		.hero-content {
 			display: block;
 			max-width: none;
-			padding: 56px 20px 24px;
+			padding: 46px 24px 12px;
 		}
 
 		.hero-left {
@@ -472,50 +476,52 @@ const cards = [
 		}
 
 		.hero-left h1 {
-			max-width: 330px;
-			font-size: 34px;
-			line-height: 1.08;
+			max-width: 260px;
+			font-size: 30px;
+			line-height: 1.12;
 			font-weight: 300;
-			letter-spacing: -0.04em;
-			margin: 0 0 18px;
+			letter-spacing: -0.035em;
+			margin: 0 0 16px;
 		}
 
 		.hero-left p {
-			max-width: 330px;
-			font-size: 16px;
+			max-width: 280px;
+			font-size: 14px;
 			line-height: 1.5;
-			margin: 0 0 28px;
-			color: rgba(255, 255, 255, 0.88);
+			margin: 0 0 22px;
+			color: rgba(255, 255, 255, 0.82);
 		}
 
 		.hero-actions {
 			display: flex;
 			flex-direction: column;
-			gap: 12px;
-			max-width: 330px;
+			gap: 8px;
+			max-width: 260px;
 		}
 
 		.hero-actions a {
 			width: 100%;
-			height: 54px;
-			padding: 0 18px;
-			border-radius: 8px;
-			font-size: 16px;
+			height: 46px;
+			padding: 0 16px;
+			border-radius: 6px;
+			font-size: 14px;
 			font-weight: 600;
 			display: inline-flex;
 			align-items: center;
 			justify-content: center;
 		}
 
-		.hero-btn-primary {
+		.hero-btn-primary,
+		.hero-primary {
 			background: #c1121f;
 			border-color: #c1121f;
 			color: #fff;
 		}
 
-		.hero-btn-secondary {
-			background: rgba(255, 255, 255, 0.04);
-			border: 1px solid rgba(255, 255, 255, 0.58);
+		.hero-btn-secondary,
+		.hero-secondary {
+			background: transparent;
+			border: 1px solid rgba(255, 255, 255, 0.4);
 			color: #fff;
 		}
 
@@ -523,38 +529,38 @@ const cards = [
 			width: 100%;
 			max-width: none;
 			box-sizing: border-box;
-			padding: 0 20px 28px;
+			padding: 0 24px 18px;
+			margin-top: 24px;
 			display: grid;
 			grid-template-columns: repeat(2, minmax(0, 1fr));
 		}
 
 		.hero-feature {
 			min-width: 0;
+			min-height: 64px;
 			box-sizing: border-box;
-			padding: 14px 10px;
-			gap: 10px;
-			border-left: 0;
-			border-top: 1px solid rgba(255, 255, 255, 0.18);
+			padding: 6px 4px;
+			gap: 6px;
+			border: none !important;
 			display: flex;
 			align-items: center;
 		}
 
-		.hero-feature:nth-child(even) {
-			border-left: 1px solid rgba(255, 255, 255, 0.18);
-		}
-
 		.hero-feature svg {
-			width: 28px;
-			height: 28px;
+			width: 20px;
+			height: 20px;
 			flex-shrink: 0;
+			opacity: 0.85;
 		}
 
 		.hero-feature span,
 		.hero-feature p {
 			min-width: 0;
-			font-size: 14px;
-			line-height: 1.3;
+			font-size: 12px;
+			line-height: 1.2;
+			font-weight: 500;
 			word-break: normal;
+			color: rgba(255, 255, 255, 0.8);
 		}
 
 		.category-entry-section {
@@ -604,13 +610,13 @@ const cards = [
 		}
 
 		.hero-left h1 {
-			font-size: 31px;
-			max-width: 300px;
+			font-size: 30px;
+			max-width: 280px;
 		}
 
 		.hero-left p {
-			font-size: 15px;
-			max-width: 300px;
+			font-size: 14px;
+			max-width: 290px;
 		}
 
 		.hero-features {
