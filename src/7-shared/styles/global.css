@@ -12,6 +12,7 @@
   --color-primary: #B91C1C;
   --color-primary-hover: #991B1B;
   --color-border: #e5e7eb;
+  --radius-ui: 3px;
   --font-heading: "Geist", "Geist Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
@@ -36,4 +37,17 @@ input,
 textarea,
 select {
   font-family: var(--font-body);
+}
+
+button,
+input,
+textarea,
+select,
+summary,
+a.button,
+a[class*="btn"],
+a[class*="button"],
+a[class*="cta"],
+[role='button'] {
+  border-radius: var(--radius-ui) !important;
 }

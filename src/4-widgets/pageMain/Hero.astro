@@ -30,6 +30,32 @@ const cards = [
 	},
 ]
 
+const scenarios = [
+	{
+		title: 'Для квартиры',
+		desc: 'Компактные и эффективные решения',
+		image: '/images/columns/about.jpg',
+		href: '/columns',
+	},
+	{
+		title: 'Для панорамных окон',
+		desc: 'Конвекторы и напольные модели',
+		image: '/images/articles/convector.jpeg',
+		href: '/convector',
+	},
+	{
+		title: 'Под дизайн-проект',
+		desc: 'Любые цвета RAL и нестандартные размеры',
+		image: '/images/articles/design.jpg',
+		href: '/design',
+	},
+	{
+		title: 'Ретро-интерьер',
+		desc: 'Чугунные радиаторы в классическом стиле',
+		image: '/images/retro/retro_1.jpg',
+		href: '/retro',
+	},
+]
 
 ---
 
@@ -145,16 +171,24 @@ const cards = [
 
 <section class='category-entry-section'>
 	<div class='category-entry-wrap'>
-		<h2 class='category-entry-title'>Выберите тип радиатора</h2>
-		<div class='category-entry-grid'>
-			{cards.map(card => (
-				<a href={card.href} class='category-entry-card'>
-					<img src={card.image} alt={card.title} class='category-entry-image' loading='eager' />
-					<div>
-						<div class='category-entry-card-title'>{card.title}</div>
-						<div class='category-entry-card-desc'>{card.desc}</div>
+		<h2 class='category-entry-title'>Подберите радиатор под вашу задачу</h2>
+		<p class='category-entry-subtitle'>
+			Или получите расчет — подберем оптимальное решение под ваш проект
+		</p>
+		<div class='mobile-scenarios'>
+			{scenarios.map(item => (
+				<a href={item.href} class='scenario-card'>
+					<img src={item.image} alt={item.title} class='scenario-card-image' loading='eager' />
+					<div class='scenario-card-copy'>
+						<div class='scenario-card-title'>{item.title}</div>
+						<div class='scenario-card-desc'>{item.desc}</div>
+						<div class='scenario-card-cta'>Смотреть варианты →</div>
 					</div>
-					<span class='category-entry-arrow' aria-hidden='true'>›</span>
+					<span class='scenario-card-arrow' aria-hidden='true'>
+						<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+							<path d='m9 18 6-6-6-6'></path>
+						</svg>
+					</span>
 				</a>
 			))}
 		</div>
@@ -366,7 +400,7 @@ const cards = [
 
 	.category-entry-section {
 		background: #fff;
-		padding: 28px 20px 36px;
+		padding: 28px 20px 18px;
 	}
 
 	.category-entry-wrap {
@@ -376,62 +410,92 @@ const cards = [
 
 	.category-entry-title {
 		font-family: var(--font-heading);
-		font-size: 28px;
-		line-height: 1.15;
+		font-size: 22px;
+		font-weight: 600;
+		line-height: 1.2;
 		color: #111;
-		margin-bottom: 18px;
+		margin-bottom: 8px;
 	}
 
-	.category-entry-grid {
-		display: grid;
-		gap: 12px;
+	.category-entry-subtitle {
+		font-size: 14px;
+		line-height: 1.5;
+		color: #666;
+		margin-bottom: 16px;
 	}
 
-	.category-entry-card {
+	.mobile-scenarios {
 		display: grid;
-		grid-template-columns: 96px 1fr 24px;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 14px;
+	}
+
+	.scenario-card {
+		display: flex;
 		align-items: center;
-		min-height: 96px;
+		gap: 12px;
 		padding: 12px;
-		border: 1px solid #e5e5e5;
+		border: 1px solid #eee;
 		border-radius: 14px;
 		background: #fff;
 		text-decoration: none;
+		color: inherit;
+		cursor: pointer;
+		transition: transform 0.18s ease, border-color 0.18s ease, background-color 0.18s ease;
 	}
 
-	.category-entry-image {
-		width: 96px;
+	.scenario-card:hover {
+		transform: translateY(-2px);
+		border-color: #d5d5d5;
+		background: #fcfcfc;
+	}
+
+	.scenario-card-image {
+		width: 72px;
 		height: 72px;
 		border-radius: 10px;
 		object-fit: cover;
+		flex-shrink: 0;
 	}
 
-	.category-entry-card-title {
-		font-size: 18px;
-		line-height: 1.2;
-		font-weight: 700;
+	.scenario-card-copy {
+		min-width: 0;
+	}
+
+	.scenario-card-title {
+		font-size: 15px;
+		line-height: 1.25;
+		font-weight: 600;
 		color: #111;
+		margin-bottom: 4px;
 	}
 
-	.category-entry-card-desc {
-		margin-top: 6px;
-		font-size: 14px;
+	.scenario-card-desc {
+		font-size: 13px;
 		line-height: 1.35;
 		color: #666;
 	}
 
-	.category-entry-arrow {
-		font-size: 22px;
-		line-height: 1;
-		color: #777;
+	.scenario-card-cta {
+		margin-top: 7px;
+		font-size: 12px;
+		line-height: 1.2;
+		font-weight: 600;
+		color: #c1121f;
+	}
+
+	.scenario-card-arrow {
+		margin-left: auto;
+		display: inline-flex;
+		color: #111;
+		opacity: 0.5;
+		flex-shrink: 0;
 	}
 
 	@media (min-width: 1025px) {
 		.category-entry-section {
 			display: none;
 		}
-
 	}
 
 	@media (max-width: 1024px) {
@@ -564,43 +628,35 @@ const cards = [
 		}
 
 		.category-entry-section {
-			padding: 28px 20px 36px;
+			padding: 20px 16px 10px;
 		}
 
-		.category-entry-grid {
-			grid-template-columns: repeat(2, minmax(0, 1fr));
-			gap: 10px;
+		.category-entry-title {
+			font-size: 22px;
+			margin-bottom: 10px;
 		}
 
-		.category-entry-card {
-			grid-template-columns: 1fr;
-			gap: 8px;
-			align-items: start;
-			min-height: 0;
-			padding: 10px;
-			border-radius: 12px;
-		}
-
-		.category-entry-image {
-			width: 100%;
-			height: 68px;
-			border-radius: 8px;
-		}
-
-		.category-entry-card-title {
+		.category-entry-subtitle {
 			font-size: 14px;
-			line-height: 1.2;
+			line-height: 1.5;
+			margin-bottom: 14px;
 		}
 
-		.category-entry-card-desc {
-			margin-top: 4px;
-			font-size: 12px;
-			line-height: 1.3;
+		.mobile-scenarios {
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
 		}
 
-		.category-entry-arrow {
-			display: none;
+		.scenario-card {
+			padding: 11px;
 		}
+
+		.scenario-card-image {
+			width: 68px;
+			height: 68px;
+		}
+
 	}
 
 	@media (max-width: 390px) {

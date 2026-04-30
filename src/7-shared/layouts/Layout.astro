@@ -35,6 +35,7 @@ const canonicalHref = (
 	.split('?')[0]
 	.split('#')[0]
 const ogImageHref = new URL(ogImageUrl, baseUrl).toString()
+const isHomePage = Astro.url.pathname === '/'
 ---
 
 <!DOCTYPE html>
@@ -205,10 +206,10 @@ const ogImageHref = new URL(ogImageUrl, baseUrl).toString()
 		<Header />
 
 
-		<main class:list={[{ 'max-w-6xl mx-auto p-3 md:p-5 lg:px-10 xl:px-0': paddings }, { 'p-0 m-0': !paddings }]}>
-			<slot />
-					<GoToFormButton client:load/>
-							{hideShoppingCartWidgt === false && <ShoppingCartWidget client:load />}
+			<main class:list={[{ 'max-w-6xl mx-auto p-3 md:p-5 lg:px-10 xl:px-0': paddings }, { 'p-0 m-0': !paddings }]}>
+				<slot />
+						{!isHomePage && <GoToFormButton client:load/>}
+								{hideShoppingCartWidgt === false && <ShoppingCartWidget client:load />}
 
 
 		</main>
