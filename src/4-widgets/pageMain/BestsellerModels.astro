@@ -9,13 +9,13 @@ type Props = {
 }
 
 const { models } = Astro.props as Props
-const type = models[0].type
+const type = models[0]?.type ?? 'columns'
 ---
 
 <div
 	id='model_list'
 	aria-label='Список моделей'
-	class='mt-10 items-top gap-8 justify-center grid grid-cols-2 md:grid-cols-4 space-x-4'
+	class='bestseller-model-list scrollbar-hide'
 	itemscope
 	itemtype='https://schema.org/ItemList'
 >
@@ -31,65 +31,228 @@ const type = models[0].type
 			const radiators = radiatorsJsonData.filter(r => r.model_id === m.id)
 			const minPrice = Math.min(...radiators.map(r => Number(r.price)))
 
-			return (
-				<div
-					class='group w-full mx-auto sm:mx-0 '
-					itemprop='itemListElement'
-					itemscope
-					itemtype='https://schema.org/Product'
-				>
-					<a href={modelHref}>
-						<Picture
-							itemprop='image'
-							src={imgPath}
-							alt={title}
-							title={title}
-							loading={i > 6 ? 'lazy' : 'eager'}
-							aspectRatio='1:1'
-							widths={[290, 400]}
-							width={200}
-							height={200}
-							sizes='200px'
-							class='rounded-lg opacity-100 md:opacity-75 group-hover:opacity-100 group-hover:shadow-lg transition-opacity duration-300'
-						/>
-						<div
-							itemprop='name'
-							class='text-xs font-bold mt-2 group-hover:text-red-700 transition-colors duration-300'
-						>
-							{title}
-						</div>
-						<div
-							itemprop='description'
-							class='text-[10px] mt-1 text-neutral-600 group-hover:text-neutral-900'
-						>
-							{m.short_comment}
-						</div>
+				return (
+					<div
+						class='bestseller-card'
+						itemprop='itemListElement'
+						itemscope
+						itemtype='https://schema.org/Product'
+					>
+						<a href={modelHref} class='bestseller-link-main'>
+							<Picture
+								itemprop='image'
+								src={imgPath}
+								alt={title}
+								title={title}
+								loading={i > 6 ? 'lazy' : 'eager'}
+								aspectRatio='1:1'
+								widths={[290, 400]}
+								width={200}
+								height={200}
+								sizes='(max-width: 768px) 180px, 220px'
+								class='bestseller-image'
+							/>
+							<div itemprop='name' class='bestseller-name'>
+								{title}
+							</div>
+							<div itemprop='description' class='bestseller-description'>
+								{m.short_comment}
+							</div>
+						</a>
 						<div
 							itemprop='offers'
 							itemscope
 							itemtype='https://schema.org/Offer'
-							class='text-[12px] mt-1 text-neutral-600 group-hover:text-red-700'
+							class='bestseller-price'
 						>
 							<div
 								itemprop='priceSpecification'
 								itemscope
 								itemtype='http://schema.org/PriceSpecification'
 							>
-								<meta
-									itemprop='priceCurrency'
-									content='RUB'
-								/>
-								<meta
-									itemprop='price'
-									content={`${Number(minPrice)}`}
-								/>
-								Цена от: {minPrice.toLocaleString('ru-RU')}
-								руб.
+								<meta itemprop='priceCurrency' content='RUB' />
+								<meta itemprop='price' content={`${Number(minPrice)}`} />
+								Цена от: {minPrice.toLocaleString('ru-RU')} руб.
 							</div>
 						</div>
-					</a>
-				</div>
-			)
-		})
-	}
+						<div class='bestseller-actions'>
+							<a href={modelHref} class='bestseller-btn bestseller-btn-secondary'>
+								Подробнее
+							</a>
+							<a href='/request' class='bestseller-btn bestseller-btn-primary'>
+								Получить расчет
+							</a>
+						</div>
+					</div>
+				)
+			})
+		}
 </div>
+
+<style>
+	.bestseller-model-list {
+		margin-top: 14px;
+		display: flex;
+		overflow-x: auto;
+		overflow-y: hidden;
+		scroll-snap-type: x mandatory;
+		scroll-behavior: smooth;
+		-webkit-overflow-scrolling: touch;
+		gap: 14px;
+		padding-bottom: 4px;
+	}
+
+	.bestseller-card {
+		flex: 0 0 80vw;
+		width: 80vw;
+		max-width: 300px;
+		min-width: 260px;
+		scroll-snap-align: start;
+		border: 1px solid #e5e5e5;
+		border-radius: 16px;
+		background: #fff;
+		padding: 12px;
+		display: flex;
+		flex-direction: column;
+		min-height: 100%;
+		transition: transform 0.18s ease, border-color 0.18s ease;
+	}
+
+	.bestseller-card:hover {
+		transform: translateY(-2px);
+		border-color: #d4d4d4;
+	}
+
+	.bestseller-link-main {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.bestseller-image {
+		width: 100%;
+		aspect-ratio: 4 / 3;
+		height: 180px;
+		object-fit: contain;
+		background: #fafafa;
+		padding: 14px;
+		border-radius: 16px;
+		display: block;
+	}
+
+	.bestseller-name {
+		margin-top: 10px;
+		font-size: 15px;
+		line-height: 1.25;
+		font-weight: 600;
+		color: #111;
+	}
+
+	.bestseller-description {
+		margin-top: 6px;
+		font-size: 12px;
+		line-height: 1.35;
+		color: #666;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+
+	.bestseller-price {
+		margin-top: 8px;
+		font-size: 13px;
+		line-height: 1.3;
+		color: #444;
+	}
+
+	.bestseller-actions {
+		margin-top: auto;
+		padding-top: 10px;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 8px;
+	}
+
+	.bestseller-btn {
+		flex: 1;
+		height: 40px;
+		border-radius: 3px;
+		font-size: 13px;
+		font-weight: 600;
+		line-height: 1;
+		text-decoration: none;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid transparent;
+	}
+
+	.bestseller-btn-secondary {
+		border-color: #d4d4d4;
+		color: #222;
+		background: #fff;
+	}
+
+	.bestseller-btn-secondary:hover {
+		border-color: #a3a3a3;
+	}
+
+	.bestseller-btn-primary {
+		border-color: #c1121f;
+		color: #fff;
+		background: #c1121f;
+	}
+
+	.bestseller-btn-primary:hover {
+		background: #a30f19;
+		border-color: #a30f19;
+	}
+
+	.scrollbar-hide {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+
+	.scrollbar-hide::-webkit-scrollbar {
+		display: none;
+	}
+
+	@media (min-width: 1024px) {
+		.bestseller-model-list {
+			display: grid;
+			overflow: visible;
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+			gap: 24px;
+			padding-bottom: 0;
+		}
+
+		.bestseller-card {
+			flex: initial;
+			width: auto;
+			max-width: none;
+			min-width: 0;
+			scroll-snap-align: unset;
+			padding: 14px;
+		}
+
+		.bestseller-image {
+			aspect-ratio: 1 / 1;
+			height: 200px;
+			padding: 16px;
+		}
+
+		.bestseller-description {
+			font-size: 13px;
+			-webkit-line-clamp: 3;
+		}
+
+		.bestseller-price {
+			font-size: 14px;
+		}
+
+		.bestseller-btn {
+			height: 40px;
+			font-size: 13px;
+		}
+	}
+</style>

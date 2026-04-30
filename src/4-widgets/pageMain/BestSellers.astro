@@ -3,70 +3,200 @@ import { modelsJsonData } from '@entities/Model'
 import BestsellerModels from './BestsellerModels.astro'
 
 const columnModels = ['2180', '3180', '3057', '3030']
-const columns = modelsJsonData.filter(m => columnModels.includes(m.id))
+const columns = columnModels
+	.map(id => modelsJsonData.find(m => m.id === id))
+	.filter((m): m is (typeof modelsJsonData)[number] => Boolean(m))
 
 const vertical = ['p30v', 'q40v', 'p60v', 'r32v']
-const verticals = modelsJsonData.filter(m => vertical.includes(m.id))
+const verticals = vertical
+	.map(id => modelsJsonData.find(m => m.id === id))
+	.filter((m): m is (typeof modelsJsonData)[number] => Boolean(m))
 
 const horizontal = ['p30h', 'p60h', 'r42h', 'q80h']
-const horizontals = modelsJsonData.filter(m => horizontal.includes(m.id))
+const horizontals = horizontal
+	.map(id => modelsJsonData.find(m => m.id === id))
+	.filter((m): m is (typeof modelsJsonData)[number] => Boolean(m))
 ---
 
 <section
 	id='bestsellers'
-	aria-label='Популярные модели'
-	class='justify-center max-w-6xl mx-auto px-5 md:px-10 mb-20'
+	aria-label='Популярные модели Velar'
+	class='bestsellers'
 >
-	<h2 class='text-3xl font-bold text-left'>Популярные модели</h2>
+	<h2 class='bestsellers-title'>Популярные модели Velar</h2>
+	<p class='bestsellers-subtitle'>
+		Модели, которые чаще всего выбирают для квартир, домов и дизайнерских проектов
+	</p>
 
-	<h3 class='mt-8 text-2xl font-bold text-left'>Трубчатые радиаторы</h3>
-
-	<div class='mt-2 text-sm leading-7 max-w-3xl'>
-		Стальные радиаторы для квартир, домов и современных интерьеров.
-	</div>
-	<div class='mt-5 font-thin uppercase'>
-		Популярные модели трубчатых радиаторов:
-	</div>
+	<div id='bs-columns' class='bestsellers-group'>
+	<h3 class='bestsellers-group-title'>Трубчатые радиаторы</h3>
+	<p class='bestsellers-group-desc'>
+		Трубчатые радиаторы сочетают надежность, выбор размеров и аккуратный внешний вид. Подходят для современных интерьеров, лофта и ретро.
+	</p>
 	<BestsellerModels models={columns} />
-	<div
-		class='text-xs mt-[20px] hover:text-red-700 transition-colors duration-300'
-	>
-		<a href='/columns'>Все трубчатые радиаторы</a>
+	<div class='bestsellers-all-link'>
+		<a href='/columns/'>Все трубчатые радиаторы →</a>
+	</div>
 	</div>
 
-	<!-- ------------- -->
-
-	<h3 class='mt-[50px] text-2xl font-bold text-left'>
-		Вертикальные дизайн-радиаторы
-	</h3>
-	<div class='mt-5 text-sm leading-7 max-w-3xl'>
-		Модели для узких стен, гостиных, ванных комнат и интерьерных акцентов.
-	</div>
-	<div class='mt-5 font-thin uppercase'>
-		Популярные модели вертикальных дизайн-радиаторов:
-	</div>
+	<div id='bs-vertical' class='bestsellers-group'>
+	<h3 class='bestsellers-group-title'>Вертикальные дизайн-радиаторы</h3>
+	<p class='bestsellers-group-desc'>
+		Вертикальные дизайн-радиаторы помогают сэкономить место и подходят для помещений, где нет возможности установить модель под окном.
+	</p>
 	<BestsellerModels models={verticals} />
-	<div
-		class='text-xs mt-[20px] hover:text-red-700 transition-colors duration-300'
-	>
-		<a href='/design'>Все вертикальные дизайн-радиаторы</a>
+	<div class='bestsellers-all-link'>
+		<a href='/design/'>Все вертикальные дизайн-радиаторы →</a>
+	</div>
 	</div>
 
-	<!-- ------------- -->
-
-	<h3 class='mt-[50px] text-2xl font-bold text-left'>
-		Горизонтальные дизайн-радиаторы
-	</h3>
-	<div class='mt-5 text-sm leading-7 max-w-3xl'>
-		Решения для установки под окнами и вдоль стен.
-	</div>
-	<div class='mt-5 font-thin uppercase'>
-		Популярные модели горизонтальных дизайн-радиаторов:
-	</div>
+	<div id='bs-horizontal' class='bestsellers-group'>
+	<h3 class='bestsellers-group-title'>Горизонтальные дизайн-радиаторы</h3>
+	<p class='bestsellers-group-desc'>
+		Горизонтальные дизайн-радиаторы устанавливают под окнами. У многих моделей есть вертикальные аналоги, чтобы выдержать единый стиль в доме.
+	</p>
 	<BestsellerModels models={horizontals} />
-	<div
-		class='text-xs mt-[20px] hover:text-red-700 transition-colors duration-300'
-	>
-		<a href='/design'>Все горизонтальные дизайн-радиаторы</a>
+	<div class='bestsellers-all-link'>
+		<a href='/design/'>Все горизонтальные дизайн-радиаторы →</a>
+	</div>
+	</div>
+
+	<div class='bestsellers-cta'>
+		<div class='bestsellers-cta-text'>
+			Не нашли подходящую модель? Подберем радиатор под ваш проект.
+		</div>
+		<a href='/request' class='bestsellers-cta-btn'>Получить расчет</a>
 	</div>
 </section>
+
+<style>
+	.bestsellers {
+		max-width: 1180px;
+		margin: 0 auto 72px;
+		padding: 0 16px;
+	}
+
+	.bestsellers-title {
+		font-size: 44px;
+		line-height: 1.15;
+		font-weight: 600;
+		color: #111;
+	}
+
+	.bestsellers-subtitle {
+		margin-top: 10px;
+		font-size: 16px;
+		line-height: 1.5;
+		color: #666;
+		max-width: 760px;
+	}
+
+	.bestsellers-group {
+		margin-top: 28px;
+	}
+
+	.bestsellers-group-title {
+		font-size: 34px;
+		line-height: 1.2;
+		font-weight: 600;
+		color: #111;
+	}
+
+	.bestsellers-group-desc {
+		margin-top: 10px;
+		font-size: 15px;
+		line-height: 1.5;
+		color: #555;
+		max-width: 720px;
+	}
+
+	.bestsellers-all-link {
+		margin-top: 16px;
+		font-size: 13px;
+		line-height: 1.3;
+	}
+
+	.bestsellers-all-link a {
+		color: #222;
+		text-decoration: none;
+	}
+
+	.bestsellers-all-link a:hover {
+		color: #a30f19;
+	}
+
+	.bestsellers-cta {
+		margin-top: 28px;
+		padding: 14px 0;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 12px;
+		border-top: 1px solid #ececec;
+	}
+
+	.bestsellers-cta-text {
+		font-size: 14px;
+		line-height: 1.4;
+		color: #444;
+	}
+
+	.bestsellers-cta-btn {
+		height: 44px;
+		padding: 0 18px;
+		border-radius: 3px;
+		border: 1px solid #c1121f;
+		background: #c1121f;
+		color: #fff;
+		font-size: 14px;
+		font-weight: 600;
+		line-height: 1;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		text-decoration: none;
+		white-space: nowrap;
+	}
+
+	.bestsellers-cta-btn:hover {
+		background: #a30f19;
+		border-color: #a30f19;
+	}
+
+	@media (max-width: 768px) {
+		.bestsellers {
+			padding: 0 16px;
+			margin-bottom: 56px;
+		}
+
+		.bestsellers-title {
+			font-size: 30px;
+		}
+
+		.bestsellers-subtitle {
+			font-size: 16px;
+			line-height: 1.75;
+		}
+
+		.bestsellers-group-title {
+			font-size: 24px;
+		}
+
+		.bestsellers-group-desc {
+			font-size: 16px;
+			line-height: 1.75;
+		}
+
+		.bestsellers-cta {
+			margin-top: 22px;
+			padding-top: 16px;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.bestsellers-cta-btn {
+			width: 100%;
+			height: 46px;
+		}
+	}
+</style>
