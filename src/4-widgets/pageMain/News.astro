@@ -8,8 +8,8 @@ const news = await getCollection('news');
 <section
   id="news"
   aria-label="Новости о радиаторах и дайзн-ради аторах"
-  class="justify-center max-w-6xl mx-auto px-5 md:px-10 mb-20">
-  <h2 class="text-3xl font-bold text-left">Новости</h2>
+  class="justify-center max-w-7xl mx-auto px-5 md:px-10 py-12 md:py-20">
+  <h2 class="text-3xl md:text-4xl font-semibold text-left">Полезные материалы и новости</h2>
   <div
     id="articles_list"
     aria-label="Список статей"
@@ -59,8 +59,8 @@ const news = await getCollection('news');
   <div class="mt-[20px]">
     <a href={'/news'}>
       <div
-        class="text-xs font-light text-red-700 hover:underline transition-all duration-300">
-        все новости
+        class="text-sm font-medium text-red-700 hover:underline transition-all duration-300">
+        Все материалы →
       </div>
     </a>
   </div>

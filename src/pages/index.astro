@@ -1,30 +1,30 @@
 ---
 import Layout from '@shared/layouts/Layout.astro'
 import BestSellers from '@widgets/pageMain/BestSellers.astro'
+import AboutVelar from '@widgets/pageMain/AboutVelar.astro'
 import BuyFromUs from '@widgets/pageMain/BuyFromUs.astro'
-import Catalog from '@widgets/pageMain/Catalog.astro'
 import Docs from '@widgets/pageMain/Docs.astro'
 import Hero from '@widgets/pageMain/Hero.astro'
 import HowToOrder from '@widgets/pageMain/HowToOrder.astro'
+import News from '@widgets/pageMain/News.astro'
 import ScenarioCta from '@widgets/pageMain/ScenarioCta.astro'
 import WhyVelar from '@widgets/pageMain/WhyVelar.astro'
 ---
 
 <Layout
-	title='Радиаторы Velar — купить дизайнерские радиаторы'
-	description='Каталог радиаторов Velar. Поможем подобрать модель под интерьер и рассчитать мощность. Доставка по России.'
+	title='Радиаторы Velar — магазин VelarShop'
+	description='Радиаторы Velar для квартир, домов и дизайн-проектов. Дизайн-радиаторы, трубчатые, ретро-модели и конвекторы. Подбор, расчет, гарантия и доставка по России.'
 	paddings={false}
 >
 	<Hero />
 	<ScenarioCta />
 	<BestSellers />
-	<div class='mt-12 md:mt-20'>
-		<Catalog />
-	</div>
+	<AboutVelar />
 	<div class='mt-12 md:mt-20'>
 		<WhyVelar />
 	</div>
 	<Docs />
 	<BuyFromUs />
 	<HowToOrder />
+	<News />
 </Layout>

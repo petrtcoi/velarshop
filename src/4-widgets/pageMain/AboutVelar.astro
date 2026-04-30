@@ -1,0 +1,64 @@
+---
+const cards = [
+	{
+		title: 'Большой выбор',
+		text: 'Дизайн-радиаторы, трубчатые, ретро и конвекторы',
+		image: '/images/articles/design.jpg',
+	},
+	{
+		title: 'Вертикальные и горизонтальные модели',
+		text: 'Можно подобрать решения под разные помещения и задачи',
+		image: '/images/columns/about.jpg',
+	},
+	{
+		title: 'Цвета RAL',
+		text: 'Подбор цвета под интерьер или дизайн-проект',
+		image: '/images/retro/retro_1.jpg',
+	},
+	{
+		title: 'Производство под заказ',
+		text: 'Размеры, мощность и конфигурация под проект',
+		image: '/images/articles/convector.jpeg',
+	},
+]
+---
+
+<section id='about-velar' aria-label='О радиаторах Velar' class='bg-white py-12 md:py-20'>
+	<div class='max-w-7xl mx-auto px-5 md:px-10'>
+		<h2 class='text-3xl md:text-4xl font-semibold text-neutral-900'>
+			Радиаторы Velar — решения для современных интерьеров
+		</h2>
+		<p class='mt-4 text-sm md:text-base leading-7 text-neutral-700 max-w-4xl'>
+			Дизайн-радиаторы, трубчатые модели, ретро-радиаторы и конвекторы — подбираем под стиль, мощность и задачи помещения
+		</p>
+
+		<div class='mt-7 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6'>
+			{
+				cards.map(card => (
+					<article class='rounded-2xl border border-neutral-200 bg-white p-3 md:p-4'>
+						<div class='aspect-[4/3] rounded-xl overflow-hidden bg-neutral-100'>
+							<img
+								src={card.image}
+								alt={card.title}
+								loading='lazy'
+								class='h-full w-full object-cover'
+							/>
+						</div>
+						<h3 class='mt-4 text-base font-semibold text-neutral-900'>{card.title}</h3>
+						<p class='mt-2 text-sm leading-6 text-neutral-600 min-h-[48px]'>{card.text}</p>
+					</article>
+				))
+			}
+		</div>
+
+		<div class='mt-7 rounded-2xl border border-neutral-300 bg-neutral-50 p-4 md:p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4'>
+			<p class='text-base md:text-lg font-semibold text-neutral-900'>Подобрать радиатор под проект</p>
+			<a
+				href='/request'
+				class='inline-flex h-12 w-full md:w-auto items-center justify-center rounded-[3px] border border-red-700 bg-red-700 px-7 text-base font-semibold text-white transition-colors hover:bg-red-800 hover:border-red-800'
+			>
+				Получить расчет
+			</a>
+		</div>
+	</div>
+</section>
