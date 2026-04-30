@@ -1,23 +1,24 @@
 ---
 const steps = [
-	'Выберите категорию или модель',
-	'Отправьте параметры помещения',
-	'Получите подбор и расчет',
-	'Согласуйте цвет, размер и подключение',
-	'Подтвердите заказ',
-	'Получите радиатор после производства',
+	'Оставьте заявку или напишите нам',
+	'Уточним параметры помещения и задачи',
+	'Подберем модели и рассчитаем стоимость',
+	'Согласуем заказ и сроки',
+	'Организуем доставку',
 ]
 ---
 
-<section class='justify-center max-w-6xl mx-auto px-5 md:px-10 mt-16 mb-20'>
-	<h2 class='text-3xl font-bold text-left'>Как заказать радиаторы Velar</h2>
-	<ol class='mt-5 list-decimal list-inside text-sm leading-8 text-neutral-800'>
-		{steps.map(step => <li>{step}</li>)}
-	</ol>
-	<a
-		href='/request'
-		class='inline-flex mt-6 items-center justify-center rounded-xl bg-red-700 px-6 py-4 text-base font-semibold text-white transition-colors hover:bg-red-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-700 focus-visible:ring-offset-2'
-	>
-		Получить расчет
-	</a>
+<section id='how-to-order' class='bg-white py-12 md:py-20'>
+	<div class='max-w-7xl mx-auto px-5 md:px-10'>
+		<h2 class='text-3xl md:text-4xl font-semibold text-left text-neutral-900'>Как заказать радиаторы Velar</h2>
+		<ol class='mt-6 list-decimal list-inside space-y-2 text-sm md:text-base leading-7 text-neutral-800'>
+			{steps.map(step => <li>{step}</li>)}
+		</ol>
+		<a
+			href='/request'
+			class='inline-flex mt-6 h-12 items-center justify-center rounded-[3px] border border-red-700 bg-red-700 px-7 text-base font-semibold text-white transition-colors hover:bg-red-800 hover:border-red-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-700 focus-visible:ring-offset-2'
+		>
+			Получить расчет
+		</a>
+	</div>
 </section>
