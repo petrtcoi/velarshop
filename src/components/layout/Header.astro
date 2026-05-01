@@ -1,698 +1,823 @@
 ---
-import { Picture } from '@astrojs/image/components'
-import { contacts } from '@shared/constants/contacts'
+import { Picture } from "@astrojs/image/components";
+import { contacts } from "@shared/constants/contacts";
 
-const { phone495, phone495String } = contacts
+const { phone495, phone495String } = contacts;
 
 type MobileIconName =
-	| 'columns'
-	| 'design'
-	| 'convector'
-	| 'retro'
-	| 'floor'
-	| 'delivery'
-	| 'store'
-	| 'book'
-	| 'phone'
-	| 'factory'
-	| 'shield'
+  | "columns"
+  | "design"
+  | "convector"
+  | "retro"
+  | "floor"
+  | "delivery"
+  | "store"
+  | "book"
+  | "phone"
+  | "factory"
+  | "shield";
 
 const catalogLinks = [
-	{
-		title: 'Дизайн-радиаторы',
-		url: '/design',
-		text: 'Вертикальные и горизонтальные модели',
-	},
-		{
-			title: 'Трубчатые радиаторы',
-			url: '/columns',
-			text: 'Стальные секционные радиаторы',
-		},
-	{
-		title: 'Напольные радиаторы',
-		url: '/floor',
-		text: 'Решения для панорамных окон',
-	},
-	{
-		title: 'Ретро-радиаторы',
-		url: '/retro',
-		text: 'Чугунные модели в классическом стиле',
-	},
-	{
-		title: 'Внутрипольные конвекторы',
-		url: '/convector',
-		text: 'Конвекторы для остекления в пол',
-	},
-]
+  {
+    title: "Дизайн-радиаторы",
+    url: "/design",
+    text: "Вертикальные и горизонтальные модели",
+  },
+  {
+    title: "Трубчатые радиаторы",
+    url: "/columns",
+    text: "Стальные секционные радиаторы",
+  },
+  {
+    title: "Напольные радиаторы",
+    url: "/floor",
+    text: "Решения для панорамных окон",
+  },
+  {
+    title: "Ретро-радиаторы",
+    url: "/retro",
+    text: "Чугунные модели в классическом стиле",
+  },
+  {
+    title: "Внутрипольные конвекторы",
+    url: "/convector",
+    text: "Конвекторы для остекления в пол",
+  },
+];
 
 const mobileCatalogLinks: Array<{
-	title: string
-	description: string
-	url: string
-	icon: MobileIconName
+  title: string;
+  description: string;
+  url: string;
+  icon: MobileIconName;
 }> = [
-	{
-		title: 'Трубчатые радиаторы',
-		description: 'Классические модели для квартиры и дома',
-		url: '/columns',
-		icon: 'columns',
-	},
-	{
-		title: 'Дизайн-радиаторы',
-		description: 'Вертикальные и интерьерные решения',
-		url: '/design',
-		icon: 'design',
-	},
-	{
-		title: 'Внутрипольные конвекторы',
-		description: 'Для панорамных окон',
-		url: '/convector',
-		icon: 'convector',
-	},
-	{
-		title: 'Ретро радиаторы',
-		description: 'Чугунные модели в классическом стиле',
-		url: '/retro',
-		icon: 'retro',
-	},
-	{
-		title: 'Напольные радиаторы',
-		description: 'Решения для нестандартного монтажа',
-		url: '/floor',
-		icon: 'floor',
-	},
-]
+  {
+    title: "Трубчатые радиаторы",
+    description: "Классические модели для квартиры и дома",
+    url: "/columns",
+    icon: "columns",
+  },
+  {
+    title: "Дизайн-радиаторы",
+    description: "Вертикальные и интерьерные решения",
+    url: "/design",
+    icon: "design",
+  },
+  {
+    title: "Внутрипольные конвекторы",
+    description: "Для панорамных окон",
+    url: "/convector",
+    icon: "convector",
+  },
+  {
+    title: "Ретро радиаторы",
+    description: "Чугунные модели в классическом стиле",
+    url: "/retro",
+    icon: "retro",
+  },
+  {
+    title: "Напольные радиаторы",
+    description: "Решения для нестандартного монтажа",
+    url: "/floor",
+    icon: "floor",
+  },
+];
 
-const mobileBuyerLinks: Array<{ title: string; url: string; icon: MobileIconName }> = [
-	{ title: 'Доставка и оплата', url: '/delivery', icon: 'delivery' },
-	{ title: 'О магазине', url: '/about', icon: 'store' },
-	{ title: 'Полезная информация', url: '/info', icon: 'book' },
-	{ title: 'О нас', url: '/about', icon: 'store' },
-]
+const mobileBuyerLinks: Array<{
+  title: string;
+  url: string;
+  icon: MobileIconName;
+}> = [
+  { title: "Доставка и оплата", url: "/delivery", icon: "delivery" },
+  { title: "О магазине", url: "/about", icon: "store" },
+  { title: "Полезная информация", url: "/info", icon: "book" },
+  { title: "О нас", url: "/about", icon: "store" },
+];
 
 const mobileTrustLinks: Array<{ title: string; icon: MobileIconName }> = [
-	{ title: 'Производство под заказ', icon: 'factory' },
-	{ title: 'Доставка по России', icon: 'delivery' },
-	{ title: 'Гарантия ДО 10 лет', icon: 'shield' },
-]
+  { title: "Производство под заказ", icon: "factory" },
+  { title: "Доставка по России", icon: "delivery" },
+  { title: "Гарантия ДО 10 лет", icon: "shield" },
+];
 
 const mobileIconSvg: Record<MobileIconName, string> = {
-	columns:
-		'<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 18h16"/><path d="M7 6v12"/><path d="M12 6v12"/><path d="M17 6v12"/></svg>',
-	design:
-		'<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.8 5.2a2 2 0 0 1-1.2 1.2L3 11.2l6 2a2 2 0 0 1 1.2 1.2L12 20.5l1.8-5.2a2 2 0 0 1 1.2-1.2l6-2-6-1.8a2 2 0 0 1-1.2-1.2Z"/></svg>',
-	convector:
-		'<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h9a4 4 0 1 0-4-4"/><path d="M3 15h13a3 3 0 1 1-3 3"/><path d="M3 12h16"/></svg>',
-	retro:
-		'<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22h18"/><path d="M6 18v-9"/><path d="M10 18v-9"/><path d="M14 18v-9"/><path d="M18 18v-9"/><path d="M4 9h16"/><path d="M12 2v3"/></svg>',
-	floor:
-		'<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="10" rx="2"/><path d="M3 18h18"/></svg>',
-	delivery:
-		'<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>',
-	store:
-		'<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10"/><path d="M2 7h20"/><path d="m5 7 1-4h12l1 4"/><path d="M9 22V12h6v10"/></svg>',
-	book:
-		'<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18V5a2 2 0 0 1 2-2h7v18H5a2 2 0 0 1-2-3Z"/><path d="M21 18V5a2 2 0 0 0-2-2h-7v18h7a2 2 0 0 0 2-3Z"/></svg>',
-	phone:
-		'<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.1 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.77.62 2.61a2 2 0 0 1-.45 2.11L8.03 9.7a16 16 0 0 0 6.27 6.27l1.26-1.25a2 2 0 0 1 2.11-.45c.84.29 1.71.5 2.61.62A2 2 0 0 1 22 16.92z"/></svg>',
-	factory:
-		'<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16h.01"/><path d="M16 16h.01"/><path d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.769-.422l-4.462 2.844A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.769-.422L9.77 10.922A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/><path d="M8 16h.01"/></svg>',
-	shield:
-		'<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>',
-}
+  columns:
+    '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 18h16"/><path d="M7 6v12"/><path d="M12 6v12"/><path d="M17 6v12"/></svg>',
+  design:
+    '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.8 5.2a2 2 0 0 1-1.2 1.2L3 11.2l6 2a2 2 0 0 1 1.2 1.2L12 20.5l1.8-5.2a2 2 0 0 1 1.2-1.2l6-2-6-1.8a2 2 0 0 1-1.2-1.2Z"/></svg>',
+  convector:
+    '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h9a4 4 0 1 0-4-4"/><path d="M3 15h13a3 3 0 1 1-3 3"/><path d="M3 12h16"/></svg>',
+  retro:
+    '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22h18"/><path d="M6 18v-9"/><path d="M10 18v-9"/><path d="M14 18v-9"/><path d="M18 18v-9"/><path d="M4 9h16"/><path d="M12 2v3"/></svg>',
+  floor:
+    '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="10" rx="2"/><path d="M3 18h18"/></svg>',
+  delivery:
+    '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>',
+  store:
+    '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10"/><path d="M2 7h20"/><path d="m5 7 1-4h12l1 4"/><path d="M9 22V12h6v10"/></svg>',
+  book: '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18V5a2 2 0 0 1 2-2h7v18H5a2 2 0 0 1-2-3Z"/><path d="M21 18V5a2 2 0 0 0-2-2h-7v18h7a2 2 0 0 0 2-3Z"/></svg>',
+  phone:
+    '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.1 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.77.62 2.61a2 2 0 0 1-.45 2.11L8.03 9.7a16 16 0 0 0 6.27 6.27l1.26-1.25a2 2 0 0 1 2.11-.45c.84.29 1.71.5 2.61.62A2 2 0 0 1 22 16.92z"/></svg>',
+  factory:
+    '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16h.01"/><path d="M16 16h.01"/><path d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.769-.422l-4.462 2.844A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.769-.422L9.77 10.922A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/><path d="M8 16h.01"/></svg>',
+  shield:
+    '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>',
+};
 ---
 
-<div class='topbar'>
-	<div class='flex flex-row items-center justify-end gap-8 max-w-[1180px] mx-auto px-5 h-full text-xs text-white'>
-		<div class='opacity-80 flex flex-row justify-between items-center gap-2 leading-1'>
-			<div><svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-factory-icon lucide-factory'><path d='M12 16h.01'></path><path d='M16 16h.01'></path><path d='M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.769-.422l-4.462 2.844A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.769-.422L9.77 10.922A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z'></path><path d='M8 16h.01'></path></svg></div>
-			<div>Производство под заказ</div>
-		</div>
-		<div class='opacity-80 flex flex-row justify-between items-center gap-2'>
-			<div><svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-truck-icon lucide-truck'><path d='M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2'></path><path d='M15 18H9'></path><path d='M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14'></path><circle cx='17' cy='18' r='2'></circle><circle cx='7' cy='18' r='2'></circle></svg></div>
-			<div>Доставка по России</div>
-		</div>
-		<div class='opacity-80 flex flex-row justify-between items-center gap-2'>
-			<div><svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-shield-icon lucide-shield'><path d='M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z'></path></svg></div>
-			<div>Гарантия ДО 10 лет</div>
-		</div>
-	</div>
+<div class="topbar">
+  <div
+    class="flex flex-row items-center justify-end gap-8 max-w-[1180px] mx-auto px-5 h-full text-xs text-white"
+  >
+    <div
+      class="opacity-80 flex flex-row justify-between items-center gap-2 leading-1"
+    >
+      <div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-factory-icon lucide-factory"
+          ><path d="M12 16h.01"></path><path d="M16 16h.01"></path><path
+            d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.769-.422l-4.462 2.844A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.769-.422L9.77 10.922A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"
+          ></path><path d="M8 16h.01"></path></svg>
+      </div>
+      <div>Производство под заказ</div>
+    </div>
+    <div class="opacity-80 flex flex-row justify-between items-center gap-2">
+      <div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-truck-icon lucide-truck"
+          ><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"
+          ></path><path d="M15 18H9"></path><path
+            d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"
+          ></path><circle cx="17" cy="18" r="2"></circle><circle
+            cx="7"
+            cy="18"
+            r="2"></circle></svg>
+      </div>
+      <div>Доставка по России</div>
+    </div>
+    <div class="opacity-80 flex flex-row justify-between items-center gap-2">
+      <div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-shield-icon lucide-shield"
+          ><path
+            d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+          ></path></svg>
+      </div>
+      <div>Гарантия ДО 10 лет</div>
+    </div>
+  </div>
 </div>
 
-<header class='site-header'>
-	<nav itemscope itemtype='https://schema.org/SiteNavigationElement' class='header-container'>
-		<a href='/' class='logo-link' aria-label='VelarShop' itemprop='url'>
-			<Picture
-				loading='eager'
-				widths={[122, 170, 260]}
-				width={170}
-				height={41}
-				sizes='(max-width: 768px) 300px, 500px'
-				aspectRatio='1052:255'
-				src='/images/logo.png'
-				alt='VelarShop'
-				class='logo-img'
-			/>
-		</a>
+<header class="site-header">
+  <nav
+    itemscope
+    itemtype="https://schema.org/SiteNavigationElement"
+    class="header-container"
+  >
+    <a href="/" class="logo-link" aria-label="VelarShop" itemprop="url">
+      <Picture
+        loading="eager"
+        widths={[122, 170, 260]}
+        width={170}
+        height={41}
+        sizes="(max-width: 768px) 300px, 500px"
+        aspectRatio="1052:255"
+        src="/images/logo.png"
+        alt="VelarShop"
+        class="logo-img"
+      />
+    </a>
 
-		<div class='desktop-menu tracking-tight!'>
-			<div class='catalog-dropdown'>
-				<a href='/#catalog' class='menu-link' itemprop='url'>
-					Каталог <span aria-hidden='true'>▾</span>
-				</a>
-				<div class='catalog-panel'>
-					{catalogLinks.map(link => (
-						<a href={link.url} class='catalog-item' itemprop='url'>
-							<span class='catalog-item-title'>{link.title}</span>
-							<span class='catalog-item-text'>{link.text}</span>
-						</a>
-					))}
-				</div>
-			</div>
-			<a href='/delivery' class='menu-link' itemprop='url'>Доставка и оплата</a>
-			<a href='/about' class='menu-link' itemprop='url'>О магазине</a>
-			<a href='/info' class='menu-link' itemprop='url'>Информация</a>
-		</div>
+    <div class="desktop-menu tracking-tight!">
+      <div class="catalog-dropdown">
+        <a href="/#catalog" class="menu-link" itemprop="url">
+          Каталог <span aria-hidden="true">▾</span>
+        </a>
+        <div class="catalog-panel">
+          {
+            catalogLinks.map((link) => (
+              <a href={link.url} class="catalog-item" itemprop="url">
+                <span class="catalog-item-title">{link.title}</span>
+                <span class="catalog-item-text">{link.text}</span>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+      <a href="/delivery" class="menu-link" itemprop="url">Доставка и оплата</a>
+      <a href="/about" class="menu-link" itemprop="url">О магазине</a>
+      <a href="/info" class="menu-link" itemprop="url">Информация</a>
+    </div>
 
-		<div class='desktop-right'>
-			<a href={`tel:${phone495}`} class='phone-link'>{phone495String}</a>
-			<a href='/request' class='header-cta'>Получить расчет</a>
-		</div>
+    <div class="desktop-right">
+      <a href={`tel:${phone495}`} class="phone-link">{phone495String}</a>
+      <a href="/request" class="header-cta">Получить расчет</a>
+    </div>
 
-			<div class='mobile-right'>
-				<a href='/request' class='mobile-calc-button'>Расчет</a>
-				<details class='mobile-menu'>
-					<summary class='mobile-burger' aria-label='Открыть меню'>
-					<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><line x1='4' y1='12' x2='20' y2='12'></line><line x1='4' y1='6' x2='20' y2='6'></line><line x1='4' y1='18' x2='20' y2='18'></line></svg>
-				</summary>
-				<div class='mobile-sheet-backdrop' data-close-sheet></div>
-				<div class='mobile-sheet' role='dialog' aria-modal='true' aria-label='Меню сайта'>
-					<div class='mobile-sheet-header'>
-						<div class='mobile-sheet-brand'>
-							<span class='mobile-sheet-brand-title'>VELAR</span>
-							<span class='mobile-sheet-brand-subtitle'>Дизайн-радиаторы</span>
-						</div>
-						<button type='button' class='mobile-sheet-close' aria-label='Закрыть меню' data-close-sheet>
-							✕
-						</button>
-					</div>
-					<p class='mobile-sheet-intro'>Радиаторы, конвекторы и решения под интерьер</p>
-					<div class='mobile-sheet-cta'>
-						<a href='/request' class='mobile-sheet-primary' data-close-sheet-link>Получить расчет</a>
-					</div>
-					<div class='mobile-sheet-section'>
-						<div class='mobile-sheet-title'>Каталог</div>
-						<div class='mobile-sheet-links'>
-							{mobileCatalogLinks.map(link => (
-								<a href={link.url} class='menu-link-card' data-close-sheet-link>
-									<span class='menu-link-icon' set:html={mobileIconSvg[link.icon]}></span>
-									<span class='menu-link-content'>
-										<span class='menu-link-title'>{link.title}</span>
-										<span class='menu-link-description'>{link.description}</span>
-									</span>
-								</a>
-							))}
-						</div>
-					</div>
-					<div class='mobile-sheet-section'>
-						<div class='mobile-sheet-title'>Покупателям</div>
-						<div class='mobile-sheet-links'>
-							{mobileBuyerLinks.map(link => (
-								<a href={link.url} class='menu-link-card' data-close-sheet-link>
-									<span class='menu-link-icon' set:html={mobileIconSvg[link.icon]}></span>
-									<span class='menu-link-content buyer-link-content'>
-										<span class='menu-link-title'>{link.title}</span>
-									</span>
-								</a>
-							))}
-						</div>
-					</div>
-					<div class='mobile-sheet-trust'>
-						{mobileTrustLinks.map(item => (
-							<div class='mobile-sheet-trust-item'>
-								<span class='mobile-sheet-trust-icon' set:html={mobileIconSvg[item.icon]}></span>
-								<span>{item.title}</span>
-							</div>
-						))}
-						<a href={`tel:${phone495}`} class='mobile-sheet-phone' data-close-sheet-link>
-							{phone495String}
-						</a>
-						</div>
-						</div>
-					</details>
-				</div>
-	</nav>
+    <div class="mobile-right">
+      <a href="/request" class="mobile-calc-button">Расчет</a>
+      <details class="mobile-menu">
+        <summary class="mobile-burger" aria-label="Открыть меню">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            ><line x1="4" y1="12" x2="20" y2="12"></line><line
+              x1="4"
+              y1="6"
+              x2="20"
+              y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg
+          >
+        </summary>
+        <div class="mobile-sheet-backdrop" data-close-sheet></div>
+        <div
+          class="mobile-sheet"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Меню сайта"
+        >
+          <div class="mobile-sheet-header">
+            <div class="mobile-sheet-brand">
+              <span class="mobile-sheet-brand-title">VELAR</span>
+              <span class="mobile-sheet-brand-subtitle">Дизайн-радиаторы</span>
+            </div>
+            <button
+              type="button"
+              class="mobile-sheet-close"
+              aria-label="Закрыть меню"
+              data-close-sheet
+            >
+              ✕
+            </button>
+          </div>
+          <p class="mobile-sheet-intro">
+            Радиаторы, конвекторы и решения под интерьер
+          </p>
+          <div class="mobile-sheet-cta">
+            <a
+              href="/request"
+              class="mobile-sheet-primary"
+              data-close-sheet-link>Получить расчет</a
+            >
+          </div>
+          <div class="mobile-sheet-section">
+            <div class="mobile-sheet-title">Каталог</div>
+            <div class="mobile-sheet-links">
+              {
+                mobileCatalogLinks.map((link) => (
+                  <a
+                    href={link.url}
+                    class="menu-link-card"
+                    data-close-sheet-link
+                  >
+                    <span
+                      class="menu-link-icon"
+                      set:html={mobileIconSvg[link.icon]}
+                    />
+                    <span class="menu-link-content">
+                      <span class="menu-link-title">{link.title}</span>
+                      <span class="menu-link-description">
+                        {link.description}
+                      </span>
+                    </span>
+                  </a>
+                ))
+              }
+            </div>
+          </div>
+          <div class="mobile-sheet-section">
+            <div class="mobile-sheet-title">Покупателям</div>
+            <div class="mobile-sheet-links">
+              {
+                mobileBuyerLinks.map((link) => (
+                  <a
+                    href={link.url}
+                    class="menu-link-card"
+                    data-close-sheet-link
+                  >
+                    <span
+                      class="menu-link-icon"
+                      set:html={mobileIconSvg[link.icon]}
+                    />
+                    <span class="menu-link-content buyer-link-content">
+                      <span class="menu-link-title">{link.title}</span>
+                    </span>
+                  </a>
+                ))
+              }
+            </div>
+          </div>
+          <div class="mobile-sheet-trust">
+            {
+              mobileTrustLinks.map((item) => (
+                <div class="mobile-sheet-trust-item">
+                  <span
+                    class="mobile-sheet-trust-icon"
+                    set:html={mobileIconSvg[item.icon]}
+                  />
+                  <span>{item.title}</span>
+                </div>
+              ))
+            }
+            <a
+              href={`tel:${phone495}`}
+              class="mobile-sheet-phone"
+              data-close-sheet-link
+            >
+              {phone495String}
+            </a>
+          </div>
+        </div>
+      </details>
+    </div>
+  </nav>
 </header>
 
 <script is:inline>
-	document.querySelectorAll('.mobile-menu').forEach(menu => {
-		const closeItems = menu.querySelectorAll('[data-close-sheet], [data-close-sheet-link]')
-		closeItems.forEach(item => {
-			item.addEventListener('click', () => {
-				if (menu instanceof HTMLDetailsElement) {
-					menu.removeAttribute('open')
-				}
-			})
-		})
-	})
+  document.querySelectorAll(".mobile-menu").forEach((menu) => {
+    const closeItems = menu.querySelectorAll(
+      "[data-close-sheet], [data-close-sheet-link]"
+    );
+    closeItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        if (menu instanceof HTMLDetailsElement) {
+          menu.removeAttribute("open");
+        }
+      });
+    });
+  });
 </script>
 
 <style>
-	.topbar {
-		height: 32px;
-		background: #080808;
-		color: #fff;
-		font-size: 12px;
-		font-weight: 200 !important;
-	}
+  .topbar {
+    height: 32px;
+    background: #080808;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 200 !important;
+  }
 
-	.topbar-container {
-		max-width: 1180px;
-		margin: 0 auto;
-		padding: 0 20px;
-		height: 100%;
-		display: flex;
-		justify-content: flex-end;
-		align-items: center;
-		gap: 34px;
-	}
+  .topbar-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 34px;
+  }
 
-	.site-header {
-		position: sticky;
-		top: 0;
-		z-index: 50;
-		height: 76px;
-		background: #fff;
-		border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-	}
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    height: 76px;
+    background: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
 
-	.header-container {
-		max-width: 1180px;
-		margin: 0 auto;
-		padding: 0 20px;
-		height: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: 28px;
-	}
+  .header-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+  }
 
-	.logo-link {
-		flex-shrink: 0;
-	}
+  .logo-link {
+    flex-shrink: 0;
+  }
 
-	.logo-img {
-		width: 170px;
-		height: auto;
-	}
+  .logo-img {
+    width: 170px;
+    height: auto;
+  }
 
-	.desktop-menu {
-		display: flex;
-		align-items: center;
-		gap: 30px;
-		font-size: 13px;
-		font-weight: 300;
-		line-height: 1;
-		color: #181818;
-	}
+  .desktop-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1;
+    color: #181818;
+  }
 
-	.menu-link {
-		text-decoration: none;
-		color: #181818;
-		display: inline-flex;
-		align-items: center;
-		gap: 5px;
-		height: 76px;
-	}
+  .menu-link {
+    text-decoration: none;
+    color: #181818;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    height: 76px;
+  }
 
-	.menu-link:hover {
-		color: #a30f19;
-	}
+  .menu-link:hover {
+    color: #a30f19;
+  }
 
-	.catalog-dropdown {
-		position: relative;
-	}
+  .catalog-dropdown {
+    position: relative;
+  }
 
-	.catalog-panel {
-		position: absolute;
-		left: 0;
-		top: calc(100% + 2px);
-		width: 360px;
-		padding: 10px;
-		border-radius: 14px;
-		border: 1px solid #e5e7eb;
-		background: #fff;
-		box-shadow: 0 16px 40px rgba(0, 0, 0, 0.16);
-		opacity: 0;
-		visibility: hidden;
-		transition: opacity 0.2s;
-	}
+  .catalog-panel {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 2px);
+    width: 360px;
+    padding: 10px;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.16);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s;
+  }
 
-	.catalog-dropdown:hover .catalog-panel {
-		opacity: 1;
-		visibility: visible;
-	}
+  .catalog-dropdown:hover .catalog-panel {
+    opacity: 1;
+    visibility: visible;
+  }
 
-	.catalog-item {
-		display: block;
-		padding: 10px 12px;
-		border-radius: 10px;
-		text-decoration: none;
-		color: #111;
-	}
+  .catalog-item {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #111;
+  }
 
-	.catalog-item:hover {
-		color: #a30f19;
-	}
+  .catalog-item:hover {
+    color: #a30f19;
+  }
 
-	.catalog-item-title {
-		display: block;
-		font-size: 13px;
-		font-weight: 600;
-		line-height: 1.2;
-	}
+  .catalog-item-title {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
 
-	.catalog-item-text {
-		display: block;
-		margin-top: 5px;
-		font-size: 13px;
-		line-height: 1.3;
-		color: #666;
-	}
+  .catalog-item-text {
+    display: block;
+    margin-top: 5px;
+    font-size: 13px;
+    line-height: 1.3;
+    color: #404040;
+  }
 
-	.desktop-right {
-		display: flex;
-		align-items: center;
-		gap: 16px;
-	}
+  .desktop-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
 
-	.phone-link {
-		font-size: 14px;
-		font-weight: 600;
-		line-height: 1;
-		white-space: nowrap;
-		color: #181818;
-		text-decoration: none;
-	}
+  .phone-link {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+    color: #181818;
+    text-decoration: none;
+  }
 
-	.phone-link:hover {
-		color: #a30f19;
-	}
+  .phone-link:hover {
+    color: #a30f19;
+  }
 
-	.header-cta {
-		border: 1px solid #c1121f;
-		color: #c1121f;
-		border-radius: 3px;
-		padding: 12px 22px;
-		font-size: 13px;
-		font-weight: 300 !important;
-		line-height: 1;
-		height: 48px;
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		text-decoration: none;
-	}
+  .header-cta {
+    border: 1px solid #c1121f;
+    color: #c1121f;
+    border-radius: 3px;
+    padding: 12px 22px;
+    font-size: 13px;
+    font-weight: 300 !important;
+    line-height: 1;
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
 
-	.header-cta:hover {
-		background: #c1121f;
-		color: #fff;
-		font-weight: 200 !important;
-	}
+  .header-cta:hover {
+    background: #c1121f;
+    color: #fff;
+    font-weight: 200 !important;
+  }
 
-	.mobile-right {
-		display: none;
-		align-items: center;
-		gap: 6px;
-	}
+  .mobile-right {
+    display: none;
+    align-items: center;
+    gap: 6px;
+  }
 
-	.mobile-calc-button {
-		background: #fff;
-		color: #c1121f;
-		border: 1px solid #c1121f;
-		border-radius: 3px;
-		height: 44px;
-		padding: 0 18px;
-		font-size: 14px;
-		font-weight: 300;
-		line-height: 1;
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		text-decoration: none;
-	}
+  .mobile-calc-button {
+    background: #fff;
+    color: #c1121f;
+    border: 1px solid #c1121f;
+    border-radius: 3px;
+    height: 44px;
+    padding: 0 18px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
 
-	.mobile-calc-button:hover {
-		background: rgba(193, 18, 31, 0.05);
-	}
+  .mobile-calc-button:hover {
+    background: rgba(193, 18, 31, 0.05);
+  }
 
-	.mobile-burger {
-		list-style: none;
-		background: #fff;
-		color: #111;
-		border: 1px solid #e5e5e5;
-		border-radius: 3px;
-		width: 44px;
-		height: 44px;
-		padding: 0;
-		cursor: pointer;
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-	}
+  .mobile-burger {
+    list-style: none;
+    background: #fff;
+    color: #111;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-	.mobile-burger::-webkit-details-marker {
-		display: none;
-	}
+  .mobile-burger::-webkit-details-marker {
+    display: none;
+  }
 
-	.mobile-burger::marker {
-		display: none;
-	}
+  .mobile-burger::marker {
+    display: none;
+  }
 
-	.mobile-sheet-backdrop {
-		display: none;
-	}
+  .mobile-sheet-backdrop {
+    display: none;
+  }
 
-	.mobile-sheet {
-		position: fixed;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		width: min(88vw, 380px);
-		background: #fff;
-		border-left: 1px solid #ececec;
-		padding: 0 0 50px;
-		transform: translateX(100%);
-		transition: transform 0.25s ease;
-		z-index: 70;
-		overflow-y: auto;
-		box-shadow: -20px 0 40px rgba(0, 0, 0, 0.22);
-	}
+  .mobile-sheet {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(88vw, 380px);
+    background: #fff;
+    border-left: 1px solid #ececec;
+    padding: 0 0 50px;
+    transform: translateX(100%);
+    transition: transform 0.25s ease;
+    z-index: 70;
+    overflow-y: auto;
+    box-shadow: -20px 0 40px rgba(0, 0, 0, 0.22);
+  }
 
-	.mobile-menu[open] .mobile-sheet {
-		transform: translateX(0);
-	}
+  .mobile-menu[open] .mobile-sheet {
+    transform: translateX(0);
+  }
 
-	.mobile-menu[open] .mobile-sheet-backdrop {
-		display: block;
-		position: fixed;
-		inset: 0;
-		background: rgba(0, 0, 0, 0.35);
-		z-index: 60;
-	}
+  .mobile-menu[open] .mobile-sheet-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 60;
+  }
 
-	.mobile-sheet-header {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: 18px 20px 12px;
-		border-bottom: 1px solid #f1f1f1;
-	}
+  .mobile-sheet-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px 12px;
+    border-bottom: 1px solid #f1f1f1;
+  }
 
-	.mobile-sheet-brand {
-		display: flex;
-		flex-direction: column;
-		gap: 2px;
-	}
+  .mobile-sheet-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
 
-	.mobile-sheet-brand-title {
-		font-size: 24px;
-		line-height: 1;
-		letter-spacing: 0.08em;
-		color: #111;
-	}
+  .mobile-sheet-brand-title {
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    color: #111;
+  }
 
-	.mobile-sheet-brand-subtitle {
-		font-size: 13px;
-		line-height: 1;
-		letter-spacing: 0;
-		text-transform: none;
-		color: #666;
-	}
+  .mobile-sheet-brand-subtitle {
+    font-size: 13px;
+    line-height: 1;
+    letter-spacing: 0;
+    text-transform: none;
+    color: #404040;
+  }
 
-	.mobile-sheet-close {
-		border: 1px solid #e5e7eb;
-		background: #fff;
-		color: #111;
-		border-radius: 3px;
-		width: 36px;
-		height: 36px;
-		font-size: 18px;
-		line-height: 1;
-		cursor: pointer;
-	}
+  .mobile-sheet-close {
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    color: #111;
+    border-radius: 3px;
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+  }
 
-	.mobile-sheet-intro {
-		margin: 0;
-		padding: 14px 20px 0;
-		font-size: 14px;
-		line-height: 1.45;
-		color: #575757;
-	}
+  .mobile-sheet-intro {
+    margin: 0;
+    padding: 14px 20px 0;
+    font-size: 14px;
+    line-height: 1.45;
+    color: #575757;
+  }
 
-	.mobile-sheet-cta {
-		display: grid;
-		gap: 10px;
-		padding: 14px 20px 0;
-	}
+  .mobile-sheet-cta {
+    display: grid;
+    gap: 10px;
+    padding: 14px 20px 0;
+  }
 
-	.mobile-sheet-primary {
-		height: 48px;
-		border-radius: 3px;
-		font-size: 15px;
-		font-weight: 600;
-		line-height: 1;
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		text-decoration: none;
-	}
+  .mobile-sheet-primary {
+    height: 48px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
 
-	.mobile-sheet-primary {
-		background: #c1121f;
-		color: #fff;
-	}
+  .mobile-sheet-primary {
+    background: #c1121f;
+    color: #fff;
+  }
 
-	.mobile-sheet-section {
-		padding: 20px 20px 0;
-	}
+  .mobile-sheet-section {
+    padding: 20px 20px 0;
+  }
 
-	.mobile-sheet-title {
-		font-size: 12px;
-		font-weight: 700;
-		color: #666;
-		text-transform: uppercase;
-		letter-spacing: 0.06em;
-	}
+  .mobile-sheet-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #404040;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
 
-	.mobile-sheet-links {
-		margin-top: 8px;
-	}
+  .mobile-sheet-links {
+    margin-top: 8px;
+  }
 
-	.menu-link-card {
-		display: flex;
-		align-items: center;
-		gap: 12px;
-		padding: 14px 0;
-		border-bottom: 1px solid #f0f0f0;
-		text-decoration: none;
-		color: #111;
-	}
+  .menu-link-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid #f0f0f0;
+    text-decoration: none;
+    color: #111;
+  }
 
-	.menu-link-icon {
-		width: 34px;
-		height: 34px;
-		border-radius: 10px;
-		background: rgba(193, 18, 31, 0.06);
-		color: #c1121f;
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		flex-shrink: 0;
-	}
+  .menu-link-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: rgba(193, 18, 31, 0.06);
+    color: #c1121f;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
 
-	.menu-link-content {
-		display: flex;
-		flex-direction: column;
-		gap: 4px;
-	}
+  .menu-link-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
 
-	.menu-link-title {
-		font-size: 15px;
-		font-weight: 600;
-		line-height: 1.25;
-		color: #111;
-	}
+  .menu-link-title {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #111;
+  }
 
-	.menu-link-description {
-		font-size: 13px;
-		line-height: 1.35;
-		color: #666;
-	}
+  .menu-link-description {
+    font-size: 13px;
+    line-height: 1.35;
+    color: #404040;
+  }
 
-	.buyer-link-content {
-		justify-content: center;
-	}
+  .buyer-link-content {
+    justify-content: center;
+  }
 
-	.mobile-sheet-trust {
-		padding: 20px;
-		margin-top: 8px;
-		border-top: 1px solid #f3f3f3;
-		background: #fafafa;
-		display: grid;
-		gap: 10px;
-	}
+  .mobile-sheet-trust {
+    padding: 20px;
+    margin-top: 8px;
+    border-top: 1px solid #f3f3f3;
+    background: #fafafa;
+    display: grid;
+    gap: 10px;
+  }
 
-	.mobile-sheet-trust-item {
-		display: flex;
-		align-items: center;
-		gap: 10px;
-		font-size: 12px;
-		color: #666;
-		line-height: 1.35;
-	}
+  .mobile-sheet-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: #404040;
+    line-height: 1.35;
+  }
 
-	.mobile-sheet-trust-icon {
-		display: inline-flex;
-		color: #c1121f;
-	}
+  .mobile-sheet-trust-icon {
+    display: inline-flex;
+    color: #c1121f;
+  }
 
-	.mobile-sheet-phone {
-		margin-top: 4px;
-		font-size: 18px;
-		font-weight: 600;
-		line-height: 1.2;
-		color: #111;
-		text-decoration: none;
-	}
+  .mobile-sheet-phone {
+    margin-top: 4px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #111;
+    text-decoration: none;
+  }
 
-	@media (max-width: 768px) {
-		.desktop-menu,
-		.desktop-right {
-			display: none;
-		}
+  @media (max-width: 768px) {
+    .desktop-menu,
+    .desktop-right {
+      display: none;
+    }
 
-		.mobile-right {
-			display: flex;
-		}
-	}
+    .mobile-right {
+      display: flex;
+    }
+  }
 
-	@media (max-width: 768px) {
-		.topbar {
-			display: none;
-		}
+  @media (max-width: 768px) {
+    .topbar {
+      display: none;
+    }
 
-		.site-header {
-			height: 76px;
-		}
+    .site-header {
+      height: 76px;
+    }
 
-		.header-container {
-			padding: 0 20px;
-			gap: 12px;
-		}
+    .header-container {
+      padding: 0 20px;
+      gap: 12px;
+    }
 
-		.logo-img {
-			width: 128px;
-		}
-	}
+    .logo-img {
+      width: 128px;
+    }
+  }
 </style>

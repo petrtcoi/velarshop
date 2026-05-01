@@ -340,7 +340,7 @@ export default function ColumnsQuickConfigurator({ models }: Props) {
           <button
             type="button"
             disabled={!canEstimate || !hasExactPrice}
-            class="inline-flex h-10 w-full cursor-pointer items-center justify-center rounded-[3px] border border-red-700 px-4 text-sm font-medium text-red-700 transition-colors hover:border-red-800 hover:bg-red-50 hover:text-red-800 disabled:cursor-not-allowed disabled:border-neutral-300 disabled:opacity-70"
+            class="inline-flex h-10 w-full cursor-pointer items-center justify-center rounded-[3px] border border-red-700 px-4 text-sm font-medium text-red-700 transition-colors hover:border-red-800 hover:bg-red-50 hover:text-red-800 disabled:cursor-not-allowed disabled:border-neutral-300 "
             onClick={handleAddToCart}
           >
             Добавить в корзину

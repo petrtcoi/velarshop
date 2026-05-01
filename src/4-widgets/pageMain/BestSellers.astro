@@ -1,226 +1,236 @@
 ---
-import { modelsJsonData } from '@entities/Model'
-import BestsellerModels from './BestsellerModels.astro'
+import { modelsJsonData } from "@entities/Model";
+import BestsellerModels from "./BestsellerModels.astro";
 
-const columnModels = ['2180', '3180', '3057', '3030']
+const columnModels = ["2180", "3180", "3057", "3030"];
 const columns = columnModels
-	.map(id => modelsJsonData.find(m => m.id === id))
-	.filter((m): m is (typeof modelsJsonData)[number] => Boolean(m))
+  .map((id) => modelsJsonData.find((m) => m.id === id))
+  .filter((m): m is (typeof modelsJsonData)[number] => Boolean(m));
 
-const vertical = ['p30v', 'q40v', 'p60v', 'r32v']
+const vertical = ["p30v", "q40v", "p60v", "r32v"];
 const verticals = vertical
-	.map(id => modelsJsonData.find(m => m.id === id))
-	.filter((m): m is (typeof modelsJsonData)[number] => Boolean(m))
+  .map((id) => modelsJsonData.find((m) => m.id === id))
+  .filter((m): m is (typeof modelsJsonData)[number] => Boolean(m));
 
-const horizontal = ['p30h', 'p60h', 'r42h', 'q80h']
+const horizontal = ["p30h", "p60h", "r42h", "q80h"];
 const horizontals = horizontal
-	.map(id => modelsJsonData.find(m => m.id === id))
-	.filter((m): m is (typeof modelsJsonData)[number] => Boolean(m))
+  .map((id) => modelsJsonData.find((m) => m.id === id))
+  .filter((m): m is (typeof modelsJsonData)[number] => Boolean(m));
 ---
 
-<div id='catalog' aria-hidden='true' class='catalog-anchor'></div>
+<div id="catalog" aria-hidden="true" class="catalog-anchor"></div>
 <section
-	id='bestsellers'
-	aria-label='Популярные модели Velar'
-	class='bestsellers'
+  id="bestsellers"
+  aria-label="Популярные модели Velar"
+  class="bestsellers"
 >
-	<h2 class='bestsellers-title'>Популярные модели Velar</h2>
-	<p class='bestsellers-subtitle'>
-		Модели, которые чаще всего выбирают для квартир, домов и дизайнерских проектов
-	</p>
+  <h2 class="bestsellers-title">Популярные модели Velar</h2>
+  <p class="bestsellers-subtitle">
+    Модели, которые чаще всего выбирают для квартир, домов и дизайнерских
+    проектов
+  </p>
 
-	<div id='bs-columns' class='bestsellers-group'>
-	<h3 class='bestsellers-group-title'>Трубчатые радиаторы</h3>
-	<p class='bestsellers-group-desc'>
-		Трубчатые радиаторы сочетают надежность, выбор размеров и аккуратный внешний вид. Подходят для современных интерьеров, лофта и ретро. Их часто выбирают для квартир и частных домов, включая проекты с нестандартной планировкой и длинными оконными зонами.
-	</p>
-	<BestsellerModels models={columns} />
-	<div class='bestsellers-all-link'>
-		<a href='/columns/'>Все трубчатые радиаторы →</a>
-	</div>
-	</div>
+  <div id="bs-columns" class="bestsellers-group">
+    <h3 class="bestsellers-group-title">Трубчатые радиаторы</h3>
+    <p class="bestsellers-group-desc">
+      Трубчатые радиаторы сочетают надежность, выбор размеров и аккуратный
+      внешний вид. Подходят для современных интерьеров, лофта и ретро. Их часто
+      выбирают для квартир и частных домов, включая проекты с нестандартной
+      планировкой и длинными оконными зонами.
+    </p>
+    <BestsellerModels models={columns} />
+    <div class="bestsellers-all-link">
+      <a href="/columns/">Все трубчатые радиаторы →</a>
+    </div>
+  </div>
 
-	<div id='bs-vertical' class='bestsellers-group'>
-	<h3 class='bestsellers-group-title'>Вертикальные дизайн-радиаторы</h3>
-	<p class='bestsellers-group-desc'>
-		Вертикальные дизайн-радиаторы помогают сэкономить место и подходят для помещений, где нет возможности установить модель под окном. Такие решения используют в гостиных, спальнях и ванных комнатах, когда важно сохранить полезную площадь и поддержать стиль интерьера.
-	</p>
-	<BestsellerModels models={verticals} />
-	<div class='bestsellers-all-link'>
-		<a href='/design/'>Все вертикальные дизайн-радиаторы →</a>
-	</div>
-	</div>
+  <div id="bs-vertical" class="bestsellers-group">
+    <h3 class="bestsellers-group-title">Вертикальные дизайн-радиаторы</h3>
+    <p class="bestsellers-group-desc">
+      Вертикальные дизайн-радиаторы помогают сэкономить место и подходят для
+      помещений, где нет возможности установить модель под окном. Такие решения
+      используют в гостиных, спальнях и ванных комнатах, когда важно сохранить
+      полезную площадь и поддержать стиль интерьера.
+    </p>
+    <BestsellerModels models={verticals} />
+    <div class="bestsellers-all-link">
+      <a href="/design/">Все вертикальные дизайн-радиаторы →</a>
+    </div>
+  </div>
 
-	<div id='bs-horizontal' class='bestsellers-group'>
-	<h3 class='bestsellers-group-title'>Горизонтальные дизайн-радиаторы</h3>
-	<p class='bestsellers-group-desc'>
-		Горизонтальные дизайн-радиаторы устанавливают под окнами. У многих моделей есть вертикальные аналоги, чтобы выдержать единый стиль в доме. Это удобный вариант для классических схем отопления, когда важны стабильная теплоотдача и визуальная аккуратность.
-	</p>
-	<BestsellerModels models={horizontals} />
-	<div class='bestsellers-all-link'>
-		<a href='/design/'>Все горизонтальные дизайн-радиаторы →</a>
-	</div>
-	</div>
+  <div id="bs-horizontal" class="bestsellers-group">
+    <h3 class="bestsellers-group-title">Горизонтальные дизайн-радиаторы</h3>
+    <p class="bestsellers-group-desc">
+      Горизонтальные дизайн-радиаторы устанавливают под окнами. У многих моделей
+      есть вертикальные аналоги, чтобы выдержать единый стиль в доме. Это
+      удобный вариант для классических схем отопления, когда важны стабильная
+      теплоотдача и визуальная аккуратность.
+    </p>
+    <BestsellerModels models={horizontals} />
+    <div class="bestsellers-all-link">
+      <a href="/design/">Все горизонтальные дизайн-радиаторы →</a>
+    </div>
+  </div>
 
-	<div class='bestsellers-cta'>
-		<div class='bestsellers-cta-text'>
-			Не нашли подходящую модель? Подберем радиатор под ваш проект.
-		</div>
-		<a href='/request' class='bestsellers-cta-btn'>Получить расчет</a>
-	</div>
+  <div class="bestsellers-cta">
+    <div class="bestsellers-cta-text">
+      Не нашли подходящую модель? Подберем радиатор под ваш проект.
+    </div>
+    <a href="/request" class="bestsellers-cta-btn">Получить расчет</a>
+  </div>
 </section>
 
 <style>
-	.catalog-anchor {
-		position: relative;
-		top: -90px;
-		height: 0;
-	}
+  .catalog-anchor {
+    position: relative;
+    top: -90px;
+    height: 0;
+  }
 
-	.bestsellers {
-		max-width: 1180px;
-		margin: 0 auto;
-		padding: 0 16px;
-		padding-top: 40px;
-		padding-bottom: 40px;
-	}
+  .bestsellers {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 16px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 
-	.bestsellers-title {
-		font-size: 44px;
-		line-height: 1.15;
-		font-weight: 600;
-		color: #111;
-	}
+  .bestsellers-title {
+    font-size: 44px;
+    line-height: 1.15;
+    font-weight: 600;
+    color: #111;
+  }
 
-	.bestsellers-subtitle {
-		margin-top: 10px;
-		font-size: 16px;
-		line-height: 1.5;
-		color: #666;
-		max-width: 760px;
-	}
+  .bestsellers-subtitle {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #404040;
+    max-width: 760px;
+  }
 
-	.bestsellers-group {
-		margin-top: 28px;
-	}
+  .bestsellers-group {
+    margin-top: 28px;
+  }
 
-	.bestsellers-group-title {
-		font-size: 34px;
-		line-height: 1.2;
-		font-weight: 600;
-		color: #111;
-	}
+  .bestsellers-group-title {
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 600;
+    color: #111;
+  }
 
-	.bestsellers-group-desc {
-		margin-top: 10px;
-		font-size: 15px;
-		line-height: 1.5;
-		color: #555;
-		max-width: 720px;
-	}
+  .bestsellers-group-desc {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #262626;
+    max-width: 720px;
+  }
 
-	.bestsellers-all-link {
-		margin-top: 16px;
-		font-size: 13px;
-		line-height: 1.3;
-	}
+  .bestsellers-all-link {
+    margin-top: 16px;
+    font-size: 13px;
+    line-height: 1.3;
+  }
 
-	.bestsellers-all-link a {
-		color: #222;
-		text-decoration: none;
-	}
+  .bestsellers-all-link a {
+    color: #222;
+    text-decoration: none;
+  }
 
-	.bestsellers-all-link a:hover {
-		color: #a30f19;
-	}
+  .bestsellers-all-link a:hover {
+    color: #a30f19;
+  }
 
-	.bestsellers-cta {
-		margin-top: 28px;
-		padding: 14px 0;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: 12px;
-		border-top: 1px solid #ececec;
-	}
+  .bestsellers-cta {
+    margin-top: 28px;
+    padding: 14px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-top: 1px solid #ececec;
+  }
 
-	.bestsellers-cta-text {
-		font-size: 14px;
-		line-height: 1.4;
-		color: #444;
-	}
+  .bestsellers-cta-text {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #444;
+  }
 
-	.bestsellers-cta-btn {
-		height: 44px;
-		padding: 0 18px;
-		border-radius: 3px;
-		border: 1px solid #c1121f;
-		background: #c1121f;
-		color: #fff;
-		font-size: 14px;
-		font-weight: 600;
-		line-height: 1;
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		text-decoration: none;
-		white-space: nowrap;
-	}
+  .bestsellers-cta-btn {
+    height: 44px;
+    padding: 0 18px;
+    border-radius: 3px;
+    border: 1px solid #c1121f;
+    background: #c1121f;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    white-space: nowrap;
+  }
 
-	.bestsellers-cta-btn:hover {
-		background: #a30f19;
-		border-color: #a30f19;
-	}
+  .bestsellers-cta-btn:hover {
+    background: #a30f19;
+    border-color: #a30f19;
+  }
 
-	@media (max-width: 768px) {
-		.bestsellers {
-			padding: 0 16px;
-			padding-top: 40px;
-			padding-bottom: 40px;
-		}
+  @media (max-width: 768px) {
+    .bestsellers {
+      padding: 0 16px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
 
-		.bestsellers-title {
-			font-size: 30px;
-		}
+    .bestsellers-title {
+      font-size: 30px;
+    }
 
-		.bestsellers-subtitle {
-			font-size: 16px;
-			line-height: 1.75;
-		}
+    .bestsellers-subtitle {
+      font-size: 16px;
+      line-height: 1.75;
+    }
 
-		.bestsellers-group-title {
-			font-size: 24px;
-		}
+    .bestsellers-group-title {
+      font-size: 24px;
+    }
 
-		.bestsellers-group-desc {
-			font-size: 16px;
-			line-height: 1.75;
-		}
+    .bestsellers-group-desc {
+      font-size: 16px;
+      line-height: 1.75;
+    }
 
-		.bestsellers-cta {
-			margin-top: 22px;
-			padding-top: 16px;
-			flex-direction: column;
-			align-items: flex-start;
-		}
+    .bestsellers-cta {
+      margin-top: 22px;
+      padding-top: 16px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
 
-			.bestsellers-cta-btn {
-				width: 100%;
-				height: 46px;
-			}
-		}
+    .bestsellers-cta-btn {
+      width: 100%;
+      height: 46px;
+    }
+  }
 
-	@media (min-width: 769px) {
-		.bestsellers {
-			padding-top: 64px;
-			padding-bottom: 64px;
-		}
-	}
+  @media (min-width: 769px) {
+    .bestsellers {
+      padding-top: 64px;
+      padding-bottom: 64px;
+    }
+  }
 
-	@media (min-width: 1280px) {
-		.bestsellers {
-			padding-top: 80px;
-			padding-bottom: 80px;
-		}
-	}
+  @media (min-width: 1280px) {
+    .bestsellers {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+  }
 </style>

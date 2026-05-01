@@ -1,688 +1,802 @@
 ---
 const cards = [
-	{
-		title: 'Трубчатые радиаторы',
-		desc: 'Классические модели для квартиры и дома',
-		href: '/columns',
-		image: '/images/columns/about.jpg',
-		icon: 'tubular',
-	},
-	{
-		title: 'Дизайн радиаторы',
-		desc: 'Вертикальные и интерьерные решения',
-		href: '/design',
-		image: '/images/articles/design.jpg',
-		icon: 'design',
-	},
-	{
-		title: 'Конвекторы',
-		desc: 'Для панорамных окон. С вентиляторами и без',
-		href: '/convector',
-		image: '/images/articles/convector.jpeg',
-		icon: 'convector',
-	},
-	{
-		title: 'Ретро радиаторы',
-		desc: 'Чугунные модели в классическом стиле',
-		href: '/retro',
-		image: '/images/articles/retro.jpg',
-		icon: 'retro',
-	},
-]
+  {
+    title: "Трубчатые радиаторы",
+    desc: "Классические модели для квартиры и дома",
+    href: "/columns",
+    image: "/images/columns/about.jpg",
+    icon: "tubular",
+  },
+  {
+    title: "Дизайн радиаторы",
+    desc: "Вертикальные и интерьерные решения",
+    href: "/design",
+    image: "/images/articles/design.jpg",
+    icon: "design",
+  },
+  {
+    title: "Конвекторы",
+    desc: "Для панорамных окон. С вентиляторами и без",
+    href: "/convector",
+    image: "/images/articles/convector.jpeg",
+    icon: "convector",
+  },
+  {
+    title: "Ретро радиаторы",
+    desc: "Чугунные модели в классическом стиле",
+    href: "/retro",
+    image: "/images/articles/retro.jpg",
+    icon: "retro",
+  },
+];
 
 const scenarios = [
-	{
-		title: 'Для квартиры',
-		desc: 'Компактные и эффективные решения',
-		image: '/images/columns/about.jpg',
-		href: '/columns',
-	},
-	{
-		title: 'Для панорамных окон',
-		desc: 'Конвекторы и напольные модели',
-		image: '/images/articles/convector.jpeg',
-		href: '/convector',
-	},
-	{
-		title: 'Под дизайн-проект',
-		desc: 'Любые цвета RAL и нестандартные размеры',
-		image: '/images/articles/design.jpg',
-		href: '/design',
-	},
-	{
-		title: 'Ретро-интерьер',
-		desc: 'Чугунные радиаторы в классическом стиле',
-		image: '/images/retro/retro_1.jpg',
-		href: '/retro',
-	},
-]
-
+  {
+    title: "Для квартиры",
+    desc: "Компактные и эффективные решения",
+    image: "/images/columns/about.jpg",
+    href: "/columns",
+  },
+  {
+    title: "Для панорамных окон",
+    desc: "Конвекторы и напольные модели",
+    image: "/images/articles/convector.jpeg",
+    href: "/convector",
+  },
+  {
+    title: "Под дизайн-проект",
+    desc: "Любые цвета RAL и нестандартные размеры",
+    image: "/images/articles/design.jpg",
+    href: "/design",
+  },
+  {
+    title: "Ретро-интерьер",
+    desc: "Чугунные радиаторы в классическом стиле",
+    image: "/images/retro/retro_1.jpg",
+    href: "/retro",
+  },
+];
 ---
 
-<section id='hero' class='hero'>
-	<picture class='hero-picture'>
-		<source srcset='/main/hero.avif' type='image/avif' />
-		<img src='/main/hero.jpg' alt='' aria-hidden='true' class='hero-bg' loading='eager' />
-	</picture>
-	<div class='hero-overlay'></div>
+<section id="hero" class="hero">
+  <picture class="hero-picture">
+    <source srcset="/main/hero.avif" type="image/avif" />
+    <img
+      src="/main/hero.jpg"
+      alt=""
+      aria-hidden="true"
+      class="hero-bg"
+      loading="eager"
+    />
+  </picture>
+  <div class="hero-overlay"></div>
 
-	<div class='hero-content items-stretch'>
-		<div class='hero-left flex flex-col justify-between h-full min-h-[460px]'>
-			<div>
-			<h1 class='hero-title'>
-				Радиаторы Velar —
-				<br />
-				решения
-				<br />
-				для интерьера
-			</h1>
-			<p class='hero-subtitle'>
-				Подберём решение под ваш проект: по мощности, размерам,
-				цвету и стилю помещения
-			</p>
-			<div class='hero-actions'>
-				<a href='/request' class='hero-btn hero-btn-primary'>Подобрать радиатор</a>
-				<a href='#catalog' class='hero-btn hero-btn-secondary'>Смотреть каталог</a>
-			</div>
-			</div>
+  <div class="hero-content items-stretch">
+    <div class="hero-left flex flex-col justify-between h-full min-h-[460px]">
+      <div>
+        <h1 class="hero-title">
+          Радиаторы Velar —
+          <br />
+          решения
+          <br />
+          для интерьера
+        </h1>
+        <p class="hero-subtitle">
+          Подберём решение под ваш проект: по мощности, размерам, цвету и стилю
+          помещения
+        </p>
+        <div class="hero-actions">
+          <a href="/request" class="hero-btn hero-btn-primary"
+            >Подобрать радиатор</a
+          >
+          <a href="#catalog" class="hero-btn hero-btn-secondary"
+            >Смотреть каталог</a
+          >
+        </div>
+      </div>
 
-			<div class='hero-features'>
-				<div class='hero-feature hero-feature-first'>
-					<span class='hero-feature-icon' aria-hidden='true'>
-						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><path d='M12 16h.01'/><path d='M16 16h.01'/><path d='M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.77-.42l-4.46 2.84a.5.5 0 0 1-.77-.42v-2a.5.5 0 0 0-.77-.42L9.77 10.92A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z'/><path d='M8 16h.01'/></svg>
-					</span>
-					<span>Производство под заказ</span>
-				</div>
-				<div class='hero-feature'>
-					<span class='hero-feature-icon' aria-hidden='true'>
-						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><path d='M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z'/><circle cx='13.5' cy='6.5' r='.5' fill='currentColor'/><circle cx='17.5' cy='10.5' r='.5' fill='currentColor'/><circle cx='6.5' cy='12.5' r='.5' fill='currentColor'/><circle cx='8.5' cy='7.5' r='.5' fill='currentColor'/></svg>
-					</span>
-					<span>Цвета RAL</span>
-				</div>
-				<div class='hero-feature'>
-					<span class='hero-feature-icon' aria-hidden='true'>
-						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><path d='M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z'/></svg>
-					</span>
-					<span>Гарантия до 10 лет</span>
-				</div>
-				<div class='hero-feature'>
-					<span class='hero-feature-icon' aria-hidden='true'>
-						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><path d='M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2'/><path d='M15 18H9'/><path d='M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14'/><circle cx='17' cy='18' r='2'/><circle cx='7' cy='18' r='2'/></svg>
-					</span>
-					<span>Доставка по России</span>
-				</div>
-			</div>
-		</div>
+      <div class="hero-features">
+        <div class="hero-feature hero-feature-first">
+          <span class="hero-feature-icon" aria-hidden="true">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              ><path d="M12 16h.01"></path><path d="M16 16h.01"></path><path
+                d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.77-.42l-4.46 2.84a.5.5 0 0 1-.77-.42v-2a.5.5 0 0 0-.77-.42L9.77 10.92A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"
+              ></path><path d="M8 16h.01"></path></svg
+            >
+          </span>
+          <span>Производство под заказ</span>
+        </div>
+        <div class="hero-feature">
+          <span class="hero-feature-icon" aria-hidden="true">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              ><path
+                d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"
+              ></path><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"
+              ></circle><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"
+              ></circle><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"
+              ></circle><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"
+              ></circle></svg
+            >
+          </span>
+          <span>Цвета RAL</span>
+        </div>
+        <div class="hero-feature">
+          <span class="hero-feature-icon" aria-hidden="true">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              ><path
+                d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+              ></path></svg
+            >
+          </span>
+          <span>Гарантия до 10 лет</span>
+        </div>
+        <div class="hero-feature">
+          <span class="hero-feature-icon" aria-hidden="true">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              ><path
+                d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"
+              ></path><path d="M15 18H9"></path><path
+                d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"
+              ></path><circle cx="17" cy="18" r="2"></circle><circle
+                cx="7"
+                cy="18"
+                r="2"></circle></svg
+            >
+          </span>
+          <span>Доставка по России</span>
+        </div>
+      </div>
+    </div>
 
-		<div class='hero-cards'>
-			{cards.map(card => (
-				<a href={card.href} class='bg-white/95 hover:bg-white flex flex-row w-[320px] rounded-[3px] p-[16px] gap-6 items-center justify-between'>
-				<div class="flex flex-col justify-center items-start gap-2">
-					<div class='hero-card-icon' aria-hidden='true'>
-						{card.icon === 'tubular' && (
-							<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'>
-								<path d='M3 6h18' />
-								<path d='M3 12h18' />
-								<path d='M3 18h18' />
-								<path d='M6 4v16' />
-								<path d='M12 4v16' />
-								<path d='M18 4v16' />
-							</svg>
-						)}
-						{card.icon === 'design' && (
-							<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'>
-								<path d='M12 2l2.1 5.9L20 10l-5.9 2.1L12 18l-2.1-5.9L4 10l5.9-2.1L12 2z' />
-								<path d='M20 3v4' />
-								<path d='M22 5h-4' />
-							</svg>
-						)}
-						{card.icon === 'convector' && (
-							<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'>
-								<path d='M3 8h11a2 2 0 1 0-2-2' />
-								<path d='M3 12h16a2 2 0 1 1-2 2' />
-								<path d='M3 16h9a2 2 0 1 1-2 2' />
-							</svg>
-						)}
-						{card.icon === 'retro' && (
-							<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'>
-								<path d='M3 22h18' />
-								<path d='M4 10h16' />
-								<path d='M6 22V10' />
-								<path d='M10 22V10' />
-								<path d='M14 22V10' />
-								<path d='M18 22V10' />
-								<path d='M12 3l8 4H4l8-4z' />
-							</svg>
-						)}
-					</div>
-					<div>
-						<div class='hero-card-title'>{card.title}</div>
-						<div class='hero-card-desc'>{card.desc}</div>
-					</div>
-					</div>
-					<img src={card.image} alt={card.title} class='hero-card-image' loading='eager' />
-				</a>
-			))}
-		</div>
-	</div>
-
-	
+    <div class="hero-cards">
+      {
+        cards.map((card) => (
+          <a
+            href={card.href}
+            class="bg-white/95 hover:bg-white flex flex-row w-[320px] rounded-[3px] p-[16px] gap-6 items-center justify-between"
+          >
+            <div class="flex flex-col justify-center items-start gap-2">
+              <div class="hero-card-icon" aria-hidden="true">
+                {card.icon === "tubular" && (
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M3 6h18" />
+                    <path d="M3 12h18" />
+                    <path d="M3 18h18" />
+                    <path d="M6 4v16" />
+                    <path d="M12 4v16" />
+                    <path d="M18 4v16" />
+                  </svg>
+                )}
+                {card.icon === "design" && (
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M12 2l2.1 5.9L20 10l-5.9 2.1L12 18l-2.1-5.9L4 10l5.9-2.1L12 2z" />
+                    <path d="M20 3v4" />
+                    <path d="M22 5h-4" />
+                  </svg>
+                )}
+                {card.icon === "convector" && (
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M3 8h11a2 2 0 1 0-2-2" />
+                    <path d="M3 12h16a2 2 0 1 1-2 2" />
+                    <path d="M3 16h9a2 2 0 1 1-2 2" />
+                  </svg>
+                )}
+                {card.icon === "retro" && (
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M3 22h18" />
+                    <path d="M4 10h16" />
+                    <path d="M6 22V10" />
+                    <path d="M10 22V10" />
+                    <path d="M14 22V10" />
+                    <path d="M18 22V10" />
+                    <path d="M12 3l8 4H4l8-4z" />
+                  </svg>
+                )}
+              </div>
+              <div>
+                <div class="hero-card-title">{card.title}</div>
+                <div class="hero-card-desc">{card.desc}</div>
+              </div>
+            </div>
+            <img
+              src={card.image}
+              alt={card.title}
+              class="hero-card-image"
+              loading="eager"
+            />
+          </a>
+        ))
+      }
+    </div>
+  </div>
 </section>
 
-<section class='category-entry-section'>
-	<div class='category-entry-wrap'>
-		<h2 class='category-entry-title'>Подберите радиатор под вашу задачу</h2>
-		<p class='category-entry-subtitle'>
-			Или получите расчет — подберем оптимальное решение под ваш проект
-		</p>
-		<div class='mobile-scenarios'>
-			{scenarios.map(item => (
-				<a href={item.href} class='scenario-card'>
-					<img src={item.image} alt={item.title} class='scenario-card-image' loading='eager' />
-					<div class='scenario-card-copy'>
-						<div class='scenario-card-title'>{item.title}</div>
-						<div class='scenario-card-desc'>{item.desc}</div>
-						<div class='scenario-card-cta'>Смотреть варианты →</div>
-					</div>
-					<span class='scenario-card-arrow' aria-hidden='true'>
-						<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
-							<path d='m9 18 6-6-6-6'></path>
-						</svg>
-					</span>
-				</a>
-			))}
-		</div>
-	</div>
+<section class="category-entry-section">
+  <div class="category-entry-wrap">
+    <h2 class="category-entry-title">Подберите радиатор под вашу задачу</h2>
+    <p class="category-entry-subtitle">
+      Или получите расчет — подберем оптимальное решение под ваш проект
+    </p>
+    <div class="mobile-scenarios">
+      {
+        scenarios.map((item) => (
+          <a href={item.href} class="scenario-card">
+            <img
+              src={item.image}
+              alt={item.title}
+              class="scenario-card-image"
+              loading="eager"
+            />
+            <div class="scenario-card-copy">
+              <div class="scenario-card-title">{item.title}</div>
+              <div class="scenario-card-desc">{item.desc}</div>
+              <div class="scenario-card-cta">Смотреть варианты →</div>
+            </div>
+            <span class="scenario-card-arrow" aria-hidden="true">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="m9 18 6-6-6-6" />
+              </svg>
+            </span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
 </section>
 
 <style>
-	.hero {
-		position: relative;
-		width: 100%;
-		min-height: 520px;
-		overflow: hidden;
-	}
-
-
-	.hero-picture {
-		position: absolute;
-		inset: 0;
-		display: block;
-	}
-
-	.hero-bg {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center center;
-	}
-
-	.hero-overlay {
-		position: absolute;
-		inset: 0;
-		background: linear-gradient(
-			90deg,
-			rgba(0, 0, 0, 0.72) 0%,
-			rgba(0, 0, 0, 0.58) 32%,
-			rgba(0, 0, 0, 0.22) 58%,
-			rgba(0, 0, 0, 0.08) 100%
-		);
-	}
-
-	.hero-content {
-		position: relative;
-		z-index: 2;
-		max-width: 1180px;
-		margin: 0 auto;
-		padding: 70px 20px 48px;
-		display: grid;
-		grid-template-columns: minmax(0, 1fr) 380px;
-		gap: 56px;
-		align-items: start;
-	}
-
-	.hero-left h1 {
-		font-family: var(--font-heading);
-		font-size: 58px;
-		line-height: 1.05;
-		font-weight: 300;
-		letter-spacing: -0.04em;
-		color: #fff;
-		max-width: 620px;
-		margin: 0 0 28px;
-	}
-
-	.hero-left p {
-		font-size: 18px;
-		line-height: 1.55;
-		font-weight: 200 !important;
-		color: rgba(255, 255, 255, 0.88);
-		max-width: 560px;
-		margin: 0 0 36px;
-	}
-
-	.hero-actions {
-		display: flex;
-		gap: 16px;
-	}
-
-	.hero-btn {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		border-radius: 3px;
-		padding: 16px 28px;
-		font-size: 13px;
-		font-weight: 300;
-		min-width: 210px;
-		text-decoration: none;
-		transition: background 0.2s, border-color 0.2s;
-	}
-	.hero-btn:hover {
-		opacity: 0.8;
-	}
-
-	.hero-btn-primary {
-		background: #c1121f;
-		color: #fff;
-		border: 1px solid #c1121f;
-	}
-
-	.hero-btn-primary:hover {
-		background: #a30f19;
-		border-color: #a30f19;
-	}
-
-	.hero-btn-secondary {
-		background: rgba(255, 255, 255, 0.04);
-		color: #fff;
-		border: 1px solid rgba(255, 255, 255, 0.65);
-	}
-
-	.hero-cards {
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-start;
-		align-items: flex-end;
-		gap: 12px;
-	}
-
-	.hero-card {
-		min-height: 142px;
-		background: rgba(255, 255, 255, 0.96);
-		border: 1px solid rgba(255, 255, 255, 0.7);
-		border-radius: 14px;
-		padding: 16px;
-		display: grid;
-		grid-template-columns: 34px 1fr 76px;
-		gap: 14px;
-		align-items: center;
-		box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
-		text-decoration: none;
-	}
-
-	.hero-card-icon {
-		width: 34px;
-		height: 34px;
-		border-radius: 999px;
-		border: 1px solid rgba(193, 18, 31, 0.22);
-		color: #c1121f;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.hero-card-icon svg {
-		width: 18px;
-		height: 18px;
-	}
-
-	.hero-card-title {
-		font-size: 14px;
-		line-height: 1.2;
-		font-weight: 700;
-		color: #111;
-	}
-
-	.hero-card-desc {
-		margin-top: 6px;
-		font-size: 12px;
-		font-weight: 300;
-		line-height: 1.35;
-		color: #666;
-	}
-
-	.hero-card-image {
-		width: 100px;
-		height: 100px;
-		border-radius: 8px;
-		object-fit: cover;
-	}
-
-	.hero-features {
-		position: relative;
-		z-index: 2;
-		max-width: 1180px;
-		margin: 0 auto;
-		padding: 0 20px 28px;
-		display: grid;
-		grid-template-columns: repeat(4, 1fr);
-	}
-
-	.hero-feature {
-		min-height: 78px;
-		padding: 0 22px;
-		display: flex;
-		align-items: center;
-		gap: 12px;
-		color: #fff;
-		border-left: 1px solid rgba(255, 255, 255, 0.28);
-		font-size: 16px;
-		line-height: 1.3;
-	}
-
-	.hero-feature-first {
-		border-left: 0;
-	}
-
-	.hero-feature-icon {
-		width: 22px;
-		height: 22px;
-		display: inline-flex;
-		color: #fff;
-		opacity: 0.95;
-	}
-
-	.hero-feature-icon svg {
-		width: 22px;
-		height: 22px;
-	}
-
-	.category-entry-section {
-		background: #fff;
-		padding: 28px 20px 18px;
-	}
-
-	.category-entry-wrap {
-		max-width: 1180px;
-		margin: 0 auto;
-	}
-
-	.category-entry-title {
-		font-family: var(--font-heading);
-		font-size: 22px;
-		font-weight: 600;
-		line-height: 1.2;
-		color: #111;
-		margin-bottom: 8px;
-	}
-
-	.category-entry-subtitle {
-		font-size: 14px;
-		line-height: 1.5;
-		color: #666;
-		margin-bottom: 16px;
-	}
-
-	.mobile-scenarios {
-		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 14px;
-	}
-
-	.scenario-card {
-		display: flex;
-		align-items: center;
-		gap: 12px;
-		padding: 12px;
-		border: 1px solid #eee;
-		border-radius: 14px;
-		background: #fff;
-		text-decoration: none;
-		color: inherit;
-		cursor: pointer;
-		transition: transform 0.18s ease, border-color 0.18s ease, background-color 0.18s ease;
-	}
-
-	.scenario-card:hover {
-		transform: translateY(-2px);
-		border-color: #d5d5d5;
-		background: #fcfcfc;
-	}
-
-	.scenario-card-image {
-		width: 72px;
-		height: 72px;
-		border-radius: 10px;
-		object-fit: cover;
-		flex-shrink: 0;
-	}
-
-	.scenario-card-copy {
-		min-width: 0;
-	}
-
-	.scenario-card-title {
-		font-size: 15px;
-		line-height: 1.25;
-		font-weight: 600;
-		color: #111;
-		margin-bottom: 4px;
-	}
-
-	.scenario-card-desc {
-		font-size: 13px;
-		line-height: 1.35;
-		color: #666;
-	}
-
-	.scenario-card-cta {
-		margin-top: 7px;
-		font-size: 12px;
-		line-height: 1.2;
-		font-weight: 600;
-		color: #c1121f;
-	}
-
-	.scenario-card-arrow {
-		margin-left: auto;
-		display: inline-flex;
-		color: #111;
-		opacity: 0.5;
-		flex-shrink: 0;
-	}
-
-	@media (min-width: 1025px) {
-		.category-entry-section {
-			display: none;
-		}
-	}
-
-	@media (max-width: 1024px) {
-		.hero-cards {
-			display: none;
-		}
-
-		.hero-content {
-			grid-template-columns: 1fr;
-			gap: 0;
-		}
-	}
-
-	@media (max-width: 768px) {
-		.hero {
-			min-height: auto;
-			overflow: hidden;
-		}
-
-		.hero-bg {
-			object-position: 58% center;
-		}
-
-		.hero-overlay {
-			background: linear-gradient(
-				180deg,
-				rgba(0, 0, 0, 0.28) 0%,
-				rgba(0, 0, 0, 0.45) 45%,
-				rgba(0, 0, 0, 0.65) 100%
-			);
-		}
-
-		.hero-content {
-			display: block;
-			max-width: none;
-			padding: 46px 24px 12px;
-		}
-
-		.hero-left {
-			max-width: none;
-			width: 100%;
-		}
-
-		.hero-left h1 {
-			max-width: 260px;
-			font-size: 30px;
-			line-height: 1.12;
-			font-weight: 300;
-			letter-spacing: -0.035em;
-			margin: 0 0 16px;
-		}
-
-		.hero-left p {
-			max-width: 280px;
-			font-size: 14px;
-			line-height: 1.5;
-			margin: 0 0 22px;
-			color: rgba(255, 255, 255, 0.82);
-		}
-
-		.hero-actions {
-			display: flex;
-			flex-direction: column;
-			gap: 8px;
-			max-width: 260px;
-		}
-
-		.hero-actions a {
-			width: 100%;
-			height: 46px;
-			padding: 0 16px;
-			border-radius: 6px;
-			font-size: 14px;
-			font-weight: 600;
-			display: inline-flex;
-			align-items: center;
-			justify-content: center;
-		}
-
-		.hero-btn-primary,
-		.hero-primary {
-			background: #c1121f;
-			border-color: #c1121f;
-			color: #fff;
-		}
-
-		.hero-btn-secondary,
-		.hero-secondary {
-			background: transparent;
-			border: 1px solid rgba(255, 255, 255, 0.4);
-			color: #fff;
-		}
-
-		.hero-features {
-			width: 100%;
-			max-width: none;
-			box-sizing: border-box;
-			padding: 0 24px 18px;
-			margin-top: 24px;
-			display: grid;
-			grid-template-columns: repeat(2, minmax(0, 1fr));
-		}
-
-		.hero-feature {
-			min-width: 0;
-			min-height: 64px;
-			box-sizing: border-box;
-			padding: 6px 4px;
-			gap: 6px;
-			border: none !important;
-			display: flex;
-			align-items: center;
-		}
-
-		.hero-feature svg {
-			width: 20px;
-			height: 20px;
-			flex-shrink: 0;
-			opacity: 0.85;
-		}
-
-		.hero-feature span,
-		.hero-feature p {
-			min-width: 0;
-			font-size: 12px;
-			line-height: 1.2;
-			font-weight: 500;
-			word-break: normal;
-			color: rgba(255, 255, 255, 0.8);
-		}
-
-		.category-entry-section {
-			padding: 20px 16px 10px;
-		}
-
-		.category-entry-title {
-			font-size: 22px;
-			margin-bottom: 10px;
-		}
-
-		.category-entry-subtitle {
-			font-size: 14px;
-			line-height: 1.5;
-			margin-bottom: 14px;
-		}
-
-		.mobile-scenarios {
-			display: flex;
-			flex-direction: column;
-			gap: 12px;
-		}
-
-		.scenario-card {
-			padding: 11px;
-		}
-
-		.scenario-card-image {
-			width: 68px;
-			height: 68px;
-		}
-
-	}
-
-	@media (max-width: 390px) {
-		.hero-content {
-			padding-left: 20px;
-			padding-right: 20px;
-		}
-
-		.hero-left h1 {
-			font-size: 30px;
-			max-width: 280px;
-		}
-
-		.hero-left p {
-			font-size: 14px;
-			max-width: 290px;
-		}
-
-		.hero-features {
-			padding-left: 20px;
-			padding-right: 20px;
-		}
-
-		.hero-feature span,
-		.hero-feature p {
-			font-size: 13px;
-		}
-	}
+  .hero {
+    position: relative;
+    width: 100%;
+    min-height: 520px;
+    overflow: hidden;
+  }
+
+  .hero-picture {
+    position: absolute;
+    inset: 0;
+    display: block;
+  }
+
+  .hero-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.58) 32%,
+      rgba(0, 0, 0, 0.22) 58%,
+      rgba(0, 0, 0, 0.08) 100%
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 70px 20px 48px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 380px;
+    gap: 56px;
+    align-items: start;
+  }
+
+  .hero-left h1 {
+    font-family: var(--font-heading);
+    font-size: 58px;
+    line-height: 1.05;
+    font-weight: 300;
+    letter-spacing: -0.04em;
+    color: #fff;
+    max-width: 620px;
+    margin: 0 0 28px;
+  }
+
+  .hero-left p {
+    font-size: 18px;
+    line-height: 1.55;
+    font-weight: 200 !important;
+    color: rgba(255, 255, 255, 0.88);
+    max-width: 560px;
+    margin: 0 0 36px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+  }
+
+  .hero-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    padding: 16px 28px;
+    font-size: 13px;
+    font-weight: 300;
+    min-width: 210px;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .hero-btn:hover {
+    opacity: 0.8;
+  }
+
+  .hero-btn-primary {
+    background: #c1121f;
+    color: #fff;
+    border: 1px solid #c1121f;
+  }
+
+  .hero-btn-primary:hover {
+    background: #a30f19;
+    border-color: #a30f19;
+  }
+
+  .hero-btn-secondary {
+    background: rgba(255, 255, 255, 0.04);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+  }
+
+  .hero-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 12px;
+  }
+
+  .hero-card {
+    min-height: 142px;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 14px;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 34px 1fr 76px;
+    gap: 14px;
+    align-items: center;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+    text-decoration: none;
+  }
+
+  .hero-card-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    border: 1px solid rgba(193, 18, 31, 0.22);
+    color: #c1121f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-card-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .hero-card-title {
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #111;
+  }
+
+  .hero-card-desc {
+    margin-top: 6px;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 1.35;
+    color: #404040;
+  }
+
+  .hero-card-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .hero-features {
+    position: relative;
+    z-index: 2;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 20px 28px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .hero-feature {
+    min-height: 78px;
+    padding: 0 22px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    border-left: 1px solid rgba(255, 255, 255, 0.28);
+    font-size: 16px;
+    line-height: 1.3;
+  }
+
+  .hero-feature-first {
+    border-left: 0;
+  }
+
+  .hero-feature-icon {
+    width: 22px;
+    height: 22px;
+    display: inline-flex;
+    color: #fff;
+    opacity: 0.95;
+  }
+
+  .hero-feature-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .category-entry-section {
+    background: #fff;
+    padding: 28px 20px 18px;
+  }
+
+  .category-entry-wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  .category-entry-title {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #111;
+    margin-bottom: 8px;
+  }
+
+  .category-entry-subtitle {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #404040;
+    margin-bottom: 16px;
+  }
+
+  .mobile-scenarios {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .scenario-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border: 1px solid #eee;
+    border-radius: 14px;
+    background: #fff;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: transform 0.18s ease, border-color 0.18s ease,
+      background-color 0.18s ease;
+  }
+
+  .scenario-card:hover {
+    transform: translateY(-2px);
+    border-color: #d5d5d5;
+    background: #fcfcfc;
+  }
+
+  .scenario-card-image {
+    width: 72px;
+    height: 72px;
+    border-radius: 10px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .scenario-card-copy {
+    min-width: 0;
+  }
+
+  .scenario-card-title {
+    font-size: 14px;
+    line-height: 1.25;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 4px;
+  }
+
+  .scenario-card-desc {
+    font-size: 13px;
+    line-height: 1.35;
+    color: #404040;
+  }
+
+  .scenario-card-cta {
+    margin-top: 7px;
+    font-size: 12px;
+    line-height: 1.2;
+    font-weight: 600;
+    color: #c1121f;
+  }
+
+  .scenario-card-arrow {
+    margin-left: auto;
+    display: inline-flex;
+    color: #111;
+    opacity: 0.5;
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 1025px) {
+    .category-entry-section {
+      display: none;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .hero-cards {
+      display: none;
+    }
+
+    .hero-content {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      min-height: auto;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      object-position: 58% center;
+    }
+
+    .hero-overlay {
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.28) 0%,
+        rgba(0, 0, 0, 0.45) 45%,
+        rgba(0, 0, 0, 0.65) 100%
+      );
+    }
+
+    .hero-content {
+      display: block;
+      max-width: none;
+      padding: 46px 24px 12px;
+    }
+
+    .hero-left {
+      max-width: none;
+      width: 100%;
+    }
+
+    .hero-left h1 {
+      max-width: 260px;
+      font-size: 30px;
+      line-height: 1.12;
+      font-weight: 300;
+      letter-spacing: -0.035em;
+      margin: 0 0 16px;
+    }
+
+    .hero-left p {
+      max-width: 280px;
+      font-size: 14px;
+      line-height: 1.5;
+      margin: 0 0 22px;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-width: 260px;
+    }
+
+    .hero-actions a {
+      width: 100%;
+      height: 46px;
+      padding: 0 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-btn-primary,
+    .hero-primary {
+      background: #c1121f;
+      border-color: #c1121f;
+      color: #fff;
+    }
+
+    .hero-btn-secondary,
+    .hero-secondary {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: #fff;
+    }
+
+    .hero-features {
+      width: 100%;
+      max-width: none;
+      box-sizing: border-box;
+      padding: 0 24px 18px;
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero-feature {
+      min-width: 0;
+      min-height: 64px;
+      box-sizing: border-box;
+      padding: 6px 4px;
+      gap: 6px;
+      border: none !important;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-feature svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      opacity: 0.85;
+    }
+
+    .hero-feature span,
+    .hero-feature p {
+      min-width: 0;
+      font-size: 12px;
+      line-height: 1.2;
+      font-weight: 500;
+      word-break: normal;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .category-entry-section {
+      padding: 20px 16px 10px;
+    }
+
+    .category-entry-title {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .category-entry-subtitle {
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .mobile-scenarios {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .scenario-card {
+      padding: 11px;
+    }
+
+    .scenario-card-image {
+      width: 68px;
+      height: 68px;
+    }
+  }
+
+  @media (max-width: 390px) {
+    .hero-content {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .hero-left h1 {
+      font-size: 30px;
+      max-width: 280px;
+    }
+
+    .hero-left p {
+      font-size: 14px;
+      max-width: 290px;
+    }
+
+    .hero-features {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .hero-feature span,
+    .hero-feature p {
+      font-size: 13px;
+    }
+  }
 </style>

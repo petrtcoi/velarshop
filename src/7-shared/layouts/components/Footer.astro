@@ -1,5 +1,5 @@
 ---
-import { contacts } from '@shared/constants/contacts';
+import { contacts } from "@shared/constants/contacts";
 const {
   phone495String,
   phone495,
@@ -12,87 +12,45 @@ const {
   whatsApp,
 } = contacts;
 
-const year = new Date().getFullYear()
-
+const year = new Date().getFullYear();
 ---
 
 <footer class="my-16">
   <div
-    class="max-w-6xl border-t py-5 px-10 mx-auto flex flex-row flex-wrap justify-between items-start wrap text-xs">
-    <div
-      class="w-full mx-auto sm:w-1/2 md:w-1/3 mt-10"
-      role="navigation">
+    class="max-w-6xl border-t py-5 px-10 mx-auto flex flex-row flex-wrap justify-between items-start wrap text-xs"
+  >
+    <div class="w-full mx-auto sm:w-1/2 md:w-1/3 mt-10" role="navigation">
       <h2 class="text-neutral-900 font-semibold">Полезные ссылки</h2>
       <div class="flex flex-col gap-3 pt-4 font-light">
-        <a
-          href="/about"
-          class="hover:underline"
-          >О магазине</a
-        >
-        <a
-          href="/delivery"
-          class="hover:underline"
-          >Доставка и оплата</a
-        >
-        <a
-          href="/guarantees"
-          class="hover:underline"
-          >Сертификаты и гарантии</a
-        >
-        <a
-          href="/info"
-          class="hover:underline"
-          >Полезная информация</a
-        >
-        <a
-          href="/news"
-          class="hover:underline"
-          >Новости</a
-        >
+        <a href="/about" class="hover:underline">О магазине</a>
+        <a href="/delivery" class="hover:underline">Доставка и оплата</a>
+        <a href="/guarantees" class="hover:underline">Сертификаты и гарантии</a>
+        <a href="/info" class="hover:underline">Полезная информация</a>
+        <a href="/news" class="hover:underline">Новости</a>
       </div>
     </div>
     <div
       class="w-full mx-auto sm:w-1/2 md:w-1/3 mt-10"
       aria-label="Каталог товаров"
-      role="navigation">
+      role="navigation"
+    >
       <h2 class="text-neutral-900 font-semibold">Каталог продукции</h2>
       <div class="flex flex-col gap-3 pt-4 font-light">
-        <a
-          href="/design"
-          class="hover:underline">
-          Дизайн-радиаторы
-        </a>
-        <a
-          href="/columns"
-          class="hover:underline">
-          Трубчатые радиаторы
-        </a>
-        <a
-          href="/floor"
-          class="hover:underline">
-          Напольные радиаторы
-        </a>
-        <a
-          href="/retro"
-          class="hover:underline">
-          Чугунные радиаторы ретро</a
-        >
+        <a href="/design" class="hover:underline"> Дизайн-радиаторы</a>
+        <a href="/columns" class="hover:underline"> Трубчатые радиаторы</a>
+        <a href="/floor" class="hover:underline"> Напольные радиаторы</a>
+        <a href="/retro" class="hover:underline"> Чугунные радиаторы ретро</a>
         <!-- <a
           href='/'
           class='hover:underline'
           >Полотенцесушители</a
         > -->
-        <a
-          href="/convector"
-          class="hover:underline"
-          >Внутрипольные конвекторы</a
+        <a href="/convector" class="hover:underline">Внутрипольные конвекторы</a
         >
       </div>
     </div>
-    <div
-      class="w-full mx-auto md:w-1/3 mt-10">
-      
-           <h2 class="text-neutral-900 font-semibold">Контактная информация</h2>
+    <div class="w-full mx-auto md:w-1/3 mt-10">
+      <h2 class="text-neutral-900 font-semibold">Контактная информация</h2>
       <div class="flex flex-col gap-3 pt-4 font-light">
         <a
           href={homekomfortWebsite}
@@ -145,125 +103,114 @@ const year = new Date().getFullYear()
           >Whatsapp
         </a>
       </div>
-      
     </div>
   </div>
 
-  <div class='flex flex-row justify-center gap-10 mt-0 mb-4 text-xs font-light'>
+  <div class="flex flex-row justify-center gap-10 mt-0 mb-4 text-xs font-light">
     <a
-					href='https://vk.com/velarshop'
-					target='_blank'
-					rel='noopener'
-					class='text-gray-900 font-light hover:underline'
-					>VK
-				</a>
-				<a
-					href='https://teletype.in/@velarshop'
-					target='_blank'
-					rel='noopener'
-					class='text-gray-900 font-light hover:underline'
-					>Teletype
-				</a>
-				<a
-					href='https://medium.com/@velarshop'
-					target='_blank'
-					rel='noopener'
-					class='text-gray-900 font-light hover:underline'
-					>Medium
-				</a>
-     
-				<a
-					href='https://ru.pinterest.com/velarshop/'
-					target='_blank'
-					rel='noopener'
-					class='text-gray-900 font-light hover:underline'
-					>Pinterest
-				</a>
-				
-				<a
-					href='https://dzen.ru/velarshop'
-					target='_blank'
-					rel='noopener'
-					class='text-gray-900 font-light hover:underline'
-					>Дзен
-				</a>
-			</div>
+      href="https://vk.com/velarshop"
+      target="_blank"
+      rel="noopener"
+      class="text-gray-900 font-light hover:underline"
+      >VK
+    </a>
+    <a
+      href="https://teletype.in/@velarshop"
+      target="_blank"
+      rel="noopener"
+      class="text-gray-900 font-light hover:underline"
+      >Teletype
+    </a>
+    <a
+      href="https://medium.com/@velarshop"
+      target="_blank"
+      rel="noopener"
+      class="text-gray-900 font-light hover:underline"
+      >Medium
+    </a>
 
+    <a
+      href="https://ru.pinterest.com/velarshop/"
+      target="_blank"
+      rel="noopener"
+      class="text-gray-900 font-light hover:underline"
+      >Pinterest
+    </a>
+
+    <a
+      href="https://dzen.ru/velarshop"
+      target="_blank"
+      rel="noopener"
+      class="text-gray-900 font-light hover:underline"
+      >Дзен
+    </a>
+  </div>
 
   <div class="max-w-6xl border-t pt-6 px-10 mx-auto text-xs text-neutral-600">
     <div
       class="flex flex-col md:flex-row gap-5 font-light md:justify-center"
-      role="menubar">
-      <a
-        href="/privacy"
-        class="hover:underline"
-        role="menuitem"
+      role="menubar"
+    >
+      <a href="/privacy" class="hover:underline" role="menuitem"
         >Политика конфиденциальности</a
       >
-      <div class="text-neutral-500 hidden md:block">|</div>
-      <a
-        href="/oferta"
-        class="hover:underline"
-        role="menuitem"
+      <div class="text-neutral-600 hidden md:block">|</div>
+      <a href="/oferta" class="hover:underline" role="menuitem"
         >Публичная оферта</a
       >
-      <div class="text-neutral-500 hidden md:block">|</div>
-      <a
-        href="/agreement"
-        class="hover:underline"
-        role="menuitem"
+      <div class="text-neutral-600 hidden md:block">|</div>
+      <a href="/agreement" class="hover:underline" role="menuitem"
         >Пользовательское соглашение</a
       >
     </div>
-    	<div class='px-6 py-10 mx-auto text-xs text-gray-500'>
-		© {year} VelarShop. ООО «Хоум Комфорт». Продажа и доставка по всей России.
-	</div>
+    <div class="px-6 py-10 mx-auto text-xs text-neutral-600">
+      © {year} VelarShop. ООО «Хоум Комфорт». Продажа и доставка по всей России.
+    </div>
   </div>
 </footer>
 
-
-<script type='application/ld+json' is:inline>
-	{
-		"@context": "https://schema.org",
-		"@type": "Organization",
-		"name": "VelarShop",
-		"url": "https://velarshop.ru/",
-		"logo": "https://velarshop.ru/logo-velar.png",
-		"email": "mail@velarshop.ru",
-		"telephone": ["+7 (495) 128-85-05", "+7 (812) 409-35-05"],
-		"contactPoint": [
-			{
-				"@type": "ContactPoint",
-				"telephone": "+7 (495) 128-85-05",
-				"contactType": "sales",
-				"areaServed": "RU",
-				"availableLanguage": ["Russian"]
-			}
-		],
-		"address": {
-			"@type": "PostalAddress",
-			"streetAddress": "пр. Обуховской Обороны, д. 7, литера С, офис 6",
-			"addressLocality": "Санкт-Петербург",
-			"postalCode": "192019",
-			"addressCountry": "RU"
-		},
-		"areaServed": [
-			{
-				"@type": "Country",
-				"name": "Russia"
-			}
-		],
-		"parentOrganization": {
-			"@type": "Organization",
-			"name": "ООО «ХОУМ КОМФОРТ»",
-			"url": "https://homekomfort.ru"
-		},
-		"sameAs": [
+<script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "VelarShop",
+    "url": "https://velarshop.ru/",
+    "logo": "https://velarshop.ru/logo-velar.png",
+    "email": "mail@velarshop.ru",
+    "telephone": ["+7 (495) 128-85-05", "+7 (812) 409-35-05"],
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+7 (495) 128-85-05",
+        "contactType": "sales",
+        "areaServed": "RU",
+        "availableLanguage": ["Russian"]
+      }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "пр. Обуховской Обороны, д. 7, литера С, офис 6",
+      "addressLocality": "Санкт-Петербург",
+      "postalCode": "192019",
+      "addressCountry": "RU"
+    },
+    "areaServed": [
+      {
+        "@type": "Country",
+        "name": "Russia"
+      }
+    ],
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "ООО «ХОУМ КОМФОРТ»",
+      "url": "https://homekomfort.ru"
+    },
+    "sameAs": [
       "https://vk.com/velarshop",
-			"https://medium.com/@velarshop",
-			"https://ru.pinterest.com/velarshop/",
-			"https://dzen.ru/velarshop",
-			"https://teletype.in/@velarshop"
-		]
-	}
+      "https://medium.com/@velarshop",
+      "https://ru.pinterest.com/velarshop/",
+      "https://dzen.ru/velarshop",
+      "https://teletype.in/@velarshop"
+    ]
+  }
 </script>
