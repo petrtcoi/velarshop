@@ -26,10 +26,12 @@ const { minPrice, models } = Astro.props as Props;
         </h1>
 
         <p class="mt-2 max-w-2xl text-sm leading-6 text-neutral-700">
-          Стальные трубчатые радиаторы Velar — решение для квартир, частных домов и дизайнерских интерьеров, где важны не только тепло, но и внешний вид. Доступны разные высоты, количество трубок в секции, варианты подключения и окраска в цвета RAL. Мы поможем подобрать модель по мощности помещения, месту установки и нужной конфигурации.
+          Стальные трубчатые радиаторы Velar для квартир, домов и дизайнерских
+          интерьеров. Подберем модель по высоте, мощности, подключению и цвету
+          RAL.
         </p>
 
-        <div class="mt-8 flex flex-wrap items-center gap-8">
+        <div class="mt-5 flex flex-wrap items-center gap-4">
           <a
             href="/request"
             class="inline-flex h-10 items-center justify-center rounded-[3px] border border-red-700 bg-white px-5 text-sm font-medium text-red-700 transition-colors hover:bg-red-50"
@@ -41,76 +43,266 @@ const { minPrice, models } = Astro.props as Props;
             href="#model_list"
             class="inline-flex items-center text-sm font-medium text-neutral-700 transition-colors hover:text-red-700 hover:underline"
           >
-            Все модели →
+            Смотреть модели →
           </a>
         </div>
 
-        <!-- Bestsellers -->
-        <div class="mt-8 flex md:flex-row flex-wrap justify-start items-center gap-2 text-sm">
-          <div class="text-neutral-600">Популярные модели:</div>
-          <div class="flex flex-wrap justify-start items-center gap-2 text-sm">
-          <a
-            href="/columns/2180"
-            class="inline-flex h-7 cursor-pointer items-center rounded-[3px] border border-neutral-200 bg-white px-2.5 text-xs font-medium text-neutral-900 transition-colors hover:border-red-300 hover:bg-red-50 hover:text-red-700"
-            >2180</a
+        <div class="mt-5">
+          <p
+            class="text-xs font-medium uppercase tracking-wide text-neutral-500"
           >
-          <a
-            href="/columns/3030"
-            class="inline-flex h-7 cursor-pointer items-center rounded-[3px] border border-neutral-200 bg-white px-2.5 text-xs font-medium text-neutral-900 transition-colors hover:border-red-300 hover:bg-red-50 hover:text-red-700"
-            >3030</a
-          >
-          <a
-            href="/columns/3057"
-            class="inline-flex h-7 cursor-pointer items-center rounded-[3px] border border-neutral-200 bg-white px-2.5 text-xs font-medium text-neutral-900 transition-colors hover:border-red-300 hover:bg-red-50 hover:text-red-700"
-            >3057</a
-          >
-          <a
-            href="/columns/3180"
-            class="inline-flex h-7 cursor-pointer items-center rounded-[3px] border border-neutral-200 bg-white px-2.5 text-xs font-medium text-neutral-900 transition-colors hover:border-red-300 hover:bg-red-50 hover:text-red-700"
-            >3180</a
-          >
+            Популярные модели
+          </p>
+          <div class="mt-2 grid gap-2 sm:grid-cols-2">
+            <a
+              href="/columns/2180"
+              class="group rounded-[3px] border border-neutral-200 bg-white p-3 transition-colors hover:border-neutral-300 hover:bg-neutral-50"
+            >
+              <p class="text-sm font-semibold text-neutral-900">Velar 2180</p>
+              <p class="mt-1 text-xs text-neutral-600">
+                вертикальный радиатор 1800 мм
+              </p>
+              <span
+                class="mt-2 inline-flex text-xs font-medium text-neutral-700 transition-colors group-hover:text-red-700"
+              >
+                Перейти →
+              </span>
+            </a>
+
+            <a
+              href="/columns/3030"
+              class="group rounded-[3px] border border-neutral-200 bg-white p-3 transition-colors hover:border-neutral-300 hover:bg-neutral-50"
+            >
+              <p class="text-sm font-semibold text-neutral-900">Velar 3030</p>
+              <p class="mt-1 text-xs text-neutral-600">
+                низкий радиатор под окно
+              </p>
+              <span
+                class="mt-2 inline-flex text-xs font-medium text-neutral-700 transition-colors group-hover:text-red-700"
+              >
+                Перейти →
+              </span>
+            </a>
+
+            <a
+              href="/columns/3057"
+              class="group rounded-[3px] border border-neutral-200 bg-white p-3 transition-colors hover:border-neutral-300 hover:bg-neutral-50"
+            >
+              <p class="text-sm font-semibold text-neutral-900">Velar 3057</p>
+              <p class="mt-1 text-xs text-neutral-600">
+                универсальная модель 570 мм
+              </p>
+              <span
+                class="mt-2 inline-flex text-xs font-medium text-neutral-700 transition-colors group-hover:text-red-700"
+              >
+                Перейти →
+              </span>
+            </a>
+
+            <a
+              href="/columns/3180"
+              class="group rounded-[3px] border border-neutral-200 bg-white p-3 transition-colors hover:border-neutral-300 hover:bg-neutral-50"
+            >
+              <p class="text-sm font-semibold text-neutral-900">Velar 3180</p>
+              <p class="mt-1 text-xs text-neutral-600">
+                высокий 3-трубчатый радиатор
+              </p>
+              <span
+                class="mt-2 inline-flex text-xs font-medium text-neutral-700 transition-colors group-hover:text-red-700"
+              >
+                Перейти →
+              </span>
+            </a>
           </div>
         </div>
       </div>
 
-      <!-- Features -->
-      <div
-        class="mt-6 grid max-w-xl grid-cols-2 gap-3  text-neutral-700 lg:mt-auto"
-      >
-        <div class="flex items-center gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-banknote-icon lucide-banknote"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>
-          <span class="text-sm md:text-md font-thin"
-            >Цена от {minPrice.toLocaleString("ru-RU")} ₽</span
-          >
+      <div class="mt-4 border-t border-neutral-200 pt-3 md:mt-5">
+        <div
+          class="hidden flex-wrap items-center gap-y-2 text-sm text-neutral-700 md:flex"
+        >
+          <span class="inline-flex items-center gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-5 w-5 text-neutral-500"
+              aria-hidden="true"
+            >
+              <path d="M12 3v18"></path>
+              <path d="M17 7H9.5a2.5 2.5 0 1 0 0 5h5a2.5 2.5 0 1 1 0 5H6"
+              ></path>
+            </svg>
+            Цена от {Math.max(minPrice, 5800).toLocaleString("ru-RU")} ₽
+          </span>
+          <span class="mx-3 h-4 w-px bg-neutral-200"></span>
+
+          <span class="inline-flex items-center gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-5 w-5 text-neutral-500"
+              aria-hidden="true"
+            >
+              <path
+                d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.77-.42l-4.46 2.84A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.77-.42L9.77 10.92A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2Z"
+              ></path>
+              <path d="M8 16h.01"></path>
+              <path d="M12 16h.01"></path>
+              <path d="M16 16h.01"></path>
+            </svg>
+            Под заказ и в наличии
+          </span>
+          <span class="mx-3 h-4 w-px bg-neutral-200"></span>
+
+          <span class="inline-flex items-center gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-5 w-5 text-neutral-500"
+              aria-hidden="true"
+            >
+              <circle cx="13.5" cy="6.5" r="2.5"></circle>
+              <circle cx="17.5" cy="17.5" r="2.5"></circle>
+              <circle cx="6.5" cy="12.5" r="2.5"></circle>
+              <path d="m8.9 11.3 3.2-3.6"></path>
+              <path d="m15 8.5 1.2 6.4"></path>
+              <path d="m8.7 13.6 6.3 2.5"></path>
+            </svg>
+            Цвета RAL
+          </span>
+          <span class="mx-3 h-4 w-px bg-neutral-200"></span>
+
+          <span class="inline-flex items-center gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-5 w-5 text-neutral-500"
+              aria-hidden="true"
+            >
+              <path
+                d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"
+              ></path>
+              <path d="M15 18h-6"></path>
+              <path
+                d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"
+              ></path>
+              <circle cx="17" cy="18" r="2"></circle>
+              <circle cx="7" cy="18" r="2"></circle>
+            </svg>
+            Доставка по России
+          </span>
         </div>
-        <div class="flex items-center gap-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-               stroke-width="1"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="h-12 w-12 text-neutral-900"
-            aria-hidden="true"
-          >
-            <path
-              d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.77-.42l-4.46 2.84A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.77-.42L9.77 10.92A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2Z"
-            ></path>
-            <path d="M8 16h.01"></path>
-            <path d="M12 16h.01"></path>
-            <path d="M16 16h.01"></path>
-          </svg>
-          <span class="text-sm md:text-md font-thin">Под заказ и в наличии</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-palette-icon lucide-palette"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/></svg>
-          <span class="text-sm md:text-md font-thin">Покраска в цвета RAL</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-truck-icon lucide-truck"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
-          <span class="text-sm md:text-md font-thin">Доставка по России</span>
+
+        <div class="grid grid-cols-2 gap-2 text-sm text-neutral-700 md:hidden">
+          <div class="flex items-center gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-5 w-5 text-neutral-500"
+              aria-hidden="true"
+            >
+              <path d="M12 3v18"></path>
+              <path d="M17 7H9.5a2.5 2.5 0 1 0 0 5h5a2.5 2.5 0 1 1 0 5H6"
+              ></path>
+            </svg>
+            <span
+              >Цена от {Math.max(minPrice, 5800).toLocaleString("ru-RU")} ₽</span
+            >
+          </div>
+
+          <div class="flex items-center gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-5 w-5 text-neutral-500"
+              aria-hidden="true"
+            >
+              <path
+                d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.77-.42l-4.46 2.84A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.77-.42L9.77 10.92A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2Z"
+              ></path>
+              <path d="M8 16h.01"></path>
+              <path d="M12 16h.01"></path>
+              <path d="M16 16h.01"></path>
+            </svg>
+            <span>Под заказ и в наличии</span>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-5 w-5 text-neutral-500"
+              aria-hidden="true"
+            >
+              <circle cx="13.5" cy="6.5" r="2.5"></circle>
+              <circle cx="17.5" cy="17.5" r="2.5"></circle>
+              <circle cx="6.5" cy="12.5" r="2.5"></circle>
+              <path d="m8.9 11.3 3.2-3.6"></path>
+              <path d="m15 8.5 1.2 6.4"></path>
+              <path d="m8.7 13.6 6.3 2.5"></path>
+            </svg>
+            <span>Цвета RAL</span>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-5 w-5 text-neutral-500"
+              aria-hidden="true"
+            >
+              <path
+                d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"
+              ></path>
+              <path d="M15 18h-6"></path>
+              <path
+                d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"
+              ></path>
+              <circle cx="17" cy="18" r="2"></circle>
+              <circle cx="7" cy="18" r="2"></circle>
+            </svg>
+            <span>Доставка по России</span>
+          </div>
         </div>
       </div>
     </div>
