@@ -72,7 +72,7 @@ function applyFilters(state: FilterState, visibleLimit: number): FilterStats {
 
 function filterButtonClass(active: boolean): string {
 	return active
-		? 'inline-flex h-7 !cursor-pointer items-center justify-center rounded-[3px] border border-red-700 bg-red-700 px-2.5 text-xs font-medium text-white transition-colors hover:cursor-pointer hover:border-red-800 hover:bg-red-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700 focus-visible:ring-offset-2'
+		? 'inline-flex h-7 !cursor-pointer items-center justify-center rounded-[3px] border border-red-600 bg-red-50 px-2.5 text-xs font-medium text-red-700 transition-colors hover:cursor-pointer hover:border-red-600 hover:bg-red-50 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-200 focus-visible:ring-offset-1'
 		: 'inline-flex h-7 !cursor-pointer items-center justify-center rounded-[3px] border border-neutral-200 bg-white px-2.5 text-xs font-medium text-neutral-800 transition-colors hover:cursor-pointer hover:border-red-300 hover:bg-red-50 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700 focus-visible:ring-offset-2'
 }
 

@@ -1,26 +1,165 @@
 ---
-const points = [
-	'Производство под заказ',
-	'Разные высоты и количество секций',
-	'Покраска в цвета RAL',
-	'Помощь с подбором',
-	'Доставка по России',
-	'Гарантия до 10 лет',
-	'Работа с физлицами и юрлицами',
-]
+const reasons = [
+  {
+    title: "Производство под заказ",
+    description:
+      "Подбираем высоту, количество секций, тип подключения и цвет под конкретный объект.",
+    icon: "factory",
+  },
+  {
+    title: "Цвета RAL",
+    description:
+      "Радиатор можно сделать нейтральным элементом или цветовым акцентом в интерьере.",
+    icon: "palette",
+  },
+  {
+    title: "Подбор по параметрам",
+    description:
+      "Поможем рассчитать мощность, количество секций и подходящую модель.",
+    icon: "settings",
+  },
+  {
+    title: "Доставка по России",
+    description:
+      "Отправляем радиаторы в регионы и подбираем подходящий способ доставки.",
+    icon: "truck",
+  },
+  {
+    title: "Гарантия до 10 лет",
+    description: "Предоставляем гарантию и документы на продукцию.",
+    icon: "shield",
+  },
+  {
+    title: "Для частных и проектных заказов",
+    description:
+      "Работаем с квартирами, частными домами, дизайн-проектами и коммерческими объектами.",
+    icon: "briefcase",
+  },
+];
 ---
 
-<section id='columns-why-velar' class='bg-white py-12 md:py-20'>
-	<div class='max-w-7xl mx-auto px-5 md:px-10'>
-		<h2 class='text-2xl md:text-3xl font-semibold text-neutral-900'>Почему выбирают Velar для трубчатых радиаторов</h2>
-		<div class='mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3'>
-			{
-				points.map(point => (
-					<div class='rounded-lg border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-800'>
-						{point}
-					</div>
-				))
-			}
-		</div>
-	</div>
+<section id="columns-why-velar" class="bg-white py-12 md:py-16">
+  <div class="max-w-7xl mx-auto px-5 md:px-10">
+    <div class="rounded-2xl bg-neutral-950 p-6 text-white md:p-8">
+      <h2 class="text-2xl font-semibold md:text-3xl">Почему Velar</h2>
+      <p class="mt-3 max-w-3xl text-sm leading-6 text-neutral-300">
+        Производим радиаторы под параметры объекта и помогаем подобрать модель
+        до оформления заказа.
+      </p>
+
+      <div class="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          reasons.map((reason) => (
+            <article class="rounded-xl border border-white/10 bg-white/5 p-4">
+              <div class="inline-flex h-9 w-9 items-center justify-center rounded-[3px] bg-white/10 text-white/80">
+                {reason.icon === "factory" && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="h-5 w-5"
+                  >
+                    <path d="M12 16h.01" />
+                    <path d="M16 16h.01" />
+                    <path d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.77-.42l-4.46 2.84A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.77-.42L9.77 10.92A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z" />
+                    <path d="M8 16h.01" />
+                  </svg>
+                )}
+                {reason.icon === "palette" && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="h-5 w-5"
+                  >
+                    <path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z" />
+                    <circle cx="13.5" cy="6.5" r=".5" fill="currentColor" />
+                    <circle cx="17.5" cy="10.5" r=".5" fill="currentColor" />
+                    <circle cx="6.5" cy="12.5" r=".5" fill="currentColor" />
+                    <circle cx="8.5" cy="7.5" r=".5" fill="currentColor" />
+                  </svg>
+                )}
+                {reason.icon === "settings" && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="h-5 w-5"
+                  >
+                    <circle cx="12" cy="12" r="3" />
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.1a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.1a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.1a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                  </svg>
+                )}
+                {reason.icon === "truck" && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="h-5 w-5"
+                  >
+                    <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2" />
+                    <path d="M15 18H9" />
+                    <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14" />
+                    <circle cx="17" cy="18" r="2" />
+                    <circle cx="7" cy="18" r="2" />
+                  </svg>
+                )}
+                {reason.icon === "shield" && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="h-5 w-5"
+                  >
+                    <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+                  </svg>
+                )}
+                {reason.icon === "briefcase" && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="h-5 w-5"
+                  >
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                    <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+                  </svg>
+                )}
+              </div>
+              <h3 class="mt-3 text-sm font-semibold text-white">
+                {reason.title}
+              </h3>
+              <p class="mt-2 text-sm leading-6 text-neutral-300">
+                {reason.description}
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </div>
 </section>

@@ -1,6 +1,4 @@
 ---
-import { Picture } from '@astrojs/image/components'
-
 const interiorImages = [
 	'/images/columns/1.jpg',
 	'/images/columns/2.jpg',
@@ -22,16 +20,12 @@ const interiorImages = [
 			{
 				interiorImages.map((image, index) => (
 					<div class='overflow-hidden rounded-lg bg-neutral-100'>
-						<Picture
+						<img
 							src={image}
 							alt={`Трубчатый радиатор Velar в интерьере ${index + 1}`}
 							title={`Трубчатый радиатор Velar в интерьере ${index + 1}`}
 							loading='lazy'
-							aspectRatio='4:3'
-							widths={[480, 720, 960]}
-							width={960}
-							sizes='(max-width: 768px) 100vw, 33vw'
-							class='h-full w-full object-cover'
+							class='block h-auto w-full'
 						/>
 					</div>
 				))
