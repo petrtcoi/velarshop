@@ -8,7 +8,10 @@ import ColumnsFaq from '../components/columns/ColumnsFaq.astro'
 import ColumnsGuide from '../components/columns/ColumnsGuide.astro'
 import ColumnsHero from '../components/columns/ColumnsHero.astro'
 import ColumnsHowToOrder from '../components/columns/ColumnsHowToOrder.astro'
+import ColumnsInteriors from '../components/columns/ColumnsInteriors.astro'
+import ColumnsTubeDifferences from '../components/columns/ColumnsTubeDifferences.astro'
 import ColumnsUseCases from '../components/columns/ColumnsUseCases.astro'
+import ColumnsWhatIs from '../components/columns/ColumnsWhatIs.astro'
 import ColumnsWhyVelar from '../components/columns/ColumnsWhyVelar.astro'
 import UsefulArticles from '../components/columns/UsefulArticles.astro'
 import {
@@ -30,9 +33,15 @@ const crumbs = [
 >
 	<Breadcrumbs items={crumbs} />
 
-	<ColumnsHero minPrice={minCatalogPrice} />
+	<ColumnsHero minPrice={minCatalogPrice} models={columnsModels} />
 
 	<ColumnsCatalog models={columnsModels} />
+
+	<ColumnsTubeDifferences />
+
+	<ColumnsWhatIs />
+
+	<ColumnsInteriors />
 
 	<ColumnsGuide />
 

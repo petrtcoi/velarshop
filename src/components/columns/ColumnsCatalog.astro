@@ -10,7 +10,8 @@ type Props = {
 const { models } = Astro.props as Props
 ---
 
-<section 	id='model_list' id='columns-catalog' class='mt-6 rounded-xl bg-neutral-50 px-4 py-5 md:px-5 md:py-6'>
+<section id='columns-catalog' class='mt-6 rounded-xl bg-neutral-50  py-5 md:px-5 md:py-6'>
+	<div id='model_list'></div>
 	<div>
 		<div class='mb-3 flex flex-col gap-1 md:flex-row md:items-end md:justify-between'>
 			<h2 class='text-xl font-semibold tracking-tight text-neutral-950 md:text-2xl'>Модели трубчатых радиаторов</h2>
@@ -24,7 +25,7 @@ const { models } = Astro.props as Props
 		<div
 		
 			aria-label='Список моделей трубчатых радиаторов Velar'
-			class='mt-4 overflow-hidden rounded-lg border border-neutral-200 bg-white'
+			class='mt-4 overflow-hidden border-y border-neutral-200 bg-white md:rounded-lg md:border'
 			itemscope
 			itemtype='https://schema.org/ItemList'
 		>
@@ -39,7 +40,7 @@ const { models } = Astro.props as Props
 			{
 				models.map((model, index) => (
 					<article
-						class='border-b border-neutral-100 bg-white px-3 py-2 last:border-b-0 transition-colors hover:bg-neutral-50/70'
+						class='border-b border-neutral-100 bg-white px-2 py-3 last:border-b-0 transition-colors hover:bg-neutral-50/70 md:px-3 md:py-2'
 						itemprop='itemListElement'
 						itemscope
 						itemtype='https://schema.org/Product'
@@ -77,7 +78,12 @@ const { models } = Astro.props as Props
 								<p class='mt-1 text-xs text-neutral-600'>
 									{model.tubeCount}-трубчатый · {model.height} мм · {model.powerSection} Вт/секц.
 								</p>
-								<p class='mt-0.5 text-xs text-neutral-600'>Секций: {model.sectionsMin}–{model.sectionsMax}</p>
+								<div class='mt-0.5 flex items-center justify-between gap-2'>
+									<p class='text-xs text-neutral-600'>Секций: {model.sectionsMin}–{model.sectionsMax}</p>
+									<a href={model.href} class='text-xs font-medium text-neutral-900 hover:text-red-700 hover:underline'>
+										К модели →
+									</a>
+								</div>
 							</div>
 						</div>
 
@@ -135,14 +141,31 @@ const { models } = Astro.props as Props
 				Показать ещё
 			</button>
 		</div>
-		<div class='mt-4 flex justify-center'>
-			<a
-				href='/request'
-				class='inline-flex h-9 cursor-pointer items-center justify-center rounded-[3px] border border-red-700 bg-red-700 px-4 text-sm font-medium text-white transition-colors hover:cursor-pointer hover:border-red-800 hover:bg-red-800'
-				style='cursor: pointer;'
-			>
-				Получить расчет
-			</a>
+		<div class='mt-4 overflow-hidden rounded-xl border border-neutral-200 bg-white md:grid md:grid-cols-[minmax(0,1fr)_320px]'>
+			<div class='p-4 md:p-5'>
+				<h3 class='text-lg font-semibold text-neutral-900'>Не нашли нужную высоту или количество секций?</h3>
+				<p class='mt-2 text-sm leading-6 text-neutral-700'>
+					Отправьте параметры помещения — подберём модель, рассчитаем мощность, количество секций, подключение и цвет RAL.
+				</p>
+				<a
+					href='/request'
+					class='mt-4 inline-flex h-9 cursor-pointer items-center justify-center rounded-[3px] border border-red-700 bg-red-700 px-4 text-sm font-light text-white transition-colors hover:cursor-pointer hover:border-red-800 hover:bg-red-800'
+					style='cursor: pointer;'
+				>
+					Получить расчет
+				</a>
+			</div>
+			<Picture
+				src='/images/columns/about.jpg'
+				alt='Трубчатый радиатор Velar в интерьере'
+				title='Трубчатый радиатор Velar в интерьере'
+				loading='lazy'
+				aspectRatio='16:10'
+				widths={[480, 720]}
+				width={720}
+				sizes='(max-width: 768px) 100vw, 320px'
+				class='h-full min-h-[180px] w-full object-cover'
+			/>
 		</div>
 	</div>
 </section>
