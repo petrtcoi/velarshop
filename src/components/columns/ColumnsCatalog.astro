@@ -1,0 +1,148 @@
+---
+import { Picture } from '@astrojs/image/components'
+import ColumnsFilters from './ColumnsFilters'
+import type { ColumnsModelCard } from './columnsData'
+
+type Props = {
+	models: ColumnsModelCard[]
+}
+
+const { models } = Astro.props as Props
+---
+
+<section 	id='model_list' id='columns-catalog' class='mt-6 rounded-xl bg-neutral-50 px-4 py-5 md:px-5 md:py-6'>
+	<div>
+		<div class='mb-3 flex flex-col gap-1 md:flex-row md:items-end md:justify-between'>
+			<h2 class='text-xl font-semibold tracking-tight text-neutral-950 md:text-2xl'>Модели трубчатых радиаторов</h2>
+			<p class='text-xs text-neutral-600'>
+				Показано <span id='columns-catalog-count' class='font-medium text-neutral-800'>20 из {models.length}</span>
+			</p>
+		</div>
+		<div class='mb-2'>
+			<ColumnsFilters client:load />
+		</div>
+		<div
+		
+			aria-label='Список моделей трубчатых радиаторов Velar'
+			class='mt-4 overflow-hidden rounded-lg border border-neutral-200 bg-white'
+			itemscope
+			itemtype='https://schema.org/ItemList'
+		>
+			<div class='hidden md:grid md:grid-cols-[minmax(0,1.7fr)_100px_110px_140px_120px_120px] md:gap-3 border-b border-neutral-100 bg-white px-3 py-2 text-xs font-medium text-neutral-600'>
+				<div>Модель</div>
+				<div>Высота</div>
+				<div>Тип</div>
+				<div>Мощность секции</div>
+				<div>Кол-во секций</div>
+				<div>Цена</div>
+			</div>
+			{
+				models.map((model, index) => (
+					<article
+						class='border-b border-neutral-100 bg-white px-3 py-2 last:border-b-0 transition-colors hover:bg-neutral-50/70'
+						itemprop='itemListElement'
+						itemscope
+						itemtype='https://schema.org/Product'
+						data-columns-card='1'
+						data-height={String(model.height)}
+						data-tubes={String(model.tubeCount)}
+						data-purpose={model.purposeTags.join(',')}
+						data-price={String(model.minPrice)}
+						data-index={String(index)}
+						style={index >= 20 ? 'display:none' : undefined}
+					>
+						<div class='grid min-h-[56px] grid-cols-[48px_minmax(0,1fr)] gap-3 md:hidden'>
+							<Picture
+								src={model.image}
+								alt={`${model.prefix} Velar ${model.name}`}
+								title={`${model.prefix} Velar ${model.name}`}
+								loading='lazy'
+								aspectRatio='1:1'
+								widths={[120, 180]}
+								width={120}
+								sizes='48px'
+								class='h-10 w-10 rounded-sm object-contain bg-neutral-50 p-1'
+							/>
+							<div class='min-w-0'>
+								<div class='flex items-start justify-between gap-3'>
+									<h3 class='text-sm font-semibold'>
+										<a href={model.href} class='text-neutral-900 hover:text-red-700 hover:underline'>
+											Velar {model.name}
+										</a>
+									</h3>
+									<span class='shrink-0 text-sm font-medium text-neutral-900'>
+										от {model.minPrice.toLocaleString('ru-RU')} ₽
+									</span>
+								</div>
+								<p class='mt-1 text-xs text-neutral-600'>
+									{model.tubeCount}-трубчатый · {model.height} мм · {model.powerSection} Вт/секц.
+								</p>
+								<p class='mt-0.5 text-xs text-neutral-600'>Секций: {model.sectionsMin}–{model.sectionsMax}</p>
+							</div>
+						</div>
+
+						<div class='hidden min-h-[56px] md:grid md:grid-cols-[minmax(0,1.7fr)_100px_110px_140px_120px_120px] md:items-center md:gap-3'>
+							<div class='flex min-w-0 items-center gap-3'>
+								<Picture
+									itemprop='image'
+									src={model.image}
+									alt={`${model.prefix} Velar ${model.name}`}
+									title={`${model.prefix} Velar ${model.name}`}
+									loading='lazy'
+									aspectRatio='1:1'
+									widths={[120, 180]}
+									width={120}
+									sizes='40px'
+									class='h-10 w-10 rounded-sm object-contain bg-neutral-50 p-1'
+								/>
+								<div class='min-w-0'>
+									<h3 itemprop='name' class='text-sm font-semibold'>
+										<a href={model.href} class='text-neutral-900 hover:text-red-700 hover:underline'>
+											Velar {model.name}
+										</a>
+									</h3>
+									<p itemprop='description' class='mt-0.5 truncate text-xs text-neutral-600'>
+										{model.tubeCount}-трубчатый радиатор {model.height <= 700 ? 'под окно' : 'универсальный'}
+									</p>
+								</div>
+							</div>
+								<div class='text-xs text-neutral-800'>{model.height} мм</div>
+								<div class='text-xs text-neutral-800'>{model.tubeCount}-труб.</div>
+								<div class='text-xs text-neutral-800'>{model.powerSection} Вт</div>
+								<div class='text-xs text-neutral-800'>{model.sectionsMin}–{model.sectionsMax}</div>
+							<div
+								itemprop='offers'
+								itemscope
+								itemtype='https://schema.org/Offer'
+									class='text-xs text-neutral-900'
+							>
+								<meta itemprop='priceCurrency' content='RUB' />
+								<meta itemprop='price' content={String(model.minPrice)} />
+								<div class='font-medium'>от {model.minPrice.toLocaleString('ru-RU')} ₽</div>
+							</div>
+						</div>
+					</article>
+				))
+			}
+		</div>
+		<div class='mt-4 flex justify-center'>
+			<button
+				id='columns-show-more'
+				type='button'
+				class='inline-flex h-9 cursor-pointer items-center justify-center rounded-[3px] border border-neutral-300 bg-white px-4 text-sm font-medium text-neutral-900 transition-colors hover:cursor-pointer hover:border-neutral-400'
+				style={models.length > 20 ? 'cursor:pointer' : 'display:none;cursor:pointer'}
+			>
+				Показать ещё
+			</button>
+		</div>
+		<div class='mt-4 flex justify-center'>
+			<a
+				href='/request'
+				class='inline-flex h-9 cursor-pointer items-center justify-center rounded-[3px] border border-red-700 bg-red-700 px-4 text-sm font-medium text-white transition-colors hover:cursor-pointer hover:border-red-800 hover:bg-red-800'
+				style='cursor: pointer;'
+			>
+				Получить расчет
+			</a>
+		</div>
+	</div>
+</section>

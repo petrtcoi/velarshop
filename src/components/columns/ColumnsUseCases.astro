@@ -1,0 +1,27 @@
+---
+const useCases = [
+	'для квартиры',
+	'для частного дома',
+	'для детской',
+	'для спальни',
+	'для гостиной',
+	'для интерьера в стиле лофт',
+	'для классического интерьера',
+	'для объектов с дизайн-проектом',
+]
+---
+
+<section id='columns-use-cases' class='bg-neutral-50 py-12 md:py-20'>
+	<div class='max-w-7xl mx-auto px-5 md:px-10'>
+		<h2 class='text-2xl md:text-3xl font-semibold text-neutral-900'>Где использовать трубчатые радиаторы</h2>
+		<div class='mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4'>
+			{
+				useCases.map(item => (
+					<div class='rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-800'>
+						{item}
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>

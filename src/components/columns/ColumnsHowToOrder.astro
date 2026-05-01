@@ -1,0 +1,25 @@
+---
+const steps = [
+	'Выберите модель',
+	'Укажите высоту, секции, цвет и подключение',
+	'Получите расчет',
+	'Подтвердите заказ',
+	'Производство',
+	'Доставка',
+]
+---
+
+<section id='columns-how-order' class='bg-neutral-50 py-12 md:py-20'>
+	<div class='max-w-7xl mx-auto px-5 md:px-10'>
+		<h2 class='text-2xl md:text-3xl font-semibold text-neutral-900'>Как заказать трубчатые радиаторы Velar</h2>
+		<ol class='mt-5 list-decimal list-inside space-y-2 text-sm md:text-base leading-7 text-neutral-800'>
+			{steps.map(step => <li>{step}</li>)}
+		</ol>
+		<a
+			href='/request'
+			class='inline-flex mt-6 h-12 items-center justify-center rounded-[3px] border border-red-700 bg-red-700 px-7 text-base font-semibold text-white transition-colors hover:bg-red-800 hover:border-red-800'
+		>
+			Получить расчет
+		</a>
+	</div>
+</section>

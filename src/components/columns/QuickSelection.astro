@@ -1,0 +1,97 @@
+---
+type QuickItem = {
+	title: string
+	field: string
+	value: string
+}
+
+type Props = {
+	items: QuickItem[]
+}
+
+const { items } = Astro.props as Props
+---
+
+<section id='quick-selection' class='border-b border-neutral-100 py-3'>
+	<div class='flex flex-col gap-2 text-sm md:flex-row md:items-center md:justify-between'>
+		<div class='-mx-1 flex flex-wrap items-center gap-x-3 gap-y-1 overflow-x-auto px-1 pb-1 md:mx-0 md:overflow-visible md:px-0'>
+			<span class='text-neutral-600'>Быстрый подбор:</span>
+			{
+				items.map(item => (
+					<button
+						type='button'
+						data-quick-filter='1'
+						data-quick-field={item.field}
+						data-quick-value={item.value}
+						class='shrink-0 inline-flex items-center border-b border-transparent pb-0.5 text-neutral-700 transition-colors hover:text-red-700'
+					>
+						{item.title}
+					</button>
+				))
+			}
+		</div>
+
+		<div class='flex flex-wrap items-center gap-x-2 gap-y-1 text-sm'>
+			<span class='text-neutral-600'>Популярные:</span>
+			<a href='/columns/2180' class='text-neutral-800 hover:text-red-700 hover:underline'>2180</a>
+			<span class='text-neutral-300'>·</span>
+			<a href='/columns/3030' class='text-neutral-800 hover:text-red-700 hover:underline'>3030</a>
+			<span class='text-neutral-300'>·</span>
+			<a href='/columns/3057' class='text-neutral-800 hover:text-red-700 hover:underline'>3057</a>
+			<span class='text-neutral-300'>·</span>
+			<a href='/columns/3180' class='text-neutral-800 hover:text-red-700 hover:underline'>3180</a>
+		</div>
+	</div>
+</section>
+
+<script is:inline>
+	const QUICK_ACTIVE_CLASS = ['text-red-700', 'border-red-700']
+
+	function applyQuickFilterActiveState(filters) {
+		const buttons = document.querySelectorAll('[data-quick-filter="1"]')
+		buttons.forEach(button => {
+			if (!(button instanceof HTMLElement)) return
+			const field = button.getAttribute('data-quick-field')
+			const value = button.getAttribute('data-quick-value')
+			if (!field || !value) return
+
+			const active = filters?.[field] === value
+			QUICK_ACTIVE_CLASS.forEach(className => {
+				button.classList.toggle(className, Boolean(active))
+			})
+		})
+	}
+
+	document.addEventListener('click', event => {
+		const target = event.target
+		if (!(target instanceof HTMLElement)) return
+
+		const button = target.closest('[data-quick-filter]')
+		if (!(button instanceof HTMLElement)) return
+
+		const field = button.getAttribute('data-quick-field')
+		const value = button.getAttribute('data-quick-value')
+		if (!field || !value) return
+
+		window.dispatchEvent(
+			new CustomEvent('columns:setFilter', {
+				detail: { field, value },
+			}),
+		)
+
+		const modelList = document.getElementById('model_list')
+		if (modelList) {
+			const rect = modelList.getBoundingClientRect()
+			const shouldScroll = rect.top > window.innerHeight || rect.top < 0
+			if (!shouldScroll) return
+			modelList.scrollIntoView({ behavior: 'smooth', block: 'start' })
+		}
+	})
+
+	window.addEventListener('columns:filtersChanged', event => {
+		const custom = event
+		applyQuickFilterActiveState(custom.detail?.filters)
+	})
+
+	applyQuickFilterActiveState({ height: 'all', tubes: 'all', purpose: 'all', price: 'all' })
+</script>

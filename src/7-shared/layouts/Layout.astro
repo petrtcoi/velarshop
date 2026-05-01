@@ -3,7 +3,6 @@ import ShoppingCartWidget from '@widgets/order/ShoppingCartWidget'
 import Footer from './components/Footer.astro'
 import Header from '../../components/layout/Header.astro'
 import '@shared/styles/global.css'
-import { GoToFormButton } from '@shared/components/GoToFormButton';
 
 export interface Props {
 	title?: string
@@ -35,7 +34,6 @@ const canonicalHref = (
 	.split('?')[0]
 	.split('#')[0]
 const ogImageHref = new URL(ogImageUrl, baseUrl).toString()
-const isHomePage = Astro.url.pathname === '/'
 ---
 
 <!DOCTYPE html>
@@ -208,7 +206,6 @@ const isHomePage = Astro.url.pathname === '/'
 
 			<main class:list={[{ 'max-w-6xl mx-auto p-3 md:p-5 lg:px-10 xl:px-0': paddings }, { 'p-0 m-0': !paddings }]}>
 				<slot />
-						{!isHomePage && <GoToFormButton client:load/>}
 								{hideShoppingCartWidgt === false && <ShoppingCartWidget client:load />}
 
 

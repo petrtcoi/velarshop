@@ -24,5 +24,9 @@ function shouldIncludeInSitemap(page) {
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://velarshop.ru',
+	redirects: {
+		'/info/raschet-sekciy-trubchatogo-radiatora-uglovaya-komnata':
+			'/info/raschet-radiatorov-dlya-uglovoy-komnaty',
+	},
 	integrations: [tailwind(), image(), mdx(), preact(), sitemap({ filter: shouldIncludeInSitemap })],
 })

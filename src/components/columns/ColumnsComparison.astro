@@ -1,0 +1,60 @@
+---
+const rows = [
+	{
+		type: 'Трубчатые',
+		pros: 'Гибкий выбор размеров, аккуратный вид, подходят для современных интерьеров.',
+		cons: 'Обычно дороже базовых панельных решений.',
+		when: 'Если важны дизайн, вариативность и подбор под проект.',
+	},
+	{
+		type: 'Панельные',
+		pros: 'Доступная цена, быстрый монтаж, хорошая теплоотдача.',
+		cons: 'Меньше вариантов по геометрии и дизайну.',
+		when: 'Для типовых помещений и ограниченного бюджета.',
+	},
+	{
+		type: 'Чугунные',
+		pros: 'Высокая инерционность и устойчивость к качеству теплоносителя.',
+		cons: 'Большой вес и более сложный монтаж.',
+		when: 'Для классических интерьеров и систем с перепадами параметров.',
+	},
+	{
+		type: 'Дизайн-радиаторы',
+		pros: 'Максимальный выбор форм и интерьерных решений.',
+		cons: 'Требуют точного подбора под задачу и проект.',
+		when: 'Если радиатор должен быть частью визуальной концепции.',
+	},
+]
+---
+
+<section id='columns-comparison' class='bg-white py-12 md:py-20'>
+	<div class='max-w-7xl mx-auto px-5 md:px-10'>
+		<h2 class='text-2xl md:text-3xl font-semibold text-neutral-900'>
+			Трубчатые, панельные, чугунные и дизайн-радиаторы: что выбрать
+		</h2>
+		<div class='mt-6 overflow-x-auto rounded-2xl border border-neutral-200'>
+			<table class='w-full min-w-[760px] border-collapse'>
+				<thead class='bg-neutral-50'>
+					<tr>
+						<th class='px-4 py-3 text-left text-sm font-semibold text-neutral-900'>Тип радиатора</th>
+						<th class='px-4 py-3 text-left text-sm font-semibold text-neutral-900'>Плюсы</th>
+						<th class='px-4 py-3 text-left text-sm font-semibold text-neutral-900'>Минусы</th>
+						<th class='px-4 py-3 text-left text-sm font-semibold text-neutral-900'>Когда выбрать</th>
+					</tr>
+				</thead>
+				<tbody>
+					{
+						rows.map(row => (
+							<tr class='border-t border-neutral-200'>
+								<td class='px-4 py-3 text-sm font-semibold text-neutral-900'>{row.type}</td>
+								<td class='px-4 py-3 text-sm text-neutral-700'>{row.pros}</td>
+								<td class='px-4 py-3 text-sm text-neutral-700'>{row.cons}</td>
+								<td class='px-4 py-3 text-sm text-neutral-700'>{row.when}</td>
+							</tr>
+						))
+					}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</section>

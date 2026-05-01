@@ -1,121 +1,50 @@
 ---
+import Breadcrumbs from '@widgets/breadcrumbs/Breadcrumbs.astro'
 import Layout from '@shared/layouts/Layout.astro'
-import Breadcrumbs from '@widgets/breadcrumbs/Breadcrumbs.astro';
-import BuyerInfo from '@widgets/buyerInfo/BuyerInfo.astro'
-import ModelList from '@widgets/ModelList.astro'
-import ColumnsAbout from '@widgets/pageColumns/ColumnsAbout.astro'
-import ColumnsBenefits from '@widgets/pageColumns/ColumnsBenefits.astro'
-import ColumnsExamples from '@widgets/pageColumns/ColumnsExamples.astro'
-import ColumnsFaq from '@widgets/pageColumns/ColumnsFaq.astro'
-import ColumnsModels from '@widgets/pageColumns/ColumnsModels.astro'
+
+import ColumnsCatalog from '../components/columns/ColumnsCatalog.astro'
+import ColumnsComparison from '../components/columns/ColumnsComparison.astro'
+import ColumnsFaq from '../components/columns/ColumnsFaq.astro'
+import ColumnsGuide from '../components/columns/ColumnsGuide.astro'
+import ColumnsHero from '../components/columns/ColumnsHero.astro'
+import ColumnsHowToOrder from '../components/columns/ColumnsHowToOrder.astro'
+import ColumnsUseCases from '../components/columns/ColumnsUseCases.astro'
+import ColumnsWhyVelar from '../components/columns/ColumnsWhyVelar.astro'
+import UsefulArticles from '../components/columns/UsefulArticles.astro'
+import {
+	columnsModels,
+	minCatalogPrice,
+	usefulArticles,
+} from '../components/columns/columnsData'
 
 const crumbs = [
-	{title: 'Главная', url: '/'},
-	{title: 'Трубчатые радиаторы отопления', url: '/columns'},
+	{ title: 'Главная', url: '/' },
+	{ title: 'Трубчатые радиаторы отопления', url: '/columns' },
 ]
 ---
 
 <Layout
-	title='Трубчатые радиаторы отопления Velar WH | купить | VelarShop.ru'
-	description='Большой выбор трубчатых радиаторов отопления.2-х, 3-х и 4-х трубчатые модели. В наличии и под заказ (4 недели). Высота до 2 м. Подходят для многоквартирных домов. Доставка по России.'
+	title='Трубчатые радиаторы Velar — стальные радиаторы отопления на заказ'
+	description='Стальные трубчатые радиаторы Velar для квартир, домов и интерьеров. Разные высоты, цвета RAL, производство под заказ, доставка по России.'
+	canonicalUrl='https://velarshop.ru/columns'
 >
 	<Breadcrumbs items={crumbs} />
 
-	<h1 class='text-3xl font-bold mt-7 md:mt-5'>Радиаторы Velar трубчатые — каталог</h1>
-	<div class='text-sm max-w-xl mt-3 leading-6'>
-		В каталоге представлены трубчатые радиаторы Velar. Поможем подобрать модель
-		по размерам, мощности и типу подключения.
-	</div>
+	<ColumnsHero minPrice={minCatalogPrice} />
 
-	<ModelList type='columns' />
+	<ColumnsCatalog models={columnsModels} />
 
-	<div class='mt-[40px] text-xs font-light max-w-[500px]'>
-		<sup>*</sup> Сроки заказа и доставки зависят от модели, комплектации и
-		выбранного цвета. Актуальные сроки уточняйте у менеджера.
-	</div>
+	<ColumnsGuide />
 
-	<ColumnsAbout />
+	<ColumnsComparison />
 
-	<ColumnsModels />
+	<ColumnsUseCases />
 
-	<ColumnsBenefits />
+	<ColumnsWhyVelar />
 
-	<ColumnsExamples />
+	<ColumnsHowToOrder />
+
+	<UsefulArticles articles={usefulArticles} />
 
 	<ColumnsFaq />
-
-<section
-  class="justify-center max-w-6xl mx-auto px-5 md:px-10 mt-20"
->
-	<h2 class="text-3xl font-light text-left">Полезные материалы</h2>
-		<div class="mt-2 text-sm leading-relaxed">
-			<ul class="list-disc list-outside pl-4">
-				<li>
-					<a href="/info/termostats" class='font-normal underline hover:no-underline'>
-						Как правильно устанавливать термоголовки для радиаторов
-					</a>
-				</li>
-				<li class="mt-1">
-					<a href="/info/column-radiators-pros-cons" class='font-normal underline hover:no-underline'>
-						Трубчатые радиаторы: преимущества и недостатки
-					</a>
-				</li>
-					<li class="mt-1">
-					<a href="/info/tube-radiators" class='font-normal underline hover:no-underline'>
-						Стальные трубчатые радиаторы Velar
-					</a>
-				</li>
-				<li class="mt-1">
-					<a href="/info/forma-trub-dizayn-radiatorov" class='font-normal underline hover:no-underline'>
-						Форма труб радиаторов
-					</a>
-				</li>
-				<li class="mt-1">
-					<a href="/info/kreplenie-radiatora-k-stene" class='font-normal underline hover:no-underline'>
-						Крепление радиатора к стене
-					</a>
-				</li>
-					<li class="mt-1">
-					<a href="/info/radiator-types" class='font-normal underline hover:no-underline'>
-						Виды радиаторов отопления
-					</a>
-				</li>
-					<li class="mt-1">
-					<a href="/info/chernye-dizainerskie-radiatory-otopleniya" class='font-normal underline hover:no-underline'>
-						Черные дизайнерские радиаторы отопления
-					</a>
-				</li>
-					<li class="mt-1">
-					<a href="/info/steel-tube-radiators-guide" class='font-normal underline hover:no-underline'>
-						Стальные трубчатые радиаторы: Полное руководство по выбору и установке
-					</a>
-				</li>
-				<li class="mt-1">
-					<a href="/info/kak-chistit-trubchatyj-radiator-otopleniya" class='font-normal underline hover:no-underline'>
-				Как правильно чистить трубчатый радиатор отопления
-					</a>
-				</li>
-				<li class="mt-1">
-					<a href="/info/raschet-sekciy-trubchatogo-radiatora-uglovaya-komnata" class='font-normal underline hover:no-underline'>
-						Как правильно рассчитать количество секций трубчатого радиатора для угловой комнаты
-					</a>
-				</li>
-				<li class="mt-1">
-					<a href="/info/zamena-panelnyh-radiatorov-na-trubchatye-velar" class='font-normal underline hover:no-underline'>
-						Замена панельных радиаторов на трубчатые Velar + онлайн калькулятор
-					</a>
-				</li>
-				<li class="mt-1">
-					<a href="/info/teplootdacha-radiatora-delta-t-chto-eto" class='font-normal underline hover:no-underline'>
-						Теплоотдача радиатора и ΔT - почему мощность меняется в реальных условиях
-					</a>
-				</li>
-			</ul>
-		</div>
-	</section>
-
-
-	<BuyerInfo productTitle='стальные трубчатые радиаторы отопления Velar' />
-
-	
 </Layout>
