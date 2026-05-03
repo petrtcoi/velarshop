@@ -72,6 +72,12 @@ type Props = {
   defaultModelId?: string;
 };
 
+type InlineSelectOption = {
+  value: string;
+  label: string;
+  disabled?: boolean;
+};
+
 type DimensionKey = "height" | "width" | "length" | "sections" | "tubes";
 type Selection = Record<DimensionKey, string> & {
   connection: string;
@@ -103,11 +109,7 @@ function parsePrice(value: string | undefined): number {
 }
 
 function fieldLabelClass(): string {
-  return "text-[11px] font-medium uppercase tracking-[0.08em] text-neutral-500";
-}
-
-function selectClass(): string {
-  return "h-10 w-full rounded-lg border border-neutral-200 bg-white px-3 text-sm text-neutral-950 outline-none transition focus:border-red-500 focus:ring-2 focus:ring-red-100";
+  return "text-[10px] font-medium uppercase tracking-[0.08em] text-neutral-500 md:text-[11px]";
 }
 
 function modelTypeLabel(model: Pick<ModelOption, "type" | "orientation">): string {
@@ -190,6 +192,84 @@ function getSelectionSummary(details: ModelDetails, variant: Variant, selection:
   ];
 
   return parts.filter(Boolean).join(" / ");
+}
+
+function InlineSelect({
+  label,
+  value,
+  options,
+  onChange,
+}: {
+  label: string;
+  value: string;
+  options: InlineSelectOption[];
+  onChange: (value: string) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const selectRef = useRef<HTMLDivElement>(null);
+  const selectedOption = options.find((option) => option.value === value);
+
+  useEffect(() => {
+    const handlePointerDown = (event: PointerEvent) => {
+      if (!selectRef.current?.contains(event.target as Node)) setOpen(false);
+    };
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+
+    window.addEventListener("pointerdown", handlePointerDown);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("pointerdown", handlePointerDown);
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
+  return (
+    <div class="relative min-w-0" ref={selectRef}>
+      <label class={fieldLabelClass()}>{label}</label>
+      <button
+        type="button"
+        class={`mt-1 flex h-10 w-full items-center justify-between gap-2 rounded-lg border bg-white px-2.5 text-left text-[13px] text-neutral-950 outline-none transition hover:border-neutral-300 focus:border-red-500 focus:ring-2 focus:ring-red-100 md:mt-1.5 md:px-3 md:text-sm ${
+          open ? "border-red-500 ring-2 ring-red-100" : "border-neutral-200"
+        }`}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        onClick={() => setOpen((current) => !current)}
+      >
+        <span class="min-w-0 truncate">{selectedOption?.label ?? "Выберите"}</span>
+        <span class="shrink-0 text-neutral-400" aria-hidden="true">⌄</span>
+      </button>
+
+      {open && (
+        <div class="absolute left-0 right-0 top-[calc(100%+4px)] z-40 overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-[0_18px_55px_rgba(15,23,42,0.22)] md:top-[calc(100%+6px)]">
+          <div role="listbox" class="max-h-[190px] overflow-y-auto p-1 md:max-h-[220px]">
+            {options.map((option) => {
+              const selected = option.value === value;
+              return (
+                <button
+                  type="button"
+                  role="option"
+                  aria-selected={selected}
+                  disabled={option.disabled}
+                  class={`block w-full rounded-lg px-2.5 py-1.5 text-left text-[13px] transition md:px-3 md:py-2 md:text-sm ${
+                    selected ? "bg-red-50 text-red-700" : "text-neutral-900 hover:bg-neutral-50"
+                  } ${option.disabled ? "cursor-not-allowed opacity-35 hover:bg-transparent" : ""}`}
+                  onClick={() => {
+                    if (option.disabled) return;
+                    onChange(option.value);
+                    setOpen(false);
+                  }}
+                >
+                  <span class="block truncate">{option.label}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
+    </div>
+  );
 }
 
 function getTotalPrice(details: ModelDetails, variant: Variant, selection: Selection): number {
@@ -325,23 +405,23 @@ export default function HeroQuickConfigurator({ models, defaultModelId = "3030" 
   };
 
   return (
-    <div class="w-full max-w-[460px] rounded-[22px] border border-white/70 bg-white p-4 text-neutral-950 shadow-[0_28px_80px_rgba(0,0,0,0.30)] md:p-5">
-      <div class="flex items-start justify-between gap-4">
+    <div class="w-full max-w-[460px] rounded-[20px] border border-white/70 bg-white p-3.5 text-neutral-950 shadow-[0_24px_64px_rgba(0,0,0,0.28)] md:rounded-[22px] md:p-5 md:shadow-[0_28px_80px_rgba(0,0,0,0.30)]">
+      <div class="flex items-start justify-between gap-3 md:gap-4">
         <div>
-          <h2 class="text-xl font-semibold tracking-[-0.02em]">Быстрый выбор</h2>
-          <p class="mt-1 text-sm leading-5 text-neutral-600">Модель, параметры и добавление в корзину без перехода в каталог.</p>
+          <h2 class="text-lg font-semibold tracking-[-0.02em] md:text-xl">Быстрый выбор</h2>
+          <p class="mt-0.5 text-xs leading-4 text-neutral-600 md:mt-1 md:text-sm md:leading-5">Модель, параметры и корзина без перехода в каталог.</p>
         </div>
-        <a href="/cart" class="shrink-0 rounded-full border border-neutral-200 px-3 py-1.5 text-xs font-medium text-neutral-700 transition hover:border-red-200 hover:text-red-700">
+        <a href="/cart" class="shrink-0 rounded-full border border-neutral-200 px-2.5 py-1 text-xs font-medium text-neutral-700 transition hover:border-red-200 hover:text-red-700 md:px-3 md:py-1.5">
           Корзина
         </a>
       </div>
 
-      <div class="mt-4" ref={comboboxRef}>
+      <div class="mt-3 md:mt-4" ref={comboboxRef}>
         <label class={fieldLabelClass()} id="hero_model_label">Модель</label>
-        <div class="relative mt-1.5">
+        <div class="relative mt-1 md:mt-1.5">
           <button
             type="button"
-            class="flex h-11 w-full items-center justify-between rounded-xl border border-neutral-200 bg-neutral-50 px-3 text-left text-sm outline-none transition hover:border-neutral-300 focus:border-red-500 focus:ring-2 focus:ring-red-100"
+            class="flex h-10 w-full items-center justify-between rounded-lg border border-neutral-200 bg-neutral-50 px-2.5 text-left text-[13px] outline-none transition hover:border-neutral-300 focus:border-red-500 focus:ring-2 focus:ring-red-100 md:h-11 md:rounded-xl md:px-3 md:text-sm"
             aria-haspopup="listbox"
             aria-expanded={open}
             aria-labelledby="hero_model_label"
@@ -357,34 +437,34 @@ export default function HeroQuickConfigurator({ models, defaultModelId = "3030" 
           </button>
 
           {open && (
-            <div class="absolute left-0 right-0 top-[calc(100%+6px)] z-30 overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-2xl">
-              <div class="border-b border-neutral-100 p-2">
+            <div class="absolute left-0 right-0 top-[calc(100%+4px)] z-30 overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-2xl md:top-[calc(100%+6px)]">
+              <div class="border-b border-neutral-100 p-1.5 md:p-2">
                 <input
-                  class="h-10 w-full rounded-lg border border-neutral-200 px-3 text-sm outline-none focus:border-red-500 focus:ring-2 focus:ring-red-100"
+                  class="h-9 w-full rounded-lg border border-neutral-200 px-2.5 text-[13px] outline-none focus:border-red-500 focus:ring-2 focus:ring-red-100 md:h-10 md:px-3 md:text-sm"
                   value={query}
                   placeholder="P30, P60, Q40, 3030, KWH..."
                   autoFocus
                   onInput={(event) => setQuery((event.currentTarget as HTMLInputElement).value)}
                 />
               </div>
-              <div role="listbox" class="max-h-[280px] overflow-y-auto p-1">
+              <div role="listbox" class="max-h-[220px] overflow-y-auto p-1 md:max-h-[280px]">
                 {filteredModels.length === 0 ? (
-                  <div class="px-3 py-4 text-sm text-neutral-500">Модель не найдена</div>
+                  <div class="px-3 py-3 text-[13px] text-neutral-500 md:py-4 md:text-sm">Модель не найдена</div>
                 ) : (
                   filteredModels.map((model) => (
                     <button
                       type="button"
                       role="option"
                       aria-selected={model.id === selectedModelId}
-                      class={`block w-full rounded-lg px-3 py-2 text-left transition hover:bg-red-50 ${model.id === selectedModelId ? "bg-red-50 text-red-700" : "text-neutral-900"}`}
+                      class={`block w-full rounded-lg px-2.5 py-1.5 text-left transition hover:bg-red-50 md:px-3 md:py-2 ${model.id === selectedModelId ? "bg-red-50 text-red-700" : "text-neutral-900"}`}
                       onClick={() => {
                         setSelectedModelId(model.id);
                         setOpen(false);
                         setQuery("");
                       }}
                     >
-                      <span class="block text-sm font-medium">Velar {model.name}</span>
-                      <span class="mt-0.5 block text-xs text-neutral-500">{modelTypeLabel(model)} · {model.id}</span>
+                      <span class="block text-[13px] font-medium md:text-sm">Velar {model.name}</span>
+                      <span class="block text-[11px] text-neutral-500 md:mt-0.5 md:text-xs">{modelTypeLabel(model)} · {model.id}</span>
                     </button>
                   ))
                 )}
@@ -394,12 +474,12 @@ export default function HeroQuickConfigurator({ models, defaultModelId = "3030" 
         </div>
       </div>
 
-      {loading && <div class="mt-4 rounded-xl bg-neutral-50 p-4 text-sm text-neutral-600">Загружаем доступные параметры...</div>}
-      {error && <div class="mt-4 rounded-xl border border-red-100 bg-red-50 p-4 text-sm text-red-700">{error}</div>}
+      {loading && <div class="mt-3 rounded-xl bg-neutral-50 p-3 text-[13px] text-neutral-600 md:mt-4 md:p-4 md:text-sm">Загружаем доступные параметры...</div>}
+      {error && <div class="mt-3 rounded-xl border border-red-100 bg-red-50 p-3 text-[13px] text-red-700 md:mt-4 md:p-4 md:text-sm">{error}</div>}
 
       {details && !loading && (
-        <div class="mt-4 space-y-3">
-          <div class="grid grid-cols-2 gap-2.5">
+        <div class="mt-3 space-y-2.5 md:mt-4 md:space-y-3">
+          <div class="grid grid-cols-2 gap-2 md:gap-2.5">
             {(["tubes", "height", "sections", "length", "width"] as DimensionKey[]).map((key) => {
               if (!details.filters[key]) return null;
               const available = getAvailableOptions(details, selection, key);
@@ -413,70 +493,72 @@ export default function HeroQuickConfigurator({ models, defaultModelId = "3030" 
               };
 
               return (
-                <div class="min-w-0">
-                  <label class={fieldLabelClass()}>{titleByKey[key]}</label>
-                  <select class={`${selectClass()} mt-1.5`} value={selection[key]} onChange={(event) => setDimension(key, (event.currentTarget as HTMLSelectElement).value)}>
-                    {options.map((value) => (
-                      <option value={value} disabled={!available.includes(value)}>{optionLabel(key, value)}</option>
-                    ))}
-                  </select>
-                </div>
+                <InlineSelect
+                  label={titleByKey[key]}
+                  value={selection[key]}
+                  options={options.map((value) => ({
+                    value,
+                    label: optionLabel(key, value),
+                    disabled: !available.includes(value),
+                  }))}
+                  onChange={(value) => setDimension(key, value)}
+                />
               );
             })}
 
             {details.filters.connection && details.options.connections.length > 0 && (
-              <div class="min-w-0">
-                <label class={fieldLabelClass()}>Подключение</label>
-                <select class={`${selectClass()} mt-1.5`} value={selection.connection} onChange={(event) => setSelection((current) => ({ ...current, connection: (event.currentTarget as HTMLSelectElement).value }))}>
-                  {details.options.connections.map((option) => <option value={option.id}>{option.label}</option>)}
-                </select>
-              </div>
+              <InlineSelect
+                label="Подключение"
+                value={selection.connection}
+                options={details.options.connections.map((option) => ({ value: option.id, label: option.label }))}
+                onChange={(value) => setSelection((current) => ({ ...current, connection: value }))}
+              />
             )}
 
             {details.filters.color && details.options.colors.length > 0 && (
-              <div class="min-w-0">
-                <label class={fieldLabelClass()}>Цвет</label>
-                <select class={`${selectClass()} mt-1.5`} value={selection.color} onChange={(event) => setSelection((current) => ({ ...current, color: (event.currentTarget as HTMLSelectElement).value }))}>
-                  {details.options.colors.map((option) => <option value={option.id}>{option.label}</option>)}
-                </select>
-              </div>
+              <InlineSelect
+                label="Цвет"
+                value={selection.color}
+                options={details.options.colors.map((option) => ({ value: option.id, label: option.label }))}
+                onChange={(value) => setSelection((current) => ({ ...current, color: value }))}
+              />
             )}
 
             {details.filters.grill && details.options.grills.length > 0 && (
-              <div class="min-w-0">
-                <label class={fieldLabelClass()}>Решетка</label>
-                <select class={`${selectClass()} mt-1.5`} value={selection.grill} onChange={(event) => setSelection((current) => ({ ...current, grill: (event.currentTarget as HTMLSelectElement).value }))}>
-                  {details.options.grills.map((option) => <option value={option.id}>{option.label}</option>)}
-                </select>
-              </div>
+              <InlineSelect
+                label="Решетка"
+                value={selection.grill}
+                options={details.options.grills.map((option) => ({ value: option.id, label: option.label }))}
+                onChange={(value) => setSelection((current) => ({ ...current, grill: value }))}
+              />
             )}
           </div>
 
           {details.filters.addon && details.options.addon && (
-            <label class="flex items-center gap-2 rounded-xl border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm text-neutral-800">
+            <label class="flex items-center gap-2 rounded-xl border border-neutral-200 bg-neutral-50 px-2.5 py-2 text-[13px] text-neutral-800 md:px-3 md:text-sm">
               <input type="checkbox" checked={selection.addon} onChange={() => setSelection((current) => ({ ...current, addon: !current.addon }))} />
               {details.options.addon.label}
             </label>
           )}
 
           {result ? (
-            <div class="rounded-2xl border border-neutral-200 bg-neutral-50 p-3.5">
-              <div class="text-xs font-medium uppercase tracking-[0.08em] text-neutral-500">Найденный вариант</div>
-              <a href={`/model/${details.model.slug}/${result.slug}`} class="mt-1.5 block text-base font-semibold leading-5 text-neutral-950 hover:text-red-700 hover:underline">
+            <div class="rounded-xl border border-neutral-200 bg-neutral-50 p-3 md:rounded-2xl md:p-3.5">
+              <div class="text-[11px] font-medium uppercase tracking-[0.08em] text-neutral-500 md:text-xs">Найденный вариант</div>
+              <a href={`/model/${details.model.slug}/${result.slug}`} class="mt-1 block text-[15px] font-semibold leading-5 text-neutral-950 hover:text-red-700 hover:underline md:mt-1.5 md:text-base">
                 {result.title}
               </a>
-              <div class="mt-2 text-xs leading-5 text-neutral-600">{summary}</div>
-              <div class="mt-3 flex items-end justify-between gap-3">
+              <div class="mt-1.5 text-[11px] leading-4 text-neutral-600 md:mt-2 md:text-xs md:leading-5">{summary}</div>
+              <div class="mt-2.5 flex items-end justify-between gap-2.5 md:mt-3 md:gap-3">
                 <div>
-                  {totalPrice > 0 && <div class="text-2xl font-semibold tracking-[-0.03em]">{formatRub(totalPrice)}</div>}
-                  {result.dt70 && <div class="mt-0.5 text-xs text-neutral-500">Мощность ΔT70: {result.dt70} Вт</div>}
+                  {totalPrice > 0 && <div class="text-[22px] font-semibold leading-none tracking-[-0.03em] md:text-2xl">{formatRub(totalPrice)}</div>}
+                  {result.dt70 && <div class="mt-1 text-[11px] text-neutral-500 md:mt-0.5 md:text-xs">Мощность ΔT70: {result.dt70} Вт</div>}
                 </div>
                 {matchedVariants.length > 1 && (
-                  <a href={details.model.href} class="text-right text-xs font-medium text-red-700 hover:underline">Показать еще {matchedVariants.length - 1} вариантов</a>
+                  <a href={details.model.href} class="text-right text-[11px] font-medium leading-4 text-red-700 hover:underline md:text-xs">Еще {matchedVariants.length - 1} вариантов</a>
                 )}
               </div>
 
-              <div class="mt-3 flex flex-wrap items-center gap-2">
+              <div class="mt-2.5 flex flex-wrap items-center gap-2 md:mt-3">
                 {itemInCartQnty > 0 ? (
                   <>
                     <button type="button" class="h-10 w-10 rounded-lg border border-neutral-300 bg-white text-lg transition hover:border-red-300 hover:text-red-700" onClick={handleRemoveFromCart} aria-label="Уменьшить количество">-</button>
@@ -485,19 +567,19 @@ export default function HeroQuickConfigurator({ models, defaultModelId = "3030" 
                     <span class="text-sm font-medium text-green-700">Добавлено</span>
                   </>
                 ) : (
-                  <button type="button" class="h-10 flex-1 rounded-lg bg-red-700 px-4 text-sm font-semibold text-white transition hover:bg-red-800 disabled:cursor-not-allowed disabled:bg-neutral-300" disabled={!totalPrice} onClick={handleAddToCart}>
+                  <button type="button" class="h-10 flex-1 rounded-lg bg-red-700 px-4 text-[13px] font-semibold text-white transition hover:bg-red-800 disabled:cursor-not-allowed disabled:bg-neutral-300 md:text-sm" disabled={!totalPrice} onClick={handleAddToCart}>
                     Добавить в корзину
                   </button>
                 )}
               </div>
 
-              <div class="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+              <div class="mt-2.5 flex flex-wrap gap-x-3 gap-y-1.5 text-[13px] md:mt-3 md:gap-x-4 md:gap-y-2 md:text-sm">
                 <a href={details.model.href} class="font-medium text-neutral-700 hover:text-red-700 hover:underline">Подробнее о модели</a>
                 <a href="/cart" class="font-medium text-red-700 hover:underline">Перейти в корзину</a>
               </div>
             </div>
           ) : (
-            <div class="rounded-xl border border-neutral-200 bg-neutral-50 p-4 text-sm text-neutral-600">Для выбранных параметров нет варианта. Измените один из размеров.</div>
+            <div class="rounded-xl border border-neutral-200 bg-neutral-50 p-3 text-[13px] text-neutral-600 md:p-4 md:text-sm">Для выбранных параметров нет варианта. Измените один из размеров.</div>
           )}
         </div>
       )}
