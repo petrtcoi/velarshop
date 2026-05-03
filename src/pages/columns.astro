@@ -1,6 +1,7 @@
 ---
 import Breadcrumbs from '@widgets/breadcrumbs/Breadcrumbs.astro'
 import Layout from '@shared/layouts/Layout.astro'
+import JsonLd from '../components/seo/JsonLd.astro'
 
 import ColumnsCatalog from '../components/columns/ColumnsCatalog.astro'
 import ColumnsComparison from '../components/columns/ColumnsComparison.astro'
@@ -15,10 +16,18 @@ import ColumnsWhatIs from '../components/columns/ColumnsWhatIs.astro'
 import ColumnsWhyVelar from '../components/columns/ColumnsWhyVelar.astro'
 import UsefulArticles from '../components/columns/UsefulArticles.astro'
 import {
+	columnsFaqItems,
+	columnsHowToSteps,
 	columnsModels,
 	minCatalogPrice,
 	usefulArticles,
 } from '../components/columns/columnsData'
+import {
+	buildColumnsCollectionPageSchema,
+	buildColumnsFaqSchema,
+	buildColumnsHowToSchema,
+	buildColumnsItemListSchema,
+} from '../lib/seo/columnsSchema'
 
 const crumbs = [
 	{ title: 'Главная', url: '/' },
@@ -29,9 +38,13 @@ const crumbs = [
 <Layout
 	title='Трубчатые радиаторы Velar — стальные радиаторы отопления на заказ'
 	description='Стальные трубчатые радиаторы Velar для квартир, домов и интерьеров. Разные высоты, цвета RAL, производство под заказ, доставка по России.'
-	canonicalUrl='https://velarshop.ru/columns'
+	canonicalUrl='https://velarshop.ru/columns/'
 >
 	<Breadcrumbs items={crumbs} />
+	<JsonLd data={buildColumnsCollectionPageSchema()} />
+	<JsonLd data={buildColumnsItemListSchema(columnsModels)} />
+	<JsonLd data={buildColumnsFaqSchema(columnsFaqItems)} />
+	<JsonLd data={buildColumnsHowToSchema(columnsHowToSteps)} />
 
 	<ColumnsHero minPrice={minCatalogPrice} models={columnsModels} />
 

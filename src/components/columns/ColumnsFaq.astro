@@ -1,42 +1,11 @@
 ---
-const faqItems = [
-	{
-		q: 'Подходят ли трубчатые радиаторы для центрального отопления?',
-		a: 'Да, при корректном подборе по рабочему давлению и параметрам системы трубчатые радиаторы подходят для квартир с центральным отоплением.',
-	},
-	{
-		q: 'Можно ли устанавливать трубчатые радиаторы в открытую систему отопления?',
-		a: 'Можно, но важно учитывать качество теплоносителя и условия эксплуатации. Для проекта лучше заранее согласовать технические параметры с менеджером.',
-	},
-	{
-		q: 'Чем трубчатые радиаторы отличаются от чугунных?',
-		a: 'Трубчатые модели легче, быстрее реагируют на регулировку и дают больше вариантов по размерам и цветам. Чугунные обычно массивнее и более инерционные.',
-	},
-	{
-		q: 'Что означают цифры в обозначении моделей 2030, 3030, 2180?',
-		a: 'Первая цифра обычно указывает на количество трубок в секции, а остальные — на геометрию серии. Точные параметры по высоте и глубине есть в карточке модели.',
-	},
-	{
-		q: 'Почему трубчатые радиаторы иногда слабее панельных при одинаковой длине?',
-		a: 'Теплоотдача зависит не только от длины, но и от глубины, числа трубок, высоты и температурного графика. Для точного сравнения нужно считать по мощности в ваших условиях.',
-	},
-	{
-		q: 'Можно ли изменить количество секций под конкретную комнату?',
-		a: 'Да, это стандартный сценарий для трубчатых моделей. Мы подбираем количество секций по расчетной мощности помещения.',
-	},
-	{
-		q: 'Можно ли заказать трубчатый радиатор в цвет RAL?',
-		a: 'Да, доступны варианты окраски по шкале RAL. Подбор цвета выполняется под интерьер или требования дизайн-проекта.',
-	},
-]
+import { columnsFaqItems } from './columnsData'
 ---
 
 <section
 	id='columns-faq'
 	aria-label='Ответы на вопросы о трубчатых радиаторах Velar'
 	class='bg-neutral-50 py-12 md:py-20'
-	itemscope
-	itemtype='https://schema.org/FAQPage'
 >
 	<div class='max-w-7xl mx-auto px-5 md:px-10'>
 		<h2 class='text-2xl md:text-3xl font-semibold text-neutral-900'>FAQ по трубчатым радиаторам</h2>
@@ -45,23 +14,11 @@ const faqItems = [
 		</p>
 		<div class='mt-6 space-y-3'>
 			{
-				faqItems.map(item => (
-					<details
-						class='rounded-xl border border-neutral-200 bg-white p-4'
-						itemscope
-						itemprop='mainEntity'
-						itemtype='https://schema.org/Question'
-					>
-						<summary class='cursor-pointer text-sm md:text-base font-semibold text-neutral-900' itemprop='name'>
-							{item.q}
-						</summary>
-						<div
-							class='mt-3 text-sm leading-6 text-neutral-700'
-							itemscope
-							itemprop='acceptedAnswer'
-							itemtype='https://schema.org/Answer'
-						>
-							<p itemprop='text'>{item.a}</p>
+				columnsFaqItems.map(item => (
+					<details class='rounded-xl border border-neutral-200 bg-white p-4'>
+						<summary class='cursor-pointer text-sm md:text-base font-semibold text-neutral-900'>{item.question}</summary>
+						<div class='mt-3 text-sm leading-6 text-neutral-700'>
+							<p>{item.answer}</p>
 						</div>
 					</details>
 				))

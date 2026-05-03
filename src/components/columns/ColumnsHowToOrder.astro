@@ -1,19 +1,12 @@
 ---
-const steps = [
-	'Выберите модель',
-	'Укажите высоту, секции, цвет и подключение',
-	'Получите расчет',
-	'Подтвердите заказ',
-	'Производство',
-	'Доставка',
-]
+import { columnsHowToSteps } from './columnsData'
 ---
 
 <section id='columns-how-order' class='bg-neutral-50 py-12 md:py-20'>
 	<div class='max-w-7xl mx-auto px-5 md:px-10'>
 		<h2 class='text-2xl md:text-3xl font-semibold text-neutral-900'>Как заказать трубчатые радиаторы Velar</h2>
 		<ol class='mt-5 list-decimal list-inside space-y-2 text-sm md:text-base leading-7 text-neutral-800'>
-			{steps.map(step => <li>{step}</li>)}
+			{columnsHowToSteps.map(step => <li>{step}</li>)}
 		</ol>
 		<a
 			href='/request'

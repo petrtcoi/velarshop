@@ -1,59 +1,49 @@
 ---
-const cards = [
-  {
-    title: "Трубчатые радиаторы",
-    desc: "Классические модели для квартиры и дома",
-    href: "/columns",
-    image: "/images/columns/about.jpg",
-    icon: "tubular",
-  },
-  {
-    title: "Дизайн радиаторы",
-    desc: "Вертикальные и интерьерные решения",
-    href: "/design",
-    image: "/images/articles/design.jpg",
-    icon: "design",
-  },
-  {
-    title: "Конвекторы",
-    desc: "Для панорамных окон. С вентиляторами и без",
-    href: "/convector",
-    image: "/images/articles/convector.jpeg",
-    icon: "convector",
-  },
-  {
-    title: "Ретро радиаторы",
-    desc: "Чугунные модели в классическом стиле",
-    href: "/retro",
-    image: "/images/articles/retro.jpg",
-    icon: "retro",
-  },
-];
+import HeroQuickConfigurator from "./HeroQuickConfigurator";
+import { modelsJsonData } from "@entities/Model";
+import { getModelSlug } from "@shared/utils/getModelSlug";
+
+const modelOptions = modelsJsonData.map((model) => ({
+  id: model.id,
+  slug: model.slug,
+  name: model.name,
+  type: model.type,
+  orientation: model.orientation ?? "",
+  prefix: model.prefix,
+  href: getModelSlug(model),
+  search: `${model.name} ${model.id} ${model.slug} ${model.short_comment} ${model.type}`.toLowerCase(),
+}));
 
 const scenarios = [
   {
-    title: "Для квартиры",
+    title: "Трубчатые радиаторы",
     desc: "Компактные и эффективные решения",
     image: "/images/columns/about.jpg",
     href: "/columns",
   },
   {
-    title: "Для панорамных окон",
-    desc: "Конвекторы и напольные модели",
-    image: "/images/articles/convector.jpeg",
-    href: "/convector",
-  },
-  {
-    title: "Под дизайн-проект",
-    desc: "Любые цвета RAL и нестандартные размеры",
+    title: "Дизайн-радиаторы",
+    desc: "Вертикальные и горизонтальные модели",
     image: "/images/articles/design.jpg",
     href: "/design",
   },
   {
-    title: "Ретро-интерьер",
+    title: "Внутрипольные конвекторы",
+    desc: "Для панорамных окон",
+    image: "/images/articles/convector.jpeg",
+    href: "/convector",
+  },
+  {
+    title: "Ретро-радиаторы",
     desc: "Чугунные радиаторы в классическом стиле",
     image: "/images/retro/retro_1.jpg",
     href: "/retro",
+  },
+  {
+    title: "Напольные радиаторы",
+    desc: "Перед окнами и витражным остеклением",
+    image: "/images/articles/floor-0.jpg",
+    href: "/floor",
   },
 ];
 ---
@@ -176,102 +166,21 @@ const scenarios = [
       </div>
     </div>
 
-    <div class="hero-cards">
-      {
-        cards.map((card) => (
-          <a
-            href={card.href}
-            class="bg-white/95 hover:bg-white flex flex-row w-[320px] rounded-[3px] p-[16px] gap-6 items-center justify-between"
-          >
-            <div class="flex flex-col justify-center items-start gap-2">
-              <div class="hero-card-icon" aria-hidden="true">
-                {card.icon === "tubular" && (
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M3 6h18" />
-                    <path d="M3 12h18" />
-                    <path d="M3 18h18" />
-                    <path d="M6 4v16" />
-                    <path d="M12 4v16" />
-                    <path d="M18 4v16" />
-                  </svg>
-                )}
-                {card.icon === "design" && (
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M12 2l2.1 5.9L20 10l-5.9 2.1L12 18l-2.1-5.9L4 10l5.9-2.1L12 2z" />
-                    <path d="M20 3v4" />
-                    <path d="M22 5h-4" />
-                  </svg>
-                )}
-                {card.icon === "convector" && (
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M3 8h11a2 2 0 1 0-2-2" />
-                    <path d="M3 12h16a2 2 0 1 1-2 2" />
-                    <path d="M3 16h9a2 2 0 1 1-2 2" />
-                  </svg>
-                )}
-                {card.icon === "retro" && (
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M3 22h18" />
-                    <path d="M4 10h16" />
-                    <path d="M6 22V10" />
-                    <path d="M10 22V10" />
-                    <path d="M14 22V10" />
-                    <path d="M18 22V10" />
-                    <path d="M12 3l8 4H4l8-4z" />
-                  </svg>
-                )}
-              </div>
-              <div>
-                <div class="hero-card-title">{card.title}</div>
-                <div class="hero-card-desc">{card.desc}</div>
-              </div>
-            </div>
-            <img
-              src={card.image}
-              alt={card.title}
-              class="hero-card-image"
-              loading="eager"
-            />
-          </a>
-        ))
-      }
+    <div class="hero-configurator">
+      <HeroQuickConfigurator
+        client:load
+        models={modelOptions}
+        defaultModelId="3030"
+      />
     </div>
   </div>
 </section>
 
 <section class="category-entry-section">
   <div class="category-entry-wrap">
-    <h2 class="category-entry-title">Подберите радиатор под вашу задачу</h2>
+    <h2 class="category-entry-title">Основные категории Velar</h2>
     <p class="category-entry-subtitle">
-      Или получите расчет — подберем оптимальное решение под ваш проект
+      Ссылки на разделы каталога сохранены отдельно от быстрого выбора в Hero
     </p>
     <div class="mobile-scenarios">
       {
@@ -350,8 +259,8 @@ const scenarios = [
     margin: 0 auto;
     padding: 70px 20px 48px;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 380px;
-    gap: 56px;
+    grid-template-columns: minmax(0, 1fr) minmax(400px, 460px);
+    gap: 42px;
     align-items: start;
   }
 
@@ -413,64 +322,11 @@ const scenarios = [
     border: 1px solid rgba(255, 255, 255, 0.65);
   }
 
-  .hero-cards {
+  .hero-configurator {
     display: flex;
-    flex-direction: column;
     justify-content: flex-start;
     align-items: flex-end;
-    gap: 12px;
-  }
-
-  .hero-card {
-    min-height: 142px;
-    background: rgba(255, 255, 255, 0.96);
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    border-radius: 14px;
-    padding: 16px;
-    display: grid;
-    grid-template-columns: 34px 1fr 76px;
-    gap: 14px;
-    align-items: center;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
-    text-decoration: none;
-  }
-
-  .hero-card-icon {
-    width: 34px;
-    height: 34px;
-    border-radius: 999px;
-    border: 1px solid rgba(193, 18, 31, 0.22);
-    color: #c1121f;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .hero-card-icon svg {
-    width: 18px;
-    height: 18px;
-  }
-
-  .hero-card-title {
-    font-size: 14px;
-    line-height: 1.2;
-    font-weight: 700;
-    color: #111;
-  }
-
-  .hero-card-desc {
-    margin-top: 6px;
-    font-size: 12px;
-    font-weight: 300;
-    line-height: 1.35;
-    color: #404040;
-  }
-
-  .hero-card-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 8px;
-    object-fit: cover;
+    min-width: 0;
   }
 
   .hero-features {
@@ -607,20 +463,16 @@ const scenarios = [
     flex-shrink: 0;
   }
 
-  @media (min-width: 1025px) {
-    .category-entry-section {
-      display: none;
-    }
-  }
-
   @media (max-width: 1024px) {
-    .hero-cards {
-      display: none;
-    }
-
     .hero-content {
       grid-template-columns: 1fr;
-      gap: 0;
+      gap: 28px;
+    }
+
+    .hero-configurator {
+      justify-content: stretch;
+      align-items: stretch;
+      width: 100%;
     }
   }
 
@@ -644,14 +496,16 @@ const scenarios = [
     }
 
     .hero-content {
-      display: block;
+      display: grid;
       max-width: none;
-      padding: 46px 24px 12px;
+      padding: 46px 24px 24px;
+      gap: 24px;
     }
 
     .hero-left {
       max-width: none;
       width: 100%;
+      min-height: auto !important;
     }
 
     .hero-left h1 {

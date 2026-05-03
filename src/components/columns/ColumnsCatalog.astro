@@ -26,8 +26,6 @@ const { models } = Astro.props as Props
 		
 			aria-label='Список моделей трубчатых радиаторов Velar'
 			class='mt-4 overflow-hidden border-y border-neutral-200 bg-white md:rounded-lg md:border'
-			itemscope
-			itemtype='https://schema.org/ItemList'
 		>
 			<div class='hidden md:grid md:grid-cols-[minmax(0,1.7fr)_100px_110px_140px_120px_120px] md:gap-3 border-b border-neutral-100 bg-white px-3 py-2 text-xs font-medium text-neutral-600'>
 				<div>Модель</div>
@@ -41,9 +39,6 @@ const { models } = Astro.props as Props
 				models.map((model, index) => (
 					<article
 						class='border-b border-neutral-100 bg-white px-2 py-3 last:border-b-0 transition-colors hover:bg-neutral-50/70 md:px-3 md:py-2'
-						itemprop='itemListElement'
-						itemscope
-						itemtype='https://schema.org/Product'
 						data-columns-card='1'
 						data-height={String(model.height)}
 						data-tubes={String(model.tubeCount)}
@@ -66,11 +61,11 @@ const { models } = Astro.props as Props
 							/>
 							<div class='min-w-0'>
 								<div class='flex items-start justify-between gap-3'>
-									<h3 class='text-sm font-semibold'>
+									<p class='text-sm font-semibold'>
 										<a href={model.href} class='text-neutral-900 hover:text-red-700 hover:underline'>
 											Velar {model.name}
 										</a>
-									</h3>
+									</p>
 									<span class='shrink-0 text-sm font-medium text-neutral-900'>
 										от {model.minPrice.toLocaleString('ru-RU')} ₽
 									</span>
@@ -90,7 +85,6 @@ const { models } = Astro.props as Props
 						<div class='hidden min-h-[56px] md:grid md:grid-cols-[minmax(0,1.7fr)_100px_110px_140px_120px_120px] md:items-center md:gap-3'>
 							<div class='flex min-w-0 items-center gap-3'>
 								<Picture
-									itemprop='image'
 									src={model.image}
 									alt={`${model.prefix} Velar ${model.name}`}
 									title={`${model.prefix} Velar ${model.name}`}
@@ -102,12 +96,12 @@ const { models } = Astro.props as Props
 									class='h-10 w-10 rounded-sm object-contain bg-neutral-50 p-1'
 								/>
 								<div class='min-w-0'>
-									<h3 itemprop='name' class='text-sm font-semibold'>
+									<p class='text-sm font-semibold'>
 										<a href={model.href} class='text-neutral-900 hover:text-red-700 hover:underline'>
 											Velar {model.name}
 										</a>
-									</h3>
-									<p itemprop='description' class='mt-0.5 truncate text-xs text-neutral-600'>
+									</p>
+									<p class='mt-0.5 truncate text-xs text-neutral-600'>
 										{model.tubeCount}-трубчатый радиатор {model.height <= 700 ? 'под окно' : 'универсальный'}
 									</p>
 								</div>
@@ -116,14 +110,7 @@ const { models } = Astro.props as Props
 								<div class='text-xs text-neutral-800'>{model.tubeCount}-труб.</div>
 								<div class='text-xs text-neutral-800'>{model.powerSection} Вт</div>
 								<div class='text-xs text-neutral-800'>{model.sectionsMin}–{model.sectionsMax}</div>
-							<div
-								itemprop='offers'
-								itemscope
-								itemtype='https://schema.org/Offer'
-									class='text-xs text-neutral-900'
-							>
-								<meta itemprop='priceCurrency' content='RUB' />
-								<meta itemprop='price' content={String(model.minPrice)} />
+							<div class='text-xs text-neutral-900'>
 								<div class='font-medium'>от {model.minPrice.toLocaleString('ru-RU')} ₽</div>
 							</div>
 						</div>
