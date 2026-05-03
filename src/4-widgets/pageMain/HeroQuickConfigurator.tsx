@@ -524,7 +524,7 @@ export default function HeroQuickConfigurator({ models, defaultModelId = '3030',
 				</div>
 			</div>
 
-			{loading && (
+			{loading && !details && (
 				<div class='mt-3 rounded-xl bg-neutral-50 p-3 text-[13px] text-neutral-600 md:mt-4 md:p-4 md:text-sm'>
 					Загружаем доступные параметры...
 				</div>
@@ -535,8 +535,10 @@ export default function HeroQuickConfigurator({ models, defaultModelId = '3030',
 				</div>
 			)}
 
-			{details && !loading && (
-				<div class='mt-3.5 space-y-3 md:mt-4 md:space-y-3'>
+			{details && (
+				<div class={`relative mt-3.5 space-y-3 transition-opacity duration-200 md:mt-4 md:space-y-3 ${
+					loading ? 'pointer-events-none select-none opacity-45' : 'opacity-100'
+				}`}>
 					<div class='grid grid-cols-2 gap-x-2.5 gap-y-3 md:gap-2.5'>
 						{(['tubes', 'height', 'sections', 'length', 'width'] as DimensionKey[]).map(key => {
 							if (!details.filters[key]) return null
@@ -688,6 +690,15 @@ export default function HeroQuickConfigurator({ models, defaultModelId = '3030',
 					) : (
 						<div class='rounded-xl border border-neutral-200 bg-neutral-50 p-3 text-[13px] text-neutral-600 md:p-4 md:text-sm'>
 							Для выбранных параметров нет варианта. Измените один из размеров.
+						</div>
+					)}
+
+					{loading && (
+						<div class='absolute inset-0 z-20 flex items-center justify-center rounded-2xl bg-white/55 backdrop-blur-[1px]'>
+							<div class='inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-xs font-medium text-neutral-700 shadow-sm'>
+								<span class='h-4 w-4 animate-spin rounded-full border-2 border-neutral-300 border-t-red-600'></span>
+								Обновляем модель...
+							</div>
 						</div>
 					)}
 				</div>

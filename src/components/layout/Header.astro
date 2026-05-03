@@ -525,24 +525,27 @@ const mobileIconSvg: Record<MobileIconName, string> = {
   }
 
   .header-cta {
-    border: 1px solid #c1121f;
-    color: #c1121f;
+    border: 1px solid #e5e5e5;
+    color: #111;
+    background: #fff;
     border-radius: 3px;
-    padding: 12px 22px;
+    padding: 0 18px;
     font-size: 13px;
-    font-weight: 300 !important;
+    font-weight: 400 !important;
     line-height: 1;
-    height: 48px;
+    height: 44px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    transition: border-color 0.2s, background-color 0.2s, color 0.2s;
   }
 
   .header-cta:hover {
-    background: #c1121f;
-    color: #fff;
-    font-weight: 200 !important;
+    background: #fff;
+    border-color: #c1121f;
+    color: #a30f19;
+    font-weight: 400 !important;
   }
 
   .mobile-right {
@@ -553,22 +556,25 @@ const mobileIconSvg: Record<MobileIconName, string> = {
 
   .mobile-calc-button {
     background: #fff;
-    color: #c1121f;
-    border: 1px solid #c1121f;
+    color: #111;
+    border: 1px solid #e5e5e5;
     border-radius: 3px;
     height: 44px;
     padding: 0 18px;
     font-size: 14px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    transition: border-color 0.2s, background-color 0.2s, color 0.2s;
   }
 
   .mobile-calc-button:hover {
-    background: rgba(193, 18, 31, 0.05);
+    background: #fff;
+    border-color: #c1121f;
+    color: #a30f19;
   }
 
   .mobile-burger {
