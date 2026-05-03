@@ -69,6 +69,7 @@ type ModelDetails = {
 type Props = {
 	models: ModelOption[]
 	defaultModelId?: string
+	initialDetails?: ModelDetails | null
 }
 
 type InlineSelectOption = {
@@ -108,7 +109,7 @@ function parsePrice(value: string | undefined): number {
 }
 
 function fieldLabelClass(): string {
-	return 'text-[10px] font-thin uppercase  tracking-tight text-neutral-600'
+	return 'mb-1.5 block text-[10px] font-thin uppercase tracking-tight text-neutral-600'
 }
 
 function modelTypeLabel(model: Pick<ModelOption, 'type' | 'orientation'>): string {
@@ -232,7 +233,7 @@ function InlineSelect({
 			<label class={fieldLabelClass()}>{label}</label>
 			<button
 				type='button'
-				class={`mt-0 flex h-8 w-full items-center justify-between gap-2 rounded-lg border bg-neutral-50 px-2 text-left text-[13px] text-neutral-950 outline-none transition hover:border-neutral-300 focus:border-red-500 focus:ring-2 focus:ring-red-100 ${
+				class={`mt-0 flex h-11 w-full items-center justify-between gap-2 rounded-lg border bg-neutral-50 px-2.5 text-left text-[13px] text-neutral-950 outline-none transition hover:border-neutral-300 focus:border-red-500 focus:ring-2 focus:ring-red-100 ${
 					open ? 'border-red-500 ring-2 ring-red-100' : 'border-neutral-200'
 				}`}
 				aria-haspopup='listbox'
@@ -303,17 +304,20 @@ function getTotalPrice(details: ModelDetails, variant: Variant, selection: Selec
 	return Math.max(0, Math.round(price))
 }
 
-export default function HeroQuickConfigurator({ models, defaultModelId = '3030' }: Props) {
+export type { ModelDetails }
+
+export default function HeroQuickConfigurator({ models, defaultModelId = '3030', initialDetails = null }: Props) {
 	const shoppingCart = useStore(storeShoppingCart)
 	const [selectedModelId, setSelectedModelId] = useState(defaultModelId)
 	const [query, setQuery] = useState('')
 	const [open, setOpen] = useState(false)
-	const [details, setDetails] = useState<ModelDetails | null>(null)
-	const [selection, setSelection] = useState<Selection>(emptySelection)
+	const [details, setDetails] = useState<ModelDetails | null>(initialDetails)
+	const [selection, setSelection] = useState<Selection>(() => (initialDetails ? buildInitialSelection(initialDetails) : emptySelection))
 	const [loading, setLoading] = useState(false)
 	const [error, setError] = useState('')
 	const comboboxRef = useRef<HTMLDivElement>(null)
 	const modelSearchInputRef = useRef<HTMLInputElement>(null)
+	const skipInitialFetchRef = useRef(Boolean(initialDetails))
 
 	const selectedModel = useMemo(
 		() => models.find(model => model.id === selectedModelId) ?? models[0],
@@ -344,6 +348,13 @@ export default function HeroQuickConfigurator({ models, defaultModelId = '3030' 
 
 	useEffect(() => {
 		if (!selectedModelId) return
+
+		if (skipInitialFetchRef.current && initialDetails?.model.id === selectedModelId) {
+			skipInitialFetchRef.current = false
+			return
+		}
+		skipInitialFetchRef.current = false
+
 		const controller = new AbortController()
 
 		setLoading(true)
@@ -421,8 +432,8 @@ export default function HeroQuickConfigurator({ models, defaultModelId = '3030' 
 	}
 
 	return (
-		<div class='w-full max-w-[460px] rounded-[20px] border border-white/70 bg-white p-3.5 text-neutral-950 shadow-[0_24px_64px_rgba(0,0,0,0.28)] md:rounded-[22px] md:p-5 md:shadow-[0_28px_80px_rgba(0,0,0,0.30)]'>
-			<div class='flex items-start justify-between gap-3 md:gap-4'>
+		<div class='w-full max-w-[460px] rounded-[20px] border border-white/70 bg-white px-[18px] pb-4 pt-[18px] text-neutral-950 shadow-[0_24px_64px_rgba(0,0,0,0.28)] md:rounded-[22px] md:p-5 md:shadow-[0_28px_80px_rgba(0,0,0,0.30)]'>
+			<div class='mb-3.5 flex items-start justify-between gap-3 md:mb-4 md:gap-4'>
 				<div>
 					<h2 class='text-md font-semibold tracking-tight md:text-lg'>Быстрый выбор</h2>
 					{/* <p class='mt-0.5 text-xs leading-4 text-neutral-600  font-light  md:leading-tight'>
@@ -438,7 +449,7 @@ export default function HeroQuickConfigurator({ models, defaultModelId = '3030' 
 			</div>
 
 			<div
-				class='mt-2'
+				class='mt-0'
 				ref={comboboxRef}
 			>
 				<label
@@ -450,7 +461,7 @@ export default function HeroQuickConfigurator({ models, defaultModelId = '3030' 
 				<div class='relative mt-0'>
 					<button
 						type='button'
-						class='flex h-8 w-full items-center justify-between rounded-lg border border-neutral-200 bg-neutral-50 px-2 text-left text-[13px] outline-none transition hover:border-neutral-300 focus:border-red-500 focus:ring-2 focus:ring-red-100 '
+						class='flex h-11 w-full items-center justify-between rounded-lg border border-neutral-200 bg-neutral-50 px-2.5 text-left text-[13px] outline-none transition hover:border-neutral-300 focus:border-red-500 focus:ring-2 focus:ring-red-100 '
 						aria-haspopup='listbox'
 						aria-expanded={open}
 						aria-labelledby='hero_model_label'
@@ -525,8 +536,8 @@ export default function HeroQuickConfigurator({ models, defaultModelId = '3030' 
 			)}
 
 			{details && !loading && (
-				<div class='mt-3 space-y-2.5 md:mt-4 md:space-y-3'>
-					<div class='grid grid-cols-2 gap-2 md:gap-2.5'>
+				<div class='mt-3.5 space-y-3 md:mt-4 md:space-y-3'>
+					<div class='grid grid-cols-2 gap-x-2.5 gap-y-3 md:gap-2.5'>
 						{(['tubes', 'height', 'sections', 'length', 'width'] as DimensionKey[]).map(key => {
 							if (!details.filters[key]) return null
 							const available = getAvailableOptions(details, selection, key)
@@ -593,16 +604,16 @@ export default function HeroQuickConfigurator({ models, defaultModelId = '3030' 
 					)}
 
 					{result ? (
-						<div class='rounded-xl border border-neutral-200 bg-neutral-50 p-3 md:rounded-2xl md:p-3.5'>
+						<div class='rounded-xl border border-neutral-200 bg-neutral-50 p-3.5 md:rounded-2xl md:p-3.5'>
 							<div class='text-[10px] font-thin uppercase tracking-tight text-neutral-500'>Найденный вариант</div>
 							<a
 								href={`/model/${details.model.slug}`}
-								class='mt-1 block text-[15px] font-semibold leading-5 text-neutral-950 hover:text-red-700 md:text-base'
+								class='mt-1.5 block text-[15px] font-semibold leading-5 text-neutral-950 hover:text-red-700 md:text-base'
 							>
 								{result.title}
 							</a>
-							<div class='mt-1 text-[11px] text-neutral-500 md:mt-0.5 md:text-xs leading-tight'>{summary}</div>
-							<div class='mt-2.5 flex items-end justify-between gap-2.5 md:mt-3 md:gap-3'>
+							<div class='mt-2 text-[11px] text-neutral-500 md:mt-0.5 md:text-xs leading-tight'>{summary}</div>
+							<div class='mt-3 flex items-end justify-between gap-2.5 md:mt-3 md:gap-3'>
 								<div>
 									{totalPrice > 0 && (
 										<div class='text-[22px] font-semibold leading-none tracking-[-0.03em] md:text-2xl'>
@@ -610,7 +621,7 @@ export default function HeroQuickConfigurator({ models, defaultModelId = '3030' 
 										</div>
 									)}
 									{result.dt70 && (
-										<div class='mt-1 text-[11px] text-neutral-500 md:mt-0.5 md:text-xs'>
+										<div class='mt-1.5 text-[11px] text-neutral-500 md:mt-0.5 md:text-xs'>
 											Мощность ΔT70: {result.dt70} Вт
 										</div>
 									)}
@@ -625,7 +636,7 @@ export default function HeroQuickConfigurator({ models, defaultModelId = '3030' 
 								)}
 							</div>
 
-							<div class='mt-2.5 flex flex-wrap items-center gap-2 md:mt-3'>
+							<div class='mt-3 flex flex-wrap items-center gap-2 md:mt-3'>
 								{itemInCartQnty > 0 ? (
 									<>
 										<button
@@ -659,7 +670,7 @@ export default function HeroQuickConfigurator({ models, defaultModelId = '3030' 
 								)}
 							</div>
 
-							<div class='mt-2.5 flex flex-wrap gap-x-3 gap-y-1.5 text-[13px] md:mt-3 md:gap-x-4 md:gap-y-2 md:text-sm'>
+							<div class='mt-3 flex flex-wrap gap-x-4 gap-y-2 text-[13px] leading-5 md:mt-3 md:gap-x-4 md:gap-y-2 md:text-sm'>
 								<a
 									href={details.model.href}
 									class='font-medium text-neutral-700 hover:text-red-700 hover:underline'
