@@ -36,7 +36,6 @@ type Variant = {
 	dt70?: string
 	price: string
 	addonDesignRadiatorsLegs?: string
-	addonStainlessBody?: string
 	grillPrices?: Record<string, string | undefined>
 }
 
@@ -233,7 +232,7 @@ function InlineSelect({
 			<label class={fieldLabelClass()}>{label}</label>
 			<button
 				type='button'
-				class={`mt-1 flex h-10 w-full items-center justify-between gap-2 rounded-lg border bg-white px-2.5 text-left text-[13px] text-neutral-950 outline-none transition hover:border-neutral-300 focus:border-red-500 focus:ring-2 focus:ring-red-100 md:mt-1.5 md:px-3 md:text-sm ${
+				class={`mt-0 flex h-8 w-full items-center justify-between gap-2 rounded-lg border bg-neutral-50 px-2 text-left text-[13px] text-neutral-950 outline-none transition hover:border-neutral-300 focus:border-red-500 focus:ring-2 focus:ring-red-100 ${
 					open ? 'border-red-500 ring-2 ring-red-100' : 'border-neutral-200'
 				}`}
 				aria-haspopup='listbox'
@@ -250,10 +249,10 @@ function InlineSelect({
 			</button>
 
 			{open && (
-				<div class='absolute left-0 right-0 top-[calc(100%+4px)] z-40 overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-[0_18px_55px_rgba(15,23,42,0.22)] md:top-[calc(100%+6px)]'>
+				<div class='absolute left-0 right-0 top-[calc(100%+4px)] z-40 overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-[0_18px_55px_rgba(15,23,42,0.22)]'>
 					<div
 						role='listbox'
-						class='max-h-[190px] overflow-y-auto p-1 md:max-h-[220px]'
+						class='max-h-[220px] overflow-y-auto p-1 md:max-h-[280px]'
 					>
 						{options.map(option => {
 							const selected = option.value === value
@@ -263,8 +262,8 @@ function InlineSelect({
 									role='option'
 									aria-selected={selected}
 									disabled={option.disabled}
-									class={`block w-full rounded-lg px-2.5 py-1.5 text-left text-[13px] transition md:px-3 md:py-2 md:text-sm ${
-										selected ? 'bg-red-50 text-red-700' : 'text-neutral-900 hover:bg-neutral-50'
+									class={`block w-full rounded-lg px-2.5 py-1.5 text-left text-[13px] transition hover:bg-red-50 md:px-3 md:py-2 ${
+										selected ? 'bg-red-50 text-red-700' : 'text-neutral-900'
 									} ${option.disabled ? 'cursor-not-allowed opacity-35 hover:bg-transparent' : ''}`}
 									onClick={() => {
 										if (option.disabled) return
@@ -299,9 +298,6 @@ function getTotalPrice(details: ModelDetails, variant: Variant, selection: Selec
 
 	if (selection.addon && details.options.addon?.id === 'addon_design_radiators_legs') {
 		price += parsePrice(variant.addonDesignRadiatorsLegs)
-	}
-	if (selection.addon && details.options.addon?.id === 'addon_stainless_body') {
-		price += parsePrice(variant.addonStainlessBody)
 	}
 
 	return Math.max(0, Math.round(price))
@@ -589,16 +585,14 @@ export default function HeroQuickConfigurator({ models, defaultModelId = '3030' 
 
 					{result ? (
 						<div class='rounded-xl border border-neutral-200 bg-neutral-50 p-3 md:rounded-2xl md:p-3.5'>
-							<div class='text-[11px] font-medium uppercase tracking-[0.08em] text-neutral-500 md:text-xs'>
-								Найденный вариант
-							</div>
+							<div class='text-[10px] font-thin uppercase tracking-tight text-neutral-500'>Найденный вариант</div>
 							<a
-								href={`/model/${details.model.slug}/${result.slug}`}
-								class='mt-1 block text-[15px] font-semibold leading-5 text-neutral-950 hover:text-red-700 hover:underline md:mt-1.5 md:text-base'
+								href={`/model/${details.model.slug}`}
+								class='mt-1 block text-[15px] font-semibold leading-5 text-neutral-950 hover:text-red-700 md:text-base'
 							>
 								{result.title}
 							</a>
-							<div class='mt-1.5 text-[11px] leading-4 text-neutral-600 md:mt-2 md:text-xs md:leading-5'>{summary}</div>
+							<div class='mt-1 text-[11px] text-neutral-500 md:mt-0.5 md:text-xs leading-tight'>{summary}</div>
 							<div class='mt-2.5 flex items-end justify-between gap-2.5 md:mt-3 md:gap-3'>
 								<div>
 									{totalPrice > 0 && (

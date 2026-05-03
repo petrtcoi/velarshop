@@ -1,33 +1,26 @@
 import { computed, atom } from 'nanostores'
-import { addonRadiatorLegs, addonStainlessBody } from '@entities/Addons'
+import { addonRadiatorLegs } from '@entities/Addons'
 
 
 
 const isRadiatorsLegs = atom<boolean>(false)
-const isStainlessBody = atom<boolean>(false)
 
 
-const addonPostfix = computed([ isRadiatorsLegs, isStainlessBody ], (isRadiatorsLegs, isStainlessBody) =>
+const addonPostfix = computed(isRadiatorsLegs, isRadiatorsLegs =>
   isRadiatorsLegs
     ? `, ${ addonRadiatorLegs.code }`
-    : isStainlessBody
-      ? `, ${ addonStainlessBody.code }`
-      : ''
+    : ''
 )
 
-const addonId = computed([ isRadiatorsLegs, isStainlessBody ], (isRadiatorsLegs, isStainlessBody) =>
+const addonId = computed(isRadiatorsLegs, isRadiatorsLegs =>
   isRadiatorsLegs
     ? addonRadiatorLegs.id
-    : isStainlessBody
-      ? addonStainlessBody.id
-      : null
+    : null
 )
 
 
 export {
   isRadiatorsLegs,
-  isStainlessBody,
   addonPostfix,
   addonId
 }
-

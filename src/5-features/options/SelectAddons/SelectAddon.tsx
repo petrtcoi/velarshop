@@ -1,7 +1,7 @@
 import { useStore } from "@nanostores/preact"
 
-import { addonRadiatorLegs, addonStainlessBody } from "@entities/Addons"
-import { isRadiatorsLegs, isStainlessBody } from "./store/addons"
+import { addonRadiatorLegs } from "@entities/Addons"
+import { isRadiatorsLegs } from "./store/addons"
 
 import type { ModelJson } from "@entities/Model"
 import type { WritableAtom } from "nanostores"
@@ -17,10 +17,6 @@ function SelectAddon({ model }: Props) {
   if (model.type === "design" && model.orientation === "horizontal") {
     addonTitle = addonRadiatorLegs.title
     addonStore = isRadiatorsLegs
-  }
-  if (model.type === "convector") {
-    addonTitle = addonStainlessBody.title
-    addonStore = isStainlessBody
   }
   if (!addonTitle || !addonStore) return null
 

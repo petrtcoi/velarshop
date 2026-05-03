@@ -5,7 +5,7 @@ import { convectorGrills } from '@entities/ConvectorGrill'
 import { modelsJsonData } from '@entities/Model'
 import { radiatorsJsonData } from '@entities/Radiator'
 import { columnConnections, radiatorConnections } from '@entities/RadiatorConnection'
-import { addonRadiatorLegs, addonStainlessBody } from '@entities/Addons'
+import { addonRadiatorLegs } from '@entities/Addons'
 import { ALL } from '@widgets/pageModel/RadiatorList/constants/filterAll'
 import { filterRadiators } from '@widgets/pageModel/RadiatorList/utils/filterRadiators'
 import { getModelFilters } from '@widgets/pageModel/RadiatorList/utils/getModelFilters'
@@ -60,9 +60,7 @@ export const get: APIRoute = ({ params }) => {
 
 	const addon = model.type === 'design' && model.orientation === 'horizontal'
 		? addonRadiatorLegs
-		: model.type === 'convector'
-			? addonStainlessBody
-			: undefined
+		: undefined
 
 	return json({
 		model: {
@@ -127,7 +125,6 @@ export const get: APIRoute = ({ params }) => {
 			dt70: radiator.dt70,
 			price: radiator.price,
 			addonDesignRadiatorsLegs: radiator.addon_design_radiators_legs,
-			addonStainlessBody: radiator.addon_stainless_body,
 			grillPrices: {
 				'basiс_grille_price': radiator.basiс_grille_price,
 				anod_color_grille_price: radiator.anod_color_grille_price,
