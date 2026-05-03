@@ -8,12 +8,12 @@ const news = await getCollection('news');
 <section
   id="news"
   aria-label="Новости о радиаторах и дайзн-ради аторах"
-  class="justify-center max-w-7xl mx-auto px-5 md:px-10 py-12 md:py-20">
+  class="justify-center max-w-[1180px] mx-auto px-4 md:px-6 xl:px-8 py-12 md:py-20 lg:py-24">
   <h2 class="text-3xl md:text-4xl font-semibold text-left">Полезные материалы и новости</h2>
   <div
     id="articles_list"
     aria-label="Список статей"
-    class="mt-6 flex flex-row flex-wrap items-top gap-8 justify-start">
+    class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
     {
       news
         .sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
@@ -28,7 +28,7 @@ const news = await getCollection('news');
           const articleHref = `/news/${slug}`;
 
           return (
-            <div class="group w-72 mx-auto sm:mx-0 mt-5">
+            <div class="group">
               <a href={articleHref}>
                 <Picture
                   src={imgPath}

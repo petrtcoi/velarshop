@@ -1,24 +1,145 @@
 ---
 const steps = [
-	'Оставьте заявку или напишите нам',
-	'Уточним параметры помещения и задачи',
-	'Подберем модели и рассчитаем стоимость',
-	'Согласуем заказ и сроки',
-	'Организуем доставку',
+	'Выберите модель',
+	'Укажите параметры',
+	'Получите расчет',
+	'Подтвердите заказ',
+	'Производство и доставка',
 ]
 ---
 
-<section id='how-to-order' class='bg-white py-12 md:py-20'>
-	<div class='max-w-7xl mx-auto px-5 md:px-10'>
-		<h2 class='text-3xl md:text-4xl font-semibold text-left text-neutral-900'>Как заказать радиаторы Velar</h2>
-		<ol class='mt-6 list-decimal list-inside space-y-2 text-sm md:text-base leading-7 text-neutral-800'>
-			{steps.map(step => <li>{step}</li>)}
+<section id='how-to-order' class='how-order-section'>
+	<div class='how-order-wrap'>
+		<div class='how-order-header'>
+			<h2 class='text-3xl md:text-4xl font-semibold text-left text-neutral-900'>Как заказать радиаторы Velar</h2>
+		</div>
+		<ol class='how-order-steps'>
+			{steps.map((step, index) => (
+				<li>
+					<span class='how-order-number'>{index + 1}</span>
+					<span>{step}</span>
+				</li>
+			))}
 		</ol>
 		<a
 			href='/request'
-			class='inline-flex mt-6 h-12 items-center justify-center rounded-[3px] border border-red-700 bg-red-700 px-7 text-base font-semibold text-white transition-colors hover:bg-red-800 hover:border-red-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-700 focus-visible:ring-offset-2'
+			class='how-order-button'
 		>
 			Получить расчет
 		</a>
 	</div>
 </section>
+
+<style>
+	.how-order-section {
+		background: #fff;
+		padding: 48px 16px 56px;
+	}
+
+	.how-order-wrap {
+		max-width: 1180px;
+		margin: 0 auto;
+	}
+
+	.how-order-header {
+		max-width: 760px;
+	}
+
+	.how-order-steps {
+		list-style: none;
+		margin: 28px 0 0;
+		padding: 0;
+		display: grid;
+		gap: 0;
+		border-top: 1px solid #e5e5e5;
+	}
+
+	.how-order-steps li {
+		display: grid;
+		grid-template-columns: 40px minmax(0, 1fr);
+		gap: 12px;
+		align-items: center;
+		border-bottom: 1px solid #e5e5e5;
+		padding: 16px 0;
+		color: #171717;
+		font-size: 15px;
+		line-height: 1.4;
+	}
+
+	.how-order-number {
+		display: inline-flex;
+		width: 28px;
+		height: 28px;
+		align-items: center;
+		justify-content: center;
+		border-radius: 999px;
+		background: #f5f5f5;
+		color: #991b1b;
+		font-size: 13px;
+		font-weight: 600;
+	}
+
+	.how-order-button {
+		display: inline-flex;
+		margin-top: 28px;
+		height: 48px;
+		align-items: center;
+		justify-content: center;
+		border-radius: 3px;
+		border: 1px solid #c1121f;
+		background: #c1121f;
+		padding: 0 28px;
+		color: #fff;
+		text-decoration: none;
+		font-size: 15px;
+		font-weight: 600;
+		line-height: 1;
+		transition: background 0.2s, border-color 0.2s;
+	}
+
+	.how-order-button:hover {
+		background: #a30f19;
+		border-color: #a30f19;
+	}
+
+	@media (max-width: 768px) {
+		.how-order-button {
+			width: 100%;
+		}
+	}
+
+	@media (min-width: 769px) {
+		.how-order-section {
+			padding: 72px 24px;
+		}
+
+		.how-order-steps {
+			grid-template-columns: repeat(5, minmax(0, 1fr));
+			border-bottom: 1px solid #e5e5e5;
+		}
+
+		.how-order-steps li {
+			position: relative;
+			display: block;
+			min-height: 122px;
+			border-bottom: 0;
+			border-right: 1px solid #e5e5e5;
+			padding: 20px 18px 18px 0;
+			font-size: 15px;
+		}
+
+		.how-order-steps li:last-child {
+			border-right: 0;
+		}
+
+		.how-order-number {
+			margin-bottom: 18px;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		.how-order-section {
+			padding: 88px 32px 96px;
+		}
+	}
+</style>
