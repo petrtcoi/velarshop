@@ -313,6 +313,7 @@ export default function HeroQuickConfigurator({ models, defaultModelId = '3030' 
 	const [loading, setLoading] = useState(false)
 	const [error, setError] = useState('')
 	const comboboxRef = useRef<HTMLDivElement>(null)
+	const modelSearchInputRef = useRef<HTMLInputElement>(null)
 
 	const selectedModel = useMemo(
 		() => models.find(model => model.id === selectedModelId) ?? models[0],
@@ -332,6 +333,14 @@ export default function HeroQuickConfigurator({ models, defaultModelId = '3030' 
 		window.addEventListener('pointerdown', handlePointerDown)
 		return () => window.removeEventListener('pointerdown', handlePointerDown)
 	}, [])
+
+	useEffect(() => {
+		if (!open) return
+		const rafId = window.requestAnimationFrame(() => {
+			modelSearchInputRef.current?.focus()
+		})
+		return () => window.cancelAnimationFrame(rafId)
+	}, [open])
 
 	useEffect(() => {
 		if (!selectedModelId) return
@@ -463,10 +472,10 @@ export default function HeroQuickConfigurator({ models, defaultModelId = '3030' 
 						<div class='absolute left-0 right-0 top-[calc(100%+4px)] z-30 overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-2xl md:top-[calc(100%+6px)]'>
 							<div class='border-b border-neutral-100 p-1.5 md:p-2'>
 								<input
+									ref={modelSearchInputRef}
 									class='h-9 w-full rounded-lg border border-neutral-200 px-2.5 text-[13px] outline-none focus:border-red-500 focus:ring-2 focus:ring-red-100 md:h-10 md:px-3 md:text-sm'
 									value={query}
 									placeholder='P30, P60, Q40, 3030, KWH...'
-									autoFocus
 									onInput={event => setQuery((event.currentTarget as HTMLInputElement).value)}
 								/>
 							</div>
@@ -641,7 +650,7 @@ export default function HeroQuickConfigurator({ models, defaultModelId = '3030' 
 								) : (
 									<button
 										type='button'
-										class='h-10 flex-1 rounded-lg bg-red-700 px-4 text-[13px] font-semibold text-white transition hover:bg-red-800 disabled:cursor-not-allowed disabled:bg-neutral-300 md:text-sm'
+										class='h-10 flex-1 rounded-lg bg-red-700 px-4 text-[13px] font-sm text-white transition hover:bg-red-800 disabled:cursor-not-allowed disabled:bg-neutral-300 md:text-sm'
 										disabled={!totalPrice}
 										onClick={handleAddToCart}
 									>
