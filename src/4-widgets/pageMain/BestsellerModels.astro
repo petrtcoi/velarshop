@@ -79,9 +79,9 @@ const type = models[0]?.type ?? "columns";
             <a href={modelHref} class="bestseller-btn bestseller-btn-secondary">
               Подробнее
             </a>
-            <a href="/request" class="bestseller-btn bestseller-btn-primary">
+            {/* <a href="/request" class="bestseller-btn bestseller-btn-primary">
               Получить расчет
-            </a>
+            </a> */}
           </div>
         </div>
       );
@@ -150,8 +150,9 @@ const type = models[0]?.type ?? "columns";
   .bestseller-description {
     margin-top: 6px;
     font-size: 12px;
-    line-height: 1.35;
-    color: #404040;
+    line-height: 1.15;
+    font-weight: 400;
+    color: #808080 !important; 
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -177,8 +178,8 @@ const type = models[0]?.type ?? "columns";
     flex: 1;
     height: 40px;
     border-radius: 3px;
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 300;
     line-height: 1;
     text-decoration: none;
     display: inline-flex;
@@ -242,7 +243,7 @@ const type = models[0]?.type ?? "columns";
     }
 
     .bestseller-description {
-      font-size: 13px;
+      font-size: 12px;
       -webkit-line-clamp: 3;
     }
 
@@ -251,8 +252,8 @@ const type = models[0]?.type ?? "columns";
     }
 
     .bestseller-btn {
-      height: 40px;
-      font-size: 13px;
+      height: 32px;
+      /* font-size: 11px; */
     }
   }
 </style>

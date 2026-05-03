@@ -5,7 +5,7 @@ import { useEffect, useMemo, useRef, useState } from 'preact/hooks'
 type ModelType = 'design' | 'floor' | 'convector' | 'ironcast' | 'columns'
 type Orientation = 'vertical' | 'horizontal' | ''
 
-type ModelOption = {
+export type ModelOption = {
 	id: string
 	slug: string
 	name: string
@@ -70,6 +70,8 @@ type Props = {
 	models: ModelOption[]
 	defaultModelId?: string
 	initialDetails?: ModelDetails | null
+	variant?: 'hero' | 'modal'
+	onNavigate?: () => void
 }
 
 type InlineSelectOption = {
@@ -306,7 +308,13 @@ function getTotalPrice(details: ModelDetails, variant: Variant, selection: Selec
 
 export type { ModelDetails }
 
-export default function HeroQuickConfigurator({ models, defaultModelId = '3030', initialDetails = null }: Props) {
+export default function HeroQuickConfigurator({
+	models,
+	defaultModelId = '3030',
+	initialDetails = null,
+	variant = 'hero',
+	onNavigate,
+}: Props) {
 	const shoppingCart = useStore(storeShoppingCart)
 	const [selectedModelId, setSelectedModelId] = useState(defaultModelId)
 	const [query, setQuery] = useState('')
@@ -329,6 +337,10 @@ export default function HeroQuickConfigurator({ models, defaultModelId = '3030',
 		if (!normalizedQuery) return models.slice(0, 12)
 		return models.filter(model => model.search.includes(normalizedQuery)).slice(0, 18)
 	}, [models, query])
+
+	useEffect(() => {
+		setSelectedModelId(defaultModelId)
+	}, [defaultModelId])
 
 	useEffect(() => {
 		const handlePointerDown = (event: PointerEvent) => {
@@ -431,21 +443,34 @@ export default function HeroQuickConfigurator({ models, defaultModelId = '3030',
 		removeFromCart({ title: itemTitle })
 	}
 
+	const isModal = variant === 'modal'
+	const titleClass = isModal ? 'text-md font-semibold tracking-tight' : 'text-md font-semibold tracking-tight md:text-lg'
+	const contentSpacingClass = isModal ? 'mt-3.5 space-y-2.5' : 'mt-3.5 space-y-3 md:mt-4 md:space-y-3'
+	const gridGapClass = isModal ? 'grid grid-cols-2 gap-x-2 gap-y-2.5' : 'grid grid-cols-2 gap-x-2.5 gap-y-3 md:gap-2.5'
+
 	return (
-		<div class='w-full max-w-[460px] rounded-[20px] border border-white/70 bg-white px-[18px] pb-4 pt-[18px] text-neutral-950 shadow-[0_24px_64px_rgba(0,0,0,0.28)] md:rounded-[22px] md:p-5 md:shadow-[0_28px_80px_rgba(0,0,0,0.30)]'>
+		<div
+			class={`w-full text-neutral-950 ${
+				isModal
+					? 'rounded-none border-0 bg-transparent p-0 shadow-none'
+					: 'max-w-[460px] rounded-[20px] border border-white/70 bg-white px-[18px] pb-4 pt-[18px] shadow-[0_24px_64px_rgba(0,0,0,0.28)] md:rounded-[22px] md:p-5 md:shadow-[0_28px_80px_rgba(0,0,0,0.30)]'
+			}`}
+		>
 			<div class='mb-3.5 flex items-start justify-between gap-3 md:mb-4 md:gap-4'>
 				<div>
-					<h2 class='text-md font-semibold tracking-tight md:text-lg'>Быстрый выбор</h2>
+					<h2 class={titleClass}>Быстрый выбор</h2>
 					{/* <p class='mt-0.5 text-xs leading-4 text-neutral-600  font-light  md:leading-tight'>
 						Модель, параметры и корзина без перехода в каталог
 					</p> */}
 				</div>
-				<a
-					href='/cart'
-					class='shrink-0 rounded-full border border-neutral-200 px-2.5 py-1 text-xs font-medium text-neutral-700 transition hover:border-red-200 hover:text-red-700 md:px-3 md:py-1.5'
-				>
-					Корзина
-				</a>
+				{!isModal && (
+					<a
+						href='/cart'
+						class='shrink-0 rounded-full border border-neutral-200 px-2.5 py-1 text-xs font-medium text-neutral-700 transition hover:border-red-200 hover:text-red-700 md:px-3 md:py-1.5'
+					>
+						Корзина
+					</a>
+				)}
 			</div>
 
 			<div
@@ -536,10 +561,10 @@ export default function HeroQuickConfigurator({ models, defaultModelId = '3030',
 			)}
 
 			{details && (
-				<div class={`relative mt-3.5 space-y-3 transition-opacity duration-200 md:mt-4 md:space-y-3 ${
+				<div class={`relative ${contentSpacingClass} transition-opacity duration-200 ${
 					loading ? 'pointer-events-none select-none opacity-45' : 'opacity-100'
 				}`}>
-					<div class='grid grid-cols-2 gap-x-2.5 gap-y-3 md:gap-2.5'>
+					<div class={gridGapClass}>
 						{(['tubes', 'height', 'sections', 'length', 'width'] as DimensionKey[]).map(key => {
 							if (!details.filters[key]) return null
 							const available = getAvailableOptions(details, selection, key)
@@ -595,7 +620,11 @@ export default function HeroQuickConfigurator({ models, defaultModelId = '3030',
 					</div>
 
 					{details.filters.addon && details.options.addon && (
-						<label class='flex items-center gap-2 rounded-xl border border-neutral-200 bg-neutral-50 px-2.5 py-2 text-[13px] text-neutral-800 md:px-3 md:text-sm'>
+						<label
+							class={`flex items-center gap-2 rounded-xl border border-neutral-200 bg-neutral-50 px-2.5 py-2 text-[13px] text-neutral-800 ${
+								isModal ? '' : 'md:px-3 md:text-sm'
+							}`}
+						>
 							<input
 								type='checkbox'
 								checked={selection.addon}
@@ -606,16 +635,19 @@ export default function HeroQuickConfigurator({ models, defaultModelId = '3030',
 					)}
 
 					{result ? (
-						<div class='rounded-xl border border-neutral-200 bg-neutral-50 p-3.5 md:rounded-2xl md:p-3.5'>
+						<div class={`rounded-xl border border-neutral-200 bg-neutral-50 ${isModal ? 'p-3' : 'p-3.5 md:rounded-2xl md:p-3.5'}`}>
 							<div class='text-[10px] font-thin uppercase tracking-tight text-neutral-500'>Найденный вариант</div>
 							<a
 								href={`/model/${details.model.slug}`}
-								class='mt-1.5 block text-[15px] font-semibold leading-5 text-neutral-950 hover:text-red-700 md:text-base'
+								onClick={() => onNavigate?.()}
+								class={`mt-1.5 block text-[15px] font-semibold leading-5 text-neutral-950 hover:text-red-700 ${
+									isModal ? '' : 'md:text-base'
+								}`}
 							>
 								{result.title}
 							</a>
-							<div class='mt-2 text-[11px] text-neutral-500 md:mt-0.5 md:text-xs leading-tight'>{summary}</div>
-							<div class='mt-3 flex items-end justify-between gap-2.5 md:mt-3 md:gap-3'>
+							<div class={`mt-2 text-[11px] leading-tight text-neutral-500 ${isModal ? '' : 'md:mt-0.5 md:text-xs'}`}>{summary}</div>
+							<div class={`mt-3 flex items-end justify-between gap-2.5 ${isModal ? '' : 'md:mt-3 md:gap-3'}`}>
 								<div>
 									{totalPrice > 0 && (
 										<div class='text-[22px] font-semibold leading-none tracking-[-0.03em] md:text-2xl'>
@@ -631,14 +663,15 @@ export default function HeroQuickConfigurator({ models, defaultModelId = '3030',
 								{matchedVariants.length > 1 && (
 									<a
 										href={details.model.href}
-										class='text-right text-[11px] font-medium leading-4 text-red-700 hover:underline md:text-xs'
+										onClick={() => onNavigate?.()}
+										class={`text-right text-[11px] font-medium leading-4 text-red-700 hover:underline ${isModal ? '' : 'md:text-xs'}`}
 									>
 										Еще {matchedVariants.length - 1} вариантов
 									</a>
 								)}
 							</div>
 
-							<div class='mt-3 flex flex-wrap items-center gap-2 md:mt-3'>
+							<div class={`mt-3 flex flex-wrap items-center gap-2 ${isModal ? '' : 'md:mt-3'}`}>
 								{itemInCartQnty > 0 ? (
 									<>
 										<button
@@ -663,7 +696,9 @@ export default function HeroQuickConfigurator({ models, defaultModelId = '3030',
 								) : (
 									<button
 										type='button'
-										class='h-10 flex-1 rounded-lg bg-red-700 px-4 text-[13px] font-sm text-white transition hover:bg-red-800 disabled:cursor-not-allowed disabled:bg-neutral-300 md:text-sm'
+										class={`h-10 flex-1 rounded-lg bg-red-700 px-4 text-[13px] font-sm text-white transition hover:bg-red-800 disabled:cursor-not-allowed disabled:bg-neutral-300 ${
+											isModal ? '' : 'md:text-sm'
+										}`}
 										disabled={!totalPrice}
 										onClick={handleAddToCart}
 									>
@@ -672,15 +707,17 @@ export default function HeroQuickConfigurator({ models, defaultModelId = '3030',
 								)}
 							</div>
 
-							<div class='mt-3 flex flex-wrap gap-x-4 gap-y-2 text-[13px] leading-5 md:mt-3 md:gap-x-4 md:gap-y-2 md:text-sm'>
+							<div class={`mt-3 flex flex-wrap gap-x-4 gap-y-2 text-[13px] leading-5 ${isModal ? '' : 'md:mt-3 md:gap-x-4 md:gap-y-2 md:text-sm'}`}>
 								<a
 									href={details.model.href}
+									onClick={() => onNavigate?.()}
 									class='font-medium text-neutral-700 hover:text-red-700 hover:underline'
 								>
 									Подробнее о модели
 								</a>
 								<a
 									href='/cart'
+									onClick={() => onNavigate?.()}
 									class='font-medium text-red-700 hover:underline'
 								>
 									Перейти в корзину

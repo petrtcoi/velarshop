@@ -1,20 +1,10 @@
 ---
 import HeroQuickConfigurator from "./HeroQuickConfigurator";
 import type { ModelDetails } from "./HeroQuickConfigurator";
-import { modelsJsonData } from "@entities/Model";
-import { getModelSlug } from "@shared/utils/getModelSlug";
+import { buildQuickConfiguratorModels } from "./quickConfiguratorData";
 import { get as getHeroConfiguratorData } from "../../pages/api/hero-configurator/[model].json";
 
-const modelOptions = modelsJsonData.map((model) => ({
-  id: model.id,
-  slug: model.slug,
-  name: model.name,
-  type: model.type,
-  orientation: model.orientation ?? "",
-  prefix: model.prefix,
-  href: getModelSlug(model),
-  search: `${model.name} ${model.id} ${model.slug} ${model.short_comment} ${model.type}`.toLowerCase(),
-}));
+const modelOptions = buildQuickConfiguratorModels();
 
 const defaultModelId = "3030";
 let initialDetails: ModelDetails | null = null;
@@ -215,9 +205,7 @@ const scenarios = [
 <section class="category-entry-section">
   <div class="category-entry-wrap">
     <h2 class="category-entry-title">Основные категории Velar</h2>
-    <p class="category-entry-subtitle">
-      Ссылки на разделы каталога сохранены отдельно от быстрого выбора в Hero
-    </p>
+    
     <div class="mobile-category-links">
       <h3 class="mobile-category-links-title">Каталог Velar</h3>
       <p class="mobile-category-links-subtitle">

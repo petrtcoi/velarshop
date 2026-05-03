@@ -1,8 +1,39 @@
 ---
 import { Picture } from "@astrojs/image/components";
 import { contacts } from "@shared/constants/contacts";
+import HeaderQuickSearch from "./HeaderQuickSearch";
+import type { ModelDetails } from "@widgets/pageMain/HeroQuickConfigurator";
+import {
+  buildQuickConfiguratorModels,
+  getDefaultConfiguratorModel,
+  resolveExistingModelId,
+} from "@widgets/pageMain/quickConfiguratorData";
+import { get as getHeroConfiguratorData } from "../../pages/api/hero-configurator/[model].json";
+
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = "/" } = Astro.props as Props;
 
 const { phone495, phone495String } = contacts;
+const quickSearchModels = buildQuickConfiguratorModels();
+const resolvedDefaultModelId = resolveExistingModelId(
+  quickSearchModels,
+  getDefaultConfiguratorModel(currentPath)
+);
+let quickSearchInitialDetails: ModelDetails | null = null;
+
+try {
+  const response = await getHeroConfiguratorData({
+    params: { model: resolvedDefaultModelId },
+  } as any);
+  if (response.ok) {
+    quickSearchInitialDetails = (await response.json()) as ModelDetails;
+  }
+} catch (error) {
+  console.error("Failed to preload header quick search model:", error);
+}
 
 type MobileIconName =
   | "columns"
@@ -239,10 +270,22 @@ const mobileIconSvg: Record<MobileIconName, string> = {
     <div class="desktop-right">
       <a href={`tel:${phone495}`} class="phone-link">{phone495String}</a>
       <a href="/request" class="header-cta">Получить расчет</a>
+      <HeaderQuickSearch
+        client:load
+        models={quickSearchModels}
+        defaultModelId={resolvedDefaultModelId}
+        initialDetails={quickSearchInitialDetails}
+      />
     </div>
 
     <div class="mobile-right">
       <a href="/request" class="mobile-calc-button">Расчет</a>
+      <HeaderQuickSearch
+        client:load
+        models={quickSearchModels}
+        defaultModelId={resolvedDefaultModelId}
+        initialDetails={quickSearchInitialDetails}
+      />
       <details class="mobile-menu">
         <summary class="mobile-burger" aria-label="Открыть меню">
           <svg
@@ -795,6 +838,10 @@ const mobileIconSvg: Record<MobileIconName, string> = {
     line-height: 1.2;
     color: #111;
     text-decoration: none;
+  }
+
+  .quick-search-modal-scroll::-webkit-scrollbar {
+    display: none;
   }
 
   @media (max-width: 768px) {
