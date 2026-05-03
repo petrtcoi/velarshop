@@ -1,67 +1,195 @@
 ---
-import { Picture } from '@astrojs/image/components';
-import { getCollection } from 'astro:content';
+import { Picture } from "@astrojs/image/components";
+import { getCollection } from "astro:content";
 
-const news = await getCollection('news');
+const news = await getCollection("news");
 ---
 
-<section
-  id="news"
-  aria-label="Новости о радиаторах и дайзн-ради аторах"
-  class="justify-center max-w-[1180px] mx-auto px-4 md:px-6 xl:px-8 py-12 md:py-20 lg:py-24">
-  <h2 class="text-3xl md:text-4xl font-semibold text-left">Полезные материалы и новости</h2>
-  <div
-    id="articles_list"
-    aria-label="Список статей"
-    class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-    {
-      news
-        .sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
-        .slice(0, 3)
-        .map(a => {
-          const { title, slug, date, short_description, thumbnail } = a.data;
-
-          const imgPath =
-            thumbnail.length > 0
-              ? `/images/news/${thumbnail}`
-              : '/images/news/empty.jpg';
-          const articleHref = `/news/${slug}`;
-
-          return (
-            <div class="group">
-              <a href={articleHref}>
-                <Picture
-                  src={imgPath}
-                  alt={title}
-                  title={title}
-                  loading="lazy"
-                  aspectRatio="1:1"
-                  widths={[290, 500]}
-                  width={290}
-                  height={290}
-                  sizes="290px"
-                  class="rounded-lg opacity-100 md:opacity-75 group-hover:opacity-100 group-hover:shadow-lg transition-opacity duration-300"
-                />
-                <div class="mt-1 text-xs text-slate-700 font-light">{date}</div>
-                <div class="text-sm mt-1 group-hover:text-red-700 transition-colors duration-300">
-                  {title}
-                </div>
-                <div class="text-xs mt-1 text-neutral-600 group-hover:text-neutral-900">
-                  {short_description}
-                </div>
-              </a>
-            </div>
-          );
-        })
-    }
-  </div>
-
-  <div class="mt-[20px]">
-    <a href={'/news'}>
-      <div
-        class="text-sm font-medium text-red-700 hover:underline transition-all duration-300">
-        Все материалы →
+<section id="news" aria-label="Новости о радиаторах и дизайн-радиаторах" class="news-section">
+  <div class="news-wrap">
+    <div class="news-heading">
+      <div>
+        <h2>Полезные материалы и новости</h2>
+        <p>Короткие материалы о выборе, установке и эксплуатации радиаторов.</p>
       </div>
-    </a>
+      <a href="/news">Все материалы →</a>
+    </div>
+
+    <div id="articles_list" aria-label="Список статей" class="news-grid">
+      {
+        news
+          .sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
+          .slice(0, 3)
+          .map((a) => {
+            const { title, slug, date, short_description, thumbnail } = a.data;
+            const imgPath =
+              thumbnail.length > 0 ? `/images/news/${thumbnail}` : "/images/news/empty.jpg";
+            const articleHref = `/news/${slug}`;
+
+            return (
+              <article class="news-card">
+                <a href={articleHref}>
+                  <Picture
+                    src={imgPath}
+                    alt={title}
+                    title={title}
+                    loading="lazy"
+                    aspectRatio="4:3"
+                    widths={[360, 520, 720]}
+                    width={360}
+                    height={270}
+                    sizes="(max-width: 768px) 92vw, 33vw"
+                    class="news-image"
+                  />
+                  <span class="news-date">{date}</span>
+                  <h3>{title}</h3>
+                  <p>{short_description}</p>
+                  <span class="news-read">Читать →</span>
+                </a>
+              </article>
+            );
+          })
+      }
+    </div>
   </div>
 </section>
+
+<style>
+  .news-section {
+    background: #fff;
+    padding: 48px 16px;
+  }
+
+  .news-wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  .news-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .news-heading h2 {
+    margin: 0;
+    color: #111;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.16;
+  }
+
+  .news-heading p {
+    margin: 10px 0 0;
+    max-width: 620px;
+    color: #666;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .news-heading a,
+  .news-read {
+    color: #b91c1c;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .news-grid {
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .news-card {
+    border: 1px solid #ececec;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .news-card:hover {
+    border-color: #d4d4d4;
+    transform: translateY(-2px);
+  }
+
+  .news-card a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    padding: 12px 12px 16px;
+  }
+
+  .news-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #fafafa;
+    display: block;
+  }
+
+  .news-date {
+    display: block;
+    margin-top: 12px;
+    color: #888;
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+  .news-card h3 {
+    margin: 8px 0 0;
+    color: #111;
+    font-size: 16px;
+    line-height: 1.35;
+    font-weight: 600;
+  }
+
+  .news-card p {
+    margin: 8px 0 0;
+    color: #666;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .news-read {
+    display: inline-flex;
+    margin-top: 14px;
+  }
+
+  @media (min-width: 768px) {
+    .news-section {
+      padding: 72px 24px;
+    }
+
+    .news-heading {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .news-heading h2 {
+      font-size: 38px;
+    }
+
+    .news-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .news-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .news-section {
+      padding: 88px 32px;
+    }
+  }
+</style>

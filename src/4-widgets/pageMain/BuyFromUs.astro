@@ -1,34 +1,160 @@
 ---
 const bullets = [
-	'Подбор и расчет радиаторов',
-	'Работа с частными клиентами и компаниями',
-	'Доставка по России',
-	'Сотрудничество с дизайнерами и строителями',
-]
+  "Официальный магазин Velar",
+  "Подбор мощности и размеров",
+  "Доставка по России",
+  "Работа с частными и дизайн-проектами",
+];
 ---
 
-<section id='about-velarshop' aria-label='О VelarShop' class='bg-neutral-50 py-12 md:py-20 lg:py-24'>
-	<div class='max-w-[1180px] mx-auto px-4 md:px-6 xl:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12'>
-		<div>
-			<h2 class='text-3xl md:text-4xl font-semibold text-neutral-900'>О VelarShop</h2>
-			<p class='mt-5 text-sm md:text-base leading-7 text-neutral-700'>
-				VelarShop — магазин радиаторов Velar с подбором под проект.
-			</p>
-			<p class='mt-4 text-sm md:text-base leading-7 text-neutral-700'>
-				Мы помогаем выбрать радиаторы для квартир, домов и коммерческих помещений: подбираем мощность, размеры, подключение, цвет и сроки производства.
-			</p>
-		</div>
+<section id="about-velarshop" aria-label="О VelarShop" class="shop-section">
+  <div class="shop-wrap">
+    <div class="shop-copy">
+      <h2>О VelarShop</h2>
+      <p>
+        VelarShop — официальный магазин дизайнерских радиаторов Velar с подбором
+        решений под интерьер, мощность и условия монтажа.
+      </p>
+      <p>
+        Помогаем выбрать радиаторы для квартир, домов и коммерческих помещений:
+        подбираем размер, подключение, цвет RAL и сроки производства.
+      </p>
+      <ul>
+        {bullets.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
 
-		<div class='rounded-2xl border border-neutral-200 bg-white p-5 md:p-6'>
-			<ul class='space-y-3 text-sm md:text-base leading-6 text-neutral-800'>
-				{bullets.map(item => <li>{item}</li>)}
-			</ul>
-			<a
-				href='/request'
-				class='mt-6 inline-flex h-12 w-full md:w-auto items-center justify-center rounded-[3px] border border-red-700 bg-red-700 px-7 text-base font-semibold text-white transition-colors hover:bg-red-800 hover:border-red-800'
-			>
-				Получить консультацию
-			</a>
-		</div>
-	</div>
+    <aside class="shop-callout">
+      <h3>Поможем подобрать модель под проект</h3>
+      <p>Можно отправить план, фото помещения или список размеров.</p>
+      <a href="/request">Получить консультацию</a>
+    </aside>
+  </div>
 </section>
+
+<style>
+  .shop-section {
+    background: #fafafa;
+    padding: 48px 16px;
+  }
+
+  .shop-wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    gap: 24px;
+  }
+
+  .shop-copy {
+    max-width: 720px;
+  }
+
+  .shop-copy h2,
+  .shop-callout h3 {
+    margin: 0;
+    color: #111;
+    font-weight: 600;
+    line-height: 1.16;
+  }
+
+  .shop-copy h2 {
+    font-size: 30px;
+  }
+
+  .shop-copy p {
+    margin: 16px 0 0;
+    color: #525252;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .shop-copy ul {
+    margin: 22px 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 10px;
+  }
+
+  .shop-copy li {
+    position: relative;
+    padding-left: 18px;
+    color: #222;
+    font-size: 14px;
+    line-height: 1.35;
+  }
+
+  .shop-copy li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: #b91c1c;
+  }
+
+  .shop-callout {
+    border: 1px solid #e5e5e5;
+    border-radius: 14px;
+    background: #fff;
+    padding: 22px;
+  }
+
+  .shop-callout h3 {
+    font-size: 22px;
+  }
+
+  .shop-callout p {
+    margin: 12px 0 0;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .shop-callout a {
+    margin-top: 22px;
+    display: inline-flex;
+    width: 100%;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    background: #c1121f;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .shop-callout a:hover {
+    background: #a30f19;
+  }
+
+  @media (min-width: 768px) {
+    .shop-section {
+      padding: 72px 24px;
+    }
+
+    .shop-wrap {
+      grid-template-columns: minmax(0, 1fr) 360px;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .shop-copy h2 {
+      font-size: 38px;
+    }
+
+    .shop-copy ul {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .shop-section {
+      padding: 88px 32px;
+    }
+  }
+</style>

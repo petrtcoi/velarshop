@@ -29,14 +29,16 @@ const horizontals = horizontal
     Модели, которые чаще всего выбирают для квартир, домов и дизайнерских
     проектов
   </p>
+  <nav class="bestsellers-tabs" aria-label="Разделы популярных моделей">
+    <a href="#bs-columns">Трубчатые радиаторы</a>
+    <a href="#bs-vertical">Дизайн-радиаторы</a>
+    <a href="#bs-horizontal">Горизонтальные</a>
+  </nav>
 
   <div id="bs-columns" class="bestsellers-group">
     <h3 class="bestsellers-group-title">Трубчатые радиаторы</h3>
     <p class="bestsellers-group-desc">
-      Трубчатые радиаторы сочетают надежность, выбор размеров и аккуратный
-      внешний вид. Подходят для современных интерьеров, лофта и ретро. Их часто
-      выбирают для квартир и частных домов, включая проекты с нестандартной
-      планировкой и длинными оконными зонами.
+      Надежные модели для квартир, домов и проектов с нестандартной планировкой.
     </p>
     <BestsellerModels models={columns} />
     <div class="bestsellers-all-link">
@@ -47,10 +49,7 @@ const horizontals = horizontal
   <div id="bs-vertical" class="bestsellers-group">
     <h3 class="bestsellers-group-title">Вертикальные дизайн-радиаторы</h3>
     <p class="bestsellers-group-desc">
-      Вертикальные дизайн-радиаторы помогают сэкономить место и подходят для
-      помещений, где нет возможности установить модель под окном. Такие решения
-      используют в гостиных, спальнях и ванных комнатах, когда важно сохранить
-      полезную площадь и поддержать стиль интерьера.
+      Решения для стен, простенков и интерьеров, где важны форма и полезная площадь.
     </p>
     <BestsellerModels models={verticals} />
     <div class="bestsellers-all-link">
@@ -61,10 +60,7 @@ const horizontals = horizontal
   <div id="bs-horizontal" class="bestsellers-group">
     <h3 class="bestsellers-group-title">Горизонтальные дизайн-радиаторы</h3>
     <p class="bestsellers-group-desc">
-      Горизонтальные дизайн-радиаторы устанавливают под окнами. У многих моделей
-      есть вертикальные аналоги, чтобы выдержать единый стиль в доме. Это
-      удобный вариант для классических схем отопления, когда важны стабильная
-      теплоотдача и визуальная аккуратность.
+      Аккуратные модели под окна и классические схемы отопления.
     </p>
     <BestsellerModels models={horizontals} />
     <div class="bestsellers-all-link">
@@ -94,7 +90,7 @@ const horizontals = horizontal
   }
 
   .bestsellers-title {
-    font-size: 44px;
+    font-size: 40px;
     line-height: 1.15;
     font-weight: 600;
     color: #111;
@@ -109,11 +105,11 @@ const horizontals = horizontal
   }
 
   .bestsellers-group {
-    margin-top: 42px;
+    margin-top: 36px;
   }
 
   .bestsellers-group-title {
-    font-size: 34px;
+    font-size: 24px;
     line-height: 1.2;
     font-weight: 600;
     color: #111;
@@ -124,7 +120,33 @@ const horizontals = horizontal
     font-size: 14px;
     line-height: 1.5;
     color: #262626;
-    max-width: 720px;
+    max-width: 620px;
+  }
+
+  .bestsellers-tabs {
+    margin-top: 26px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .bestsellers-tabs a {
+    display: inline-flex;
+    align-items: center;
+    height: 38px;
+    padding: 0 12px;
+    border-bottom: 2px solid transparent;
+    color: #444;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .bestsellers-tabs a:first-child,
+  .bestsellers-tabs a:hover {
+    color: #b91c1c;
+    border-bottom-color: #b91c1c;
   }
 
   .bestsellers-all-link {

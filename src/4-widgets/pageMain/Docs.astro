@@ -1,151 +1,57 @@
 ---
-import { Picture } from "@astrojs/image/components";
-
 const trustCards = [
-  {
-    title: "Гарантия до 10 лет",
-    text: "Срок гарантии указывается в паспорте изделия.",
-  },
-  {
-    title: "Сертификаты соответствия",
-    text: "Документы подтверждают соответствие отопительных приборов требованиям.",
-  },
-  {
-    title: "Официальные документы",
-    text: "Сертификаты можно открыть и посмотреть в полном размере.",
-  },
+  { title: "Гарантия до 10 лет", text: "На все радиаторы Velar" },
+  { title: "Сертификаты", text: "Соответствие ГОСТ и ТС" },
+  { title: "Испытания", text: "Проверка давлением на каждом этапе" },
+  { title: "Ответственность", text: "Контроль поставки и документов" },
 ];
 
 const certs = [
-  {
-    href: "/docs/certs/velar_cert_1.jpg",
-    src: "/docs/certs/velar_cert_1.jpg",
-  },
-  {
-    href: "/docs/certs/velar_cert_2.jpg",
-    src: "/docs/certs/velar_cert_2.jpg",
-  },
-  {
-    href: "/docs/certs/velar_cert_3.jpg",
-    src: "/docs/certs/velar_cert_3.jpg",
-  },
-  {
-    href: "/docs/certs/velar_cert_4.jpg",
-    src: "/docs/certs/velar_cert_4.jpg",
-  },
+  { href: "/docs/certs/velar_cert_1.jpg", label: "Сертификат соответствия" },
+  { href: "/docs/certs/velar_cert_2.jpg", label: "Сертификат соответствия" },
+  { href: "/docs/certs/velar_cert_3.jpg", label: "Сертификат соответствия" },
+  { href: "/docs/certs/velar_cert_4.jpg", label: "Сертификат соответствия" },
 ];
 ---
 
-<section
-  id="docs"
-  aria-label="Сертификаты для радиаторов и конвекторов Velar"
-  class="docs-section py-12 md:py-20 lg:py-24"
->
-  <div class="max-w-[1180px] mx-auto px-4 md:px-6 xl:px-8">
-    <h2 class="text-3xl md:text-4xl font-semibold text-left">
-      Гарантии и сертификаты
-    </h2>
-    <p class="mt-3 text-base md:text-lg leading-7 text-neutral-600 max-w-3xl">
-      Документы и гарантийные условия на оборудование Velar
-    </p>
-
-    <p class="mt-5 text-sm md:text-base leading-7 text-neutral-700 max-w-4xl">
-      На оборудование Velar действует гарантия до 10 лет. Срок зависит от типа
-      изделия и указывается в паспорте. Для сохранения гарантии монтаж должен
-      выполняться с соблюдением инструкции и требований производителя.
-    </p>
-
-    <details class="docs-details mt-4 max-w-4xl">
-      <summary class="docs-details-summary"
-        >Подробнее о гарантийных условиях</summary
-      >
-      <div class="mt-3 text-sm leading-7 text-neutral-600">
-        На оборудование Velar предоставляется гарантия до 10 лет, срок зависит
-        от типа выбранного устройства. Важно знать, что гарантия остаётся
-        действительной только если установку выполняют лицензированные
-        специалисты. В случае монтажа оборудования компанией без соответствующей
-        лицензии, гарантия аннулируется. Это связано с возможными нарушениями
-        установочных процедур, описанных в инструкции. Срок гарантии указывается
-        в паспорте изделия.
+<section id="docs" aria-label="Сертификаты для радиаторов и конвекторов Velar" class="docs-section">
+  <div class="docs-wrap">
+    <div class="docs-heading">
+      <div>
+        <h2>Гарантии и сертификаты</h2>
+        <p>Качество, подтвержденное документами и опытом поставок.</p>
       </div>
-    </details>
+      <a href="/docs/cert.pdf" target="_blank" rel="noopener noreferrer">Все документы →</a>
+    </div>
 
-    <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-5">
+    <div class="docs-trust-grid">
       {
         trustCards.map((card) => (
-          <article class="rounded-2xl border border-neutral-200 bg-white p-5">
-            <h3 class="text-base md:text-lg font-semibold text-neutral-900">
-              {card.title}
-            </h3>
-            <p class="mt-2 text-sm md:text-base leading-6 text-neutral-600">
-              {card.text}
-            </p>
+          <article class="docs-trust-card">
+            <span class="docs-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+            </span>
+            <h3>{card.title}</h3>
+            <p>{card.text}</p>
           </article>
         ))
       }
     </div>
 
-    <div class="mt-8 md:mt-10">
-      <div class="docs-certs-row scrollbar-hide">
-        {
-          certs.map((cert) => (
-            <article class="docs-cert-card">
-              <a href={cert.href} target="_blank" rel="noopener noreferrer">
-                <div class="docs-cert-image-wrap">
-                  <Picture
-                    src={cert.src}
-                    alt={"Сертификат соответствия"}
-                    title={
-                      "Сертификат соответствия отопительных приборов Velar"
-                    }
-                    loading={"eager"}
-                    aspectRatio="1346:1920"
-                    widths={[290, 400, 600]}
-                    width={290}
-                    sizes="(max-width: 768px) 72vw, 22vw"
-                    class="docs-cert-image"
-                  />
-                </div>
-              </a>
-              <div class="mt-3">
-                <div class="text-sm font-semibold text-neutral-900">
-                  Сертификат соответствия
-                </div>
-                <a
-                  href={cert.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="mt-1 inline-block text-sm text-neutral-600 hover:text-red-700"
-                >
-                  Открыть →
-                </a>
-              </div>
-            </article>
-          ))
-        }
-      </div>
-    </div>
-
-    <div class="mt-4">
-      <a
-        href="/docs/cert.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-block text-sm font-medium text-neutral-700 hover:text-red-700"
-      >
-        Скачать комплект документов (PDF) →
-      </a>
-    </div>
-
-    <div
-      class="mt-8 rounded-2xl border border-neutral-300 bg-neutral-50 p-4 md:p-5 docs-cta"
-    >
-      <p class="text-base md:text-lg font-semibold text-neutral-900">
-        Нужны документы для проекта или закупки?
-      </p>
-      <a href="/request" class="docs-cta-btn mt-4 md:mt-0"
-        >Запросить документы</a
-      >
+    <div class="docs-list">
+      {
+        certs.map((cert) => (
+          <a href={cert.href} target="_blank" rel="noopener noreferrer" class="docs-file-card">
+            <span class="docs-file-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M9 15h6"/><path d="M9 18h3"/></svg>
+            </span>
+            <span>
+              <span class="docs-file-title">{cert.label}</span>
+              <span class="docs-file-action">Открыть документ →</span>
+            </span>
+          </a>
+        ))
+      }
     </div>
   </div>
 </section>
@@ -153,118 +59,171 @@ const certs = [
 <style>
   .docs-section {
     background: #fff;
+    padding: 48px 16px;
   }
 
-  .docs-details-summary {
-    cursor: pointer;
-    font-size: 14px;
-    line-height: 1.35;
-    font-weight: 600;
-    color: #404040;
+  .docs-wrap {
+    max-width: 1180px;
+    margin: 0 auto;
   }
 
-  .docs-details-summary:hover {
-    color: #a30f19;
-  }
-
-  .docs-certs-row {
+  .docs-heading {
     display: flex;
-    gap: 12px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    padding-bottom: 4px;
+    flex-direction: column;
+    gap: 14px;
   }
 
-  .docs-cert-card {
-    min-width: 72vw;
-    max-width: 75vw;
-    border: 1px solid #e5e7eb;
-    border-radius: 16px;
+  .docs-heading h2 {
+    margin: 0;
+    font-size: 30px;
+    line-height: 1.16;
+    font-weight: 600;
+    color: #111;
+  }
+
+  .docs-heading p {
+    margin: 10px 0 0;
+    max-width: 640px;
+    color: #666;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .docs-heading a {
+    color: #b91c1c;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .docs-trust-grid {
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .docs-trust-card,
+  .docs-file-card {
+    border: 1px solid #ececec;
+    border-radius: 10px;
     background: #fff;
-    padding: 12px;
-    scroll-snap-align: start;
-    transition: border-color 0.2s ease;
   }
 
-  .docs-cert-card:hover {
-    border-color: #d4d4d8;
+  .docs-trust-card {
+    padding: 14px;
   }
 
-  .docs-cert-image-wrap {
-    aspect-ratio: 3 / 4;
-    border-radius: 12px;
-    overflow: hidden;
-    background: #fafafa;
-  }
-
-  .docs-cert-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-
-  .docs-cta {
-    display: block;
-  }
-
-  .docs-cta-btn {
+  .docs-icon {
     display: inline-flex;
+    width: 24px;
+    height: 24px;
+    color: #b91c1c;
+  }
+
+  .docs-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .docs-trust-card h3 {
+    margin: 12px 0 0;
+    font-size: 14px;
+    line-height: 1.25;
+    font-weight: 600;
+    color: #111;
+  }
+
+  .docs-trust-card p {
+    margin: 5px 0 0;
+    color: #666;
+    font-size: 12px;
+    line-height: 1.35;
+  }
+
+  .docs-list {
+    margin-top: 16px;
+    display: grid;
+    gap: 10px;
+  }
+
+  .docs-file-card {
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 12px;
+    align-items: center;
+    padding: 13px;
+    color: #111;
+    text-decoration: none;
+  }
+
+  .docs-file-icon {
+    display: inline-flex;
+    width: 34px;
+    height: 34px;
     align-items: center;
     justify-content: center;
-    height: 46px;
-    padding: 0 20px;
-    border-radius: 3px;
-    border: 1px solid #c1121f;
-    background: #c1121f;
-    color: #fff;
-    text-decoration: none;
+    border-radius: 8px;
+    background: #fafafa;
+    color: #b91c1c;
+  }
+
+  .docs-file-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .docs-file-title {
+    display: block;
     font-size: 14px;
     font-weight: 600;
-    line-height: 1;
+    line-height: 1.25;
   }
 
-  .docs-cta-btn:hover {
-    background: #a30f19;
-    border-color: #a30f19;
-  }
-
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
+  .docs-file-action {
+    display: block;
+    margin-top: 3px;
+    color: #666;
+    font-size: 12px;
+    line-height: 1.25;
   }
 
   @media (min-width: 768px) {
-    .docs-cert-card {
-      min-width: 0;
-      max-width: none;
-      width: auto;
+    .docs-section {
+      padding: 72px 24px;
     }
 
-    .docs-certs-row {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 16px;
-      overflow: visible;
+    .docs-heading {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .docs-heading h2 {
+      font-size: 38px;
+    }
+
+    .docs-trust-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .docs-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
     }
   }
 
   @media (min-width: 1024px) {
-    .docs-certs-row {
-      gap: 20px;
+    .docs-trust-grid,
+    .docs-list {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }
 
-  @media (min-width: 769px) {
-    .docs-cta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
+  @media (min-width: 1200px) {
+    .docs-section {
+      padding: 88px 32px;
     }
   }
 </style>

@@ -1,64 +1,184 @@
 ---
 const cards = [
-	{
-		title: 'Большой выбор',
-		text: 'Дизайн-радиаторы, трубчатые, ретро и конвекторы',
-		image: '/images/articles/design.jpg',
-	},
-	{
-		title: 'Вертикальные и горизонтальные модели',
-		text: 'Можно подобрать решения под разные помещения и задачи',
-		image: '/images/columns/about.jpg',
-	},
-	{
-		title: 'Цвета RAL',
-		text: 'Подбор цвета под интерьер или дизайн-проект',
-		image: '/images/retro/retro_1.jpg',
-	},
-	{
-		title: 'Производство под заказ',
-		text: 'Размеры, мощность и конфигурация под проект',
-		image: '/images/articles/convector.jpeg',
-	},
-]
+  {
+    title: "Современный интерьер",
+    text: "Вертикальные и горизонтальные модели для чистых архитектурных линий.",
+    image: "/images/articles/modern.jpg",
+  },
+  {
+    title: "Классика и ретро",
+    text: "Чугунные радиаторы и спокойные формы для классических проектов.",
+    image: "/images/articles/retro.jpg",
+  },
+  {
+    title: "Панорамные окна",
+    text: "Конвекторы и напольные решения для сложных зон остекления.",
+    image: "/images/articles/panorama.jpg",
+  },
+];
 ---
 
-<section id='about-velar' aria-label='О радиаторах Velar' class='bg-neutral-50 py-12 md:py-20 lg:py-24'>
-	<div class='max-w-[1180px] mx-auto px-4 md:px-6 xl:px-8'>
-		<h2 class='text-3xl md:text-4xl font-semibold text-neutral-900'>
-			Радиаторы Velar — решения для современных интерьеров
-		</h2>
-		<p class='mt-4 text-sm md:text-base leading-7 text-neutral-700 max-w-[780px]'>
-			Дизайн-радиаторы, трубчатые модели, ретро-радиаторы и конвекторы — подбираем под стиль, мощность и задачи помещения
-		</p>
+<section id="about-velar" aria-label="О радиаторах Velar" class="interior-section">
+  <div class="interior-wrap">
+    <div class="interior-copy">
+      <h2>Радиаторы Velar — для любого интерьера</h2>
+      <p>
+        Широкая палитра форм, вертикальные и горизонтальные модели, ретро-радиаторы
+        и конвекторы для разных стилей и сценариев отопления.
+      </p>
+      <a href="/design" class="interior-link">Смотреть решения →</a>
+    </div>
 
-		<div class='mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-6'>
-			{
-				cards.map(card => (
-					<article class='rounded-2xl border border-neutral-200 bg-white p-3 md:p-4'>
-						<div class='aspect-[4/3] rounded-xl overflow-hidden bg-neutral-100'>
-							<img
-								src={card.image}
-								alt={card.title}
-								loading='lazy'
-								class='h-full w-full object-cover'
-							/>
-						</div>
-						<h3 class='mt-4 text-base font-semibold text-neutral-900'>{card.title}</h3>
-						<p class='mt-2 text-sm leading-6 text-neutral-600 min-h-[48px]'>{card.text}</p>
-					</article>
-				))
-			}
-		</div>
-
-		<div class='mt-8 md:mt-10 border-t border-neutral-200 pt-6 md:pt-7 flex flex-col md:flex-row md:items-center md:justify-between gap-4'>
-			<p class='text-base md:text-lg font-semibold text-neutral-900'>Подобрать радиатор под проект</p>
-			<a
-				href='/request'
-				class='inline-flex h-12 w-full md:w-auto items-center justify-center rounded-[3px] border border-red-700 bg-red-700 px-7 text-base font-semibold text-white transition-colors hover:bg-red-800 hover:border-red-800'
-			>
-				Получить расчет
-			</a>
-		</div>
-	</div>
+    <div class="interior-grid">
+      {
+        cards.map((card) => (
+          <article class="interior-card">
+            <img src={card.image} alt={card.title} loading="lazy" />
+            <div class="interior-card-copy">
+              <h3>{card.title}</h3>
+              <p>{card.text}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
 </section>
+
+<style>
+  .interior-section {
+    background: #fafafa;
+    padding: 48px 16px;
+  }
+
+  .interior-wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    gap: 28px;
+  }
+
+  .interior-copy {
+    max-width: 520px;
+  }
+
+  .interior-copy h2 {
+    margin: 0;
+    color: #111;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.16;
+  }
+
+  .interior-copy p {
+    margin: 16px 0 0;
+    color: #525252;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .interior-link {
+    margin-top: 22px;
+    display: inline-flex;
+    color: #b91c1c;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .interior-link:hover {
+    color: #991b1b;
+  }
+
+  .interior-grid {
+    display: grid;
+    gap: 16px;
+  }
+
+  .interior-card {
+    position: relative;
+    min-height: 260px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #111;
+  }
+
+  .interior-card img {
+    width: 100%;
+    height: 100%;
+    min-height: 260px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .interior-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.62));
+  }
+
+  .interior-card-copy {
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+    z-index: 1;
+    color: #fff;
+  }
+
+  .interior-card-copy h3 {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+
+  .interior-card-copy p {
+    margin: 6px 0 0;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  @media (min-width: 768px) {
+    .interior-section {
+      padding: 72px 24px;
+    }
+
+    .interior-copy h2 {
+      font-size: 38px;
+    }
+
+    .interior-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .interior-card {
+      min-height: 320px;
+    }
+
+    .interior-card img {
+      min-height: 320px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .interior-wrap {
+      grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+      align-items: center;
+      gap: 42px;
+    }
+
+    .interior-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .interior-section {
+      padding: 88px 32px;
+    }
+  }
+</style>

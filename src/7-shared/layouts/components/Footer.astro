@@ -1,5 +1,6 @@
 ---
 import { contacts } from "@shared/constants/contacts";
+
 const {
   phone495String,
   phone495,
@@ -13,161 +14,263 @@ const {
 } = contacts;
 
 const year = new Date().getFullYear();
+
+const catalogLinks = [
+  { href: "/design", label: "Дизайн-радиаторы" },
+  { href: "/columns", label: "Трубчатые радиаторы" },
+  { href: "/floor", label: "Напольные радиаторы" },
+  { href: "/retro", label: "Чугунные радиаторы ретро" },
+  { href: "/convector", label: "Внутрипольные конвекторы" },
+];
+
+const infoLinks = [
+  { href: "/about", label: "О магазине" },
+  { href: "/delivery", label: "Доставка и оплата" },
+  { href: "/guarantees", label: "Сертификаты и гарантии" },
+  { href: "/info", label: "Полезная информация" },
+  { href: "/news", label: "Новости" },
+];
+
+const socialLinks = [
+  { href: `https://vk.com/${vk}`, label: "VK" },
+  { href: telegram, label: "Telegram" },
+  { href: `https://wa.me/${whatsApp}`, label: "WhatsApp" },
+  { href: "https://ru.pinterest.com/velarshop/", label: "Pinterest" },
+  { href: "https://dzen.ru/velarshop", label: "Дзен" },
+];
 ---
 
-<footer class="my-16">
-  <div
-    class="max-w-6xl border-t py-5 px-10 mx-auto flex flex-row flex-wrap justify-between items-start wrap text-xs"
-  >
-    <div class="w-full mx-auto sm:w-1/2 md:w-1/3 mt-10" role="navigation">
-      <h2 class="text-neutral-900 font-semibold">Полезные ссылки</h2>
-      <div class="flex flex-col gap-3 pt-4 font-light">
-        <a href="/about" class="hover:underline">О магазине</a>
-        <a href="/delivery" class="hover:underline">Доставка и оплата</a>
-        <a href="/guarantees" class="hover:underline">Сертификаты и гарантии</a>
-        <a href="/info" class="hover:underline">Полезная информация</a>
-        <a href="/news" class="hover:underline">Новости</a>
+<footer class="site-footer">
+  <div class="footer-wrap">
+    <div class="footer-brand">
+      <a href="/" class="footer-logo" aria-label="VelarShop">
+        <span>VR</span>
+        <strong>VELAR</strong>
+      </a>
+      <p>
+        Дизайнерские радиаторы Velar с подбором под интерьер, мощность и задачу
+        помещения.
+      </p>
+      <div class="footer-socials">
+        {
+          socialLinks.map((item) => (
+            <a href={item.href} target="_blank" rel="noopener noreferrer nofollow">
+              {item.label}
+            </a>
+          ))
+        }
       </div>
     </div>
-    <div
-      class="w-full mx-auto sm:w-1/2 md:w-1/3 mt-10"
-      aria-label="Каталог товаров"
-      role="navigation"
-    >
-      <h2 class="text-neutral-900 font-semibold">Каталог продукции</h2>
-      <div class="flex flex-col gap-3 pt-4 font-light">
-        <a href="/design" class="hover:underline"> Дизайн-радиаторы</a>
-        <a href="/columns" class="hover:underline"> Трубчатые радиаторы</a>
-        <a href="/floor" class="hover:underline"> Напольные радиаторы</a>
-        <a href="/retro" class="hover:underline"> Чугунные радиаторы ретро</a>
-        <!-- <a
-          href='/'
-          class='hover:underline'
-          >Полотенцесушители</a
-        > -->
-        <a href="/convector" class="hover:underline">Внутрипольные конвекторы</a
-        >
-      </div>
-    </div>
-    <div class="w-full mx-auto md:w-1/3 mt-10">
-      <h2 class="text-neutral-900 font-semibold">Контактная информация</h2>
-      <div class="flex flex-col gap-3 pt-4 font-light">
-        <a
-          href={homekomfortWebsite}
-          rel="noopener noreferrer nofollow"
-          aria-label="Ссылка на сайт компании ООО ХОУМ КОМФОРТ"
-          target="_blank"
-          class="text-xs text-neutral-900 font-light hover:underline"
-          >ООО ХОУМ КОМФОРТ
-        </a>
-        <a
-          href={`tel:${phone495}`}
-          aria-label="Московский номер"
-          class="text-xs text-neutral-900 font-light hover:underline"
-          >{phone495String}
-        </a>
-        <a
-          href={`tel:${phone812}`}
-          aria-label="Санкт-Петербургский номер"
-          class="text-xs text-neutral-900 font-light hover:underline"
-          >{phone812String}
-        </a>
-        <a
-          href={`mailto:${email}`}
-          aria-label="Электронная почта"
-          class="text-xs text-neutral-900 font-light hover:underline"
-          >{email}
-        </a>
-        <a
-          href={`https://vk.com/${vk}`}
-          rel="noopener noreferrer nofollow"
-          aria-label="Наша страница Вконтакте"
-          target="_blank"
-          class="text-xs text-neutral-900 font-light hover:underline"
-          >Вконтакте
-        </a>
-        <a
-          href={`${telegram}`}
-          rel="noopener noreferrer nofollow"
-          target="_blank"
-          aria-label="Наш Телеграм"
-          class="text-xs text-neutral-900 font-light hover:underline"
-          >Телеграм
-        </a>
-        <a
-          href={`https://wa.me/${whatsApp}`}
-          rel="noopener noreferrer nofollow"
-          aria-label="Наш WhatsApp для связи"
-          target="_blank"
-          class="text-xs text-neutral-900 font-light hover:underline"
-          >Whatsapp
-        </a>
-      </div>
+
+    <nav class="footer-column" aria-label="Каталог товаров">
+      <h2>Каталог</h2>
+      {catalogLinks.map((link) => <a href={link.href}>{link.label}</a>)}
+    </nav>
+
+    <nav class="footer-column" aria-label="Информация для покупателей">
+      <h2>Покупателям</h2>
+      {infoLinks.map((link) => <a href={link.href}>{link.label}</a>)}
+    </nav>
+
+    <div class="footer-contacts">
+      <h2>Контакты</h2>
+      <a href={`tel:${phone495}`} class="footer-phone">{phone495String}</a>
+      <a href={`tel:${phone812}`}>{phone812String}</a>
+      <a href={`mailto:${email}`}>{email}</a>
+      <a
+        href={homekomfortWebsite}
+        rel="noopener noreferrer nofollow"
+        target="_blank"
+      >
+        ООО ХОУМ КОМФОРТ
+      </a>
+      <p>Ежедневно с 9:00 до 19:00</p>
+      <a href="/request" class="footer-call">Заказать звонок</a>
     </div>
   </div>
 
-  <div class="flex flex-row justify-center gap-10 mt-0 mb-4 text-xs font-light">
-    <a
-      href="https://vk.com/velarshop"
-      target="_blank"
-      rel="noopener"
-      class="text-gray-900 font-light hover:underline"
-      >VK
-    </a>
-    <a
-      href="https://teletype.in/@velarshop"
-      target="_blank"
-      rel="noopener"
-      class="text-gray-900 font-light hover:underline"
-      >Teletype
-    </a>
-    <a
-      href="https://medium.com/@velarshop"
-      target="_blank"
-      rel="noopener"
-      class="text-gray-900 font-light hover:underline"
-      >Medium
-    </a>
-
-    <a
-      href="https://ru.pinterest.com/velarshop/"
-      target="_blank"
-      rel="noopener"
-      class="text-gray-900 font-light hover:underline"
-      >Pinterest
-    </a>
-
-    <a
-      href="https://dzen.ru/velarshop"
-      target="_blank"
-      rel="noopener"
-      class="text-gray-900 font-light hover:underline"
-      >Дзен
-    </a>
-  </div>
-
-  <div class="max-w-6xl border-t pt-6 px-10 mx-auto text-xs text-neutral-600">
-    <div
-      class="flex flex-col md:flex-row gap-5 font-light md:justify-center"
-      role="menubar"
-    >
-      <a href="/privacy" class="hover:underline" role="menuitem"
-        >Политика конфиденциальности</a
-      >
-      <div class="text-neutral-600 hidden md:block">|</div>
-      <a href="/oferta" class="hover:underline" role="menuitem"
-        >Публичная оферта</a
-      >
-      <div class="text-neutral-600 hidden md:block">|</div>
-      <a href="/agreement" class="hover:underline" role="menuitem"
-        >Пользовательское соглашение</a
-      >
-    </div>
-    <div class="px-6 py-10 mx-auto text-xs text-neutral-600">
-      © {year} VelarShop. ООО «Хоум Комфорт». Продажа и доставка по всей России.
-    </div>
+  <div class="footer-bottom">
+    <div>© {year} VelarShop. ООО «Хоум Комфорт».</div>
+    <nav aria-label="Правовая информация">
+      <a href="/privacy">Политика конфиденциальности</a>
+      <a href="/oferta">Публичная оферта</a>
+      <a href="/agreement">Пользовательское соглашение</a>
+    </nav>
   </div>
 </footer>
+
+<style>
+  .site-footer {
+    background: #111;
+    color: #fff;
+    padding: 44px 16px 24px;
+  }
+
+  .footer-wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    gap: 28px;
+  }
+
+  .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .footer-logo span {
+    width: 42px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    color: #fff;
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  .footer-logo strong {
+    font-size: 26px;
+    letter-spacing: 0.05em;
+    line-height: 1;
+  }
+
+  .footer-brand p,
+  .footer-contacts p {
+    margin: 16px 0 0;
+    max-width: 320px;
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .footer-socials {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .footer-socials a {
+    display: inline-flex;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 999px;
+    padding: 0 11px;
+    color: rgba(255, 255, 255, 0.74);
+    font-size: 12px;
+    text-decoration: none;
+  }
+
+  .footer-column,
+  .footer-contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .footer-column h2,
+  .footer-contacts h2 {
+    margin: 0 0 4px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 600;
+  }
+
+  .footer-column a,
+  .footer-contacts a,
+  .footer-bottom a {
+    color: rgba(255, 255, 255, 0.66);
+    font-size: 13px;
+    line-height: 1.35;
+    text-decoration: none;
+  }
+
+  .footer-column a:hover,
+  .footer-contacts a:hover,
+  .footer-bottom a:hover,
+  .footer-socials a:hover {
+    color: #fff;
+  }
+
+  .footer-contacts .footer-phone {
+    margin-bottom: 2px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .footer-call {
+    margin-top: 8px;
+    width: 100%;
+    max-width: 240px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    border-radius: 3px;
+    color: #fff !important;
+  }
+
+  .footer-bottom {
+    max-width: 1180px;
+    margin: 34px auto 0;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    color: rgba(255, 255, 255, 0.48);
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .footer-bottom nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  @media (min-width: 768px) {
+    .site-footer {
+      padding: 56px 24px 28px;
+    }
+
+    .footer-wrap {
+      grid-template-columns: 1.25fr 0.8fr 0.8fr 1fr;
+      gap: 34px;
+    }
+
+    .footer-bottom {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-bottom nav {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 18px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .site-footer {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+  }
+</style>
 
 <script type="application/ld+json" is:inline>
   {
