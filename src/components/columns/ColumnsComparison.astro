@@ -1,4 +1,6 @@
 ---
+import { columnsSectionTitleClass } from './columnsTypography'
+
 const rows = [
 	{
 		type: 'Трубчатые',
@@ -29,27 +31,27 @@ const rows = [
 
 <section id='columns-comparison' class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
 	<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
-		<h2 class='max-w-4xl text-3xl font-semibold tracking-tight text-neutral-950 md:text-4xl'>
+		<h2 class={`max-w-4xl ${columnsSectionTitleClass}`}>
 			Трубчатые, панельные, чугунные и дизайн-радиаторы: что выбрать
 		</h2>
-		<div class='mt-7 hidden overflow-hidden rounded-[20px] border border-neutral-200 bg-white md:block'>
+		<div class='mt-7 hidden overflow-hidden rounded-2xl border border-neutral-200 bg-white md:block'>
 			<table class='w-full min-w-[760px] border-collapse'>
 				<thead class='bg-neutral-50'>
 					<tr>
-						<th class='px-4 py-3 text-left text-sm font-semibold text-neutral-900'>Тип радиатора</th>
-						<th class='px-4 py-3 text-left text-sm font-semibold text-neutral-900'>Плюсы</th>
-						<th class='px-4 py-3 text-left text-sm font-semibold text-neutral-900'>Минусы</th>
-						<th class='px-4 py-3 text-left text-sm font-semibold text-neutral-900'>Когда выбрать</th>
+						<th class='px-4 py-2.5 text-left text-xs font-semibold uppercase tracking-wide text-neutral-500'>Тип радиатора</th>
+						<th class='px-4 py-2.5 text-left text-xs font-semibold uppercase tracking-wide text-neutral-500'>Плюсы</th>
+						<th class='px-4 py-2.5 text-left text-xs font-semibold uppercase tracking-wide text-neutral-500'>Минусы</th>
+						<th class='px-4 py-2.5 text-left text-xs font-semibold uppercase tracking-wide text-neutral-500'>Когда выбрать</th>
 					</tr>
 				</thead>
 				<tbody>
 					{
 						rows.map(row => (
 							<tr class='border-t border-neutral-200'>
-								<td class='px-4 py-3 text-sm font-semibold text-neutral-900'>{row.type}</td>
-								<td class='px-4 py-3 text-sm text-neutral-700'>{row.pros}</td>
-								<td class='px-4 py-3 text-sm text-neutral-700'>{row.cons}</td>
-								<td class='px-4 py-3 text-sm text-neutral-700'>{row.when}</td>
+								<td class='px-4 py-3 text-[15px] font-semibold text-neutral-900'>{row.type}</td>
+								<td class='px-4 py-3 text-[15px] leading-6 text-neutral-700'>{row.pros}</td>
+								<td class='px-4 py-3 text-[15px] leading-6 text-neutral-700'>{row.cons}</td>
+								<td class='px-4 py-3 text-[15px] leading-6 text-neutral-700'>{row.when}</td>
 							</tr>
 						))
 					}

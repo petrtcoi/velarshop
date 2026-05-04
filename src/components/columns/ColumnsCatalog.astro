@@ -2,6 +2,7 @@
 import { Picture } from '@astrojs/image/components'
 import ColumnsFilters from './ColumnsFilters'
 import type { ColumnsModelCard } from './columnsData'
+import { columnsSectionSubtitleClass, columnsSectionTitleClass } from './columnsTypography'
 
 type Props = {
 	models: ColumnsModelCard[]
@@ -23,8 +24,8 @@ function depthByTubes(tubes: number): number {
 		<div id='model_list'></div>
 		<div class='mb-5 flex flex-col gap-2 md:flex-row md:items-end md:justify-between'>
 			<div>
-				<h2 class='text-3xl font-semibold tracking-tight text-neutral-950 md:text-4xl'>Модели трубчатых радиаторов</h2>
-				<p class='mt-3 max-w-2xl text-sm leading-6 text-neutral-700 md:text-base'>
+				<h2 class={columnsSectionTitleClass}>Модели трубчатых радиаторов</h2>
+				<p class={`mt-3 max-w-2xl ${columnsSectionSubtitleClass}`}>
 					Фильтруйте линейку по количеству труб и высоте. На desktop список остается таблицей, на мобильных превращается в компактные строки.
 				</p>
 			</div>
@@ -35,8 +36,8 @@ function depthByTubes(tubes: number): number {
 
 		<ColumnsFilters client:load />
 
-		<div aria-label='Список моделей трубчатых радиаторов Velar' class='mt-5 overflow-hidden rounded-[20px] border border-neutral-200 bg-white'>
-			<div class='hidden border-b border-neutral-100 bg-neutral-50 px-5 py-3 text-xs font-medium uppercase tracking-wide text-neutral-500 md:grid md:grid-cols-[minmax(0,1.45fr)_70px_100px_100px_130px_140px_110px_90px] md:gap-4'>
+		<div aria-label='Список моделей трубчатых радиаторов Velar' class='mt-5 overflow-hidden rounded-2xl border border-neutral-200 bg-white'>
+			<div class='hidden border-b border-neutral-100 bg-neutral-50 px-5 py-2.5 text-xs font-medium uppercase tracking-wide text-neutral-500 md:grid md:grid-cols-[minmax(0,1.45fr)_70px_100px_100px_130px_140px_110px_90px] md:gap-4'>
 				<div>Модель</div>
 				<div>Труб</div>
 				<div>Высота, мм</div>
@@ -49,7 +50,7 @@ function depthByTubes(tubes: number): number {
 			{
 				models.map((model, index) => (
 					<article
-						class='border-b border-neutral-100 bg-white px-4 py-4 transition-colors last:border-b-0 hover:bg-neutral-50 md:px-5'
+						class='border-b border-neutral-100 bg-white px-4 py-3.5 transition-colors last:border-b-0 hover:bg-neutral-50 md:px-5 md:py-3'
 						data-columns-card='1'
 						data-height={String(model.height)}
 						data-tubes={String(model.tubeCount)}
@@ -84,7 +85,7 @@ function depthByTubes(tubes: number): number {
 							</div>
 						</div>
 
-						<div class='hidden min-h-[58px] items-center md:grid md:grid-cols-[minmax(0,1.45fr)_70px_100px_100px_130px_140px_110px_90px] md:gap-4'>
+						<div class='hidden min-h-[54px] items-center md:grid md:grid-cols-[minmax(0,1.45fr)_70px_100px_100px_130px_140px_110px_90px] md:gap-4'>
 							<div class='flex min-w-0 items-center gap-3'>
 								<Picture
 									src={model.image}

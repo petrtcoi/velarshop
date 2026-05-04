@@ -128,62 +128,50 @@ const usefulArticles = [
 	{
 		href: '/info/termostats',
 		title: 'Как правильно устанавливать термоголовки для радиаторов',
-		description: 'Практические рекомендации по корректной установке термоголовок.',
 	},
 	{
 		href: '/info/column-radiators-pros-cons',
 		title: 'Трубчатые радиаторы: преимущества и недостатки',
-		description: 'Краткий разбор плюсов и ограничений трубчатых моделей.',
 	},
 	{
 		href: '/info/tube-radiators',
 		title: 'Стальные трубчатые радиаторы Velar',
-		description: 'Обзор линейки и ключевых характеристик трубчатых радиаторов.',
 	},
 	{
 		href: '/info/forma-trub-dizayn-radiatorov',
 		title: 'Форма труб радиаторов',
-		description: 'Как форма секций влияет на стиль и восприятие радиатора в интерьере.',
 	},
 	{
 		href: '/info/kreplenie-radiatora-k-stene',
 		title: 'Крепление радиатора к стене',
-		description: 'Что важно учесть при выборе крепежа и высоты установки.',
 	},
 	{
 		href: '/info/radiator-types',
 		title: 'Виды радиаторов отопления',
-		description: 'Сравнение основных типов отопительных приборов для дома и квартиры.',
 	},
 	{
 		href: '/info/chernye-dizainerskie-radiatory-otopleniya',
 		title: 'Черные дизайнерские радиаторы отопления',
-		description: 'Как использовать темные оттенки радиаторов в современных интерьерах.',
 	},
 	{
 		href: '/info/steel-tube-radiators-guide',
 		title: 'Стальные трубчатые радиаторы: полное руководство по выбору и установке',
-		description: 'Подробное руководство по подбору, монтажу и эксплуатации.',
 	},
 	{
 		href: '/info/kak-chistit-trubchatyj-radiator-otopleniya',
 		title: 'Как правильно чистить трубчатый радиатор отопления',
-		description: 'Пошаговая инструкция по уходу за трубчатыми радиаторами.',
 	},
 	{
 		href: '/info/raschet-sekciy-trubchatogo-radiatora-uglovaya-komnata',
 		title: 'Как правильно рассчитать количество секций трубчатого радиатора для угловой комнаты',
-		description: 'Методика расчета секций с учетом повышенных теплопотерь.',
 	},
 	{
 		href: '/info/zamena-panelnyh-radiatorov-na-trubchatye-velar',
 		title: 'Замена панельных радиаторов на трубчатые Velar + онлайн калькулятор',
-		description: 'На что обратить внимание при замене и как оценить нужную мощность.',
 	},
 	{
 		href: '/info/teplootdacha-radiatora-delta-t-chto-eto',
 		title: 'Теплоотдача радиатора и ΔT — почему мощность меняется в реальных условиях',
-		description: 'Разбор влияния температурного графика на фактическую теплоотдачу.',
 	},
 ]
 

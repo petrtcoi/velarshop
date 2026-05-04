@@ -8,6 +8,7 @@ import ColumnsFaq from '../components/columns/ColumnsFaq.astro'
 import ColumnsHero from '../components/columns/ColumnsHero.astro'
 import ColumnsHowToOrder from '../components/columns/ColumnsHowToOrder.astro'
 import ColumnsInteriors from '../components/columns/ColumnsInteriors.astro'
+import PopularModels from '../components/columns/PopularModels.astro'
 import ColumnsTubeDifferences from '../components/columns/ColumnsTubeDifferences.astro'
 import ColumnsUseCases from '../components/columns/ColumnsUseCases.astro'
 import ColumnsWhatIs from '../components/columns/ColumnsWhatIs.astro'
@@ -17,6 +18,7 @@ import {
 	columnsFaqItems,
 	columnsHowToSteps,
 	columnsModels,
+	popularModels,
 	usefulArticles,
 } from '../components/columns/columnsData'
 import {
@@ -48,13 +50,15 @@ const breadcrumbs = [
 
 	<ColumnsHero />
 
+	<PopularModels models={popularModels} />
+
 	<ColumnsCatalog models={columnsModels} />
 
 	<ColumnsTubeDifferences />
 
-	<ColumnsWhatIs />
-
 	<ColumnsInteriors />
+
+	<ColumnsWhatIs />
 
 	<ColumnsHowToOrder />
 
