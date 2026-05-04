@@ -30,8 +30,8 @@ const horizontals = horizontal
     проектов
   </p>
   <nav class="bestsellers-tabs" aria-label="Разделы популярных моделей">
-    <a href="#bs-columns">Трубчатые радиаторы</a>
-    <a href="#bs-vertical">Дизайн-радиаторы</a>
+    <a href="#bs-columns">Трубчатые</a>
+    <a href="#bs-vertical">Дизайн</a>
     <a href="#bs-horizontal">Горизонтальные</a>
   </nav>
 
@@ -66,13 +66,6 @@ const horizontals = horizontal
     <div class="bestsellers-all-link">
       <a href="/design/">Все горизонтальные дизайн-радиаторы →</a>
     </div>
-  </div>
-
-  <div class="bestsellers-cta">
-    <div class="bestsellers-cta-text">
-      Не нашли подходящую модель? Подберем радиатор под ваш проект.
-    </div>
-    <a href="/request" class="bestsellers-cta-btn">Получить расчет</a>
   </div>
 </section>
 
@@ -126,8 +119,10 @@ const horizontals = horizontal
   .bestsellers-tabs {
     margin-top: 26px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     border-bottom: 1px solid #e5e5e5;
   }
 
@@ -135,12 +130,13 @@ const horizontals = horizontal
     display: inline-flex;
     align-items: center;
     height: 38px;
-    padding: 0 12px;
+    padding: 0 0;
     border-bottom: 2px solid transparent;
     color: #444;
     font-size: 13px;
     font-weight: 600;
     text-decoration: none;
+    white-space: nowrap;
   }
 
   .bestsellers-tabs a:first-child,
@@ -162,44 +158,6 @@ const horizontals = horizontal
 
   .bestsellers-all-link a:hover {
     color: #a30f19;
-  }
-
-  .bestsellers-cta {
-    margin-top: 44px;
-    padding: 14px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    border-top: 1px solid #ececec;
-  }
-
-  .bestsellers-cta-text {
-    font-size: 14px;
-    line-height: 1.4;
-    color: #444;
-  }
-
-  .bestsellers-cta-btn {
-    height: 44px;
-    padding: 0 18px;
-    border-radius: 3px;
-    border: 1px solid #c1121f;
-    background: #c1121f;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    white-space: nowrap;
-  }
-
-  .bestsellers-cta-btn:hover {
-    background: #a30f19;
-    border-color: #a30f19;
   }
 
   @media (max-width: 768px) {
@@ -225,18 +183,6 @@ const horizontals = horizontal
     .bestsellers-group-desc {
       font-size: 16px;
       line-height: 1.75;
-    }
-
-    .bestsellers-cta {
-      margin-top: 22px;
-      padding-top: 16px;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .bestsellers-cta-btn {
-      width: 100%;
-      height: 46px;
     }
   }
 
