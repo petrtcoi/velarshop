@@ -1,0 +1,190 @@
+---
+import Layout from '@shared/layouts/Layout.astro'
+import JsonLd from '../seo/JsonLd.astro'
+import DesignSeriesGrid from './DesignSeriesGrid.astro'
+import DesignFaq from './DesignFaq.astro'
+import DesignUsefulLinks from './DesignUsefulLinks.astro'
+import { formatRub, horizontalDesignSeries, verticalDesignSeries, type DesignOrientation } from './designData'
+
+type Props = {
+	orientation: DesignOrientation
+}
+
+const { orientation } = Astro.props as Props
+const isVertical = orientation === 'vertical'
+const series = isVertical ? verticalDesignSeries : horizontalDesignSeries
+const pagePath = isVertical ? '/design/vertikalnye' : '/design/gorizontalnye'
+const canonicalUrl = `https://velarshop.ru${pagePath}/`
+const pageTitle = isVertical
+	? 'Вертикальные дизайн-радиаторы Velar | VelarShop.ru'
+	: 'Горизонтальные дизайн-радиаторы Velar | VelarShop.ru'
+const pageDescription = isVertical
+	? 'Вертикальные дизайнерские радиаторы Velar для квартир, домов и современных интерьеров. Серии P, Q, R, S, RT и QT, цвета RAL, подбор и доставка по России.'
+	: 'Горизонтальные дизайнерские радиаторы Velar для установки под окнами и в низких зонах. Серии P, Q, R, S и SP, цвета RAL, подбор и доставка по России.'
+const h1 = isVertical ? 'Вертикальные дизайн-радиаторы Velar' : 'Горизонтальные дизайн-радиаторы Velar'
+const intro = isVertical
+	? 'Вертикальные дизайнерские радиаторы выбирают для узких простенков, акцентных стен, прихожих, гостиных и помещений, где важно сохранить полезную ширину стены. В ассортименте Velar есть плоские, квадратные, круглые и овальные серии.'
+	: 'Горизонтальные дизайнерские радиаторы подходят для установки под окнами, в низких зонах, гостиных, спальнях и помещениях, где радиатор должен работать в привычной горизонтальной линии.'
+const minPrice = Math.min(...series.map(item => item.priceFrom).filter(Boolean))
+
+const breadcrumbs = [
+	{ title: 'Главная', url: '/' },
+	{ title: 'Дизайн-радиаторы', url: '/design' },
+	{ title: isVertical ? 'Вертикальные' : 'Горизонтальные', url: pagePath },
+]
+
+const chooseItems = isVertical
+	? [
+			['Высота и место', 'Вертикальную модель ставят на свободный простенок, рядом с окном, в прихожей или на акцентной стене.'],
+			['Профиль', 'Плоский профиль выглядит спокойнее, квадратный и круглый дают более выразительную геометрию.'],
+			['Мощность', 'Высокий радиатор не всегда мощнее сам по себе: мощность зависит от размера, секций и режима системы.'],
+			['Цвет', 'RAL позволяет сделать радиатор незаметным или подчеркнуть его как интерьерный объект.'],
+		]
+	: [
+			['Высота под окно', 'Горизонтальные модели удобны под окнами и в зонах, где нельзя ставить высокий радиатор.'],
+			['Длина и мощность', 'Длину подбирают по зоне установки, теплопотерям и месту подключения.'],
+			['Профиль', 'Плоские, квадратные, круглые и овальные профили дают разный визуальный характер.'],
+			['Подключение', 'Схему подключения лучше согласовать до отделочных работ и монтажа труб.'],
+		]
+
+const usePlaces = isVertical
+	? ['узкие простенки', 'прихожие и коридоры', 'акцентные стены', 'кухни и гостиные', 'офисы и шоурумы']
+	: ['под окнами', 'под низкими подоконниками', 'в спальнях и гостиных', 'в кабинетах', 'в общественных пространствах']
+
+const faqItems: Array<[string, string]> = isVertical
+	? [
+			['Когда выбирают вертикальный дизайн-радиатор?', 'Вертикальный радиатор выбирают, когда мало места по ширине, нужна установка на простенке или радиатор должен стать заметным интерьерным элементом.'],
+			['Какие серии есть в вертикальном исполнении?', 'В вертикальном исполнении доступны серии P, Q, R, S, SP, RT и QT. Конкретные модели показаны в карточках на странице.'],
+			['Можно ли сделать вертикальный радиатор в цвет RAL?', 'Да, вертикальные дизайн-радиаторы Velar можно окрашивать в цвета RAL.'],
+			['Можно ли подобрать мощность по плану помещения?', 'Да, можно отправить план или размеры помещения, и менеджер поможет подобрать модель и параметры.'],
+		]
+	: [
+			['Когда выбирают горизонтальный дизайн-радиатор?', 'Горизонтальный радиатор выбирают для установки под окнами, под низкими подоконниками и в помещениях, где удобна привычная горизонтальная линия отопления.'],
+			['Какие серии есть в горизонтальном исполнении?', 'В горизонтальном исполнении доступны серии P, Q, R, S и SP. Конкретные модели показаны в карточках на странице.'],
+			['Можно ли использовать горизонтальный дизайн-радиатор под окно?', 'Да, это один из основных сценариев: радиатор можно подобрать по длине, высоте, мощности и цвету.'],
+			['Можно ли заказать радиатор в цвет RAL?', 'Да, горизонтальные дизайн-радиаторы Velar окрашиваются в цвета RAL.'],
+		]
+
+const schema = [
+	{
+		'@context': 'https://schema.org',
+		'@type': 'CollectionPage',
+		name: h1,
+		description: pageDescription,
+		url: canonicalUrl,
+		mainEntity: {
+			'@type': 'ItemList',
+			itemListElement: series.map((item, index) => ({
+				'@type': 'ListItem',
+				position: index + 1,
+				url: new URL(item.href, canonicalUrl).toString(),
+				item: {
+					'@type': 'ProductGroup',
+					name: item.title,
+					description: item.description,
+					image: new URL(item.image, canonicalUrl).toString(),
+					brand: { '@type': 'Brand', name: 'Velar' },
+				},
+			})),
+		},
+	},
+	{
+		'@context': 'https://schema.org',
+		'@type': 'FAQPage',
+		mainEntity: faqItems.map(([question, answer]) => ({
+			'@type': 'Question',
+			name: question,
+			acceptedAnswer: { '@type': 'Answer', text: answer },
+		})),
+	},
+]
+---
+
+<Layout title={pageTitle} description={pageDescription} canonicalUrl={canonicalUrl} breadcrumbs={breadcrumbs} paddings={false}>
+	<JsonLd data={schema} />
+
+	<section class='bg-white pb-12 pt-7 md:pb-16 xl:pb-20'>
+		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-end xl:px-8'>
+			<div>
+				<h1 class='max-w-4xl text-[38px] font-semibold leading-[0.98] tracking-tight text-neutral-950 md:text-[54px] xl:text-[64px]'>{h1}</h1>
+				<p class='mt-5 max-w-3xl text-[16px] leading-7 text-neutral-700 md:text-lg'>{intro}</p>
+				<div class='mt-7 flex flex-wrap gap-3'>
+					<a href='/request' class='inline-flex h-11 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>Получить расчет</a>
+					<a href='#design-orientation-series' class='inline-flex h-11 items-center justify-center rounded-lg border border-neutral-300 px-5 text-sm font-semibold text-neutral-950 transition hover:border-red-700 hover:text-red-700'>Смотреть модели</a>
+				</div>
+			</div>
+			<div class='rounded-lg border border-neutral-200 bg-neutral-50 p-5'>
+				<div class='text-xs uppercase tracking-wide text-neutral-500'>В разделе</div>
+				<div class='mt-1 text-3xl font-semibold text-neutral-950'>{series.length} серий</div>
+				<div class='mt-5 border-t border-neutral-200 pt-4 text-sm text-neutral-600'>Цена от</div>
+				<div class='mt-1 text-xl font-semibold text-neutral-950'>от {formatRub(minPrice)}</div>
+				<div class='mt-5 border-t border-neutral-200 pt-4 text-sm text-neutral-600'>Цвет</div>
+				<div class='mt-1 text-base font-semibold text-neutral-950'>палитра RAL</div>
+			</div>
+		</div>
+	</section>
+
+	<section id='design-orientation-series' class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<div class='max-w-3xl'>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>
+					{isVertical ? 'Серии с вертикальным исполнением' : 'Серии с горизонтальным исполнением'}
+				</h2>
+				<p class='mt-4 text-[15px] leading-6 text-neutral-600 md:text-base'>
+					Показаны только фактические серии Velar, у которых есть {isVertical ? 'вертикальная' : 'горизонтальная'} товарная страница.
+				</p>
+			</div>
+			<div class='mt-8'>
+				<DesignSeriesGrid series={series} orientation={orientation} />
+			</div>
+		</div>
+	</section>
+
+	<section class='bg-white py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] xl:px-8'>
+			<div>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>
+					{isVertical ? 'Как выбрать вертикальный дизайн-радиатор' : 'Как выбрать горизонтальный дизайн-радиатор'}
+				</h2>
+				<p class='mt-4 text-[15px] leading-6 text-neutral-700 md:text-base'>
+					Выбор зависит от места установки, нужной мощности, формы профиля, цвета и заранее выбранной схемы подключения.
+				</p>
+			</div>
+			<div class='grid gap-3 sm:grid-cols-2'>
+				{chooseItems.map(([title, text]) => (
+					<div class='border-t border-neutral-200 py-3'>
+						<h3 class='text-base font-semibold text-neutral-950'>{title}</h3>
+						<p class='mt-1 text-sm leading-6 text-neutral-600'>{text}</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class='bg-neutral-50 py-12 md:py-16'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px]'>Где использовать</h2>
+			<ul class='mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5'>
+				{usePlaces.map(item => (
+					<li class='border-t border-neutral-200 py-3 text-sm font-semibold text-neutral-950'>{item}</li>
+				))}
+			</ul>
+		</div>
+	</section>
+
+	<section class='bg-neutral-950 py-12 text-white md:py-16'>
+		<div class='mx-auto grid max-w-[1240px] gap-6 px-4 md:px-6 lg:grid-cols-[minmax(0,1fr)_260px] lg:items-center xl:px-8'>
+			<div>
+				<h2 class='text-[28px] font-semibold leading-tight tracking-tight md:text-[34px]'>Получить расчет</h2>
+				<p class='mt-3 max-w-3xl text-sm leading-6 text-neutral-300 md:text-base'>
+					Отправьте размеры помещения, желаемую ориентацию, цвет и город доставки. Мы поможем выбрать серию и конкретную модель.
+				</p>
+			</div>
+			<a href='/request' class='inline-flex h-11 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>Получить расчет</a>
+		</div>
+	</section>
+
+	<DesignFaq items={faqItems} title={isVertical ? 'Частые вопросы о вертикальных дизайн-радиаторах' : 'Частые вопросы о горизонтальных дизайн-радиаторах'} />
+	<DesignUsefulLinks />
+</Layout>
+

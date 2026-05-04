@@ -1,81 +1,546 @@
 ---
+import { Picture } from '@astrojs/image/components'
+import { modelsJsonData } from '@entities/Model'
+import { radiatorsJsonData } from '@entities/Radiator'
 import Layout from '@shared/layouts/Layout.astro'
-import Breadcrumbs from '@widgets/breadcrumbs/Breadcrumbs.astro';
-import BuyerInfo from '@widgets/buyerInfo/BuyerInfo.astro'
-import ModelList from '@widgets/ModelList.astro'
-import RetroAdvices from '@widgets/pageRetro/RetroAdvices.astro'
-import RetroBenefits from '@widgets/pageRetro/RetroBenefits.astro'
-import RetroExamples from '@widgets/pageRetro/RetroExamples.astro'
+import { getModelSlug } from '@shared/utils/getModelSlug'
+import JsonLd from '../components/seo/JsonLd.astro'
+import RetroQuickSelector from '../components/retro/RetroQuickSelector'
+
+const canonicalUrl = 'https://velarshop.ru/retro/'
+const pageTitle = 'Чугунные ретро-радиаторы Velar | выгодные цены | VelarShop.ru'
+const pageDescription =
+	'Чугунные ретро радиаторы Velar представлены 4 моделями (с орнаментом и без). Покраска в любой цвет, включая состаренные цвета, а также нанесение текстур. Срок производства - 2 недели.'
+const heroImage = '/images/retro/hero/nostalgia-section.jpg'
 
 const crumbs = [
-	{title: 'Главная', url: '/'},
-	{title: 'Чугунные ретро-радиаторы', url: '/retro'},
+	{ title: 'Главная', url: '/' },
+	{ title: 'Чугунные ретро-радиаторы', url: '/retro' },
 ]
+
+function toNum(value: string | undefined): number {
+	if (!value) return 0
+	const parsed = Number.parseFloat(value)
+	return Number.isFinite(parsed) ? parsed : 0
+}
+
+function formatRub(value: number): string {
+	return `${value.toLocaleString('ru-RU')} ₽`
+}
+
+const modelCopy: Record<string, { description: string; short: string }> = {
+	nostalgia300: {
+		short: 'Чугунный ретро-радиатор в стиле ретро. Украшен цветочным орнаментом.',
+		description: 'Чугунный ретро-радиатор в стиле ретро. Украшен цветочным орнаментом.',
+	},
+	nostalgia500: {
+		short: 'Чугунный ретро-радиатор в стиле ретро. Украшен цветочным орнаментом.',
+		description: 'Чугунный ретро-радиатор в стиле ретро. Украшен цветочным орнаментом.',
+	},
+	historic300: {
+		short: 'Чугунный радиатор без орнамента. Отлично подходит для интерьеров в стиле лофт.',
+		description: 'Чугунный радиатор без орнамента. Отлично подходит для интерьеров в стиле лофт.',
+	},
+	historic500: {
+		short: 'Чугунный радиатор без орнамента. Отлично подходит для интерьеров в стиле лофт.',
+		description: 'Чугунный радиатор без орнамента. Отлично подходит для интерьеров в стиле лофт.',
+	},
+}
+
+const preferredModelOrder = ['nostalgia500', 'historic500', 'nostalgia300', 'historic300']
+const retroModels = preferredModelOrder
+	.map(id => modelsJsonData.find(model => model.id === id))
+	.filter(Boolean)
+	.map(model => {
+		const radiators = radiatorsJsonData.filter(radiator => radiator.model_id === model!.id)
+		const prices = radiators.map(radiator => toNum(radiator.price)).filter(value => value > 0)
+		const minPrice = prices.length ? Math.min(...prices) : 0
+		const firstRadiator = radiators[0]
+		const width = firstRadiator?.width ? `${firstRadiator.width} мм` : 'уточняется'
+		const height = firstRadiator?.height ? `${firstRadiator.height} мм` : 'уточняется'
+		const dt70 = firstRadiator?.dt70 && firstRadiator?.sections
+			? Math.round(toNum(firstRadiator.dt70) / toNum(firstRadiator.sections)).toString()
+			: ''
+		const weight = firstRadiator?.weight && firstRadiator?.sections
+			? `${(toNum(firstRadiator.weight) / toNum(firstRadiator.sections)).toFixed(1)} кг/секц.`
+			: 'уточняется'
+
+		return {
+			id: model!.id,
+			name: model!.name,
+			title: `Velar ${model!.name}`,
+			href: getModelSlug(model!),
+			image: `/images/models/${model!.slug}/main.jpg`,
+			priceFrom: minPrice,
+			height,
+			width,
+			dt70,
+			weight,
+			short: modelCopy[model!.id]?.short ?? model!.short_comment,
+			description: modelCopy[model!.id]?.description ?? model!.short_comment,
+		}
+	})
+
+const trustPoints = [
+	{ title: '4 модели', text: 'Nostalgia и Historic', icon: 'star' },
+	{ title: 'Высоты 300 и 500 мм', text: 'низкие и универсальные', icon: 'shield' },
+	{ title: 'Покраска RAL', text: 'любой цвет по запросу', icon: 'palette' },
+	{ title: 'Патинация', text: 'бронза, золото, серебро', icon: 'palette' },
+	{ title: 'От 2 недель', text: 'срок производства', icon: 'factory' },
+	{ title: 'Доставка по России', text: 'через ТК и до двери', icon: 'factory' },
+]
+
+const benefits = [
+	'Долговечность',
+	'Устойчивость к коррозии',
+	'Нетребовательность к теплоносителю',
+	'Высокая тепловая инерция',
+	'Мягкое тепло',
+	'Интерьерный внешний вид',
+]
+
+const finishChips = ['RAL', 'патина', 'бронза', 'медь', 'золото', 'серебро', 'двухцветная покраска', 'выделение орнамента', 'текстуры']
+
+const interiorImages = [
+	['/images/retro/retro_1.jpg', 'Чугунный ретро-радиатор Velar Nostalgia в интерьере'],
+	['/images/retro/retro_2.jpg', 'Ретро-радиатор с патиной в классическом интерьере'],
+	['/images/retro/retro_3.jpg', 'Белый чугунный радиатор Velar у стены'],
+	['/images/retro/retro_4.jpg', 'Чугунный радиатор Velar Historic в интерьере loft'],
+	['/images/retro/retro_5.jpg', 'Чугунный ретро-радиатор Velar в загородном интерьере'],
+	['/images/retro/retro_6.jpg', 'Чугунный ретро-радиатор Velar в интерьерном проекте'],
+]
+
+const orderSteps = [
+	['01', 'Выберите модель', 'Nostalgia или Historic, высота 300 или 500 мм.'],
+	['02', 'Укажите параметры', 'Количество секций, цвет, патина или декоративная отделка.'],
+	['03', 'Получите расчет', 'Менеджер уточнит детали и подготовит стоимость.'],
+	['04', 'Производство и доставка', 'Радиатор изготавливается под заказ и доставляется по России.'],
+]
+
+const mountingItems = [
+	['Согласование марки антифриза', 'Если планируется использование антифриза, необходимо заранее согласовать его марку. Некоторые составы могут повреждать прокладки и провоцировать протечки между секциями.'],
+	['Контроль давления', 'При первом запуске важно плавно открывать запорный вентиль, чтобы избежать резкого скачка давления и повреждения отопительного прибора.'],
+	['Правильная транспортировка', 'Ретро-радиаторы достаточно тяжелые, поэтому их следует переносить вертикально. Переноска плашмя может привести к деформации и ослаблению соединений между секциями.'],
+	['Осторожность при монтаже запорной арматуры', 'При установке вентилей нельзя прилагать чрезмерное усилие, чтобы не повредить прокладки и соединения.'],
+	['Проверка соединений', 'Перед установкой необходимо проверить ниппельные соединения. Они могли ослабнуть во время транспортировки.'],
+	['Монтажные расстояния', 'Рекомендуемые расстояния: от пола до низа радиатора — 7–10 см, от подоконника до верха — 8–12 см, от стены до задней стороны — 3–5 см.'],
+	['Диагональное подключение', 'Для радиаторов свыше 10 секций рекомендуется диагональная схема подключения, чтобы тепло распределялось равномернее.'],
+	['Установка воздухоотводчика', 'Воздухоотводный клапан следует устанавливать только на верхнем присоединительном отверстии.'],
+	['Испытания после монтажа', 'После установки необходимо провести испытания радиатора и составить акт ввода в эксплуатацию.'],
+]
+
+const usefulLinks = [
+	['/info/iron-cast-radiators', 'Чугунные радиаторы в ретро-стиле'],
+	['/info/ironcast', 'Особенности чугунных радиаторов отопления'],
+	['/info/restavratsiya-chugunnyh-radiatorov', 'Реставрация чугунных радиаторов'],
+	['/info/pravila-ekspluatacii-chugunnyh-radiatorov', 'Правила эксплуатации чугунных радиаторов: переноска, монтаж и первый запуск'],
+	['/info/kak-otlichit-kachestvennoe-lite-radiatorov', 'Как отличить качественное художественное литье чугунных радиаторов'],
+]
+
+const faqItems = [
+	['Чем ретро-радиаторы Velar отличаются от обычных чугунных батарей?', 'Ретро-радиаторы Velar выбирают не только для отопления, но и для интерьера: доступны модели с орнаментом, патинацией и декоративной окраской.'],
+	['Какие модели доступны на странице?', 'На странице представлены Velar Nostalgia 500, Velar Historic 500, Velar Nostalgia 300 и Velar Historic 300.'],
+	['Можно ли заказать радиатор в цвет RAL?', 'Да, ретро-радиаторы можно окрасить в цвет RAL по запросу.'],
+	['Можно ли сделать патинацию или выделить орнамент?', 'Да, доступны патинация, бронза, медь, золото, серебро, двухцветная покраска и выделение орнамента.'],
+	['Сколько занимает производство?', 'Срок производства чугунных ретро-радиаторов начинается от 2 недель без учета доставки.'],
+	['Подходят ли чугунные ретро-радиаторы для квартиры?', 'Да, при корректном подборе модели и согласовании параметров системы отопления такие радиаторы можно использовать в квартире.'],
+	['Какой тип подключения выбрать?', 'Подключение выбирают по разводке труб, количеству секций и месту установки. Для радиаторов свыше 10 секций часто рекомендуют диагональную схему.'],
+	['Как доставляются тяжелые чугунные радиаторы?', 'Радиаторы отправляются в жесткой упаковке через транспортные компании, при возможности со страховкой груза.'],
+]
+
+const iconSvg = {
+	shield: '<path d="M20 13c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V5l8-3 8 3v8Z"></path><path d="m9 12 2 2 4-4"></path>',
+	palette: '<circle cx="13.5" cy="6.5" r=".5"></circle><circle cx="17.5" cy="10.5" r=".5"></circle><circle cx="8.5" cy="7.5" r=".5"></circle><circle cx="6.5" cy="12.5" r=".5"></circle><path d="M12 22a10 10 0 1 1 10-10c0 2.5-1.5 3.5-3.5 3.5h-1.8c-1 0-1.7.7-1.7 1.7 0 .4.1.8.3 1.1.4.7.2 1.7-.5 2.2A5 5 0 0 1 12 22Z"></path>',
+	star: '<path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21 7 14.2 2 9.3l6.9-1L12 2Z"></path>',
+	factory: '<path d="M2 20h20"></path><path d="M4 20V8l6 4V8l6 4V4h4v16"></path><path d="M17 12h1"></path><path d="M12 16h1"></path><path d="M7 16h1"></path>',
+}
+
+const productJsonLd = retroModels.map(model => ({
+	'@type': 'Product',
+	name: model.title,
+	image: new URL(model.image, canonicalUrl).toString(),
+	description: model.description,
+	brand: {
+		'@type': 'Brand',
+		name: 'Velar',
+	},
+	category: 'Чугунные ретро-радиаторы',
+	offers: model.priceFrom
+		? {
+				'@type': 'Offer',
+				priceCurrency: 'RUB',
+				price: String(model.priceFrom),
+				availability: 'https://schema.org/InStock',
+				url: new URL(model.href, canonicalUrl).toString(),
+			}
+		: undefined,
+}))
+
+const collectionJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'CollectionPage',
+	name: 'Чугунные ретро-радиаторы Velar',
+	url: canonicalUrl,
+	description: pageDescription,
+	mainEntity: {
+		'@type': 'ItemList',
+		itemListElement: retroModels.map((model, index) => ({
+			'@type': 'ListItem',
+			position: index + 1,
+			url: new URL(model.href, canonicalUrl).toString(),
+			item: productJsonLd[index],
+		})),
+	},
+}
+
+const faqJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: faqItems.map(([question, answer]) => ({
+		'@type': 'Question',
+		name: question,
+		acceptedAnswer: {
+			'@type': 'Answer',
+			text: answer,
+		},
+	})),
+}
+
+const organizationJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'Organization',
+	name: 'VelarShop.ru',
+	url: 'https://velarshop.ru/',
+	logo: 'https://velarshop.ru/images/logo.png',
+}
 ---
 
 <Layout
-	title='Чугунные ретро-радиаторы Velar | выгодные цены | VelarShop.ru'
-	description='Чугунные ретро радиаторы Velar представлены 4 моделями (с орнаментом и без). Покраска в любой цвет, включая состаренные цвета, а также нанесение текстур. Срок производства - 2 недели.'
+	title={pageTitle}
+	description={pageDescription}
+	canonicalUrl={canonicalUrl}
+	ogImageUrl={heroImage}
+	breadcrumbs={crumbs}
+	paddings={false}
 >
-	<Breadcrumbs items={crumbs} />
+	<JsonLd data={collectionJsonLd} />
+	<JsonLd data={faqJsonLd} />
+	<JsonLd data={organizationJsonLd} />
 
-	<h1 class='text-3xl font-bold mt-7 md:mt-5'>
-		Радиаторы Velar ретро — каталог
-	</h1>
-	<div class='text-sm max-w-2xl mt-3 leading-6'>
-		В каталоге представлены ретро-радиаторы Velar. Поможем подобрать модель по
-		размерам, мощности и типу подключения.
-	</div>
-
-	<ModelList type='ironcast' />
-
-	<div class='mt-[40px] text-xs font-light max-w-[500px]'>
-		<sup>*</sup> Сроки заказа и доставки зависят от модели, комплектации и
-		выбранного цвета. Актуальные сроки уточняйте у менеджера.
-	</div>
-
-	<RetroBenefits />
-
-	<RetroExamples />
-
-	<RetroAdvices />
-
-
-		<section
-  class="justify-center max-w-6xl mx-auto px-5 md:px-10 mt-20"
->
-	<h2 class="text-3xl font-light text-left">Полезные материалы</h2>
-		<div class="mt-2 text-sm leading-relaxed">
-			<ul class="list-disc list-outside pl-4">
-				<li>
-					<a href="/info/iron-cast-radiators" class='font-normal underline hover:no-underline'>
-						Чугунные радиаторы в ретро-стиле
+	<section class='border-b border-neutral-200 bg-white'>
+		<div class='mx-auto grid max-w-[1240px] gap-7 px-4 pb-8 pt-6 md:px-6 md:pb-12 md:pt-9 min-[900px]:grid-cols-[minmax(0,1fr)_minmax(420px,520px)] min-[900px]:gap-8 min-[1250px]:grid-cols-[minmax(0,1fr)_minmax(200px,280px)_minmax(360px,420px)] min-[1250px]:items-center min-[1250px]:gap-10 xl:px-8 xl:py-12'>
+			<div class='min-w-0'>
+				<h1 class='max-w-[680px] text-[34px] font-semibold leading-[1.04] tracking-tight text-neutral-950 md:text-[42px] min-[1250px]:text-[56px]'>
+					Чугунные ретро-радиаторы Velar
+				</h1>
+				<p class='mt-5 max-w-[620px] text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>
+					Чугунные ретро-радиаторы Velar подходят для классических интерьеров, лофта, винтажных проектов, ресторанов, отелей и загородных домов. В каталоге представлены модели с выразительным орнаментом и более сдержанным историческим силуэтом.
+				</p>
+				<p class='mt-3 max-w-[620px] text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>
+					Радиаторы можно окрасить в любой цвет RAL, выполнить патинацию, выделить орнамент оттенками золота, бронзы, серебра или меди. Срок производства чугунных ретро-радиаторов — от 2 недель без учета доставки.
+				</p>
+				<div class='mt-7 flex flex-col gap-3 min-[420px]:flex-row'>
+					<a href='/request' class='inline-flex h-11 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>
+						Получить расчет
 					</a>
-				</li>
-				<li class="mt-1">
-					<a href="/info/ironcast" class='font-normal underline hover:no-underline'>
-						Особенности чугунных радиаторов отопления
+					<a href='#retro-models' class='inline-flex h-11 items-center justify-center rounded-lg border border-neutral-300 bg-white px-5 text-sm font-semibold text-neutral-950 transition hover:border-neutral-400 hover:bg-neutral-50'>
+						Смотреть модели
 					</a>
-				</li>
-				<li class="mt-1">
-					<a href="/info/restavratsiya-chugunnyh-radiatorov" class='font-normal underline hover:no-underline'>
-						Реставрация чугунных радиаторов
-					</a>
-				</li>
-				<li class="mt-1">
-					<a href="/info/pravila-ekspluatacii-chugunnyh-radiatorov" class='font-normal underline hover:no-underline'>
-						Правила эксплуатации чугунных радиаторов: переноска, монтаж и первый запуск
-					</a>
-				</li>
-				<li class="mt-1">
-					<a href="/info/kak-otlichit-kachestvennoe-lite-radiatorov" class='font-normal underline hover:no-underline'>
-						Как отличить качественное художественное литье чугунных радиаторов
-					</a>
-				</li>
-				
+				</div>
+				<div class='mt-7 flex flex-wrap items-center gap-x-7 gap-y-3 text-[13px] leading-tight text-neutral-700 md:text-sm'>
+					{trustPoints.map(item => (
+						<div class='inline-flex items-center gap-2.5'>
+							<span class='inline-flex h-5 w-5 shrink-0 items-center justify-center text-red-700' aria-hidden='true'>
+								<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='h-5 w-5' set:html={iconSvg[item.icon]} />
+							</span>
+							<span>
+								<span class='block font-semibold leading-5 text-neutral-950'>{item.title}</span>
+								<span class='block text-xs leading-5 text-neutral-600'>{item.text}</span>
+							</span>
+						</div>
+					))}
+				</div>
+			</div>
+
+			<div class='hidden justify-center min-[1250px]:flex min-[1250px]:items-center'>
+				<img
+					src={heroImage}
+					alt='Вертикальная секция чугунного ретро-радиатора Velar Nostalgia'
+					title='Вертикальная секция чугунного ретро-радиатора Velar Nostalgia'
+					loading='eager'
+					class='h-auto max-h-[520px] w-full max-w-[220px] object-contain'
+				/>
+			</div>
+
+			<div class='grid min-w-0 gap-5 sm:grid-cols-[150px_minmax(0,1fr)] sm:items-start md:grid-cols-[180px_minmax(0,1fr)] min-[900px]:col-start-2 min-[900px]:block min-[1250px]:col-start-3'>
+				<div class='hidden justify-center sm:flex min-[900px]:hidden'>
+					<img
+						src={heroImage}
+						alt='Вертикальная секция чугунного ретро-радиатора Velar Nostalgia'
+						title='Вертикальная секция чугунного ретро-радиатора Velar Nostalgia'
+						loading='lazy'
+						class='h-auto max-h-[430px] w-full max-w-[180px] object-contain'
+					/>
+				</div>
+
+				<RetroQuickSelector client:load models={retroModels} />
+			</div>
+		</div>
+	</section>
+
+	<section id='retro-models' class='bg-white py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<div class='max-w-3xl'>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Модели чугунных ретро-радиаторов</h2>
+				<p class='mt-3 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>Всего 4 модели: две серии и две высоты. Выбор зависит от стиля интерьера, места установки и нужной мощности.</p>
+			</div>
+			<div class='mt-8 grid gap-4 md:grid-cols-3 min-[1180px]:grid-cols-2 min-[1180px]:gap-6'>
+				{retroModels.map(model => (
+					<article class='flex flex-col rounded-[18px] border border-neutral-200 bg-white p-4 transition hover:border-neutral-300 hover:bg-neutral-50 min-[1180px]:p-5'>
+						<a href={model.href} class='block'>
+							<Picture
+								src={model.image}
+								alt={`Чугунный ретро-радиатор ${model.title}`}
+								title={`Чугунный ретро-радиатор ${model.title}`}
+								loading='lazy'
+								aspectRatio='1:1'
+								widths={[280, 420, 640]}
+								width={320}
+								sizes='(max-width: 768px) 100vw, 25vw'
+								class='aspect-square w-full rounded-xl bg-neutral-50 object-contain p-3 min-[1180px]:p-5'
+							/>
+						</a>
+						<h3 class='mt-4 text-lg font-semibold leading-tight text-neutral-950 min-[1180px]:text-xl'>{model.title}</h3>
+						<p class='mt-2 text-[14px] leading-[1.45] text-neutral-600 min-[1180px]:text-[15px] min-[1180px]:leading-[1.5]'>{model.description}</p>
+						<div class='mt-4 grid gap-1.5 border-t border-neutral-200 pt-4 text-[13px] text-neutral-700 min-[1180px]:gap-2 min-[1180px]:text-sm'>
+							<div><span class='text-neutral-500'>Высота:</span> {model.height}</div>
+							<div><span class='text-neutral-500'>Глубина:</span> {model.width}</div>
+							{model.dt70 && <div><span class='text-neutral-500'>Теплоотдача:</span> {model.dt70} Вт/секц.</div>}
+							<div><span class='text-neutral-500'>Вес:</span> {model.weight}</div>
+							<div><span class='text-neutral-500'>Срок:</span> от 2 недель</div>
+						</div>
+						<div class='mt-4 text-base font-semibold text-neutral-950 min-[1180px]:text-lg'>от {formatRub(model.priceFrom)}</div>
+						<div class='mt-auto grid grid-cols-2 gap-2 pt-4'>
+							<a href={model.href} class='inline-flex h-10 items-center justify-center rounded-lg border border-neutral-300 bg-white px-3 text-sm font-semibold text-neutral-950 transition hover:border-neutral-400 hover:bg-white'>
+								Подробнее
+							</a>
+							<a href='/request' class='inline-flex h-10 items-center justify-center rounded-lg bg-red-700 px-3 text-sm font-semibold text-white transition hover:bg-red-800'>
+								Расчет
+							</a>
+						</div>
+					</article>
+				))}
+			</div>
+			<p class='mt-6 max-w-3xl text-sm leading-6 text-neutral-600'>
+				<sup>*</sup> Указан срок производства без учета времени доставки. В некоторых случаях срок производства чугунных ретро-радиаторов может быть увеличен в зависимости от загруженности производства. Актуальные сроки уточняйте у менеджера.
+			</p>
+		</div>
+	</section>
+
+	<section class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<div class='max-w-3xl'>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Чем отличаются Nostalgia и Historic</h2>
+				<p class='mt-5 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>
+					<strong class='font-semibold text-neutral-950'>Nostalgia</strong> — более декоративная серия с выразительным цветочным орнаментом. Она подходит для классических интерьеров, винтажных проектов, ресторанов, отелей и загородных домов.
+				</p>
+				<p class='mt-3 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>
+					<strong class='font-semibold text-neutral-950'>Historic</strong> — более сдержанная серия без активного орнамента. Она хорошо смотрится в лофте, эклектике, спокойной классике и интерьерах, где радиатор не должен перетягивать внимание.
+				</p>
+			</div>
+
+			<div class='mt-7 overflow-hidden rounded-lg border border-neutral-200 bg-white'>
+				<table class='w-full text-left text-sm'>
+					<thead class='bg-neutral-100 text-xs uppercase text-neutral-500'>
+						<tr>
+							<th class='px-4 py-2.5 font-semibold'>Параметр</th>
+							<th class='px-4 py-2.5 font-semibold'>Nostalgia</th>
+							<th class='px-4 py-2.5 font-semibold'>Historic</th>
+						</tr>
+					</thead>
+					<tbody class='divide-y divide-neutral-200 text-neutral-700'>
+						<tr><td class='px-4 py-2.5 font-semibold text-neutral-950'>Визуальный характер</td><td class='px-4 py-2.5'>более декоративный</td><td class='px-4 py-2.5'>более сдержанный</td></tr>
+						<tr><td class='px-4 py-2.5 font-semibold text-neutral-950'>Орнамент</td><td class='px-4 py-2.5'>выразительный цветочный</td><td class='px-4 py-2.5'>без активного орнамента</td></tr>
+						<tr><td class='px-4 py-2.5 font-semibold text-neutral-950'>Высоты</td><td class='px-4 py-2.5'>300 / 500 мм</td><td class='px-4 py-2.5'>300 / 500 мм</td></tr>
+						<tr><td class='px-4 py-2.5 font-semibold text-neutral-950'>Где использовать</td><td class='px-4 py-2.5'>классика, винтаж, рестораны, отели</td><td class='px-4 py-2.5'>лофт, классика, эклектика</td></tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+
+	<section class='bg-white py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:px-8'>
+			<div>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Преимущества чугунных ретро-радиаторов Velar</h2>
+				<p class='mt-5 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>
+					Радиаторы из чугуна ценят за долговечность, устойчивость к коррозии и нетребовательность к качеству теплоносителя. Чугун хорошо сохраняет тепло и сглаживает температурные перепады, поэтому отопление ощущается более мягким и стабильным.
+				</p>
+				<p class='mt-3 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>
+					Еще одно преимущество — высокая тепловая инерция. Радиатор дольше остывает после отключения подачи теплоносителя и помогает поддерживать комфортный микроклимат. При этом чугунные модели часто выбирают не только как отопительный прибор, но и как выразительный интерьерный элемент.
+				</p>
+			</div>
+			<ul class='grid content-start gap-3 sm:grid-cols-2'>
+				{benefits.map(item => (
+					<li class='flex items-center gap-3 border-t border-neutral-200 py-3 text-sm font-semibold text-neutral-950'>
+						<span class='h-1.5 w-1.5 shrink-0 rounded-full bg-red-700'></span>
+						<span>{item}</span>
+					</li>
+				))}
 			</ul>
 		</div>
 	</section>
 
-	<BuyerInfo productTitle='чугунные ретро-радиаторы радиаторы Velar' />
+	<section class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:px-8'>
+			<div>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Цвета, патинация и декоративная отделка</h2>
+				<p class='mt-5 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>
+					Для ретро-радиаторов доступны разные варианты декоративной отделки: окраска в цвета RAL, состаренное серебро, бронза, медь, золото, двухцветная покраска и выделение орнамента. По запросу можно выполнить патинацию или нанести декоративные текстуры, включая имитацию дерева.
+				</p>
+				<p class='mt-3 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>
+					Такая отделка помогает адаптировать радиатор под интерьер: сделать его заметным акцентом или, наоборот, вписать в спокойную цветовую гамму помещения.
+				</p>
+			</div>
+			<div class='flex content-start flex-wrap gap-2'>
+				{finishChips.map(item => (
+					<span class='rounded-full border border-neutral-200 bg-white px-3 py-2 text-sm font-medium text-neutral-700'>
+						{item}
+					</span>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class='bg-white py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<div class='max-w-3xl'>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Чугунные ретро-радиаторы в интерьере</h2>
+				<p class='mt-3 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>Ретро-радиаторы в интерьере работают не только как отопительный прибор, но и как декоративный акцент. Они хорошо смотрятся в классических пространствах, лофте, винтажных проектах, загородных домах, ресторанах и отелях.</p>
+			</div>
+			<div class='-mx-4 mt-8 flex gap-4 overflow-x-auto px-4 pb-2 md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0 xl:grid-cols-4'>
+				{interiorImages.map(([src, alt]) => (
+					<img
+						src={src}
+						alt={alt}
+						title={alt}
+						loading='lazy'
+						class='h-auto min-w-[280px] rounded-[18px] border border-neutral-200 md:min-w-0'
+					/>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] xl:px-8'>
+			<div>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Рекомендации по монтажу и эксплуатации</h2>
+				<p class='mt-3 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>Чугунные ретро-радиаторы тяжелее стальных и алюминиевых моделей, поэтому при транспортировке, монтаже и первом запуске важно соблюдать несколько правил. Это помогает избежать повреждений, протечек и проблем с подключением.</p>
+			</div>
+			<ol class='space-y-4'>
+				{mountingItems.map(([title, text], index) => (
+					<li class='grid gap-3 border-t border-neutral-200 pt-4 sm:grid-cols-[44px_minmax(0,1fr)]'>
+						<div class='text-sm font-semibold text-red-700'>{String(index + 1).padStart(2, '0')}</div>
+						<div>
+							<h3 class='text-base font-semibold text-neutral-950'>{title}</h3>
+							<p class='mt-1 text-[15px] leading-6 text-neutral-600'>{text}</p>
+						</div>
+					</li>
+				))}
+			</ol>
+		</div>
+	</section>
+
+	<section class='bg-white py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<div class='max-w-3xl'>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Как заказать чугунные ретро-радиаторы Velar</h2>
+				<p class='mt-5 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>Вы можете оформить заказ на сайте, добавив интересующие модели в запрос, или связаться с нами по телефону, электронной почте, через онлайн-чат или форму обратной связи. В заявке можно указать требуемую мощность, площадь помещения, тип подключения, цвет, вариант отделки и другие пожелания.</p>
+				<p class='mt-3 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>Если у вас есть план помещения или дизайн-проект, приложите его к заявке. Менеджер поможет подобрать модель, количество секций и подходящий вариант подключения.</p>
+				<a href='/request' class='mt-6 inline-flex h-11 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>
+					Получить расчет ретро-радиатора
+				</a>
+			</div>
+			<div class='mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4'>
+				{orderSteps.map(([number, title, text]) => (
+					<div class='rounded-lg border border-neutral-200 bg-white p-5'>
+						<div class='text-sm font-semibold text-red-700'>{number}</div>
+						<h3 class='mt-3 text-lg font-semibold text-neutral-950'>{title}</h3>
+						<p class='mt-2 text-[15px] leading-6 text-neutral-600'>{text}</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<div class='max-w-3xl'>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Доставка и оплата</h2>
+				<p class='mt-5 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>Доставка выполняется по всей России. В Санкт-Петербурге возможна доставка до двери. В другие регионы радиаторы отправляются через транспортные компании: Деловые Линии, Возовоз, Байкал-Сервис, ПЭК и другие.</p>
+				<p class='mt-3 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>Доставка до терминала транспортной компании в городе отправления выполняется за наш счет. Груз отправляется в жесткой упаковке и со страховкой, если такая услуга доступна у перевозчика.</p>
+				<p class='mt-3 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>Оплата возможна для физических и юридических лиц: банковским переводом, онлайн-оплатой картой или переводом по QR-коду. Для изделий под заказ заключается договор и вносится предоплата. Радиаторы, изготовленные по индивидуальному заказу, не подлежат возврату или обмену.</p>
+			</div>
+			<div class='mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-neutral-700'>
+				<a href='/delivery' class='hover:text-red-700'>Доставка</a>
+				<a href='/about' class='hover:text-red-700'>О компании</a>
+				<a href='/guarantees' class='hover:text-red-700'>Гарантии</a>
+			</div>
+		</div>
+	</section>
+
+	<section class='bg-white py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto max-w-[900px] px-4 md:px-6 xl:px-8'>
+			<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Полезные материалы</h2>
+			<ul class='mt-7 divide-y divide-neutral-200 border-y border-neutral-200'>
+				{usefulLinks.map(([href, title]) => (
+					<li>
+						<a href={href} class='group flex gap-3 py-3.5 text-[15px] leading-6 text-neutral-700 transition hover:text-red-700 md:text-base'>
+							<span class='text-neutral-400 transition group-hover:text-red-700'>→</span>
+							<span>{title}</span>
+						</a>
+					</li>
+				))}
+			</ul>
+		</div>
+	</section>
+
+	<section class='bg-white py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto max-w-[900px] px-4 md:px-6 xl:px-8'>
+			<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Частые вопросы</h2>
+			<div class='mt-6 border-y border-neutral-200'>
+				{faqItems.map(([question, answer]) => (
+					<details class='faq-item group border-b border-neutral-200 py-4 last:border-b-0'>
+						<summary class='flex cursor-pointer list-none items-center justify-between gap-6 text-sm font-semibold text-neutral-950 md:text-base'>
+							<span>{question}</span>
+							<span class='relative h-5 w-5 shrink-0 text-neutral-500' aria-hidden='true'>
+								<span class='absolute left-1/2 top-1/2 h-px w-4 -translate-x-1/2 -translate-y-1/2 bg-current'></span>
+								<span class='absolute left-1/2 top-1/2 h-4 w-px -translate-x-1/2 -translate-y-1/2 bg-current transition group-open:rotate-90 group-open:opacity-0'></span>
+							</span>
+						</summary>
+						<p class='mt-3 text-[15px] leading-6 text-neutral-600'>{answer}</p>
+					</details>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class='bg-neutral-950 py-12 text-white md:py-16'>
+		<div class='mx-auto flex max-w-[1240px] flex-col gap-5 px-4 md:px-6 lg:flex-row lg:items-center lg:justify-between xl:px-8'>
+			<div>
+				<h2 class='text-[28px] font-semibold leading-tight tracking-tight md:text-[34px]'>Нужен расчет ретро-радиатора под интерьер?</h2>
+				<p class='mt-2 max-w-2xl text-sm leading-6 text-neutral-300 md:text-base'>Отправьте параметры помещения, желаемую серию, количество секций и вариант отделки. Менеджер подготовит расчет и уточнит сроки производства.</p>
+			</div>
+			<a href='/request' class='inline-flex h-11 shrink-0 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>
+				Получить расчет
+			</a>
+		</div>
+	</section>
 </Layout>
+
+<style>
+	.faq-item > summary::-webkit-details-marker {
+		display: none;
+	}
+</style>

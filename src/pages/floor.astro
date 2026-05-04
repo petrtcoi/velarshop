@@ -1,58 +1,450 @@
 ---
+import { Picture } from '@astrojs/image/components'
+import { modelsJsonData } from '@entities/Model'
+import { radiatorsJsonData } from '@entities/Radiator'
 import Layout from '@shared/layouts/Layout.astro'
-import Breadcrumbs from '@widgets/breadcrumbs/Breadcrumbs.astro';
-import BuyerInfo from '@widgets/buyerInfo/BuyerInfo.astro'
-import ModelList from '@widgets/ModelList.astro'
+import { getModelSlug } from '@shared/utils/getModelSlug'
+import JsonLd from '../components/seo/JsonLd.astro'
 
-const crumbs = [
-	{title: 'Главная', url: '/'},
-	{title: 'Напольные радиаторы', url: '/floor'},
+const canonicalUrl = 'https://velarshop.ru/floor/'
+const pageTitle = 'Напольные радиаторы отопления Velar — Q500, P200 и P300'
+const pageDescription =
+	'Напольные радиаторы Velar Q500, P200 и P300 для панорамных окон, входных зон, гостиных и коммерческих помещений. Подбор, расчет и доставка по России.'
+
+const breadcrumbs = [
+	{ title: 'Главная', url: '/' },
+	{ title: 'Напольные радиаторы', url: '/floor' },
 ]
+
+function toNum(value: string | undefined): number {
+	if (!value) return 0
+	const parsed = Number.parseFloat(value)
+	return Number.isFinite(parsed) ? parsed : 0
+}
+
+function formatRub(value: number): string {
+	return `${value.toLocaleString('ru-RU')} ₽`
+}
+
+const modelCopy: Record<string, { title: string; description: string; useCase: string }> = {
+	q500: {
+		title: 'Velar Q500',
+		description: 'Радиатор-скамейка для входных зон, гостиных и общественных помещений.',
+		useCase: 'Подходит для длинных зон остекления и интерьеров, где радиатор должен выглядеть как часть мебели.',
+	},
+	p200: {
+		title: 'Velar P200',
+		description: 'Низкий напольный радиатор высотой около 191 мм для установки перед панорамными окнами.',
+		useCase: 'Компактное решение для квартир, домов и помещений с низкими подоконниками.',
+	},
+	p300: {
+		title: 'Velar P300',
+		description: 'Более мощная напольная модель для панорамного остекления и помещений с повышенной теплопотерей.',
+		useCase: 'Подходит для гостиных, зимних садов и коммерческих пространств.',
+	},
+}
+
+const floorModelOrder = ['q500', 'p200', 'p300']
+const floorModels = floorModelOrder
+	.map(id => modelsJsonData.find(model => model.id === id))
+	.filter(Boolean)
+	.map(model => {
+		const radiators = radiatorsJsonData.filter(radiator => radiator.model_id === model!.id)
+		const prices = radiators.map(radiator => toNum(radiator.price)).filter(value => value > 0)
+		const minPrice = prices.length ? Math.min(...prices) : 0
+		const firstRadiator = radiators[0]
+		const lengths = radiators.map(radiator => toNum(radiator.length)).filter(value => value > 0)
+		const minLength = lengths.length ? Math.min(...lengths) : 0
+		const maxLength = lengths.length ? Math.max(...lengths) : 0
+
+		return {
+			id: model!.id,
+			title: modelCopy[model!.id]?.title ?? `Velar ${model!.name}`,
+			href: getModelSlug(model!),
+			image: `/images/models/${model!.slug}/main.jpg`,
+			priceFrom: minPrice,
+			height: firstRadiator?.height ? `${firstRadiator.height} мм` : 'уточняется',
+			width: firstRadiator?.width ? `${firstRadiator.width} мм` : 'уточняется',
+			lengthRange: minLength && maxLength ? `${minLength}-${maxLength} мм` : 'уточняется',
+			description: modelCopy[model!.id]?.description ?? model!.short_comment,
+			useCase: modelCopy[model!.id]?.useCase ?? model!.short_comment,
+		}
+	})
+
+const heroFacts = [
+	['3 модели', 'Q500, P200, P300'],
+	['Цена от', `от ${formatRub(Math.min(...floorModels.map(model => model.priceFrom).filter(Boolean)))}`],
+	['Срок производства', '5-6 недель'],
+	['Цвет', 'палитра RAL'],
+]
+
+const quickLinks = [
+	['/info/radiatory-dlya-panoramnykh-okon-tipy-osobennosti', 'Для панорамных окон'],
+	['/info/floor-design-radiators', 'Радиаторы-скамейки'],
+	['/info/teplovaya-zavesa-u-panoramnyh-okon', 'Тепловая завеса'],
+	['#floor-use-cases', 'Для входной зоны'],
+	['#floor-request', 'Для коммерческого помещения'],
+]
+
+const useCases = [
+	'перед панорамными окнами',
+	'в помещениях без свободной стены',
+	'в гостиных и зонах отдыха',
+	'в коммерческих и входных пространствах',
+]
+
+const velarBenefits = [
+	'производство под заказ',
+	'окраска в цвета RAL',
+	'аккуратное скрытое подключение',
+	'подбор под размеры помещения',
+	'доставка по России',
+	'помощь с расчетом мощности',
+	'работа с физическими и юридическими лицами',
+]
+
+const usefulLinks = [
+	['/info/floor-design-radiators', 'Напольные дизайн-радиаторы: особенности, преимущества и недостатки'],
+	['/info/radiatory-dlya-panoramnykh-okon-tipy-osobennosti', 'Радиаторы для панорамных окон: типы и особенности'],
+	['/info/teplovaya-zavesa-u-panoramnyh-okon', 'Тепловая завеса у панорамных окон'],
+]
+
+const orderSteps = [
+	['01', 'Выберите модель', 'Q500, P200 или P300.'],
+	['02', 'Отправьте параметры', 'Размеры помещения, длину зоны установки и город доставки.'],
+	['03', 'Получите расчет', 'Менеджер поможет рассчитать мощность и уточнить параметры.'],
+	['04', 'Согласуйте заказ', 'После согласования оформляется заказ и предоплата.'],
+	['05', 'Производство', 'Радиатор запускается в производство под выбранные параметры.'],
+	['06', 'Доставка', 'После готовности выполняется доставка по России.'],
+]
+
+const faqItems = [
+	['Где устанавливают напольные радиаторы?', 'Напольные радиаторы устанавливают перед панорамными окнами, в гостиных, зимних садах, входных группах и коммерческих помещениях. Они подходят для ситуаций, когда настенный радиатор поставить сложно или он портит интерьер.'],
+	['Чем напольный радиатор отличается от внутрипольного конвектора?', 'Напольный радиатор устанавливается поверх пола и остается видимым элементом интерьера. Внутрипольный конвектор монтируется в нишу в полу и закрывается декоративной решеткой. Выбор зависит от проекта, высоты пола, мощности и требований к внешнему виду.'],
+	['Можно ли заказать напольный радиатор в цвет RAL?', 'Да, напольные радиаторы Velar можно окрашивать в цвета палитры RAL. Это позволяет подобрать прибор под цвет стен, оконных рам, мебели или других элементов интерьера.'],
+	['Как выбрать между Q500, P200 и P300?', 'Q500 стоит рассматривать как радиатор-скамейку и выразительный интерьерный элемент. P200 подойдет, если нужен низкий аккуратный радиатор перед остеклением. P300 стоит выбрать, если требуется более мощное решение для просторного помещения или зоны с большими теплопотерями.'],
+	['Сколько занимает производство?', 'Ориентировочный срок производства - 5-6 недель без учета доставки. Актуальные сроки нужно уточнять у менеджера, потому что они зависят от загрузки производства и параметров заказа.'],
+	['Можно ли подобрать радиатор по плану помещения?', 'Да, можно отправить план, размеры зоны установки или фото помещения. Менеджер поможет подобрать модель, длину, цвет и параметры подключения.'],
+]
+
+const productJsonLd = floorModels.map(model => ({
+	'@type': 'Product',
+	name: model.title,
+	image: new URL(model.image, canonicalUrl).toString(),
+	description: model.description,
+	brand: {
+		'@type': 'Brand',
+		name: 'Velar',
+	},
+	category: 'Напольные радиаторы отопления',
+	offers: model.priceFrom
+		? {
+				'@type': 'Offer',
+				priceCurrency: 'RUB',
+				price: String(model.priceFrom),
+				availability: 'https://schema.org/InStock',
+				url: new URL(model.href, canonicalUrl).toString(),
+			}
+		: undefined,
+}))
+
+const collectionJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'CollectionPage',
+	name: 'Напольные радиаторы отопления Velar',
+	url: canonicalUrl,
+	description: pageDescription,
+	mainEntity: {
+		'@type': 'ItemList',
+		itemListElement: floorModels.map((model, index) => ({
+			'@type': 'ListItem',
+			position: index + 1,
+			url: new URL(model.href, canonicalUrl).toString(),
+			item: productJsonLd[index],
+		})),
+	},
+}
+
+const faqJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: faqItems.map(([question, answer]) => ({
+		'@type': 'Question',
+		name: question,
+		acceptedAnswer: {
+			'@type': 'Answer',
+			text: answer,
+		},
+	})),
+}
+
+const organizationJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'Organization',
+	name: 'VelarShop.ru',
+	url: 'https://velarshop.ru/',
+	logo: 'https://velarshop.ru/images/logo.png',
+}
 ---
 
 <Layout
-	title='Напольные радиаторы Velar | Q500, P200 и P300 | VelarShop.ru'
-	description='Напольные радиаторы Velar Q500, P200 и P300: решения для панорамных окон и входных зон, подбор размеров и доставка по России.'
+	title={pageTitle}
+	description={pageDescription}
+	canonicalUrl={canonicalUrl}
+	breadcrumbs={breadcrumbs}
+	paddings={false}
 >
-	<Breadcrumbs items={crumbs} />
-	<h1 class='text-3xl font-bold mt-7 md:mt-5'>Радиаторы Velar напольные — каталог</h1>
-	<div class='text-sm max-w-xl mt-3 leading-6'>
-		В каталоге представлены напольные радиаторы Velar. Поможем подобрать модель
-		по размерам, мощности и типу подключения.
-	</div>
+	<JsonLd data={collectionJsonLd} />
+	<JsonLd data={faqJsonLd} />
+	<JsonLd data={organizationJsonLd} />
 
-	<ModelList type='floor' />
+	<section class='border-b border-neutral-200 bg-white'>
+		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 pb-8 pt-6 md:px-6 md:pb-12 md:pt-9 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-center lg:gap-12 xl:px-8 xl:py-12'>
+			<div class='min-w-0'>
+				<h1 class='max-w-[760px] text-[34px] font-semibold leading-[1.04] tracking-tight text-neutral-950 md:text-[44px] xl:text-[58px]'>
+					Напольные радиаторы отопления Velar
+				</h1>
+				<p class='mt-5 max-w-[760px] text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>
+					Напольные радиаторы Velar подходят для установки перед панорамными окнами, в гостиных, входных группах, зимних садах и коммерческих помещениях. Модели Q500, P200 и P300 изготавливаются под заказ, окрашиваются в цвета RAL и помогают создать тепловую завесу там, где обычный настенный радиатор установить сложно.
+				</p>
+				<div class='mt-7 flex flex-col gap-3 min-[420px]:flex-row'>
+					<a href='/request' class='inline-flex h-11 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>
+						Получить расчет
+					</a>
+					<a href='#floor-models' class='inline-flex h-11 items-center justify-center rounded-lg border border-neutral-300 bg-white px-5 text-sm font-semibold text-neutral-950 transition hover:border-neutral-400 hover:bg-neutral-50'>
+						Смотреть модели
+					</a>
+				</div>
+			</div>
 
-	<div class='mt-[40px] text-xs font-light max-w-[500px]'>
-		<sup>*</sup> Сроки заказа и доставки зависят от модели, комплектации и
-		выбранного цвета. Актуальные сроки уточняйте у менеджера.
-	</div>
+			<div class='rounded-[22px] border border-neutral-200 bg-neutral-50 p-4 md:p-5'>
+				<div class='grid grid-cols-2 gap-3'>
+					{heroFacts.map(([title, text]) => (
+						<div class='rounded-lg bg-white p-4'>
+							<div class='text-[11px] font-semibold uppercase tracking-wide text-neutral-500'>{title}</div>
+							<div class='mt-2 text-base font-semibold leading-snug text-neutral-950'>{text}</div>
+						</div>
+					))}
+				</div>
+				<p class='mt-4 text-sm leading-6 text-neutral-600'>
+					Подбор зависит от длины остекления, теплопотерь, планировки и желаемого цвета.
+				</p>
+			</div>
+		</div>
+	</section>
 
-		<section
-  class="justify-center max-w-6xl mx-auto px-5 md:px-10 mt-20"
->
-	<h2 class="text-3xl font-light text-left">Полезные материалы</h2>
-		<div class="mt-2 text-sm leading-relaxed">
-			<ul class="list-disc list-outside pl-4">
-				<li>
-					<a href="/info/floor-design-radiators" class='font-normal underline hover:no-underline'>
-						Напольные дизайн-радиаторы: особенности, преимущества и недостатки
+	<section class='bg-white py-8'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<div class='flex flex-wrap items-center gap-2'>
+				<span class='mr-2 text-sm font-semibold text-neutral-950'>Популярные решения:</span>
+				{quickLinks.map(([href, title]) => (
+					<a href={href} class='rounded-full border border-neutral-200 bg-white px-3 py-2 text-sm font-medium text-neutral-700 transition hover:border-red-200 hover:text-red-700'>
+						{title}
 					</a>
-				</li>
-				<li class="mt-1">
-					<a href="/info/radiatory-dlya-panoramnykh-okon-tipy-osobennosti" class='font-normal underline hover:no-underline'>
-						Радиаторы для панорамных окон: типы и особенности
-					</a>
-				</li>
-				<li class="mt-1">
-					<a href="/info/teplovaya-zavesa-u-panoramnyh-okon" class='font-normal underline hover:no-underline'>
-						Тепловая завеса у панорамных окон
-					</a>
-				</li>
-				
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section id='floor-models' class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<div class='max-w-3xl'>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Модели напольных радиаторов Velar</h2>
+				<p class='mt-3 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>В линейке три модели: радиатор-скамейка Q500 и низкие напольные радиаторы P200 и P300.</p>
+			</div>
+			<div class='mt-8 grid gap-4 md:grid-cols-3 xl:gap-5'>
+				{floorModels.map(model => (
+					<article class='flex flex-col rounded-[18px] border border-neutral-200 bg-white p-4 transition hover:border-neutral-300 md:p-4 xl:p-5'>
+						<a href={model.href} class='block'>
+							<Picture
+								src={model.image}
+								alt={`Напольный радиатор ${model.title}`}
+								title={`Напольный радиатор ${model.title}`}
+								loading='lazy'
+								aspectRatio='4:3'
+								widths={[320, 480, 640]}
+								width={420}
+								sizes='(max-width: 768px) 100vw, 33vw'
+								class='aspect-[4/3] w-full rounded-xl bg-neutral-50 object-contain p-3'
+							/>
+						</a>
+						<h3 class='mt-4 text-lg font-semibold leading-tight text-neutral-950 xl:text-xl'>{model.title}</h3>
+						<p class='mt-2 text-[14px] leading-[1.45] text-neutral-600 xl:text-[15px]'>{model.description}</p>
+						<div class='mt-4 border-t border-neutral-200 pt-4 text-sm leading-6 text-neutral-700'>
+							<div><span class='text-neutral-500'>Цена от:</span> <span class='font-semibold text-neutral-950'>{formatRub(model.priceFrom)}</span></div>
+							<div><span class='text-neutral-500'>Высота:</span> {model.height}</div>
+							<div><span class='text-neutral-500'>Длина:</span> {model.lengthRange}</div>
+						</div>
+						<p class='mt-3 text-sm leading-6 text-neutral-600'>{model.useCase}</p>
+						<div class='mt-auto grid grid-cols-2 gap-2 pt-4'>
+							<a href={model.href} class='inline-flex h-10 items-center justify-center rounded-lg border border-neutral-300 bg-white px-3 text-sm font-semibold text-neutral-950 transition hover:border-neutral-400 hover:bg-neutral-50'>
+								Подробнее
+							</a>
+							<a href='/request' class='inline-flex h-10 items-center justify-center rounded-lg bg-red-700 px-3 text-sm font-semibold text-white transition hover:bg-red-800'>
+								Расчет
+							</a>
+						</div>
+					</article>
+				))}
+			</div>
+			<p class='mt-6 max-w-3xl text-sm leading-6 text-neutral-600'>
+				<sup>*</sup> Срок производства обычно составляет 5-6 недель без учета доставки. Сроки зависят от модели, комплектации, выбранного цвета и загрузки производства.
+			</p>
+		</div>
+	</section>
+
+	<section id='floor-use-cases' class='bg-white py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] xl:px-8'>
+			<div>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Когда стоит выбрать напольный радиатор</h2>
+				<p class='mt-5 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>
+					Напольный радиатор подходит, если обычный настенный прибор сложно разместить или он нарушает интерьер. Такие модели часто используют перед панорамными окнами, в помещениях с низкими подоконниками, в холлах, входных группах, зимних садах и коммерческих зонах. Радиатор устанавливается на пол и может работать как тепловая завеса вдоль остекления.
+				</p>
+			</div>
+			<ul class='grid content-start gap-3 sm:grid-cols-2'>
+				{useCases.map(item => (
+					<li class='flex items-center gap-3 border-t border-neutral-200 py-3 text-sm font-semibold text-neutral-950'>
+						<span class='h-1.5 w-1.5 shrink-0 rounded-full bg-red-700'></span>
+						<span>{item}</span>
+					</li>
+				))}
 			</ul>
 		</div>
 	</section>
 
-	<BuyerInfo productTitle='напольные дизайн-радиаторы Velar' />
+	<section class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<div class='max-w-3xl'>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Чем отличаются Q500, P200 и P300</h2>
+			</div>
+			<div class='mt-7 overflow-x-auto rounded-lg border border-neutral-200 bg-white'>
+				<table class='min-w-[760px] w-full text-left text-sm'>
+					<thead class='bg-neutral-100 text-xs uppercase text-neutral-500'>
+						<tr>
+							<th class='px-4 py-2.5 font-semibold'>Модель</th>
+							<th class='px-4 py-2.5 font-semibold'>Формат</th>
+							<th class='px-4 py-2.5 font-semibold'>Где использовать</th>
+							<th class='px-4 py-2.5 font-semibold'>Особенность</th>
+						</tr>
+					</thead>
+					<tbody class='divide-y divide-neutral-200 text-neutral-700'>
+						<tr><td class='px-4 py-3 font-semibold text-neutral-950'>Q500</td><td class='px-4 py-3'>радиатор-скамейка</td><td class='px-4 py-3'>входные зоны, гостиные, коммерческие помещения</td><td class='px-4 py-3'>выразительный дизайн, можно использовать как интерьерный объект</td></tr>
+						<tr><td class='px-4 py-3 font-semibold text-neutral-950'>P200</td><td class='px-4 py-3'>низкий напольный радиатор</td><td class='px-4 py-3'>панорамные окна, квартиры, частные дома</td><td class='px-4 py-3'>компактная высота, аккуратный внешний вид</td></tr>
+						<tr><td class='px-4 py-3 font-semibold text-neutral-950'>P300</td><td class='px-4 py-3'>напольный радиатор повышенной мощности</td><td class='px-4 py-3'>панорамное остекление, зимние сады, просторные помещения</td><td class='px-4 py-3'>больше тепловая отдача по сравнению с P200</td></tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+
+	<section class='bg-white py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:px-8'>
+			<div>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Почему выбирают напольные радиаторы Velar</h2>
+				<p class='mt-5 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>
+					Напольные радиаторы Velar изготавливаются под параметры проекта: можно подобрать модель, длину, цвет, подключение и сценарий установки. Это удобно для частных интерьеров, общественных помещений и коммерческих объектов.
+				</p>
+			</div>
+			<ul class='grid content-start gap-3 sm:grid-cols-2'>
+				{velarBenefits.map(item => (
+					<li class='flex items-center gap-3 border-t border-neutral-200 py-3 text-sm font-semibold text-neutral-950'>
+						<span class='h-1.5 w-1.5 shrink-0 rounded-full bg-red-700'></span>
+						<span>{item}</span>
+					</li>
+				))}
+			</ul>
+		</div>
+	</section>
+
+	<section id='floor-request' class='bg-neutral-950 py-12 text-white md:py-16'>
+		<div class='mx-auto grid max-w-[1240px] gap-6 px-4 md:px-6 lg:grid-cols-[minmax(0,1fr)_260px] lg:items-center xl:px-8'>
+			<div>
+				<h2 class='text-[28px] font-semibold leading-tight tracking-tight md:text-[34px]'>Получить расчет напольного радиатора</h2>
+				<p class='mt-3 max-w-3xl text-sm leading-6 text-neutral-300 md:text-base'>
+					Напольные радиаторы часто подбираются под длину остекления, теплопотери помещения и планировку. Отправьте размеры зоны установки, город доставки и желаемый цвет — мы поможем выбрать модель и рассчитать стоимость.
+				</p>
+			</div>
+			<a href='/request' class='inline-flex h-11 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>
+				Получить расчет
+			</a>
+		</div>
+	</section>
+
+	<section class='bg-white py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto max-w-[900px] px-4 md:px-6 xl:px-8'>
+			<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Полезные материалы</h2>
+			<ul class='mt-7 divide-y divide-neutral-200 border-y border-neutral-200'>
+				{usefulLinks.map(([href, title]) => (
+					<li>
+						<a href={href} class='group flex gap-3 py-3.5 text-[15px] leading-6 text-neutral-700 transition hover:text-red-700 md:text-base'>
+							<span class='text-neutral-400 transition group-hover:text-red-700'>→</span>
+							<span>{title}</span>
+						</a>
+					</li>
+				))}
+			</ul>
+		</div>
+	</section>
+
+	<section class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<div class='max-w-3xl'>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Как заказать напольный радиатор Velar</h2>
+			</div>
+			<div class='mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3'>
+				{orderSteps.map(([number, title, text]) => (
+					<div class='rounded-lg border border-neutral-200 bg-white p-5'>
+						<div class='text-sm font-semibold text-red-700'>{number}</div>
+						<h3 class='mt-3 text-lg font-semibold text-neutral-950'>{title}</h3>
+						<p class='mt-2 text-[15px] leading-6 text-neutral-600'>{text}</p>
+					</div>
+				))}
+			</div>
+			<a href='/request' class='mt-7 inline-flex h-11 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>
+				Отправить запрос
+			</a>
+		</div>
+	</section>
+
+	<section class='bg-white py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto max-w-[900px] px-4 md:px-6 xl:px-8'>
+			<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Доставка и оплата</h2>
+			<p class='mt-5 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>
+				Доставка выполняется по России. В Санкт-Петербурге возможна доставка до двери, в другие города — через транспортные компании. Радиаторы отправляются в жесткой упаковке, при необходимости со страховкой. Доставка до терминала транспортной компании в городе отправления выполняется за наш счет.
+			</p>
+			<p class='mt-3 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>
+				Оплата доступна для физических и юридических лиц: банковский перевод, онлайн-оплата или QR-код. Для изделий под заказ заключается договор и вносится предоплата. Радиаторы, изготовленные по индивидуальным параметрам, не подлежат возврату или обмену.
+			</p>
+			<div class='mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-neutral-700'>
+				<a href='/delivery' class='hover:text-red-700'>Доставка</a>
+				<a href='/about' class='hover:text-red-700'>О компании</a>
+			</div>
+		</div>
+	</section>
+
+	<section class='bg-white py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto max-w-[900px] px-4 md:px-6 xl:px-8'>
+			<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Частые вопросы о напольных радиаторах</h2>
+			<div class='mt-6 border-y border-neutral-200'>
+				{faqItems.map(([question, answer]) => (
+					<details class='faq-item group border-b border-neutral-200 py-4 last:border-b-0'>
+						<summary class='flex cursor-pointer list-none items-center justify-between gap-6 text-sm font-semibold text-neutral-950 md:text-base'>
+							<span>{question}</span>
+							<span class='relative h-5 w-5 shrink-0 text-neutral-500' aria-hidden='true'>
+								<span class='absolute left-1/2 top-1/2 h-px w-4 -translate-x-1/2 -translate-y-1/2 bg-current'></span>
+								<span class='absolute left-1/2 top-1/2 h-4 w-px -translate-x-1/2 -translate-y-1/2 bg-current transition group-open:rotate-90 group-open:opacity-0'></span>
+							</span>
+						</summary>
+						<p class='mt-3 text-[15px] leading-6 text-neutral-600'>{answer}</p>
+					</details>
+				))}
+			</div>
+		</div>
+	</section>
 </Layout>
+
+<style>
+	.faq-item > summary::-webkit-details-marker {
+		display: none;
+	}
+</style>

@@ -1,0 +1,249 @@
+---
+import { Picture } from '@astrojs/image/components'
+import Layout from '@shared/layouts/Layout.astro'
+import JsonLd from '../../components/seo/JsonLd.astro'
+import DesignSeriesGrid from '../../components/design/DesignSeriesGrid.astro'
+import DesignFaq from '../../components/design/DesignFaq.astro'
+import {
+	designSeries,
+	formatRub,
+	getDesignSeriesBySlug,
+	type DesignSeries,
+} from '../../components/design/designData'
+
+export function getStaticPaths() {
+	return designSeries.map(series => ({
+		params: { series: series.slug },
+		props: { series },
+	}))
+}
+
+type Props = {
+	series: DesignSeries
+}
+
+const { series } = Astro.props as Props
+const canonicalUrl = `https://velarshop.ru/design/${series.slug}/`
+const pageTitle = `Дизайн-радиатор ${series.title} | VelarShop.ru`
+const pageDescription = `${series.title}: ${series.description} Вертикальные и горизонтальные исполнения, если доступны в серии, цвета RAL, подбор и доставка по России.`
+const breadcrumbs = [
+	{ title: 'Главная', url: '/' },
+	{ title: 'Дизайн-радиаторы', url: '/design' },
+	{ title: series.title, url: `/design/${series.slug}` },
+]
+
+const relatedSeries = designSeries
+	.filter(item => item.slug !== series.slug)
+	.filter(item => item.profile[0] === series.profile[0] || item.orientations.some(orientation => series.orientations.includes(orientation)))
+	.slice(0, 4)
+
+const availableLinks = [
+	series.verticalModel ? ['Вертикальное исполнение', series.verticalModel.href, series.verticalModel.title] : null,
+	series.horizontalModel ? ['Горизонтальное исполнение', series.horizontalModel.href, series.horizontalModel.title] : null,
+].filter((item): item is [string, string, string] => Boolean(item))
+
+const faqItems: Array<[string, string]> = [
+	[`Что представляет собой серия ${series.label}?`, series.description],
+	['Какие исполнения доступны?', `В серии доступны: ${availableLinks.map(([label]) => label.toLowerCase()).join(', ')}. Ссылки ведут на существующие товарные страницы конкретных исполнений.`],
+	['Можно ли заказать радиатор в цвет RAL?', 'Да, дизайн-радиаторы Velar можно окрашивать в цвета палитры RAL под интерьер, мебель, стены или оконные рамы.'],
+	['Как получить точный расчет?', 'Отправьте размеры помещения, нужную ориентацию, цвет, город доставки и, если есть, план или дизайн-проект.'],
+]
+
+const schema = [
+	{
+		'@context': 'https://schema.org',
+		'@type': 'CollectionPage',
+		name: `Дизайн-радиатор ${series.title}`,
+		description: pageDescription,
+		url: canonicalUrl,
+		mainEntity: {
+			'@type': 'ProductGroup',
+			name: series.title,
+			description: series.description,
+			image: new URL(series.image, canonicalUrl).toString(),
+			brand: { '@type': 'Brand', name: 'Velar' },
+			category: 'Дизайн-радиаторы',
+			hasVariant: series.models.map(model => ({
+				'@type': 'Product',
+				name: model.title,
+				url: new URL(model.href, canonicalUrl).toString(),
+				image: new URL(model.image, canonicalUrl).toString(),
+				description: model.shortComment,
+				offers: model.priceFrom
+					? {
+							'@type': 'Offer',
+							priceCurrency: 'RUB',
+							price: model.priceFrom,
+							availability: 'https://schema.org/InStock',
+							url: new URL(model.href, canonicalUrl).toString(),
+						}
+					: undefined,
+			})),
+		},
+	},
+	{
+		'@context': 'https://schema.org',
+		'@type': 'FAQPage',
+		mainEntity: faqItems.map(([question, answer]) => ({
+			'@type': 'Question',
+			name: question,
+			acceptedAnswer: { '@type': 'Answer', text: answer },
+		})),
+	},
+]
+---
+
+<Layout title={pageTitle} description={pageDescription} canonicalUrl={canonicalUrl} breadcrumbs={breadcrumbs} paddings={false}>
+	<JsonLd data={schema} />
+
+	<section class='bg-white pb-12 pt-7 md:pb-16 xl:pb-20'>
+		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-center xl:px-8'>
+			<div>
+				<h1 class='max-w-4xl text-[38px] font-semibold leading-[0.98] tracking-tight text-neutral-950 md:text-[54px] xl:text-[64px]'>
+					Дизайн-радиатор {series.title}
+				</h1>
+				<p class='mt-5 max-w-3xl text-[16px] leading-7 text-neutral-700 md:text-lg'>{series.description}</p>
+				<div class='mt-7 flex flex-wrap gap-3'>
+					<a href='/request' class='inline-flex h-11 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>Получить расчет</a>
+					<a href='#series-variants' class='inline-flex h-11 items-center justify-center rounded-lg border border-neutral-300 px-5 text-sm font-semibold text-neutral-950 transition hover:border-red-700 hover:text-red-700'>Доступные исполнения</a>
+				</div>
+			</div>
+			<div class='rounded-lg border border-neutral-200 bg-neutral-50 p-5'>
+				<Picture
+					src={series.image}
+					alt={`${series.title} дизайн-радиатор`}
+					title={`${series.title} дизайн-радиатор`}
+					loading='eager'
+					aspectRatio='4:3'
+					widths={[420, 640, 820]}
+					width={640}
+					height={480}
+					sizes='(max-width: 1024px) 100vw, 420px'
+					class='h-[320px] w-full object-contain p-4 md:h-[380px]'
+				/>
+				<div class='mt-5 grid grid-cols-2 gap-3'>
+					<div class='border-t border-neutral-200 pt-3'>
+						<div class='text-xs uppercase tracking-wide text-neutral-500'>Цена от</div>
+						<div class='mt-1 text-sm font-semibold text-neutral-950'>от {formatRub(series.priceFrom)}</div>
+					</div>
+					<div class='border-t border-neutral-200 pt-3'>
+						<div class='text-xs uppercase tracking-wide text-neutral-500'>Профиль</div>
+						<div class='mt-1 text-sm font-semibold text-neutral-950'>{series.profile}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:px-8'>
+			<div>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Что представляет собой серия {series.label}</h2>
+				<p class='mt-4 text-[15px] leading-6 text-neutral-700 md:text-base'>{series.description}</p>
+			</div>
+			<div class='grid content-start gap-3 sm:grid-cols-2'>
+				<div class='border-t border-neutral-200 py-3'>
+					<h3 class='text-base font-semibold text-neutral-950'>Профиль</h3>
+					<p class='mt-1 text-sm leading-6 text-neutral-600'>{series.profile}</p>
+				</div>
+				<div class='border-t border-neutral-200 py-3'>
+					<h3 class='text-base font-semibold text-neutral-950'>Где использовать</h3>
+					<p class='mt-1 text-sm leading-6 text-neutral-600'>{series.shortUse}</p>
+				</div>
+				<div class='border-t border-neutral-200 py-3'>
+					<h3 class='text-base font-semibold text-neutral-950'>Цвет</h3>
+					<p class='mt-1 text-sm leading-6 text-neutral-600'>окраска в цвета RAL</p>
+				</div>
+				<div class='border-t border-neutral-200 py-3'>
+					<h3 class='text-base font-semibold text-neutral-950'>Подбор</h3>
+					<p class='mt-1 text-sm leading-6 text-neutral-600'>по мощности, размеру и подключению</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id='series-variants' class='bg-white py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<div class='max-w-3xl'>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Доступные исполнения</h2>
+				<p class='mt-4 text-[15px] leading-6 text-neutral-600 md:text-base'>
+					Сводная страница серии ведет на существующие товарные страницы конкретных исполнений. Если у серии нет горизонтальной версии, такая ссылка не показывается.
+				</p>
+			</div>
+			<div class='mt-8 grid gap-4 md:grid-cols-2'>
+				{series.models.map((model, index) => (
+					<article class='grid gap-5 rounded-lg border border-neutral-200 bg-white p-5 sm:grid-cols-[160px_minmax(0,1fr)]'>
+						<a href={model.href} class='block rounded-lg bg-neutral-50'>
+							<Picture
+								src={model.image}
+								alt={model.title}
+								title={model.title}
+								loading={index > 1 ? 'lazy' : 'eager'}
+								aspectRatio='1:1'
+								widths={[220, 320, 420]}
+								width={320}
+								height={320}
+								sizes='160px'
+								class='h-[160px] w-full object-contain p-4'
+							/>
+						</a>
+						<div>
+							<h3 class='text-xl font-semibold text-neutral-950'>{model.title}</h3>
+							<p class='mt-2 text-[15px] leading-6 text-neutral-600'>{model.shortComment}</p>
+							{model.priceFrom > 0 && <div class='mt-3 text-base font-semibold text-neutral-950'>от {formatRub(model.priceFrom)}</div>}
+							<div class='mt-4 flex flex-wrap gap-2'>
+								<a href={model.href} class='inline-flex h-9 items-center justify-center rounded-lg bg-red-700 px-3 text-sm font-semibold text-white transition hover:bg-red-800'>Смотреть модель</a>
+								<a href='/request' class='inline-flex h-9 items-center justify-center rounded-lg border border-neutral-300 px-3 text-sm font-semibold text-neutral-950 transition hover:border-red-700 hover:text-red-700'>Получить расчет</a>
+							</div>
+						</div>
+					</article>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Размеры, цвета и подключение</h2>
+			<div class='mt-7 grid gap-4 md:grid-cols-3'>
+				<div class='border-t border-neutral-200 py-3'>
+					<h3 class='text-base font-semibold text-neutral-950'>Размеры</h3>
+					<p class='mt-1 text-sm leading-6 text-neutral-600'>Подбираются по месту установки, теплопотерям и нужной мощности.</p>
+				</div>
+				<div class='border-t border-neutral-200 py-3'>
+					<h3 class='text-base font-semibold text-neutral-950'>Цвета RAL</h3>
+					<p class='mt-1 text-sm leading-6 text-neutral-600'>Радиатор можно сделать нейтральным или акцентным под интерьер.</p>
+				</div>
+				<div class='border-t border-neutral-200 py-3'>
+					<h3 class='text-base font-semibold text-neutral-950'>Подключение</h3>
+					<p class='mt-1 text-sm leading-6 text-neutral-600'>Схему подключения лучше согласовать заранее, до монтажа труб.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{relatedSeries.length > 0 && (
+		<section class='bg-white py-12 md:py-16 xl:py-20'>
+			<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Похожие серии</h2>
+				<div class='mt-8'>
+					<DesignSeriesGrid series={relatedSeries} />
+				</div>
+			</div>
+		</section>
+	)}
+
+	<section class='bg-neutral-950 py-12 text-white md:py-16'>
+		<div class='mx-auto grid max-w-[1240px] gap-6 px-4 md:px-6 lg:grid-cols-[minmax(0,1fr)_260px] lg:items-center xl:px-8'>
+			<div>
+				<h2 class='text-[28px] font-semibold leading-tight tracking-tight md:text-[34px]'>Получить расчет {series.title}</h2>
+				<p class='mt-3 max-w-3xl text-sm leading-6 text-neutral-300 md:text-base'>
+					Отправьте размеры помещения, нужное исполнение, цвет и город доставки. Мы поможем подобрать конкретную модель и параметры.
+				</p>
+			</div>
+			<a href='/request' class='inline-flex h-11 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>Получить расчет</a>
+		</div>
+	</section>
+
+	<DesignFaq items={faqItems} title={`Частые вопросы о ${series.title}`} />
+</Layout>

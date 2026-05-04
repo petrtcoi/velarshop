@@ -1,88 +1,280 @@
 ---
+import { Picture } from '@astrojs/image/components'
 import Layout from '@shared/layouts/Layout.astro'
-import Breadcrumbs from '@widgets/breadcrumbs/Breadcrumbs.astro';
-import BuyerInfo from '@widgets/buyerInfo/BuyerInfo.astro'
-import ModelList from '@widgets/ModelList.astro'
+import JsonLd from '../components/seo/JsonLd.astro'
+import DesignSeriesGrid from '../components/design/DesignSeriesGrid.astro'
+import DesignUsefulLinks from '../components/design/DesignUsefulLinks.astro'
+import DesignFaq from '../components/design/DesignFaq.astro'
+import { designSeries, formatRub } from '../components/design/designData'
 
-const crumbs = [
-	{title: 'Главная', url: '/'},
-	{title: 'Дизайн-радиаторы', url: '/design'},
+const canonicalUrl = 'https://velarshop.ru/design/'
+const title = 'Дизайн-радиаторы отопления Velar | VelarShop.ru'
+const description =
+	'Дизайнерские радиаторы Velar для квартир, домов и современных интерьеров: вертикальные и горизонтальные модели, цвета RAL, подбор под помещение и доставка по России.'
+
+const breadcrumbs = [
+	{ title: 'Главная', url: '/' },
+	{ title: 'Дизайн-радиаторы', url: '/design' },
+]
+
+const minPrice = Math.min(...designSeries.map(series => series.priceFrom).filter(Boolean))
+const heroFacts = [
+	['Цена от', `от ${formatRub(minPrice)}`],
+	['Производство', 'под заказ'],
+	['Цвета', 'палитра RAL'],
+	['Доставка', 'по России'],
+]
+
+const quickChoice = [
+	['/design/vertikalnye', 'Вертикальные дизайн-радиаторы'],
+	['/design/gorizontalnye', 'Горизонтальные дизайн-радиаторы'],
+	['/design/p30', 'Профиль P'],
+	['/design/q40', 'Профиль Q'],
+	['/design/r32', 'Профиль R'],
+	['/design/rt1', 'Радиаторы с ТЭНом'],
+	['/info/kak-podobrat-radiator-pod-dizajn-kvartiry', 'Под интерьер'],
+]
+
+const chooseItems = [
+	['по ориентации', 'Вертикальные модели подходят для узких простенков и акцентных стен. Горизонтальные чаще используют под окнами и в низких зонах.'],
+	['по высоте', 'Высота влияет на визуальный силуэт, место установки и тепловую отдачу.'],
+	['по форме профиля', 'Плоский P, квадратный Q, круглый R и овальный S дают разный характер интерьера.'],
+	['по мощности', 'Мощность подбирают по теплопотерям помещения, площади остекления и режиму отопления.'],
+	['по месту установки', 'Для спальни, гостиной, кухни, прихожей и коммерческих зон подходят разные форматы.'],
+	['по цвету', 'Радиатор можно сделать нейтральным или акцентным за счет цвета RAL.'],
+	['по подключению', 'Вариант подключения лучше согласовать до отделочных работ и монтажа труб.'],
+]
+
+const benefits = [
+	'производство под заказ',
+	'цвета RAL',
+	'подбор под интерьер',
+	'разные форматы и размеры',
+	'помощь с расчетом мощности',
+	'доставка по России',
+	'работа с физлицами и юрлицами',
+]
+
+const galleryImages = [
+	['/images/articles/design.jpg', 'Дизайн-радиатор Velar в современном интерьере'],
+	['/images/articles/vertical-designer-radiators.jpg', 'Вертикальный дизайнерский радиатор Velar'],
+	['/images/articles/horizontal-designer-radiators.jpg', 'Горизонтальный дизайн-радиатор Velar под окном'],
+	['/images/articles/colors.jpg', 'Дизайн-радиаторы Velar в цветах RAL'],
+]
+
+const faqItems: Array<[string, string]> = [
+	['Чем дизайн-радиатор отличается от обычного радиатора?', 'Дизайн-радиатор выполняет ту же отопительную задачу, но подбирается еще и как видимый элемент интерьера: по форме профиля, ориентации, цвету, размеру и способу размещения.'],
+	['Какие дизайн-радиаторы Velar бывают?', 'В ассортименте есть вертикальные и горизонтальные модели с плоским, квадратным, круглым и овальным профилем. Конкретные исполнения доступны на страницах серий и товарных страницах.'],
+	['Можно ли заказать радиатор в цвет RAL?', 'Да, дизайн-радиаторы Velar можно окрашивать в цвета палитры RAL, чтобы подобрать прибор под стены, мебель, оконные рамы или сделать его акцентом.'],
+	['Что выбрать: вертикальный или горизонтальный радиатор?', 'Вертикальный радиатор выбирают для узких стен, простенков и интерьерных акцентов. Горизонтальный удобен под окнами, в низких зонах и там, где важно сохранить привычную линию отопления.'],
+	['Как рассчитать мощность дизайн-радиатора?', 'Мощность рассчитывают по площади, теплопотерям, остеклению и режиму системы отопления. Для точного подбора лучше отправить план помещения или размеры зоны установки.'],
+	['Можно ли заказать расчет по дизайн-проекту?', 'Да, можно отправить план, визуализацию или фото помещения. Менеджер поможет подобрать серию, ориентацию, размер, цвет и подключение.'],
+]
+
+const schema = [
+	{
+		'@context': 'https://schema.org',
+		'@type': 'CollectionPage',
+		name: 'Дизайн-радиаторы отопления Velar',
+		description,
+		url: canonicalUrl,
+		mainEntity: {
+			'@type': 'ItemList',
+			itemListElement: designSeries.map((series, index) => ({
+				'@type': 'ListItem',
+				position: index + 1,
+				url: new URL(series.href, canonicalUrl).toString(),
+				item: {
+					'@type': 'ProductGroup',
+					name: series.title,
+					description: series.description,
+					image: new URL(series.image, canonicalUrl).toString(),
+					brand: { '@type': 'Brand', name: 'Velar' },
+					category: 'Дизайн-радиаторы',
+					hasVariant: series.models.map(model => ({
+						'@type': 'Product',
+						name: model.title,
+						url: new URL(model.href, canonicalUrl).toString(),
+						image: new URL(model.image, canonicalUrl).toString(),
+						offers: model.priceFrom
+							? {
+									'@type': 'Offer',
+									priceCurrency: 'RUB',
+									price: model.priceFrom,
+									availability: 'https://schema.org/InStock',
+									url: new URL(model.href, canonicalUrl).toString(),
+								}
+							: undefined,
+					})),
+				},
+			})),
+		},
+	},
+	{
+		'@context': 'https://schema.org',
+		'@type': 'FAQPage',
+		mainEntity: faqItems.map(([question, answer]) => ({
+			'@type': 'Question',
+			name: question,
+			acceptedAnswer: { '@type': 'Answer', text: answer },
+		})),
+	},
 ]
 ---
 
-<Layout
-	title='Дизайн-радиаторы Velar | полный каталог | VelarShop.ru'
-	description='Каталог дизайн-радиаторов Velar: вертикальные и горизонтальные модели, подбор размеров и конфигураций, доставка по России.'
->
-<Breadcrumbs items={crumbs} />
+<Layout title={title} description={description} canonicalUrl={canonicalUrl} breadcrumbs={breadcrumbs} paddings={false}>
+	<JsonLd data={schema} />
 
-	<h1 class='text-3xl font-bold mt-7 md:mt-5'>Радиаторы Velar дизайнерские — каталог</h1>
-	<div class='text-sm max-w-xl mt-3 leading-6'>
-		В каталоге представлены дизайнерские радиаторы Velar. Поможем подобрать
-		модель по размерам, мощности и типу подключения.
-	</div>
+	<section class='bg-white pb-12 pt-7 md:pb-16 xl:pb-20'>
+		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-center xl:px-8'>
+			<div>
+				<h1 class='max-w-4xl text-[38px] font-semibold leading-[0.98] tracking-tight text-neutral-950 md:text-[54px] xl:text-[64px]'>
+					Дизайн-радиаторы отопления Velar
+				</h1>
+				<p class='mt-5 max-w-3xl text-[16px] leading-7 text-neutral-700 md:text-lg'>
+					Дизайнерские радиаторы Velar для квартир, домов и современных интерьеров. Вертикальные и горизонтальные модели, разные формы профиля, цвета RAL, подбор под помещение и дизайн-проект.
+				</p>
+				<div class='mt-7 flex flex-wrap gap-3'>
+					<a href='/request' class='inline-flex h-11 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>Получить расчет</a>
+					<a href='#design-series' class='inline-flex h-11 items-center justify-center rounded-lg border border-neutral-300 px-5 text-sm font-semibold text-neutral-950 transition hover:border-red-700 hover:text-red-700'>Смотреть модели</a>
+				</div>
+			</div>
+			<div class='rounded-lg border border-neutral-200 bg-neutral-50 p-5'>
+				<Picture
+					src='/images/design/hero/vertical-design-radiator.jpg'
+					alt='Вертикальный дизайн-радиатор Velar'
+					title='Вертикальный дизайн-радиатор Velar'
+					loading='eager'
+					aspectRatio='3:4'
+					widths={[320, 480, 640]}
+					width={480}
+					height={640}
+					sizes='(max-width: 1024px) 80vw, 360px'
+					class='mx-auto h-[360px] w-full object-contain md:h-[420px]'
+				/>
+				<div class='mt-5 grid grid-cols-2 gap-3'>
+					{heroFacts.map(([name, value]) => (
+						<div class='border-t border-neutral-200 pt-3'>
+							<div class='text-xs uppercase tracking-wide text-neutral-500'>{name}</div>
+							<div class='mt-1 text-sm font-semibold text-neutral-950'>{value}</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
 
-	<ModelList type='design' />
+	<section class='bg-neutral-50 py-8'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<div class='text-sm font-semibold text-neutral-950'>Быстрый выбор</div>
+			<div class='mt-4 flex flex-wrap gap-2'>
+				{quickChoice.map(([href, label]) => (
+					<a href={href} class='rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm font-semibold text-neutral-700 transition hover:border-red-700 hover:text-red-700'>
+						{label}
+					</a>
+				))}
+			</div>
+		</div>
+	</section>
 
-	<div class='mt-[40px] text-xs font-light max-w-[500px]'>
-		<sup>*</sup> Сроки заказа и доставки зависят от модели, комплектации и
-		выбранного цвета. Актуальные сроки уточняйте у менеджера.
-	</div>
+	<section id='design-series' class='bg-white py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<div class='max-w-3xl'>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Популярные серии дизайн-радиаторов</h2>
+				<p class='mt-4 text-[15px] leading-6 text-neutral-600 md:text-base'>На общей странице показаны серии Velar. Внутри каждой серии доступны конкретные вертикальные и горизонтальные исполнения, если они есть в ассортименте.</p>
+			</div>
+			<div class='mt-8'>
+				<DesignSeriesGrid series={designSeries} />
+			</div>
+		</div>
+	</section>
 
-			<section
-  class="justify-center max-w-6xl mx-auto px-5 md:px-10 mt-20"
->
-	<h2 class="text-3xl font-light text-left">Полезные материалы</h2>
-		<div class="mt-2 text-sm leading-relaxed">
-			<ul class="list-disc list-outside pl-4">
-				<li>
-					<a href="/info/wall" class='font-normal underline hover:no-underline'>
-						Настенные дизайнерские радиаторы отопления
-					</a>
-				</li>
-				<li class="mt-1">
-					<a href="/info/power" class='font-normal underline hover:no-underline'>
-						Как определить требуемую мощность радиатора
-					</a>
-				</li>
-				<li class="mt-1">
-					<a href="/info/vertical-designer-radiators" class='font-normal underline hover:no-underline'>
-						Вертикальные дизайнерские радиаторы: экономия места и стиль
-					</a>
-				</li>
-				<li class="mt-1">
-					<a href="/info/horizontal-designer-radiators" class='font-normal underline hover:no-underline'>
-						Горизонтальные дизайн-радиаторы: где использовать лучше
-					</a>
-				</li>
-				<li class="mt-1">
-					<a href="/info/forma-trub-dizayn-radiatorov" class='font-normal underline hover:no-underline'>
-						Конструкция труб радиаторов
-					</a>
-				</li>
-				<li class="mt-1">
-					<a href="/info/oshibki-pri-vybore-radiatorov" class='font-normal underline hover:no-underline'>
-						Ошибки при выборе радиаторов отопления
-					</a>
-				</li>
-				<li class="mt-1">
-					<a href="/info/bezopasnost-radiatorov-dlya-detej" class='font-normal underline hover:no-underline'>
-						Безопасность радиаторов в доме
-					</a>
-				</li>
-				<li class="mt-1">
-					<a href="/info/tsvet-interera-i-radiator" class='font-normal underline hover:no-underline'>
-						Что говорит цвет интерьера о вас и как выбрать дизайнерский радиатор под стиль
-					</a>
-				</li>
-				<li class="mt-1">
-					<a href="/info/kak-podobrat-radiatory-dlya-kuhni" class='font-normal underline hover:no-underline'>
-						Как подобрать радиаторы для кухни: советы по выбору
-					</a>
-				</li>
+	<section class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] xl:px-8'>
+			<div>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Как выбрать дизайн-радиатор</h2>
+				<p class='mt-4 text-[15px] leading-6 text-neutral-700 md:text-base'>Дизайн-радиатор выбирают не только по мощности. Важно заранее понять ориентацию, профиль, место установки, цвет и схему подключения.</p>
+			</div>
+			<div class='grid gap-3 sm:grid-cols-2'>
+				{chooseItems.map(([title, text]) => (
+					<div class='border-t border-neutral-200 py-3'>
+						<h3 class='text-base font-semibold text-neutral-950'>{title}</h3>
+						<p class='mt-1 text-sm leading-6 text-neutral-600'>{text}</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class='bg-white py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<div class='grid gap-5 md:grid-cols-2'>
+				<a href='/design/vertikalnye' class='rounded-lg border border-neutral-200 bg-white p-6 transition hover:border-red-700'>
+					<h2 class='text-2xl font-semibold text-neutral-950'>Вертикальные дизайн-радиаторы</h2>
+					<p class='mt-3 text-[15px] leading-6 text-neutral-600'>Для узких простенков, акцентных стен, прихожих и помещений, где нужно сохранить полезную ширину стены.</p>
+				</a>
+				<a href='/design/gorizontalnye' class='rounded-lg border border-neutral-200 bg-white p-6 transition hover:border-red-700'>
+					<h2 class='text-2xl font-semibold text-neutral-950'>Горизонтальные дизайн-радиаторы</h2>
+					<p class='mt-3 text-[15px] leading-6 text-neutral-600'>Для установки под окнами, в низких зонах и интерьерах, где радиатор должен работать в привычной горизонтальной линии.</p>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<section class='bg-neutral-950 py-12 text-white md:py-16 xl:py-20'>
+		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] xl:px-8'>
+			<div>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight md:text-[34px] xl:text-[38px]'>Преимущества Velar</h2>
+				<p class='mt-4 text-[15px] leading-6 text-neutral-300 md:text-base'>Радиаторы изготавливаются под параметры проекта и помогают совместить отопление с задачами интерьера.</p>
+			</div>
+			<ul class='grid gap-3 sm:grid-cols-2'>
+				{benefits.map(item => (
+					<li class='flex items-center gap-3 border-t border-white/15 py-3 text-sm font-semibold text-white'>
+						<span class='h-1.5 w-1.5 shrink-0 rounded-full bg-red-600'></span>
+						<span>{item}</span>
+					</li>
+				))}
 			</ul>
 		</div>
 	</section>
 
-	<BuyerInfo productTitle='дизайн-радиаторы Velar' />
+	<section class='bg-white py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<div class='max-w-3xl'>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Дизайн-радиаторы в интерьере</h2>
+				<p class='mt-4 text-[15px] leading-6 text-neutral-600 md:text-base'>Вертикальные, горизонтальные и цветные модели можно вписать в спокойную отделку или сделать заметным интерьерным акцентом.</p>
+			</div>
+			<div class='mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4'>
+				{galleryImages.map(([src, alt], index) => (
+					<Picture
+						src={src}
+						alt={alt}
+						title={alt}
+						loading={index > 1 ? 'lazy' : 'eager'}
+						aspectRatio='4:3'
+						widths={[360, 520, 720]}
+						width={520}
+						height={390}
+						sizes='(max-width: 768px) 100vw, 25vw'
+						class='h-full w-full rounded-lg object-cover'
+					/>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class='bg-neutral-950 py-12 text-white md:py-16'>
+		<div class='mx-auto grid max-w-[1240px] gap-6 px-4 md:px-6 lg:grid-cols-[minmax(0,1fr)_260px] lg:items-center xl:px-8'>
+			<div>
+				<h2 class='text-[28px] font-semibold leading-tight tracking-tight md:text-[34px]'>Получить расчет дизайн-радиатора</h2>
+				<p class='mt-3 max-w-3xl text-sm leading-6 text-neutral-300 md:text-base'>
+					Отправьте размеры помещения, желаемую серию, ориентацию, цвет и город доставки. Мы поможем подобрать модель и рассчитать стоимость.
+				</p>
+			</div>
+			<a href='/request' class='inline-flex h-11 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>Получить расчет</a>
+		</div>
+	</section>
+
+	<DesignFaq items={faqItems} />
+	<DesignUsefulLinks />
 </Layout>

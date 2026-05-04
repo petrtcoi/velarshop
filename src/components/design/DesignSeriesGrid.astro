@@ -1,0 +1,18 @@
+---
+import DesignSeriesCard from './DesignSeriesCard.astro'
+import type { DesignSeries, DesignOrientation } from './designData'
+
+type Props = {
+	series: DesignSeries[]
+	orientation?: DesignOrientation
+}
+
+const { series, orientation } = Astro.props as Props
+---
+
+<div class='grid gap-4 md:grid-cols-3 xl:grid-cols-4 xl:gap-5'>
+	{series.map((item, index) => (
+		<DesignSeriesCard series={item} orientation={orientation} index={index} />
+	))}
+</div>
+

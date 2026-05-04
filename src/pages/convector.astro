@@ -1,81 +1,572 @@
 ---
+import { Picture } from '@astrojs/image/components'
 import Layout from '@shared/layouts/Layout.astro'
-import Breadcrumbs from '@widgets/breadcrumbs/Breadcrumbs.astro';
-import BuyerInfo from '@widgets/buyerInfo/BuyerInfo.astro'
-import ModelList from '@widgets/ModelList.astro'
+import JsonLd from '../components/seo/JsonLd.astro'
 
+const canonicalUrl = 'https://velarshop.ru/convector/'
+const pageTitle = 'Внутрипольные конвекторы Velar — KWH, KWHV и KWHV 24V'
+const pageDescription =
+	'Внутрипольные конвекторы Velar для панорамных окон, квартир, домов и коммерческих помещений. Модели KWH, KWHV и KWHV 24V, естественная и принудительная конвекция, доставка по России.'
 
-const crumbs = [
-	{title: 'Главная', url: '/'},
-	{title: 'Внутрипольные конвекторы', url: '/convector'},
+const breadcrumbs = [
+	{ title: 'Главная', url: '/' },
+	{ title: 'Внутрипольные конвекторы', url: '/convector' },
+]
+
+const convectorModels = [
+	{
+		id: 'kwh',
+		name: 'Velar KWH',
+		fullName: 'Внутрипольный конвектор Velar KWH',
+		href: '/model/kwh',
+		image: '/images/models/kwh/main.jpg',
+		convectionType: 'Естественная конвекция',
+		width: '150-420 мм',
+		height: '65-140 мм',
+		priceFrom: 8348,
+		description: 'Естественная конвекция. Ширина 150-420 мм. Высота 65-140 мм.',
+		useCase: 'Для спокойной тепловой завесы без вентиляторов и лишнего шума.',
+	},
+	{
+		id: 'kwhv',
+		name: 'Velar KWHV',
+		fullName: 'Внутрипольный конвектор Velar KWHV',
+		href: '/model/kwhv',
+		image: '/images/models/kwhv/main.jpg',
+		convectionType: 'Принудительная конвекция',
+		width: '250-420 мм',
+		height: '85-140 мм',
+		priceFrom: 17582,
+		description: 'Принудительная конвекция. Ширина 250-420 мм. Высота 85-140 мм.',
+		useCase: 'Для панорамных окон, холодных зон и активного обогрева.',
+	},
+	{
+		id: 'kwhv24',
+		name: 'Velar KWHV 24V',
+		fullName: 'Внутрипольный конвектор Velar KWHV 24V',
+		href: '/model/kwhv24',
+		image: '/images/models/kwhv24/main.jpg',
+		convectionType: 'Принудительная конвекция, вентиляторы 24В',
+		width: '200-420 мм',
+		height: '85-140 мм',
+		priceFrom: 27442,
+		description: 'Принудительная конвекция. Вентиляторы 24В. Ширина 200-420 мм. Высота 85-140 мм.',
+		useCase: 'Для проектов с низковольтными вентиляторами и гибким управлением.',
+	},
+]
+
+function formatRub(value: number): string {
+	return `${value.toLocaleString('ru-RU')} ₽`
+}
+
+const trustPoints = [
+	['Для панорамных окон', 'создают тепловую завесу вдоль остекления'],
+	['KWH и KWHV', 'естественная и принудительная конвекция'],
+	['Низкий монтаж в пол', 'высота от 65 мм'],
+	['Производство под заказ', 'срок 2-3 недели'],
+]
+
+const selectorOptions = {
+	place: ['Панорамное окно', 'Балконная дверь', 'Частный дом', 'Квартира', 'Офис / коммерческое помещение', 'Зона с повышенными теплопотерями'],
+	convection: ['Не знаю, нужна консультация', 'Естественная конвекция', 'С вентилятором', 'С вентилятором 24V'],
+	length: ['до 1000 мм', '1000-1500 мм', '1500-2000 мм', '2000+ мм', 'нужна нестандартная длина'],
+	depth: ['минимальная высота', 'стандартная', 'подберем по проекту'],
+}
+
+const comparisonRows = [
+	['KWH', 'естественная', 'когда достаточно спокойной тепловой завесы без вентиляторов', 'простая конструкция, тихая работа'],
+	['KWHV', 'принудительная', 'когда нужны высокая мощность и активный обогрев у панорамных окон', 'вентиляторы, повышенная теплоотдача'],
+	['KWHV 24V', 'принудительная 24V', 'когда важны низковольтные вентиляторы и гибкое управление', 'вентиляторы 24В, современная автоматика'],
+]
+
+const chooseItems = [
+	['Оцените остекление', 'Чем больше площадь панорамных окон, тем важнее правильно рассчитать тепловую завесу.'],
+	['Выберите тип конвекции', 'KWH работает за счет естественной конвекции. KWHV и KWHV 24V используют вентиляторы для более активного обогрева.'],
+	['Подберите размеры', 'Важны длина, ширина и высота канала. Они зависят от ниши в полу и требуемой мощности.'],
+	['Уточните теплопотери', 'Для точного подбора нужны площадь помещения, высота потолков, тип остекления и регион.'],
+	['Выберите решетку', 'Решетка должна подходить по цвету, материалу и направлению укладки к напольному покрытию.'],
+	['Продумайте обслуживание', 'К конвектору должен сохраняться доступ для чистки теплообменника, корпуса и вентиляторов.'],
+]
+
+const useCases = [
+	['Панорамные окна', 'Создают тепловую завесу вдоль стекла и помогают снизить ощущение холода у остекления.'],
+	['Балконные двери', 'Помогают компенсировать теплопотери в зоне выхода на балкон или террасу.'],
+	['Частные дома', 'Подходят для гостиных, кухонь-гостиных и помещений с большими окнами.'],
+	['Квартиры', 'Используются там, где обычный настенный радиатор мешает интерьеру или планировке.'],
+	['Коммерческие помещения', 'Подходят для офисов, шоурумов, ресторанов, салонов и входных зон.'],
+	['Дизайнерские интерьеры', 'Позволяют скрыть отопительный прибор в полу и сохранить чистую архитектуру пространства.'],
+]
+
+const benefits = [
+	['Естественная и принудительная конвекция', 'Можно выбрать спокойную работу без вентиляторов или усиленный обогрев.'],
+	['Для панорамного остекления', 'Конвекторы помогают создать тепловую завесу вдоль окон.'],
+	['Широкий размерный ряд', 'Можно подобрать длину, ширину и высоту под проект.'],
+	['Аккуратный монтаж в пол', 'Отопительный прибор не занимает стену и не мешает интерьеру.'],
+	['Решетки под интерьер', 'Возможны разные варианты декоративных решеток под покрытие пола.'],
+	['Производство под заказ', 'Подбор параметров под помещение, теплопотери и проект.'],
+]
+
+const mountItems = [
+	'заранее подготовить нишу в полу',
+	'учесть глубину корпуса и уровень чистового пола',
+	'предусмотреть подключение к системе отопления',
+	'для моделей с вентиляторами предусмотреть питание и управление',
+	'обеспечить ровную установку корпуса',
+	'согласовать расположение решетки с напольным покрытием',
+]
+
+const serviceItems = [
+	'периодически очищать решетку',
+	'убирать пыль внутри канала',
+	'очищать теплообменник',
+	'проверять вентиляторы в моделях KWHV и KWHV 24V',
+	'сохранять доступ к корпусу после отделочных работ',
+	'не закрывать решетку коврами или мебелью',
+]
+
+const orderSteps = [
+	['01', 'Подберите модель', 'KWH, KWHV или KWHV 24V — в зависимости от остекления, мощности и требований к управлению.'],
+	['02', 'Укажите параметры', 'Длина, ширина, высота, тип решетки, помещение, город доставки и особенности проекта.'],
+	['03', 'Получите расчет', 'Менеджер уточнит детали, поможет подобрать мощность и подготовит стоимость.'],
+	['04', 'Производство и доставка', 'Конвектор изготавливается под заказ и доставляется по России.'],
+]
+
+const usefulLinks = [
+	['/info/panoramnie-okna', 'Конвекторы для панорамного остекления'],
+	['/info/teplovaya-zavesa-u-panoramnyh-okon', 'Тепловая завеса у панорамных окон'],
+	['/info/vnutripolnye-konvektory-podbor-i-montazh', 'Подбор и монтаж внутрипольных конвекторов'],
+	['/info/kak-vybirat-vnutripolnye-konvektory', 'Как выбирать внутрипольные конвекторы: подробное руководство'],
+	['/info/vnutripolnye-konvektory-prinuditelnaia-vs-estestvennaia-konvekciia', 'Внутрипольные конвекторы с принудительной вентиляцией vs естественная конвекция'],
+	['/info/obsluzhivanie-vnutripolnyh-konvektorov', 'Обслуживание внутрипольных конвекторов и защита системы отопления от магнетита'],
+	['/info/vnutripolnye-konvektory-s-ventilyatorom', 'Внутрипольные конвекторы с вентилятором - плюсы, минусы и когда выбирать'],
+]
+
+const deliveryItems = [
+	['Доставка по России', 'Через транспортные компании, с отправкой до терминала или доставкой до двери в отдельных городах.'],
+	['Жесткая упаковка', 'Груз отправляется в защитной упаковке и со страховкой, если услуга предусмотрена перевозчиком.'],
+	['Удобная оплата', 'Банковский перевод, онлайн-оплата, QR-код, работа с физическими и юридическими лицами.'],
+	['Под заказ', 'Для индивидуального производства заключается договор и вносится предоплата.'],
+]
+
+const faqItems = [
+	['Чем внутрипольный конвектор отличается от обычного радиатора?', 'Внутрипольный конвектор монтируется в нишу пола и закрывается решеткой. Он не занимает стену и помогает создать тепловую завесу вдоль остекления.'],
+	['Когда нужен конвектор с вентилятором?', 'Вентилятор нужен, когда требуется более высокая мощность, активный обогрев у панорамных окон или компенсация заметных теплопотерь.'],
+	['Чем отличаются KWH, KWHV и KWHV 24V?', 'KWH работает без вентиляторов за счет естественной конвекции. KWHV использует вентиляторы. KWHV 24V — версия с низковольтными вентиляторами 24В и гибким управлением.'],
+	['Подходит ли KWH для панорамных окон?', 'Да, если теплопотери умеренные и достаточно спокойной тепловой завесы. Для больших окон и холодных зон чаще рассматривают KWHV или KWHV 24V.'],
+	['Что выбрать для частного дома с большими окнами?', 'Для частного дома с большим остеклением обычно стоит рассматривать модели с вентиляторами: KWHV или KWHV 24V. Точный выбор зависит от расчета теплопотерь.'],
+	['Можно ли установить внутрипольный конвектор в квартире?', 'Да, если есть возможность подготовить нишу в полу и согласовать подключение. На этапе ремонта это сделать проще.'],
+	['Какая высота конвектора нужна?', 'Высота зависит от глубины пола, нужной мощности и типа модели. У Velar есть решения высотой от 65 мм.'],
+	['Как подобрать длину конвектора?', 'Длину подбирают по линии остекления, теплопотерям и доступной нише. Для точного подбора лучше отправить план помещения.'],
+	['Нужно ли обслуживание?', 'Да. Нужно очищать решетку, корпус, теплообменник и проверять вентиляторы в моделях KWHV и KWHV 24V.'],
+	['Можно ли заказать решетку под цвет пола?', 'Да, доступны разные варианты декоративных решеток. Подбор зависит от материала пола, цвета и задачи интерьера.'],
+	['Сколько занимает производство?', 'Ориентировочный срок производства — 2-3 недели без учета доставки. Актуальные сроки уточняйте у менеджера.'],
+	['Как получить точный расчет?', 'Отправьте размеры зоны установки, параметры помещения, город доставки и, если есть, план или фото. Менеджер подготовит расчет.'],
+]
+
+const schema = [
+	{
+		'@context': 'https://schema.org',
+		'@type': 'CollectionPage',
+		name: 'Внутрипольные конвекторы Velar',
+		description: pageDescription,
+		url: canonicalUrl,
+		mainEntity: {
+			'@type': 'ItemList',
+			itemListElement: convectorModels.map((model, index) => ({
+				'@type': 'ListItem',
+				position: index + 1,
+				url: new URL(model.href, canonicalUrl).toString(),
+				item: {
+					'@type': 'Product',
+					name: model.fullName,
+					image: new URL(model.image, canonicalUrl).toString(),
+					description: model.description,
+					brand: { '@type': 'Brand', name: 'Velar' },
+					category: 'Внутрипольные конвекторы',
+					offers: {
+						'@type': 'Offer',
+						priceCurrency: 'RUB',
+						price: model.priceFrom,
+						availability: 'https://schema.org/InStock',
+						url: new URL(model.href, canonicalUrl).toString(),
+					},
+				},
+			})),
+		},
+	},
+	{
+		'@context': 'https://schema.org',
+		'@type': 'FAQPage',
+		mainEntity: faqItems.map(([question, answer]) => ({
+			'@type': 'Question',
+			name: question,
+			acceptedAnswer: { '@type': 'Answer', text: answer },
+		})),
+	},
 ]
 ---
 
-<Layout
-	title='Встраиваемые в пол конвекторы Velar | KWH и KWHV | VelarShop.ru'
-	description='Внутрипольные конвекторы Velar KWH и KWHV: широкий размерный ряд, естественная и принудительная конвекция, доставка по России.'
->
-	<Breadcrumbs items={crumbs} />
-	<h1 class='text-3xl font-bold mt-7 md:mt-5'>
-		Радиаторы Velar внутрипольные конвекторы — каталог
-	</h1>
-	<div class='text-sm max-w-xl mt-3 leading-6'>
-		В каталоге представлены внутрипольные конвекторы Velar. Поможем подобрать
-		модель по размерам, мощности и типу подключения.
-	</div>
+<Layout title={pageTitle} description={pageDescription} canonicalUrl={canonicalUrl} breadcrumbs={breadcrumbs} paddings={false}>
+	<JsonLd data={schema} />
 
-	<ModelList type='convector' />
+	<section class='bg-white pb-12 pt-7 md:pb-16 xl:pb-20'>
+		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,1fr)_220px_minmax(340px,390px)] lg:items-start xl:grid-cols-[minmax(0,1fr)_280px_minmax(360px,420px)] xl:px-8'>
+			<div>
+				<h1 class='max-w-4xl text-[38px] font-semibold leading-[0.98] tracking-tight text-neutral-950 md:text-[54px] xl:text-[64px]'>Внутрипольные конвекторы Velar</h1>
+				<p class='mt-5 max-w-3xl text-[16px] leading-7 text-neutral-700 md:text-lg'>
+					Внутрипольные конвекторы Velar для панорамных окон, квартир, частных домов и коммерческих помещений. Модели с естественной и принудительной конвекцией, широкий размерный ряд, аккуратная установка в пол и производство под заказ.
+				</p>
+				<div class='mt-7 flex flex-wrap gap-3'>
+					<a href='/request' class='inline-flex h-11 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>Получить расчет</a>
+					<a href='#convector-models' class='inline-flex h-11 items-center justify-center rounded-lg border border-neutral-300 px-5 text-sm font-semibold text-neutral-950 transition hover:border-red-700 hover:text-red-700'>Смотреть модели</a>
+				</div>
+				<div class='mt-8 grid gap-3 sm:grid-cols-2'>
+					{trustPoints.map(([title, text]) => (
+						<div class='border-t border-neutral-200 pt-3'>
+							<div class='text-sm font-semibold text-neutral-950'>{title}</div>
+							<div class='mt-1 text-sm leading-5 text-neutral-600'>{text}</div>
+						</div>
+					))}
+				</div>
+			</div>
 
-	<div class='mt-[40px] text-xs font-light max-w-[500px]'>
-		<sup>*</sup> Сроки заказа и доставки зависят от модели, комплектации и
-		выбранного цвета. Актуальные сроки уточняйте у менеджера.
-	</div>
+			<div class='order-3 flex justify-center lg:order-none'>
+				<Picture
+					src='/images/convector/hero/top-view-convector.png'
+					alt='Внутрипольный конвектор Velar вид сверху'
+					title='Внутрипольный конвектор Velar вид сверху'
+					loading='eager'
+					aspectRatio='1:4'
+					widths={[240, 360, 520]}
+					width={360}
+					height={1440}
+					sizes='(max-width: 1024px) 240px, 280px'
+					class='hero-product-image max-h-[360px] w-full object-contain md:max-h-[440px] lg:max-h-[560px]'
+				/>
+			</div>
 
+			<form class='rounded-lg border border-neutral-200 bg-neutral-50 p-5' data-convector-selector>
+				<div class='text-xs uppercase tracking-wide text-neutral-500'>Быстрый подбор</div>
+				<h2 class='mt-2 text-2xl font-semibold leading-tight text-neutral-950'>Подобрать серию</h2>
+				<div class='mt-5 grid gap-4'>
+					<label class='block'>
+						<span class='text-xs uppercase tracking-wide text-neutral-500'>Где будет установлен</span>
+						<select class='mt-2 h-11 w-full rounded-lg border border-neutral-200 bg-white px-3 text-sm text-neutral-950' name='place'>
+							{selectorOptions.place.map(option => <option>{option}</option>)}
+						</select>
+					</label>
+					<label class='block'>
+						<span class='text-xs uppercase tracking-wide text-neutral-500'>Тип конвекции</span>
+						<select class='mt-2 h-11 w-full rounded-lg border border-neutral-200 bg-white px-3 text-sm text-neutral-950' name='convection'>
+							{selectorOptions.convection.map(option => <option>{option}</option>)}
+						</select>
+					</label>
+					<label class='block'>
+						<span class='text-xs uppercase tracking-wide text-neutral-500'>Длина</span>
+						<select class='mt-2 h-11 w-full rounded-lg border border-neutral-200 bg-white px-3 text-sm text-neutral-950' name='length'>
+							{selectorOptions.length.map(option => <option>{option}</option>)}
+						</select>
+					</label>
+					<label class='block'>
+						<span class='text-xs uppercase tracking-wide text-neutral-500'>Глубина / высота</span>
+						<select class='mt-2 h-11 w-full rounded-lg border border-neutral-200 bg-white px-3 text-sm text-neutral-950' name='depth'>
+							{selectorOptions.depth.map(option => <option>{option}</option>)}
+						</select>
+					</label>
+					<label class='block'>
+						<span class='text-xs uppercase tracking-wide text-neutral-500'>Город доставки</span>
+						<input class='mt-2 h-11 w-full rounded-lg border border-neutral-200 bg-white px-3 text-sm text-neutral-950' name='city' placeholder='Например, Санкт-Петербург' />
+					</label>
+				</div>
+				<div class='mt-5 rounded-lg border border-neutral-200 bg-white p-4'>
+					<div class='text-xs uppercase tracking-wide text-neutral-500'>Рекомендуемая серия</div>
+					<div class='mt-1 text-xl font-semibold text-neutral-950' data-result-model>Поможем подобрать</div>
+					<div class='mt-2 text-sm text-neutral-600'>Ориентировочная цена: <span class='font-semibold text-neutral-950' data-result-price>по расчету</span></div>
+					<p class='mt-2 text-xs leading-5 text-neutral-500'>Точный расчет зависит от длины, ширины, высоты, типа решетки и комплектации.</p>
+				</div>
+				<a href='/request' class='mt-4 inline-flex h-11 w-full items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>Получить точный расчет</a>
+				<a href='/request' class='mt-3 inline-flex w-full justify-center text-sm font-semibold text-neutral-700 transition hover:text-red-700'>Прикрепить план помещения</a>
+			</form>
+		</div>
+	</section>
 
-	<section
-  class="justify-center max-w-6xl mx-auto px-5 md:px-10 mt-20"
->
-	<h2 class="text-3xl font-light text-left">Полезные материалы</h2>
-		<div class="mt-2 text-sm leading-relaxed">
-			<ul class="list-disc list-outside pl-4">
-				<li>
-					<a href="/info/panoramnie-okna" class='font-normal underline hover:no-underline'>
-						Конвекторы для панорамного остекления
-					</a>
-				</li>		
-				<li class="mt-1">
-					<a href="/info/teplovaya-zavesa-u-panoramnyh-okon" class='font-normal underline hover:no-underline'>
-						Тепловая завеса у панорамных окон
-					</a>
-				</li>
-				<li class="mt-1">
-					<a href="/info/vnutripolnye-konvektory-podbor-i-montazh" class='font-normal underline hover:no-underline'>
-						Подбор и монтаж внутрипольных конвекторов
-					</a>
-				</li>
-				<li>
-					<a href="/info/kak-vybirat-vnutripolnye-konvektory" class='font-normal underline hover:no-underline'>
-						Как выбирать внутрипольные конвекторы: подробное руководство
-					</a>
-				</li>	
-				<li>
-					<a href="/info/vnutripolnye-konvektory-prinuditelnaia-vs-estestvennaia-konvekciia" class='font-normal underline hover:no-underline'>
-						Внутрипольные конвекторы с принудительной вентиляцией vs естественная конвекция: что выбрать для климата России
-					</a>
-				</li>		
-				<li>
-					<a href="/info/obsluzhivanie-vnutripolnyh-konvektorov" class='font-normal underline hover:no-underline'>
-						Обслуживание внутрипольных конвекторов и защита системы отопления от магнетита
-					</a>
-				</li>
-				<li>
-					<a href="/info/vnutripolnye-konvektory-s-ventilyatorom" class='font-normal underline hover:no-underline'>
-						Внутрипольные конвекторы с вентилятором - плюсы, минусы и когда выбирать
-					</a>
-				</li>
+	<section id='convector-models' class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<div class='max-w-3xl'>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Модели внутрипольных конвекторов Velar</h2>
+				<p class='mt-4 text-[15px] leading-6 text-neutral-600 md:text-base'>Три серии закрывают основные сценарии: естественная конвекция, принудительный обогрев и низковольтные вентиляторы 24В.</p>
+			</div>
+			<div class='mt-8 grid gap-4 md:grid-cols-3'>
+				{convectorModels.map((model, index) => (
+					<article class='flex h-full flex-col overflow-hidden rounded-lg border border-neutral-200 bg-white'>
+						<a href={model.href} class='block bg-neutral-50'>
+							<Picture
+								src={model.image}
+								alt={model.fullName}
+								title={model.fullName}
+								loading={index > 1 ? 'lazy' : 'eager'}
+								aspectRatio='4:3'
+								widths={[360, 520, 720]}
+								width={520}
+								height={390}
+								sizes='(max-width: 768px) 100vw, 33vw'
+								class='h-[220px] w-full object-contain p-5'
+							/>
+						</a>
+						<div class='flex flex-1 flex-col p-5'>
+							<h3 class='text-xl font-semibold leading-tight text-neutral-950'>{model.name}</h3>
+							<p class='mt-2 text-[15px] leading-6 text-neutral-600'>{model.useCase}</p>
+							<dl class='mt-4 grid gap-2 text-sm'>
+								<div class='flex justify-between gap-3 border-t border-neutral-200 pt-2'><dt class='text-neutral-500'>Тип</dt><dd class='text-right font-semibold text-neutral-950'>{model.convectionType}</dd></div>
+								<div class='flex justify-between gap-3 border-t border-neutral-200 pt-2'><dt class='text-neutral-500'>Ширина</dt><dd class='font-semibold text-neutral-950'>{model.width}</dd></div>
+								<div class='flex justify-between gap-3 border-t border-neutral-200 pt-2'><dt class='text-neutral-500'>Высота</dt><dd class='font-semibold text-neutral-950'>{model.height}</dd></div>
+							</dl>
+							<div class='mt-5 text-lg font-semibold text-neutral-950'>от {formatRub(model.priceFrom)}</div>
+							<div class='mt-auto flex flex-wrap gap-2 pt-5 text-sm font-semibold'>
+								<a href={model.href} class='inline-flex h-9 items-center justify-center rounded-lg border border-neutral-300 px-3 text-neutral-950 transition hover:border-red-700 hover:text-red-700'>Подробнее</a>
+								<a href='/request' class='inline-flex h-9 items-center justify-center rounded-lg bg-red-700 px-3 text-white transition hover:bg-red-800'>Получить расчет</a>
+							</div>
+						</div>
+					</article>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class='bg-white py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Чем отличаются KWH, KWHV и KWHV 24V</h2>
+			<div class='mt-7 overflow-x-auto rounded-lg border border-neutral-200 bg-white'>
+				<table class='min-w-[820px] w-full text-left text-sm'>
+					<thead class='bg-neutral-100 text-xs uppercase text-neutral-500'>
+						<tr>
+							<th class='px-4 py-2.5 font-semibold'>Модель</th>
+							<th class='px-4 py-2.5 font-semibold'>Тип конвекции</th>
+							<th class='px-4 py-2.5 font-semibold'>Когда выбрать</th>
+							<th class='px-4 py-2.5 font-semibold'>Особенности</th>
+						</tr>
+					</thead>
+					<tbody class='divide-y divide-neutral-200 text-neutral-700'>
+						{comparisonRows.map(row => (
+							<tr>
+								{row.map((cell, index) => (
+									<td class:list={['px-4 py-3', index === 0 ? 'font-semibold text-neutral-950' : '']}>{cell}</td>
+								))}
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
+			<p class='mt-5 max-w-4xl text-[15px] leading-6 text-neutral-700 md:text-base'>
+				Если конвектор нужен для обычной зоны с умеренными теплопотерями, чаще рассматривают KWH. Для панорамного остекления, холодных зон и помещений с повышенными теплопотерями обычно выбирают KWHV. Версия KWHV 24V подходит для проектов, где важно низковольтное питание вентиляторов и более гибкое управление системой.
+			</p>
+		</div>
+	</section>
+
+	<section class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<div class='max-w-3xl'>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Как выбрать внутрипольный конвектор</h2>
+			</div>
+			<div class='mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3'>
+				{chooseItems.map(([title, text]) => (
+					<div class='rounded-lg border border-neutral-200 bg-white p-5'>
+						<h3 class='text-lg font-semibold text-neutral-950'>{title}</h3>
+						<p class='mt-2 text-[15px] leading-6 text-neutral-600'>{text}</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class='bg-white py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Где устанавливают внутрипольные конвекторы</h2>
+			<div class='mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3'>
+				{useCases.map(([title, text]) => (
+					<div class='border-t border-neutral-200 py-4'>
+						<h3 class='text-lg font-semibold text-neutral-950'>{title}</h3>
+						<p class='mt-2 text-[15px] leading-6 text-neutral-600'>{text}</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class='bg-neutral-950 py-12 text-white md:py-16 xl:py-20'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<div class='max-w-3xl'>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight md:text-[34px] xl:text-[38px]'>Почему выбирают внутрипольные конвекторы Velar</h2>
+			</div>
+			<div class='mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3'>
+				{benefits.map(([title, text]) => (
+					<div class='border-t border-white/15 py-4'>
+						<h3 class='text-lg font-semibold text-white'>{title}</h3>
+						<p class='mt-2 text-[15px] leading-6 text-neutral-300'>{text}</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class='bg-white py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] xl:px-8'>
+			<div>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Внутрипольные конвекторы для панорамных окон</h2>
+				<p class='mt-5 text-[15px] leading-6 text-neutral-700 md:text-base'>
+					Панорамное остекление выглядит эффектно, но требует внимательного подбора отопления. В зоне больших окон часто возникают повышенные теплопотери и ощущение холодного воздуха от стекла. Внутрипольный конвектор устанавливается вдоль линии остекления и помогает сформировать тепловую завесу.
+				</p>
+				<p class='mt-3 text-[15px] leading-6 text-neutral-700 md:text-base'>
+					Для спокойных условий может подойти модель KWH с естественной конвекцией, а для больших окон, частных домов и коммерческих помещений чаще выбирают KWHV или KWHV 24V с вентиляторами.
+				</p>
+			</div>
+			<ul class='content-start divide-y divide-neutral-200 border-y border-neutral-200'>
+				{[
+					['/info/panoramnie-okna', 'Конвекторы для панорамного остекления'],
+					['/info/teplovaya-zavesa-u-panoramnyh-okon', 'Тепловая завеса у панорамных окон'],
+					['/info/vnutripolnye-konvektory-s-ventilyatorom', 'Внутрипольные конвекторы с вентилятором'],
+				].map(([href, title]) => (
+					<li>
+						<a href={href} class='group flex gap-3 py-3.5 text-[15px] leading-6 text-neutral-700 transition hover:text-red-700 md:text-base'>
+							<span class='text-neutral-400 transition group-hover:text-red-700'>→</span>
+							<span>{title}</span>
+						</a>
+					</li>
+				))}
 			</ul>
 		</div>
 	</section>
 
-	<BuyerInfo productTitle='внутрипольные конвекторы Velar' />
+	<section class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Монтаж и обслуживание внутрипольных конвекторов</h2>
+			<div class='mt-8 grid gap-6 md:grid-cols-2'>
+				{[
+					['Монтаж', mountItems],
+					['Обслуживание', serviceItems],
+				].map(([title, items]) => (
+					<div class='rounded-lg border border-neutral-200 bg-white p-5'>
+						<h3 class='text-xl font-semibold text-neutral-950'>{title}</h3>
+						<ul class='mt-4 space-y-3 text-[15px] leading-6 text-neutral-600'>
+							{items.map(item => (
+								<li class='flex gap-3'>
+									<span class='mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-red-700'></span>
+									<span>{item}</span>
+								</li>
+							))}
+						</ul>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class='bg-white py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<div class='max-w-3xl'>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Как заказать внутрипольный конвектор Velar</h2>
+				<p class='mt-4 text-[15px] leading-6 text-neutral-600 md:text-base'>
+					Заказ можно оформить через сайт, телефон, email, онлайн-чат или форму запроса. Если есть план помещения или дизайн-проект, приложите его к заявке.
+				</p>
+			</div>
+			<div class='mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4'>
+				{orderSteps.map(([number, title, text]) => (
+					<div class='rounded-lg border border-neutral-200 bg-white p-5'>
+						<div class='text-sm font-semibold text-red-700'>{number}</div>
+						<h3 class='mt-3 text-lg font-semibold text-neutral-950'>{title}</h3>
+						<p class='mt-2 text-[15px] leading-6 text-neutral-600'>{text}</p>
+					</div>
+				))}
+			</div>
+			<a href='/request' class='mt-7 inline-flex h-11 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>Отправить запрос</a>
+		</div>
+	</section>
+
+	<section class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto max-w-[900px] px-4 md:px-6 xl:px-8'>
+			<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Полезные материалы</h2>
+			<ul class='mt-7 divide-y divide-neutral-200 border-y border-neutral-200 md:columns-2 md:gap-10'>
+				{usefulLinks.map(([href, title]) => (
+					<li class='break-inside-avoid'>
+						<a href={href} class='group flex gap-3 py-3.5 text-[15px] leading-6 text-neutral-700 transition hover:text-red-700 md:text-base'>
+							<span class='text-neutral-400 transition group-hover:text-red-700'>→</span>
+							<span>{title}</span>
+						</a>
+					</li>
+				))}
+			</ul>
+		</div>
+	</section>
+
+	<section class='bg-white py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Доставка и оплата</h2>
+			<div class='mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4'>
+				{deliveryItems.map(([title, text]) => (
+					<div class='rounded-lg border border-neutral-200 bg-white p-5'>
+						<h3 class='text-lg font-semibold text-neutral-950'>{title}</h3>
+						<p class='mt-2 text-[15px] leading-6 text-neutral-600'>{text}</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class='bg-white py-12 md:py-16 xl:py-20'>
+		<div class='mx-auto max-w-[900px] px-4 md:px-6 xl:px-8'>
+			<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Частые вопросы</h2>
+			<div class='mt-6 border-y border-neutral-200'>
+				{faqItems.map(([question, answer]) => (
+					<details class='faq-item group border-b border-neutral-200 py-4 last:border-b-0'>
+						<summary class='flex cursor-pointer list-none items-center justify-between gap-6 text-sm font-semibold text-neutral-950 md:text-base'>
+							<span>{question}</span>
+							<span class='relative h-5 w-5 shrink-0 text-neutral-500' aria-hidden='true'>
+								<span class='absolute left-1/2 top-1/2 h-px w-4 -translate-x-1/2 -translate-y-1/2 bg-current'></span>
+								<span class='absolute left-1/2 top-1/2 h-4 w-px -translate-x-1/2 -translate-y-1/2 bg-current transition group-open:rotate-90 group-open:opacity-0'></span>
+							</span>
+						</summary>
+						<p class='mt-3 text-[15px] leading-6 text-neutral-600'>{answer}</p>
+					</details>
+				))}
+			</div>
+		</div>
+	</section>
 </Layout>
+
+<script>
+	const selector = document.querySelector('[data-convector-selector]')
+	if (selector instanceof HTMLFormElement) {
+		const convection = selector.elements.namedItem('convection')
+		const resultModel = selector.querySelector('[data-result-model]')
+		const resultPrice = selector.querySelector('[data-result-price]')
+		const updateResult = () => {
+			if (!(convection instanceof HTMLSelectElement) || !resultModel || !resultPrice) return
+			const value = convection.value
+			if (value === 'Естественная конвекция') {
+				resultModel.textContent = 'KWH'
+				resultPrice.textContent = 'от 8 348 ₽'
+				return
+			}
+			if (value === 'С вентилятором') {
+				resultModel.textContent = 'KWHV'
+				resultPrice.textContent = 'от 17 582 ₽'
+				return
+			}
+			if (value === 'С вентилятором 24V') {
+				resultModel.textContent = 'KWHV 24V'
+				resultPrice.textContent = 'от 27 442 ₽'
+				return
+			}
+			resultModel.textContent = 'Поможем подобрать по плану'
+			resultPrice.textContent = 'по расчету'
+		}
+		convection?.addEventListener('change', updateResult)
+		updateResult()
+	}
+</script>
+
+<style>
+	.faq-item > summary::-webkit-details-marker {
+		display: none;
+	}
+</style>
