@@ -212,8 +212,8 @@ const ogImageHref = new URL(ogImageUrl, baseUrl).toString()
 			<Header currentPath={Astro.url.pathname} />
 
 			{breadcrumbs.length > 0 && (
-				<div class='border-b border-neutral-100 bg-white'>
-					<div class='mx-auto max-w-[1240px] px-4 py-4 text-[13px] text-neutral-500 md:px-6 md:py-6 xl:px-8'>
+				<div class='bg-white'>
+					<div class='mx-auto max-w-[1240px] px-4 pb-0 pt-3 text-[13px] text-neutral-500 md:px-6 md:pt-5 xl:px-8'>
 						<Breadcrumbs items={breadcrumbs} separator='/' />
 					</div>
 				</div>

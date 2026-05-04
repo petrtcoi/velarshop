@@ -633,7 +633,7 @@ export default function HeroQuickConfigurator({
 									: getAvailableOptions(details, selection, key)
 								const options = isFamilyHeightSwitcher ? familyHeightOptions : isColumnTubeSwitcher ? ['2', '3', '4', '5'] : getDimensionOptions(details, key)
 								const titleByKey: Record<DimensionKey, string> = {
-									tubes: 'Трубок',
+									tubes: 'Трубок в секции',
 									height: 'Высота',
 								sections: 'Секций',
 								length: 'Длина',

@@ -45,15 +45,15 @@ const jsonLd = {
 
 {items.length > 0 && (
   <nav aria-label="Breadcrumb" class={`${className}`}>
-    <ol class="w-full text-xs flex flex-row flex-wrap items-center gap-1">
+    <ol class="w-full text-[13px] flex flex-row flex-wrap items-center gap-1 leading-5">
       {items.map((c, i) => (
         <li>
           {i < lastIndex ? (
-            <a href={c.url} class="font-light hover:underline">{c.title}</a>
+            <a href={c.url} class="font-light text-neutral-500 hover:text-neutral-700 hover:underline">{c.title}</a>
           ) : (
-            <span aria-current="page" class="font-light text-zinc-700">{c.title}</span>
+            <span aria-current="page" class="font-light text-neutral-700">{c.title}</span>
           )}
-          {i < lastIndex && <span  aria-hidden="true" class="font-light ml-1">{separator}</span>}
+          {i < lastIndex && <span  aria-hidden="true" class="font-light ml-1 text-neutral-300">{separator}</span>}
         </li>
       ))}
     </ol>
@@ -65,5 +65,4 @@ const jsonLd = {
 	is:inline
 	set:html={JSON.stringify(jsonLd)}
 />
-
 
