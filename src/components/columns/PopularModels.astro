@@ -8,6 +8,11 @@ type Props = {
 }
 
 const { models } = Astro.props as Props
+const modelOrder = ['3030', '3057', '2180', '3180']
+const orderedModels = modelOrder
+	.map(id => models.find(model => model.id === id))
+	.filter((model): model is ColumnsModelCard => Boolean(model))
+const visibleModels = orderedModels.length === modelOrder.length ? orderedModels : models
 ---
 
 <section id='popular-columns-models' class='bg-white py-8 md:py-10'>
@@ -16,12 +21,12 @@ const { models } = Astro.props as Props
 		<p class={`mt-3 max-w-3xl ${columnsSectionSubtitleClass}`}>
 			Быстрые ссылки на основные модели Velar: низкие, стандартные и высокие трубчатые радиаторы.
 		</p>
-		<div class='-mx-4 mt-6 flex gap-3 overflow-x-auto px-4 pb-1 md:mx-0 md:grid md:grid-cols-2 md:gap-4 md:overflow-visible md:px-0 xl:grid-cols-4'>
+		<div class='mt-6 grid grid-cols-2 gap-3 md:gap-4 xl:grid-cols-4'>
 			{
-				models.map(model => (
+				visibleModels.map(model => (
 					<a
 						href={model.href}
-						class='group flex min-h-[116px] min-w-[248px] items-center gap-3 rounded-[16px] border border-neutral-200 bg-white p-3 transition hover:border-neutral-300 hover:bg-neutral-50 md:min-w-0'
+						class='group flex min-h-[116px] items-start gap-2.5 rounded-[16px] border border-neutral-200 bg-white p-3 transition hover:border-neutral-300 hover:bg-neutral-50 md:gap-3 md:p-3.5'
 					>
 						<Picture
 							src={model.image}
@@ -31,18 +36,16 @@ const { models } = Astro.props as Props
 							aspectRatio='1:1'
 							widths={[120, 180]}
 							width={120}
-							sizes='56px'
-							class='h-14 w-14 shrink-0 rounded-lg bg-neutral-50 object-contain p-1.5'
+							sizes='(max-width: 768px) 48px, 56px'
+							class='h-12 w-12 shrink-0 rounded-lg bg-neutral-50 object-contain p-1.5 md:h-14 md:w-14'
 						/>
-						<div class='min-w-0'>
-							<h3 class='text-[15px] font-semibold leading-5 text-neutral-950 md:text-base'>Velar {model.name}</h3>
-							<p class='mt-1 truncate text-[13px] leading-5 text-neutral-600'>
-								{model.tubeCount} трубки · высота {model.height} мм · {model.sectionsMin}-{model.sectionsMax} секций
+						<div class='min-w-0 flex-1'>
+							<h3 class='text-[14px] font-semibold leading-5 text-neutral-950 md:text-[15px]'>Velar {model.name}</h3>
+							<p class='mt-1 text-[12px] leading-[1.35] text-neutral-600 md:text-[13px]'>
+								{model.tubeCount} трубки · высота {model.height} мм
 							</p>
-							<div class='mt-2 inline-flex items-center gap-1 text-[14px] font-semibold leading-5 text-neutral-950'>
-								<span>от {model.minPrice.toLocaleString('ru-RU')} ₽</span>
-								<span class='text-red-700 transition-transform group-hover:translate-x-0.5'>→</span>
-							</div>
+							<p class='text-[12px] leading-[1.35] text-neutral-600 md:text-[13px]'>{model.sectionsMin}-{model.sectionsMax} секций</p>
+							<p class='mt-2 text-[14px] font-semibold leading-5 text-neutral-950'>от {model.minPrice.toLocaleString('ru-RU')} ₽</p>
 						</div>
 					</a>
 				))
