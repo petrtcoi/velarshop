@@ -2,6 +2,7 @@ import type { APIRoute } from 'astro'
 
 import { columnColors } from '@entities/ColumnsColor'
 import { convectorGrills } from '@entities/ConvectorGrill'
+import { ironcastColors } from '@entities/IroncastColor'
 import { modelsJsonData } from '@entities/Model'
 import { radiatorsJsonData } from '@entities/Radiator'
 import { columnConnections, radiatorConnections } from '@entities/RadiatorConnection'
@@ -32,6 +33,12 @@ function json(data: unknown, status = 200): Response {
 	})
 }
 
+const baseIroncastColor = {
+	id: 'base_color',
+	label: 'Базовый цвет',
+	pricePerSectionRub: 0,
+}
+
 export const get: APIRoute = ({ params }) => {
 	const modelId = params.model
 	const model = modelsJsonData.find(item => item.id === modelId || item.slug === modelId)
@@ -46,10 +53,11 @@ export const get: APIRoute = ({ params }) => {
 	const tubes = model.type === 'columns' ? [model.id.slice(0, 1)] : []
 
 	const { filterByHeight, filterByWidth, filterByLength } = getModelFilters(model)
+	const hasLengthFilter = model.type === 'floor' || filterByLength || (model.type === 'convector' && lengths.length > 0)
 	const initialFilteredRadiators = filterRadiators({
 		radiators,
 		selectedHeight: filterByHeight ? heights[0] ?? ALL : ALL,
-		selectedLength: filterByLength ? lengths[0] ?? ALL : ALL,
+		selectedLength: hasLengthFilter ? lengths[0] ?? ALL : ALL,
 		selectedWidth: filterByWidth ? widths[0] ?? ALL : ALL,
 	})
 
@@ -76,11 +84,11 @@ export const get: APIRoute = ({ params }) => {
 		filters: {
 			height: model.type === 'columns' ? heights.length > 0 : filterByHeight,
 			width: model.type === 'convector' ? widths.length > 0 : filterByWidth,
-			length: filterByLength || (model.type === 'convector' && lengths.length > 0),
+			length: hasLengthFilter,
 			sections: model.type === 'columns' || model.type === 'ironcast' || (model.type === 'design' && sections.length > 1),
 			tubes: model.type === 'columns',
 			connection: connections.length > 0,
-			color: model.type === 'columns',
+			color: model.type === 'columns' || model.type === 'ironcast',
 			grill: model.type === 'convector',
 			addon: Boolean(addon),
 		},
@@ -98,11 +106,20 @@ export const get: APIRoute = ({ params }) => {
 			})),
 			colors: model.type === 'columns'
 				? columnColors.map(color => ({
-					id: color.id,
-					label: color.shortName,
-					multiplicate: color.multiplicate,
-				}))
-				: [],
+						id: color.id,
+						label: color.shortName,
+						multiplicate: color.multiplicate,
+					}))
+				: model.type === 'ironcast'
+					? [
+							baseIroncastColor,
+							...ironcastColors.map(color => ({
+								id: color.id,
+								label: `${color.title} (+${Number.parseInt(color.price_section, 10).toLocaleString('ru-RU')} ₽/секц.)`,
+								pricePerSectionRub: Number.parseInt(color.price_section, 10),
+							})),
+						]
+					: [],
 			grills: model.type === 'convector'
 				? convectorGrills.map(grill => ({
 					id: grill.id,

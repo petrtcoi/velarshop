@@ -4,8 +4,11 @@ import { modelsJsonData } from '@entities/Model'
 import { radiatorsJsonData } from '@entities/Radiator'
 import Layout from '@shared/layouts/Layout.astro'
 import { getModelSlug } from '@shared/utils/getModelSlug'
+import HeroQuickConfigurator from '@widgets/pageMain/HeroQuickConfigurator'
+import type { ModelDetails } from '@widgets/pageMain/HeroQuickConfigurator'
+import { buildQuickConfiguratorModels } from '@widgets/pageMain/quickConfiguratorData'
+import { get as getHeroConfiguratorData } from './api/hero-configurator/[model].json'
 import JsonLd from '../components/seo/JsonLd.astro'
-import RetroQuickSelector from '../components/retro/RetroQuickSelector'
 
 const canonicalUrl = 'https://velarshop.ru/retro/'
 const pageTitle = 'Чугунные ретро-радиаторы Velar | выгодные цены | VelarShop.ru'
@@ -48,6 +51,22 @@ const modelCopy: Record<string, { description: string; short: string }> = {
 }
 
 const preferredModelOrder = ['nostalgia500', 'historic500', 'nostalgia300', 'historic300']
+const retroConfiguratorMap = new Map(buildQuickConfiguratorModels({ type: 'ironcast' }).map(model => [model.id, model]))
+const retroConfiguratorModels = preferredModelOrder
+	.map(id => retroConfiguratorMap.get(id))
+	.filter((model): model is NonNullable<typeof model> => Boolean(model))
+const defaultRetroModelId = retroConfiguratorModels.find(model => model.id === 'nostalgia500')?.id ?? retroConfiguratorModels[0]?.id ?? 'nostalgia500'
+let initialRetroDetails: ModelDetails | null = null
+
+try {
+	const response = await getHeroConfiguratorData({
+		params: { model: defaultRetroModelId },
+	} as any)
+	if (response.ok) initialRetroDetails = (await response.json()) as ModelDetails
+} catch (error) {
+	console.error('Failed to preload retro configurator model:', error)
+}
+
 const retroModels = preferredModelOrder
 	.map(id => modelsJsonData.find(model => model.id === id))
 	.filter(Boolean)
@@ -234,10 +253,7 @@ const organizationJsonLd = {
 					Чугунные ретро-радиаторы Velar
 				</h1>
 				<p class='mt-5 max-w-[620px] text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>
-					Чугунные ретро-радиаторы Velar подходят для классических интерьеров, лофта, винтажных проектов, ресторанов, отелей и загородных домов. В каталоге представлены модели с выразительным орнаментом и более сдержанным историческим силуэтом.
-				</p>
-				<p class='mt-3 max-w-[620px] text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>
-					Радиаторы можно окрасить в любой цвет RAL, выполнить патинацию, выделить орнамент оттенками золота, бронзы, серебра или меди. Срок производства чугунных ретро-радиаторов — от 2 недель без учета доставки.
+					Чугунные ретро-радиаторы Velar подходят для классических интерьеров, лофта, ресторанов, отелей и загородных домов. В каталоге представлены модели с выразительным орнаментом и более сдержанным историческим силуэтом. Радиаторы можно окрасить в любой цвет RAL, выполнить патинацию или выделить орнамент оттенками золота, бронзы, серебра и меди.
 				</p>
 				<div class='mt-7 flex flex-col gap-3 min-[420px]:flex-row'>
 					<a href='/request' class='inline-flex h-11 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>
@@ -247,9 +263,9 @@ const organizationJsonLd = {
 						Смотреть модели
 					</a>
 				</div>
-				<div class='mt-7 flex flex-wrap items-center gap-x-7 gap-y-3 text-[13px] leading-tight text-neutral-700 md:text-sm'>
+				<div class='mt-7 grid max-w-[720px] grid-cols-1 gap-x-8 gap-y-5 text-[13px] leading-tight text-neutral-700 min-[520px]:grid-cols-2 md:text-sm'>
 					{trustPoints.map(item => (
-						<div class='inline-flex items-center gap-2.5'>
+						<div class='flex items-start gap-2.5'>
 							<span class='inline-flex h-5 w-5 shrink-0 items-center justify-center text-red-700' aria-hidden='true'>
 								<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='h-5 w-5' set:html={iconSvg[item.icon]} />
 							</span>
@@ -268,7 +284,7 @@ const organizationJsonLd = {
 					alt='Вертикальная секция чугунного ретро-радиатора Velar Nostalgia'
 					title='Вертикальная секция чугунного ретро-радиатора Velar Nostalgia'
 					loading='eager'
-					class='h-auto max-h-[520px] w-full max-w-[220px] object-contain'
+					class='h-auto max-h-[660px] w-full max-w-[260px] object-contain'
 				/>
 			</div>
 
@@ -279,11 +295,18 @@ const organizationJsonLd = {
 						alt='Вертикальная секция чугунного ретро-радиатора Velar Nostalgia'
 						title='Вертикальная секция чугунного ретро-радиатора Velar Nostalgia'
 						loading='lazy'
-						class='h-auto max-h-[430px] w-full max-w-[180px] object-contain'
+						class='h-auto max-h-[540px] w-full max-w-[210px] object-contain'
 					/>
 				</div>
 
-				<RetroQuickSelector client:load models={retroModels} />
+				<HeroQuickConfigurator
+					client:load
+					models={retroConfiguratorModels}
+					defaultModelId={defaultRetroModelId}
+					initialDetails={initialRetroDetails}
+					variant='category'
+					title='Быстрый выбор'
+				/>
 			</div>
 		</div>
 	</section>
@@ -294,45 +317,51 @@ const organizationJsonLd = {
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Модели чугунных ретро-радиаторов</h2>
 				<p class='mt-3 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>Всего 4 модели: две серии и две высоты. Выбор зависит от стиля интерьера, места установки и нужной мощности.</p>
 			</div>
-			<div class='mt-8 grid gap-4 md:grid-cols-3 min-[1180px]:grid-cols-2 min-[1180px]:gap-6'>
+			<div class='mt-7 flex flex-col gap-4 md:flex-row md:flex-wrap md:justify-center md:gap-6'>
 				{retroModels.map(model => (
-					<article class='flex flex-col rounded-[18px] border border-neutral-200 bg-white p-4 transition hover:border-neutral-300 hover:bg-neutral-50 min-[1180px]:p-5'>
-						<a href={model.href} class='block'>
+					<article class='flex w-full flex-col rounded-[18px] border border-neutral-200 bg-white p-3.5 transition hover:border-neutral-300 hover:bg-neutral-50 md:max-w-[280px] md:p-4'>
+						<a href={model.href} class='retro-model-image-wrapper flex h-[240px] w-full items-center justify-center overflow-hidden rounded-xl bg-white md:h-[240px] min-[900px]:h-[250px] min-[1280px]:h-[260px] min-[1440px]:h-[280px]'>
 							<Picture
 								src={model.image}
 								alt={`Чугунный ретро-радиатор ${model.title}`}
 								title={`Чугунный ретро-радиатор ${model.title}`}
 								loading='lazy'
 								aspectRatio='1:1'
-								widths={[280, 420, 640]}
-								width={320}
-								sizes='(max-width: 768px) 100vw, 25vw'
-								class='aspect-square w-full rounded-xl bg-neutral-50 object-contain p-3 min-[1180px]:p-5'
+								widths={[220, 320, 420]}
+								width={260}
+								sizes='(max-width: 640px) 100vw, (max-width: 1279px) 50vw, 25vw'
+								class='retro-model-image block h-auto w-full max-w-full object-contain'
 							/>
 						</a>
-						<h3 class='mt-4 text-lg font-semibold leading-tight text-neutral-950 min-[1180px]:text-xl'>{model.title}</h3>
-						<p class='mt-2 text-[14px] leading-[1.45] text-neutral-600 min-[1180px]:text-[15px] min-[1180px]:leading-[1.5]'>{model.description}</p>
-						<div class='mt-4 grid gap-1.5 border-t border-neutral-200 pt-4 text-[13px] text-neutral-700 min-[1180px]:gap-2 min-[1180px]:text-sm'>
+						<h3 class='mt-3 text-[17px] font-semibold leading-tight text-neutral-950 min-[1280px]:text-lg'>{model.title}</h3>
+						<p class='mt-1.5 text-[14px] leading-[1.42] text-neutral-600'>{model.description}</p>
+						<div class='mt-3 grid gap-1.5 border-t border-neutral-200 pt-3 text-[13px] leading-5 text-neutral-700'>
 							<div><span class='text-neutral-500'>Высота:</span> {model.height}</div>
 							<div><span class='text-neutral-500'>Глубина:</span> {model.width}</div>
 							{model.dt70 && <div><span class='text-neutral-500'>Теплоотдача:</span> {model.dt70} Вт/секц.</div>}
 							<div><span class='text-neutral-500'>Вес:</span> {model.weight}</div>
-							<div><span class='text-neutral-500'>Срок:</span> от 2 недель</div>
+							<div><span class='text-neutral-500'>Производство:</span> от 2 недель</div>
 						</div>
-						<div class='mt-4 text-base font-semibold text-neutral-950 min-[1180px]:text-lg'>от {formatRub(model.priceFrom)}</div>
-						<div class='mt-auto grid grid-cols-2 gap-2 pt-4'>
-							<a href={model.href} class='inline-flex h-10 items-center justify-center rounded-lg border border-neutral-300 bg-white px-3 text-sm font-semibold text-neutral-950 transition hover:border-neutral-400 hover:bg-white'>
+						<div class='mt-3 text-base font-semibold text-neutral-950'>от {formatRub(model.priceFrom)}</div>
+						<div class='mt-auto pt-3'>
+							<a href={model.href} class='inline-flex h-9 w-full items-center justify-center rounded-lg border border-neutral-300 bg-white px-3 text-[13px] font-semibold text-neutral-950 transition hover:border-neutral-400 hover:bg-white'>
 								Подробнее
-							</a>
-							<a href='/request' class='inline-flex h-10 items-center justify-center rounded-lg bg-red-700 px-3 text-sm font-semibold text-white transition hover:bg-red-800'>
-								Расчет
 							</a>
 						</div>
 					</article>
 				))}
 			</div>
-			<p class='mt-6 max-w-3xl text-sm leading-6 text-neutral-600'>
-				<sup>*</sup> Указан срок производства без учета времени доставки. В некоторых случаях срок производства чугунных ретро-радиаторов может быть увеличен в зависимости от загруженности производства. Актуальные сроки уточняйте у менеджера.
+			<div class='mt-6 rounded-2xl border border-neutral-200 bg-neutral-50 p-5 md:p-6'>
+				<h3 class='text-xl font-semibold leading-tight text-neutral-950 md:text-2xl'>Нужен расчет ретро-радиатора под помещение?</h3>
+				<p class='mt-2 text-sm leading-6 text-neutral-700 md:text-base'>
+					Подберем модель, количество секций, цвет, вариант подключения и сориентируем по срокам производства.
+				</p>
+				<a href='/request' class='mt-4 inline-flex h-10 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>
+					Получить расчет
+				</a>
+			</div>
+			<p class='mt-4 max-w-3xl text-sm leading-6 text-neutral-600'>
+				<sup>*</sup> Точный срок зависит от комплектации, цвета и текущей загрузки производства.
 			</p>
 		</div>
 	</section>
@@ -540,6 +569,23 @@ const organizationJsonLd = {
 </Layout>
 
 <style>
+	.retro-model-image-wrapper :global(picture) {
+		display: flex;
+		width: 100%;
+		height: 100%;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.retro-model-image-wrapper :global(img) {
+		display: block;
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+		max-height: 100%;
+		object-fit: contain;
+	}
+
 	.faq-item > summary::-webkit-details-marker {
 		display: none;
 	}

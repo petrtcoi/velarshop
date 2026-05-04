@@ -23,6 +23,7 @@ type SelectOption = {
 	label: string
 	code?: string
 	priceRub?: number
+	pricePerSectionRub?: number
 	multiplicate?: number
 	priceId?: string
 }
@@ -245,6 +246,10 @@ function getSelectionSummary(details: ModelDetails, variant: Variant, selection:
 	return parts.filter(Boolean).join(' / ')
 }
 
+function getVariantSizeLabel(variant: Variant): string {
+	return [variant.height, variant.length, variant.width].filter(Boolean).join(' × ')
+}
+
 function InlineSelect({
 	label,
 	value,
@@ -339,6 +344,9 @@ function getTotalPrice(details: ModelDetails, variant: Variant, selection: Selec
 
 	const color = details.options.colors.find(item => item.id === selection.color)
 	if (details.model.type === 'columns' && color?.multiplicate) price *= color.multiplicate
+	if (details.model.type === 'ironcast' && color?.pricePerSectionRub) {
+		price += color.pricePerSectionRub * parsePrice(variant.sections)
+	}
 
 	const connection = details.options.connections.find(item => item.id === selection.connection)
 	price += connection?.priceRub ?? 0
@@ -471,6 +479,7 @@ export default function HeroQuickConfigurator({
 	const result = matchedVariants[0]
 	const totalPrice = details && result ? getTotalPrice(details, result, selection) : 0
 	const summary = details && result ? getSelectionSummary(details, result, selection) : ''
+	const sizeLabel = result ? getVariantSizeLabel(result) : ''
 	const itemTitle = details && result ? `${result.title}${summary ? `, ${summary}` : ''}` : ''
 	const itemInCartQnty = shoppingCart.items.find(item => item.title === itemTitle)?.qnty ?? 0
 
@@ -494,12 +503,19 @@ export default function HeroQuickConfigurator({
 		removeFromCart({ title: itemTitle })
 	}
 
-		const isModal = variant === 'modal'
-		const isCategory = variant === 'category'
-		const useFamilyByHeight = modelResolutionMode === 'family-by-height'
+	const isModal = variant === 'modal'
+	const isCategory = variant === 'category'
+	const useFamilyByHeight = modelResolutionMode === 'family-by-height'
+	const isFloorModel = details?.model.type === 'floor'
 	const titleClass = isModal ? 'text-md font-semibold tracking-tight' : 'text-md font-semibold tracking-tight md:text-lg'
 	const contentSpacingClass = isModal ? 'mt-3.5 space-y-2.5' : 'mt-3.5 space-y-3 md:mt-4 md:space-y-3'
-	const gridGapClass = isModal ? 'grid grid-cols-2 gap-x-2 gap-y-2.5' : 'grid grid-cols-2 gap-x-2.5 gap-y-3 md:gap-2.5'
+	const gridGapClass = isFloorModel
+		? isModal
+			? 'grid grid-cols-1 gap-x-2 gap-y-2.5'
+			: 'grid grid-cols-1 gap-x-2.5 gap-y-3 md:grid-cols-2 md:gap-2.5'
+		: isModal
+			? 'grid grid-cols-2 gap-x-2 gap-y-2.5'
+			: 'grid grid-cols-2 gap-x-2.5 gap-y-3 md:gap-2.5'
 	const configuratorTitle = title ?? (isCategory ? 'Быстрый подбор' : 'Быстрый выбор')
 
 	return (
@@ -681,7 +697,7 @@ export default function HeroQuickConfigurator({
 
 						{details.filters.color && details.options.colors.length > 0 && (
 							<InlineSelect
-								label='Цвет'
+								label={details.model.type === 'ironcast' ? 'Отделка / цвет' : 'Цвет'}
 								value={selection.color}
 								options={details.options.colors.map(option => ({ value: option.id, label: option.label }))}
 								onChange={value => setSelection(current => ({ ...current, color: value }))}
@@ -726,6 +742,11 @@ export default function HeroQuickConfigurator({
 								{result.title}
 							</a>
 							<div class={`mt-2 text-[11px] leading-tight text-neutral-500 ${isModal ? '' : 'md:mt-0.5 md:text-xs'}`}>{summary}</div>
+							{details.model.type === 'ironcast' && sizeLabel && (
+								<div class='mt-1.5 text-[11px] leading-tight text-neutral-500 md:text-xs'>
+									Размер: {sizeLabel} мм
+								</div>
+							)}
 							<div class={`mt-3 flex items-end justify-between gap-2.5 ${isModal ? '' : 'md:mt-3 md:gap-3'}`}>
 								<div>
 									{totalPrice > 0 && (
@@ -739,7 +760,7 @@ export default function HeroQuickConfigurator({
 										</div>
 									)}
 								</div>
-								{matchedVariants.length > 1 && (
+								{!isFloorModel && matchedVariants.length > 1 && (
 									<a
 										href={details.model.href}
 										onClick={() => onNavigate?.()}
@@ -805,7 +826,14 @@ export default function HeroQuickConfigurator({
 						</div>
 					) : (
 						<div class='rounded-xl border border-neutral-200 bg-neutral-50 p-3 text-[13px] text-neutral-600 md:p-4 md:text-sm'>
-							Для выбранных параметров нет варианта. Измените один из размеров.
+							{isFloorModel ? (
+								<>
+									<div>Для выбранной длины нет варианта с таким подключением.</div>
+									<div class='mt-1'>Выберите другую длину или тип подключения.</div>
+								</>
+							) : (
+								<div>Для выбранных параметров нет варианта. Измените один из размеров.</div>
+							)}
 						</div>
 					)}
 

@@ -1,6 +1,10 @@
 ---
 import { Picture } from '@astrojs/image/components'
 import Layout from '@shared/layouts/Layout.astro'
+import HeroQuickConfigurator from '@widgets/pageMain/HeroQuickConfigurator'
+import type { ModelDetails } from '@widgets/pageMain/HeroQuickConfigurator'
+import { buildQuickConfiguratorModels } from '@widgets/pageMain/quickConfiguratorData'
+import { get as getHeroConfiguratorData } from './api/hero-configurator/[model].json'
 import JsonLd from '../components/seo/JsonLd.astro'
 
 const canonicalUrl = 'https://velarshop.ru/convector/'
@@ -55,6 +59,23 @@ const convectorModels = [
 	},
 ]
 
+const convectorModelOrder = ['kwh', 'kwhv', 'kwhv24']
+const convectorConfiguratorMap = new Map(buildQuickConfiguratorModels({ type: 'convector' }).map(model => [model.id, model]))
+const convectorConfiguratorModels = convectorModelOrder
+	.map(id => convectorConfiguratorMap.get(id))
+	.filter((model): model is NonNullable<typeof model> => Boolean(model))
+const defaultConvectorModelId = convectorConfiguratorModels.find(model => model.id === 'kwh')?.id ?? convectorConfiguratorModels[0]?.id ?? 'kwh'
+let initialConvectorDetails: ModelDetails | null = null
+
+try {
+	const response = await getHeroConfiguratorData({
+		params: { model: defaultConvectorModelId },
+	} as any)
+	if (response.ok) initialConvectorDetails = (await response.json()) as ModelDetails
+} catch (error) {
+	console.error('Failed to preload convector configurator model:', error)
+}
+
 function formatRub(value: number): string {
 	return `${value.toLocaleString('ru-RU')} ₽`
 }
@@ -65,13 +86,6 @@ const trustPoints = [
 	['Низкий монтаж в пол', 'высота от 65 мм'],
 	['Производство под заказ', 'срок 2-3 недели'],
 ]
-
-const selectorOptions = {
-	place: ['Панорамное окно', 'Балконная дверь', 'Частный дом', 'Квартира', 'Офис / коммерческое помещение', 'Зона с повышенными теплопотерями'],
-	convection: ['Не знаю, нужна консультация', 'Естественная конвекция', 'С вентилятором', 'С вентилятором 24V'],
-	length: ['до 1000 мм', '1000-1500 мм', '1500-2000 мм', '2000+ мм', 'нужна нестандартная длина'],
-	depth: ['минимальная высота', 'стандартная', 'подберем по проекту'],
-}
 
 const comparisonRows = [
 	['KWH', 'естественная', 'когда достаточно спокойной тепловой завесы без вентиляторов', 'простая конструкция, тихая работа'],
@@ -245,87 +259,54 @@ const schema = [
 				/>
 			</div>
 
-			<form class='rounded-lg border border-neutral-200 bg-neutral-50 p-5' data-convector-selector>
-				<div class='text-xs uppercase tracking-wide text-neutral-500'>Быстрый подбор</div>
-				<h2 class='mt-2 text-2xl font-semibold leading-tight text-neutral-950'>Подобрать серию</h2>
-				<div class='mt-5 grid gap-4'>
-					<label class='block'>
-						<span class='text-xs uppercase tracking-wide text-neutral-500'>Где будет установлен</span>
-						<select class='mt-2 h-11 w-full rounded-lg border border-neutral-200 bg-white px-3 text-sm text-neutral-950' name='place'>
-							{selectorOptions.place.map(option => <option>{option}</option>)}
-						</select>
-					</label>
-					<label class='block'>
-						<span class='text-xs uppercase tracking-wide text-neutral-500'>Тип конвекции</span>
-						<select class='mt-2 h-11 w-full rounded-lg border border-neutral-200 bg-white px-3 text-sm text-neutral-950' name='convection'>
-							{selectorOptions.convection.map(option => <option>{option}</option>)}
-						</select>
-					</label>
-					<label class='block'>
-						<span class='text-xs uppercase tracking-wide text-neutral-500'>Длина</span>
-						<select class='mt-2 h-11 w-full rounded-lg border border-neutral-200 bg-white px-3 text-sm text-neutral-950' name='length'>
-							{selectorOptions.length.map(option => <option>{option}</option>)}
-						</select>
-					</label>
-					<label class='block'>
-						<span class='text-xs uppercase tracking-wide text-neutral-500'>Глубина / высота</span>
-						<select class='mt-2 h-11 w-full rounded-lg border border-neutral-200 bg-white px-3 text-sm text-neutral-950' name='depth'>
-							{selectorOptions.depth.map(option => <option>{option}</option>)}
-						</select>
-					</label>
-					<label class='block'>
-						<span class='text-xs uppercase tracking-wide text-neutral-500'>Город доставки</span>
-						<input class='mt-2 h-11 w-full rounded-lg border border-neutral-200 bg-white px-3 text-sm text-neutral-950' name='city' placeholder='Например, Санкт-Петербург' />
-					</label>
-				</div>
-				<div class='mt-5 rounded-lg border border-neutral-200 bg-white p-4'>
-					<div class='text-xs uppercase tracking-wide text-neutral-500'>Рекомендуемая серия</div>
-					<div class='mt-1 text-xl font-semibold text-neutral-950' data-result-model>Поможем подобрать</div>
-					<div class='mt-2 text-sm text-neutral-600'>Ориентировочная цена: <span class='font-semibold text-neutral-950' data-result-price>по расчету</span></div>
-					<p class='mt-2 text-xs leading-5 text-neutral-500'>Точный расчет зависит от длины, ширины, высоты, типа решетки и комплектации.</p>
-				</div>
-				<a href='/request' class='mt-4 inline-flex h-11 w-full items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>Получить точный расчет</a>
-				<a href='/request' class='mt-3 inline-flex w-full justify-center text-sm font-semibold text-neutral-700 transition hover:text-red-700'>Прикрепить план помещения</a>
-			</form>
+			<div class='min-w-0'>
+				<HeroQuickConfigurator
+					client:load
+					models={convectorConfiguratorModels}
+					defaultModelId={defaultConvectorModelId}
+					initialDetails={initialConvectorDetails}
+					variant='category'
+					title='Быстрый выбор'
+				/>
+			</div>
 		</div>
 	</section>
 
-	<section id='convector-models' class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
+	<section id='convector-models' class='bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-3xl'>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Модели внутрипольных конвекторов Velar</h2>
 				<p class='mt-4 text-[15px] leading-6 text-neutral-600 md:text-base'>Три серии закрывают основные сценарии: естественная конвекция, принудительный обогрев и низковольтные вентиляторы 24В.</p>
 			</div>
-			<div class='mt-8 grid gap-4 md:grid-cols-3'>
+			<div class='mt-7 flex flex-col gap-4 md:flex-row md:flex-wrap md:justify-center md:gap-6'>
 				{convectorModels.map((model, index) => (
-					<article class='flex h-full flex-col overflow-hidden rounded-lg border border-neutral-200 bg-white'>
-						<a href={model.href} class='block bg-neutral-50'>
+					<article class='flex w-full flex-col rounded-[18px] border border-neutral-200 bg-white p-3.5 transition hover:border-neutral-300 hover:bg-neutral-50 md:max-w-[280px] md:p-4'>
+						<a href={model.href} class='convector-model-image-wrapper flex h-[240px] w-full items-center justify-center overflow-hidden rounded-xl bg-white md:h-[240px] min-[900px]:h-[250px] min-[1280px]:h-[260px] min-[1440px]:h-[280px]'>
 							<Picture
 								src={model.image}
 								alt={model.fullName}
 								title={model.fullName}
 								loading={index > 1 ? 'lazy' : 'eager'}
 								aspectRatio='4:3'
-								widths={[360, 520, 720]}
-								width={520}
-								height={390}
-								sizes='(max-width: 768px) 100vw, 33vw'
-								class='h-[220px] w-full object-contain p-5'
+								widths={[220, 320, 420]}
+								width={260}
+								height={195}
+								sizes='(max-width: 640px) 100vw, (max-width: 1279px) 50vw, 25vw'
+								class='convector-model-image block h-auto w-full max-w-full object-contain'
 							/>
 						</a>
-						<div class='flex flex-1 flex-col p-5'>
-							<h3 class='text-xl font-semibold leading-tight text-neutral-950'>{model.name}</h3>
-							<p class='mt-2 text-[15px] leading-6 text-neutral-600'>{model.useCase}</p>
-							<dl class='mt-4 grid gap-2 text-sm'>
-								<div class='flex justify-between gap-3 border-t border-neutral-200 pt-2'><dt class='text-neutral-500'>Тип</dt><dd class='text-right font-semibold text-neutral-950'>{model.convectionType}</dd></div>
-								<div class='flex justify-between gap-3 border-t border-neutral-200 pt-2'><dt class='text-neutral-500'>Ширина</dt><dd class='font-semibold text-neutral-950'>{model.width}</dd></div>
-								<div class='flex justify-between gap-3 border-t border-neutral-200 pt-2'><dt class='text-neutral-500'>Высота</dt><dd class='font-semibold text-neutral-950'>{model.height}</dd></div>
-							</dl>
-							<div class='mt-5 text-lg font-semibold text-neutral-950'>от {formatRub(model.priceFrom)}</div>
-							<div class='mt-auto flex flex-wrap gap-2 pt-5 text-sm font-semibold'>
-								<a href={model.href} class='inline-flex h-9 items-center justify-center rounded-lg border border-neutral-300 px-3 text-neutral-950 transition hover:border-red-700 hover:text-red-700'>Подробнее</a>
-								<a href='/request' class='inline-flex h-9 items-center justify-center rounded-lg bg-red-700 px-3 text-white transition hover:bg-red-800'>Получить расчет</a>
-							</div>
+						<h3 class='mt-3 text-[17px] font-semibold leading-tight text-neutral-950 min-[1280px]:text-lg'>{model.name}</h3>
+						<p class='mt-1.5 text-[14px] leading-[1.42] text-neutral-600'>{model.useCase}</p>
+						<div class='mt-3 grid gap-1.5 border-t border-neutral-200 pt-3 text-[13px] leading-5 text-neutral-700'>
+							<div><span class='text-neutral-500'>Тип:</span> {model.convectionType}</div>
+							<div><span class='text-neutral-500'>Ширина:</span> {model.width}</div>
+							<div><span class='text-neutral-500'>Высота:</span> {model.height}</div>
+						</div>
+						<div class='mt-3 text-base font-semibold text-neutral-950'>от {formatRub(model.priceFrom)}</div>
+						<div class='mt-auto pt-3'>
+							<a href={model.href} class='inline-flex h-9 w-full items-center justify-center rounded-lg border border-neutral-300 bg-white px-3 text-[13px] font-semibold text-neutral-950 transition hover:border-neutral-400 hover:bg-white'>
+								Подробнее
+							</a>
 						</div>
 					</article>
 				))}
@@ -533,39 +514,24 @@ const schema = [
 	</section>
 </Layout>
 
-<script>
-	const selector = document.querySelector('[data-convector-selector]')
-	if (selector instanceof HTMLFormElement) {
-		const convection = selector.elements.namedItem('convection')
-		const resultModel = selector.querySelector('[data-result-model]')
-		const resultPrice = selector.querySelector('[data-result-price]')
-		const updateResult = () => {
-			if (!(convection instanceof HTMLSelectElement) || !resultModel || !resultPrice) return
-			const value = convection.value
-			if (value === 'Естественная конвекция') {
-				resultModel.textContent = 'KWH'
-				resultPrice.textContent = 'от 8 348 ₽'
-				return
-			}
-			if (value === 'С вентилятором') {
-				resultModel.textContent = 'KWHV'
-				resultPrice.textContent = 'от 17 582 ₽'
-				return
-			}
-			if (value === 'С вентилятором 24V') {
-				resultModel.textContent = 'KWHV 24V'
-				resultPrice.textContent = 'от 27 442 ₽'
-				return
-			}
-			resultModel.textContent = 'Поможем подобрать по плану'
-			resultPrice.textContent = 'по расчету'
-		}
-		convection?.addEventListener('change', updateResult)
-		updateResult()
-	}
-</script>
-
 <style>
+	.convector-model-image-wrapper :global(picture) {
+		display: flex;
+		width: 100%;
+		height: 100%;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.convector-model-image-wrapper :global(img) {
+		display: block;
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+		max-height: 100%;
+		object-fit: contain;
+	}
+
 	.faq-item > summary::-webkit-details-marker {
 		display: none;
 	}
