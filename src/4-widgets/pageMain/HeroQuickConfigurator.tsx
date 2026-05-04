@@ -4,6 +4,8 @@ import { useEffect, useMemo, useRef, useState } from 'preact/hooks'
 
 type ModelType = 'design' | 'floor' | 'convector' | 'ironcast' | 'columns'
 type Orientation = 'vertical' | 'horizontal' | ''
+type ModelResolutionMode = 'exact-model' | 'family-by-height'
+type ConfiguratorCategory = 'tubular' | 'retro'
 
 export type ModelOption = {
 	id: string
@@ -70,7 +72,10 @@ type Props = {
 	models: ModelOption[]
 	defaultModelId?: string
 	initialDetails?: ModelDetails | null
-	variant?: 'hero' | 'modal'
+	variant?: 'hero' | 'modal' | 'category'
+	title?: string
+	modelResolutionMode?: ModelResolutionMode
+	category?: ConfiguratorCategory
 	onNavigate?: () => void
 }
 
@@ -135,10 +140,54 @@ function getDimensionOptions(details: ModelDetails, key: DimensionKey): string[]
 	return details.options.tubes
 }
 
+function getColumnTubeModelId(models: ModelOption[], currentModelId: string, tubes: string): string | undefined {
+	const suffix = currentModelId.slice(1)
+	return models.find(model => model.type === 'columns' && model.id === `${tubes}${suffix}`)?.id
+}
+
+function getModelHeight(model: ModelOption): string | undefined {
+	if (model.type === 'columns') {
+		const heightFromDescription = model.search.match(/высот\D+(\d+)/i)?.[1]
+		if (heightFromDescription) return heightFromDescription
+
+		const suffix = model.id.slice(1)
+		const height = Number.parseInt(suffix, 10) * 10
+		return Number.isFinite(height) ? String(height) : undefined
+	}
+
+	if (model.type === 'ironcast') {
+		const match = model.id.match(/(300|500)$/)
+		return match?.[1]
+	}
+
+	return undefined
+}
+
+function getFamilyKey(model: ModelOption): string {
+	if (model.type === 'columns') return `columns:${model.id.slice(0, 1)}`
+	if (model.type === 'ironcast') return `ironcast:${model.id.replace(/(300|500)$/, '')}`
+	return `${model.type}:${model.id}`
+}
+
+function getFamilyModelsByHeight(models: ModelOption[], currentModel: ModelOption): ModelOption[] {
+	const familyKey = getFamilyKey(currentModel)
+	return models
+		.filter(model => getFamilyKey(model) === familyKey && getModelHeight(model))
+		.sort((a, b) => Number(getModelHeight(a) ?? 0) - Number(getModelHeight(b) ?? 0))
+}
+
+function getFamilyHeightOptions(models: ModelOption[], currentModel: ModelOption): string[] {
+	return [...new Set(getFamilyModelsByHeight(models, currentModel).map(model => getModelHeight(model)).filter(Boolean) as string[])]
+}
+
+function getFamilyModelIdByHeight(models: ModelOption[], currentModel: ModelOption, height: string): string | undefined {
+	return getFamilyModelsByHeight(models, currentModel).find(model => getModelHeight(model) === height)?.id
+}
+
 function optionLabel(key: DimensionKey, value: string): string {
 	if (key === 'height' || key === 'width' || key === 'length') return `${value} мм`
 	if (key === 'sections') return `${value} сек.`
-	if (key === 'tubes') return `${value} трубки`
+	if (key === 'tubes') return `${value} ${value === '2' || value === '3' || value === '4' ? 'трубки' : 'труб'}`
 	return value
 }
 
@@ -313,6 +362,8 @@ export default function HeroQuickConfigurator({
 	defaultModelId = '3030',
 	initialDetails = null,
 	variant = 'hero',
+	title,
+	modelResolutionMode = 'exact-model',
 	onNavigate,
 }: Props) {
 	const shoppingCart = useStore(storeShoppingCart)
@@ -433,7 +484,7 @@ export default function HeroQuickConfigurator({
 			title: itemTitle,
 			price: totalPrice,
 			details: `${result.height}x${result.length}x${result.width} мм${result.dt70 ? ` / ${result.dt70} Вт` : ''}`,
-			linkSlug: `/model/${details.model.slug}/${result.slug}`,
+			linkSlug: details.model.type === 'columns' ? details.model.href : `/model/${details.model.slug}/${result.slug}`,
 			itemType: 'radiator',
 		})
 	}
@@ -443,22 +494,27 @@ export default function HeroQuickConfigurator({
 		removeFromCart({ title: itemTitle })
 	}
 
-	const isModal = variant === 'modal'
+		const isModal = variant === 'modal'
+		const isCategory = variant === 'category'
+		const useFamilyByHeight = modelResolutionMode === 'family-by-height'
 	const titleClass = isModal ? 'text-md font-semibold tracking-tight' : 'text-md font-semibold tracking-tight md:text-lg'
 	const contentSpacingClass = isModal ? 'mt-3.5 space-y-2.5' : 'mt-3.5 space-y-3 md:mt-4 md:space-y-3'
 	const gridGapClass = isModal ? 'grid grid-cols-2 gap-x-2 gap-y-2.5' : 'grid grid-cols-2 gap-x-2.5 gap-y-3 md:gap-2.5'
+	const configuratorTitle = title ?? (isCategory ? 'Быстрый подбор' : 'Быстрый выбор')
 
 	return (
 		<div
 			class={`w-full text-neutral-950 ${
 				isModal
 					? 'rounded-none border-0 bg-transparent p-0 shadow-none'
+					: isCategory
+						? 'rounded-[20px] border border-neutral-200 bg-white p-4 shadow-none transition hover:border-neutral-300 md:p-5'
 					: 'max-w-[460px] rounded-[20px] border border-white/70 bg-white px-[18px] pb-4 pt-[18px] shadow-[0_24px_64px_rgba(0,0,0,0.28)] md:rounded-[22px] md:p-5 md:shadow-[0_28px_80px_rgba(0,0,0,0.30)]'
 			}`}
 		>
 			<div class='mb-3.5 flex items-start justify-between gap-3 md:mb-4 md:gap-4'>
 				<div>
-					<h2 class={titleClass}>Быстрый выбор</h2>
+					<h2 class={titleClass}>{configuratorTitle}</h2>
 					{/* <p class='mt-0.5 text-xs leading-4 text-neutral-600  font-light  md:leading-tight'>
 						Модель, параметры и корзина без перехода в каталог
 					</p> */}
@@ -565,13 +621,20 @@ export default function HeroQuickConfigurator({
 					loading ? 'pointer-events-none select-none opacity-45' : 'opacity-100'
 				}`}>
 					<div class={gridGapClass}>
-						{(['tubes', 'height', 'sections', 'length', 'width'] as DimensionKey[]).map(key => {
-							if (!details.filters[key]) return null
-							const available = getAvailableOptions(details, selection, key)
-							const options = getDimensionOptions(details, key)
-							const titleByKey: Record<DimensionKey, string> = {
-								tubes: 'Трубок',
-								height: 'Высота',
+							{(['tubes', 'height', 'sections', 'length', 'width'] as DimensionKey[]).map(key => {
+								if (!details.filters[key]) return null
+								const isColumnTubeSwitcher = isCategory && key === 'tubes' && details.model.type === 'columns'
+								const isFamilyHeightSwitcher = useFamilyByHeight && key === 'height' && (details.model.type === 'columns' || details.model.type === 'ironcast')
+								const familyHeightOptions = isFamilyHeightSwitcher ? getFamilyHeightOptions(models, details.model) : []
+								const available = isFamilyHeightSwitcher
+									? familyHeightOptions
+									: isColumnTubeSwitcher
+									? ['2', '3', '4', '5'].filter(value => Boolean(getColumnTubeModelId(models, details.model.id, value)))
+									: getAvailableOptions(details, selection, key)
+								const options = isFamilyHeightSwitcher ? familyHeightOptions : isColumnTubeSwitcher ? ['2', '3', '4', '5'] : getDimensionOptions(details, key)
+								const titleByKey: Record<DimensionKey, string> = {
+									tubes: 'Трубок',
+									height: 'Высота',
 								sections: 'Секций',
 								length: 'Длина',
 								width: details.model.type === 'convector' ? 'Ширина' : 'Глубина',
@@ -586,7 +649,23 @@ export default function HeroQuickConfigurator({
 										label: optionLabel(key, value),
 										disabled: !available.includes(value),
 									}))}
-									onChange={value => setDimension(key, value)}
+										onChange={value => {
+											if (isFamilyHeightSwitcher) {
+												const nextModelId = getFamilyModelIdByHeight(models, details.model, value)
+												if (nextModelId) {
+													setSelectedModelId(nextModelId)
+													return
+												}
+												setDimension(key, value)
+												return
+											}
+											if (isColumnTubeSwitcher) {
+												const nextModelId = getColumnTubeModelId(models, details.model.id, value)
+												if (nextModelId) setSelectedModelId(nextModelId)
+											return
+										}
+										setDimension(key, value)
+									}}
 								/>
 							)
 						})}
@@ -638,7 +717,7 @@ export default function HeroQuickConfigurator({
 						<div class={`rounded-xl border border-neutral-200 bg-neutral-50 ${isModal ? 'p-3' : 'p-3.5 md:rounded-2xl md:p-3.5'}`}>
 							<div class='text-[10px] font-thin uppercase tracking-tight text-neutral-500'>Найденный вариант</div>
 							<a
-								href={`/model/${details.model.slug}`}
+								href={details.model.href}
 								onClick={() => onNavigate?.()}
 								class={`mt-1.5 block text-[15px] font-semibold leading-5 text-neutral-950 hover:text-red-700 ${
 									isModal ? '' : 'md:text-base'

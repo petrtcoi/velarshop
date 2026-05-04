@@ -1,35 +1,27 @@
 ---
-const interiorImages = [
-	'/images/columns/1.jpg',
-	'/images/columns/2.jpg',
-	'/images/columns/3.jpg',
-	'/images/columns/4.jpg',
-	'/images/columns/5.jpg',
-	'/images/columns/6.jpg',
+const interiors = [
+	{ title: 'Классические интерьеры', image: '/images/columns/1.jpg' },
+	{ title: 'Современные квартиры', image: '/images/columns/2.jpg' },
+	{ title: 'Лофт и индустриальные пространства', image: '/images/columns/3.jpg' },
+	{ title: 'Коммерческие и общественные здания', image: '/images/columns/4.jpg' },
 ]
 ---
 
-<section id='columns-interiors' class='bg-white py-12 md:py-16'>
-	<div class='max-w-7xl mx-auto px-5 md:px-10'>
-		<h2 class='text-2xl md:text-3xl font-semibold text-neutral-900'>Трубчатые радиаторы Velar в интерьере</h2>
-		<p class='mt-3 max-w-3xl text-sm leading-6 text-neutral-700'>
-			Трубчатые модели подходят для квартир, домов и дизайнерских интерьеров. Радиатор можно сделать нейтральным элементом
-			или акцентом за счёт цвета RAL.
+<section id='columns-interiors' class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
+	<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+		<h2 class='text-3xl font-semibold tracking-tight text-neutral-950 md:text-4xl'>Трубчатые радиаторы Velar в интерьере</h2>
+		<p class='mt-3 max-w-3xl text-base leading-7 text-neutral-700'>
+			Модель можно сделать нейтральной частью стены или заметным акцентом за счет цвета RAL и высоты.
 		</p>
-		<div class='mt-6 grid grid-cols-1 gap-3 md:grid-cols-3 md:gap-4'>
-			{
-				interiorImages.map((image, index) => (
-					<div class='overflow-hidden rounded-lg bg-neutral-100'>
-						<img
-							src={image}
-							alt={`Трубчатый радиатор Velar в интерьере ${index + 1}`}
-							title={`Трубчатый радиатор Velar в интерьере ${index + 1}`}
-							loading='lazy'
-							class='block h-auto w-full'
-						/>
+		<div class='-mx-4 mt-7 flex gap-4 overflow-x-auto px-4 pb-2 md:mx-0 md:grid md:grid-cols-2 md:overflow-visible md:px-0 xl:grid-cols-4'>
+			{interiors.map(item => (
+				<article class='min-w-[270px] overflow-hidden rounded-[20px] border border-neutral-200 bg-white transition hover:border-neutral-300 md:min-w-0'>
+					<img src={item.image} alt={item.title} title={item.title} loading='lazy' class='h-[220px] w-full object-cover' />
+					<div class='p-4'>
+						<h3 class='text-base font-semibold text-neutral-950'>{item.title}</h3>
 					</div>
-				))
-			}
+				</article>
+			))}
 		</div>
 	</div>
 </section>

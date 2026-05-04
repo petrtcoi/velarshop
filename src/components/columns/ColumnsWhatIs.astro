@@ -1,27 +1,29 @@
 ---
+const benefits = [
+	'Премиальная сталь и точная геометрия',
+	'Высокая теплоотдача',
+	'Стильный дизайн',
+	'Срок службы более 25 лет',
+]
 ---
 
-<section id='columns-what-is' class='bg-white py-12 md:py-16'>
-	<div class='max-w-7xl mx-auto px-5 md:px-10'>
-		<div class='rounded-2xl bg-neutral-950 px-6 py-10 md:px-10 md:py-14'>
-			<div class='max-w-4xl'>
-				<p class='text-xs uppercase tracking-wide text-neutral-400'>О трубчатых радиаторах</p>
-				<h2 class='mt-3 text-2xl md:text-3xl font-semibold text-white'>Что такое трубчатые радиаторы Velar</h2>
-				<div class='mt-6 space-y-4 text-sm leading-7 text-neutral-200'>
-					<p>
-						Трубчатые радиаторы состоят из вертикальных трубок и коллекторов, объединённых в секции. Такая конструкция
-						позволяет подбирать высоту, количество трубок и число секций под конкретную задачу: от компактных моделей под окно
-						до высоких вертикальных радиаторов для акцентных зон.
+<section id='columns-what-is' class='bg-white py-12 md:py-16 xl:py-20'>
+	<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+		<div class='rounded-[28px] bg-neutral-950 p-6 text-white md:p-10 xl:p-12'>
+			<div class='grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center'>
+				<div>
+					<h2 class='text-3xl font-semibold tracking-tight md:text-4xl'>Что такое трубчатые радиаторы Velar</h2>
+					<p class='mt-5 text-base leading-7 text-neutral-300'>
+						Трубчатые радиаторы состоят из стальных секций с вертикальными трубами и коллекторами. Такая конструкция позволяет точно подобрать высоту, количество труб, число секций, подключение и цвет под помещение: от компактной замены батареи под окном до высокого интерьерного акцента.
 					</p>
-					<p>
-						Секции выполняются из стали и свариваются в единую конструкцию без резьбовых соединений между элементами. Это даёт
-						жёсткую геометрию и стабильную работу в разных форматах систем отопления при корректном подборе параметров.
-					</p>
-					<p>
-						Высота и теплоотдача зависят от длины трубок, количества трубок в секции и общего числа секций. Поверхность
-						окрашивается порошковой краской, включая варианты по шкале RAL, поэтому такие радиаторы подходят и для квартир, и для
-						частных домов, и для дизайнерских интерьеров.
-					</p>
+				</div>
+				<div class='grid gap-3 sm:grid-cols-2'>
+					{benefits.map(item => (
+						<div class='rounded-2xl border border-white/10 bg-white/[0.04] p-4'>
+							<div class='mb-4 h-8 w-8 rounded-full border border-red-500/70'></div>
+							<p class='text-sm font-semibold leading-5 text-white'>{item}</p>
+						</div>
+					))}
 				</div>
 			</div>
 		</div>

@@ -8,37 +8,48 @@ type Props = {
 }
 
 const { models } = Astro.props as Props
+
+function depthByTubes(tubes: number): number {
+	if (tubes === 2) return 78
+	if (tubes === 3) return 110
+	if (tubes === 4) return 142
+	if (tubes === 5) return 174
+	return 110
+}
 ---
 
-<section id='columns-catalog' class='mt-6 rounded-xl bg-neutral-50  py-5 md:px-5 md:py-6'>
-	<div id='model_list'></div>
-	<div>
-		<div class='mb-3 flex flex-col gap-1 md:flex-row md:items-end md:justify-between'>
-			<h2 class='text-xl font-semibold tracking-tight text-neutral-950 md:text-2xl'>Модели трубчатых радиаторов</h2>
-			<p class='text-xs text-neutral-600'>
-				Показано <span id='columns-catalog-count' class='font-medium text-neutral-800'>20 из {models.length}</span>
+<section id='columns-catalog' class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
+	<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+		<div id='model_list'></div>
+		<div class='mb-5 flex flex-col gap-2 md:flex-row md:items-end md:justify-between'>
+			<div>
+				<h2 class='text-3xl font-semibold tracking-tight text-neutral-950 md:text-4xl'>Модели трубчатых радиаторов</h2>
+				<p class='mt-3 max-w-2xl text-sm leading-6 text-neutral-700 md:text-base'>
+					Фильтруйте линейку по количеству труб и высоте. На desktop список остается таблицей, на мобильных превращается в компактные строки.
+				</p>
+			</div>
+			<p class='text-sm text-neutral-600'>
+				Показано <span id='columns-catalog-count' class='font-medium text-neutral-900'>20 из {models.length}</span>
 			</p>
 		</div>
-		<div class='mb-2'>
-			<ColumnsFilters client:load />
-		</div>
-		<div
-		
-			aria-label='Список моделей трубчатых радиаторов Velar'
-			class='mt-4 overflow-hidden border-y border-neutral-200 bg-white md:rounded-lg md:border'
-		>
-			<div class='hidden md:grid md:grid-cols-[minmax(0,1.7fr)_100px_110px_140px_120px_120px] md:gap-3 border-b border-neutral-100 bg-white px-3 py-2 text-xs font-medium text-neutral-600'>
+
+		<ColumnsFilters client:load />
+
+		<div aria-label='Список моделей трубчатых радиаторов Velar' class='mt-5 overflow-hidden rounded-[20px] border border-neutral-200 bg-white'>
+			<div class='hidden border-b border-neutral-100 bg-neutral-50 px-5 py-3 text-xs font-medium uppercase tracking-wide text-neutral-500 md:grid md:grid-cols-[minmax(0,1.45fr)_70px_100px_100px_130px_140px_110px_90px] md:gap-4'>
 				<div>Модель</div>
-				<div>Высота</div>
-				<div>Тип</div>
-				<div>Мощность секции</div>
-				<div>Кол-во секций</div>
-				<div>Цена</div>
+				<div>Труб</div>
+				<div>Высота, мм</div>
+				<div>Глубина, мм</div>
+				<div>Теплоотдача, Вт</div>
+				<div>Подключение</div>
+				<div>Цена от</div>
+				<div>Подробнее</div>
 			</div>
 			{
 				models.map((model, index) => (
 					<article
-						class='border-b border-neutral-100 bg-white px-2 py-3 last:border-b-0 transition-colors hover:bg-neutral-50/70 md:px-3 md:py-2'
+						class='border-b border-neutral-100 bg-white px-4 py-4 transition-colors last:border-b-0 hover:bg-neutral-50 md:px-5'
 						data-columns-card='1'
 						data-height={String(model.height)}
 						data-tubes={String(model.tubeCount)}
@@ -47,7 +58,7 @@ const { models } = Astro.props as Props
 						data-index={String(index)}
 						style={index >= 20 ? 'display:none' : undefined}
 					>
-						<div class='grid min-h-[56px] grid-cols-[48px_minmax(0,1fr)] gap-3 md:hidden'>
+						<div class='grid grid-cols-[52px_minmax(0,1fr)] gap-3 md:hidden'>
 							<Picture
 								src={model.image}
 								alt={`${model.prefix} Velar ${model.name}`}
@@ -56,33 +67,24 @@ const { models } = Astro.props as Props
 								aspectRatio='1:1'
 								widths={[120, 180]}
 								width={120}
-								sizes='48px'
-								class='h-10 w-10 rounded-sm object-contain bg-neutral-50 p-1'
+								sizes='52px'
+								class='h-12 w-12 rounded-lg bg-neutral-50 object-contain p-1'
 							/>
 							<div class='min-w-0'>
 								<div class='flex items-start justify-between gap-3'>
-									<p class='text-sm font-semibold'>
-										<a href={model.href} class='text-neutral-900 hover:text-red-700 hover:underline'>
-											Velar {model.name}
-										</a>
-									</p>
-									<span class='shrink-0 text-sm font-medium text-neutral-900'>
-										от {model.minPrice.toLocaleString('ru-RU')} ₽
-									</span>
-								</div>
-								<p class='mt-1 text-xs text-neutral-600'>
-									{model.tubeCount}-трубчатый · {model.height} мм · {model.powerSection} Вт/секц.
-								</p>
-								<div class='mt-0.5 flex items-center justify-between gap-2'>
-									<p class='text-xs text-neutral-600'>Секций: {model.sectionsMin}–{model.sectionsMax}</p>
-									<a href={model.href} class='text-xs font-medium text-neutral-900 hover:text-red-700 hover:underline'>
-										К модели →
+									<a href={model.href} class='text-sm font-semibold text-neutral-950 hover:text-red-700 hover:underline'>
+										Velar {model.name}
 									</a>
+									<span class='shrink-0 text-sm font-semibold text-neutral-950'>от {model.minPrice.toLocaleString('ru-RU')} ₽</span>
 								</div>
+								<p class='mt-1 text-xs leading-5 text-neutral-600'>
+									{model.tubeCount} труб · {model.height} мм · {depthByTubes(model.tubeCount)} мм · нижнее/боковое
+								</p>
+								<a href={model.href} class='mt-1 inline-flex text-xs font-medium text-red-700 hover:underline'>Подробнее →</a>
 							</div>
 						</div>
 
-						<div class='hidden min-h-[56px] md:grid md:grid-cols-[minmax(0,1.7fr)_100px_110px_140px_120px_120px] md:items-center md:gap-3'>
+						<div class='hidden min-h-[58px] items-center md:grid md:grid-cols-[minmax(0,1.45fr)_70px_100px_100px_130px_140px_110px_90px] md:gap-4'>
 							<div class='flex min-w-0 items-center gap-3'>
 								<Picture
 									src={model.image}
@@ -92,67 +94,38 @@ const { models } = Astro.props as Props
 									aspectRatio='1:1'
 									widths={[120, 180]}
 									width={120}
-									sizes='40px'
-									class='h-10 w-10 rounded-sm object-contain bg-neutral-50 p-1'
+									sizes='44px'
+									class='h-11 w-11 rounded-lg bg-neutral-50 object-contain p-1'
 								/>
 								<div class='min-w-0'>
-									<p class='text-sm font-semibold'>
-										<a href={model.href} class='text-neutral-900 hover:text-red-700 hover:underline'>
-											Velar {model.name}
-										</a>
-									</p>
-									<p class='mt-0.5 truncate text-xs text-neutral-600'>
-										{model.tubeCount}-трубчатый радиатор {model.height <= 700 ? 'под окно' : 'универсальный'}
-									</p>
+									<a href={model.href} class='text-sm font-semibold text-neutral-950 hover:text-red-700 hover:underline'>
+										Velar {model.name}
+									</a>
+									<p class='mt-0.5 truncate text-xs text-neutral-500'>{model.height <= 700 ? 'низкая модель под окно' : 'высокая или универсальная модель'}</p>
 								</div>
 							</div>
-								<div class='text-xs text-neutral-800'>{model.height} мм</div>
-								<div class='text-xs text-neutral-800'>{model.tubeCount}-труб.</div>
-								<div class='text-xs text-neutral-800'>{model.powerSection} Вт</div>
-								<div class='text-xs text-neutral-800'>{model.sectionsMin}–{model.sectionsMax}</div>
-							<div class='text-xs text-neutral-900'>
-								<div class='font-medium'>от {model.minPrice.toLocaleString('ru-RU')} ₽</div>
-							</div>
+							<div class='text-sm text-neutral-800'>{model.tubeCount}</div>
+							<div class='text-sm text-neutral-800'>{model.height}</div>
+							<div class='text-sm text-neutral-800'>{depthByTubes(model.tubeCount)}</div>
+							<div class='text-sm text-neutral-800'>{model.powerSection} Вт/секц.</div>
+							<div class='text-sm text-neutral-800'>нижнее/боковое</div>
+							<div class='text-sm font-semibold text-neutral-950'>{model.minPrice.toLocaleString('ru-RU')} ₽</div>
+							<a href={model.href} class='text-sm font-medium text-red-700 hover:underline'>Открыть</a>
 						</div>
 					</article>
 				))
 			}
 		</div>
-		<div class='mt-4 flex justify-center'>
+
+		<div class='mt-5 flex justify-center'>
 			<button
 				id='columns-show-more'
 				type='button'
-				class='inline-flex h-9 cursor-pointer items-center justify-center rounded-[3px] border border-neutral-300 bg-white px-4 text-sm font-medium text-neutral-900 transition-colors hover:cursor-pointer hover:border-neutral-400'
+				class='inline-flex h-11 cursor-pointer items-center justify-center rounded-xl border border-neutral-300 bg-white px-5 text-sm font-semibold text-neutral-950 transition hover:border-neutral-400 hover:bg-neutral-50'
 				style={models.length > 20 ? 'cursor:pointer' : 'display:none;cursor:pointer'}
 			>
 				Показать ещё
 			</button>
-		</div>
-		<div class='mt-4 overflow-hidden rounded-xl border border-neutral-200 bg-white md:grid md:grid-cols-[minmax(0,1fr)_320px]'>
-			<div class='p-4 md:p-5'>
-				<h3 class='text-lg font-semibold text-neutral-900'>Не нашли нужную высоту или количество секций?</h3>
-				<p class='mt-2 text-sm leading-6 text-neutral-700'>
-					Отправьте параметры помещения — подберём модель, рассчитаем мощность, количество секций, подключение и цвет RAL.
-				</p>
-				<a
-					href='/request'
-					class='mt-4 inline-flex h-9 cursor-pointer items-center justify-center rounded-[3px] border border-red-700 bg-red-700 px-4 text-sm font-light text-white transition-colors hover:cursor-pointer hover:border-red-800 hover:bg-red-800'
-					style='cursor: pointer;'
-				>
-					Получить расчет
-				</a>
-			</div>
-			<Picture
-				src='/images/columns/about.jpg'
-				alt='Трубчатый радиатор Velar в интерьере'
-				title='Трубчатый радиатор Velar в интерьере'
-				loading='lazy'
-				aspectRatio='16:10'
-				widths={[480, 720]}
-				width={720}
-				sizes='(max-width: 768px) 100vw, 320px'
-				class='h-full min-h-[180px] w-full object-cover'
-			/>
 		</div>
 	</div>
 </section>

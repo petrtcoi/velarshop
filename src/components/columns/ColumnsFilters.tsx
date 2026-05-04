@@ -18,26 +18,24 @@ const initialState: FilterState = {
 }
 
 const heightOptions = [
-	{ value: 'all', label: 'Все' },
-	{ value: 'h500', label: 'До 500 мм' },
-	{ value: 'h500_700', label: '500–700 мм' },
-	{ value: 'h700_1200', label: '700–1200 мм' },
-	{ value: 'h1200', label: 'Выше 1200 мм' },
+	{ value: 'all', label: 'Любая' },
+	{ value: 'low', label: 'Низкие' },
+	{ value: 'middle', label: 'Средние' },
+	{ value: 'high', label: 'Высокие' },
 ]
 
 const tubeOptions = [
-	{ value: 'all', label: 'Все' },
-	{ value: '2', label: '2 трубки' },
-	{ value: '3', label: '3 трубки' },
-	{ value: '4', label: '4 трубки' },
+	{ value: 'all', label: 'Любое' },
+	{ value: '2', label: '2' },
+	{ value: '3', label: '3' },
+	{ value: '4', label: '4' },
 ]
 
 function matchesHeight(height: number, value: string): boolean {
 	if (value === 'all') return true
-	if (value === 'h500') return height <= 500
-	if (value === 'h500_700') return height > 500 && height <= 700
-	if (value === 'h700_1200') return height > 700 && height <= 1200
-	if (value === 'h1200') return height > 1200
+	if (value === 'low') return height <= 400
+	if (value === 'middle') return height > 400 && height <= 900
+	if (value === 'high') return height >= 1000
 	return true
 }
 
@@ -72,8 +70,8 @@ function applyFilters(state: FilterState, visibleLimit: number): FilterStats {
 
 function filterButtonClass(active: boolean): string {
 	return active
-		? 'inline-flex h-7 !cursor-pointer items-center justify-center rounded-[3px] border border-red-600 bg-red-50 px-2.5 text-xs font-medium text-red-700 transition-colors hover:cursor-pointer hover:border-red-600 hover:bg-red-50 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-200 focus-visible:ring-offset-1'
-		: 'inline-flex h-7 !cursor-pointer items-center justify-center rounded-[3px] border border-neutral-200 bg-white px-2.5 text-xs font-medium text-neutral-800 transition-colors hover:cursor-pointer hover:border-red-300 hover:bg-red-50 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700 focus-visible:ring-offset-2'
+		? 'inline-flex h-8 !cursor-pointer items-center justify-center rounded-full border border-neutral-950 bg-neutral-950 px-3.5 text-xs font-medium text-white transition-colors hover:cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-200 focus-visible:ring-offset-1'
+		: 'inline-flex h-8 !cursor-pointer items-center justify-center rounded-full border border-neutral-200 bg-white px-3.5 text-xs font-medium text-neutral-800 transition-colors hover:cursor-pointer hover:border-neutral-300 hover:bg-neutral-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300 focus-visible:ring-offset-2'
 }
 
 export default function ColumnsFilters() {
@@ -112,59 +110,59 @@ export default function ColumnsFilters() {
 	}, [])
 
 	return (
-		<div class='rounded-lg border border-neutral-200 bg-white px-3 py-3'>
-			<div class='flex flex-col gap-3 md:flex-row md:items-start md:justify-between'>
-				<div class='flex-1 space-y-2'>
-					<div class='flex flex-col gap-2 md:flex-row md:items-center'>
-						<div class='shrink-0 text-xs font-normal text-neutral-600 md:w-[120px]'>Высота</div>
-						<div class='flex flex-wrap gap-2'>
-							{heightOptions.map(option => (
-								<button
-									type='button'
-									aria-pressed={filters.height === option.value}
-									class={filterButtonClass(filters.height === option.value)}
-									style={{ cursor: 'pointer' }}
-									onClick={() => {
-										setWasChanged(true)
-										setVisibleLimit(PAGE_SIZE)
-										setFilters(prev => ({ ...prev, height: option.value }))
-									}}
-								>
-									{option.label}
-								</button>
-							))}
+			<div class='rounded-[20px] border border-neutral-200 bg-white p-4 md:p-5'>
+				<div class='grid gap-4 md:grid-cols-[1fr_auto] md:items-end'>
+					<div class='space-y-3'>
+						<div class='grid gap-2 md:grid-cols-[140px_1fr] md:items-center'>
+							<div class='text-xs font-medium uppercase tracking-wide text-neutral-500'>Высота</div>
+							<div class='-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 md:mx-0 md:flex-wrap md:overflow-visible md:px-0 md:pb-0'>
+								{heightOptions.map(option => (
+									<button
+										type='button'
+										aria-pressed={filters.height === option.value}
+										class={filterButtonClass(filters.height === option.value)}
+										style={{ cursor: 'pointer' }}
+										onClick={() => {
+											setWasChanged(true)
+											setVisibleLimit(PAGE_SIZE)
+											setFilters(prev => ({ ...prev, height: option.value }))
+										}}
+									>
+										{option.label}
+									</button>
+								))}
+							</div>
+						</div>
+
+						<div class='grid gap-2 md:grid-cols-[140px_1fr] md:items-center'>
+							<div class='text-xs font-medium uppercase tracking-wide text-neutral-500'>Трубок в секции</div>
+							<div class='-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 md:mx-0 md:flex-wrap md:overflow-visible md:px-0 md:pb-0'>
+								{tubeOptions.map(option => (
+									<button
+										type='button'
+										aria-pressed={filters.tubes === option.value}
+										class={filterButtonClass(filters.tubes === option.value)}
+										style={{ cursor: 'pointer' }}
+										onClick={() => {
+											setWasChanged(true)
+											setVisibleLimit(PAGE_SIZE)
+											setFilters(prev => ({ ...prev, tubes: option.value }))
+										}}
+									>
+										{option.label}
+									</button>
+								))}
+							</div>
 						</div>
 					</div>
 
-					<div class='flex flex-col gap-2 md:flex-row md:items-center'>
-						<div class='shrink-0 text-xs font-normal text-neutral-600 md:w-[120px]'>Трубок в секции</div>
-						<div class='flex flex-wrap gap-2'>
-							{tubeOptions.map(option => (
-								<button
-									type='button'
-									aria-pressed={filters.tubes === option.value}
-									class={filterButtonClass(filters.tubes === option.value)}
-									style={{ cursor: 'pointer' }}
-									onClick={() => {
-										setWasChanged(true)
-										setVisibleLimit(PAGE_SIZE)
-										setFilters(prev => ({ ...prev, tubes: option.value }))
-									}}
-								>
-									{option.label}
-								</button>
-							))}
-						</div>
-					</div>
-				</div>
-
-				{hasActiveFilters ? (
-					<button
-						type='button'
-						class='text-xs font-medium text-red-700 transition-colors hover:underline'
-						onClick={() => {
-							setWasChanged(true)
-							setVisibleLimit(PAGE_SIZE)
+					{hasActiveFilters ? (
+						<button
+							type='button'
+							class='inline-flex h-9 items-center justify-center rounded-full border border-neutral-200 px-4 text-xs font-medium text-neutral-700 transition-colors hover:border-neutral-300 hover:bg-neutral-50'
+							onClick={() => {
+								setWasChanged(true)
+								setVisibleLimit(PAGE_SIZE)
 							setFilters(initialState)
 						}}
 					>

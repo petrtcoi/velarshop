@@ -1,12 +1,10 @@
 ---
-import Breadcrumbs from '@widgets/breadcrumbs/Breadcrumbs.astro'
 import Layout from '@shared/layouts/Layout.astro'
 import JsonLd from '../components/seo/JsonLd.astro'
 
 import ColumnsCatalog from '../components/columns/ColumnsCatalog.astro'
 import ColumnsComparison from '../components/columns/ColumnsComparison.astro'
 import ColumnsFaq from '../components/columns/ColumnsFaq.astro'
-import ColumnsGuide from '../components/columns/ColumnsGuide.astro'
 import ColumnsHero from '../components/columns/ColumnsHero.astro'
 import ColumnsHowToOrder from '../components/columns/ColumnsHowToOrder.astro'
 import ColumnsInteriors from '../components/columns/ColumnsInteriors.astro'
@@ -19,7 +17,6 @@ import {
 	columnsFaqItems,
 	columnsHowToSteps,
 	columnsModels,
-	minCatalogPrice,
 	usefulArticles,
 } from '../components/columns/columnsData'
 import {
@@ -29,24 +26,27 @@ import {
 	buildColumnsItemListSchema,
 } from '../lib/seo/columnsSchema'
 
-const crumbs = [
+const breadcrumbs = [
 	{ title: 'Главная', url: '/' },
-	{ title: 'Трубчатые радиаторы отопления', url: '/columns' },
+	{ title: 'Каталог', url: '/#catalog' },
+	{ title: 'Трубчатые радиаторы', url: '/columns' },
 ]
----
+
+	---
 
 <Layout
 	title='Трубчатые радиаторы Velar — стальные радиаторы отопления на заказ'
 	description='Стальные трубчатые радиаторы Velar для квартир, домов и интерьеров. Разные высоты, цвета RAL, производство под заказ, доставка по России.'
 	canonicalUrl='https://velarshop.ru/columns/'
+	paddings={false}
+	breadcrumbs={breadcrumbs}
 >
-	<Breadcrumbs items={crumbs} />
 	<JsonLd data={buildColumnsCollectionPageSchema()} />
 	<JsonLd data={buildColumnsItemListSchema(columnsModels)} />
 	<JsonLd data={buildColumnsFaqSchema(columnsFaqItems)} />
 	<JsonLd data={buildColumnsHowToSchema(columnsHowToSteps)} />
 
-	<ColumnsHero minPrice={minCatalogPrice} models={columnsModels} />
+	<ColumnsHero />
 
 	<ColumnsCatalog models={columnsModels} />
 
@@ -56,15 +56,13 @@ const crumbs = [
 
 	<ColumnsInteriors />
 
-	<ColumnsGuide />
+	<ColumnsHowToOrder />
 
 	<ColumnsComparison />
 
 	<ColumnsUseCases />
 
 	<ColumnsWhyVelar />
-
-	<ColumnsHowToOrder />
 
 	<UsefulArticles articles={usefulArticles} />
 

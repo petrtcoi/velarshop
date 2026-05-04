@@ -1,8 +1,14 @@
 ---
 import ShoppingCartWidget from '@widgets/order/ShoppingCartWidget'
+import Breadcrumbs from '@widgets/breadcrumbs/Breadcrumbs.astro'
 import Footer from './components/Footer.astro'
 import Header from '../../components/layout/Header.astro'
 import '@shared/styles/global.css'
+
+type BreadcrumbItem = {
+	title: string
+	url: string
+}
 
 export interface Props {
 	title?: string
@@ -12,6 +18,7 @@ export interface Props {
 	ogImageUrl?: string
 	paddings?: boolean
 	hideShoppingCartWidgt?: boolean
+	breadcrumbs?: BreadcrumbItem[]
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
@@ -23,7 +30,8 @@ const {
 	ogImageUrl = '/images/logo.png',
 	paddings = true,
 	hideShoppingCartWidgt = false,
-	canonicalUrl
+	canonicalUrl,
+	breadcrumbs = [],
 } = Astro.props as Props as Props
 
 const baseUrl = Astro.site ?? Astro.url
@@ -201,10 +209,17 @@ const ogImageHref = new URL(ogImageUrl, baseUrl).toString()
 	<body class='text-neutral-900 dark:text-neutral-200 bg-white dark:bg-neutral-800'>
 
 		
-		<Header currentPath={Astro.url.pathname} />
+			<Header currentPath={Astro.url.pathname} />
 
+			{breadcrumbs.length > 0 && (
+				<div class='border-b border-neutral-100 bg-white'>
+					<div class='mx-auto max-w-[1240px] px-4 py-4 text-[13px] text-neutral-500 md:px-6 md:py-6 xl:px-8'>
+						<Breadcrumbs items={breadcrumbs} separator='/' />
+					</div>
+				</div>
+			)}
 
-			<main class:list={[{ 'max-w-6xl mx-auto p-3 md:p-5 lg:px-10 xl:px-0': paddings }, { 'p-0 m-0': !paddings }]}>
+				<main class:list={[{ 'max-w-6xl mx-auto p-3 md:p-5 lg:px-10 xl:px-0': paddings }, { 'p-0 m-0': !paddings }]}>
 				<slot />
 								{hideShoppingCartWidgt === false && <ShoppingCartWidget client:load />}
 

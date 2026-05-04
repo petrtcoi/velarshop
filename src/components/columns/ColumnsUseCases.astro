@@ -1,127 +1,24 @@
 ---
 const useCases = [
-  {
-    title: "Под окно",
-    description:
-      "Низкие модели 300–570 мм подходят для установки под стандартные окна и замены старых батарей.",
-    icon: "window",
-  },
-  {
-    title: "Для квартиры",
-    description:
-      "Можно подобрать высоту, мощность и подключение под существующую систему отопления.",
-    icon: "building",
-  },
-  {
-    title: "Для частного дома",
-    description:
-      "Подходят для индивидуальных систем отопления, больших помещений и нестандартных планировок.",
-    icon: "house",
-  },
-  {
-    title: "Для интерьера",
-    description:
-      "Радиатор можно сделать нейтральным элементом или акцентом за счёт цвета RAL и формы.",
-    icon: "palette",
-  },
-];
+	['Квартиры и дома', 'Универсальный подбор по высоте, мощности и подключению.'],
+	['Лофты и студии', 'Высокие вертикальные модели хорошо работают как интерьерный акцент.'],
+	['Офисы и коммерческие помещения', 'Подходят для переговорных, холлов и рабочих зон.'],
+	['Школы и детские сады', 'Можно подобрать понятную геометрию и надежное подключение.'],
+	['Рестораны и отели', 'Цвет RAL помогает встроить радиатор в проектный интерьер.'],
+	['Медицинские учреждения', 'Простая форма облегчает визуальный контроль и уход.'],
+]
 ---
 
-<section id="columns-use-cases" class="bg-white py-12 md:py-16">
-  <div class="max-w-7xl mx-auto px-5 md:px-10">
-    <h2 class="text-2xl md:text-3xl font-semibold text-neutral-950">
-      Под какие задачи подходят трубчатые радиаторы
-    </h2>
-    <p class="mt-3 max-w-3xl text-sm leading-6 text-neutral-800">
-      Трубчатые модели используют не только как замену стандартной батареи, но и
-      как часть интерьерного решения.
-    </p>
-
-    <div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
-      {
-        useCases.map((item) => (
-          <article class="rounded-xl border border-neutral-200 bg-white p-4">
-            <div class="inline-flex h-9 w-9 items-center justify-center rounded-[3px] bg-neutral-100 text-neutral-600">
-              {item.icon === "window" && (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="h-5 w-5"
-                >
-                  <rect x="3" y="5" width="18" height="14" rx="2" />
-                  <path d="M3 12h18" />
-                </svg>
-              )}
-              {item.icon === "building" && (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="h-5 w-5"
-                >
-                  <rect x="4" y="2" width="16" height="20" rx="2" />
-                  <path d="M9 22v-4h6v4" />
-                  <path d="M8 6h.01" />
-                  <path d="M16 6h.01" />
-                  <path d="M8 10h.01" />
-                  <path d="M16 10h.01" />
-                  <path d="M8 14h.01" />
-                  <path d="M16 14h.01" />
-                </svg>
-              )}
-              {item.icon === "house" && (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="h-5 w-5"
-                >
-                  <path d="m3 10 9-7 9 7" />
-                  <path d="M5 10v10h14V10" />
-                </svg>
-              )}
-              {item.icon === "palette" && (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="h-5 w-5"
-                >
-                  <path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z" />
-                  <circle cx="13.5" cy="6.5" r=".5" fill="currentColor" />
-                  <circle cx="17.5" cy="10.5" r=".5" fill="currentColor" />
-                  <circle cx="6.5" cy="12.5" r=".5" fill="currentColor" />
-                  <circle cx="8.5" cy="7.5" r=".5" fill="currentColor" />
-                </svg>
-              )}
-            </div>
-
-            <h3 class="mt-3 text-sm font-semibold text-neutral-950">
-              {item.title}
-            </h3>
-            <p class="mt-2 text-sm leading-6 text-neutral-800">
-              {item.description}
-            </p>
-          </article>
-        ))
-      }
-    </div>
-  </div>
+<section id='columns-use-cases' class='bg-white py-12 md:py-16 xl:py-20'>
+	<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+		<h2 class='text-3xl font-semibold tracking-tight text-neutral-950 md:text-4xl'>Где подходят трубчатые радиаторы</h2>
+		<div class='mt-7 grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3'>
+			{useCases.map(([title, description]) => (
+				<article class='rounded-[20px] border border-neutral-200 bg-white p-5 transition hover:border-neutral-300 hover:bg-neutral-50'>
+					<h3 class='text-base font-semibold text-neutral-950'>{title}</h3>
+					<p class='mt-2 text-sm leading-6 text-neutral-700'>{description}</p>
+				</article>
+			))}
+		</div>
+	</div>
 </section>

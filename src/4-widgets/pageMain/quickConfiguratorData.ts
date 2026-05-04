@@ -3,8 +3,10 @@ import { getModelSlug } from '@shared/utils/getModelSlug'
 
 import type { ModelOption } from './HeroQuickConfigurator'
 
-export function buildQuickConfiguratorModels(): ModelOption[] {
-	return modelsJsonData.map(model => ({
+export function buildQuickConfiguratorModels(options: { type?: ModelOption['type'] } = {}): ModelOption[] {
+	const source = options.type ? modelsJsonData.filter(model => model.type === options.type) : modelsJsonData
+
+	return source.map(model => ({
 		id: model.id,
 		slug: model.slug,
 		name: model.name,
@@ -33,7 +35,7 @@ export function getDefaultConfiguratorModel(pathname: string): string {
 	if (normalizedPath === '/design/q40') return 'q40v'
 	if (normalizedPath === '/design/r32') return 'r32v'
 
-	if (normalizedPath === '/columns' || normalizedPath === '/trubchatye-radiatory') return '2180'
+	if (normalizedPath === '/columns' || normalizedPath === '/trubchatye-radiatory') return '3057'
 	if (normalizedPath === '/convector' || normalizedPath === '/vnutripolnye-konvektory') return 'kwh'
 	if (normalizedPath === '/retro' || normalizedPath === '/retro-radiatory') return 'nostalgia'
 

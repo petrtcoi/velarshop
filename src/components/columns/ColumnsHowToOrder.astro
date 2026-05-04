@@ -2,17 +2,27 @@
 import { columnsHowToSteps } from './columnsData'
 ---
 
-<section id='columns-how-order' class='bg-neutral-50 py-12 md:py-20'>
-	<div class='max-w-7xl mx-auto px-5 md:px-10'>
-		<h2 class='text-2xl md:text-3xl font-semibold text-neutral-900'>Как заказать трубчатые радиаторы Velar</h2>
-		<ol class='mt-5 list-decimal list-inside space-y-2 text-sm md:text-base leading-7 text-neutral-800'>
-			{columnsHowToSteps.map(step => <li>{step}</li>)}
+<section id='columns-how-order' class='bg-white py-12 md:py-16 xl:py-20'>
+	<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+		<div class='flex flex-col gap-4 md:flex-row md:items-end md:justify-between'>
+			<h2 class='max-w-3xl text-3xl font-semibold tracking-tight text-neutral-950 md:text-4xl'>Как заказать трубчатый радиатор</h2>
+			<a href='/request' class='inline-flex h-12 items-center justify-center rounded-xl bg-red-700 px-6 text-sm font-semibold text-white transition hover:bg-red-800'>
+				Получить расчет
+			</a>
+		</div>
+		<ol class='mt-7 grid gap-3 md:grid-cols-2 xl:grid-cols-4'>
+			{columnsHowToSteps.map((step, index) => (
+				<li class='rounded-[20px] border border-neutral-200 bg-white p-5'>
+					<div class='text-sm font-semibold text-red-700'>{String(index + 1).padStart(2, '0')}</div>
+					<h3 class='mt-5 text-base font-semibold text-neutral-950'>{step}</h3>
+					<p class='mt-2 text-sm leading-6 text-neutral-600'>
+						{index === 0 && 'Оцените помещение и нужную теплоотдачу.'}
+						{index === 1 && 'Выберите глубину секции: 2, 3, 4 или 5 труб.'}
+						{index === 2 && 'Согласуйте габарит и количество секций.'}
+						{index === 3 && 'Подберите узел подключения и цвет RAL.'}
+					</p>
+				</li>
+			))}
 		</ol>
-		<a
-			href='/request'
-			class='inline-flex mt-6 h-12 items-center justify-center rounded-[3px] border border-red-700 bg-red-700 px-7 text-base font-semibold text-white transition-colors hover:bg-red-800 hover:border-red-800'
-		>
-			Получить расчет
-		</a>
 	</div>
 </section>

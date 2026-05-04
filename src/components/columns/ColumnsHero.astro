@@ -1,326 +1,80 @@
 ---
-import ColumnsQuickConfigurator from "./ColumnsQuickConfigurator";
-import type { ColumnsModelCard } from "./columnsData";
+import HeroQuickConfigurator from '@widgets/pageMain/HeroQuickConfigurator'
+import type { ModelDetails } from '@widgets/pageMain/HeroQuickConfigurator'
+import { buildQuickConfiguratorModels } from '@widgets/pageMain/quickConfiguratorData'
+import { get as getHeroConfiguratorData } from '../../pages/api/hero-configurator/[model].json'
 
-type Props = {
-  minPrice: number;
-  models: ColumnsModelCard[];
-};
+const modelOptions = buildQuickConfiguratorModels({ type: 'columns' })
+const defaultModelId = '3057'
+let initialDetails: ModelDetails | null = null
 
-const { minPrice: _minPrice, models } = Astro.props as Props;
----
+try {
+	const response = await getHeroConfiguratorData({
+		params: { model: defaultModelId },
+	} as any)
+	if (response.ok) initialDetails = (await response.json()) as ModelDetails
+} catch (error) {
+	console.error('Failed to preload columns configurator model:', error)
+}
 
-<section
-  id="columns-hero"
-  class="mt-3 border-b border-neutral-200 py-5 md:py-7"
->
-  <div
-    class="grid gap-4 md:gap-6 lg:grid-cols-[minmax(0,1fr)_480px] lg:items-stretch xl:grid-cols-[minmax(0,1fr)_520px]"
-  >
-    <div class="flex min-h-full flex-col">
-      <div>
-        <h1
-          class="text-2xl font-semibold tracking-tight text-neutral-950 md:text-3xl"
-        >
-          Трубчатые радиаторы Velar
-        </h1>
+const statItems = [
+	{ value: 'до 3000 мм', label: 'по высоте' },
+	{ value: 'до 50 секций', label: 'в одном радиаторе' },
+	{ value: 'до 16 атм', label: 'рабочее давление' },
+	{ value: 'RAL', label: 'цвета на выбор' },
+]
+	---
 
-        <p class="mt-1.5 max-w-2xl text-sm leading-5 text-neutral-700 md:mt-2 md:leading-6">
-          <span class="md:hidden">
-            Подберем модель по высоте, мощности, подключению и цвету RAL.
-          </span>
-          <span class="hidden md:inline">
-            Стальные трубчатые радиаторы Velar для квартир, домов и дизайнерских
-            интерьеров. Подберем модель по высоте, мощности, подключению и цвету
-            RAL.
-          </span>
-        </p>
+<section id='columns-hero' class='border-b border-neutral-200 bg-white'>
+		<div class='mx-auto max-w-[1240px] px-4 py-8 md:px-6 md:py-12 xl:px-8 xl:py-14'>
+			<div class='grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(220px,320px)] lg:gap-10 xl:grid-cols-[minmax(0,1fr)_minmax(220px,320px)_minmax(360px,420px)]'>
+				<div class='min-w-0'>
+					<h1 class='max-w-[620px] text-[36px] font-semibold leading-[0.95] tracking-tight text-neutral-950 md:text-6xl xl:text-[68px]'>
+						Трубчатые радиаторы Velar
+					</h1>
+				<p class='mt-5 max-w-[560px] text-base leading-7 text-neutral-700 md:text-lg'>
+					Стальные трубчатые радиаторы для квартир, домов и дизайнерских интерьеров. Подберем модель по высоте, мощности, подключению и цвету RAL.
+				</p>
+				<div class='mt-7 flex flex-col gap-3 min-[420px]:flex-row'>
+					<a href='/request' class='inline-flex h-12 items-center justify-center rounded-xl bg-red-700 px-6 text-sm font-semibold text-white transition hover:bg-red-800'>
+						Получить расчет
+					</a>
+					<a href='#model_list' class='inline-flex h-12 items-center justify-center rounded-xl border border-neutral-300 bg-white px-6 text-sm font-semibold text-neutral-950 transition hover:border-neutral-400 hover:bg-neutral-50'>
+						Смотреть модели
+					</a>
+					</div>
+					<div class='mt-7 grid grid-cols-2 gap-3 sm:grid-cols-4'>
+						{statItems.map(item => (
+							<div class='rounded-full border border-neutral-200 bg-white px-4 py-2.5 text-sm leading-tight text-neutral-800'>
+								<span class='font-semibold text-neutral-950'>{item.value}</span>
+								<span class='ml-1 text-neutral-500'>{item.label}</span>
+							</div>
+						))}
+					</div>
+				</div>
 
-        <div class="mt-4 grid grid-cols-2 gap-2.5 md:mt-5 md:flex md:flex-wrap md:items-center md:gap-4">
-          <a
-            href="/request"
-            class="inline-flex h-11 items-center justify-center rounded-md border border-red-700 bg-white px-3 text-[14px] font-semibold text-red-700 transition-colors hover:bg-red-50 md:h-10 md:rounded-[3px] md:px-5 md:text-sm md:font-medium"
-          >
-            <span class="hidden md:inline">Подобрать радиатор</span>
-            <span class="md:hidden">Подобрать</span>
-          </a>
+					<div class='order-2 hidden justify-center md:flex lg:order-none'>
+						<img
+							src='/images/models/columns/hero-black-column-radiator.png'
+							alt='Черный вертикальный трубчатый радиатор Velar'
+							title='Черный вертикальный трубчатый радиатор Velar'
+							loading='eager'
+							class='h-auto max-h-[430px] w-full max-w-[240px] bg-transparent object-contain shadow-none md:max-h-[520px] md:max-w-[300px] xl:max-h-[560px]'
+						/>
+					</div>
 
-          <a
-            href="#model_list"
-            class="inline-flex h-11 items-center justify-center rounded-md border border-neutral-300 px-3 text-[14px] font-semibold text-neutral-700 transition-colors hover:border-neutral-400 hover:text-red-700 md:h-auto md:rounded-none md:border-0 md:px-0 md:text-sm md:font-medium md:hover:underline"
-          >
-            <span class="hidden md:inline">Смотреть каталог</span>
-            <span class="md:hidden">Каталог</span>
-            <span class="ml-1 hidden md:inline">→</span>
-          </a>
-        </div>
-
-        <div class="mt-5 hidden md:block">
-          <p
-            class="text-xs font-medium uppercase tracking-wide text-neutral-600"
-          >
-            Популярные модели
-          </p>
-          <div class="mt-2 grid gap-2 sm:grid-cols-2">
-            <a
-              href="/columns/2180"
-              class="group rounded-[3px] border border-neutral-200 bg-white p-3 transition-colors hover:border-neutral-300 hover:bg-neutral-50"
-            >
-              <p class="text-sm font-semibold text-neutral-900">Velar 2180</p>
-              <p class="mt-1 text-xs text-neutral-600">
-                вертикальный радиатор 1800 мм
-              </p>
-              <span
-                class="mt-2 inline-flex text-xs font-medium text-neutral-700 transition-colors group-hover:text-red-700"
-              >
-                Перейти →
-              </span>
-            </a>
-
-            <a
-              href="/columns/3030"
-              class="group rounded-[3px] border border-neutral-200 bg-white p-3 transition-colors hover:border-neutral-300 hover:bg-neutral-50"
-            >
-              <p class="text-sm font-semibold text-neutral-900">Velar 3030</p>
-              <p class="mt-1 text-xs text-neutral-600">
-                низкий радиатор под окно
-              </p>
-              <span
-                class="mt-2 inline-flex text-xs font-medium text-neutral-700 transition-colors group-hover:text-red-700"
-              >
-                Перейти →
-              </span>
-            </a>
-
-            <a
-              href="/columns/3057"
-              class="group rounded-[3px] border border-neutral-200 bg-white p-3 transition-colors hover:border-neutral-300 hover:bg-neutral-50"
-            >
-              <p class="text-sm font-semibold text-neutral-900">Velar 3057</p>
-              <p class="mt-1 text-xs text-neutral-600">
-                универсальная модель 570 мм
-              </p>
-              <span
-                class="mt-2 inline-flex text-xs font-medium text-neutral-700 transition-colors group-hover:text-red-700"
-              >
-                Перейти →
-              </span>
-            </a>
-
-            <a
-              href="/columns/3180"
-              class="group rounded-[3px] border border-neutral-200 bg-white p-3 transition-colors hover:border-neutral-300 hover:bg-neutral-50"
-            >
-              <p class="text-sm font-semibold text-neutral-900">Velar 3180</p>
-              <p class="mt-1 text-xs text-neutral-600">
-                высокий 3-трубчатый радиатор
-              </p>
-              <span
-                class="mt-2 inline-flex text-xs font-medium text-neutral-700 transition-colors group-hover:text-red-700"
-              >
-                Перейти →
-              </span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="mt-4 border-t border-neutral-200 pt-3 md:mt-auto">
-        <div class="hidden md:grid md:grid-cols-4">
-          <div class="flex items-center gap-2 py-1 text-neutral-950">
-            <span
-              class="inline-flex h-6 w-6 items-center justify-center"
-              aria-hidden="true"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.6"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                ><path d="M12 16h.01"></path><path d="M16 16h.01"></path><path
-                  d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.77-.42l-4.46 2.84a.5.5 0 0 1-.77-.42v-2a.5.5 0 0 0-.77-.42L9.77 10.92A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"
-                ></path><path d="M8 16h.01"></path></svg
-              >
-            </span>
-            <span class="text-sm tracking-tight leading-4">В наличии и под заказ</span>
-          </div>
-          <div
-            class="flex items-center gap-2 border-l border-neutral-300 pl-4 py-1 text-neutral-950"
-          >
-            <span
-              class="inline-flex h-6 w-6 items-center justify-center"
-              aria-hidden="true"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.6"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                ><path
-                  d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"
-                ></path><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"
-                ></circle><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"
-                ></circle><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"
-                ></circle><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"
-                ></circle></svg
-              >
-            </span>
-            <span class="text-sm tracking-tight leading-4">Цвета RAL</span>
-          </div>
-          <div
-            class="flex items-center gap-2 border-l border-neutral-300 pl-4 py-1 text-neutral-950"
-          >
-            <span
-              class="inline-flex h-6 w-6 items-center justify-center"
-              aria-hidden="true"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.6"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                ><path
-                  d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
-                ></path></svg
-              >
-            </span>
-            <span class="text-sm tracking-tight leading-4">Гарантия<br/>до 10 лет</span>
-          </div>
-          <div
-            class="flex items-center gap-2 border-l border-neutral-300 pl-4 py-1 text-neutral-950"
-          >
-            <span
-              class="inline-flex h-6 w-6 items-center justify-center"
-              aria-hidden="true"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.6"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                ><path
-                  d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"
-                ></path><path d="M15 18H9"></path><path
-                  d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"
-                ></path><circle cx="17" cy="18" r="2"></circle><circle
-                  cx="7"
-                  cy="18"
-                  r="2"></circle></svg
-              >
-            </span>
-             <span class="text-sm tracking-tight leading-4">Доставка по России</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <aside class="mt-1 lg:mt-0">
-      <ColumnsQuickConfigurator models={models} client:load />
-    </aside>
-
-    <div class="grid grid-cols-2 gap-x-4 gap-y-3 text-neutral-950 md:hidden">
-      <div class="flex items-center gap-2 py-1">
-        <span
-          class="inline-flex h-4 w-4 items-center justify-center"
-          aria-hidden="true"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.6"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            ><path d="M12 16h.01"></path><path d="M16 16h.01"></path><path
-              d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.77-.42l-4.46 2.84a.5.5 0 0 1-.77-.42v-2a.5.5 0 0 0-.77-.42L9.77 10.92A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"
-            ></path><path d="M8 16h.01"></path></svg
-          >
-        </span>
-        <span class="text-[12px] leading-tight">В наличии / заказ</span>
-      </div>
-      <div class="flex items-center gap-2 py-1">
-        <span
-          class="inline-flex h-4 w-4 items-center justify-center"
-          aria-hidden="true"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.6"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            ><path
-              d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"
-            ></path><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"
-            ></circle><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"
-            ></circle><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"
-            ></circle><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"
-            ></circle></svg
-          >
-        </span>
-        <span class="text-[12px] leading-tight">Цвета RAL</span>
-      </div>
-      <div class="flex items-center gap-2 py-1">
-        <span
-          class="inline-flex h-4 w-4 items-center justify-center"
-          aria-hidden="true"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.6"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            ><path
-              d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
-            ></path></svg
-          >
-        </span>
-        <span class="text-[12px] leading-tight">Гарантия 10 лет</span>
-      </div>
-      <div class="flex items-center gap-2 py-1">
-        <span
-          class="inline-flex h-4 w-4 items-center justify-center"
-          aria-hidden="true"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.6"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            ><path
-              d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"
-            ></path><path d="M15 18H9"></path><path
-              d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"
-            ></path><circle cx="17" cy="18" r="2"></circle><circle
-              cx="7"
-              cy="18"
-              r="2"></circle></svg
-          >
-        </span>
-        <span class="text-[12px] leading-tight">Доставка</span>
-      </div>
-    </div>
-  </div>
+			<aside class='order-3 lg:col-span-2 xl:col-span-1'>
+				<HeroQuickConfigurator
+					client:load
+					models={modelOptions}
+					defaultModelId={defaultModelId}
+						initialDetails={initialDetails}
+						variant='category'
+						title='Быстрый подбор'
+						modelResolutionMode='family-by-height'
+						category='tubular'
+					/>
+				</aside>
+		</div>
+	</div>
 </section>
