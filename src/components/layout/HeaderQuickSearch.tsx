@@ -36,11 +36,6 @@ export default function HeaderQuickSearch({
 		}
 	}, [open])
 
-	useEffect(() => {
-		if (open) return
-		triggerRef.current?.focus()
-	}, [open])
-
 	const openModal = () => {
 		setSession(current => current + 1)
 		setOpen(true)

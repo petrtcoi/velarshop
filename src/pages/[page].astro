@@ -16,14 +16,96 @@ type Props = {
 
 const { page } = Astro.props as Props;
 const { Content } = await page.render();
+
+const isAboutPage = page.slug === "about";
+const articleClass = isAboutPage
+  ? "container mx-auto max-w-6xl p-5 md:px-10"
+  : "container mx-auto max-w-4xl p-5 prose-sm md:px-10";
+
+const siteOrigin = (Astro.site ?? new URL("https://velarshop.ru")).origin;
+const homeUrl = `${siteOrigin}/`;
+const aboutUrl = `${siteOrigin}/about`;
+
+const aboutBreadcrumbs = isAboutPage
+  ? [
+      { title: "Главная", url: "/" },
+      { title: "О магазине", url: "/about" },
+    ]
+  : [];
+
+const aboutJsonLd = isAboutPage
+  ? {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Store",
+          "@id": `${siteOrigin}/#organization`,
+          name: "VelarShop",
+          url: `${siteOrigin}/`,
+          logo: `${siteOrigin}/images/logo.png`,
+          image: `${siteOrigin}/docs/cert.jpg`,
+          telephone: "+74951288505",
+          email: "mail@velarshop.ru",
+          description:
+            "VelarShop специализируется на подборе и продаже дизайнерских радиаторов, трубчатых радиаторов, внутрипольных конвекторов и чугунных ретро-радиаторов.",
+          address: {
+            "@type": "PostalAddress",
+            addressCountry: "RU",
+            postalCode: "192019",
+            addressLocality: "Санкт-Петербург",
+            streetAddress: "пр-кт Обуховской Обороны, д. 7, литера С, офис 6",
+          },
+        },
+        {
+          "@type": "AboutPage",
+          "@id": `${aboutUrl}/#webpage`,
+          url: `${aboutUrl}/`,
+          name: "О магазине VelarShop",
+          description:
+            "Информация о магазине VelarShop, подборе радиаторов, доставке и юридических данных.",
+          isPartOf: {
+            "@id": `${siteOrigin}/#website`,
+          },
+          about: {
+            "@id": `${siteOrigin}/#organization`,
+          },
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": `${aboutUrl}/#breadcrumb`,
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Главная",
+              item: homeUrl,
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "О магазине",
+              item: `${aboutUrl}/`,
+            },
+          ],
+        },
+      ],
+    }
+  : null;
 ---
 
 <Layout
   title={page.data.title}
   description={page.data.description}
   robots={page.data.noindex ? "noindex,follow" : undefined}
+  breadcrumbs={aboutBreadcrumbs}
+  disableBreadcrumbJsonLd={isAboutPage}
 >
-  <article class='container mx-auto p-5 md:px-10 max-w-4xl prose-sm'>
+  {aboutJsonLd && (
+    <Fragment slot='head'>
+      <script type='application/ld+json' set:html={JSON.stringify(aboutJsonLd)} />
+    </Fragment>
+  )}
+  <article class={articleClass}>
     <Content />
   </article>
 </Layout>
