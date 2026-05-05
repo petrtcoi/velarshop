@@ -24,7 +24,7 @@ const { articles } = Astro.props as Props
 		<ul class='mt-7 max-w-3xl divide-y divide-neutral-200 border-y border-neutral-200'>
 			{articles.map(item => (
 				<li>
-					<a href={item.href} class='group flex gap-3 py-3.5 text-[15px] leading-6 text-neutral-700 transition-colors hover:text-red-700 md:text-base'>
+					<a href={item.href} class='group flex gap-3 py-3.5 text-sm leading-6 text-neutral-700 transition-colors hover:text-red-700 md:text-base'>
 						<span class='mt-px text-neutral-400 transition-colors group-hover:text-red-700' aria-hidden='true'>→</span>
 						<span>{item.title}</span>
 					</a>

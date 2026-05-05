@@ -1,0 +1,50 @@
+---
+type Variant = 'default' | 'light' | 'accent'
+
+type Props = {
+	title: string
+	description?: string
+	buttonText?: string
+	buttonHref?: string
+	linkText?: string
+	linkHref?: string
+	variant?: Variant
+	size?: 'default' | 'compact'
+	class?: string
+	className?: string
+}
+
+const {
+	title,
+	description,
+	buttonText = 'Получить расчет',
+	buttonHref = '/request',
+	linkText,
+	linkHref,
+	variant = 'default',
+	size = 'default',
+	class: classAttr = '',
+	className = '',
+} = Astro.props as Props
+
+const variantClass =
+	variant === 'accent'
+		? 'article-cta--accent'
+		: variant === 'light'
+			? 'article-cta--light'
+			: 'article-cta--default'
+
+const sizeClass = size === 'compact' ? 'article-cta--compact' : ''
+---
+
+<aside class:list={['not-prose article-cta', variantClass, sizeClass, classAttr, className]}>
+	<div class='article-cta__content'>
+		<h2 class='article-cta__title'>{title}</h2>
+		{description && <p class='article-cta__description'>{description}</p>}
+	</div>
+
+	<div class='article-cta__actions'>
+		<a class='article-cta__button' href={buttonHref}>{buttonText}</a>
+		{linkText && linkHref && <a class='article-cta__link' href={linkHref}>{linkText}</a>}
+	</div>
+</aside>

@@ -246,7 +246,7 @@ const seo = getCategorySeo({
 				</div>
 			</div>
 
-			<div class='order-3 flex justify-center lg:order-none'>
+			<div class='hidden justify-center lg:flex'>
 				<Picture
 					src='/images/convector/hero/top-view-convector.png'
 					alt='Внутрипольный конвектор Velar вид сверху'
@@ -256,8 +256,8 @@ const seo = getCategorySeo({
 					widths={[240, 360, 520]}
 					width={360}
 					height={1440}
-					sizes='(max-width: 1024px) 240px, 280px'
-					class='hero-product-image max-h-[360px] w-full object-contain md:max-h-[440px] lg:max-h-[560px]'
+					sizes='280px'
+					class='hero-product-image max-h-[560px] w-full object-contain'
 				/>
 			</div>
 
@@ -278,7 +278,7 @@ const seo = getCategorySeo({
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-3xl'>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Модели внутрипольных конвекторов Velar</h2>
-				<p class='mt-4 text-[15px] leading-6 text-neutral-600 md:text-base'>Три серии закрывают основные сценарии: естественная конвекция, принудительный обогрев и низковольтные вентиляторы 24В.</p>
+				<p class='mt-4 text-sm leading-6 text-neutral-600 md:text-base'>Три серии закрывают основные сценарии: естественная конвекция, принудительный обогрев и низковольтные вентиляторы 24В.</p>
 			</div>
 			<div class='mt-7 flex flex-col gap-4 md:flex-row md:flex-wrap md:justify-center md:gap-6'>
 				{convectorModels.map((model, index) => (
@@ -297,7 +297,7 @@ const seo = getCategorySeo({
 								class='convector-model-image block h-auto w-full max-w-full object-contain'
 							/>
 						</a>
-						<h3 class='mt-3 text-[17px] font-semibold leading-tight text-neutral-950 min-[1280px]:text-lg'>{model.name}</h3>
+						<h3 class='mt-3 text-base font-semibold leading-tight text-neutral-950 min-[1280px]:text-lg'>{model.name}</h3>
 						<p class='mt-1.5 text-[14px] leading-[1.42] text-neutral-600'>{model.useCase}</p>
 						<div class='mt-3 grid gap-1.5 border-t border-neutral-200 pt-3 text-[13px] leading-5 text-neutral-700'>
 							<div><span class='text-neutral-500'>Тип:</span> {model.convectionType}</div>
@@ -340,7 +340,7 @@ const seo = getCategorySeo({
 					</tbody>
 				</table>
 			</div>
-			<p class='mt-5 max-w-4xl text-[15px] leading-6 text-neutral-700 md:text-base'>
+			<p class='mt-5 max-w-4xl text-sm leading-6 text-neutral-700 md:text-base'>
 				Если конвектор нужен для обычной зоны с умеренными теплопотерями, чаще рассматривают KWH. Для панорамного остекления, холодных зон и помещений с повышенными теплопотерями обычно выбирают KWHV. Версия KWHV 24V подходит для проектов, где важно низковольтное питание вентиляторов и более гибкое управление системой.
 			</p>
 		</div>
@@ -355,7 +355,7 @@ const seo = getCategorySeo({
 				{chooseItems.map(([title, text]) => (
 					<div class='rounded-lg border border-neutral-200 bg-white p-5'>
 						<h3 class='text-lg font-semibold text-neutral-950'>{title}</h3>
-						<p class='mt-2 text-[15px] leading-6 text-neutral-600'>{text}</p>
+						<p class='mt-2 text-sm leading-6 text-neutral-600'>{text}</p>
 					</div>
 				))}
 			</div>
@@ -369,7 +369,7 @@ const seo = getCategorySeo({
 				{useCases.map(([title, text]) => (
 					<div class='border-t border-neutral-200 py-4'>
 						<h3 class='text-lg font-semibold text-neutral-950'>{title}</h3>
-						<p class='mt-2 text-[15px] leading-6 text-neutral-600'>{text}</p>
+						<p class='mt-2 text-sm leading-6 text-neutral-600'>{text}</p>
 					</div>
 				))}
 			</div>
@@ -385,7 +385,7 @@ const seo = getCategorySeo({
 				{benefits.map(([title, text]) => (
 					<div class='border-t border-white/15 py-4'>
 						<h3 class='text-lg font-semibold text-white'>{title}</h3>
-						<p class='mt-2 text-[15px] leading-6 text-neutral-300'>{text}</p>
+						<p class='mt-2 text-sm leading-6 text-neutral-300'>{text}</p>
 					</div>
 				))}
 			</div>
@@ -396,10 +396,10 @@ const seo = getCategorySeo({
 		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] xl:px-8'>
 			<div>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Внутрипольные конвекторы для панорамных окон</h2>
-				<p class='mt-5 text-[15px] leading-6 text-neutral-700 md:text-base'>
+				<p class='mt-5 text-sm leading-6 text-neutral-700 md:text-base'>
 					Панорамное остекление выглядит эффектно, но требует внимательного подбора отопления. В зоне больших окон часто возникают повышенные теплопотери и ощущение холодного воздуха от стекла. Внутрипольный конвектор устанавливается вдоль линии остекления и помогает сформировать тепловую завесу.
 				</p>
-				<p class='mt-3 text-[15px] leading-6 text-neutral-700 md:text-base'>
+				<p class='mt-3 text-sm leading-6 text-neutral-700 md:text-base'>
 					Для спокойных условий может подойти модель KWH с естественной конвекцией, а для больших окон, частных домов и коммерческих помещений чаще выбирают KWHV или KWHV 24V с вентиляторами.
 				</p>
 			</div>
@@ -410,7 +410,7 @@ const seo = getCategorySeo({
 					['/info/vnutripolnye-konvektory-s-ventilyatorom', 'Внутрипольные конвекторы с вентилятором'],
 				].map(([href, title]) => (
 					<li>
-						<a href={href} class='group flex gap-3 py-3.5 text-[15px] leading-6 text-neutral-700 transition hover:text-red-700 md:text-base'>
+						<a href={href} class='group flex gap-3 py-3.5 text-sm leading-6 text-neutral-700 transition hover:text-red-700 md:text-base'>
 							<span class='text-neutral-400 transition group-hover:text-red-700'>→</span>
 							<span>{title}</span>
 						</a>
@@ -430,7 +430,7 @@ const seo = getCategorySeo({
 				].map(([title, items]) => (
 					<div class='rounded-lg border border-neutral-200 bg-white p-5'>
 						<h3 class='text-xl font-semibold text-neutral-950'>{title}</h3>
-						<ul class='mt-4 space-y-3 text-[15px] leading-6 text-neutral-600'>
+						<ul class='mt-4 space-y-3 text-sm leading-6 text-neutral-600'>
 							{items.map(item => (
 								<li class='flex gap-3'>
 									<span class='mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-red-700'></span>
@@ -448,7 +448,7 @@ const seo = getCategorySeo({
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-3xl'>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Как заказать внутрипольный конвектор Velar</h2>
-				<p class='mt-4 text-[15px] leading-6 text-neutral-600 md:text-base'>
+				<p class='mt-4 text-sm leading-6 text-neutral-600 md:text-base'>
 					Заказ можно оформить через сайт, телефон, email, онлайн-чат или форму запроса. Если есть план помещения или дизайн-проект, приложите его к заявке.
 				</p>
 			</div>
@@ -457,7 +457,7 @@ const seo = getCategorySeo({
 					<div class='rounded-lg border border-neutral-200 bg-white p-5'>
 						<div class='text-sm font-semibold text-red-700'>{number}</div>
 						<h3 class='mt-3 text-lg font-semibold text-neutral-950'>{title}</h3>
-						<p class='mt-2 text-[15px] leading-6 text-neutral-600'>{text}</p>
+						<p class='mt-2 text-sm leading-6 text-neutral-600'>{text}</p>
 					</div>
 				))}
 			</div>
@@ -471,7 +471,7 @@ const seo = getCategorySeo({
 			<ul class='mt-7 divide-y divide-neutral-200 border-y border-neutral-200 md:columns-2 md:gap-10'>
 				{usefulLinks.map(([href, title]) => (
 					<li class='break-inside-avoid'>
-						<a href={href} class='group flex gap-3 py-3.5 text-[15px] leading-6 text-neutral-700 transition hover:text-red-700 md:text-base'>
+						<a href={href} class='group flex gap-3 py-3.5 text-sm leading-6 text-neutral-700 transition hover:text-red-700 md:text-base'>
 							<span class='text-neutral-400 transition group-hover:text-red-700'>→</span>
 							<span>{title}</span>
 						</a>
@@ -488,7 +488,7 @@ const seo = getCategorySeo({
 				{deliveryItems.map(([title, text]) => (
 					<div class='rounded-lg border border-neutral-200 bg-white p-5'>
 						<h3 class='text-lg font-semibold text-neutral-950'>{title}</h3>
-						<p class='mt-2 text-[15px] leading-6 text-neutral-600'>{text}</p>
+						<p class='mt-2 text-sm leading-6 text-neutral-600'>{text}</p>
 					</div>
 				))}
 			</div>
@@ -508,7 +508,7 @@ const seo = getCategorySeo({
 								<span class='absolute left-1/2 top-1/2 h-4 w-px -translate-x-1/2 -translate-y-1/2 bg-current transition group-open:rotate-90 group-open:opacity-0'></span>
 							</span>
 						</summary>
-						<p class='mt-3 text-[15px] leading-6 text-neutral-600'>{answer}</p>
+						<p class='mt-3 text-sm leading-6 text-neutral-600'>{answer}</p>
 					</details>
 				))}
 			</div>

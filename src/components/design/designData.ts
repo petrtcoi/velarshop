@@ -199,7 +199,7 @@ export const designSeries: DesignSeries[] = seriesOrder
 			image: mainModel.image,
 			heroImage: seriesHeroImages[slug],
 			priceFrom: Number.isFinite(priceFrom) ? priceFrom : 0,
-			href: `/design/${slug}`,
+			href: models.length > 1 ? `/design/${slug}` : mainModel.href,
 			orientations: [...new Set(models.map(model => model.orientation))],
 			models,
 			verticalModel,

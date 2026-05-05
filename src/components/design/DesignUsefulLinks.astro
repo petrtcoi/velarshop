@@ -5,13 +5,13 @@ import { designUsefulLinks } from './designData'
 <section class='bg-white py-12 md:py-16 xl:py-20'>
 	<div class='mx-auto max-w-[900px] px-4 md:px-6 xl:px-8'>
 		<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Полезные материалы</h2>
-		<p class='mt-4 text-[15px] leading-6 text-neutral-600 md:text-base'>
+		<p class='mt-4 text-sm leading-6 text-neutral-600 md:text-base'>
 			Статьи о выборе дизайнерских радиаторов, мощности, форме труб, безопасности и подборе под интерьер.
 		</p>
 		<ul class='mt-7 divide-y divide-neutral-200 border-y border-neutral-200'>
 			{designUsefulLinks.map(([href, title]) => (
 				<li>
-					<a href={href} class='group flex gap-3 py-3.5 text-[15px] leading-6 text-neutral-700 transition hover:text-red-700 md:text-base'>
+					<a href={href} class='group flex gap-3 py-3.5 text-sm leading-6 text-neutral-700 transition hover:text-red-700 md:text-base'>
 						<span class='text-neutral-400 transition group-hover:text-red-700'>→</span>
 						<span>{title}</span>
 					</a>

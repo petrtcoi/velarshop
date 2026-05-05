@@ -1,6 +1,6 @@
 import { useStore } from "@nanostores/preact";
 
-import BuyButton from "@features/order/ShoppingCart";
+import { addToCart, storeShoppingCart } from "@features/order/ShoppingCart";
 
 import { getGrillNotFit } from "@features/options/GrillNotFit";
 import { getRadiatorTotalCost } from "@features/radiator/RadiatorTotalCost";
@@ -18,10 +18,23 @@ type Props = {
 function RadiatorRow({ model, radiator, showInterAxis }: Props) {
   const totalPrice = useStore(getRadiatorTotalCost)(model, radiator);
   const totalTitle = useStore(radiatorTotalTitle)(model, radiator);
+  const shoppingCart = useStore(storeShoppingCart);
   const convectorGrillNotFit = useStore(getGrillNotFit)(model, radiator);
+  const itemInRequestQnty =
+    shoppingCart.items.find((item) => item.title === totalTitle)?.qnty || 0;
+
+  const handleAddToRequest = () => {
+    addToCart({
+      title: totalTitle,
+      price: totalPrice,
+      details: `${radiator.height}x${radiator.length}x${radiator.width} / ${radiator.dt70} Вт`,
+      linkSlug: `/model/${model.slug}/${radiator.slug}`,
+      itemType: "radiator",
+    });
+  };
 
   return (
-    <tr class="hover:bg-neutral-50 py-3 text-xs border-b border-neutral-200 font-light">
+    <tr class="border-b border-neutral-200 py-3 text-xs font-light transition hover:bg-neutral-50">
       <td class="py-3 pl-2 flex flex-col">
         <div class="text-red-600 font-normal hover:underline">
           <a href={`/model/${model.slug}/${radiator.slug}`}>{totalTitle}</a>
@@ -57,13 +70,14 @@ function RadiatorRow({ model, radiator, showInterAxis }: Props) {
       ) : (
         <>
           <td class="py-3">{totalPrice.toLocaleString("ru-RU")}</td>
-          <td class="justify-center ">
-            <BuyButton
-              itemTitle={totalTitle}
-              price={totalPrice}
-              model={model}
-              radiator={radiator}
-            />
+          <td class="py-2 text-right">
+            <button
+              type="button"
+              class="inline-flex h-7 items-center justify-center rounded-[3px] border border-red-200 bg-white px-2.5 text-xs font-normal text-red-700 transition hover:border-red-700 hover:bg-red-50"
+              onClick={handleAddToRequest}
+            >
+              {itemInRequestQnty > 0 ? `В запросе: ${itemInRequestQnty}` : "В запрос"}
+            </button>
           </td>
         </>
       )}

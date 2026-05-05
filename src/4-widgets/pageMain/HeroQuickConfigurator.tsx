@@ -757,7 +757,7 @@ export default function HeroQuickConfigurator({
 								href={details.model.href}
 								onClick={() => onNavigate?.()}
 								class={`mt-1 block text-sm font-semibold leading-5 text-neutral-950 hover:text-red-700 ${
-									isModal ? '' : 'md:text-[15px]'
+									isModal ? '' : 'md:text-sm'
 								}`}
 							>
 								{result.title}

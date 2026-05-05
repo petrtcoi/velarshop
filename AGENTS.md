@@ -73,6 +73,17 @@ Main principle: a Velar model page is not a decorative card-based landing page. 
 - If a button opens a request form, name it "Получить расчет".
 - Do not confuse the user with multiple similar CTAs in one place.
 
+### Text links
+
+- Text links inside product descriptions, article prose, and MDX content must not use raw browser-default underline styles.
+- Links should be visible but calm:
+  - brand red color;
+  - thin underline;
+  - small underline offset;
+  - hover state must visibly change the underline or remove it.
+- Do not apply text-link styles to buttons, navigation links, breadcrumbs, footer links, or card actions.
+- Always preserve internal links when rewriting product descriptions or article content.
+
 ### SEO / content preservation
 
 - Before refactoring any category/model page, compare with the previous version and make sure:

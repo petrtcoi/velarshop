@@ -228,7 +228,7 @@ const seo = getCategorySeo({
 				<h1 class='max-w-[680px] text-[34px] font-semibold leading-[1.04] tracking-tight text-neutral-950 md:text-[42px] min-[1250px]:text-[56px]'>
 					Чугунные ретро-радиаторы Velar
 				</h1>
-				<p class='mt-5 max-w-[620px] text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>
+				<p class='mt-5 max-w-[620px] text-sm leading-6 text-neutral-700 md:text-base md:leading-7'>
 					Чугунные ретро-радиаторы Velar подходят для классических интерьеров, лофта, ресторанов, отелей и загородных домов. В каталоге представлены модели с выразительным орнаментом и более сдержанным историческим силуэтом. Радиаторы можно окрасить в любой цвет RAL, выполнить патинацию или выделить орнамент оттенками золота, бронзы, серебра и меди.
 				</p>
 				<div class='mt-7 flex flex-col gap-3 min-[420px]:flex-row'>
@@ -291,7 +291,7 @@ const seo = getCategorySeo({
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-3xl'>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Модели чугунных ретро-радиаторов</h2>
-				<p class='mt-3 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>Всего 4 модели: две серии и две высоты. Выбор зависит от стиля интерьера, места установки и нужной мощности.</p>
+				<p class='mt-3 text-sm leading-6 text-neutral-700 md:text-base md:leading-7'>Всего 4 модели: две серии и две высоты. Выбор зависит от стиля интерьера, места установки и нужной мощности.</p>
 			</div>
 			<div class='mt-7 flex flex-col gap-4 md:flex-row md:flex-wrap md:justify-center'>
 				{retroModels.map(model => (
@@ -309,7 +309,7 @@ const seo = getCategorySeo({
 								class='retro-model-image block h-auto w-full max-w-full object-contain'
 							/>
 						</a>
-						<h3 class='mt-3 text-[16px] font-semibold leading-tight text-neutral-950 min-[1280px]:text-[17px]'>{model.title}</h3>
+						<h3 class='mt-3 text-[16px] font-semibold leading-tight text-neutral-950 min-[1280px]:text-base'>{model.title}</h3>
 						<p class='mt-1.5 text-[13px] leading-[1.42] text-neutral-600'>{model.description}</p>
 						<div class='mt-3 grid gap-1.5 border-t border-neutral-200 pt-3 text-[12.5px] leading-5 text-neutral-700'>
 							<div><span class='text-neutral-500'>Высота:</span> {model.height}</div>
@@ -318,7 +318,7 @@ const seo = getCategorySeo({
 							<div><span class='text-neutral-500'>Вес:</span> {model.weight}</div>
 							<div><span class='text-neutral-500'>Производство:</span> от 2 недель</div>
 						</div>
-						<div class='mt-3 text-[15px] font-semibold text-neutral-950'>от {formatRub(model.priceFrom)}</div>
+						<div class='mt-3 text-sm font-semibold text-neutral-950'>от {formatRub(model.priceFrom)}</div>
 						<div class='mt-auto pt-3'>
 							<a href={model.href} class='inline-flex h-9 w-full items-center justify-center rounded-lg border border-neutral-300 bg-white px-3 text-[13px] font-semibold text-neutral-950 transition hover:border-neutral-400 hover:bg-white'>
 								Подробнее
@@ -346,10 +346,10 @@ const seo = getCategorySeo({
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-3xl'>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Чем отличаются Nostalgia и Historic</h2>
-				<p class='mt-5 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>
+				<p class='mt-5 text-sm leading-6 text-neutral-700 md:text-base md:leading-7'>
 					<strong class='font-semibold text-neutral-950'>Nostalgia</strong> — более декоративная серия с выразительным цветочным орнаментом. Она подходит для классических интерьеров, винтажных проектов, ресторанов, отелей и загородных домов.
 				</p>
-				<p class='mt-3 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>
+				<p class='mt-3 text-sm leading-6 text-neutral-700 md:text-base md:leading-7'>
 					<strong class='font-semibold text-neutral-950'>Historic</strong> — более сдержанная серия без активного орнамента. Она хорошо смотрится в лофте, эклектике, спокойной классике и интерьерах, где радиатор не должен перетягивать внимание.
 				</p>
 			</div>
@@ -378,10 +378,10 @@ const seo = getCategorySeo({
 		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:px-8'>
 			<div>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Преимущества чугунных ретро-радиаторов Velar</h2>
-				<p class='mt-5 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>
+				<p class='mt-5 text-sm leading-6 text-neutral-700 md:text-base md:leading-7'>
 					Радиаторы из чугуна ценят за долговечность, устойчивость к коррозии и нетребовательность к качеству теплоносителя. Чугун хорошо сохраняет тепло и сглаживает температурные перепады, поэтому отопление ощущается более мягким и стабильным.
 				</p>
-				<p class='mt-3 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>
+				<p class='mt-3 text-sm leading-6 text-neutral-700 md:text-base md:leading-7'>
 					Еще одно преимущество — высокая тепловая инерция. Радиатор дольше остывает после отключения подачи теплоносителя и помогает поддерживать комфортный микроклимат. При этом чугунные модели часто выбирают не только как отопительный прибор, но и как выразительный интерьерный элемент.
 				</p>
 			</div>
@@ -400,10 +400,10 @@ const seo = getCategorySeo({
 		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:px-8'>
 			<div>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Цвета, патинация и декоративная отделка</h2>
-				<p class='mt-5 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>
+				<p class='mt-5 text-sm leading-6 text-neutral-700 md:text-base md:leading-7'>
 					Для ретро-радиаторов доступны разные варианты декоративной отделки: окраска в цвета RAL, состаренное серебро, бронза, медь, золото, двухцветная покраска и выделение орнамента. По запросу можно выполнить патинацию или нанести декоративные текстуры, включая имитацию дерева.
 				</p>
-				<p class='mt-3 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>
+				<p class='mt-3 text-sm leading-6 text-neutral-700 md:text-base md:leading-7'>
 					Такая отделка помогает адаптировать радиатор под интерьер: сделать его заметным акцентом или, наоборот, вписать в спокойную цветовую гамму помещения.
 				</p>
 			</div>
@@ -421,7 +421,7 @@ const seo = getCategorySeo({
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-3xl'>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Чугунные ретро-радиаторы в интерьере</h2>
-				<p class='mt-3 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>Ретро-радиаторы в интерьере работают не только как отопительный прибор, но и как декоративный акцент. Они хорошо смотрятся в классических пространствах, лофте, винтажных проектах, загородных домах, ресторанах и отелях.</p>
+				<p class='mt-3 text-sm leading-6 text-neutral-700 md:text-base md:leading-7'>Ретро-радиаторы в интерьере работают не только как отопительный прибор, но и как декоративный акцент. Они хорошо смотрятся в классических пространствах, лофте, винтажных проектах, загородных домах, ресторанах и отелях.</p>
 			</div>
 			<div class='-mx-4 mt-8 flex gap-4 overflow-x-auto px-4 pb-2 md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0 xl:grid-cols-4'>
 				{interiorImages.map(([src, alt]) => (
@@ -441,7 +441,7 @@ const seo = getCategorySeo({
 		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] xl:px-8'>
 			<div>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Рекомендации по монтажу и эксплуатации</h2>
-				<p class='mt-3 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>Чугунные ретро-радиаторы тяжелее стальных и алюминиевых моделей, поэтому при транспортировке, монтаже и первом запуске важно соблюдать несколько правил. Это помогает избежать повреждений, протечек и проблем с подключением.</p>
+				<p class='mt-3 text-sm leading-6 text-neutral-700 md:text-base md:leading-7'>Чугунные ретро-радиаторы тяжелее стальных и алюминиевых моделей, поэтому при транспортировке, монтаже и первом запуске важно соблюдать несколько правил. Это помогает избежать повреждений, протечек и проблем с подключением.</p>
 			</div>
 			<ol class='space-y-4'>
 				{mountingItems.map(([title, text], index) => (
@@ -449,7 +449,7 @@ const seo = getCategorySeo({
 						<div class='text-sm font-semibold text-red-700'>{String(index + 1).padStart(2, '0')}</div>
 						<div>
 							<h3 class='text-base font-semibold text-neutral-950'>{title}</h3>
-							<p class='mt-1 text-[15px] leading-6 text-neutral-600'>{text}</p>
+							<p class='mt-1 text-sm leading-6 text-neutral-600'>{text}</p>
 						</div>
 					</li>
 				))}
@@ -461,8 +461,8 @@ const seo = getCategorySeo({
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-3xl'>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Как заказать чугунные ретро-радиаторы Velar</h2>
-				<p class='mt-5 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>Вы можете оформить заказ на сайте, добавив интересующие модели в запрос, или связаться с нами по телефону, электронной почте, через онлайн-чат или форму обратной связи. В заявке можно указать требуемую мощность, площадь помещения, тип подключения, цвет, вариант отделки и другие пожелания.</p>
-				<p class='mt-3 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>Если у вас есть план помещения или дизайн-проект, приложите его к заявке. Менеджер поможет подобрать модель, количество секций и подходящий вариант подключения.</p>
+				<p class='mt-5 text-sm leading-6 text-neutral-700 md:text-base md:leading-7'>Вы можете оформить заказ на сайте, добавив интересующие модели в запрос, или связаться с нами по телефону, электронной почте, через онлайн-чат или форму обратной связи. В заявке можно указать требуемую мощность, площадь помещения, тип подключения, цвет, вариант отделки и другие пожелания.</p>
+				<p class='mt-3 text-sm leading-6 text-neutral-700 md:text-base md:leading-7'>Если у вас есть план помещения или дизайн-проект, приложите его к заявке. Менеджер поможет подобрать модель, количество секций и подходящий вариант подключения.</p>
 				<a href='/request' class='mt-6 inline-flex h-11 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>
 					Получить расчет ретро-радиатора
 				</a>
@@ -472,7 +472,7 @@ const seo = getCategorySeo({
 					<div class='rounded-lg border border-neutral-200 bg-white p-5'>
 						<div class='text-sm font-semibold text-red-700'>{number}</div>
 						<h3 class='mt-3 text-lg font-semibold text-neutral-950'>{title}</h3>
-						<p class='mt-2 text-[15px] leading-6 text-neutral-600'>{text}</p>
+						<p class='mt-2 text-sm leading-6 text-neutral-600'>{text}</p>
 					</div>
 				))}
 			</div>
@@ -483,9 +483,9 @@ const seo = getCategorySeo({
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-3xl'>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Доставка и оплата</h2>
-				<p class='mt-5 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>Доставка выполняется по всей России. В Санкт-Петербурге возможна доставка до двери. В другие регионы радиаторы отправляются через транспортные компании: Деловые Линии, Возовоз, Байкал-Сервис, ПЭК и другие.</p>
-				<p class='mt-3 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>Доставка до терминала транспортной компании в городе отправления выполняется за наш счет. Груз отправляется в жесткой упаковке и со страховкой, если такая услуга доступна у перевозчика.</p>
-				<p class='mt-3 text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>Оплата возможна для физических и юридических лиц: банковским переводом, онлайн-оплатой картой или переводом по QR-коду. Для изделий под заказ заключается договор и вносится предоплата. Радиаторы, изготовленные по индивидуальному заказу, не подлежат возврату или обмену.</p>
+				<p class='mt-5 text-sm leading-6 text-neutral-700 md:text-base md:leading-7'>Доставка выполняется по всей России. В Санкт-Петербурге возможна доставка до двери. В другие регионы радиаторы отправляются через транспортные компании: Деловые Линии, Возовоз, Байкал-Сервис, ПЭК и другие.</p>
+				<p class='mt-3 text-sm leading-6 text-neutral-700 md:text-base md:leading-7'>Доставка до терминала транспортной компании в городе отправления выполняется за наш счет. Груз отправляется в жесткой упаковке и со страховкой, если такая услуга доступна у перевозчика.</p>
+				<p class='mt-3 text-sm leading-6 text-neutral-700 md:text-base md:leading-7'>Оплата возможна для физических и юридических лиц: банковским переводом, онлайн-оплатой картой или переводом по QR-коду. Для изделий под заказ заключается договор и вносится предоплата. Радиаторы, изготовленные по индивидуальному заказу, не подлежат возврату или обмену.</p>
 			</div>
 			<div class='mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-neutral-700'>
 				<a href='/delivery' class='hover:text-red-700'>Доставка</a>
@@ -501,7 +501,7 @@ const seo = getCategorySeo({
 			<ul class='mt-7 divide-y divide-neutral-200 border-y border-neutral-200'>
 				{usefulLinks.map(([href, title]) => (
 					<li>
-						<a href={href} class='group flex gap-3 py-3.5 text-[15px] leading-6 text-neutral-700 transition hover:text-red-700 md:text-base'>
+						<a href={href} class='group flex gap-3 py-3.5 text-sm leading-6 text-neutral-700 transition hover:text-red-700 md:text-base'>
 							<span class='text-neutral-400 transition group-hover:text-red-700'>→</span>
 							<span>{title}</span>
 						</a>
@@ -524,7 +524,7 @@ const seo = getCategorySeo({
 								<span class='absolute left-1/2 top-1/2 h-4 w-px -translate-x-1/2 -translate-y-1/2 bg-current transition group-open:rotate-90 group-open:opacity-0'></span>
 							</span>
 						</summary>
-						<p class='mt-3 text-[15px] leading-6 text-neutral-600'>{answer}</p>
+						<p class='mt-3 text-sm leading-6 text-neutral-600'>{answer}</p>
 					</details>
 				))}
 			</div>
