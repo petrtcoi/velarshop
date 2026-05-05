@@ -5,13 +5,25 @@ import ShoppingCartList from "@widgets/order/ShoppingCartList";
 ---
 
 <Layout
-  title='Корзина покупок | VelarShop.ru'
-  description='Оформление заказа на радиаторы и конвекторы Velar.'
+  title='Заявка на расчет | VelarShop'
+  description='Корзина выбранных радиаторов и конвекторов Velar для отправки заявки на расчет.'
   robots='noindex,follow'
   paddings={true}
   hideShoppingCartWidgt={true}
 >
-  <h1 class='text-3xl'>Корзина покупок</h1>
-  <ShoppingCartList client:load />
-  <OrderForm client:load />
+  <main class='mx-auto max-w-6xl px-4 py-8 md:px-8 md:py-12'>
+    <div class='mb-7 max-w-3xl'>
+      <p class='mb-2 text-xs font-medium uppercase tracking-[0.18em] text-neutral-500'>VelarShop</p>
+      <h1 class='m-0 text-3xl font-semibold tracking-tight text-neutral-950 md:text-4xl'>Заявка на расчет</h1>
+      <p class='mt-3 text-sm leading-6 text-neutral-600 md:text-base md:leading-7'>
+        Проверьте выбранные позиции и оставьте контакты. Менеджер уточнит параметры, подготовит расчет стоимости,
+        мощности, подключения и доставки.
+      </p>
+    </div>
+
+    <div class='grid min-w-0 gap-8 lg:grid-cols-[minmax(0,1fr)_390px] lg:items-start'>
+      <ShoppingCartList client:load />
+      <OrderForm client:load />
+    </div>
+  </main>
 </Layout>

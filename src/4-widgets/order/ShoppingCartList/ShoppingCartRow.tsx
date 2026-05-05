@@ -12,23 +12,25 @@ function ShoppingCartRow (item: Props) {
 
 
   return (
-    <tr class="hover:bg-neutral-50 py-3 text-xs border-b border-neutral-200 font-light ">
-      <td class="py-3 pl-2 flex flex-col gap-1">
-        <div class="text-red-600 font-normal hover:underline">
-          <a href={ item.linkSlug }>
+    <tr class="border-b border-neutral-200 text-sm transition hover:bg-neutral-50">
+      <td class="px-4 py-4">
+        <div class="flex flex-col gap-1">
+        <div class="font-medium text-neutral-950">
+          <a href={ item.linkSlug } class="text-[#b91c1c] underline decoration-[#b91c1c]/40 underline-offset-[3px] hover:no-underline">
             { title }
           </a>
         </div>
-        <div class="text-[10px] text-neutral-600 text-light">
+        <div class="text-xs leading-5 text-neutral-600">
           { details }
+        </div>
         </div>
       </td>
 
-      <td class="py-3 text-center ">{ item.price.toLocaleString() }</td>
-      <td class="justify-center ">
+      <td class="px-3 py-4 text-center text-sm text-neutral-700">{ item.price.toLocaleString() } ₽</td>
+      <td class="px-3 py-4">
         <BuyButton itemTitle={ title } />
       </td>
-      <td class="py-3 text-center pr-2 ">{ total.toLocaleString() }</td>
+      <td class="px-4 py-4 text-right text-sm font-medium text-neutral-950">{ total.toLocaleString() } ₽</td>
 
     </tr>
   )

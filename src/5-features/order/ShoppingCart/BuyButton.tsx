@@ -32,7 +32,7 @@ function isPropsFullItem (props: PropsTiny | PropsFullRadiator | PropsFullItem):
 }
 
 
-const smallBtnCls = "py-1 px-2 border rounded-md border-neutral-200 hover:border-neutral-400 transition-colors"
+const smallBtnCls = "flex h-7 w-7 items-center justify-center rounded-md border border-neutral-300 bg-white text-xs font-normal text-neutral-800 transition hover:border-neutral-950 hover:bg-neutral-50"
 const largeBtnCls = "py-2 px-4 border rounded-md bg-transparent border-red-600 border hover:bg-red-600 text-red-600 hover:text-white transition-colors duration-300"
 const largeQntyCls = "text-3xl font-mono mx-6"
 
@@ -91,7 +91,7 @@ function BuyButton (props: PropsTiny | PropsFullRadiator | PropsFullItem) {
 
   if (itemInCartQnty > 0) {
     return (
-      <div class="flex flex-row justify-between items-center">
+      <div class="flex flex-row justify-center items-center gap-2">
         <button
           class={ btnCls }
           aria-label="Добавить в корзину 1 шт"
@@ -99,7 +99,7 @@ function BuyButton (props: PropsTiny | PropsFullRadiator | PropsFullItem) {
         >
           +
         </button>
-        <div class={ qntyCls }>{ itemInCartQnty }</div>
+        <div class={ `${qntyCls} min-w-5 text-center text-sm font-normal text-neutral-900` }>{ itemInCartQnty }</div>
         <button
           class={ btnCls }
           aria-label="Убрать из корзины 1 шт"
@@ -113,11 +113,11 @@ function BuyButton (props: PropsTiny | PropsFullRadiator | PropsFullItem) {
 
   return (
     <button
-      class={ `${ btnCls } w-full sm:w-48` }
+      class={ `${ btnCls } w-full sm:w-24` }
       aria-label="Купить"
       onClick={ () => handleAddToCart() }
     >
-      купить
+      Добавить
     </button>
   )
 
@@ -125,7 +125,6 @@ function BuyButton (props: PropsTiny | PropsFullRadiator | PropsFullItem) {
 
 
 export default BuyButton
-
 
 
 

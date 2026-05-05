@@ -1,0 +1,115 @@
+---
+import { Picture } from '@astrojs/image/components'
+
+export type ProductGalleryImage = {
+	src: any
+	alt: string
+	title?: string
+}
+
+type Props = {
+	images: ProductGalleryImage[]
+	isHorizontal?: boolean
+	productName: string
+}
+
+const { images, isHorizontal = false, productName } = Astro.props as Props
+const hasMultipleImages = images.length > 1
+---
+
+<div class='product-gallery max-w-[520px]' data-product-gallery data-gallery-count={images.length}>
+	<div class='relative'>
+		<div class='overflow-hidden' data-product-gallery-main>
+			<div class='flex'>
+				{images.map((image, index) => (
+					<div class='min-w-0 flex-[0_0_100%]'>
+						<div
+							class:list={[
+								'flex w-full items-center justify-center overflow-hidden',
+								isHorizontal ? 'h-[220px] md:h-[380px]' : 'h-[280px] md:h-[440px]',
+							]}
+						>
+							<Picture
+								src={image.src}
+								alt={image.alt || productName}
+								title={image.title || image.alt || productName}
+								loading={index === 0 ? 'eager' : 'lazy'}
+								aspectRatio='1:1'
+								widths={[420, 640, 820]}
+								width={760}
+								height={760}
+								sizes='(max-width: 768px) 100vw, 44vw'
+								class='h-full w-full object-contain'
+							/>
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+
+		{hasMultipleImages && (
+			<>
+				<button
+					type='button'
+					class='product-gallery-arrow absolute left-2 top-1/2 hidden h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-neutral-300 bg-white/90 text-base text-neutral-900 shadow-sm transition hover:border-neutral-500 disabled:pointer-events-none disabled:opacity-35 md:flex'
+					aria-label={`Предыдущее изображение ${productName}`}
+					data-product-gallery-prev
+				>
+					‹
+				</button>
+				<button
+					type='button'
+					class='product-gallery-arrow absolute right-2 top-1/2 hidden h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-neutral-300 bg-white/90 text-base text-neutral-900 shadow-sm transition hover:border-neutral-500 disabled:pointer-events-none disabled:opacity-35 md:flex'
+					aria-label={`Следующее изображение ${productName}`}
+					data-product-gallery-next
+				>
+					›
+				</button>
+			</>
+		)}
+	</div>
+
+	{hasMultipleImages && (
+		<div class='mt-2 flex gap-2 overflow-x-auto pb-1' data-product-gallery-thumbs>
+			{images.map((image, index) => (
+				<button
+					type='button'
+					class='product-gallery-thumb h-[54px] w-[54px] shrink-0 overflow-hidden rounded-[2px] border border-neutral-200 bg-white transition hover:border-neutral-500 md:h-[72px] md:w-[72px]'
+					aria-label={`Показать изображение ${index + 1}: ${image.alt || productName}`}
+					aria-current={index === 0 ? 'true' : 'false'}
+					data-product-gallery-thumb
+					data-gallery-index={index}
+				>
+					<Picture
+						src={image.src}
+						alt={image.alt || productName}
+						title={image.title || image.alt || productName}
+						loading='lazy'
+						aspectRatio='1:1'
+						widths={[80, 120]}
+						width={120}
+						height={120}
+						sizes='72px'
+						class='h-full w-full object-cover'
+					/>
+				</button>
+			))}
+		</div>
+	)}
+</div>
+
+<script>
+	import '../../scripts/product-gallery'
+</script>
+
+<style>
+	.product-gallery-thumb[aria-current='true'] {
+		border-color: #111827;
+	}
+
+	.product-gallery-arrow:focus-visible,
+	.product-gallery-thumb:focus-visible {
+		outline: 2px solid rgba(17, 24, 39, 0.28);
+		outline-offset: 2px;
+	}
+</style>

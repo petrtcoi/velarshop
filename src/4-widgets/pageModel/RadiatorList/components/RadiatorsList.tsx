@@ -5,11 +5,11 @@ import RadiatorFilter from './RadiatorFilter'
 import RadiatorListHeader from './RadiatorListHeader'
 import RadiatorRow from './RadiatorRow'
 
-import { ALL } from '../constants/filterAll'
-import { filterRadiators } from '../utils/filterRadiators'
-import { addToCart, storeShoppingCart } from '@features/order/ShoppingCart'
 import SelectAddon from '@features/options/SelectAddons'
 import SelectConvectorGrill from '@features/options/SelectConvectorGrill'
+import { addToCart, storeShoppingCart } from '@features/order/ShoppingCart'
+import { ALL } from '../constants/filterAll'
+import { filterRadiators } from '../utils/filterRadiators'
 
 import type { ModelJson } from '@entities/Model'
 import type { RadiatorJson } from '@entities/Radiator'
@@ -41,7 +41,10 @@ function getSizeLabel(model: ModelJson, radiator: RadiatorJson): string {
 }
 
 function normalizeModelName(name: string): string {
-	return name.replace(/([A-Za-zА-Яа-я])\s+(\d+)/g, '$1$2').replace(/\s+/g, ' ').trim()
+	return name
+		.replace(/([A-Za-zА-Яа-я])\s+(\d+)/g, '$1$2')
+		.replace(/\s+/g, ' ')
+		.trim()
 }
 
 function getRadiatorPrice(radiator: RadiatorJson): number {
@@ -53,9 +56,10 @@ function getCartItemTitle(modelLabel: string, model: ModelJson, radiator: Radiat
 }
 
 function getCartItemDetails(model: ModelJson, radiator: RadiatorJson): string {
-	const dimensions = model.orientation === 'vertical' || model.orientation === 'horizontal'
-		? `${radiator.height}x${radiator.length} мм`
-		: `${radiator.height}x${radiator.length}x${radiator.width} мм`
+	const dimensions =
+		model.orientation === 'vertical' || model.orientation === 'horizontal'
+			? `${radiator.height}x${radiator.length} мм`
+			: `${radiator.height}x${radiator.length}x${radiator.width} мм`
 
 	return `${dimensions} / ${getPowerValue(radiator)} Вт`
 }
@@ -98,7 +102,7 @@ function RadiatorList(props: Props) {
 			r =>
 				(selectedHeight === ALL || r.height === selectedHeight) &&
 				(selectedWidth === ALL || r.width === selectedWidth) &&
-				(selectedLength === ALL || r.length === selectedLength)
+				(selectedLength === ALL || r.length === selectedLength),
 		)
 		if (radiator) return
 
@@ -106,7 +110,7 @@ function RadiatorList(props: Props) {
 			r =>
 				(selectedHeight === ALL || lastFilterUpdate !== 'height' || r.height === selectedHeight) &&
 				(selectedWidth === ALL || lastFilterUpdate !== 'width' || r.width === selectedWidth) &&
-				(selectedLength === ALL || lastFilterUpdate !== 'length' || r.length === selectedLength)
+				(selectedLength === ALL || lastFilterUpdate !== 'length' || r.length === selectedLength),
 		)
 
 		if (escapeRadiator) {
@@ -129,9 +133,9 @@ function RadiatorList(props: Props) {
 						selectedHeight === ALL ||
 						(h === r.height &&
 							(selectedWidth === ALL || r.width === selectedWidth) &&
-							(selectedLength === ALL || r.length === selectedLength))
-				)
-			)
+							(selectedLength === ALL || r.length === selectedLength)),
+				),
+			),
 		)
 		setAvailableWidths(
 			widths.filter(w =>
@@ -141,9 +145,9 @@ function RadiatorList(props: Props) {
 						selectedWidth === ALL ||
 						(w === r.width &&
 							(selectedHeight === ALL || r.height === selectedHeight) &&
-							(selectedLength === ALL || r.length === selectedLength))
-				)
-			)
+							(selectedLength === ALL || r.length === selectedLength)),
+				),
+			),
 		)
 		setAvailableLengths(
 			lengths.filter(l =>
@@ -153,9 +157,9 @@ function RadiatorList(props: Props) {
 						selectedLength === ALL ||
 						(l === r.length &&
 							(selectedHeight === ALL || r.height === selectedHeight) &&
-							(selectedWidth === ALL || r.width === selectedWidth))
-				)
-			)
+							(selectedWidth === ALL || r.width === selectedWidth)),
+				),
+			),
 		)
 	}, [filteredRadiators])
 
@@ -166,7 +170,7 @@ function RadiatorList(props: Props) {
 				selectedHeight,
 				selectedLength,
 				selectedWidth,
-			})
+			}),
 		)
 	}, [selectedHeight, selectedWidth, selectedLength])
 
@@ -189,7 +193,10 @@ function RadiatorList(props: Props) {
 	}
 
 	return (
-		<div id='radiators-list' class='mt-5'>
+		<div
+			id='radiators-list'
+			class='mt-5'
+		>
 			<div>
 				{filterByLength && (
 					<RadiatorFilter
@@ -241,61 +248,81 @@ function RadiatorList(props: Props) {
 					</>
 				)}
 
-				{model.type !== 'convector' && <div class='mt-4 hidden overflow-x-auto border border-neutral-200 md:block'>
-					<table class='w-full min-w-[720px] border-collapse text-left text-xs font-normal'>
-						<thead>
-							<tr class='border-b border-neutral-200 bg-neutral-100 text-xs font-normal uppercase tracking-[0.04em] text-neutral-600'>
-								<th class='px-2.5 py-2 font-normal'>Модель / размер</th>
-								<th class='px-2.5 py-2 text-center font-normal'>Высота</th>
-								<th class='px-2.5 py-2 text-center font-normal'>Длина</th>
-								<th class='px-2.5 py-2 text-center font-normal'>Мощность</th>
-								<th class='px-2.5 py-2 text-right font-normal'>Цена</th>
-								<th class='px-2.5 py-2 text-right font-normal'>Действие</th>
-							</tr>
-						</thead>
-						<tbody>
-							{filteredRadiators.map(radiator => {
-								const qnty = getRadiatorQnty(radiator)
-								return (
-								<tr class='border-b border-neutral-200 text-xs font-normal text-neutral-800 transition hover:bg-neutral-50 last:border-b-0'>
-									<td class='px-2.5 py-2.5'>
-										<div class='font-normal text-neutral-900'>{modelLabel} {getSizeLabel(model, radiator)}</div>
-									</td>
-									<td class='px-2.5 py-2.5 text-center'>{radiator.height} мм</td>
-									<td class='px-2.5 py-2.5 text-center'>{radiator.length} мм</td>
-									<td class='px-2.5 py-2.5 text-center'>{getPowerValue(radiator)} Вт</td>
-									<td class='px-2.5 py-2.5 text-right font-normal'>{getRadiatorPrice(radiator).toLocaleString('ru-RU')} ₽</td>
-									<td class='px-2.5 py-2.5 text-right'>
-										<button type='button' onClick={() => addRadiatorToRequest(radiator)} class='inline-flex h-7 items-center justify-center rounded-[3px] border border-red-200 bg-white px-2.5 text-xs font-normal text-red-700 transition hover:border-red-700 hover:bg-red-50'>
-											{qnty > 0 ? `В запросе: ${qnty}` : 'В запрос'}
-										</button>
-									</td>
+				{model.type !== 'convector' && (
+					<div class='mt-4 hidden overflow-x-auto border border-neutral-200 md:block'>
+						<table class='w-full min-w-[720px] border-collapse text-left text-xs font-normal'>
+							<thead>
+								<tr class='border-b border-neutral-200 bg-neutral-100 text-xs font-normal uppercase tracking-[0.04em] text-neutral-600'>
+									<th class='px-2.5 py-2 font-normal'>Модель / размер</th>
+									<th class='px-2.5 py-2 text-center font-normal'>Высота</th>
+									<th class='px-2.5 py-2 text-center font-normal'>Длина</th>
+									<th class='px-2.5 py-2 text-center font-normal'>Мощность</th>
+									<th class='px-2.5 py-2 text-right font-normal'>Цена</th>
+									<th class='px-2.5 py-2 text-right font-normal'>Действие</th>
 								</tr>
-								)
-							})}
-						</tbody>
-					</table>
-				</div>}
+							</thead>
+							<tbody>
+								{filteredRadiators.map(radiator => {
+									const qnty = getRadiatorQnty(radiator)
+									return (
+										<tr class='border-b border-neutral-200 text-xs font-normal text-neutral-800 transition hover:bg-neutral-50 last:border-b-0'>
+											<td class='px-2.5 py-2.5'>
+												<div class='font-normal text-neutral-900'>
+													{modelLabel} {getSizeLabel(model, radiator)}
+												</div>
+											</td>
+											<td class='px-2.5 py-2.5 text-center'>{radiator.height} мм</td>
+											<td class='px-2.5 py-2.5 text-center'>{radiator.length} мм</td>
+											<td class='px-2.5 py-2.5 text-center'>{getPowerValue(radiator)} Вт</td>
+											<td class='px-2.5 py-2.5 text-right font-normal'>
+												{getRadiatorPrice(radiator).toLocaleString('ru-RU')} ₽
+											</td>
+											<td class='px-2.5 py-2.5 text-right'>
+												<button
+													type='button'
+													onClick={() => addRadiatorToRequest(radiator)}
+													class='inline-flex h-7 items-center justify-center rounded-[3px] border border-red-200 bg-white px-2.5 text-xs font-normal text-red-700 transition hover:border-red-700 hover:bg-red-50'
+												>
+													{qnty > 0 ? `В корзине: ${qnty}` : 'В корзину'}
+												</button>
+											</td>
+										</tr>
+									)
+								})}
+							</tbody>
+						</table>
+					</div>
+				)}
 
-				{model.type !== 'convector' && <div class='mt-4 grid gap-2 md:hidden'>
-					{filteredRadiators.map(radiator => {
-						const qnty = getRadiatorQnty(radiator)
-						return (
-						<article class='rounded-[3px] border border-neutral-200 bg-white p-2.5'>
-							<div class='text-xs font-normal leading-5 text-neutral-950'>{modelLabel} {getSizeLabel(model, radiator)}</div>
-							<div class='mt-1 text-xs leading-5 text-neutral-700'>
-								Высота: {radiator.height} мм · Длина: {radiator.length} мм · Мощность: {getPowerValue(radiator)} Вт
-							</div>
-							<div class='mt-2 flex items-center justify-between gap-3'>
-								<div class='text-xs font-normal text-neutral-950'>от {getRadiatorPrice(radiator).toLocaleString('ru-RU')} ₽</div>
-								<button type='button' onClick={() => addRadiatorToRequest(radiator)} class='inline-flex h-7 shrink-0 items-center justify-center rounded-[3px] border border-red-200 bg-white px-2.5 text-xs font-normal text-red-700 transition hover:border-red-700 hover:bg-red-50'>
-									{qnty > 0 ? `В запросе: ${qnty}` : 'В запрос'}
-								</button>
-							</div>
-						</article>
-						)
-					})}
-				</div>}
+				{model.type !== 'convector' && (
+					<div class='mt-4 grid gap-2 md:hidden'>
+						{filteredRadiators.map(radiator => {
+							const qnty = getRadiatorQnty(radiator)
+							return (
+								<article class='rounded-[3px] border border-neutral-200 bg-white p-2.5'>
+									<div class='text-xs font-normal leading-5 text-neutral-950'>
+										{modelLabel} {getSizeLabel(model, radiator)}
+									</div>
+									<div class='mt-1 text-xs leading-5 text-neutral-700'>
+										Высота: {radiator.height} мм · Длина: {radiator.length} мм · Мощность: {getPowerValue(radiator)} Вт
+									</div>
+									<div class='mt-2 flex items-center justify-between gap-3'>
+										<div class='text-xs font-normal text-neutral-950'>
+											от {getRadiatorPrice(radiator).toLocaleString('ru-RU')} ₽
+										</div>
+										<button
+											type='button'
+											onClick={() => addRadiatorToRequest(radiator)}
+											class='inline-flex h-7 shrink-0 items-center justify-center rounded-[3px] border border-red-200 bg-white px-2.5 text-xs font-normal text-red-700 transition hover:border-red-700 hover:bg-red-50'
+										>
+											{qnty > 0 ? `В корзине: ${qnty}` : 'В корзину'}
+										</button>
+									</div>
+								</article>
+							)
+						})}
+					</div>
+				)}
 			</div>
 		</div>
 	)

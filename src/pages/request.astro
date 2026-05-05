@@ -10,12 +10,12 @@ import Layout from '@shared/layouts/Layout.astro';
   robots='noindex,follow'
   hideShoppingCartWidgt={true}
 >
-<div class='flex flex-col mx-auto p-5 md:px-10 max-w-4xl'>
-  <h1 class='mt-6 mb-1 text-4xl tracking-tight'>Запрос на подбор радиаторов Rifar Tubog</h1>
+<div class='mx-auto flex max-w-4xl flex-col px-4 py-8 md:px-10 md:py-12'>
+  <h1 class='mb-3 text-3xl font-semibold tracking-tight text-neutral-950 md:text-4xl'>Запрос на подбор радиаторов</h1>
 
-  <div class='mt-2 mb-8 leading-relaxed text-sm font-light'>
-    Пожалуйста, заполните форму ниже. Мы подготовим расчет цены и подберем подходящий радиатор Rifar Tubog под ваш
-    объект.
+  <div class='mb-7 max-w-2xl text-sm leading-6 text-neutral-600 md:text-base md:leading-7'>
+    Заполните форму, и мы подготовим расчет стоимости, подберем подходящую модель, размеры, подключение и цвет.
+    Если в корзине есть выбранные позиции, они будут учтены при расчете.
   </div>
 
   <LeadWidget
@@ -23,8 +23,8 @@ import Layout from '@shared/layouts/Layout.astro';
     webhook='https://arufefet.beget.app/webhook/calc-notify'
     successUrl='/accepted'
     store='VelarShop.ru'
-    primary='#0d9488'
-    border='#0d9488'
+    primary='#c1121f'
+    border='#e5e5e5'
     privacyUrl='/privacy'
     termsUrl='/agreement'
   />

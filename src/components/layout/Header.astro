@@ -1,6 +1,7 @@
 ---
 import { Picture } from "@astrojs/image/components";
 import { contacts } from "@shared/constants/contacts";
+import HeaderCartButton from "./HeaderCartButton";
 import HeaderQuickSearch from "./HeaderQuickSearch";
 import type { ModelDetails } from "@widgets/pageMain/HeroQuickConfigurator";
 import {
@@ -276,6 +277,7 @@ const mobileIconSvg: Record<MobileIconName, string> = {
         defaultModelId={resolvedDefaultModelId}
         initialDetails={quickSearchInitialDetails}
       />
+      <HeaderCartButton client:load />
     </div>
 
     <div class="mobile-right">
@@ -286,6 +288,7 @@ const mobileIconSvg: Record<MobileIconName, string> = {
         defaultModelId={resolvedDefaultModelId}
         initialDetails={quickSearchInitialDetails}
       />
+      <HeaderCartButton client:load />
       <details class="mobile-menu">
         <summary class="mobile-burger" aria-label="Открыть меню">
           <svg
@@ -873,6 +876,12 @@ const mobileIconSvg: Record<MobileIconName, string> = {
   @media (max-width: 768px) {
     .logo-img {
       width: 128px;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .mobile-calc-button {
+      display: none;
     }
   }
 </style>

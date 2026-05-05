@@ -4,6 +4,7 @@ import { getEntryBySlug } from 'astro:content'
 
 import Layout from '@shared/layouts/Layout.astro'
 import JsonLd from '../../components/seo/JsonLd.astro'
+import ProductGallery from '../../components/product/ProductGallery.astro'
 
 import RadiatorList from '@widgets/pageModel/RadiatorList/RadiatorList.astro'
 import ModelDownloadSchema from '@features/model/ModelDownloadShema/ModelDownloadSchema.astro'
@@ -179,6 +180,18 @@ const modelImageModules = Object.entries(imageModules)
 const extraImages = await Promise.all(modelImageModules.map(([, value]) => value()))
 // @ts-ignore Astro image module typing
 const renderedExtraImages = extraImages.map(image => image.default)
+const galleryImages = [
+	{
+		src: imagePath,
+		alt: h1,
+		title: h1,
+	},
+	...renderedExtraImages.slice(0, 8).map((image, index) => ({
+		src: image,
+		alt: index === 0 ? `${productName} в интерьере` : `${productName}, дополнительное фото ${index + 2}`,
+		title: index === 0 ? `${productName} в интерьере` : productName,
+	})),
+]
 const hasModelDescription = Boolean(await getEntryBySlug('modelDescriptions', model.slug))
 
 const heroDescription = isHorizontal
@@ -333,40 +346,7 @@ const seo = getModelSeo({
 	<section class='border-b border-neutral-200 bg-white'>
 		<div class='mx-auto grid max-w-[1180px] gap-5 px-3 pb-7 pt-3 md:grid-cols-[minmax(0,0.44fr)_minmax(0,0.56fr)] md:items-start md:px-5 md:py-10'>
 			<div class='order-2 max-w-[520px] md:order-1'>
-				<Picture
-					src={imagePath}
-					alt={h1}
-					title={h1}
-					loading='eager'
-					aspectRatio='1:1'
-					widths={[420, 640, 820]}
-					width={760}
-					height={760}
-					sizes='(max-width: 768px) 100vw, 44vw'
-					class:list={[
-						'w-full object-contain',
-						isHorizontal ? 'max-h-[280px] md:max-h-[380px]' : 'max-h-[280px] md:max-h-[440px]',
-					]}
-				/>
-
-				{renderedExtraImages.length > 0 && (
-					<div class='mt-2 flex gap-2 overflow-x-auto pb-1'>
-						{renderedExtraImages.slice(0, 8).map(image => (
-							<Picture
-								src={image}
-								alt={h1}
-								title={h1}
-								loading='lazy'
-								aspectRatio='1:1'
-								widths={[80, 120]}
-								width={120}
-								height={120}
-								sizes='72px'
-								class='h-[54px] w-[54px] shrink-0 object-cover md:h-[72px] md:w-[72px]'
-							/>
-						))}
-					</div>
-				)}
+				<ProductGallery images={galleryImages} productName={productName} isHorizontal={isHorizontal} />
 			</div>
 
 			<div class='order-1 md:order-2'>

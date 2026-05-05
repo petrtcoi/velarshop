@@ -1,5 +1,4 @@
 ---
-import ShoppingCartWidget from '@widgets/order/ShoppingCartWidget'
 import Breadcrumbs from '@widgets/breadcrumbs/Breadcrumbs.astro'
 import Footer from './components/Footer.astro'
 import Header from '../../components/layout/Header.astro'
@@ -63,7 +62,6 @@ const {
 	productMeta,
 	disableBreadcrumbJsonLd = false,
 	paddings = true,
-	hideShoppingCartWidgt = false,
 	canonicalUrl,
 	breadcrumbs = [],
 } = Astro.props as Props as Props
@@ -318,7 +316,6 @@ const finalTwitterImage = twitterImage
 
 				<main class:list={[{ 'max-w-6xl mx-auto p-3 md:p-5 lg:px-10 xl:px-0': paddings }, { 'p-0 m-0': !paddings }]}>
 				<slot />
-								{hideShoppingCartWidgt === false && <ShoppingCartWidget client:load />}
 
 
 		</main>
