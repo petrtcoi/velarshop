@@ -1,21 +1,14 @@
+import { useStore } from '@nanostores/preact'
 import { useEffect, useState } from 'preact/hooks'
 
 import RadiatorFilter from './RadiatorFilter'
-import RadiatorListHeader from './RadiatorListHeader'
-import RadiatorRow from './RadiatorRow'
-
-import SelectAddon from '@features/options/SelectAddons'
-import SelectConnection from '@features/options/SelectConnection'
-import SelectConvectorGrill from '@features/options/SelectConvectorGrill'
-import SelectIroncastColor from '@features/options/SelectIroncastColor'
 
 import { ALL } from '../constants/filterAll'
 import { filterRadiators } from '../utils/filterRadiators'
+import { addToCart, storeShoppingCart } from '@features/order/ShoppingCart'
 
 import type { ModelJson } from '@entities/Model'
 import type { RadiatorJson } from '@entities/Radiator'
-import SelectColumnColor from '@features/options/SelectColumnColor'
-import SelectColumnConnection from '@features/options/SelectColumnConnection'
 
 type Props = {
 	model: ModelJson
@@ -27,6 +20,40 @@ type Props = {
 	filterByHeight?: boolean
 	filterByWidth?: boolean
 	filterByLength?: boolean
+}
+
+function getPowerValue(radiator: RadiatorJson): string {
+	return radiator.dt70 || radiator.dt60 || radiator.dt50 || '—'
+}
+
+function getSizeLabel(model: ModelJson, radiator: RadiatorJson): string {
+	if (model.orientation === 'horizontal') {
+		return `${radiator.height} × ${radiator.length} мм`
+	}
+	if (model.orientation === 'vertical') {
+		return `${radiator.height} × ${radiator.length} мм`
+	}
+	return `${radiator.height} × ${radiator.length} × ${radiator.width} мм`
+}
+
+function normalizeModelName(name: string): string {
+	return name.replace(/([A-Za-zА-Яа-я])\s+(\d+)/g, '$1$2').replace(/\s+/g, ' ').trim()
+}
+
+function getRadiatorPrice(radiator: RadiatorJson): number {
+	return Number.parseInt(radiator.price, 10) || 0
+}
+
+function getCartItemTitle(modelLabel: string, model: ModelJson, radiator: RadiatorJson): string {
+	return `${modelLabel} ${getSizeLabel(model, radiator)}`
+}
+
+function getCartItemDetails(model: ModelJson, radiator: RadiatorJson): string {
+	const dimensions = model.orientation === 'vertical' || model.orientation === 'horizontal'
+		? `${radiator.height}x${radiator.length} мм`
+		: `${radiator.height}x${radiator.length}x${radiator.width} мм`
+
+	return `${dimensions} / ${getPowerValue(radiator)} Вт`
 }
 
 function RadiatorList(props: Props) {
@@ -47,10 +74,8 @@ function RadiatorList(props: Props) {
 	const [selectedWidth, setSelectedWidth] = useState<string>(filterByWidth ? widths[0] : ALL)
 	const [selectedLength, setSelectedLength] = useState<string>(filterByLength ? lengths[0] : ALL)
 	const [filteredRadiators, setFilteredRadiators] = useState<RadiatorJson[]>(initialFilteredRadiators)
+	const shoppingCart = useStore(storeShoppingCart)
 
-	const showInterAxis = model.type !== 'convector' && model.type !== 'floor'
-
-	// Track filter changes to avoid empty list
 	const changeHeightFilter = (height: string) => {
 		setSelectedHeight(height)
 		setLastFilterUpdate('height')
@@ -79,8 +104,7 @@ function RadiatorList(props: Props) {
 				(selectedWidth === ALL || lastFilterUpdate !== 'width' || r.width === selectedWidth) &&
 				(selectedLength === ALL || lastFilterUpdate !== 'length' || r.length === selectedLength)
 		)
-		// console.log(lastFilterUpdate, selectedHeight, selectedWidth)
-		// console.log("escapeRadiator", escapeRadiator)
+
 		if (escapeRadiator) {
 			if (lastFilterUpdate !== 'height' && selectedHeight !== ALL) setSelectedHeight(escapeRadiator.height)
 			if (lastFilterUpdate !== 'width' && selectedWidth !== ALL) setSelectedWidth(escapeRadiator.width)
@@ -88,10 +112,10 @@ function RadiatorList(props: Props) {
 		}
 	}, [filteredRadiators])
 
-	// Track filter changes to display not available options
 	const [availableHeights, setAvailableHeights] = useState<string[]>(heights)
 	const [availableWidths, setAvailableWidths] = useState<string[]>(widths)
 	const [availableLengths, setAvailableLengths] = useState<string[]>(lengths)
+
 	useEffect(() => {
 		setAvailableHeights(
 			heights.filter(h =>
@@ -142,59 +166,109 @@ function RadiatorList(props: Props) {
 		)
 	}, [selectedHeight, selectedWidth, selectedLength])
 
+	const modelLabel = `Velar ${normalizeModelName(model.name)}`
+
+	const addRadiatorToRequest = (radiator: RadiatorJson) => {
+		addToCart({
+			title: getCartItemTitle(modelLabel, model, radiator),
+			price: getRadiatorPrice(radiator),
+			details: getCartItemDetails(model, radiator),
+			linkSlug: `/model/${model.slug}`,
+			itemType: 'radiator',
+		})
+	}
+
+	const getRadiatorQnty = (radiator: RadiatorJson) => {
+		const itemTitle = getCartItemTitle(modelLabel, model, radiator)
+		return shoppingCart.items.find(item => item.title === itemTitle)?.qnty || 0
+	}
+
 	return (
-		<div
-			id='radiators-list'
-			class='mt-7 pt-3'
-		>
-			{filterByLength && (
-				<RadiatorFilter
-					title={'Длина (мм)'}
-					options={lengths}
-					availableOptions={availableLengths}
-					selectedOption={selectedLength}
-					setSelectedOption={changeLengthFilter}
-				/>
-			)}
-			{filterByHeight && (
-				<RadiatorFilter
-					title={'Высота (мм)'}
-					options={heights}
-					availableOptions={availableHeights}
-					selectedOption={selectedHeight}
-					setSelectedOption={changeHeightFilter}
-				/>
-			)}
-			{filterByWidth && (
-				<RadiatorFilter
-					title={'Глубина (мм)'}
-					options={widths}
-					availableOptions={availableWidths}
-					selectedOption={selectedWidth}
-					setSelectedOption={changeWidthFilter}
-				/>
-			)}
+		<div id='radiators-list' class='mt-5'>
+			<div>
+				{filterByLength && (
+					<RadiatorFilter
+						title='Длина'
+						options={lengths}
+						availableOptions={availableLengths}
+						selectedOption={selectedLength}
+						setSelectedOption={changeLengthFilter}
+					/>
+				)}
+				{filterByHeight && (
+					<RadiatorFilter
+						title='Высота'
+						options={heights}
+						availableOptions={availableHeights}
+						selectedOption={selectedHeight}
+						setSelectedOption={changeHeightFilter}
+					/>
+				)}
+				{filterByWidth && (
+					<RadiatorFilter
+						title='Глубина'
+						options={widths}
+						availableOptions={availableWidths}
+						selectedOption={selectedWidth}
+						setSelectedOption={changeWidthFilter}
+					/>
+				)}
 
-			{(model.type === 'design' || model.type === 'floor') && <SelectConnection model={model} />}
-			{model.type === 'columns' && <SelectColumnColor />}
-			{model.type === 'columns' && <SelectColumnConnection model={model} />}
-			{model.type === 'ironcast' && <SelectIroncastColor />}
-			{model.type === 'convector' && <SelectConvectorGrill />}
-			<SelectAddon model={model} />
+				<div class='mt-4 hidden overflow-x-auto border border-neutral-200 md:block'>
+					<table class='w-full min-w-[720px] border-collapse text-left text-xs font-normal'>
+						<thead>
+							<tr class='border-b border-neutral-200 bg-neutral-100 text-xs font-normal uppercase tracking-[0.04em] text-neutral-600'>
+								<th class='px-2.5 py-2 font-normal'>Модель / размер</th>
+								<th class='px-2.5 py-2 text-center font-normal'>Высота</th>
+								<th class='px-2.5 py-2 text-center font-normal'>Длина</th>
+								<th class='px-2.5 py-2 text-center font-normal'>Мощность</th>
+								<th class='px-2.5 py-2 text-right font-normal'>Цена</th>
+								<th class='px-2.5 py-2 text-right font-normal'>Действие</th>
+							</tr>
+						</thead>
+						<tbody>
+							{filteredRadiators.map(radiator => {
+								const qnty = getRadiatorQnty(radiator)
+								return (
+								<tr class='border-b border-neutral-200 text-xs font-normal text-neutral-800 last:border-b-0'>
+									<td class='px-2.5 py-2.5'>
+										<div class='font-normal text-neutral-900'>{modelLabel} {getSizeLabel(model, radiator)}</div>
+									</td>
+									<td class='px-2.5 py-2.5 text-center'>{radiator.height} мм</td>
+									<td class='px-2.5 py-2.5 text-center'>{radiator.length} мм</td>
+									<td class='px-2.5 py-2.5 text-center'>{getPowerValue(radiator)} Вт</td>
+									<td class='px-2.5 py-2.5 text-right font-normal'>{getRadiatorPrice(radiator).toLocaleString('ru-RU')} ₽</td>
+									<td class='px-2.5 py-2.5 text-right'>
+										<button type='button' onClick={() => addRadiatorToRequest(radiator)} class='inline-flex h-7 items-center justify-center rounded-[3px] bg-red-700 px-2.5 text-xs font-normal text-white transition hover:bg-red-800'>
+											{qnty > 0 ? `В корзине: ${qnty}` : 'В корзину'}
+										</button>
+									</td>
+								</tr>
+								)
+							})}
+						</tbody>
+					</table>
+				</div>
 
-			<div class='mt-5'>
-				<table class='text-xs w-full text-left'>
-					<RadiatorListHeader showInterAxis={showInterAxis} />
-					<tbody>
-						{filteredRadiators.map(radiator => (
-							<RadiatorRow
-								model={model}
-								radiator={radiator}
-								showInterAxis={showInterAxis}
-							/>
-						))}
-					</tbody>
-				</table>
+				<div class='mt-4 grid gap-2 md:hidden'>
+					{filteredRadiators.map(radiator => {
+						const qnty = getRadiatorQnty(radiator)
+						return (
+						<article class='rounded-[3px] border border-neutral-200 bg-white p-2.5'>
+							<div class='text-xs font-normal leading-5 text-neutral-950'>{modelLabel} {getSizeLabel(model, radiator)}</div>
+							<div class='mt-1 text-xs leading-5 text-neutral-700'>
+								Высота: {radiator.height} мм · Длина: {radiator.length} мм · Мощность: {getPowerValue(radiator)} Вт
+							</div>
+							<div class='mt-2 flex items-center justify-between gap-3'>
+								<div class='text-xs font-normal text-neutral-950'>от {getRadiatorPrice(radiator).toLocaleString('ru-RU')} ₽</div>
+								<button type='button' onClick={() => addRadiatorToRequest(radiator)} class='inline-flex h-7 shrink-0 items-center justify-center rounded-[3px] bg-red-700 px-2.5 text-xs font-normal text-white transition hover:bg-red-800'>
+									{qnty > 0 ? `В корзине: ${qnty}` : 'В корзину'}
+								</button>
+							</div>
+						</article>
+						)
+					})}
+				</div>
 			</div>
 		</div>
 	)

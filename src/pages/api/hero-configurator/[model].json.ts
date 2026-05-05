@@ -69,6 +69,7 @@ export const get: APIRoute = ({ params }) => {
 	const addon = model.type === 'design' && model.orientation === 'horizontal'
 		? addonRadiatorLegs
 		: undefined
+	const usesColumnColorPalette = model.type === 'columns' || model.type === 'design'
 
 	return json({
 		model: {
@@ -88,7 +89,7 @@ export const get: APIRoute = ({ params }) => {
 			sections: model.type === 'columns' || model.type === 'ironcast' || (model.type === 'design' && sections.length > 1),
 			tubes: model.type === 'columns',
 			connection: connections.length > 0,
-			color: model.type === 'columns' || model.type === 'ironcast',
+			color: usesColumnColorPalette || model.type === 'ironcast',
 			grill: model.type === 'convector',
 			addon: Boolean(addon),
 		},
@@ -104,10 +105,10 @@ export const get: APIRoute = ({ params }) => {
 				code: connection.code,
 				priceRub: 'priceRub' in connection ? connection.priceRub : 0,
 			})),
-			colors: model.type === 'columns'
+			colors: usesColumnColorPalette
 				? columnColors.map(color => ({
 						id: color.id,
-						label: color.shortName,
+						label: color.title,
 						multiplicate: color.multiplicate,
 					}))
 				: model.type === 'ironcast'

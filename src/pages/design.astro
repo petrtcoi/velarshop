@@ -1,39 +1,31 @@
 ---
 import { Picture } from '@astrojs/image/components'
 import Layout from '@shared/layouts/Layout.astro'
+import HeroQuickConfigurator from '@widgets/pageMain/HeroQuickConfigurator'
+import type { ModelDetails } from '@widgets/pageMain/HeroQuickConfigurator'
+import { buildQuickConfiguratorModels } from '@widgets/pageMain/quickConfiguratorData'
 import JsonLd from '../components/seo/JsonLd.astro'
 import DesignSeriesGrid from '../components/design/DesignSeriesGrid.astro'
 import DesignUsefulLinks from '../components/design/DesignUsefulLinks.astro'
 import DesignFaq from '../components/design/DesignFaq.astro'
 import { designSeries, formatRub } from '../components/design/designData'
+import { get as getHeroConfiguratorData } from './api/hero-configurator/[model].json'
+import { getCategorySeo } from '../lib/seo/categorySeo'
 
-const canonicalUrl = 'https://velarshop.ru/design/'
-const title = 'Дизайн-радиаторы отопления Velar | VelarShop.ru'
-const description =
-	'Дизайнерские радиаторы Velar для квартир, домов и современных интерьеров: вертикальные и горизонтальные модели, цвета RAL, подбор под помещение и доставка по России.'
+const breadcrumbs = [{ title: 'Главная', url: '/' }, { title: 'Дизайн-радиаторы', url: '/design' }]
 
-const breadcrumbs = [
-	{ title: 'Главная', url: '/' },
-	{ title: 'Дизайн-радиаторы', url: '/design' },
-]
+const designConfiguratorModels = buildQuickConfiguratorModels({ type: 'design' })
+const defaultDesignModelId = designConfiguratorModels.find(model => model.id === 'p30v')?.id ?? designConfiguratorModels[0]?.id ?? 'p30v'
+let initialDesignDetails: ModelDetails | null = null
 
-const minPrice = Math.min(...designSeries.map(series => series.priceFrom).filter(Boolean))
-const heroFacts = [
-	['Цена от', `от ${formatRub(minPrice)}`],
-	['Производство', 'под заказ'],
-	['Цвета', 'палитра RAL'],
-	['Доставка', 'по России'],
-]
-
-const quickChoice = [
-	['/design/vertikalnye', 'Вертикальные дизайн-радиаторы'],
-	['/design/gorizontalnye', 'Горизонтальные дизайн-радиаторы'],
-	['/design/p30', 'Профиль P'],
-	['/design/q40', 'Профиль Q'],
-	['/design/r32', 'Профиль R'],
-	['/design/rt1', 'Радиаторы с ТЭНом'],
-	['/info/kak-podobrat-radiator-pod-dizajn-kvartiry', 'Под интерьер'],
-]
+try {
+	const response = await getHeroConfiguratorData({
+		params: { model: defaultDesignModelId },
+	} as any)
+	if (response.ok) initialDesignDetails = (await response.json()) as ModelDetails
+} catch (error) {
+	console.error('Failed to preload design configurator model:', error)
+}
 
 const chooseItems = [
 	['по ориентации', 'Вертикальные модели подходят для узких простенков и акцентных стен. Горизонтальные чаще используют под окнами и в низких зонах.'],
@@ -46,13 +38,12 @@ const chooseItems = [
 ]
 
 const benefits = [
+	'горизонтальные и вертикальные модели',
+	'рабочее давление до 16 атм',
+	'возможно подключение ТЭНа',
+	'окраска в цвета RAL',
 	'производство под заказ',
-	'цвета RAL',
-	'подбор под интерьер',
-	'разные форматы и размеры',
-	'помощь с расчетом мощности',
 	'доставка по России',
-	'работа с физлицами и юрлицами',
 ]
 
 const galleryImages = [
@@ -71,108 +62,110 @@ const faqItems: Array<[string, string]> = [
 	['Можно ли заказать расчет по дизайн-проекту?', 'Да, можно отправить план, визуализацию или фото помещения. Менеджер поможет подобрать серию, ориентацию, размер, цвет и подключение.'],
 ]
 
-const schema = [
-	{
-		'@context': 'https://schema.org',
-		'@type': 'CollectionPage',
-		name: 'Дизайн-радиаторы отопления Velar',
-		description,
-		url: canonicalUrl,
-		mainEntity: {
-			'@type': 'ItemList',
-			itemListElement: designSeries.map((series, index) => ({
-				'@type': 'ListItem',
-				position: index + 1,
-				url: new URL(series.href, canonicalUrl).toString(),
-				item: {
-					'@type': 'ProductGroup',
-					name: series.title,
-					description: series.description,
-					image: new URL(series.image, canonicalUrl).toString(),
-					brand: { '@type': 'Brand', name: 'Velar' },
-					category: 'Дизайн-радиаторы',
-					hasVariant: series.models.map(model => ({
-						'@type': 'Product',
-						name: model.title,
-						url: new URL(model.href, canonicalUrl).toString(),
-						image: new URL(model.image, canonicalUrl).toString(),
-						offers: model.priceFrom
-							? {
-									'@type': 'Offer',
-									priceCurrency: 'RUB',
-									price: model.priceFrom,
-									availability: 'https://schema.org/InStock',
-									url: new URL(model.href, canonicalUrl).toString(),
-								}
-							: undefined,
-					})),
-				},
-			})),
-		},
-	},
-	{
-		'@context': 'https://schema.org',
-		'@type': 'FAQPage',
-		mainEntity: faqItems.map(([question, answer]) => ({
-			'@type': 'Question',
-			name: question,
-			acceptedAnswer: { '@type': 'Answer', text: answer },
+const seo = getCategorySeo({
+	category: {
+		slug: 'design',
+		url: '/design',
+		name: 'Дизайн-радиаторы',
+		h1: 'Дизайн-радиаторы отопления Velar',
+		seoTitle: 'Дизайнерские радиаторы Velar — вертикальные и горизонтальные модели',
+		seoDescription:
+			'Дизайнерские радиаторы Velar для квартир, домов и интерьеров: вертикальные и горизонтальные модели, разные профили, цвета RAL, подбор и доставка по России.',
+		ogTitle: 'Дизайнерские радиаторы Velar — каталог моделей',
+		ogDescription:
+			'Вертикальные и горизонтальные дизайн-радиаторы Velar: разные профили, цвета RAL, подбор мощности и доставка по России.',
+		ogImage: '/images/design/hero/vertical-design-radiator.jpg',
+		ogImageAlt: 'Дизайнерские радиаторы Velar в интерьере',
+		breadcrumbs,
+		itemListName: 'Серии дизайнерских радиаторов Velar',
+		products: designSeries.map(series => ({
+			name: series.title,
+			url: series.href,
+		})),
+		faq: faqItems.map(([question, answer]) => ({
+			question,
+			answer,
 		})),
 	},
-]
+})
 ---
 
-<Layout title={title} description={description} canonicalUrl={canonicalUrl} breadcrumbs={breadcrumbs} paddings={false}>
-	<JsonLd data={schema} />
+<Layout
+	title={seo.title}
+	description={seo.description}
+	canonicalUrl={seo.canonicalUrl}
+	robots={seo.robots}
+	ogType='website'
+	ogTitle={seo.ogTitle}
+	ogDescription={seo.ogDescription}
+	ogUrl={seo.canonicalUrl}
+	ogImageUrl={seo.ogImage}
+	ogImageAlt={seo.ogImageAlt}
+	twitterCard='summary_large_image'
+	twitterTitle={seo.twitterTitle}
+	twitterDescription={seo.twitterDescription}
+	twitterImage={seo.twitterImage}
+	twitterImageAlt={seo.twitterImageAlt}
+	breadcrumbs={breadcrumbs}
+	disableBreadcrumbJsonLd={true}
+	paddings={false}
+>
+	<JsonLd data={seo.jsonLd} />
 
-	<section class='bg-white pb-12 pt-7 md:pb-16 xl:pb-20'>
-		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-center xl:px-8'>
-			<div>
-				<h1 class='max-w-4xl text-[38px] font-semibold leading-[0.98] tracking-tight text-neutral-950 md:text-[54px] xl:text-[64px]'>
+	<section class='border-b border-neutral-200 bg-white'>
+		<div class='mx-auto grid max-w-[1240px] gap-7 px-4 pb-8 pt-6 md:px-6 md:pb-12 md:pt-9 min-[900px]:grid-cols-[minmax(0,1fr)_minmax(420px,520px)] min-[900px]:gap-8 min-[1250px]:grid-cols-[minmax(0,1fr)_minmax(200px,280px)_minmax(360px,420px)] min-[1250px]:items-center min-[1250px]:gap-10 xl:px-8 xl:py-12'>
+			<div class='min-w-0'>
+				<h1 class='max-w-[680px] text-[34px] font-semibold leading-[1.04] tracking-tight text-neutral-950 md:text-[42px] min-[1250px]:text-[56px]'>
 					Дизайн-радиаторы отопления Velar
 				</h1>
-				<p class='mt-5 max-w-3xl text-[16px] leading-7 text-neutral-700 md:text-lg'>
+				<p class='mt-5 max-w-[620px] text-[15px] leading-6 text-neutral-700 md:text-base md:leading-7'>
 					Дизайнерские радиаторы Velar для квартир, домов и современных интерьеров. Вертикальные и горизонтальные модели, разные формы профиля, цвета RAL, подбор под помещение и дизайн-проект.
 				</p>
-				<div class='mt-7 flex flex-wrap gap-3'>
+				<div class='mt-7 flex flex-col gap-3 min-[420px]:flex-row'>
 					<a href='/request' class='inline-flex h-11 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>Получить расчет</a>
-					<a href='#design-series' class='inline-flex h-11 items-center justify-center rounded-lg border border-neutral-300 px-5 text-sm font-semibold text-neutral-950 transition hover:border-red-700 hover:text-red-700'>Смотреть модели</a>
+					<a href='#design-series' class='inline-flex h-11 items-center justify-center rounded-lg border border-neutral-300 bg-white px-5 text-sm font-semibold text-neutral-950 transition hover:border-neutral-400 hover:bg-neutral-50'>Смотреть модели</a>
 				</div>
 			</div>
-			<div class='rounded-lg border border-neutral-200 bg-neutral-50 p-5'>
+
+			<div class='hidden justify-center min-[1250px]:flex min-[1250px]:items-center'>
 				<Picture
 					src='/images/design/hero/vertical-design-radiator.jpg'
 					alt='Вертикальный дизайн-радиатор Velar'
 					title='Вертикальный дизайн-радиатор Velar'
 					loading='eager'
-					aspectRatio='3:4'
-					widths={[320, 480, 640]}
-					width={480}
-					height={640}
-					sizes='(max-width: 1024px) 80vw, 360px'
-					class='mx-auto h-[360px] w-full object-contain md:h-[420px]'
+					aspectRatio='1:4'
+					widths={[220, 320, 440]}
+					width={320}
+					height={1280}
+					sizes='260px'
+					class='h-auto max-h-[560px] w-full max-w-[260px] object-contain'
 				/>
-				<div class='mt-5 grid grid-cols-2 gap-3'>
-					{heroFacts.map(([name, value]) => (
-						<div class='border-t border-neutral-200 pt-3'>
-							<div class='text-xs uppercase tracking-wide text-neutral-500'>{name}</div>
-							<div class='mt-1 text-sm font-semibold text-neutral-950'>{value}</div>
-						</div>
-					))}
-				</div>
 			</div>
-		</div>
-	</section>
 
-	<section class='bg-neutral-50 py-8'>
-		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
-			<div class='text-sm font-semibold text-neutral-950'>Быстрый выбор</div>
-			<div class='mt-4 flex flex-wrap gap-2'>
-				{quickChoice.map(([href, label]) => (
-					<a href={href} class='rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm font-semibold text-neutral-700 transition hover:border-red-700 hover:text-red-700'>
-						{label}
-					</a>
-				))}
+			<div class='grid min-w-0 gap-5 sm:grid-cols-[150px_minmax(0,1fr)] sm:items-start md:grid-cols-[180px_minmax(0,1fr)] min-[900px]:col-start-2 min-[900px]:block min-[1250px]:col-start-3'>
+				<div class='hidden justify-center sm:flex min-[900px]:hidden'>
+					<Picture
+						src='/images/design/hero/vertical-design-radiator.jpg'
+						alt='Вертикальный дизайн-радиатор Velar'
+						title='Вертикальный дизайн-радиатор Velar'
+						loading='lazy'
+						aspectRatio='1:4'
+						widths={[180, 260, 360]}
+						width={260}
+						height={1040}
+						sizes='180px'
+						class='h-auto max-h-[430px] w-full max-w-[180px] object-contain'
+					/>
+				</div>
+
+				<HeroQuickConfigurator
+					client:load
+					models={designConfiguratorModels}
+					defaultModelId={defaultDesignModelId}
+					initialDetails={initialDesignDetails}
+					variant='category'
+					title='Быстрый выбор'
+				/>
 			</div>
 		</div>
 	</section>

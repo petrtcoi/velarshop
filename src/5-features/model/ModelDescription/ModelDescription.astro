@@ -1,8 +1,8 @@
 ---
 import { getEntryBySlug } from "astro:content";
 
-type Props = { slug: string, isColumns?: boolean };
-const { slug, isColumns = false } = Astro.props satisfies Props;
+type Props = { slug: string, isColumns?: boolean, class?: string };
+const { slug, isColumns = false, class: className = "prose-sm" } = Astro.props satisfies Props;
 
 const modelDescription = await getEntryBySlug("modelDescriptions", isColumns ? "columns" : slug);
 
@@ -13,7 +13,7 @@ const { Content } = modelDescription
 
 {
   Content !== null && (
-    <div class='prose-sm'>
+    <div class={className}>
       <Content />
     </div>
   )

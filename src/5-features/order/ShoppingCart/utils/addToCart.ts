@@ -19,7 +19,6 @@ function addToCart (newItem: PropsTiny | PropsFull): void {
   const shoppingCart = storeShoppingCart.get()
   const itemIndex = shoppingCart.items.findIndex(item => item.title === newItem.title)
 
-  console.log('newItem', newItem)
   if (itemIndex === -1 && isPropsFull(newItem)) {
     const itemType = newItem.itemType ? newItem.itemType : 'radiator'
     storeShoppingCart.set({

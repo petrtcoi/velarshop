@@ -45,6 +45,20 @@ const radiatorName = `${model.prefix} Velar ${getRadiatorTitle({
 const description = `Купить ${radiatorName} c доставкой по России. Поможем подобрать модель, подключение и рассчитать мощность. https://velarshop.ru${getModelSlug(model)}`
 const canonicalUrl = `https://velarshop.ru${getModelSlug(model)}/`
 
+function getDesignSeriesCrumb(model: ModelJson) {
+	if (model.type !== 'design') return undefined
+	const modelId = model.id.toLowerCase()
+	const seriesSlug = modelId === 'sv' || modelId === 'sh'
+		? 's'
+		: modelId === 'spv' || modelId === 'sph'
+			? 'sp'
+			: modelId.replace(/[vh]$/, '')
+
+	return {
+		title: `Velar ${seriesSlug.toUpperCase()}`,
+		url: `/design/${seriesSlug}`,
+	}
+}
 
 
 let modelCrumbTitle = 'Дизайн-радиаторы'
@@ -70,9 +84,12 @@ const radiatorCrumbTitle =getRadiatorTitle({
 			model,
 			radiator,
 	})
+const designSeriesCrumb = getDesignSeriesCrumb(model)
+
 const crumbs = [
 	{title: 'Главная', url: '/'},
 	{title: modelCrumbTitle, url: modelCrumbUrl},
+	...(designSeriesCrumb ? [designSeriesCrumb] : []),
 	{title: `Velar ${model.name}`, url: getModelSlug(model)},
 	{title: `${radiatorCrumbTitle}`, url: `/model/${model.slug}/${radiator.slug}`},
 ]

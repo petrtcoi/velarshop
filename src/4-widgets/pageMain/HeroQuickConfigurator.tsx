@@ -75,6 +75,7 @@ type Props = {
 	initialDetails?: ModelDetails | null
 	variant?: 'hero' | 'modal' | 'category'
 	title?: string
+	subtitle?: string
 	modelResolutionMode?: ModelResolutionMode
 	category?: ConfiguratorCategory
 	onNavigate?: () => void
@@ -117,7 +118,7 @@ function parsePrice(value: string | undefined): number {
 }
 
 function fieldLabelClass(): string {
-	return 'mb-1.5 block text-[10px] font-thin uppercase tracking-tight text-neutral-600'
+	return 'mb-0.5 block text-[9px] font-thin uppercase tracking-tight text-neutral-600'
 }
 
 function modelTypeLabel(model: Pick<ModelOption, 'type' | 'orientation'>): string {
@@ -238,7 +239,10 @@ function getSelectionSummary(details: ModelDetails, variant: Variant, selection:
 		details.filters.sections && variant.sections ? `${variant.sections} сек.` : '',
 		details.filters.tubes ? `${selection.tubes} трубки` : '',
 		details.options.connections.find(item => item.id === selection.connection)?.code ?? '',
-		details.options.colors.find(item => item.id === selection.color)?.label ?? '',
+		(() => {
+			const color = details.options.colors.find(item => item.id === selection.color)
+			return color ? colorOptionLabel(color) : ''
+		})(),
 		details.options.grills.find(item => item.id === selection.grill)?.code ?? '',
 		selection.addon ? details.options.addon?.code ?? details.options.addon?.label ?? '' : '',
 	]
@@ -250,16 +254,28 @@ function getVariantSizeLabel(variant: Variant): string {
 	return [variant.height, variant.length, variant.width].filter(Boolean).join(' × ')
 }
 
+function getPercentMarkup(option: SelectOption): string {
+	if (!option.multiplicate || option.multiplicate <= 1) return ''
+	const percent = Math.round((option.multiplicate - 1) * 100)
+	return percent > 0 ? ` (+${percent}%)` : ''
+}
+
+function colorOptionLabel(option: SelectOption): string {
+	return `${option.label}${getPercentMarkup(option)}`
+}
+
 function InlineSelect({
 	label,
 	value,
 	options,
 	onChange,
+	className = '',
 }: {
 	label: string
 	value: string
 	options: InlineSelectOption[]
 	onChange: (value: string) => void
+	className?: string
 }) {
 	const [open, setOpen] = useState(false)
 	const selectRef = useRef<HTMLDivElement>(null)
@@ -283,13 +299,13 @@ function InlineSelect({
 
 	return (
 		<div
-			class='relative min-w-0'
+			class={`relative min-w-0 ${className}`}
 			ref={selectRef}
 		>
 			<label class={fieldLabelClass()}>{label}</label>
 			<button
 				type='button'
-				class={`mt-0 flex h-11 w-full items-center justify-between gap-2 rounded-lg border bg-neutral-50 px-2.5 text-left text-[13px] text-neutral-950 outline-none transition hover:border-neutral-300 focus:border-red-500 focus:ring-2 focus:ring-red-100 ${
+				class={`mt-0 flex h-9 w-full items-center justify-between gap-2 rounded-lg border bg-neutral-50 px-2 text-left text-[12px] text-neutral-950 outline-none transition hover:border-neutral-300 focus:border-red-500 focus:ring-2 focus:ring-red-100 md:h-10 md:text-[13px] ${
 					open ? 'border-red-500 ring-2 ring-red-100' : 'border-neutral-200'
 				}`}
 				aria-haspopup='listbox'
@@ -306,10 +322,10 @@ function InlineSelect({
 			</button>
 
 			{open && (
-				<div class='absolute left-0 right-0 top-[calc(100%+4px)] z-40 overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-[0_18px_55px_rgba(15,23,42,0.22)]'>
+				<div class='absolute left-0 right-0 top-[calc(100%+3px)] z-40 overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-[0_18px_55px_rgba(15,23,42,0.22)]'>
 					<div
 						role='listbox'
-						class='max-h-[220px] overflow-y-auto p-1 md:max-h-[280px]'
+						class='max-h-[190px] overflow-y-auto p-1 md:max-h-[220px]'
 					>
 						{options.map(option => {
 							const selected = option.value === value
@@ -319,7 +335,7 @@ function InlineSelect({
 									role='option'
 									aria-selected={selected}
 									disabled={option.disabled}
-									class={`block w-full rounded-lg px-2.5 py-1.5 text-left text-[13px] transition hover:bg-red-50 md:px-3 md:py-2 ${
+									class={`block w-full rounded-lg px-2 py-1 text-left text-[11px] leading-4 transition hover:bg-red-50 md:text-xs ${
 										selected ? 'bg-red-50 text-red-700' : 'text-neutral-900'
 									} ${option.disabled ? 'cursor-not-allowed opacity-35 hover:bg-transparent' : ''}`}
 									onClick={() => {
@@ -328,7 +344,7 @@ function InlineSelect({
 										setOpen(false)
 									}}
 								>
-									<span class='block truncate'>{option.label}</span>
+									<span class='block whitespace-normal'>{option.label}</span>
 								</button>
 							)
 						})}
@@ -343,7 +359,7 @@ function getTotalPrice(details: ModelDetails, variant: Variant, selection: Selec
 	let price = parsePrice(variant.price)
 
 	const color = details.options.colors.find(item => item.id === selection.color)
-	if (details.model.type === 'columns' && color?.multiplicate) price *= color.multiplicate
+	if ((details.model.type === 'columns' || details.model.type === 'design') && color?.multiplicate) price *= color.multiplicate
 	if (details.model.type === 'ironcast' && color?.pricePerSectionRub) {
 		price += color.pricePerSectionRub * parsePrice(variant.sections)
 	}
@@ -371,6 +387,7 @@ export default function HeroQuickConfigurator({
 	initialDetails = null,
 	variant = 'hero',
 	title,
+	subtitle,
 	modelResolutionMode = 'exact-model',
 	onNavigate,
 }: Props) {
@@ -507,15 +524,15 @@ export default function HeroQuickConfigurator({
 	const isCategory = variant === 'category'
 	const useFamilyByHeight = modelResolutionMode === 'family-by-height'
 	const isFloorModel = details?.model.type === 'floor'
-	const titleClass = isModal ? 'text-md font-semibold tracking-tight' : 'text-md font-semibold tracking-tight md:text-lg'
-	const contentSpacingClass = isModal ? 'mt-3.5 space-y-2.5' : 'mt-3.5 space-y-3 md:mt-4 md:space-y-3'
+	const titleClass = isModal ? 'text-sm font-semibold tracking-tight' : 'text-sm font-semibold tracking-tight md:text-base'
+	const contentSpacingClass = isModal ? 'mt-2.5 space-y-2' : 'mt-2.5 space-y-2 md:mt-3 md:space-y-2'
 	const gridGapClass = isFloorModel
 		? isModal
-			? 'grid grid-cols-1 gap-x-2 gap-y-2.5'
-			: 'grid grid-cols-1 gap-x-2.5 gap-y-3 md:grid-cols-2 md:gap-2.5'
+			? 'grid grid-cols-1 gap-x-2 gap-y-2'
+			: 'grid grid-cols-1 gap-x-2 gap-y-2 md:grid-cols-2 md:gap-2'
 		: isModal
-			? 'grid grid-cols-2 gap-x-2 gap-y-2.5'
-			: 'grid grid-cols-2 gap-x-2.5 gap-y-3 md:gap-2.5'
+			? 'grid grid-cols-2 gap-x-2 gap-y-2'
+			: 'grid grid-cols-2 gap-x-2 gap-y-2 md:gap-2'
 	const configuratorTitle = title ?? (isCategory ? 'Быстрый подбор' : 'Быстрый выбор')
 
 	return (
@@ -524,21 +541,23 @@ export default function HeroQuickConfigurator({
 				isModal
 					? 'rounded-none border-0 bg-transparent p-0 shadow-none'
 					: isCategory
-						? 'rounded-[20px] border border-neutral-200 bg-white p-4 shadow-none transition hover:border-neutral-300 md:p-5'
-					: 'max-w-[460px] rounded-[20px] border border-white/70 bg-white px-[18px] pb-4 pt-[18px] shadow-[0_24px_64px_rgba(0,0,0,0.28)] md:rounded-[22px] md:p-5 md:shadow-[0_28px_80px_rgba(0,0,0,0.30)]'
+						? 'rounded-[18px] border border-neutral-200 bg-white p-3.5 shadow-none transition hover:border-neutral-300 md:p-4'
+					: 'max-w-[460px] rounded-[18px] border border-white/70 bg-white px-4 pb-3.5 pt-4 shadow-[0_24px_64px_rgba(0,0,0,0.28)] md:rounded-[20px] md:p-4 md:shadow-[0_28px_80px_rgba(0,0,0,0.30)]'
 			}`}
 		>
-			<div class='mb-3.5 flex items-start justify-between gap-3 md:mb-4 md:gap-4'>
+			<div class='mb-2.5 flex items-start justify-between gap-3 md:mb-3 md:gap-4'>
 				<div>
 					<h2 class={titleClass}>{configuratorTitle}</h2>
-					{/* <p class='mt-0.5 text-xs leading-4 text-neutral-600  font-light  md:leading-tight'>
-						Модель, параметры и корзина без перехода в каталог
-					</p> */}
+					{subtitle && (
+						<p class='mt-1 max-w-[280px] text-xs leading-4 text-neutral-600 md:leading-tight'>
+							{subtitle}
+						</p>
+					)}
 				</div>
 				{!isModal && (
 					<a
 						href='/cart'
-						class='shrink-0 rounded-full border border-neutral-200 px-2.5 py-1 text-xs font-medium text-neutral-700 transition hover:border-red-200 hover:text-red-700 md:px-3 md:py-1.5'
+						class='shrink-0 rounded-full border border-neutral-200 px-2.5 py-1 text-[11px] font-medium text-neutral-700 transition hover:border-red-200 hover:text-red-700 md:px-3 md:text-xs'
 					>
 						Корзина
 					</a>
@@ -558,7 +577,7 @@ export default function HeroQuickConfigurator({
 				<div class='relative mt-0'>
 					<button
 						type='button'
-						class='flex h-11 w-full items-center justify-between rounded-lg border border-neutral-200 bg-neutral-50 px-2.5 text-left text-[13px] outline-none transition hover:border-neutral-300 focus:border-red-500 focus:ring-2 focus:ring-red-100 '
+						class='flex h-9 w-full items-center justify-between rounded-lg border border-neutral-200 bg-neutral-50 px-2 text-left text-[12px] outline-none transition hover:border-neutral-300 focus:border-red-500 focus:ring-2 focus:ring-red-100 md:h-10 md:text-[13px]'
 						aria-haspopup='listbox'
 						aria-expanded={open}
 						aria-labelledby='hero_model_label'
@@ -577,11 +596,11 @@ export default function HeroQuickConfigurator({
 					</button>
 
 					{open && (
-						<div class='absolute left-0 right-0 top-[calc(100%+4px)] z-30 overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-2xl md:top-[calc(100%+6px)]'>
-							<div class='border-b border-neutral-100 p-1.5 md:p-2'>
+						<div class='absolute left-0 right-0 top-[calc(100%+3px)] z-30 overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-2xl'>
+							<div class='border-b border-neutral-100 p-1'>
 								<input
 									ref={modelSearchInputRef}
-									class='h-9 w-full rounded-lg border border-neutral-200 px-2.5 text-[13px] outline-none focus:border-red-500 focus:ring-2 focus:ring-red-100 md:h-10 md:px-3 md:text-sm'
+									class='h-8 w-full rounded-lg border border-neutral-200 px-2 text-xs outline-none focus:border-red-500 focus:ring-2 focus:ring-red-100'
 									value={query}
 									placeholder='P30, P60, Q40, 3030, KWH...'
 									onInput={event => setQuery((event.currentTarget as HTMLInputElement).value)}
@@ -589,17 +608,17 @@ export default function HeroQuickConfigurator({
 							</div>
 							<div
 								role='listbox'
-								class='max-h-[220px] overflow-y-auto p-1 md:max-h-[280px]'
+								class='max-h-[190px] overflow-y-auto p-1 md:max-h-[220px]'
 							>
 								{filteredModels.length === 0 ? (
-									<div class='px-3 py-3 text-[13px] text-neutral-500 md:py-4 md:text-sm'>Модель не найдена</div>
+									<div class='px-2.5 py-2.5 text-xs text-neutral-500 md:py-3'>Модель не найдена</div>
 								) : (
 									filteredModels.map(model => (
 										<button
 											type='button'
 											role='option'
 											aria-selected={model.id === selectedModelId}
-											class={`block w-full rounded-lg px-2.5 py-1.5 text-left transition hover:bg-red-50 md:px-3 md:py-2 ${
+											class={`block w-full rounded-lg px-2 py-1 text-left transition hover:bg-red-50 ${
 												model.id === selectedModelId ? 'bg-red-50 text-red-700' : 'text-neutral-900'
 											}`}
 											onClick={() => {
@@ -608,8 +627,8 @@ export default function HeroQuickConfigurator({
 												setQuery('')
 											}}
 										>
-											<span class='block text-[13px] font-medium md:text-sm'>Velar {model.name}</span>
-											<span class='block text-[11px] text-neutral-500 md:mt-0.5 md:text-xs'>
+											<span class='block text-xs font-medium'>Velar {model.name}</span>
+											<span class='block text-[10px] text-neutral-500 md:mt-0.5 md:text-[11px]'>
 												{modelTypeLabel(model)} · {model.id}
 											</span>
 										</button>
@@ -622,12 +641,12 @@ export default function HeroQuickConfigurator({
 			</div>
 
 			{loading && !details && (
-				<div class='mt-3 rounded-xl bg-neutral-50 p-3 text-[13px] text-neutral-600 md:mt-4 md:p-4 md:text-sm'>
+				<div class='mt-2.5 rounded-xl bg-neutral-50 p-2.5 text-xs text-neutral-600 md:mt-3 md:p-3 md:text-[13px]'>
 					Загружаем доступные параметры...
 				</div>
 			)}
 			{error && (
-				<div class='mt-3 rounded-xl border border-red-100 bg-red-50 p-3 text-[13px] text-red-700 md:mt-4 md:p-4 md:text-sm'>
+				<div class='mt-2.5 rounded-xl border border-red-100 bg-red-50 p-2.5 text-xs text-red-700 md:mt-3 md:p-3 md:text-[13px]'>
 					{error}
 				</div>
 			)}
@@ -692,6 +711,7 @@ export default function HeroQuickConfigurator({
 								value={selection.connection}
 								options={details.options.connections.map(option => ({ value: option.id, label: option.label }))}
 								onChange={value => setSelection(current => ({ ...current, connection: value }))}
+								className='col-span-full'
 							/>
 						)}
 
@@ -699,8 +719,9 @@ export default function HeroQuickConfigurator({
 							<InlineSelect
 								label={details.model.type === 'ironcast' ? 'Отделка / цвет' : 'Цвет'}
 								value={selection.color}
-								options={details.options.colors.map(option => ({ value: option.id, label: option.label }))}
+								options={details.options.colors.map(option => ({ value: option.id, label: colorOptionLabel(option) }))}
 								onChange={value => setSelection(current => ({ ...current, color: value }))}
+								className='col-span-full'
 							/>
 						)}
 
@@ -716,8 +737,8 @@ export default function HeroQuickConfigurator({
 
 					{details.filters.addon && details.options.addon && (
 						<label
-							class={`flex items-center gap-2 rounded-xl border border-neutral-200 bg-neutral-50 px-2.5 py-2 text-[13px] text-neutral-800 ${
-								isModal ? '' : 'md:px-3 md:text-sm'
+							class={`flex items-center gap-2 rounded-xl border border-neutral-200 bg-neutral-50 px-2 py-1.5 text-xs text-neutral-800 ${
+								isModal ? '' : 'md:px-2.5 md:text-[13px]'
 							}`}
 						>
 							<input
@@ -730,32 +751,32 @@ export default function HeroQuickConfigurator({
 					)}
 
 					{result ? (
-						<div class={`rounded-xl border border-neutral-200 bg-neutral-50 ${isModal ? 'p-3' : 'p-3.5 md:rounded-2xl md:p-3.5'}`}>
-							<div class='text-[10px] font-thin uppercase tracking-tight text-neutral-500'>Найденный вариант</div>
+						<div class={`rounded-xl border border-neutral-200 bg-neutral-50 ${isModal ? 'p-2.5' : 'p-2.5 md:rounded-2xl md:p-3'}`}>
+							<div class='text-[9px] font-thin uppercase tracking-tight text-neutral-500 md:text-[10px]'>Найденный вариант</div>
 							<a
 								href={details.model.href}
 								onClick={() => onNavigate?.()}
-								class={`mt-1.5 block text-[15px] font-semibold leading-5 text-neutral-950 hover:text-red-700 ${
-									isModal ? '' : 'md:text-base'
+								class={`mt-1 block text-sm font-semibold leading-5 text-neutral-950 hover:text-red-700 ${
+									isModal ? '' : 'md:text-[15px]'
 								}`}
 							>
 								{result.title}
 							</a>
-							<div class={`mt-2 text-[11px] leading-tight text-neutral-500 ${isModal ? '' : 'md:mt-0.5 md:text-xs'}`}>{summary}</div>
-							{details.model.type === 'ironcast' && sizeLabel && (
-								<div class='mt-1.5 text-[11px] leading-tight text-neutral-500 md:text-xs'>
+							<div class={`mt-1 text-[11px] leading-tight text-neutral-500 ${isModal ? '' : 'md:mt-0.5 md:text-xs'}`}>{summary}</div>
+							{(details.model.type === 'ironcast' || details.model.type === 'design') && sizeLabel && (
+								<div class='mt-1 text-[11px] leading-tight text-neutral-500 md:text-xs'>
 									Размер: {sizeLabel} мм
 								</div>
 							)}
-							<div class={`mt-3 flex items-end justify-between gap-2.5 ${isModal ? '' : 'md:mt-3 md:gap-3'}`}>
+							<div class={`mt-2 flex items-end justify-between gap-2.5 ${isModal ? '' : 'md:mt-2 md:gap-3'}`}>
 								<div>
 									{totalPrice > 0 && (
-										<div class='text-[22px] font-semibold leading-none tracking-[-0.03em] md:text-2xl'>
+										<div class='text-xl font-semibold leading-none tracking-[-0.03em] md:text-[22px]'>
 											{formatRub(totalPrice)}
 										</div>
 									)}
 									{result.dt70 && (
-										<div class='mt-1.5 text-[11px] text-neutral-500 md:mt-0.5 md:text-xs'>
+										<div class='mt-1 text-[11px] text-neutral-500 md:mt-0.5 md:text-xs'>
 											Мощность ΔT70: {result.dt70} Вт
 										</div>
 									)}
@@ -771,33 +792,33 @@ export default function HeroQuickConfigurator({
 								)}
 							</div>
 
-							<div class={`mt-3 flex flex-wrap items-center gap-2 ${isModal ? '' : 'md:mt-3'}`}>
+							<div class={`mt-2 flex flex-wrap items-center gap-1.5 ${isModal ? '' : 'md:mt-2'}`}>
 								{itemInCartQnty > 0 ? (
 									<>
 										<button
 											type='button'
-											class='h-10 w-10 rounded-lg border border-neutral-300 bg-white text-lg transition hover:border-red-300 hover:text-red-700'
+											class='h-9 w-9 rounded-lg border border-neutral-300 bg-white text-base transition hover:border-red-300 hover:text-red-700'
 											onClick={handleRemoveFromCart}
 											aria-label='Уменьшить количество'
 										>
 											-
 										</button>
-										<div class='min-w-8 text-center text-sm font-semibold'>{itemInCartQnty}</div>
+										<div class='min-w-7 text-center text-sm font-semibold'>{itemInCartQnty}</div>
 										<button
 											type='button'
-											class='h-10 w-10 rounded-lg border border-neutral-300 bg-white text-lg transition hover:border-red-300 hover:text-red-700'
+											class='h-9 w-9 rounded-lg border border-neutral-300 bg-white text-base transition hover:border-red-300 hover:text-red-700'
 											onClick={handleAddToCart}
 											aria-label='Увеличить количество'
 										>
 											+
 										</button>
-										<span class='text-sm font-medium text-green-700'>Добавлено</span>
+										<span class='text-xs font-medium text-green-700 md:text-[13px]'>Добавлено</span>
 									</>
 								) : (
 									<button
 										type='button'
-										class={`h-10 flex-1 rounded-lg bg-red-700 px-4 text-[13px] font-sm text-white transition hover:bg-red-800 disabled:cursor-not-allowed disabled:bg-neutral-300 ${
-											isModal ? '' : 'md:text-sm'
+										class={`h-9 flex-1 rounded-lg bg-red-700 px-3 text-xs font-sm text-white transition hover:bg-red-800 disabled:cursor-not-allowed disabled:bg-neutral-300 ${
+											isModal ? '' : 'md:text-[13px]'
 										}`}
 										disabled={!totalPrice}
 										onClick={handleAddToCart}
@@ -807,7 +828,7 @@ export default function HeroQuickConfigurator({
 								)}
 							</div>
 
-							<div class={`mt-3 flex flex-wrap gap-x-4 gap-y-2 text-[13px] leading-5 ${isModal ? '' : 'md:mt-3 md:gap-x-4 md:gap-y-2 md:text-sm'}`}>
+							<div class={`mt-2 flex flex-wrap gap-x-3 gap-y-1 text-xs leading-5 ${isModal ? '' : 'md:mt-2 md:gap-x-4 md:text-[13px]'}`}>
 								<a
 									href={details.model.href}
 									onClick={() => onNavigate?.()}
@@ -825,7 +846,7 @@ export default function HeroQuickConfigurator({
 							</div>
 						</div>
 					) : (
-						<div class='rounded-xl border border-neutral-200 bg-neutral-50 p-3 text-[13px] text-neutral-600 md:p-4 md:text-sm'>
+						<div class='rounded-xl border border-neutral-200 bg-neutral-50 p-2.5 text-xs text-neutral-600 md:p-3 md:text-[13px]'>
 							{isFloorModel ? (
 								<>
 									<div>Для выбранной длины нет варианта с таким подключением.</div>

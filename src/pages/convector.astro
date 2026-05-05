@@ -6,11 +6,10 @@ import type { ModelDetails } from '@widgets/pageMain/HeroQuickConfigurator'
 import { buildQuickConfiguratorModels } from '@widgets/pageMain/quickConfiguratorData'
 import { get as getHeroConfiguratorData } from './api/hero-configurator/[model].json'
 import JsonLd from '../components/seo/JsonLd.astro'
+import { getCategorySeo } from '../lib/seo/categorySeo'
 
-const canonicalUrl = 'https://velarshop.ru/convector/'
-const pageTitle = 'Внутрипольные конвекторы Velar — KWH, KWHV и KWHV 24V'
 const pageDescription =
-	'Внутрипольные конвекторы Velar для панорамных окон, квартир, домов и коммерческих помещений. Модели KWH, KWHV и KWHV 24V, естественная и принудительная конвекция, доставка по России.'
+	'Внутрипольные конвекторы Velar для панорамных окон и остекления в пол. Модели с естественной и принудительной конвекцией, подбор мощности и доставка.'
 
 const breadcrumbs = [
 	{ title: 'Главная', url: '/' },
@@ -177,51 +176,54 @@ const faqItems = [
 	['Как получить точный расчет?', 'Отправьте размеры зоны установки, параметры помещения, город доставки и, если есть, план или фото. Менеджер подготовит расчет.'],
 ]
 
-const schema = [
-	{
-		'@context': 'https://schema.org',
-		'@type': 'CollectionPage',
-		name: 'Внутрипольные конвекторы Velar',
-		description: pageDescription,
-		url: canonicalUrl,
-		mainEntity: {
-			'@type': 'ItemList',
-			itemListElement: convectorModels.map((model, index) => ({
-				'@type': 'ListItem',
-				position: index + 1,
-				url: new URL(model.href, canonicalUrl).toString(),
-				item: {
-					'@type': 'Product',
-					name: model.fullName,
-					image: new URL(model.image, canonicalUrl).toString(),
-					description: model.description,
-					brand: { '@type': 'Brand', name: 'Velar' },
-					category: 'Внутрипольные конвекторы',
-					offers: {
-						'@type': 'Offer',
-						priceCurrency: 'RUB',
-						price: model.priceFrom,
-						availability: 'https://schema.org/InStock',
-						url: new URL(model.href, canonicalUrl).toString(),
-					},
-				},
-			})),
-		},
-	},
-	{
-		'@context': 'https://schema.org',
-		'@type': 'FAQPage',
-		mainEntity: faqItems.map(([question, answer]) => ({
-			'@type': 'Question',
-			name: question,
-			acceptedAnswer: { '@type': 'Answer', text: answer },
+const seo = getCategorySeo({
+	category: {
+		slug: 'convector',
+		url: '/convector',
+		name: 'Внутрипольные конвекторы',
+		h1: 'Внутрипольные конвекторы Velar',
+		seoTitle: 'Внутрипольные конвекторы Velar для панорамных окон',
+		seoDescription: pageDescription,
+		ogTitle: 'Внутрипольные конвекторы Velar — подбор и каталог',
+		ogDescription:
+			'Конвекторы для панорамных окон: естественная и принудительная конвекция, модели 24В, подбор мощности и доставка по России.',
+		ogImage: '/images/convector/hero/top-view-convector.png',
+		ogImageAlt: 'Внутрипольные конвекторы Velar для панорамных окон',
+		breadcrumbs,
+		itemListName: 'Модели внутрипольных конвекторов Velar',
+		products: convectorModels.map(model => ({
+			name: model.name,
+			url: model.href,
+		})),
+		faq: faqItems.map(([question, answer]) => ({
+			question,
+			answer,
 		})),
 	},
-]
+})
 ---
 
-<Layout title={pageTitle} description={pageDescription} canonicalUrl={canonicalUrl} breadcrumbs={breadcrumbs} paddings={false}>
-	<JsonLd data={schema} />
+<Layout
+	title={seo.title}
+	description={seo.description}
+	canonicalUrl={seo.canonicalUrl}
+	robots={seo.robots}
+	ogType='website'
+	ogTitle={seo.ogTitle}
+	ogDescription={seo.ogDescription}
+	ogUrl={seo.canonicalUrl}
+	ogImageUrl={seo.ogImage}
+	ogImageAlt={seo.ogImageAlt}
+	twitterCard='summary_large_image'
+	twitterTitle={seo.twitterTitle}
+	twitterDescription={seo.twitterDescription}
+	twitterImage={seo.twitterImage}
+	twitterImageAlt={seo.twitterImageAlt}
+	breadcrumbs={breadcrumbs}
+	disableBreadcrumbJsonLd={true}
+	paddings={false}
+>
+	<JsonLd data={seo.jsonLd} />
 
 	<section class='bg-white pb-12 pt-7 md:pb-16 xl:pb-20'>
 		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,1fr)_220px_minmax(340px,390px)] lg:items-start xl:grid-cols-[minmax(0,1fr)_280px_minmax(360px,420px)] xl:px-8'>

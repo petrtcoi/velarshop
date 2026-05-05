@@ -16,37 +16,67 @@ import ColumnsWhyVelar from '../components/columns/ColumnsWhyVelar.astro'
 import UsefulArticles from '../components/columns/UsefulArticles.astro'
 import {
 	columnsFaqItems,
-	columnsHowToSteps,
 	columnsModels,
 	popularModels,
 	usefulArticles,
 } from '../components/columns/columnsData'
-import {
-	buildColumnsCollectionPageSchema,
-	buildColumnsFaqSchema,
-	buildColumnsHowToSchema,
-	buildColumnsItemListSchema,
-} from '../lib/seo/columnsSchema'
+import { getCategorySeo } from '../lib/seo/categorySeo'
 
 const breadcrumbs = [
 	{ title: 'Главная', url: '/' },
-	{ title: 'Каталог', url: '/#catalog' },
 	{ title: 'Трубчатые радиаторы', url: '/columns' },
 ]
 
-	---
+const seo = getCategorySeo({
+	category: {
+		slug: 'columns',
+		url: '/columns',
+		name: 'Трубчатые радиаторы',
+		h1: 'Трубчатые радиаторы Velar',
+		seoTitle: 'Трубчатые радиаторы Velar — стальные радиаторы отопления на заказ',
+		seoDescription:
+			'Стальные трубчатые радиаторы Velar для квартир, домов и дизайнерских интерьеров. Разные высоты, количество секций, цвета RAL, производство под заказ.',
+		ogTitle: 'Трубчатые радиаторы Velar — каталог моделей',
+		ogDescription:
+			'Стальные трубчатые радиаторы Velar разных высот и секционности. Подбор мощности, цвета RAL и доставка по России.',
+		ogImage: '/images/models/columns/hero-black-column-radiator.png',
+		ogImageAlt: 'Стальные трубчатые радиаторы Velar',
+		breadcrumbs,
+		itemListName: 'Модели трубчатых радиаторов Velar',
+		products: columnsModels.map(model => ({
+			name: `Velar ${model.name}`,
+			url: model.href,
+		})),
+		faq: columnsFaqItems.map(item => ({
+			question: item.question,
+			answer: item.answer,
+		})),
+	},
+})
+
+---
 
 <Layout
-	title='Трубчатые радиаторы Velar — стальные радиаторы отопления на заказ'
-	description='Стальные трубчатые радиаторы Velar для квартир, домов и интерьеров. Разные высоты, цвета RAL, производство под заказ, доставка по России.'
-	canonicalUrl='https://velarshop.ru/columns/'
+	title={seo.title}
+	description={seo.description}
+	canonicalUrl={seo.canonicalUrl}
+	robots={seo.robots}
+	ogType='website'
+	ogTitle={seo.ogTitle}
+	ogDescription={seo.ogDescription}
+	ogUrl={seo.canonicalUrl}
+	ogImageUrl={seo.ogImage}
+	ogImageAlt={seo.ogImageAlt}
+	twitterCard='summary_large_image'
+	twitterTitle={seo.twitterTitle}
+	twitterDescription={seo.twitterDescription}
+	twitterImage={seo.twitterImage}
+	twitterImageAlt={seo.twitterImageAlt}
 	paddings={false}
 	breadcrumbs={breadcrumbs}
+	disableBreadcrumbJsonLd={true}
 >
-	<JsonLd data={buildColumnsCollectionPageSchema()} />
-	<JsonLd data={buildColumnsItemListSchema(columnsModels)} />
-	<JsonLd data={buildColumnsFaqSchema(columnsFaqItems)} />
-	<JsonLd data={buildColumnsHowToSchema(columnsHowToSteps)} />
+	<JsonLd data={seo.jsonLd} />
 
 	<ColumnsHero />
 

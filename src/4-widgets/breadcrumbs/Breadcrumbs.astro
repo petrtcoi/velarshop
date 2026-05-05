@@ -9,9 +9,10 @@ type Crumb = {
   items: Crumb[];
   separator?: string; // например, ">" или "›"
   class?: string;
+  withJsonLd?: boolean;
 }
 
-const { items = [], separator = ">", class: className = "" } = Astro.props;
+const { items = [], separator = ">", class: className = "", withJsonLd = true } = Astro.props;
 const lastIndex = items.length - 1;
 
 const toAbs = (u: string) => {
@@ -60,9 +61,10 @@ const jsonLd = {
   </nav>
 )}
 
-<script
-	type='application/ld+json'
-	is:inline
-	set:html={JSON.stringify(jsonLd)}
-/>
-
+{withJsonLd && (
+  <script
+    type='application/ld+json'
+    is:inline
+    set:html={JSON.stringify(jsonLd)}
+  />
+)}

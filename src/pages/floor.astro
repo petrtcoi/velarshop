@@ -9,11 +9,10 @@ import type { ModelDetails } from '@widgets/pageMain/HeroQuickConfigurator'
 import { buildQuickConfiguratorModels } from '@widgets/pageMain/quickConfiguratorData'
 import { get as getHeroConfiguratorData } from './api/hero-configurator/[model].json'
 import JsonLd from '../components/seo/JsonLd.astro'
+import { getCategorySeo } from '../lib/seo/categorySeo'
 
-const canonicalUrl = 'https://velarshop.ru/floor/'
-const pageTitle = 'Напольные радиаторы отопления Velar — Q500, P200 и P300'
 const pageDescription =
-	'Напольные радиаторы Velar Q500, P200 и P300 для панорамных окон, входных зон, гостиных и коммерческих помещений. Подбор, расчет и доставка по России.'
+	'Напольные радиаторы Velar для панорамных окон, витражного остекления и помещений без подоконников. Подбор модели, мощности, цвета и доставки по России.'
 
 const breadcrumbs = [
 	{ title: 'Главная', url: '/' },
@@ -132,76 +131,54 @@ const faqItems = [
 	['Можно ли подобрать радиатор по плану помещения?', 'Да, можно отправить план, размеры зоны установки или фото помещения. Менеджер поможет подобрать модель, длину, цвет и параметры подключения.'],
 ]
 
-const productJsonLd = floorModels.map(model => ({
-	'@type': 'Product',
-	name: model.title,
-	image: new URL(model.image, canonicalUrl).toString(),
-	description: model.description,
-	brand: {
-		'@type': 'Brand',
-		name: 'Velar',
-	},
-	category: 'Напольные радиаторы отопления',
-	offers: model.priceFrom
-		? {
-				'@type': 'Offer',
-				priceCurrency: 'RUB',
-				price: String(model.priceFrom),
-				availability: 'https://schema.org/InStock',
-				url: new URL(model.href, canonicalUrl).toString(),
-			}
-		: undefined,
-}))
-
-const collectionJsonLd = {
-	'@context': 'https://schema.org',
-	'@type': 'CollectionPage',
-	name: 'Напольные радиаторы отопления Velar',
-	url: canonicalUrl,
-	description: pageDescription,
-	mainEntity: {
-		'@type': 'ItemList',
-		itemListElement: floorModels.map((model, index) => ({
-			'@type': 'ListItem',
-			position: index + 1,
-			url: new URL(model.href, canonicalUrl).toString(),
-			item: productJsonLd[index],
+const seo = getCategorySeo({
+	category: {
+		slug: 'floor',
+		url: '/floor',
+		name: 'Напольные радиаторы',
+		h1: 'Напольные радиаторы Velar',
+		seoTitle: 'Напольные радиаторы Velar для панорамных окон и интерьеров',
+		seoDescription: pageDescription,
+		ogTitle: 'Напольные радиаторы Velar — каталог моделей',
+		ogDescription:
+			'Напольные радиаторы для панорамных окон и интерьеров: подбор мощности, цвета, креплений и доставки по России.',
+		ogImage: '/images/main/main0.jpg',
+		ogImageAlt: 'Напольные радиаторы Velar',
+		breadcrumbs,
+		itemListName: 'Модели напольных радиаторов Velar',
+		products: floorModels.map(model => ({
+			name: model.title,
+			url: model.href,
+		})),
+		faq: faqItems.map(([question, answer]) => ({
+			question,
+			answer,
 		})),
 	},
-}
-
-const faqJsonLd = {
-	'@context': 'https://schema.org',
-	'@type': 'FAQPage',
-	mainEntity: faqItems.map(([question, answer]) => ({
-		'@type': 'Question',
-		name: question,
-		acceptedAnswer: {
-			'@type': 'Answer',
-			text: answer,
-		},
-	})),
-}
-
-const organizationJsonLd = {
-	'@context': 'https://schema.org',
-	'@type': 'Organization',
-	name: 'VelarShop.ru',
-	url: 'https://velarshop.ru/',
-	logo: 'https://velarshop.ru/images/logo.png',
-}
+})
 ---
 
 <Layout
-	title={pageTitle}
-	description={pageDescription}
-	canonicalUrl={canonicalUrl}
+	title={seo.title}
+	description={seo.description}
+	canonicalUrl={seo.canonicalUrl}
+	robots={seo.robots}
+	ogType='website'
+	ogTitle={seo.ogTitle}
+	ogDescription={seo.ogDescription}
+	ogUrl={seo.canonicalUrl}
+	ogImageUrl={seo.ogImage}
+	ogImageAlt={seo.ogImageAlt}
+	twitterCard='summary_large_image'
+	twitterTitle={seo.twitterTitle}
+	twitterDescription={seo.twitterDescription}
+	twitterImage={seo.twitterImage}
+	twitterImageAlt={seo.twitterImageAlt}
 	breadcrumbs={breadcrumbs}
+	disableBreadcrumbJsonLd={true}
 	paddings={false}
 >
-	<JsonLd data={collectionJsonLd} />
-	<JsonLd data={faqJsonLd} />
-	<JsonLd data={organizationJsonLd} />
+	<JsonLd data={seo.jsonLd} />
 
 	<section class='border-b border-neutral-200 bg-white'>
 		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 pb-8 pt-6 md:px-6 md:pb-12 md:pt-9 lg:grid-cols-[minmax(0,1fr)_minmax(340px,460px)] lg:items-center lg:gap-12 xl:px-8 xl:py-12'>

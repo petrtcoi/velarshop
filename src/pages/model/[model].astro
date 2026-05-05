@@ -1,83 +1,606 @@
 ---
+import { Picture } from '@astrojs/image/components'
+import { getEntryBySlug } from 'astro:content'
+
 import Layout from '@shared/layouts/Layout.astro'
+import JsonLd from '../../components/seo/JsonLd.astro'
 
-import ModelTitle from '@widgets/pageModel/ModelTitle.astro'
 import RadiatorList from '@widgets/pageModel/RadiatorList/RadiatorList.astro'
-import ModelBasicInfo from '@widgets/pageModel/ModelBasicInfo.astro'
-
-import RelatedModels from '@features/model/RelatedModels/RelatedModels.astro'
-import ModelsImagesGallery from '@features/model/ModelsImagesGallery/ModelsImagesGallery.astro'
-import ModelAdditionalInfo from '@features/model/ModelAdditionalInfo/ModelAdditionalInfo.astro'
+import ModelDownloadSchema from '@features/model/ModelDownloadShema/ModelDownloadSchema.astro'
+import ModelDescription from '@features/model/ModelDescription/ModelDescription.astro'
 
 import { modelsJsonData } from '@entities/Model'
-import { getModelMetaTitle } from '@shared/utils/getModelMetaTitle'
+import { radiatorsJsonData } from '@entities/Radiator'
+import { getModelSlug } from '@shared/utils/getModelSlug'
+import { getModelMainImagePath } from '@shared/utils/getModelMainImagePath'
+import { getModelSeo } from '../../lib/seo/modelSeo'
 
 import type { ModelJson } from '@entities/Model'
-import BuyerInfo from '@widgets/buyerInfo/BuyerInfo.astro'
-import { getModelMetaDescription } from '@shared/utils/getModelMetaDescription';
-import Breadcrumbs from '@widgets/breadcrumbs/Breadcrumbs.astro';
+import type { RadiatorJson } from '@entities/Radiator'
 
 export async function getStaticPaths() {
 	return modelsJsonData
 		.filter(model => model.type !== 'columns')
 		.map(model => ({
 			params: { model: model.slug },
-			props: { model: model },
+			props: { model },
 		}))
 }
 
 export type Props = {
 	model: ModelJson
 }
+
 const { model } = Astro.props as Props
 
-const modelTitle = getModelMetaTitle(model)
-const metaDescription = getModelMetaDescription(model)
+const modelUrl = getModelSlug(model)
+function normalizeModelName(name: string): string {
+	return name.replace(/([A-Za-zА-Яа-я])\s+(\d+)/g, '$1$2').replace(/\s+/g, ' ').trim()
+}
+const normalizedModelName = normalizeModelName(model.name)
+const productName = `Velar ${normalizedModelName}`
+const h1 = `${model.prefix} Velar ${normalizedModelName}`
 
-let modelCrumbTitle = 'Дизайн-радиаторы'
-let modelCrumbUrl = '/design'
+const categoryMeta = {
+	design: { title: 'Дизайн-радиаторы', url: '/design' },
+	convector: { title: 'Внутрипольные конвекторы', url: '/convector' },
+	floor: { title: 'Напольные радиаторы', url: '/floor' },
+	ironcast: { title: 'Чугунные ретро-радиаторы', url: '/retro' },
+	columns: { title: 'Трубчатые радиаторы', url: '/columns' },
+} as const
 
-if (model.type === 'columns') {
-	modelCrumbTitle = 'Трубчатые радиаторы'
-	modelCrumbUrl = '/columns'
+const modelCategory = categoryMeta[model.type]
+
+function getDesignSeriesData(targetModel: ModelJson): { slug: string; title: string; url: string } | undefined {
+	if (targetModel.type !== 'design') return undefined
+
+	const id = targetModel.id.toLowerCase()
+	const slug = id === 'sv' || id === 'sh' ? 's' : id === 'spv' || id === 'sph' ? 'sp' : id.replace(/[vh]$/, '')
+	const availableSeriesSlugs = new Set([
+		'p30',
+		'p60',
+		'q40',
+		'q60',
+		'q80',
+		'r32',
+		'r42',
+		'r89',
+		's',
+		'sp',
+		'rt1',
+		'rt1w',
+		'rt2',
+		'qt1',
+		'qt2',
+	])
+	if (!availableSeriesSlugs.has(slug)) return undefined
+
+	const normalizedLabel = slug.toUpperCase().replace(/\s+/g, '')
+	const title = normalizedLabel
+
+	return {
+		slug,
+		title: `Velar ${title}`,
+		url: `/design/${slug}`,
+	}
 }
-if (model.type === 'convector') {
-	modelCrumbTitle = 'Внутрипольные конвекторы'
-		modelCrumbUrl = '/convector'
-}
-if (model.type === 'floor') {
-	modelCrumbTitle = 'Напольные радиаторы'
-		modelCrumbUrl = '/floor'
-}	
-if (model.type === 'ironcast') {
-	modelCrumbTitle = 'Чугунные ретро-радиаторы'
-		modelCrumbUrl = '/retro'
-}
+
+const designSeries = getDesignSeriesData(model)
+
 const crumbs = [
-	{title: 'Главная', url: '/'},
-	{title: modelCrumbTitle, url: modelCrumbUrl},
-	{title: `Velar ${model.name}`, url: `/model/${model.slug}`},
+	{ title: 'Главная', url: '/' },
+	{ title: modelCategory.title, url: modelCategory.url },
+	...(designSeries ? [{ title: designSeries.title, url: designSeries.url }] : []),
+	{ title: productName, url: modelUrl },
 ]
+
+const modelRadiators = radiatorsJsonData.filter(radiator => radiator.model_id === model.id)
+
+function toNumber(value?: string): number {
+	if (!value) return 0
+	const parsed = Number.parseFloat(value)
+	return Number.isFinite(parsed) ? parsed : 0
+}
+
+const prices = modelRadiators.map(radiator => toNumber(radiator.price)).filter(Boolean)
+const minPrice = prices.length ? Math.min(...prices) : 0
+const priceFrom = minPrice > 0 ? `от ${minPrice.toLocaleString('ru-RU')} ₽` : 'уточняйте'
+
+const isHorizontal = model.orientation === 'horizontal'
+const isVertical = model.orientation === 'vertical'
+
+const heroBadge = model.type === 'design' ? 'Дизайн-радиатор Velar' : `${model.prefix} Velar`
+const heroBenefits = [
+	'Цвет по RAL',
+	'Давление до 16 атм',
+	'Сделано в России',
+	'Под заказ',
+	'Доставка по России',
+	'Подбор мощности',
+]
+
+const profileText = model.short_comment.toLowerCase()
+
+function resolveTubeShape(comment: string): string {
+	if (comment.includes('круг')) return 'круглая'
+	if (comment.includes('квадрат')) return 'квадратная'
+	if (comment.includes('оваль')) return 'овальная'
+	if (comment.includes('плоск') || comment.includes('прямоуголь')) return 'плоская'
+	return 'по серии'
+}
+
+function resolveTubeSize(comment: string): string {
+	const mmMatch = comment.match(/(\d+\s?[xх]\s?\d+|\d+)\s*мм/iu)
+	return mmMatch?.[1]?.replace(/\s+/g, '') ?? ''
+}
+
+const tubeShape = resolveTubeShape(profileText)
+const tubeSize = resolveTubeSize(profileText)
+const tubeShapeInstrumental =
+	tubeShape === 'квадратная'
+		? 'квадратной'
+		: tubeShape === 'круглая'
+			? 'круглой'
+			: tubeShape === 'овальная'
+				? 'овальной'
+				: tubeShape === 'плоская'
+					? 'плоской'
+					: tubeShape
+
+function resolveConnectionText(connections: string): string {
+	const values = connections.split(',').map(item => item.trim()).filter(Boolean)
+	const labels: string[] = []
+
+	if (values.includes('lat')) labels.push('боковое')
+	if (values.some(value => ['l50', 'r50', '050'].includes(value))) labels.push('нижнее')
+	if (values.includes('lr')) labels.push('по схеме модели')
+
+	return labels.length ? labels.join(' / ') : 'по схеме модели'
+}
+
+const connectionText = resolveConnectionText(model.connections)
+
+const imagePath = getModelMainImagePath(model.slug, model.type === 'columns')
+const imageModules = import.meta.glob('../../../public/images/models/*/*.*')
+const modelImageModules = Object.entries(imageModules)
+	.filter(([key]) => key.includes(`/images/models/${model.slug}/`) && !key.endsWith('/main.jpg'))
+	.sort(([a], [b]) => a.localeCompare(b))
+
+const extraImages = await Promise.all(modelImageModules.map(([, value]) => value()))
+// @ts-ignore Astro image module typing
+const renderedExtraImages = extraImages.map(image => image.default)
+const hasModelDescription = Boolean(await getEntryBySlug('modelDescriptions', model.slug))
+
+const heroDescription = isHorizontal
+	? `Горизонтальный дизайн-радиатор ${productName} с ${tubeShapeInstrumental} формой труб${tubeSize ? ` ${tubeSize} мм` : ''}. Подходит для установки под окнами, в гостиных, спальнях и современных интерьерах. Доступен в разных размерах, цветах RAL и вариантах подключения.`
+	: isVertical
+		? `Вертикальный дизайн-радиатор ${productName} с ${tubeShapeInstrumental} формой труб${tubeSize ? ` ${tubeSize} мм` : ''}. Подходит для узких стен, зон у панорамных окон и современных интерьеров. Доступен в разных размерах, цветах RAL и вариантах подключения.`
+		: `${productName} изготавливается под заказ в разных размерах и цветах. Подберем исполнение под помещение, подключение и задачу по мощности.`
+
+function getPowerValue(radiator: RadiatorJson): string {
+	return radiator.dt70 || radiator.dt60 || radiator.dt50 || ''
+}
+
+const powerValues = modelRadiators.map(radiator => toNumber(getPowerValue(radiator))).filter(Boolean)
+const maxPower = powerValues.length ? Math.max(...powerValues).toLocaleString('ru-RU') : ''
+
+const specs: Array<{ label: string; value: string }> = [
+	{ label: 'Тип', value: model.prefix.toLowerCase() },
+	{ label: 'Исполнение', value: isHorizontal ? 'горизонтальное' : isVertical ? 'вертикальное' : '' },
+	{ label: 'Форма труб', value: tubeShape === 'по серии' ? '' : tubeShape },
+	{ label: 'Диаметр / профиль труб', value: tubeSize ? `${tubeSize} мм` : '' },
+	{ label: 'Материал', value: 'сталь' },
+	{ label: 'Подключение', value: connectionText },
+	{ label: 'Цвет', value: 'по каталогу RAL' },
+	{ label: 'Мощность (макс. по вариантам)', value: maxPower ? `${maxPower} Вт` : '' },
+	{ label: 'Монтаж', value: model.type === 'floor' ? 'напольный' : 'настенный / по проекту' },
+].filter(item => item.value)
+
+const modelCode = model.name.replace(/[HV]$/i, '').trim()
+
+const useCases = isHorizontal
+	? [
+		'под стандартным окном;',
+		'вдоль стены в гостиной или спальне;',
+		'в интерьере с низкой мебелью;',
+		'в помещениях, где вертикальный радиатор не подходит;',
+		'как аккуратную замену обычному панельному радиатору.',
+	]
+	: isVertical
+		? [
+			'на узкой стене;',
+			'рядом с панорамным окном;',
+			'в прихожей;',
+			'в гостиной как интерьерный акцент;',
+			'в помещениях, где важно сохранить полезную ширину стены.',
+		]
+		: [
+			'в проектах с повышенными требованиями к внешнему виду;',
+			'в жилых и коммерческих пространствах;',
+			'в интерьерах, где важны и мощность, и дизайн.',
+		]
+
+const faqItems = [
+	{
+		question: `Можно ли заказать ${productName} в другом цвете?`,
+		answer: 'Да, радиатор можно заказать в цвете по каталогу RAL. Точный цвет и покрытие согласовываются при расчете.',
+	},
+	{
+		question: 'Как понять, подойдет ли эта модель по мощности?',
+		answer: 'Мощность зависит от выбранного размера и параметров помещения. Выберите вариант в таблице или отправьте заявку на расчет.',
+	},
+	{
+		question: 'Можно ли изменить подключение?',
+		answer: 'Доступные варианты подключения зависят от модели и размера. Менеджер уточнит схему перед заказом.',
+	},
+	{
+		question: 'Сколько занимает производство?',
+		answer: 'Срок производства зависит от модели, цвета и текущей загрузки. Актуальный срок уточняется при оформлении расчета.',
+	},
+]
+
+function getRelatedModels(currentModel: ModelJson): ModelJson[] {
+	const allByType = modelsJsonData.filter(item => item.type === currentModel.type && item.id !== currentModel.id)
+	const seen = new Set<string>()
+	const result: ModelJson[] = []
+
+	const pushUnique = (item: ModelJson | undefined) => {
+		if (!item || seen.has(item.id) || item.id === currentModel.id) return
+		seen.add(item.id)
+		result.push(item)
+	}
+
+	if (currentModel.type === 'design') {
+		const altId = currentModel.id.endsWith('h')
+			? `${currentModel.id.slice(0, -1)}v`
+			: currentModel.id.endsWith('v')
+				? `${currentModel.id.slice(0, -1)}h`
+				: ''
+		pushUnique(modelsJsonData.find(item => item.id === altId))
+	}
+
+	currentModel.related_models
+		.split(',')
+		.map(item => item.trim())
+		.forEach(id => pushUnique(modelsJsonData.find(item => item.id === id)))
+
+	const modelPrefix = currentModel.id[0]
+	allByType
+		.filter(item => item.id.startsWith(modelPrefix))
+		.forEach(pushUnique)
+
+	allByType.forEach(pushUnique)
+
+	return result.slice(0, 4)
+}
+
+const relatedModels = getRelatedModels(model)
+const relatedTitle = model.type === 'design' ? 'Похожие дизайн-радиаторы' : 'Похожие модели Velar'
+
+const seo = getModelSeo({
+	model,
+	radiators: modelRadiators,
+	breadcrumbs: crumbs,
+	parentSeries: designSeries
+		? {
+				slug: designSeries.slug,
+				title: designSeries.title,
+				url: designSeries.url,
+			}
+		: undefined,
+	faqItems,
+	additionalProperties: specs,
+	categoryLabel: modelCategory.title,
+	heroDescription,
+})
 ---
 
-<Layout title={modelTitle} description={metaDescription}>
-	<span
-		itemscope
-		itemtype='https://schema.org/ProductModel'
-	>
-		<Breadcrumbs items={crumbs} />
+<Layout
+	title={seo.title}
+	description={seo.description}
+	canonicalUrl={seo.canonicalUrl}
+	robots={seo.robots}
+	ogType='product'
+	ogTitle={seo.ogTitle}
+	ogDescription={seo.ogDescription}
+	ogUrl={seo.canonicalUrl}
+	ogImageUrl={seo.ogImage}
+	ogImageAlt={seo.ogImageAlt}
+	ogImageWidth='1200'
+	ogImageHeight='630'
+	twitterCard='summary_large_image'
+	twitterTitle={seo.twitterTitle}
+	twitterDescription={seo.twitterDescription}
+	twitterImage={seo.twitterImage}
+	twitterImageAlt={seo.twitterImageAlt}
+	productMeta={seo.productMeta}
+	breadcrumbs={crumbs}
+	disableBreadcrumbJsonLd={true}
+	paddings={false}
+>
+	<JsonLd data={seo.jsonLd} />
 
-		<ModelTitle {...model} />
-		<ModelBasicInfo model={model} />
-		<RadiatorList model={model} />
-		<ModelsImagesGallery
-			title={`Дополнительные изображения Velar ${model.name}`}
-			ignoreMain={true}
-			model={model}
-		/>
-		<ModelAdditionalInfo model={model} />
-		<RelatedModels model={model} />
+	<section class='border-b border-neutral-200 bg-white'>
+		<div class='mx-auto grid max-w-[1180px] gap-5 px-3 pb-7 pt-3 md:grid-cols-[minmax(0,0.44fr)_minmax(0,0.56fr)] md:items-start md:px-5 md:py-10'>
+			<div class='order-2 max-w-[520px] md:order-1'>
+				<Picture
+					src={imagePath}
+					alt={h1}
+					title={h1}
+					loading='eager'
+					aspectRatio='1:1'
+					widths={[420, 640, 820]}
+					width={760}
+					height={760}
+					sizes='(max-width: 768px) 100vw, 44vw'
+					class:list={[
+						'w-full object-contain',
+						isHorizontal ? 'max-h-[280px] md:max-h-[380px]' : 'max-h-[280px] md:max-h-[440px]',
+					]}
+				/>
 
-		<BuyerInfo productTitle='радиаторы и конвекторы Velar' />
-	</span>
+				{renderedExtraImages.length > 0 && (
+					<div class='mt-2 flex gap-2 overflow-x-auto pb-1'>
+						{renderedExtraImages.slice(0, 8).map(image => (
+							<Picture
+								src={image}
+								alt={h1}
+								title={h1}
+								loading='lazy'
+								aspectRatio='1:1'
+								widths={[80, 120]}
+								width={120}
+								height={120}
+								sizes='72px'
+								class='h-[54px] w-[54px] shrink-0 object-cover md:h-[72px] md:w-[72px]'
+							/>
+						))}
+					</div>
+				)}
+			</div>
+
+			<div class='order-1 md:order-2'>
+				<div class='text-xs font-medium text-red-700 md:inline-flex md:rounded-full md:border md:border-red-200 md:bg-red-50 md:px-2 md:py-1'>
+					{heroBadge}
+				</div>
+				<h1 class='mt-2 text-3xl font-semibold leading-tight tracking-tight text-neutral-950 md:text-4xl'>{h1}</h1>
+				<p class='mt-3 max-w-2xl text-base leading-7 text-neutral-700'>{heroDescription}</p>
+
+				<div class='mt-4 grid max-w-[520px] grid-cols-2 border-y border-neutral-200 text-sm'>
+					<div class='border-r border-neutral-200 py-3 pr-4'>
+						<div class='text-neutral-600'>Цена от</div>
+						<div class='mt-1 text-xl font-semibold text-neutral-950'>{priceFrom}</div>
+					</div>
+					<div class='py-3 pl-4'>
+						<div class='text-neutral-600'>Срок</div>
+						<div class='mt-1 font-medium text-neutral-950'>уточняйте при расчете</div>
+					</div>
+				</div>
+
+				<div class='mt-4 flex flex-col gap-2 sm:flex-row sm:flex-wrap'>
+					<a href={`/request?model=${encodeURIComponent(productName)}`} class='inline-flex h-10 items-center justify-center rounded-[3px] bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>
+						Получить расчет
+					</a>
+					<a href='#model-variants' class='inline-flex h-10 items-center justify-center rounded-[3px] border border-neutral-300 bg-white px-5 text-sm font-semibold text-neutral-900 transition hover:border-neutral-500'>
+						Смотреть размеры
+					</a>
+				</div>
+
+				<ul class='mt-5 grid max-w-[560px] gap-x-6 gap-y-2 text-sm leading-5 text-neutral-800 sm:grid-cols-2'>
+					{heroBenefits.map(item => (
+						<li class='flex gap-2'>
+							<span class='text-red-700'>✓</span>
+							<span>{item}</span>
+						</li>
+					))}
+				</ul>
+
+				<p class='mt-4 text-xs leading-5 text-neutral-500'>Точная цена зависит от размера, цвета и подключения.</p>
+
+				<div class='mt-4 border-t border-neutral-200 pt-3 text-sm'>
+					<ModelDownloadSchema model={model} />
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id='model-variants' class='bg-white py-10 md:py-16'>
+		<div class='mx-auto max-w-[1180px] px-3 md:px-5'>
+			<div class='max-w-3xl'>
+				<h2 class='text-2xl font-semibold leading-tight tracking-tight text-neutral-950'>Быстрый выбор размеров {productName}</h2>
+				<p class='mt-3 text-base leading-7 text-neutral-700'>
+					Выберите типоразмер из таблицы или отправьте заявку на расчет по вашим параметрам.
+				</p>
+			</div>
+
+			<RadiatorList model={model} />
+
+			<div class='mt-5 border-t border-neutral-200 pt-5'>
+				<p class='max-w-2xl text-base leading-7 text-neutral-700'>Добавьте подходящие типоразмеры в запрос или отправьте параметры помещения — подберем размер, подключение и цвет.</p>
+				<a href='/request' class='mt-3 inline-flex h-10 items-center justify-center rounded-[3px] bg-red-700 px-5 text-sm font-medium text-white transition hover:bg-red-800'>
+					Получить расчет по выбранным моделям
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<section id='model-specs' class='border-t border-neutral-200 bg-white py-10 md:py-16'>
+		<div class='mx-auto max-w-[1180px] px-3 md:px-5'>
+			<h2 class='text-2xl font-semibold leading-tight tracking-tight text-neutral-950'>Характеристики {productName}</h2>
+			<dl class='mt-6 grid max-w-[920px] border-y border-neutral-200 text-sm md:grid-cols-2'>
+				{specs.map(item => (
+					<div class='grid grid-cols-[132px_minmax(0,1fr)] gap-4 border-b border-neutral-200 py-3 md:px-3'>
+						<dt class='text-neutral-500'>{item.label}</dt>
+						<dd class='font-normal text-neutral-900'>{item.value}</dd>
+					</div>
+				))}
+			</dl>
+		</div>
+	</section>
+
+	<section id='about-model' class='border-t border-neutral-200 bg-white py-10 md:py-16'>
+		<div class='mx-auto max-w-[1180px] px-3 md:px-5'>
+			<h2 class='text-2xl font-semibold leading-tight tracking-tight text-neutral-950'>О модели {productName}</h2>
+			{hasModelDescription ? (
+				<div class='model-description-content mt-5 max-w-[820px] text-base font-normal leading-7 text-neutral-700'>
+					<ModelDescription slug={model.slug} isColumns={false} class='model-description-body' />
+				</div>
+			) : (
+				<div class='mt-5 max-w-[820px] space-y-4 text-base font-normal leading-7 text-neutral-700'>
+					<p>
+						{productName} — {isHorizontal ? 'горизонтальный' : isVertical ? 'вертикальный' : ''} дизайн-радиатор с {tubeShape === 'по серии' ? 'фирменной геометрией серии' : `${tubeShapeInstrumental} формой труб`}. Модель подходит для современных интерьеров, где важны внешний вид и практичность отопления.
+					</p>
+					<p>
+						{tubeSize ? `Профиль ${tubeSize} мм формирует узнаваемый внешний вид и помогает подобрать радиатор под разные сценарии размещения.` : 'Модель изготавливается в нескольких типоразмерах и подбирается по мощности для конкретного помещения.'} Варианты исполнения можно выбрать в таблице быстрых размеров выше.
+					</p>
+					<p>
+						Радиатор изготавливается под заказ в цветах RAL. Для точного подбора важно учитывать площадь помещения, теплопотери, тип подключения и город доставки.
+					</p>
+				</div>
+			)}
+		</div>
+	</section>
+
+	<section id='model-usage' class='border-t border-neutral-200 bg-white py-10 md:py-16'>
+		<div class='mx-auto max-w-[1180px] px-3 md:px-5'>
+			<h2 class='text-2xl font-semibold leading-tight tracking-tight text-neutral-950'>
+				{isHorizontal ? `Где использовать горизонтальный радиатор ${modelCode}` : isVertical ? `Где использовать вертикальный радиатор ${modelCode}` : `Где использовать ${productName}`}
+			</h2>
+			<ul class='mt-5 grid max-w-[820px] gap-x-8 gap-y-2 text-base leading-7 text-neutral-700 md:grid-cols-2'>
+				{useCases.map(item => (
+					<li class='flex gap-2'><span class='text-red-700'>•</span><span>{item}</span></li>
+				))}
+			</ul>
+		</div>
+	</section>
+
+	<section id='how-to-order' class='border-t border-neutral-200 bg-white py-10 md:py-16'>
+		<div class='mx-auto max-w-[1180px] px-3 md:px-5'>
+			<h2 class='text-2xl font-semibold leading-tight tracking-tight text-neutral-950'>Как заказать {productName}</h2>
+			<ol class='mt-5 max-w-[820px] list-decimal space-y-2 pl-5 text-base leading-7 text-neutral-700'>
+				<li>Выберите размер в таблице или отправьте заявку.</li>
+				<li>Мы уточним помещение, цвет, подключение и город доставки.</li>
+				<li>Подготовим расчет стоимости и мощности.</li>
+				<li>После согласования радиатор передается в производство.</li>
+				<li>Готовое изделие отправляется транспортной компанией.</li>
+			</ol>
+			<a href={`/request?model=${encodeURIComponent(productName)}`} class='mt-5 inline-flex h-10 items-center justify-center rounded-[3px] bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>
+				Получить расчет {productName}
+			</a>
+		</div>
+	</section>
+
+	<section id='delivery-payment' class='border-t border-neutral-200 bg-white py-10 md:py-16'>
+		<div class='mx-auto max-w-[1180px] px-3 md:px-5'>
+			<h2 class='text-2xl font-semibold leading-tight tracking-tight text-neutral-950'>Доставка и оплата</h2>
+			<div class='mt-4 max-w-[820px] space-y-3 text-base leading-7 text-neutral-700'>
+				<p>VelarShop доставляет радиаторы по России транспортными компаниями. Стоимость и срок доставки зависят от города, габаритов изделия и выбранного способа отправки.</p>
+				<p>Оплата и условия заказа уточняются после расчета модели, цвета, подключения и сроков производства.</p>
+			</div>
+			<a href='/delivery' class='mt-4 inline-flex h-9 items-center justify-center rounded-[3px] border border-neutral-300 bg-white px-4 text-sm font-semibold text-neutral-900 transition hover:border-neutral-500'>
+				Подробнее о доставке и оплате
+			</a>
+		</div>
+	</section>
+
+	<section id='model-faq' class='border-t border-neutral-200 bg-white py-10 md:py-16'>
+		<div class='mx-auto max-w-[1180px] px-3 md:px-5'>
+			<h2 class='text-2xl font-semibold leading-tight tracking-tight text-neutral-950'>Частые вопросы о {productName}</h2>
+			<div class='mt-4 max-w-[900px] border-t border-neutral-200'>
+				{faqItems.map(item => (
+					<details class='group border-b border-neutral-200'>
+						<summary class='flex min-h-[46px] cursor-pointer list-none items-center pr-6 text-sm font-medium leading-6 text-neutral-900'>
+							{item.question}
+						</summary>
+						<p class='pb-3 text-sm leading-6 text-neutral-700'>{item.answer}</p>
+					</details>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class='border-t border-neutral-200 bg-white py-10 md:py-16'>
+		<div class='mx-auto max-w-[1180px] px-3 md:px-5'>
+			<p class='text-lg font-semibold leading-tight text-neutral-950'>Нужен радиатор под конкретный проект?</p>
+			<p class='mt-2 max-w-[700px] text-base leading-7 text-neutral-700'>Поможем подобрать модель Velar под размеры, интерьер и теплопотери помещения.</p>
+			<a href={`/request?model=${encodeURIComponent(productName)}`} class='mt-4 inline-flex h-10 items-center justify-center rounded-[3px] bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>
+				Отправить заявку
+			</a>
+		</div>
+	</section>
+
+	{relatedModels.length > 0 && (
+		<section id='related-models' class='border-t border-neutral-200 bg-white py-10 md:py-16'>
+			<div class='mx-auto max-w-[1180px] px-3 md:px-5'>
+				<h2 class='text-2xl font-semibold leading-tight tracking-tight text-neutral-950'>{relatedTitle}</h2>
+				<div class='mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-4'>
+					{relatedModels.map(relatedModel => {
+						const relatedTitle = `Velar ${normalizeModelName(relatedModel.name)}`
+						const relatedHref = getModelSlug(relatedModel)
+						const relatedImage = getModelMainImagePath(relatedModel.slug, relatedModel.type === 'columns')
+						const relatedText = relatedModel.orientation === 'horizontal'
+							? `Горизонтальная версия модели ${relatedModel.name.replace(/[HV]$/i, '').trim()}`
+							: relatedModel.orientation === 'vertical'
+								? `Вертикальная версия модели ${relatedModel.name.replace(/[HV]$/i, '').trim()}`
+								: relatedModel.short_comment
+
+						return (
+							<article class='border-t border-neutral-200 py-3'>
+								<a href={relatedHref}>
+									<Picture
+										src={relatedImage}
+										alt={relatedTitle}
+										title={relatedTitle}
+										loading='lazy'
+										aspectRatio='1:1'
+										widths={[160, 240]}
+										width={160}
+										height={160}
+										sizes='120px'
+										class='h-[120px] w-full object-contain'
+									/>
+								</a>
+								<h3 class='mt-3 text-base font-semibold leading-tight text-neutral-950'>{relatedTitle}</h3>
+								<p class='mt-1 text-sm leading-5 text-neutral-700'>{relatedText}</p>
+								<a href={relatedHref} class='mt-3 inline-flex h-8 items-center justify-center rounded-[3px] border border-neutral-300 bg-white px-3 text-sm font-semibold text-neutral-950 transition hover:border-neutral-500'>
+									Подробнее
+								</a>
+							</article>
+						)
+					})}
+				</div>
+			</div>
+		</section>
+	)}
 </Layout>
+
+<style>
+	.model-description-content :global(.model-description-body) {
+		line-height: inherit;
+	}
+
+	.model-description-content :global(.model-description-body > span) {
+		display: block;
+		margin-top: 1rem;
+		font-weight: 400;
+	}
+
+	.model-description-content :global(.model-description-body > span:first-child) {
+		margin-top: 0;
+	}
+
+	.model-description-content :global(a span) {
+		display: inline;
+		margin-top: 0;
+	}
+
+	.model-description-content :global(a) {
+		color: #b91c1c;
+		text-decoration: underline;
+		text-underline-offset: 0.16em;
+	}
+
+	.model-description-content :global(table) {
+		display: none;
+	}
+</style>

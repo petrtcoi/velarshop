@@ -16,6 +16,26 @@ export interface Props {
 	canonicalUrl?: string
 	robots?: string
 	ogImageUrl?: string
+	ogType?: string
+	ogTitle?: string
+	ogDescription?: string
+	ogUrl?: string
+	ogImageAlt?: string
+	ogImageWidth?: string
+	ogImageHeight?: string
+	twitterCard?: string
+	twitterTitle?: string
+	twitterDescription?: string
+	twitterImage?: string
+	twitterImageAlt?: string
+	productMeta?: {
+		brand?: string
+		availability?: string
+		condition?: string
+		priceAmount?: string
+		priceCurrency?: string
+	}
+	disableBreadcrumbJsonLd?: boolean
 	paddings?: boolean
 	hideShoppingCartWidgt?: boolean
 	breadcrumbs?: BreadcrumbItem[]
@@ -28,6 +48,20 @@ const {
 	description = 'Интернет-магазин радиаторов отопления Velar. Подбор модели, расчет мощности и доставка по России.',
 	robots,
 	ogImageUrl = '/images/logo.png',
+	ogType = 'website',
+	ogTitle,
+	ogDescription,
+	ogUrl,
+	ogImageAlt,
+	ogImageWidth,
+	ogImageHeight,
+	twitterCard = 'summary_large_image',
+	twitterTitle,
+	twitterDescription,
+	twitterImage,
+	twitterImageAlt,
+	productMeta,
+	disableBreadcrumbJsonLd = false,
 	paddings = true,
 	hideShoppingCartWidgt = false,
 	canonicalUrl,
@@ -42,6 +76,14 @@ const canonicalHref = (
 	.split('?')[0]
 	.split('#')[0]
 const ogImageHref = new URL(ogImageUrl, baseUrl).toString()
+const finalOgUrl = ogUrl ?? canonicalHref
+const finalOgTitle = ogTitle ?? title
+const finalOgDescription = ogDescription ?? description
+const finalTwitterTitle = twitterTitle ?? finalOgTitle
+const finalTwitterDescription = twitterDescription ?? finalOgDescription
+const finalTwitterImage = twitterImage
+	? new URL(twitterImage, baseUrl).toString()
+	: ogImageHref
 ---
 
 <!DOCTYPE html>
@@ -118,7 +160,7 @@ const ogImageHref = new URL(ogImageUrl, baseUrl).toString()
 		)}
 		<meta
 			property='og:type'
-			content='website'
+			content={ogType}
 		/>
 		<meta
 			property='og:site_name'
@@ -130,36 +172,91 @@ const ogImageHref = new URL(ogImageUrl, baseUrl).toString()
 		/>
 		<meta
 			property='og:url'
-			content={canonicalHref}
+			content={finalOgUrl}
 		/>
 		<meta
 			property='og:title'
-			content={title}
+			content={finalOgTitle}
 		/>
 		<meta
 			property='og:description'
-			content={description}
+			content={finalOgDescription}
 		/>
 		<meta
 			property='og:image'
 			content={ogImageHref}
 		/>
+		{ogImageAlt && (
+			<meta
+				property='og:image:alt'
+				content={ogImageAlt}
+			/>
+		)}
+		{ogImageWidth && (
+			<meta
+				property='og:image:width'
+				content={ogImageWidth}
+			/>
+		)}
+		{ogImageHeight && (
+			<meta
+				property='og:image:height'
+				content={ogImageHeight}
+			/>
+		)}
 		<meta
 			name='twitter:card'
-			content='summary_large_image'
+			content={twitterCard}
 		/>
 		<meta
 			name='twitter:title'
-			content={title}
+			content={finalTwitterTitle}
 		/>
 		<meta
 			name='twitter:description'
-			content={description}
+			content={finalTwitterDescription}
 		/>
 		<meta
 			name='twitter:image'
-			content={ogImageHref}
+			content={finalTwitterImage}
 		/>
+		{twitterImageAlt && (
+			<meta
+				name='twitter:image:alt'
+				content={twitterImageAlt}
+			/>
+		)}
+		{productMeta?.brand && (
+			<meta
+				property='product:brand'
+				content={productMeta.brand}
+			/>
+		)}
+		{productMeta?.availability && (
+			<meta
+				property='product:availability'
+				content={productMeta.availability}
+			/>
+		)}
+		{productMeta?.condition && (
+			<meta
+				property='product:condition'
+				content={productMeta.condition}
+			/>
+		)}
+		{productMeta?.priceAmount && (
+			<meta
+				property='product:price:amount'
+				content={productMeta.priceAmount}
+			/>
+		)}
+		{productMeta?.priceCurrency && (
+			<meta
+				property='product:price:currency'
+				content={productMeta.priceCurrency}
+			/>
+		)}
+		<slot name='head' />
 		<!-- Yandex.Metrika counter -->
 		<script type='text/javascript'>
 			setTimeout(() => {
@@ -214,7 +311,7 @@ const ogImageHref = new URL(ogImageUrl, baseUrl).toString()
 			{breadcrumbs.length > 0 && (
 				<div class='bg-white'>
 					<div class='mx-auto max-w-[1240px] px-4 pb-0 pt-3 text-[13px] text-neutral-500 md:px-6 md:pt-5 xl:px-8'>
-						<Breadcrumbs items={breadcrumbs} separator='/' />
+						<Breadcrumbs items={breadcrumbs} separator='/' withJsonLd={!disableBreadcrumbJsonLd} />
 					</div>
 				</div>
 			)}

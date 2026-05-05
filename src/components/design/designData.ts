@@ -12,6 +12,7 @@ export type DesignSeries = {
 	profile: string
 	shortUse: string
 	image: string
+	heroImage?: string
 	priceFrom: number
 	href: string
 	orientations: DesignOrientation[]
@@ -31,17 +32,28 @@ export type DesignSeries = {
 
 const seriesOrder = ['p30', 'p60', 'q40', 'q60', 'q80', 'r32', 'r42', 'r89', 's', 'sp', 'rt1', 'rt1w', 'rt2', 'qt1', 'qt2']
 
+const seriesHeroImages: Partial<Record<string, string>> = {
+	p30: '/images/design/series/p30-hero.png',
+	p60: '/images/design/series/p60-hero.jpg',
+	q40: '/images/design/series/q40-hero.png',
+	r32: '/images/design/series/r32-hero.jpg',
+	r42: '/images/design/series/r42-hero.png',
+	r89: '/images/design/series/r89-hero.png',
+	s: '/images/design/series/s-hero.png',
+	sp: '/images/design/series/sp-hero.png',
+}
+
 const seriesMeta: Record<string, { label: string; description: string; profile: string; shortUse: string }> = {
 	p30: {
 		label: 'P30',
 		description: 'Дизайн-радиатор из профильной трубы 30x60 мм. Универсальная серия для современных интерьеров, доступна в вертикальном и горизонтальном исполнении.',
-		profile: 'плоский профиль',
+		profile: 'плоский профиль 30x60 мм',
 		shortUse: 'квартиры, дома, современные интерьеры',
 	},
 	p60: {
 		label: 'P60',
 		description: 'Плоская серия с более выразительной шириной профиля. Подходит для лаконичных интерьеров, где радиатор должен выглядеть спокойно и архитектурно.',
-		profile: 'плоские трубы',
+		profile: 'плоский профиль 60 мм',
 		shortUse: 'гостиные, спальни, кабинеты',
 	},
 	q40: {
@@ -151,17 +163,21 @@ function normalizeOrientation(model: ModelJson): DesignOrientation {
 
 const designModels = modelsJsonData
 	.filter(model => model.type === 'design')
-	.map(model => ({
-		id: model.id,
-		name: model.name,
-		title: `Velar ${model.name.replace(/\s+/g, ' ')}`,
-		orientation: normalizeOrientation(model),
-		href: getModelSlug(model),
-		image: `/images/models/${model.slug}/main.jpg`,
-		shortComment: model.short_comment,
-		priceFrom: getMinPrice(model.id),
-		seriesSlug: getSeriesSlug(model),
-	}))
+	.map(model => {
+		const orientation = normalizeOrientation(model)
+		const seriesSlug = getSeriesSlug(model)
+		return {
+			id: model.id,
+			name: model.name,
+			title: `Velar ${model.name.replace(/\s+/g, ' ')}`,
+			orientation,
+			href: getModelSlug(model),
+			image: `/images/models/${model.slug}/main.jpg`,
+			shortComment: model.short_comment,
+			priceFrom: getMinPrice(model.id),
+			seriesSlug,
+		}
+	})
 
 export const designSeries: DesignSeries[] = seriesOrder
 	.map(slug => {
@@ -181,6 +197,7 @@ export const designSeries: DesignSeries[] = seriesOrder
 			profile: meta?.profile ?? mainModel.shortComment,
 			shortUse: meta?.shortUse ?? 'современные интерьеры',
 			image: mainModel.image,
+			heroImage: seriesHeroImages[slug],
 			priceFrom: Number.isFinite(priceFrom) ? priceFrom : 0,
 			href: `/design/${slug}`,
 			orientations: [...new Set(models.map(model => model.orientation))],
@@ -213,4 +230,3 @@ export const designUsefulLinks = [
 	['/info/tsvet-interera-i-radiator', 'Как выбрать дизайнерский радиатор под стиль интерьера'],
 	['/info/kak-podobrat-radiatory-dlya-kuhni', 'Как подобрать радиаторы для кухни'],
 ] as const
-

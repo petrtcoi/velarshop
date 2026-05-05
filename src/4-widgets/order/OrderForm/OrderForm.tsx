@@ -10,7 +10,8 @@ type Errors = {
 	contacts?: string
 }
 
-const checked = signal(false)
+const privacyChecked = signal(false)
+const termsChecked = signal(false)
 
 const name = signal('')
 const city = signal('')
@@ -26,24 +27,24 @@ const errors = computed(() => {
 	let errs: Errors = {}
 	if (!name.value.trim()) errs.name = 'Пожалуйста, укажите ваше имя'
 	if (!city.value.trim()) errs.city = 'Пожалуйста, укажите, куда требуется доставка'
-	if (!phone.value.trim() && !email.value.trim())
-		errs.contacts = 'Пожалуйста, как можно с вами связаться: телефон и/или электронная почта'
+	if (!phone.value.trim() && !email.value.trim()) errs.contacts = 'Пожалуйста, как можно с вами связаться: телефон и/или электронная почта'
 	return errs
 })
 const isErrors = computed(() => !!Object.keys(errors.value).length)
+const consentErrors = computed(() => checkForm.value && (!privacyChecked.value || !termsChecked.value))
 
 function OrderForm() {
 	const handleSubmit = async () => {
 		if (!window?.location) return
 		sendEmailError.value = ''
-		fetching.value = true
 		checkForm.value = true
 
-		if (isErrors.value) {
+		if (isErrors.value || !privacyChecked.value || !termsChecked.value) {
 			window.location.href = `#${FORM_ID}`
 			return
 		}
 
+		fetching.value = true
 		const result = await sendOrderConfirmation({
 			formData: {
 				name: name.value,
@@ -135,63 +136,49 @@ function OrderForm() {
 					</label>
 				</div>
 
-				<div class='mt-4 mb-2 text-xs flex flex-row justify-start items-start'>
-					<input
-						type='checkbox'
-						checked={checked}
-						className={'border border-gray-300 mr-2 mt-1'}
-						onChange={e => (checked.value = e.currentTarget.checked)}
-					/>
-					<div>
-						Подтверждая заказ, Вы соглашаетесь с условиями{' '}
-						<a
-							href='/privacy'
-							target='_blank'
-							class='underline hover:no-underline'
-						>
-							Политики конфиденциальности
+				<div class={`mt-6 mb-6 rounded-[18px] border p-4 ${consentErrors.value ? 'border-[#c8102e]' : 'border-[#d3d3d3]'} bg-[#f2eff0]`}>
+					<p class='mb-2.5 text-xs text-[#6b6b6b]'>
+						Для отправки формы необходимо подтвердить согласие с условиями обработки персональных данных и правилами
+						использования сайта.
+					</p>
+					<label class='mb-2 block text-xs text-[#555]'>
+						<input
+							type='checkbox'
+							checked={privacyChecked.value}
+							class='mr-2 mt-[2px] border border-[#7a7a7a]'
+							onChange={e => {
+								privacyChecked.value = e.currentTarget.checked
+							}}
+						/>
+						Я подтверждаю согласие на обработку персональных данных в соответствии с{' '}
+						<a href='/privacy' target='_blank' class='underline hover:no-underline'>
+							Политикой конфиденциальности
 						</a>
-						,{' '}
-						<a
-							href='/oferta'
-							target='_blank'
-							class='underline hover:no-underline'
-						>
-							Оферты
-						</a>
-						, и{' '}
-						<a
-							href='/agreement'
-							target='_blank'
-							class='underline hover:no-underline'
-						>
+					</label>
+					<label class='block text-xs text-[#555]'>
+						<input
+							type='checkbox'
+							checked={termsChecked.value}
+							class='mr-2 mt-[2px] border border-[#7a7a7a]'
+							onChange={e => {
+								termsChecked.value = e.currentTarget.checked
+							}}
+						/>
+						Я принимаю условия{' '}
+						<a href='/agreement' target='_blank' class='underline hover:no-underline'>
 							Пользовательского соглашения
 						</a>
-						.
-					</div>
+					</label>
+					{consentErrors.value ? <p class='mt-3 text-xs text-[#c8102e]'>Подтвердите согласие с Политикой конфиденциальности и Пользовательским соглашением.</p> : null}
 				</div>
 
-				{/* <input type="submit" value="Submit" /> */}
 				<button
-					disabled={isErrors.value || fetching.value || !checked.value}
+					disabled={fetching.value || !privacyChecked.value || !termsChecked.value}
 					aria-role='Отправить запрос'
-					onClick={() => handleSubmit()}
-					class='
-            w-full mt-4 py-1 px-2 border rounded-md 
-            border-neutral-400  
-            disabled:border-neutral-200 
-            hover:enabled:border-neutral-700  hover:enabled:shadow-md 
-            group transition-colors
-          '
+					onClick={() => void handleSubmit()}
+					class='w-full mt-4 py-1 px-2 border rounded-md border-neutral-400 disabled:border-neutral-200 hover:enabled:border-neutral-700 hover:enabled:shadow-md group transition-colors'
 				>
-					<span
-						class='
-              text-xs text-neutral-700
-             group-disabled:text-neutral-200  
-             group-hover:group-enabled:text-neutral-900 
-              transition-colors
-           '
-					>
+					<span class='text-xs text-neutral-700 group-disabled:text-neutral-200 group-hover:group-enabled:text-neutral-900 transition-colors'>
 						{fetching.value ? 'Отправляю запрос...' : 'Отправить запрос'}
 					</span>
 				</button>
