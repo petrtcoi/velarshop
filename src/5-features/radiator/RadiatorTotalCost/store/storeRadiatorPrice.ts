@@ -33,7 +33,8 @@ const getAddonCost = computed(
 
 const getColumnColorCostMultiplicate = computed(
 	columnColorPriceMultiplicate,
-	columnColorPriceMultiplicate => (model: ModelJson) => model.type !== 'columns' ? 1 : columnColorPriceMultiplicate
+	columnColorPriceMultiplicate => (model: ModelJson) =>
+		model.type === 'columns' || model.type === 'design' ? columnColorPriceMultiplicate : 1
 )
 
 const getColumnConnectionCost = computed(

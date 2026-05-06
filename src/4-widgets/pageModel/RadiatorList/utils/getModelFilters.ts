@@ -24,26 +24,11 @@ export function getModelFilters (model: Pick<ModelJson, 'type' | 'orientation'>)
     }
   }
   if (type === 'columns') {
-    return {
-      ...allFiltersOff,
-      filterByLength: true,
-    }
+    return allFiltersOff
   }
   if (type === 'floor') return allFiltersOff
   if (type === 'ironcast') return allFiltersOff
   if (type === 'design') {
-    if (orientation === 'horizontal') {
-      return {
-        ...allFiltersOff,
-        filterByLength: true,
-      }
-    }
-    if (orientation === 'vertical') {
-      return {
-        ...allFiltersOff,
-        filterByHeight: true,
-      }
-    }
     return allFiltersOff
   }
 

@@ -26,7 +26,9 @@ const postfix = computed(
       convectorGrillPostfix
     ) =>
     (model: ModelJson) => {
-      return model.type === "design" || model.type === "floor"
+      return model.type === "design"
+        ? `${radiatorConnPostfix}${columnColorPostfix}`
+        : model.type === "floor"
         ? radiatorConnPostfix
         : model.type === "ironcast"
         ? ironcastColorPostfix

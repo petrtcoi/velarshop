@@ -19,7 +19,7 @@ const columnColorPostfix = computed(columnColor, color => {
 })
 
 const columnColorPriceMultiplicate = computed(columnColor, color => {
-  if (!color) return 0
+  if (!color) return 1
   return color.multiplicate
 })
 

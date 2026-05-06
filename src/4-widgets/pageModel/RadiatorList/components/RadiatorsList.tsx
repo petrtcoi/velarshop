@@ -6,8 +6,15 @@ import RadiatorListHeader from './RadiatorListHeader'
 import RadiatorRow from './RadiatorRow'
 
 import SelectAddon from '@features/options/SelectAddons'
+import SelectColumnColor from '@features/options/SelectColumnColor'
+import SelectColumnConnection from '@features/options/SelectColumnConnection'
 import SelectConvectorGrill from '@features/options/SelectConvectorGrill'
+import SelectConnection from '@features/options/SelectConnection'
+import SelectIroncastColor from '@features/options/SelectIroncastColor'
 import { addToCart, storeShoppingCart } from '@features/order/ShoppingCart'
+import { getRadiatorTotalCost } from '@features/radiator/RadiatorTotalCost'
+import { radiatorTotalTitle } from '@features/radiator/RadiatorTotalTitle'
+import { getModelSlug } from '@shared/utils/getModelSlug'
 import { ALL } from '../constants/filterAll'
 import { filterRadiators } from '../utils/filterRadiators'
 
@@ -40,21 +47,6 @@ function getSizeLabel(model: ModelJson, radiator: RadiatorJson): string {
 	return `${radiator.height} × ${radiator.length} × ${radiator.width} мм`
 }
 
-function normalizeModelName(name: string): string {
-	return name
-		.replace(/([A-Za-zА-Яа-я])\s+(\d+)/g, '$1$2')
-		.replace(/\s+/g, ' ')
-		.trim()
-}
-
-function getRadiatorPrice(radiator: RadiatorJson): number {
-	return Number.parseInt(radiator.price, 10) || 0
-}
-
-function getCartItemTitle(modelLabel: string, model: ModelJson, radiator: RadiatorJson): string {
-	return `${modelLabel} ${getSizeLabel(model, radiator)}`
-}
-
 function getCartItemDetails(model: ModelJson, radiator: RadiatorJson): string {
 	const dimensions =
 		model.orientation === 'vertical' || model.orientation === 'horizontal'
@@ -78,11 +70,13 @@ function RadiatorList(props: Props) {
 	} = props
 
 	const [lastFilterUpdate, setLastFilterUpdate] = useState<'length' | 'height' | 'width'>('height')
-	const [selectedHeight, setSelectedHeight] = useState<string>(filterByHeight ? heights[0] : ALL)
-	const [selectedWidth, setSelectedWidth] = useState<string>(filterByWidth ? widths[0] : ALL)
-	const [selectedLength, setSelectedLength] = useState<string>(filterByLength ? lengths[0] : ALL)
+	const [selectedHeight, setSelectedHeight] = useState<string>(ALL)
+	const [selectedWidth, setSelectedWidth] = useState<string>(ALL)
+	const [selectedLength, setSelectedLength] = useState<string>(ALL)
 	const [filteredRadiators, setFilteredRadiators] = useState<RadiatorJson[]>(initialFilteredRadiators)
 	const shoppingCart = useStore(storeShoppingCart)
+	const getTotalCost = useStore(getRadiatorTotalCost)
+	const getTotalTitle = useStore(radiatorTotalTitle)
 
 	const changeHeightFilter = (height: string) => {
 		setSelectedHeight(height)
@@ -174,21 +168,23 @@ function RadiatorList(props: Props) {
 		)
 	}, [selectedHeight, selectedWidth, selectedLength])
 
-	const modelLabel = `Velar ${normalizeModelName(model.name)}`
 	const showInterAxis = model.type !== 'convector' && model.type !== 'floor'
+	const modelHref = getModelSlug(model)
+	const hasConfiguratorOptions = model.type !== 'convector'
 
 	const addRadiatorToRequest = (radiator: RadiatorJson) => {
+		const title = getTotalTitle(model, radiator)
 		addToCart({
-			title: getCartItemTitle(modelLabel, model, radiator),
-			price: getRadiatorPrice(radiator),
+			title,
+			price: getTotalCost(model, radiator),
 			details: getCartItemDetails(model, radiator),
-			linkSlug: `/model/${model.slug}`,
+			linkSlug: modelHref,
 			itemType: 'radiator',
 		})
 	}
 
 	const getRadiatorQnty = (radiator: RadiatorJson) => {
-		const itemTitle = getCartItemTitle(modelLabel, model, radiator)
+		const itemTitle = getTotalTitle(model, radiator)
 		return shoppingCart.items.find(item => item.title === itemTitle)?.qnty || 0
 	}
 
@@ -198,6 +194,16 @@ function RadiatorList(props: Props) {
 			class='mt-5'
 		>
 			<div>
+				{hasConfiguratorOptions && (
+					<div class='mb-4 grid gap-3 border-y border-neutral-200 py-4 md:grid-cols-2 lg:grid-cols-3'>
+						{(model.type === 'design' || model.type === 'floor') && <SelectConnection model={model} />}
+						{model.type === 'design' && <SelectColumnColor />}
+						{model.type === 'columns' && <SelectColumnConnection model={model} />}
+						{model.type === 'columns' && <SelectColumnColor />}
+						{model.type === 'ironcast' && <SelectIroncastColor />}
+					</div>
+				)}
+
 				{filterByLength && (
 					<RadiatorFilter
 						title={model.type === 'convector' ? 'Длина (мм)' : 'Длина'}
@@ -205,6 +211,7 @@ function RadiatorList(props: Props) {
 						availableOptions={availableLengths}
 						selectedOption={selectedLength}
 						setSelectedOption={changeLengthFilter}
+						showAllOption
 					/>
 				)}
 				{filterByHeight && (
@@ -214,6 +221,7 @@ function RadiatorList(props: Props) {
 						availableOptions={availableHeights}
 						selectedOption={selectedHeight}
 						setSelectedOption={changeHeightFilter}
+						showAllOption
 					/>
 				)}
 				{filterByWidth && (
@@ -223,6 +231,7 @@ function RadiatorList(props: Props) {
 						availableOptions={availableWidths}
 						selectedOption={selectedWidth}
 						setSelectedOption={changeWidthFilter}
+						showAllOption
 					/>
 				)}
 
@@ -264,18 +273,20 @@ function RadiatorList(props: Props) {
 							<tbody>
 								{filteredRadiators.map(radiator => {
 									const qnty = getRadiatorQnty(radiator)
+									const totalTitle = getTotalTitle(model, radiator)
+									const totalPrice = getTotalCost(model, radiator)
 									return (
 										<tr class='border-b border-neutral-200 text-xs font-normal text-neutral-800 transition hover:bg-neutral-50 last:border-b-0'>
 											<td class='px-2.5 py-2.5'>
 												<div class='font-normal text-neutral-900'>
-													{modelLabel} {getSizeLabel(model, radiator)}
+													{totalTitle}
 												</div>
 											</td>
 											<td class='px-2.5 py-2.5 text-center'>{radiator.height} мм</td>
 											<td class='px-2.5 py-2.5 text-center'>{radiator.length} мм</td>
 											<td class='px-2.5 py-2.5 text-center'>{getPowerValue(radiator)} Вт</td>
 											<td class='px-2.5 py-2.5 text-right font-normal'>
-												{getRadiatorPrice(radiator).toLocaleString('ru-RU')} ₽
+												{totalPrice.toLocaleString('ru-RU')} ₽
 											</td>
 											<td class='px-2.5 py-2.5 text-right'>
 												<button
@@ -298,17 +309,19 @@ function RadiatorList(props: Props) {
 					<div class='mt-4 grid gap-2 md:hidden'>
 						{filteredRadiators.map(radiator => {
 							const qnty = getRadiatorQnty(radiator)
+							const totalTitle = getTotalTitle(model, radiator)
+							const totalPrice = getTotalCost(model, radiator)
 							return (
 								<article class='rounded-[3px] border border-neutral-200 bg-white p-2.5'>
 									<div class='text-xs font-normal leading-5 text-neutral-950'>
-										{modelLabel} {getSizeLabel(model, radiator)}
+										{totalTitle}
 									</div>
 									<div class='mt-1 text-xs leading-5 text-neutral-700'>
 										Высота: {radiator.height} мм · Длина: {radiator.length} мм · Мощность: {getPowerValue(radiator)} Вт
 									</div>
 									<div class='mt-2 flex items-center justify-between gap-3'>
 										<div class='text-xs font-normal text-neutral-950'>
-											от {getRadiatorPrice(radiator).toLocaleString('ru-RU')} ₽
+											от {totalPrice.toLocaleString('ru-RU')} ₽
 										</div>
 										<button
 											type='button'
