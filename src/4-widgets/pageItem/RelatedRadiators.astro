@@ -48,7 +48,7 @@ const relatedModels = relatedModelIds
 						radiator,
 					})}`
 					const imagePath = getModelMainImagePath(model.slug)
-					const itemHref = `/model/${model.slug}/${radiator.slug}`
+					const itemHref = getModelSlug(model)
 
 					return (
 						<div class='group w-52 mx-auto sm:mx-0'>

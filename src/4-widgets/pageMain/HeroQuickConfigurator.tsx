@@ -510,7 +510,7 @@ export default function HeroQuickConfigurator({
 			title: itemTitle,
 			price: totalPrice,
 			details: `${result.height}x${result.length}x${result.width} мм${result.dt70 ? ` / ${result.dt70} Вт` : ''}`,
-			linkSlug: details.model.type === 'columns' ? details.model.href : `/model/${details.model.slug}/${result.slug}`,
+			linkSlug: details.model.href,
 			itemType: 'radiator',
 		})
 	}

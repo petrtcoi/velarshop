@@ -4,6 +4,7 @@ import { addToCart, removeFromCart, storeShoppingCart } from "@features/order/Sh
 import type { ModelJson } from "@entities/Model"
 import type { RadiatorJson } from "@entities/Radiator"
 import type { ItemJson } from "@entities/Item"
+import { getModelSlug } from "@shared/utils/getModelSlug"
 
 
 type BtnType = 'small' | 'large'
@@ -48,7 +49,7 @@ function BuyButton (props: PropsTiny | PropsFullRadiator | PropsFullItem) {
 
   const linkSlug =
     isPropsFullRadiator(props)
-      ? `/model/${ props.model.slug }/${ props.radiator.slug }`
+      ? getModelSlug(props.model)
       : isPropsFullItem(props)
         ? `/item/${ props.item.slug }`
         : '/'
@@ -125,6 +126,5 @@ function BuyButton (props: PropsTiny | PropsFullRadiator | PropsFullItem) {
 
 
 export default BuyButton
-
 
 

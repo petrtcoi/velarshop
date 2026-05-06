@@ -8,6 +8,7 @@ import { getRadiatorTotalCost } from '@features/radiator/RadiatorTotalCost'
 import type { ModelJson } from '@entities/Model'
 import type { RadiatorJson } from '@entities/Radiator'
 import { radiatorTotalTitle } from '@features/radiator/RadiatorTotalTitle'
+import { getModelSlug } from '@shared/utils/getModelSlug'
 
 type Props = {
 	model: ModelJson
@@ -21,13 +22,14 @@ function RadiatorRow({ model, radiator, showInterAxis }: Props) {
 	const shoppingCart = useStore(storeShoppingCart)
 	const convectorGrillNotFit = useStore(getGrillNotFit)(model, radiator)
 	const itemInRequestQnty = shoppingCart.items.find(item => item.title === totalTitle)?.qnty || 0
+	const modelHref = getModelSlug(model)
 
 	const handleAddToRequest = () => {
 		addToCart({
 			title: totalTitle,
 			price: totalPrice,
 			details: `${radiator.height}x${radiator.length}x${radiator.width} / ${radiator.dt70} Вт`,
-			linkSlug: `/model/${model.slug}/${radiator.slug}`,
+			linkSlug: modelHref,
 			itemType: 'radiator',
 		})
 	}
@@ -36,7 +38,7 @@ function RadiatorRow({ model, radiator, showInterAxis }: Props) {
 		<tr class='border-b border-neutral-200 py-3 text-xs font-light transition hover:bg-neutral-50'>
 			<td class='py-3 pl-2 flex flex-col'>
 				<div class='text-red-600 font-normal hover:underline'>
-					<a href={`/model/${model.slug}/${radiator.slug}`}>{totalTitle}</a>
+					<a href={modelHref}>{totalTitle}</a>
 				</div>
 				<div class='text-[10px] text-neutral-600 md:hidden'>
 					{radiator.height}
