@@ -62,24 +62,28 @@ const scenarios = [
       src="/main/hero.jpg"
       alt=""
       aria-hidden="true"
+      width="1920"
+      height="1080"
       class="hero-bg"
       loading="eager"
+      decoding="async"
+      fetchpriority="high"
     />
   </picture>
   <div class="hero-overlay"></div>
 
   <div class="hero-content items-stretch">
-    <div class="hero-left flex flex-col justify-between h-full min-h-[460px]">
+    <div class="hero-left">
       <div class="hero-main-copy">
         <h1 class="hero-title">
-          Радиаторы Velar — решения для современных интерьеров
+          Velar — дизайнерские радиаторы и конвекторы под заказ
         </h1>
         <p class="hero-subtitle">
           <span class="hero-subtitle-desktop">
-            Дизайн-радиаторы, трубчатые модели, ретро-радиаторы и конвекторы — подбираем под стиль, мощность и задачи помещения.
+            Производство радиаторов для квартир, домов и интерьерных проектов. Подбор по мощности, размеру, подключению и цвету RAL.
           </span>
           <span class="hero-subtitle-mobile">
-            Подберём по стилю, мощности, размерам и задаче помещения.
+            Производство радиаторов под заказ. Подбор по мощности, размеру, подключению и цвету RAL.
           </span>
         </p>
         <div class="hero-actions">
@@ -189,7 +193,7 @@ const scenarios = [
 
     <div class="hero-configurator">
       <HeroQuickConfigurator
-        client:load
+        client:idle
         models={modelOptions}
         defaultModelId={defaultModelId}
         initialDetails={initialDetails}
@@ -209,7 +213,6 @@ const scenarios = [
       {
         scenarios.map((item) => (
           <a href={item.href} class="mobile-category-link">
-            <img src={item.image} alt="" loading="eager" class="mobile-category-link-image" />
             <span>
               <span class="mobile-category-link-title">{item.title}</span>
               <span class="mobile-category-link-desc">{item.desc}</span>
@@ -227,7 +230,7 @@ const scenarios = [
               src={item.image}
               alt={item.title}
               class="scenario-card-image"
-              loading="eager"
+              loading="lazy"
             />
             <div class="scenario-card-copy">
               <div class="scenario-card-title">{item.title}</div>
@@ -260,7 +263,7 @@ const scenarios = [
   .hero {
     position: relative;
     width: 100%;
-    min-height: 620px;
+    min-height: 560px;
     overflow: hidden;
     background: #fff;
   }
@@ -295,7 +298,7 @@ const scenarios = [
     z-index: 2;
     max-width: 1180px;
     margin: 0 auto;
-    padding: 82px 32px 44px;
+    padding: 68px 32px 36px;
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(390px, 440px);
     gap: 42px;
@@ -311,6 +314,20 @@ const scenarios = [
     color: #fff;
     max-width: 640px;
     margin: 0 0 24px;
+  }
+
+  .hero-left {
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .hero-configurator {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    min-width: 0;
   }
 
   .hero-left p {
@@ -366,25 +383,18 @@ const scenarios = [
     border: 1px solid rgba(255, 255, 255, 0.65);
   }
 
-  .hero-configurator {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    min-width: 0;
-  }
-
   .hero-features {
     position: relative;
     z-index: 2;
     max-width: 1180px;
-    margin: 0 auto;
-    padding: 4px 32px 32px;
+    margin: 24px auto;
+    padding: 4px 0px 32px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
   }
 
   .hero-feature {
-    min-height: 78px;
+    min-height: 64px;
     padding: 0 22px;
     display: flex;
     align-items: center;
@@ -584,7 +594,7 @@ const scenarios = [
 
   @media (min-width: 820px) and (max-width: 1024px) {
     .hero {
-      min-height: 620px;
+      min-height: 540px;
     }
 
     .hero-content {
@@ -611,14 +621,9 @@ const scenarios = [
       padding-right: 18px;
     }
 
-    .hero-configurator {
-      justify-content: flex-end;
-      align-items: flex-start;
-    }
-
     .hero-features {
       padding: 0;
-      margin-top: 44px;
+      margin-top: 28px;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 12px;
     }
@@ -627,6 +632,11 @@ const scenarios = [
       min-height: auto;
       padding: 0;
       border-left: 0;
+    }
+
+    .hero-configurator {
+      justify-content: flex-end;
+      align-items: flex-start;
     }
   }
 
@@ -652,12 +662,20 @@ const scenarios = [
     .hero-content {
       display: grid;
       max-width: none;
-      padding: 42px 12px 24px;
+      padding: 34px 12px 22px;
       gap: 14px;
     }
 
     .hero-left {
       display: contents;
+      min-height: 0;
+    }
+
+    .hero-configurator {
+      order: 2;
+      margin-top: 20px;
+      position: relative;
+      z-index: 4;
     }
 
     .hero-main-copy {
@@ -667,8 +685,8 @@ const scenarios = [
     }
 
     .hero-left h1 {
-      max-width: 330px;
-      font-size: 31px;
+      max-width: 350px;
+      font-size: 30px;
       line-height: 1.12;
       font-weight: 500;
       letter-spacing: 0;
@@ -676,7 +694,7 @@ const scenarios = [
     }
 
     .hero-left p {
-      max-width: 280px;
+      max-width: 330px;
       font-size: 14px;
       line-height: 1.5;
       margin: 0 0 16px;
@@ -715,13 +733,6 @@ const scenarios = [
       justify-content: center;
     }
 
-    .hero-configurator {
-      order: 2;
-      margin-top: 34px;
-      position: relative;
-      z-index: 4;
-    }
-
     .hero-btn-primary,
     .hero-primary {
       background: #c1121f;
@@ -739,7 +750,7 @@ const scenarios = [
     .hero-features {
       order: 3;
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: 1fr;
       gap: 10px;
       max-width: none;
       width: 100%;
@@ -812,25 +823,17 @@ const scenarios = [
 
     .mobile-category-link {
       display: grid;
-      grid-template-columns: 56px minmax(0, 1fr) 18px;
+      grid-template-columns: minmax(0, 1fr) 18px;
       gap: 12px;
       width: 100%;
       min-height: 72px;
       align-items: center;
-      padding: 8px 10px 8px 8px;
+      padding: 12px 12px;
       border: 1px solid #ececec;
       border-radius: 10px;
       color: #111;
       text-decoration: none;
       background: #fff;
-    }
-
-    .mobile-category-link-image {
-      width: 56px;
-      height: 56px;
-      object-fit: cover;
-      border-radius: 8px;
-      background: #f5f5f5;
     }
 
     .mobile-category-link-title {

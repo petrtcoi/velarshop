@@ -19,14 +19,48 @@ const { article } = Astro.props as Props;
 const { Content } = await article.render();
 const { title, short_description, thumbnail, date } = article.data;
 const readingMinutes = Math.max(1, Math.ceil((article.body ?? '').split(/\s+/).filter(Boolean).length / 180));
+const publishedAt = new Date(`${date}T00:00:00+03:00`).toISOString();
+const humanDate = new Intl.DateTimeFormat('ru-RU', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+}).format(new Date(`${date}T00:00:00+03:00`));
 
 const imgPath = thumbnail.length > 0 ? `/images/news/${thumbnail}` : null;
 const imageUrl = imgPath ? new URL(imgPath, 'https://velarshop.ru').toString() : null;
+const articleUrl = new URL(`/news/${article.slug}`, 'https://velarshop.ru').toString();
 const crumbs = [
   { title: 'Главная', url: '/' },
   { title: 'Новости', url: '/news' },
   { title, url: `/news/${article.slug}` },
 ];
+
+const newsArticleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'NewsArticle',
+  headline: title,
+  description: short_description,
+  url: articleUrl,
+  datePublished: publishedAt,
+  dateModified: publishedAt,
+  mainEntityOfPage: articleUrl,
+  inLanguage: 'ru-RU',
+  author: {
+    '@type': 'Organization',
+    name: 'Velar',
+    url: 'https://velarshop.ru',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Velar',
+    url: 'https://velarshop.ru',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://velarshop.ru/images/logo.png',
+    },
+  },
+  ...(imageUrl ? { image: [imageUrl] } : {}),
+};
 ---
 
 <Layout
@@ -36,13 +70,18 @@ const crumbs = [
   paddings={false}
   ogImageUrl={imgPath ?? undefined}
   ogImageAlt={title}
+  ogType='article'
 >
-  <div class='article-page'>
+  <Fragment slot='head'>
+    <script type='application/ld+json' set:html={JSON.stringify(newsArticleSchema)} />
+  </Fragment>
+
+  <div class='article-page article-page--info'>
     <header class='article-hero'>
-      <div class='article-shell'>
+      <div class='article-shell article-shell--reading'>
         <div class='article-hero__meta'>
           <span>Новости</span>
-          <span>{date}</span>
+          <span>{humanDate}</span>
           <span>{readingMinutes} мин чтения</span>
           <a href='/news'>Все новости</a>
         </div>
@@ -51,7 +90,7 @@ const crumbs = [
       </div>
     </header>
 
-    <div class='article-shell article-layout'>
+    <div class='article-shell article-shell--reading article-layout'>
       <article
         class='article-content article-prose'
         itemscope
@@ -59,7 +98,11 @@ const crumbs = [
       >
         <meta itemprop='headline' content={title} />
         {imageUrl && <meta itemprop='image' content={imageUrl} />}
-        <meta itemprop='datePublished' content={`${date}T00:00:00+03:00`} />
+        <meta itemprop='datePublished' content={publishedAt} />
+        <meta itemprop='dateModified' content={publishedAt} />
+        <meta itemprop='mainEntityOfPage' content={articleUrl} />
+        <meta itemprop='author' content='Velar' />
+        <meta itemprop='publisher' content='Velar' />
         <Content />
 
         {
@@ -77,7 +120,7 @@ const crumbs = [
             />
           )
         }
-        <p class='text-xs text-slate-600'>Использованы материалы с сайта https://velarwh.ru</p>
+        <p class='text-xs text-slate-600'>Использованы материалы с сайта <a href='https://velarwh.ru'>velarwh.ru</a></p>
       </article>
     </div>
   </div>

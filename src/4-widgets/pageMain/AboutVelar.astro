@@ -1,4 +1,6 @@
 ---
+import { Picture } from "@astrojs/image/components";
+
 const cards = [
   {
     title: "Современный интерьер",
@@ -33,7 +35,16 @@ const cards = [
       {
         cards.map((card) => (
           <article class="interior-card">
-            <img src={card.image} alt={card.title} loading="lazy" />
+            <Picture
+              src={card.image}
+              alt={card.title}
+              loading="lazy"
+              aspectRatio="1:1"
+              widths={[380, 520, 760]}
+              width={380}
+              height={380}
+              sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 260px"
+            />
             <div class="interior-card-copy">
               <h3>{card.title}</h3>
               <p>{card.text}</p>
@@ -141,7 +152,7 @@ const cards = [
     line-height: 1.45;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 600px) {
     .interior-section {
       padding: 72px 24px;
     }
@@ -164,7 +175,7 @@ const cards = [
     }
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: 950px) {
     .interior-wrap {
       grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
       align-items: center;

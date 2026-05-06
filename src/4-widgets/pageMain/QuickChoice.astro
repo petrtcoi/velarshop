@@ -1,24 +1,105 @@
 ---
 const choices = [
-	{ title: 'Радиатор под окно', url: '/columns' },
-	{ title: 'Вертикальный радиатор на стену', url: '/design' },
-	{ title: 'Радиатор для ванной', url: '/design' },
-	{ title: 'Решение для панорамных окон', url: '/convector' },
-	{ title: 'Ретро-радиатор для классического интерьера', url: '/retro' },
-	{ title: 'Внутрипольный конвектор', url: '/convector' },
-]
+  { title: "Под окно", url: "/columns" },
+  { title: "Для панорамных окон", url: "/convector" },
+  { title: "Для детской комнаты", url: "/info/bezopasnost-radiatorov-dlya-detej" },
+  { title: "Для ванной", url: "/design" },
+  { title: "Для лофта", url: "/design" },
+  { title: "Для классического интерьера", url: "/retro" },
+];
 ---
 
-<section class='max-w-6xl mx-auto px-5 md:px-10 mb-16 md:mb-20'>
-	<h2 class='text-3xl font-bold text-left'>Что нужно подобрать?</h2>
-	<div class='mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
-		{choices.map(choice => (
-			<a
-				href={choice.url}
-				class='rounded-2xl border border-neutral-200 bg-white p-5 text-base font-semibold transition-colors hover:border-red-700 hover:bg-red-50 hover:text-red-700'
-			>
-				{choice.title}
-			</a>
-		))}
-	</div>
+<section class="quick-choice" aria-labelledby="quick-choice-title">
+  <div class="quick-choice__copy">
+    <h2 id="quick-choice-title">Не знаете, какой радиатор нужен?</h2>
+    <p>Выберите ситуацию, а дальше откроется подходящий раздел или материал для подбора.</p>
+  </div>
+  <nav class="quick-choice__links" aria-label="Подбор радиатора по задаче">
+    {choices.map((choice) => (
+      <a href={choice.url}>{choice.title}</a>
+    ))}
+  </nav>
 </section>
+
+<style>
+  .quick-choice {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 8px 24px 72px;
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 40px;
+    align-items: start;
+  }
+
+  .quick-choice__copy h2 {
+    margin: 0;
+    color: #111;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.15;
+  }
+
+  .quick-choice__copy p {
+    margin: 12px 0 0;
+    color: #52525b;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  .quick-choice__links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .quick-choice__links a {
+    min-height: 54px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #111827;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 14px 4px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.35;
+    text-decoration: none;
+  }
+
+  .quick-choice__links a:nth-child(odd) {
+    margin-right: 18px;
+  }
+
+  .quick-choice__links a::after {
+    content: "→";
+    color: #b91c1c;
+    font-weight: 400;
+  }
+
+  .quick-choice__links a:hover {
+    color: #991b1b;
+  }
+
+  @media (max-width: 768px) {
+    .quick-choice {
+      padding: 0 16px 52px;
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+
+    .quick-choice__copy h2 {
+      font-size: 28px;
+    }
+
+    .quick-choice__links {
+      grid-template-columns: 1fr;
+    }
+
+    .quick-choice__links a:nth-child(odd) {
+      margin-right: 0;
+    }
+  }
+</style>

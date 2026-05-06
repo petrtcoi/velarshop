@@ -18,6 +18,7 @@ const { page } = Astro.props as Props;
 const { Content } = await page.render();
 
 const isAboutPage = page.slug === "about";
+const isDeliveryPage = page.slug === "delivery";
 const articleClass = isAboutPage
   ? "container mx-auto max-w-6xl p-5 md:px-10"
   : "container mx-auto max-w-4xl p-5 prose-sm md:px-10";
@@ -30,6 +31,13 @@ const aboutBreadcrumbs = isAboutPage
   ? [
       { title: "Главная", url: "/" },
       { title: "О магазине", url: "/about" },
+    ]
+  : [];
+
+const deliveryBreadcrumbs = isDeliveryPage
+  ? [
+      { title: "Главная", url: "/" },
+      { title: "Доставка и оплата", url: "/delivery" },
     ]
   : [];
 
@@ -91,21 +99,87 @@ const aboutJsonLd = isAboutPage
       ],
     }
   : null;
+
+const deliveryUrl = `${siteOrigin}/delivery`;
+const deliveryJsonLd = isDeliveryPage
+  ? {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": `${deliveryUrl}/#webpage`,
+          url: `${deliveryUrl}/`,
+          name: "Доставка и оплата Velar",
+          description:
+            "Условия доставки радиаторов Velar по России, способы оплаты, получение и возврат товара.",
+          breadcrumb: {
+            "@id": `${deliveryUrl}/#breadcrumb`,
+          },
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": `${deliveryUrl}/#breadcrumb`,
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Главная",
+              item: homeUrl,
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Доставка и оплата",
+              item: `${deliveryUrl}/`,
+            },
+          ],
+        },
+      ],
+    }
+  : null;
 ---
 
 <Layout
   title={page.data.title}
   description={page.data.description}
   robots={page.data.noindex ? "noindex,follow" : undefined}
-  breadcrumbs={aboutBreadcrumbs}
-  disableBreadcrumbJsonLd={isAboutPage}
+  breadcrumbs={isAboutPage ? aboutBreadcrumbs : deliveryBreadcrumbs}
+  disableBreadcrumbJsonLd={isAboutPage || isDeliveryPage}
+  paddings={!isDeliveryPage}
 >
   {aboutJsonLd && (
     <Fragment slot='head'>
       <script type='application/ld+json' set:html={JSON.stringify(aboutJsonLd)} />
     </Fragment>
   )}
-  <article class={articleClass}>
-    <Content />
-  </article>
+  {deliveryJsonLd && (
+    <Fragment slot='head'>
+      <script type='application/ld+json' set:html={JSON.stringify(deliveryJsonLd)} />
+    </Fragment>
+  )}
+
+  {
+    isDeliveryPage ? (
+      <div class='article-page article-page--info'>
+        <header class='article-hero'>
+          <div class='article-shell article-shell--reading'>
+            <h1 class='article-hero__title'>Доставка и оплата</h1>
+            <p class='article-hero__lead'>
+              Условия доставки по России, способы оплаты, получение и возврат товара.
+            </p>
+          </div>
+        </header>
+
+        <div class='article-shell article-shell--reading article-layout'>
+          <article class='article-content article-prose article-prose--hide-duplicate-intro-heading'>
+            <Content />
+          </article>
+        </div>
+      </div>
+    ) : (
+      <article class={articleClass}>
+        <Content />
+      </article>
+    )
+  }
 </Layout>

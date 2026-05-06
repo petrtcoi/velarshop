@@ -145,8 +145,8 @@ a[class*="cta"],
 }
 
 .article-prose h2 {
-  margin-top: 2.4em;
-  margin-bottom: 0.65em;
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
   color: #0a0a0a;
   font-family: var(--font-heading);
   font-size: clamp(1.5rem, 3vw, 2rem);
@@ -156,8 +156,8 @@ a[class*="cta"],
 }
 
 .article-prose h3 {
-  margin-top: 1.8em;
-  margin-bottom: 0.55em;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
   color: #151515;
   font-family: var(--font-heading);
   font-size: clamp(1.25rem, 2vw, 1.5rem);
@@ -167,7 +167,7 @@ a[class*="cta"],
 }
 
 .article-prose h4 {
-  margin-top: 1.5em;
+  margin-top: 1.25rem;
   margin-bottom: 0.45em;
   color: #171717;
   font-size: 1.0625rem;
@@ -182,7 +182,7 @@ a[class*="cta"],
 }
 
 .article-prose li {
-  margin-block: 0.35em;
+  margin-block: 0.4em;
   padding-left: 0.15rem;
 }
 
@@ -226,7 +226,7 @@ a[class*="cta"],
   border-collapse: collapse;
   font-size: 0.875rem;
   line-height: 1.5;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .article-prose thead {
@@ -292,7 +292,7 @@ a[class*="cta"],
 }
 
 .article-cta--compact {
-  margin-block: 24px;
+  margin-block: 22px;
   padding-block: 18px;
 }
 
@@ -357,7 +357,7 @@ a[class*="cta"],
 }
 
 .article-related__block + .article-related__block {
-  margin-top: 44px;
+  margin-top: 34px;
 }
 
 .article-related__title {
@@ -447,6 +447,39 @@ a[class*="cta"],
   border-color: #fecaca;
   color: #991b1b;
   background: #fff8f8;
+}
+
+.article-related__list {
+  margin-top: 16px;
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.article-related__list-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  color: #1f2937;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.45;
+  text-decoration: none;
+}
+
+.article-related__arrow {
+  color: #b91c1c;
+  font-weight: 500;
+}
+
+.article-related__list-link:hover,
+.article-related__list-link:focus-visible {
+  color: #991b1b;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  text-decoration-color: rgba(153, 27, 27, 0.45);
 }
 
 .product-description a,
@@ -592,7 +625,11 @@ a[class*="cta"],
   }
 
   .article-related__block + .article-related__block {
-    margin-top: 36px;
+    margin-top: 28px;
+  }
+
+  .article-related__list {
+    gap: 9px;
   }
 }
 
@@ -614,6 +651,10 @@ a[class*="cta"],
 
 .article-page--info .article-layout {
   padding-block: 32px 76px;
+}
+
+.article-page--info .article-cta--footer {
+  margin-top: 36px;
 }
 
 .article-page--info .article-content {

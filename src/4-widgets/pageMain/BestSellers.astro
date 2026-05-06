@@ -1,71 +1,62 @@
 ---
-import { modelsJsonData } from "@entities/Model";
-import BestsellerModels from "./BestsellerModels.astro";
-
-const columnModels = ["2180", "3180", "3057", "3030"];
-const columns = columnModels
-  .map((id) => modelsJsonData.find((m) => m.id === id))
-  .filter((m): m is (typeof modelsJsonData)[number] => Boolean(m));
-
-const vertical = ["p30v", "q40v", "p60v", "r32v"];
-const verticals = vertical
-  .map((id) => modelsJsonData.find((m) => m.id === id))
-  .filter((m): m is (typeof modelsJsonData)[number] => Boolean(m));
-
-const horizontal = ["p30h", "p60h", "r42h", "q80h"];
-const horizontals = horizontal
-  .map((id) => modelsJsonData.find((m) => m.id === id))
-  .filter((m): m is (typeof modelsJsonData)[number] => Boolean(m));
+const models = [
+  {
+    name: "P30",
+    href: "/model/p30v",
+    text: "Плоский профиль для современных интерьеров",
+  },
+  {
+    name: "P60",
+    href: "/model/p60v",
+    text: "Широкая плоская труба, больше теплового излучения",
+  },
+  {
+    name: "Q40",
+    href: "/model/q40v",
+    text: "Квадратный профиль для строгих интерьеров",
+  },
+  {
+    name: "R32",
+    href: "/model/r32v",
+    text: "Круглая труба и спокойная вертикальная геометрия",
+  },
+  {
+    name: "3030",
+    href: "/columns/3030",
+    text: "Трубчатый радиатор для установки под окно",
+  },
+  {
+    name: "2180",
+    href: "/columns/2180",
+    text: "Высокий трубчатый радиатор для стен и простенков",
+  },
+];
 ---
 
 <div id="catalog" aria-hidden="true" class="catalog-anchor"></div>
-<section
-  id="bestsellers"
-  aria-label="Популярные модели Velar"
-  class="bestsellers"
->
-  <h2 class="bestsellers-title">Популярные модели Velar</h2>
-  <p class="bestsellers-subtitle">
-    Модели, которые чаще всего выбирают для квартир, домов и дизайнерских
-    проектов
-  </p>
-  <nav class="bestsellers-tabs" aria-label="Разделы популярных моделей">
-    <a href="#bs-columns">Трубчатые</a>
-    <a href="#bs-vertical">Дизайн</a>
-    <a href="#bs-horizontal">Горизонтальные</a>
-  </nav>
-
-  <div id="bs-columns" class="bestsellers-group">
-    <h3 class="bestsellers-group-title">Трубчатые радиаторы</h3>
-    <p class="bestsellers-group-desc">
-      Надежные модели для квартир, домов и проектов с нестандартной планировкой.
+<section id="bestsellers" aria-labelledby="bestsellers-title" class="popular-models">
+  <div class="popular-models__head">
+    <h2 id="bestsellers-title">Популярные модели Velar</h2>
+    <p>
+      Несколько базовых серий, с которых удобно начать подбор по форме, месту установки и тепловой задаче.
     </p>
-    <BestsellerModels models={columns} />
-    <div class="bestsellers-all-link">
-      <a href="/columns/">Все трубчатые радиаторы →</a>
-    </div>
   </div>
 
-  <div id="bs-vertical" class="bestsellers-group">
-    <h3 class="bestsellers-group-title">Вертикальные дизайн-радиаторы</h3>
-    <p class="bestsellers-group-desc">
-      Решения для стен, простенков и интерьеров, где важны форма и полезная площадь.
-    </p>
-    <BestsellerModels models={verticals} />
-    <div class="bestsellers-all-link">
-      <a href="/design/">Все вертикальные дизайн-радиаторы →</a>
-    </div>
-  </div>
-
-  <div id="bs-horizontal" class="bestsellers-group">
-    <h3 class="bestsellers-group-title">Горизонтальные дизайн-радиаторы</h3>
-    <p class="bestsellers-group-desc">
-      Аккуратные модели под окна и классические схемы отопления.
-    </p>
-    <BestsellerModels models={horizontals} />
-    <div class="bestsellers-all-link">
-      <a href="/design/">Все горизонтальные дизайн-радиаторы →</a>
-    </div>
+  <div class="popular-models__grid">
+    {
+      models.map((model) => (
+        <article class="popular-model">
+          <div>
+            <h3>{model.name}</h3>
+            <p>{model.text}</p>
+          </div>
+          <div class="popular-model__actions">
+            <a href={model.href}>Подробнее</a>
+            <a href="/request">Получить расчет</a>
+          </div>
+        </article>
+      ))
+    }
   </div>
 </section>
 
@@ -76,131 +67,108 @@ const horizontals = horizontal
     height: 0;
   }
 
-  .bestsellers {
+  .popular-models {
     max-width: 1180px;
     margin: 0 auto;
-    padding: 48px 16px;
+    padding: 64px 24px 72px;
   }
 
-  .bestsellers-title {
-    font-size: 40px;
-    line-height: 1.15;
-    font-weight: 600;
-    color: #111;
-  }
-
-  .bestsellers-subtitle {
-    margin-top: 10px;
-    font-size: 16px;
-    line-height: 1.5;
-    color: #404040;
+  .popular-models__head {
+    display: grid;
+    gap: 12px;
     max-width: 760px;
   }
 
-  .bestsellers-group {
-    margin-top: 36px;
-  }
-
-  .bestsellers-group-title {
-    font-size: 24px;
-    line-height: 1.2;
-    font-weight: 600;
+  .popular-models__head h2 {
+    margin: 0;
     color: #111;
-  }
-
-  .bestsellers-group-desc {
-    margin-top: 10px;
-    font-size: 14px;
-    line-height: 1.5;
-    color: #262626;
-    max-width: 620px;
-  }
-
-  .bestsellers-tabs {
-    margin-top: 26px;
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 20px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    border-bottom: 1px solid #e5e5e5;
-  }
-
-  .bestsellers-tabs a {
-    display: inline-flex;
-    align-items: center;
-    height: 38px;
-    padding: 0 0;
-    border-bottom: 2px solid transparent;
-    color: #444;
-    font-size: 13px;
+    font-size: 36px;
     font-weight: 600;
-    text-decoration: none;
-    white-space: nowrap;
+    line-height: 1.15;
   }
 
-  .bestsellers-tabs a:first-child,
-  .bestsellers-tabs a:hover {
+  .popular-models__head p {
+    margin: 0;
+    color: #4b5563;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  .popular-models__grid {
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-top: 1px solid #e5e7eb;
+    border-left: 1px solid #e5e7eb;
+  }
+
+  .popular-model {
+    min-height: 190px;
+    border-right: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 18px;
+    background: #fff;
+  }
+
+  .popular-model h3 {
+    margin: 0;
+    color: #111;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.15;
+  }
+
+  .popular-model p {
+    margin: 10px 0 0;
+    color: #52525b;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.55;
+  }
+
+  .popular-model__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+  }
+
+  .popular-model__actions a {
     color: #b91c1c;
-    border-bottom-color: #b91c1c;
-  }
-
-  .bestsellers-all-link {
-    margin-top: 16px;
     font-size: 13px;
+    font-weight: 500;
     line-height: 1.3;
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(185, 28, 28, 0.4);
   }
 
-  .bestsellers-all-link a {
-    color: #222;
-    text-decoration: none;
+  .popular-model__actions a:hover {
+    color: #991b1b;
+    text-decoration-color: transparent;
   }
 
-  .bestsellers-all-link a:hover {
-    color: #a30f19;
-  }
-
-  @media (max-width: 768px) {
-    .bestsellers {
-      padding: 0 16px;
-      padding-top: 48px;
-      padding-bottom: 48px;
+  @media (max-width: 900px) {
+    .popular-models {
+      padding: 48px 16px 56px;
     }
 
-    .bestsellers-title {
+    .popular-models__head h2 {
       font-size: 30px;
     }
 
-    .bestsellers-subtitle {
-      font-size: 16px;
-      line-height: 1.75;
+    .popular-models__grid {
+      grid-template-columns: 1fr;
     }
 
-    .bestsellers-group-title {
-      font-size: 24px;
-    }
-
-    .bestsellers-group-desc {
-      font-size: 16px;
-      line-height: 1.75;
-    }
-  }
-
-  @media (min-width: 769px) {
-    .bestsellers {
-      padding-left: 24px;
-      padding-right: 24px;
-      padding-top: 72px;
-      padding-bottom: 72px;
-    }
-  }
-
-  @media (min-width: 1280px) {
-    .bestsellers {
-      padding-left: 32px;
-      padding-right: 32px;
-      padding-top: 88px;
-      padding-bottom: 96px;
+    .popular-model {
+      min-height: auto;
+      padding: 18px;
     }
   }
 </style>
