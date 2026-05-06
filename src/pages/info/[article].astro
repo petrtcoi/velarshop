@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import Layout from "@shared/layouts/Layout.astro";
 import type { CollectionEntry } from "astro:content";
+import ArticleCta from "../../components/articles/ArticleCta.astro";
 
 export async function getStaticPaths() {
   const articles = await getCollection("articles");
@@ -31,6 +32,15 @@ type ArticleCandidate = {
 type SectionLink = {
   href: string;
   label: string;
+};
+
+type CtaConfig = {
+  title: string;
+  description: string;
+  buttonText: string;
+  buttonHref: string;
+  linkText?: string;
+  linkHref?: string;
 };
 
 const relatedArticleSets: Record<Topic, ArticleCandidate[]> = {
@@ -103,6 +113,91 @@ const sectionLinkSets: Record<Topic, SectionLink[]> = {
   ],
 };
 
+const modelLinkSets: Record<Topic, SectionLink[]> = {
+  safety: [
+    { href: "/model/p30v", label: "P30V" },
+    { href: "/model/r32v", label: "R32V" },
+    { href: "/model/q40v", label: "Q40V" },
+  ],
+  design: [
+    { href: "/model/p30v", label: "P30V" },
+    { href: "/model/p60v", label: "P60V" },
+    { href: "/model/q40v", label: "Q40V" },
+    { href: "/model/r32v", label: "R32V" },
+  ],
+  columns: [
+    { href: "/columns", label: "Серии трубчатых радиаторов" },
+    { href: "/model/3020", label: "Серия 3020" },
+    { href: "/model/3030", label: "Серия 3030" },
+  ],
+  convector: [
+    { href: "/model/kwh", label: "KWH" },
+    { href: "/model/kwhv", label: "KWHV" },
+    { href: "/model/kwhv24", label: "KWHV 24V" },
+  ],
+  retro: [
+    { href: "/model/nostalgia500", label: "Nostalgia 500" },
+    { href: "/model/historic500", label: "Historic 500" },
+    { href: "/model/nostalgia300", label: "Nostalgia 300" },
+  ],
+  generic: [
+    { href: "/design", label: "Дизайн-радиаторы" },
+    { href: "/columns", label: "Трубчатые радиаторы" },
+    { href: "/convector", label: "Внутрипольные конвекторы" },
+  ],
+};
+
+const endingCtaByTopic: Record<Topic, CtaConfig> = {
+  safety: {
+    title: "Подберем безопасный радиатор под вашу задачу",
+    description: "Учитываем мощность, высоту, температуру поверхности, подключение и размещение в комнате.",
+    buttonText: "Получить подбор радиатора",
+    buttonHref: "/request",
+    linkText: "Смотреть дизайн-радиаторы",
+    linkHref: "/design",
+  },
+  design: {
+    title: "Подберем дизайн-радиатор под интерьер и отопление",
+    description: "Поможем совместить эстетику, мощность, тип подключения и доступные цвета RAL.",
+    buttonText: "Получить подбор радиатора",
+    buttonHref: "/request",
+    linkText: "Открыть каталог дизайна",
+    linkHref: "/design",
+  },
+  columns: {
+    title: "Нужен расчет трубчатого радиатора?",
+    description: "Рассчитаем количество секций, проверим режим системы и предложим подходящие серии Velar.",
+    buttonText: "Получить расчет",
+    buttonHref: "/request",
+    linkText: "Смотреть трубчатые радиаторы",
+    linkHref: "/columns",
+  },
+  convector: {
+    title: "Подберем внутрипольный конвектор под остекление",
+    description: "Учитываем длину витража, глубину ниши, режим отопления и требуемую тепловую завесу.",
+    buttonText: "Получить расчет",
+    buttonHref: "/request",
+    linkText: "Перейти к конвекторам",
+    linkHref: "/convector",
+  },
+  retro: {
+    title: "Подберем ретро-радиатор под интерьер и нагрузку",
+    description: "Подскажем по высоте, секционности, отделке и расчету мощности для вашего помещения.",
+    buttonText: "Получить подбор радиатора",
+    buttonHref: "/request",
+    linkText: "Смотреть ретро-радиаторы",
+    linkHref: "/retro",
+  },
+  generic: {
+    title: "Нужна помощь с выбором радиатора?",
+    description: "Подготовим практичный подбор по площади, температурному режиму и типу подключения.",
+    buttonText: "Получить консультацию",
+    buttonHref: "/request",
+    linkText: "Перейти в каталог",
+    linkHref: "/design",
+  },
+};
+
 function getTopicBySlug(slug: string): Topic {
   if (/convektor|konvektor|convector|panoram|teplovaya-zavesa|220v|24v|kwh/.test(slug)) return "convector";
   if (/trubchat|tube|column|sekci|panelnyh|termostat|chistit/.test(slug)) return "columns";
@@ -114,16 +209,111 @@ function getTopicBySlug(slug: string): Topic {
 
 function normalizeText(value: string): string {
   return value
+    .replace(/ё/gi, "е")
     .normalize("NFKD")
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/\[(.*?)\]\((.*?)\)/g, "$1")
     .replace(/<[^>]+>/g, " ")
     .replace(/&[a-z]+;/gi, " ")
+    .replace(/[—–−‑‒-]+/g, " ")
     .replace(/[`*_~]/g, " ")
     .replace(/[^\p{L}\p{N}\s]/gu, " ")
     .replace(/\s+/g, " ")
     .trim()
     .toLowerCase();
+}
+
+function stemToken(token: string): string {
+  if (token.length <= 5) return token;
+
+  return token.replace(
+    /(ами|ями|ого|ему|ому|ыми|ими|иях|иям|ием|ией|ах|ях|ов|ев|ом|ем|ой|ый|ий|ая|яя|ое|ее|ые|ие|ам|ям|ую|юю|а|я|ы|и|о|е|у|ю)$/u,
+    "",
+  );
+}
+
+function getCoreTokenSet(value: string): Set<string> {
+  const stopwords = new Set([
+    "и",
+    "в",
+    "во",
+    "на",
+    "по",
+    "для",
+    "с",
+    "со",
+    "к",
+    "ко",
+    "о",
+    "об",
+    "от",
+    "до",
+    "из",
+    "у",
+    "а",
+    "но",
+    "или",
+    "что",
+    "это",
+    "как",
+    "при",
+    "их",
+  ]);
+
+  const tokens = normalizeText(value)
+    .split(" ")
+    .map((token) => token.trim())
+    .filter(Boolean)
+    .filter((token) => !stopwords.has(token))
+    .map(stemToken);
+
+  return new Set(tokens);
+}
+
+function isSoftDuplicateDashHeading(titleValue: string, headingValue: string): boolean {
+  const hasDashInBoth = /[—–−‑‒-]/.test(titleValue) && /[—–−‑‒-]/.test(headingValue);
+  if (!hasDashInBoth) return false;
+
+  const normalizedTitle = normalizeText(titleValue);
+  const normalizedHeading = normalizeText(headingValue);
+  const firstTitleWord = normalizedTitle.split(" ")[0] ?? "";
+  const firstHeadingWord = normalizedHeading.split(" ")[0] ?? "";
+
+  if (!firstTitleWord || firstTitleWord !== firstHeadingWord) return false;
+
+  const titleTokens = getCoreTokenSet(titleValue);
+  const headingTokens = getCoreTokenSet(headingValue);
+  if (titleTokens.size < 4 || headingTokens.size < 4) return false;
+
+  let intersectionCount = 0;
+  for (const token of titleTokens) {
+    if (headingTokens.has(token)) intersectionCount += 1;
+  }
+
+  const minSetSize = Math.min(titleTokens.size, headingTokens.size);
+  const overlapRatio = minSetSize > 0 ? intersectionCount / minSetSize : 0;
+
+  return intersectionCount >= 3 && overlapRatio >= 0.55;
+}
+
+function isLikelyDuplicateTitleHeading(titleValue: string, headingValue: string): boolean {
+  const normalizedTitle = normalizeText(titleValue);
+  const normalizedHeading = normalizeText(headingValue);
+
+  if (!normalizedTitle || !normalizedHeading) return false;
+  if (normalizedTitle === normalizedHeading) return true;
+
+  const [shorter, longer] =
+    normalizedTitle.length <= normalizedHeading.length
+      ? [normalizedTitle, normalizedHeading]
+      : [normalizedHeading, normalizedTitle];
+
+  if (longer.startsWith(shorter)) {
+    const overlapRatio = shorter.length / longer.length;
+    if (overlapRatio >= 0.72) return true;
+  }
+
+  return isSoftDuplicateDashHeading(titleValue, headingValue);
 }
 
 function getFirstHeadingFromBody(body: string): { level: number; text: string } | null {
@@ -168,12 +358,14 @@ const readMoreLinks = [...relatedArticleSets[topic], ...relatedArticleSets.gener
   }));
 
 const sectionLinks = sectionLinkSets[topic];
+const modelLinks = modelLinkSets[topic];
+const endingCta = endingCtaByTopic[topic];
 
 const firstBodyHeading = getFirstHeadingFromBody(article.body ?? "");
 const shouldHideDuplicateIntroHeading =
   firstBodyHeading !== null &&
   (firstBodyHeading.level === 1 || firstBodyHeading.level === 2) &&
-  normalizeText(firstBodyHeading.text) === normalizeText(title);
+  isLikelyDuplicateTitleHeading(title, firstBodyHeading.text);
 
 const crumbs = [
   { title: "Главная", url: "/" },
@@ -200,15 +392,27 @@ const crumbs = [
       <article class:list={['article-content', 'article-prose', shouldHideDuplicateIntroHeading && 'article-prose--hide-duplicate-intro-heading']}>
         <Content />
 
+        <ArticleCta
+          className='article-cta--footer'
+          variant='light'
+          size='compact'
+          title={endingCta.title}
+          description={endingCta.description}
+          buttonText={endingCta.buttonText}
+          buttonHref={endingCta.buttonHref}
+          linkText={endingCta.linkText}
+          linkHref={endingCta.linkHref}
+        />
+
         <section class='not-prose article-related'>
           <div class='article-related__block'>
-            <h2 class='article-related__title'>Читайте также</h2>
-            <ul class='article-related__cards'>
+            <h2 class='article-related__title'>Полезные материалы по теме</h2>
+            <ul class='article-related__list'>
               {readMoreLinks.map((item) => (
                 <li>
-                  <a class='article-related__card' href={item.href}>
-                    <span class='article-related__card-title'>{item.label}</span>
-                    <span class='article-related__card-more'>Подробнее →</span>
+                  <a class='article-related__list-link' href={item.href}>
+                    <span class='article-related__arrow'>→</span>
+                    <span>{item.label}</span>
                   </a>
                 </li>
               ))}
@@ -219,6 +423,17 @@ const crumbs = [
             <h2 class='article-related__title'>Перейти в раздел</h2>
             <ul class='article-related__chips'>
               {sectionLinks.map((item) => (
+                <li>
+                  <a href={item.href}>{item.label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class='article-related__block'>
+            <h2 class='article-related__title'>Популярные модели</h2>
+            <ul class='article-related__chips'>
+              {modelLinks.map((item) => (
                 <li>
                   <a href={item.href}>{item.label}</a>
                 </li>

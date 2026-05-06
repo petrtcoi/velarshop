@@ -1,7 +1,6 @@
 ---
 import { Picture } from "@astrojs/image/components";
 import Layout from "@shared/layouts/Layout.astro";
-import Breadcrumbs from '@widgets/breadcrumbs/Breadcrumbs.astro';
 import { getCollection } from "astro:content";
 
 const articles = await getCollection("articles");
@@ -15,54 +14,60 @@ const crumbs = [
 <Layout
   title='Полезная информация | радиаторы и конвекторы | VelarShop.ru'
   description='Полезные материалы Velar о выборе, расчете и эксплуатации радиаторов и конвекторов.'
+  breadcrumbs={crumbs}
 >
-  <section class="mb-3">
-<Breadcrumbs items={crumbs} />
-</section>
-  <h1 class='text-2xl'>Полезные материалы</h1>
-  <div
-    id='articles_list'
-    aria-label='Список статей'
-    class='mt-6 flex flex-row flex-wrap items-top gap-8 justify-start'
-  >
-    {
-      articles
-        .sort((a, b) => b.data.sortRank - a.data.sortRank)
-        .map((article) => {
-          const { title, short_description, slug, thumbnail } = article.data;
-          const safeThumbnail = thumbnail ?? "";
+  <section class='mx-auto max-w-6xl p-5 md:px-10'>
+    <div class='space-y-4'>
+      <h1 class='m-0 text-[34px] font-semibold leading-[1.08] tracking-tight text-neutral-950 md:text-[44px]'>Полезные материалы</h1>
+      <p class='max-w-[840px] text-base leading-7 text-neutral-700 md:text-[18px] md:leading-8'>
+        Разбираем выбор, расчет, монтаж и эксплуатацию радиаторов Velar, трубчатых моделей, конвекторов и ретро-радиаторов.
+      </p>
+    </div>
 
-          const imgPath =
-            safeThumbnail.length > 0
-              ? `/images/articles/${safeThumbnail}`
-              : "/images/articles/empty.jpg";
-          const articleHref = `/info/${slug}`;
+    <div
+      id='articles_list'
+      aria-label='Список статей'
+      class='mt-10 flex flex-row flex-wrap items-start gap-8 justify-start'
+    >
+      {
+        articles
+          .sort((a, b) => b.data.sortRank - a.data.sortRank)
+          .map((article) => {
+            const { title, short_description, slug, thumbnail } = article.data;
+            const safeThumbnail = thumbnail ?? "";
 
-          return (
-            <div class='group w-72 mx-auto sm:mx-0 mt-5'>
-              <a href={articleHref}>
-                <Picture
-                  src={imgPath}
-                  alt={title}
-                  title={title}
-                  loading='lazy'
-                  aspectRatio='1:1'
-                  widths={[290, 500]}
-                  width={290}
-                  height={290}
-                  sizes='290px'
-                  class='rounded-lg opacity-100 md:opacity-75 group-hover:opacity-100 group-hover:shadow-lg transition-opacity duration-300'
-                />
-                <div class='text-sm mt-2 group-hover:text-red-600 transition-colors duration-300'>
-                  {title}
-                </div>
-                <div class='text-xs mt-1 text-neutral-600 group-hover:text-neutral-900'>
-                  {short_description}
-                </div>
-              </a>
-            </div>
-          );
-        })
-    }
-  </div>
+            const imgPath =
+              safeThumbnail.length > 0
+                ? `/images/articles/${safeThumbnail}`
+                : "/images/articles/empty.jpg";
+            const articleHref = `/info/${slug}`;
+
+            return (
+              <div class='group w-72 mx-auto sm:mx-0'>
+                <a href={articleHref}>
+                  <Picture
+                    src={imgPath}
+                    alt={title}
+                    title={title}
+                    loading='lazy'
+                    aspectRatio='1:1'
+                    widths={[290, 500]}
+                    width={290}
+                    height={290}
+                    sizes='290px'
+                    class='rounded-lg opacity-100 md:opacity-75 group-hover:opacity-100 group-hover:shadow-lg transition-opacity duration-300'
+                  />
+                  <div class='text-sm mt-2 group-hover:text-red-600 transition-colors duration-300'>
+                    {title}
+                  </div>
+                  <div class='text-xs mt-1 text-neutral-600 group-hover:text-neutral-900'>
+                    {short_description}
+                  </div>
+                </a>
+              </div>
+            );
+          })
+      }
+    </div>
+  </section>
 </Layout>
