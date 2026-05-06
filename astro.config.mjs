@@ -1,4 +1,3 @@
-import image from '@astrojs/image'
 import mdx from '@astrojs/mdx'
 import preact from '@astrojs/preact'
 import sitemap from '@astrojs/sitemap'
@@ -28,5 +27,5 @@ export default defineConfig({
 		'/info/raschet-sekciy-trubchatogo-radiatora-uglovaya-komnata':
 			'/info/raschet-radiatorov-dlya-uglovoy-komnaty',
 	},
-	integrations: [tailwind(), image(), mdx(), preact(), sitemap({ filter: shouldIncludeInSitemap })],
+	integrations: [tailwind(), mdx(), preact(), sitemap({ filter: shouldIncludeInSitemap })],
 })

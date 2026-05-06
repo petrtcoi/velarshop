@@ -1,0 +1,80 @@
+---
+type ImageLike = string | {
+	src?: string
+	default?: string | { src?: string; width?: number; height?: number }
+	width?: number
+	height?: number
+}
+
+type Props = {
+	src: ImageLike
+	alt?: string
+	title?: string
+	width?: number | string
+	height?: number | string
+	loading?: 'eager' | 'lazy'
+	decoding?: 'async' | 'auto' | 'sync'
+	aspectRatio?: string
+	widths?: number[]
+	formats?: string[]
+	format?: string
+	quality?: number | string
+	fit?: string
+	position?: string
+	sizes?: string
+	class?: string
+	itemprop?: string
+}
+
+const {
+	src,
+	alt = '',
+	title,
+	width,
+	height,
+	loading = 'lazy',
+	decoding = 'async',
+	aspectRatio,
+	widths: _widths,
+	formats: _formats,
+	format: _format,
+	quality: _quality,
+	fit: _fit,
+	position: _position,
+	...attrs
+} = Astro.props as Props
+
+function resolveImage(image: ImageLike) {
+	if (typeof image === 'string') return { src: image }
+	const value = image.default && typeof image.default === 'object' ? image.default : image
+	if (typeof value === 'string') return { src: value }
+	return {
+		src: value.src || '',
+		width: value.width,
+		height: value.height,
+	}
+}
+
+function getHeightFromRatio(imageWidth?: number | string, ratio?: string) {
+	if (!imageWidth || !ratio) return undefined
+	const [ratioWidth, ratioHeight] = ratio.split(':').map(Number)
+	const numericWidth = Number(imageWidth)
+	if (!numericWidth || !ratioWidth || !ratioHeight) return undefined
+	return Math.round(numericWidth * (ratioHeight / ratioWidth))
+}
+
+const image = resolveImage(src)
+const imgWidth = width || image.width
+const imgHeight = height || image.height || getHeightFromRatio(imgWidth, aspectRatio)
+---
+
+<img
+	{...attrs}
+	src={image.src}
+	alt={alt}
+	title={title}
+	loading={loading}
+	decoding={decoding}
+	width={imgWidth}
+	height={imgHeight}
+/>
