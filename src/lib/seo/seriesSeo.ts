@@ -7,6 +7,7 @@ type SeriesVariant = {
 	name: string
 	url: string
 	image?: string
+	priceFrom?: number
 }
 
 type SeriesFaqItem = {
@@ -168,6 +169,11 @@ function sanitizeVariants(variants: SeriesVariant[]): SeriesVariant[] {
 	return variants.filter(item => trimValue(item.name) && trimValue(item.url))
 }
 
+function getVariantPrice(value?: number): number {
+	if (!value || !Number.isFinite(value) || value <= 0) return 0
+	return Math.round(value)
+}
+
 export function buildSeriesJsonLd(input: BuildSeriesJsonLdInput): Record<string, unknown> {
 	const organizationId = `${input.siteUrl}/#organization`
 	const websiteId = `${input.siteUrl}/#website`
@@ -179,6 +185,11 @@ export function buildSeriesJsonLd(input: BuildSeriesJsonLdInput): Record<string,
 	const profileShape = getProfileShape(profile)
 	const profileSize = getProfileSize(profile)
 	const orientationText = getOrientationText(input.variants)
+	const variantPrices = input.variants
+		.map(item => getVariantPrice(item.priceFrom))
+		.filter(Boolean)
+	const minVariantPrice = variantPrices.length ? Math.min(...variantPrices) : 0
+	const maxVariantPrice = variantPrices.length ? Math.max(...variantPrices) : 0
 
 	const additionalProperty = [
 		profileShape
@@ -235,12 +246,45 @@ export function buildSeriesJsonLd(input: BuildSeriesJsonLdInput): Record<string,
 		variesBy: ['orientation', 'size', 'color', 'connection'],
 		material: 'Сталь',
 		additionalProperty,
-		hasVariant: input.variants.map(item => ({
-			'@type': 'Product',
-			'@id': `${normalizeAbsoluteUrl(item.url, input.siteUrl)}#product`,
-			name: item.name,
-			url: normalizeAbsoluteUrl(item.url, input.siteUrl),
-		})),
+		offers: minVariantPrice > 0
+			? {
+					'@type': 'AggregateOffer',
+					priceCurrency: 'RUB',
+					lowPrice: String(minVariantPrice),
+					highPrice: maxVariantPrice > minVariantPrice ? String(maxVariantPrice) : undefined,
+					offerCount: String(variantPrices.length),
+					availability: 'https://schema.org/InStock',
+					url: input.canonicalUrl,
+					seller: {
+						'@id': organizationId,
+					},
+				}
+			: undefined,
+		hasVariant: input.variants.map(item => {
+			const variantUrl = normalizeAbsoluteUrl(item.url, input.siteUrl)
+			const price = getVariantPrice(item.priceFrom)
+
+			return {
+				'@type': 'Product',
+				'@id': `${variantUrl}#product`,
+				name: item.name,
+				url: variantUrl,
+				image: item.image ? normalizeAbsoluteUrl(item.image, input.siteUrl) : undefined,
+				offers: price > 0
+					? {
+							'@type': 'Offer',
+							url: variantUrl,
+							priceCurrency: 'RUB',
+							price: String(price),
+							availability: 'https://schema.org/InStock',
+							itemCondition: 'https://schema.org/NewCondition',
+							seller: {
+								'@id': organizationId,
+							},
+						}
+					: undefined,
+			}
+		}),
 	}
 
 	const variantsList = {

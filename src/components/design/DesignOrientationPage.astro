@@ -84,6 +84,15 @@ const schema = [
 					description: item.description,
 					image: new URL(item.image, canonicalUrl).toString(),
 					brand: { '@type': 'Brand', name: 'Velar' },
+					offers: item.priceFrom > 0
+						? {
+								'@type': 'AggregateOffer',
+								priceCurrency: 'RUB',
+								lowPrice: String(Math.round(item.priceFrom)),
+								availability: 'https://schema.org/InStock',
+								url: new URL(item.href, canonicalUrl).toString(),
+							}
+						: undefined,
 				},
 			})),
 		},
@@ -187,4 +196,3 @@ const schema = [
 	<DesignFaq items={faqItems} title={isVertical ? 'Частые вопросы о вертикальных дизайн-радиаторах' : 'Частые вопросы о горизонтальных дизайн-радиаторах'} />
 	<DesignUsefulLinks />
 </Layout>
-
