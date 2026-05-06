@@ -14,65 +14,172 @@ export async function getStaticPaths() {
 type Props = {
   article: CollectionEntry<"articles">;
 };
+
 const { article } = Astro.props as Props;
 const { Content } = await article.render();
 const { title, short_description, metaTitle, metaDescription } = article.data;
-const readingMinutes = Math.max(1, Math.ceil((article.body ?? '').split(/\s+/).filter(Boolean).length / 180));
-const relatedLinkSets = {
-  convector: [
-    ['/convector', 'Внутрипольные конвекторы Velar'],
-    ['/model/kwh', 'Velar KWH без вентилятора'],
-    ['/model/kwhv', 'Velar KWHV с вентилятором'],
-    ['/info/vnutripolnye-konvektory-podbor-i-montazh', 'Подбор и монтаж внутрипольных конвекторов'],
-  ],
-  columns: [
-    ['/columns', 'Трубчатые радиаторы Velar'],
-    ['/info/steel-tube-radiators-guide', 'Как выбрать стальной трубчатый радиатор'],
-    ['/info/column-radiators-pros-cons', 'Плюсы и минусы трубчатых радиаторов'],
-    ['/info/raschet-sekciy-trubchatogo-radiatora-uglovaya-komnata', 'Расчет секций для угловой комнаты'],
-  ],
-  retro: [
-    ['/retro', 'Чугунные ретро-радиаторы Velar'],
-    ['/info/ironcast', 'Особенности чугунных радиаторов'],
-    ['/info/restavratsiya-chugunnyh-radiatorov', 'Реставрация чугунных радиаторов'],
-    ['/info/pravila-ekspluatacii-chugunnyh-radiatorov', 'Правила эксплуатации чугунных радиаторов'],
-  ],
-  floor: [
-    ['/floor', 'Напольные радиаторы Velar'],
-    ['/info/floor-design-radiators', 'Напольные дизайн-радиаторы'],
-    ['/convector', 'Внутрипольные конвекторы для панорамных окон'],
-    ['/info/radiatory-dlya-panoramnykh-okon-tipy-osobennosti', 'Радиаторы для панорамных окон'],
+const allArticles = await getCollection("articles");
+const articleTitleBySlug = new Map(allArticles.map((entry) => [entry.slug, entry.data.title]));
+
+type Topic = "safety" | "design" | "columns" | "convector" | "retro" | "generic";
+
+type ArticleCandidate = {
+  slug: string;
+  label?: string;
+};
+
+type SectionLink = {
+  href: string;
+  label: string;
+};
+
+const relatedArticleSets: Record<Topic, ArticleCandidate[]> = {
+  safety: [
+    { slug: "power" },
+    { slug: "oshibki-pri-vybore-radiatorov", label: "Как выбрать радиатор отопления для квартиры" },
+    { slug: "column-radiators-pros-cons", label: "Трубчатые радиаторы: особенности и выбор" },
+    { slug: "kak-podobrat-radiatory-dlya-kuhni", label: "Радиаторы для кухни: как подобрать" },
   ],
   design: [
-    ['/design', 'Дизайн-радиаторы Velar'],
-    ['/design/vertikalnye', 'Вертикальные дизайн-радиаторы'],
-    ['/design/gorizontalnye', 'Горизонтальные дизайн-радиаторы'],
-    ['/info/power', 'Как рассчитать мощность радиатора'],
+    { slug: "kak-podobrat-radiator-pod-dizajn-kvartiry", label: "Как выбрать дизайнерский радиатор" },
+    { slug: "vertical-designer-radiators", label: "Вертикальные или горизонтальные радиаторы" },
+    { slug: "horizontal-designer-radiators", label: "Радиаторы в интерьере: горизонтальные модели" },
+    { slug: "colors", label: "Цвета RAL для радиаторов" },
+  ],
+  columns: [
+    { slug: "steel-tube-radiators-guide", label: "Как выбрать трубчатый радиатор" },
+    { slug: "power", label: "Как рассчитать мощность радиатора" },
+    { slug: "column-radiators-pros-cons", label: "Трубчатые или панельные радиаторы" },
+    { slug: "tube-radiators", label: "Трубчатые радиаторы для квартиры" },
+  ],
+  convector: [
+    { slug: "kak-vybirat-vnutripolnye-konvektory", label: "Как выбрать внутрипольный конвектор" },
+    { slug: "vnutripolnye-konvektory-s-ventilyatorom", label: "Конвекторы с вентилятором" },
+    { slug: "teplovaya-zavesa-u-panoramnyh-okon", label: "Конвекторы для панорамных окон" },
+    { slug: "vnutripolnye-konvektory-podbor-i-montazh", label: "Монтаж внутрипольных конвекторов" },
+  ],
+  retro: [
+    { slug: "ironcast", label: "Как выбрать чугунный ретро-радиатор" },
+    { slug: "kak-otlichit-kachestvennoe-lite-radiatorov", label: "Радиаторы с орнаментом: качество литья" },
+    { slug: "colors", label: "Патина и цвета для ретро-радиаторов" },
+    { slug: "restavratsiya-chugunnyh-radiatorov", label: "Ретро-радиаторы в интерьере" },
   ],
   generic: [
-    ['/design', 'Дизайн-радиаторы Velar'],
-    ['/columns', 'Трубчатые радиаторы Velar'],
-    ['/convector', 'Внутрипольные конвекторы Velar'],
-    ['/info/power', 'Как рассчитать мощность радиатора'],
+    { slug: "power" },
+    { slug: "kak-podobrat-radiator-pod-dizajn-kvartiry" },
+    { slug: "steel-tube-radiators-guide" },
+    { slug: "kak-vybirat-vnutripolnye-konvektory" },
   ],
-} as const
+};
 
-function getRelatedLinks(slug: string): readonly (readonly [string, string])[] {
-  if (/convektor|konvektor|panoram|teplovaya-zavesa|220v|24v/.test(slug)) return relatedLinkSets.convector
-  if (/trubchat|tube|column|sekci|panelnyh|termostat/.test(slug)) return relatedLinkSets.columns
-  if (/chugun|retro|iron|restavrats|lite/.test(slug)) return relatedLinkSets.retro
-  if (/floor|napoln/.test(slug)) return relatedLinkSets.floor
-  if (/design|vertical|horizontal|tsvet|interer|wall|steel|kuhni/.test(slug)) return relatedLinkSets.design
-  return relatedLinkSets.generic
+const sectionLinkSets: Record<Topic, SectionLink[]> = {
+  safety: [
+    { href: "/columns", label: "Трубчатые радиаторы Velar" },
+    { href: "/design", label: "Дизайн-радиаторы Velar" },
+  ],
+  design: [
+    { href: "/design", label: "Дизайн-радиаторы Velar" },
+    { href: "/design/vertikalnye", label: "Вертикальные дизайн-радиаторы" },
+    { href: "/design/gorizontalnye", label: "Горизонтальные дизайн-радиаторы" },
+  ],
+  columns: [
+    { href: "/columns", label: "Трубчатые радиаторы Velar" },
+    { href: "/floor", label: "Напольные радиаторы" },
+  ],
+  convector: [
+    { href: "/convector", label: "Внутрипольные конвекторы Velar" },
+    { href: "/model/kwh", label: "KWH" },
+    { href: "/model/kwhv", label: "KWHV" },
+    { href: "/model/kwhv24", label: "KWHV 24V" },
+  ],
+  retro: [
+    { href: "/retro", label: "Чугунные ретро-радиаторы" },
+  ],
+  generic: [
+    { href: "/design", label: "Дизайн-радиаторы Velar" },
+    { href: "/columns", label: "Трубчатые радиаторы Velar" },
+    { href: "/convector", label: "Внутрипольные конвекторы Velar" },
+    { href: "/retro", label: "Чугунные ретро-радиаторы" },
+  ],
+};
+
+function getTopicBySlug(slug: string): Topic {
+  if (/convektor|konvektor|convector|panoram|teplovaya-zavesa|220v|24v|kwh/.test(slug)) return "convector";
+  if (/trubchat|tube|column|sekci|panelnyh|termostat|chistit/.test(slug)) return "columns";
+  if (/chugun|retro|iron|lite|restavrats/.test(slug)) return "retro";
+  if (/design|vertical|horizontal|tsvet|interer|colors|wall|kuhni|chernye|forma-trub/.test(slug)) return "design";
+  if (/bezopasnost|vybor|oshibki|power|radiator-ne-greet|kreplenie|teplootdacha|heating/.test(slug)) return "safety";
+  return "generic";
 }
 
-const relatedLinks = getRelatedLinks(article.slug).filter(([href]) => href !== `/info/${article.slug}`).slice(0, 4)
+function normalizeText(value: string): string {
+  return value
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\[(.*?)\]\((.*?)\)/g, "$1")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&[a-z]+;/gi, " ")
+    .replace(/[`*_~]/g, " ")
+    .replace(/[^\p{L}\p{N}\s]/gu, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .toLowerCase();
+}
+
+function getFirstHeadingFromBody(body: string): { level: number; text: string } | null {
+  const lines = body.split("\n");
+
+  for (const rawLine of lines) {
+    const line = rawLine.trim();
+
+    if (!line) continue;
+    if (line.startsWith("import ") || line.startsWith("export ")) continue;
+
+    const headingMatch = line.match(/^(#{1,6})\s+(.+)$/);
+    if (headingMatch) {
+      return {
+        level: headingMatch[1].length,
+        text: headingMatch[2].trim(),
+      };
+    }
+
+    return null;
+  }
+
+  return null;
+}
+
+const topic = getTopicBySlug(article.slug);
+
+const existingRelatedLinks = new Set<string>();
+const readMoreLinks = [...relatedArticleSets[topic], ...relatedArticleSets.generic]
+  .filter((candidate) => candidate.slug !== article.slug)
+  .filter((candidate) => articleTitleBySlug.has(candidate.slug))
+  .filter((candidate) => {
+    if (existingRelatedLinks.has(candidate.slug)) return false;
+    existingRelatedLinks.add(candidate.slug);
+    return true;
+  })
+  .slice(0, 4)
+  .map((candidate) => ({
+    href: `/info/${candidate.slug}`,
+    label: candidate.label ?? articleTitleBySlug.get(candidate.slug) ?? candidate.slug,
+    description: articleTitleBySlug.get(candidate.slug) ?? "",
+  }));
+
+const sectionLinks = sectionLinkSets[topic];
+
+const firstBodyHeading = getFirstHeadingFromBody(article.body ?? "");
+const shouldHideDuplicateIntroHeading =
+  firstBodyHeading !== null &&
+  (firstBodyHeading.level === 1 || firstBodyHeading.level === 2) &&
+  normalizeText(firstBodyHeading.text) === normalizeText(title);
 
 const crumbs = [
-	{title: 'Главная', url: '/'},
-	{title: 'Полезные материалы', url: '/info'},
-  {title: title, url: `/info/${article.slug}`},
-]
+  { title: "Главная", url: "/" },
+  { title: "Полезные материалы", url: "/info" },
+  { title, url: `/info/${article.slug}` },
+];
 ---
 
 <Layout
@@ -81,33 +188,43 @@ const crumbs = [
   breadcrumbs={crumbs}
   paddings={false}
 >
-  <div class='article-page'>
+  <div class='article-page article-page--info'>
     <header class='article-hero'>
-      <div class='article-shell'>
-        <div class='article-hero__meta'>
-          <span>Полезные материалы</span>
-          <span>{readingMinutes} мин чтения</span>
-          <a href='/info'>Все статьи</a>
-        </div>
+      <div class='article-shell article-shell--reading'>
         <h1 class='article-hero__title'>{title}</h1>
         <p class='article-hero__lead'>{short_description}</p>
       </div>
     </header>
 
-    <div class='article-shell article-layout'>
-      <article class='article-content article-prose'>
+    <div class='article-shell article-shell--reading article-layout'>
+      <article class:list={['article-content', 'article-prose', shouldHideDuplicateIntroHeading && 'article-prose--hide-duplicate-intro-heading']}>
         <Content />
-        <section class='not-prose mt-12 border-t border-neutral-200 pt-6'>
-          <h2 class='text-xl font-semibold leading-tight tracking-tight text-neutral-950 md:text-2xl'>Полезные материалы по теме</h2>
-          <ul class='mt-4 grid gap-2 text-sm leading-6 text-neutral-700 md:grid-cols-2'>
-            {relatedLinks.map(([href, label]) => (
-              <li>
-                <a class='text-red-700 underline decoration-red-700/40 underline-offset-[0.18em] transition hover:text-red-800 hover:decoration-transparent' href={href}>
-                  {label}
-                </a>
-              </li>
-            ))}
-          </ul>
+
+        <section class='not-prose article-related'>
+          <div class='article-related__block'>
+            <h2 class='article-related__title'>Читайте также</h2>
+            <ul class='article-related__cards'>
+              {readMoreLinks.map((item) => (
+                <li>
+                  <a class='article-related__card' href={item.href}>
+                    <span class='article-related__card-title'>{item.label}</span>
+                    <span class='article-related__card-more'>Подробнее →</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class='article-related__block'>
+            <h2 class='article-related__title'>Перейти в раздел</h2>
+            <ul class='article-related__chips'>
+              {sectionLinks.map((item) => (
+                <li>
+                  <a href={item.href}>{item.label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </section>
       </article>
     </div>

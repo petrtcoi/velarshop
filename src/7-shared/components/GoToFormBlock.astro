@@ -1,16 +1,30 @@
 ---
+import ArticleCta from '../../components/articles/ArticleCta.astro';
+
+const isInfoArticle = Astro.url.pathname.startsWith('/info/');
 ---
 
-<div class='mt-4 lg:mt-6 mb-3 text-sm leading-5 font-light max-w-[600px] px-3 py-4 bg-gray-100 rounded-xl'>
-	<div class='mt-3 mb-2'>
-		<a
-			class='mt-2  bg-red-700 text-sm text-white ring-[1px] py-2 px-3 rounded-md  hover:opacity-80 hover:no-underline'
-			href={"/request"}
-			>🔥 Подобрать радиатор под мои условия →</a
-		>
-	</div>
-	<div class="mt-4 text-xs">
-	Подскажем, какой радиатор Velar подойдёт под ваши условия, и вышлем расчёт с ценами и сроками <span class='font-[700]'>в течение дня - без звонков, в мессенджере</span>.
-	
-	</div>
-</div>
+{
+	isInfoArticle ? (
+		<ArticleCta
+			title='Нужен расчет и подбор под ваш проект?'
+			description='Подскажем, какой радиатор Velar подойдет под ваши условия, и вышлем расчет с ценами и сроками в течение дня.'
+			buttonText='Получить расчет'
+			buttonHref='/request'
+			size='compact'
+		/>
+	) : (
+		<div class='mt-4 lg:mt-6 mb-3 text-sm leading-5 font-light max-w-[600px] px-3 py-4 bg-gray-100 rounded-xl'>
+			<div class='mt-3 mb-2'>
+				<a
+					class='mt-2  bg-red-700 text-sm text-white ring-[1px] py-2 px-3 rounded-md  hover:opacity-80 hover:no-underline'
+					href={"/request"}
+					>🔥 Подобрать радиатор под мои условия →</a
+				>
+			</div>
+			<div class='mt-4 text-xs'>
+				Подскажем, какой радиатор Velar подойдёт под ваши условия, и вышлем расчёт с ценами и сроками <span class='font-[700]'>в течение дня - без звонков, в мессенджере</span>.
+			</div>
+		</div>
+	)
+}
