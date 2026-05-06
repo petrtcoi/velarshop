@@ -162,6 +162,8 @@ const seo = getSeriesSeo({
 			url: model.href,
 			image: model.image,
 			priceFrom: model.priceFrom,
+			description: modelUse(model),
+			orientation: model.orientation,
 		})),
 		faq: faqItems.map(([question, answer]) => ({
 			question,

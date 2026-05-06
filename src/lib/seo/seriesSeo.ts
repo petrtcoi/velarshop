@@ -8,6 +8,8 @@ type SeriesVariant = {
 	url: string
 	image?: string
 	priceFrom?: number
+	description?: string
+	orientation?: string
 }
 
 type SeriesFaqItem = {
@@ -174,6 +176,30 @@ function getVariantPrice(value?: number): number {
 	return Math.round(value)
 }
 
+function getVariantOrientation(item: SeriesVariant): string {
+	if (item.orientation) return item.orientation
+
+	const name = item.name.toLowerCase()
+	if (name.endsWith(' v') || name.endsWith('v')) return 'vertical'
+	if (name.endsWith(' h') || name.endsWith('h')) return 'horizontal'
+	return ''
+}
+
+function getVariantDescription(item: SeriesVariant, series: SeriesSeoData): string {
+	const description = trimValue(item.description)
+	if (description) return description
+
+	const orientation = getVariantOrientation(item)
+	const orientationText =
+		orientation === 'vertical'
+			? 'вертикальный'
+			: orientation === 'horizontal'
+				? 'горизонтальный'
+				: 'дизайн'
+
+	return `${item.name} — ${orientationText} дизайн-радиатор Velar серии ${series.label}. Подбор размера, цвета RAL и подключения выполняется на странице модели.`
+}
+
 export function buildSeriesJsonLd(input: BuildSeriesJsonLdInput): Record<string, unknown> {
 	const organizationId = `${input.siteUrl}/#organization`
 	const websiteId = `${input.siteUrl}/#website`
@@ -243,7 +269,7 @@ export function buildSeriesJsonLd(input: BuildSeriesJsonLdInput): Record<string,
 		},
 		category: trimValue(input.series.category) || 'Дизайн-радиаторы',
 		productGroupID: input.series.slug,
-		variesBy: ['orientation', 'size', 'color', 'connection'],
+		variesBy: ['https://schema.org/model'],
 		material: 'Сталь',
 		additionalProperty,
 		offers: minVariantPrice > 0
@@ -269,7 +295,9 @@ export function buildSeriesJsonLd(input: BuildSeriesJsonLdInput): Record<string,
 				'@id': `${variantUrl}#product`,
 				name: item.name,
 				url: variantUrl,
+				description: getVariantDescription(item, input.series),
 				image: item.image ? normalizeAbsoluteUrl(item.image, input.siteUrl) : undefined,
+				model: item.name,
 				offers: price > 0
 					? {
 							'@type': 'Offer',
