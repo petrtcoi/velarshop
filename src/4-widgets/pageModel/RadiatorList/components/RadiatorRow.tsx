@@ -37,9 +37,7 @@ function RadiatorRow({ model, radiator, showInterAxis }: Props) {
 	return (
 		<tr class='border-b border-neutral-200 py-3 text-xs font-light transition hover:bg-neutral-50'>
 			<td class='py-3 pl-2 flex flex-col'>
-				<div class='text-red-600 font-normal hover:underline'>
-					<a href={modelHref}>{totalTitle}</a>
-				</div>
+				<div class='font-normal text-neutral-900'>{totalTitle}</div>
 				<div class='text-[10px] text-neutral-600 md:hidden'>
 					{radiator.height}
 					<span class='text-[8px] font-thin'>x</span>

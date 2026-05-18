@@ -207,6 +207,10 @@
 /model/kwhv/:radiator  /model/kwhv/  301
 /model/kwhv24/:radiator/  /model/kwhv24/  301
 /model/kwhv24/:radiator  /model/kwhv24/  301
+/model/kwv24/  /model/kwhv24/  301
+/model/kwv24  /model/kwhv24/  301
+/model/kwv24/:radiator/  /model/kwhv24/  301
+/model/kwv24/:radiator  /model/kwhv24/  301
 /model/nostalgia500/:radiator/  /model/nostalgia500/  301
 /model/nostalgia500/:radiator  /model/nostalgia500/  301
 /model/historic500/:radiator/  /model/historic500/  301

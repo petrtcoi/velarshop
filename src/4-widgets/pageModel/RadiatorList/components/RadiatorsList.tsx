@@ -240,7 +240,7 @@ function RadiatorList(props: Props) {
 						<SelectConvectorGrill />
 						<SelectAddon model={model} />
 
-						<div class='mt-5 overflow-x-auto'>
+						<div class='mt-5 hidden overflow-x-auto md:block'>
 							<table class='w-full min-w-[720px] text-left text-xs'>
 								<RadiatorListHeader showInterAxis={showInterAxis} />
 								<tbody>
@@ -253,6 +253,32 @@ function RadiatorList(props: Props) {
 									))}
 								</tbody>
 							</table>
+						</div>
+
+						<div class='mt-4 grid gap-2 md:hidden'>
+							{filteredRadiators.map(radiator => {
+								const qnty = getRadiatorQnty(radiator)
+								const totalTitle = getTotalTitle(model, radiator)
+								const totalPrice = getTotalCost(model, radiator)
+								return (
+									<article class='rounded-[3px] border border-neutral-200 bg-white p-2.5'>
+										<div class='text-xs font-normal leading-5 text-neutral-950'>{totalTitle}</div>
+										<div class='mt-1 text-xs leading-5 text-neutral-700'>
+											Размер: {getSizeLabel(model, radiator)} · Мощность: {getPowerValue(radiator)} Вт
+										</div>
+										<div class='mt-2 flex items-center justify-between gap-3'>
+											<div class='text-xs font-normal text-neutral-950'>от {totalPrice.toLocaleString('ru-RU')} ₽</div>
+											<button
+												type='button'
+												onClick={() => addRadiatorToRequest(radiator)}
+												class='inline-flex h-7 shrink-0 items-center justify-center rounded-[3px] border border-red-200 bg-white px-2.5 text-xs font-normal text-red-700 transition hover:border-red-700 hover:bg-red-50'
+											>
+												{qnty > 0 ? `В корзине: ${qnty}` : 'В корзину'}
+											</button>
+										</div>
+									</article>
+								)
+							})}
 						</div>
 					</>
 				)}
