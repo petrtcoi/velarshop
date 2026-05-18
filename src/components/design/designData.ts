@@ -229,4 +229,5 @@ export const designUsefulLinks = [
 	['/info/bezopasnost-radiatorov-dlya-detej', 'Безопасность радиаторов в доме'],
 	['/info/tsvet-interera-i-radiator', 'Как выбрать дизайнерский радиатор под стиль интерьера'],
 	['/info/kak-podobrat-radiatory-dlya-kuhni', 'Как подобрать радиаторы для кухни'],
+	['/info/chugunnye-retro-radiatory-v-interere', 'Ретро-радиаторы как альтернатива современным дизайн-радиаторам'],
 ] as const

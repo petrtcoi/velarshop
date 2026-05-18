@@ -173,6 +173,10 @@ const usefulArticles = [
 		href: '/info/teplootdacha-radiatora-delta-t-chto-eto',
 		title: 'Теплоотдача радиатора и ΔT — почему мощность меняется в реальных условиях',
 	},
+	{
+		href: '/info/trubchatye-radiatory-vs-panelnye',
+		title: 'Трубчатые радиаторы vs панельные батареи',
+	},
 ]
 
 const columnsFaqItems = [
