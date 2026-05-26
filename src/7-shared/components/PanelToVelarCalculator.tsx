@@ -1,4 +1,4 @@
-import { useMemo, useState } from "preact/hooks";
+import { useEffect, useMemo, useState } from "preact/hooks";
 
 type PanelType = "11" | "22" | "33";
 type PanelHeight = 300 | 400 | 500 | 600;
@@ -274,6 +274,15 @@ function PanelToVelarCalculator() {
   const [panelType, setPanelType] = useState<PanelType>("22");
   const [panelHeight, setPanelHeight] = useState<PanelHeight>(500);
   const [panelLength, setPanelLength] = useState<number>(1000);
+  const [isHydrated, setIsHydrated] = useState(false);
+
+  useEffect(() => {
+    setIsHydrated(true);
+  }, []);
+
+  const panelTypeOptions = isHydrated ? PANEL_TYPES : [panelType];
+  const panelHeightOptions = isHydrated ? PANEL_HEIGHTS : [panelHeight];
+  const panelLengthOptions = isHydrated ? PANEL_LENGTHS : [panelLength];
 
   const panelPower = useMemo(() => {
     return PANEL_POWER_TABLE_BY_TYPE[panelType][panelHeight][panelLength] || 0;
@@ -310,7 +319,7 @@ function PanelToVelarCalculator() {
               setPanelType((e.target as HTMLSelectElement).value as PanelType)
             }
           >
-            {PANEL_TYPES.map((type) => (
+            {panelTypeOptions.map((type) => (
               <option key={type} value={type}>
                 Royal Thermo тип {type}
               </option>
@@ -329,7 +338,7 @@ function PanelToVelarCalculator() {
               )
             }
           >
-            {PANEL_HEIGHTS.map((height) => (
+            {panelHeightOptions.map((height) => (
               <option key={height} value={height}>
                 {height}
               </option>
@@ -346,7 +355,7 @@ function PanelToVelarCalculator() {
               setPanelLength(parseInt((e.target as HTMLSelectElement).value))
             }
           >
-            {PANEL_LENGTHS.map((length) => (
+            {panelLengthOptions.map((length) => (
               <option key={length} value={length}>
                 {length}
               </option>

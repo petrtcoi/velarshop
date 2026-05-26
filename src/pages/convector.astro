@@ -2,9 +2,7 @@
 import Picture from '@shared/components/Picture.astro';
 import Layout from '@shared/layouts/Layout.astro'
 import HeroQuickConfigurator from '@widgets/pageMain/HeroQuickConfigurator'
-import type { ModelDetails } from '@widgets/pageMain/HeroQuickConfigurator'
 import { buildQuickConfiguratorModels } from '@widgets/pageMain/quickConfiguratorData'
-import { get as getHeroConfiguratorData } from './api/hero-configurator/[model].json'
 import JsonLd from '../components/seo/JsonLd.astro'
 import { getCategorySeo } from '../lib/seo/categorySeo'
 
@@ -64,16 +62,6 @@ const convectorConfiguratorModels = convectorModelOrder
 	.map(id => convectorConfiguratorMap.get(id))
 	.filter((model): model is NonNullable<typeof model> => Boolean(model))
 const defaultConvectorModelId = convectorConfiguratorModels.find(model => model.id === 'kwh')?.id ?? convectorConfiguratorModels[0]?.id ?? 'kwh'
-let initialConvectorDetails: ModelDetails | null = null
-
-try {
-	const response = await getHeroConfiguratorData({
-		params: { model: defaultConvectorModelId },
-	} as any)
-	if (response.ok) initialConvectorDetails = (await response.json()) as ModelDetails
-} catch (error) {
-	console.error('Failed to preload convector configurator model:', error)
-}
 
 function formatRub(value: number): string {
 	return `${value.toLocaleString('ru-RU')} ₽`
@@ -267,7 +255,6 @@ const seo = getCategorySeo({
 					client:load
 					models={convectorConfiguratorModels}
 					defaultModelId={defaultConvectorModelId}
-					initialDetails={initialConvectorDetails}
 					variant='category'
 					title='Быстрый выбор'
 				/>

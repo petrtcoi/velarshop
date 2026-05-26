@@ -3,13 +3,11 @@ import Picture from '@shared/components/Picture.astro';
 import { contacts } from "@shared/constants/contacts";
 import HeaderCartButton from "./HeaderCartButton";
 import HeaderQuickSearch from "./HeaderQuickSearch";
-import type { ModelDetails } from "@widgets/pageMain/HeroQuickConfigurator";
 import {
   buildQuickConfiguratorModels,
   getDefaultConfiguratorModel,
   resolveExistingModelId,
 } from "@widgets/pageMain/quickConfiguratorData";
-import { get as getHeroConfiguratorData } from "../../pages/api/hero-configurator/[model].json";
 
 interface Props {
   currentPath?: string;
@@ -23,18 +21,6 @@ const resolvedDefaultModelId = resolveExistingModelId(
   quickSearchModels,
   getDefaultConfiguratorModel(currentPath)
 );
-let quickSearchInitialDetails: ModelDetails | null = null;
-
-try {
-  const response = await getHeroConfiguratorData({
-    params: { model: resolvedDefaultModelId },
-  } as any);
-  if (response.ok) {
-    quickSearchInitialDetails = (await response.json()) as ModelDetails;
-  }
-} catch (error) {
-  console.error("Failed to preload header quick search model:", error);
-}
 
 type MobileIconName =
   | "columns"
@@ -275,7 +261,6 @@ const mobileIconSvg: Record<MobileIconName, string> = {
         client:load
         models={quickSearchModels}
         defaultModelId={resolvedDefaultModelId}
-        initialDetails={quickSearchInitialDetails}
       />
       <HeaderCartButton client:load />
     </div>
@@ -286,7 +271,6 @@ const mobileIconSvg: Record<MobileIconName, string> = {
         client:load
         models={quickSearchModels}
         defaultModelId={resolvedDefaultModelId}
-        initialDetails={quickSearchInitialDetails}
       />
       <HeaderCartButton client:load />
       <details class="mobile-menu">

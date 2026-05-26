@@ -9,6 +9,9 @@ function Select({ options, selected, onChange, id }: Props) {
   const handleChange = (e: any) => {
     onChange(e.target.value)
   }
+  const ssrSafeOptions = selected
+    ? options
+    : [{ id: "", label: "Выберите параметр" }]
 
   return (
     <select
@@ -18,7 +21,7 @@ function Select({ options, selected, onChange, id }: Props) {
       disabled={!selected}
       onChange={e => handleChange(e)}
     >
-      {options.map(o => (
+      {ssrSafeOptions.map(o => (
         <option
           value={o.id}
           role="option"
