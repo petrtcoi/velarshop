@@ -177,6 +177,10 @@ const usefulArticles = [
 		href: '/info/trubchatye-radiatory-vs-panelnye',
 		title: 'Трубчатые радиаторы vs панельные батареи',
 	},
+	{
+		href: '/info/trubchatyy-radiator-ili-panelnyy',
+		title: 'Трубчатый радиатор или панельный - что выбрать',
+	},
 ]
 
 const columnsFaqItems = [

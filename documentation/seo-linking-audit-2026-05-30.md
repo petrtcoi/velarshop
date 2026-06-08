@@ -35,6 +35,7 @@
 | /info/air-in-radiators/ | generic | да | — | есть | ok |
 | /info/bezopasnost-radiatorov-dlya-detej/ | safety | да | — | есть | ok |
 | /info/chernye-dizainerskie-radiatory-otopleniya/ | design | да | — | есть | ok |
+| /info/chto-postavit-pered-panoramnym-oknom/ | floor | да | — | есть | ok |
 | /info/chugunnye-retro-radiatory-v-interere/ | retro | да | — | есть | ok |
 | /info/cold/ | generic | да | — | есть | ok |
 | /info/colors/ | design | да | — | есть | ok |
@@ -49,6 +50,7 @@
 | /info/horizontal-designer-radiators/ | design | да | — | есть | ok |
 | /info/iron-cast-radiators/ | retro | да | — | есть | ok |
 | /info/ironcast/ | retro | да | — | есть | ok |
+| /info/nostalgia-ili-historic-chto-vybrat/ | retro | да | — | есть | ok |
 | /info/kak-chistit-trubchatyj-radiator-otopleniya/ | columns | да | — | есть | ok |
 | /info/kak-otlichit-kachestvennoe-lite-radiatorov/ | retro | да | — | есть | ok |
 | /info/kak-podobrat-radiator-pod-dizajn-kvartiry/ | generic | да | — | есть | ok |
@@ -76,6 +78,7 @@
 | /info/termostat-installation-errors/ | columns | да | — | есть | ok |
 | /info/termostats/ | columns | да | — | есть | ok |
 | /info/trubchatye-radiatory-vs-panelnye/ | columns | да | — | есть | ok |
+| /info/trubchatyy-radiator-ili-panelnyy/ | columns | да | — | есть | ok |
 | /info/tsvet-interera-i-radiator/ | design | да | — | есть | ok |
 | /info/tube-radiators-myths-and-facts/ | columns | да | — | есть | ok |
 | /info/tube-radiators/ | columns | да | — | есть | ok |

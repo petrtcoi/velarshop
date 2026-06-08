@@ -58,9 +58,9 @@ const defaultRetroModelId = retroConfiguratorModels.find(model => model.id === '
 let initialRetroDetails: ModelDetails | null = null
 
 try {
-	const response = await getHeroConfiguratorData({
+	const response = (await getHeroConfiguratorData({
 		params: { model: defaultRetroModelId },
-	} as any)
+	} as any)) as Response
 	if (response.ok) initialRetroDetails = (await response.json()) as ModelDetails
 } catch (error) {
 	console.error('Failed to preload retro configurator model:', error)
@@ -154,6 +154,7 @@ const usefulLinks = [
 	['/info/tsvet-interera-i-radiator', 'Патина и цвета для ретро-радиаторов'],
 	['/info/restavratsiya-chugunnyh-radiatorov', 'Реставрация чугунных радиаторов'],
 	['/info/ironcast', 'Особенности чугунных радиаторов отопления'],
+	['/info/nostalgia-ili-historic-chto-vybrat', 'Nostalgia или Historic — что выбрать'],
 ]
 
 const faqItems = [
@@ -244,7 +245,7 @@ const seo = getCategorySeo({
 					{trustPoints.map(item => (
 						<div class='flex items-start gap-2.5'>
 							<span class='inline-flex h-5 w-5 shrink-0 items-center justify-center text-red-700' aria-hidden='true'>
-								<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='h-5 w-5' set:html={iconSvg[item.icon]} />
+								<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='h-5 w-5' set:html={iconSvg[item.icon as keyof typeof iconSvg]} />
 							</span>
 							<span>
 								<span class='block font-semibold leading-5 text-neutral-950'>{item.title}</span>
