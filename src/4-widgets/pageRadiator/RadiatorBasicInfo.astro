@@ -9,6 +9,7 @@ import SelectConnection from "@features/options/SelectConnection";
 import SelectIroncastColor from "@features/options/SelectIroncastColor";
 import SelectConvectorGrill from "@features/options/SelectConvectorGrill";
 import SelectColumnColor from "@features/options/SelectColumnColor"
+import SelectDesignColor from "@features/options/SelectDesignColor"
 import SelectColumnConnection from "@features/options/SelectColumnConnection"
 
 import LeftRightBlock4555 from "@shared/components/LeftRightBlock4555.astro";
@@ -60,6 +61,7 @@ const imagePath = getModelMainImagePath(model.slug, model.type === 'columns');
           />
         )
       }
+      {model.type === "design" && <SelectDesignColor client:load />}
       {model.type === "ironcast" && <SelectIroncastColor client:load />}
       {model.type === "convector" && <SelectConvectorGrill client:load />}
       {model.type === "columns" && <SelectColumnColor client:load/>}

@@ -162,7 +162,7 @@ const usefulArticles = [
 		title: 'Как правильно чистить трубчатый радиатор отопления',
 	},
 	{
-		href: '/info/raschet-sekciy-trubchatogo-radiatora-uglovaya-komnata',
+		href: '/info/raschet-radiatorov-dlya-uglovoy-komnaty',
 		title: 'Как правильно рассчитать количество секций трубчатого радиатора для угловой комнаты',
 	},
 	{

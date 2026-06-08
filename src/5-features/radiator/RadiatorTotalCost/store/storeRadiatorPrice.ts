@@ -3,6 +3,7 @@ import { computed } from 'nanostores'
 import { addonId } from '@features/options/SelectAddons'
 import { columnConn } from '@features/options/SelectColumnConnection'
 import { convectorGrill } from '@features/options/SelectConvectorGrill'
+import { designColorPriceMultiplicate } from '@features/options/SelectDesignColor'
 import { ironcastColorPricePerSection } from '@features/options/SelectIroncastColor'
 import { getConvectorGrillPrice } from '@shared/utils/getConvectorGrillPrice'
 
@@ -31,10 +32,14 @@ const getAddonCost = computed(
 	addonId => (radiator: RadiatorJson) => addonId ? parseInt(radiator[addonId as keyof RadiatorJson] || '0') : 0
 )
 
-const getColumnColorCostMultiplicate = computed(
-	columnColorPriceMultiplicate,
-	columnColorPriceMultiplicate => (model: ModelJson) =>
-		model.type === 'columns' || model.type === 'design' ? columnColorPriceMultiplicate : 1
+const getProfileColorCostMultiplicate = computed(
+	[columnColorPriceMultiplicate, designColorPriceMultiplicate],
+	(columnColorPriceMultiplicate, designColorPriceMultiplicate) => (model: ModelJson) =>
+		model.type === 'columns'
+			? columnColorPriceMultiplicate
+			: model.type === 'design'
+				? designColorPriceMultiplicate
+				: 1
 )
 
 const getColumnConnectionCost = computed(
@@ -43,11 +48,11 @@ const getColumnConnectionCost = computed(
 )
 
 const getRadiatorTotalCost = computed(
-	[getGrillCost, getIronCastCost, getAddonCost, columnConn, getColumnColorCostMultiplicate, getColumnConnectionCost],
-	(getGrillCost, getIronCastCost, getAddonCost, columnConn, getColumnColorCostMultiplicate, getColumnConnectionCost) =>
+	[getGrillCost, getIronCastCost, getAddonCost, columnConn, getProfileColorCostMultiplicate, getColumnConnectionCost],
+	(getGrillCost, getIronCastCost, getAddonCost, columnConn, getProfileColorCostMultiplicate, getColumnConnectionCost) =>
 		(model: ModelJson, radiator: RadiatorJson) =>
 			Math.round(
-				getColumnColorCostMultiplicate(model) *
+				getProfileColorCostMultiplicate(model) *
 					(parseInt(radiator.price) +
 						getGrillCost(model, radiator) +
 						getIronCastCost(model, radiator) +

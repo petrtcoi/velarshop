@@ -5,6 +5,7 @@ import ItemBasicInfo from "@widgets/pageItem/ItemBasicInfo.astro";
 import RalatedRadiators from "@widgets/pageItem/RelatedRadiators.astro";
 
 import { itemsJsonData } from "@entities/Item";
+import { getItemSeo } from "../../lib/seo/itemSeo";
 
 import type { ItemJson } from "@entities/Item";
 import type { RadiatorJson } from "@entities/Radiator";
@@ -23,14 +24,19 @@ export type Props = {
   relatedRadiators: RadiatorJson[];
 };
 const { item } = Astro.props as Props;
-
-const itemTitle = `Velar ${item.title}`;
-const metaTitle = `${itemTitle} купить в магазине VelarShop.ru`;
-const metaDescription = `Купить ${itemTitle} с доставкой по России. Помощь с подбором и консультация по совместимости.`;
+const seo = getItemSeo(item);
 ---
 
-<Layout title={metaTitle} description={metaDescription}>
-  <h1 class="text-2xl">{itemTitle}</h1>
+<Layout
+  title={seo.metaTitle}
+  description={seo.metaDescription}
+  canonicalUrl={seo.canonicalUrl}
+  breadcrumbs={seo.breadcrumbs}
+>
+  <Fragment slot='head'>
+    <script type='application/ld+json' set:html={JSON.stringify(seo.jsonLd)} />
+  </Fragment>
+  <h1 class="text-2xl">{seo.itemTitle}</h1>
   <ItemBasicInfo item={item} />
   <RalatedRadiators itemId={item.id} />
 </Layout>

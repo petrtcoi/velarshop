@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import Layout from "@shared/layouts/Layout.astro";
 import type { CollectionEntry } from "astro:content";
 import ArticleCta from "../../components/articles/ArticleCta.astro";
+import { buildArticleJsonLd } from "../../lib/seo/articleSeo";
 
 export async function getStaticPaths() {
   const articles = await getCollection("articles");
@@ -18,9 +19,20 @@ type Props = {
 
 const { article } = Astro.props as Props;
 const { Content } = await article.render();
-const { title, short_description, metaTitle, metaDescription } = article.data;
+const { title, short_description, metaTitle, metaDescription, thumbnail, datePublished, dateModified } = article.data;
 const allArticles = await getCollection("articles");
 const articleTitleBySlug = new Map(allArticles.map((entry) => [entry.slug, entry.data.title]));
+const siteOrigin = (Astro.site ?? new URL("https://velarshop.ru")).origin;
+const canonicalUrl = new URL(`/info/${article.slug}/`, `${siteOrigin}/`).toString();
+const articleImageUrl = thumbnail ? new URL(`/images/articles/${thumbnail}`, `${siteOrigin}/`).toString() : undefined;
+const articleJsonLd = buildArticleJsonLd({
+  title,
+  description: metaDescription || short_description,
+  canonicalUrl,
+  imageUrl: articleImageUrl,
+  datePublished,
+  dateModified,
+});
 
 type Topic = "safety" | "design" | "columns" | "convector" | "retro" | "generic";
 
@@ -377,9 +389,13 @@ const crumbs = [
 <Layout
   title={metaTitle || `${title} | VelarShop.ru`}
   description={metaDescription || short_description}
+  canonicalUrl={canonicalUrl}
   breadcrumbs={crumbs}
   paddings={false}
 >
+  <Fragment slot='head'>
+    <script type='application/ld+json' set:html={JSON.stringify(articleJsonLd)} />
+  </Fragment>
   <div class='article-page article-page--info'>
     <header class='article-hero'>
       <div class='article-shell article-shell--reading'>

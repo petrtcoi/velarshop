@@ -1,0 +1,53 @@
+---
+import Layout from '@shared/layouts/Layout.astro'
+import Picture from '@shared/components/Picture.astro'
+import { itemsJsonData } from '@entities/Item'
+
+const crumbs = [
+	{ title: 'Главная', url: '/' },
+	{ title: 'Комплектующие Velar', url: '/item' },
+]
+---
+
+<Layout
+	title='Комплектующие Velar — термостаты, блоки и элементы'
+	description='Комплектующие Velar: термостаты, блоки регулирования и угловые элементы. Подбор по совместимости с моделями радиаторов и конвекторов.'
+	breadcrumbs={crumbs}
+>
+	<section class='mt-4 md:mt-6'>
+		<h1 class='text-2xl font-semibold text-neutral-900 md:text-3xl'>Комплектующие Velar</h1>
+		<p class='mt-3 max-w-3xl text-sm font-normal leading-6 text-neutral-700 md:text-base'>
+			Термостаты, блоки регулирования и дополнительные элементы для радиаторов и конвекторов Velar.
+			Выберите нужную позицию и проверьте совместимость с моделью.
+		</p>
+	</section>
+
+	<section class='mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
+		{itemsJsonData.map((item) => {
+			const title = `${item.prefix} Velar ${item.title}`
+			const imagePath = `/images/items/${item.image_slug || 'empty'}/main.jpg`
+			return (
+				<article class='rounded-xl border border-neutral-200 p-4'>
+					<a href={`/item/${item.slug}`} class='group block'>
+						<Picture
+							src={imagePath}
+							alt={title}
+							title={title}
+							loading='lazy'
+							aspectRatio='1:1'
+							widths={[360, 540, 720]}
+							width={360}
+							height={360}
+							sizes='(max-width: 768px) 100vw, 360px'
+							class='rounded-lg transition-opacity duration-300 group-hover:opacity-90'
+						/>
+						<div class='mt-3 text-sm font-medium text-neutral-900'>{title}</div>
+						<div class='mt-1 text-sm font-normal text-neutral-600'>
+							Цена: {Number.parseInt(item.price, 10).toLocaleString('ru-RU')} ₽
+						</div>
+					</a>
+				</article>
+			)
+		})}
+	</section>
+</Layout>

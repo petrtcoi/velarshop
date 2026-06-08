@@ -18,6 +18,8 @@ const articleSchema = defineCollection({
     sortRank: z.number(),
     metaTitle: z.string().optional(),
     metaDescription: z.string().optional(),
+    datePublished: z.string().optional(),
+    dateModified: z.string().optional(),
   }),
 });
 

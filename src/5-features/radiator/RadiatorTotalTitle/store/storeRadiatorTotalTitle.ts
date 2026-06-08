@@ -5,6 +5,7 @@ import type { RadiatorJson } from "@entities/Radiator"
 import { radiatorConnPostfix } from "@features/options/SelectConnection"
 import { columnConnPostfix } from "@features/options/SelectColumnConnection"
 import { columnColorPostfix } from "@features/options/SelectColumnColor"
+import { designColorPostfix } from "@features/options/SelectDesignColor"
 import { convectorGrillPostfix } from "@features/options/SelectConvectorGrill"
 import { ironcastColorPostfix } from "@features/options/SelectIroncastColor"
 import { getRadiatorTitle } from "@shared/utils/getRadiatorTitle"
@@ -16,6 +17,7 @@ const postfix = computed(
     ironcastColorPostfix,
     columnConnPostfix,
     columnColorPostfix,
+    designColorPostfix,
     convectorGrillPostfix,
   ],
   (
@@ -23,11 +25,12 @@ const postfix = computed(
       ironcastColorPostfix,
       columnConnPostfix,
       columnColorPostfix,
+      designColorPostfix,
       convectorGrillPostfix
     ) =>
     (model: ModelJson) => {
       return model.type === "design"
-        ? `${radiatorConnPostfix}${columnColorPostfix}`
+        ? `${radiatorConnPostfix}${designColorPostfix}`
         : model.type === "floor"
         ? radiatorConnPostfix
         : model.type === "ironcast"

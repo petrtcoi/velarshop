@@ -9,6 +9,7 @@ import SelectAddon from '@features/options/SelectAddons'
 import SelectColumnColor from '@features/options/SelectColumnColor'
 import SelectColumnConnection from '@features/options/SelectColumnConnection'
 import SelectConvectorGrill from '@features/options/SelectConvectorGrill'
+import SelectDesignColor from '@features/options/SelectDesignColor'
 import SelectConnection from '@features/options/SelectConnection'
 import SelectIroncastColor from '@features/options/SelectIroncastColor'
 import { addToCart, storeShoppingCart } from '@features/order/ShoppingCart'
@@ -197,7 +198,7 @@ function RadiatorList(props: Props) {
 				{hasConfiguratorOptions && (
 					<div class='mb-4 grid gap-3 border-y border-neutral-200 py-4 md:grid-cols-2 lg:grid-cols-3'>
 						{(model.type === 'design' || model.type === 'floor') && <SelectConnection model={model} />}
-						{model.type === 'design' && <SelectColumnColor />}
+						{model.type === 'design' && <SelectDesignColor />}
 						{model.type === 'columns' && <SelectColumnConnection model={model} />}
 						{model.type === 'columns' && <SelectColumnColor />}
 						{model.type === 'ironcast' && <SelectIroncastColor />}

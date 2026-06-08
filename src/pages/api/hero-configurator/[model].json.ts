@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro'
 
 import { columnColors } from '@entities/ColumnsColor'
+import { designColors } from '@entities/DesignColor'
 import { convectorGrills } from '@entities/ConvectorGrill'
 import { ironcastColors } from '@entities/IroncastColor'
 import { modelsJsonData } from '@entities/Model'
@@ -69,7 +70,8 @@ export const get: APIRoute = ({ params }) => {
 	const addon = model.type === 'design' && model.orientation === 'horizontal'
 		? addonRadiatorLegs
 		: undefined
-	const usesColumnColorPalette = model.type === 'columns' || model.type === 'design'
+	const usesColumnColorPalette = model.type === 'columns'
+	const usesDesignColorPalette = model.type === 'design'
 
 	return json({
 		model: {
@@ -89,7 +91,7 @@ export const get: APIRoute = ({ params }) => {
 			sections: model.type === 'columns' || model.type === 'ironcast' || (model.type === 'design' && sections.length > 1),
 			tubes: model.type === 'columns',
 			connection: connections.length > 0,
-			color: usesColumnColorPalette || model.type === 'ironcast',
+			color: usesColumnColorPalette || usesDesignColorPalette || model.type === 'ironcast',
 			grill: model.type === 'convector',
 			addon: Boolean(addon),
 		},
@@ -111,6 +113,12 @@ export const get: APIRoute = ({ params }) => {
 						label: color.title,
 						multiplicate: color.multiplicate,
 					}))
+				: usesDesignColorPalette
+					? designColors.map(color => ({
+							id: color.id,
+							label: color.title,
+							multiplicate: color.multiplicate,
+						}))
 				: model.type === 'ironcast'
 					? [
 							baseIroncastColor,
