@@ -158,6 +158,10 @@ const usefulArticles = [
 		title: 'Стальные трубчатые радиаторы: полное руководство по выбору и установке',
 	},
 	{
+		href: '/info/2-3-4-trubchatye-radiatory-chto-vybrat',
+		title: '2-, 3- и 4-трубчатые радиаторы: что выбрать',
+	},
+	{
 		href: '/info/kak-chistit-trubchatyj-radiator-otopleniya',
 		title: 'Как правильно чистить трубчатый радиатор отопления',
 	},
