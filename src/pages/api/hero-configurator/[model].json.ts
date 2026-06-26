@@ -54,7 +54,15 @@ export const get: APIRoute = ({ params }) => {
 	const tubes = model.type === 'columns' ? [model.id.slice(0, 1)] : []
 
 	const { filterByHeight, filterByWidth, filterByLength } = getModelFilters(model)
-	const hasLengthFilter = model.type === 'floor' || filterByLength || (model.type === 'convector' && lengths.length > 0)
+	// Design radiators need two size axes to pin down a single variant.
+	// Vertical models vary by height × sections (length tracks sections), so we show sections.
+	// Horizontal and non-oriented models vary by height × length (sections tracks height), so we show length.
+	const isVerticalDesign = model.type === 'design' && model.orientation === 'vertical'
+	const hasLengthFilter =
+		model.type === 'floor' ||
+		filterByLength ||
+		(model.type === 'convector' && lengths.length > 0) ||
+		(model.type === 'design' && !isVerticalDesign && lengths.length > 1)
 	const initialFilteredRadiators = filterRadiators({
 		radiators,
 		selectedHeight: filterByHeight ? heights[0] ?? ALL : ALL,
@@ -85,10 +93,10 @@ export const get: APIRoute = ({ params }) => {
 			href: getModelSlug(model),
 		},
 		filters: {
-			height: model.type === 'columns' ? heights.length > 0 : filterByHeight,
+			height: model.type === 'columns' ? heights.length > 0 : model.type === 'design' ? heights.length > 1 : filterByHeight,
 			width: model.type === 'convector' ? widths.length > 0 : filterByWidth,
 			length: hasLengthFilter,
-			sections: model.type === 'columns' || model.type === 'ironcast' || (model.type === 'design' && sections.length > 1),
+			sections: model.type === 'columns' || model.type === 'ironcast' || (isVerticalDesign && sections.length > 1),
 			tubes: model.type === 'columns',
 			connection: connections.length > 0,
 			color: usesColumnColorPalette || usesDesignColorPalette || model.type === 'ironcast',
