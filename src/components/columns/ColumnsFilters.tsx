@@ -31,6 +31,22 @@ const tubeOptions = [
 	{ value: '4', label: '4' },
 ]
 
+type QuickTab = {
+	label: string
+	field?: 'height' | 'tubes'
+	value?: string
+}
+
+const quickTabs: QuickTab[] = [
+	{ label: 'Все' },
+	{ label: 'Под окно', field: 'height', value: 'low' },
+	{ label: 'Стандартные', field: 'height', value: 'middle' },
+	{ label: 'Высокие', field: 'height', value: 'high' },
+	{ label: '2 трубки', field: 'tubes', value: '2' },
+	{ label: '3 трубки', field: 'tubes', value: '3' },
+	{ label: '4 трубки', field: 'tubes', value: '4' },
+]
+
 function matchesHeight(height: number, value: string): boolean {
 	if (value === 'all') return true
 	if (value === 'low') return height <= 400
@@ -109,8 +125,80 @@ export default function ColumnsFilters() {
 		return () => document.removeEventListener('click', onClick)
 	}, [])
 
+	// Внешние блоки страницы (например, «что выбрать» по трубкам) могут
+	// выставлять фильтр через событие columns:setFilter.
+	useEffect(() => {
+		const onSetFilter = (event: Event) => {
+			const detail = (event as CustomEvent).detail as
+				| {
+						field?: string
+						value?: string
+						filters?: Partial<FilterState>
+						modelIds?: string[]
+				  }
+				| undefined
+			if (!detail) return
+			setWasChanged(true)
+			setVisibleLimit(PAGE_SIZE)
+			if (Array.isArray(detail.modelIds) && detail.modelIds.length > 0) {
+				window.requestAnimationFrame(() => {
+					const cards = document.querySelectorAll<HTMLElement>('[data-model-id]')
+					cards.forEach(card => card.classList.remove('bg-red-50', 'ring-1', 'ring-inset', 'ring-red-200'))
+					detail.modelIds?.forEach(id => {
+						const card = document.querySelector<HTMLElement>(`[data-model-id="${id}"]`)
+						if (!card) return
+						card.classList.add('bg-red-50', 'ring-1', 'ring-inset', 'ring-red-200')
+						window.setTimeout(() => {
+							card.classList.remove('bg-red-50', 'ring-1', 'ring-inset', 'ring-red-200')
+						}, 2600)
+					})
+				})
+			}
+
+			if (detail.filters) {
+				setFilters({ ...initialState, ...detail.filters })
+				return
+			}
+			if (!detail.field || !detail.value) return
+			if (detail.field !== 'height' && detail.field !== 'tubes') return
+			setFilters(prev => ({ ...prev, [detail.field as 'height' | 'tubes']: detail.value as string }))
+		}
+
+		window.addEventListener('columns:setFilter', onSetFilter)
+		return () => window.removeEventListener('columns:setFilter', onSetFilter)
+	}, [])
+
+	const setQuickTab = (tab: QuickTab) => {
+		setWasChanged(true)
+		setVisibleLimit(PAGE_SIZE)
+		if (!tab.field || !tab.value) {
+			setFilters(initialState)
+			return
+		}
+		setFilters(prev => ({
+			...prev,
+			[tab.field]: prev[tab.field] === tab.value ? 'all' : tab.value,
+		}))
+	}
+
 	return (
 			<div class='rounded-[20px] border border-neutral-200 bg-white p-4 md:p-5'>
+				<div class='mb-4 border-b border-neutral-100 pb-4'>
+					<div class='text-xs font-medium uppercase tracking-wide text-neutral-500'>Быстрый выбор</div>
+					<div class='-mx-4 mt-2 flex gap-2 overflow-x-auto px-4 pb-1 md:mx-0 md:flex-wrap md:overflow-visible md:px-0 md:pb-0'>
+						{quickTabs.map(tab => (
+							<button
+								type='button'
+								aria-pressed={tab.field ? filters[tab.field] === tab.value : !hasActiveFilters}
+								class={filterButtonClass(tab.field ? filters[tab.field] === tab.value : !hasActiveFilters)}
+								style={{ cursor: 'pointer' }}
+								onClick={() => setQuickTab(tab)}
+							>
+								{tab.label}
+							</button>
+						))}
+					</div>
+				</div>
 				<div class='grid gap-4 md:grid-cols-[1fr_auto] md:items-end'>
 					<div class='space-y-3'>
 						<div class='grid gap-2 md:grid-cols-[140px_1fr] md:items-center'>

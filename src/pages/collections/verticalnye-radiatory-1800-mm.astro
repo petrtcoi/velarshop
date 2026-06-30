@@ -1,0 +1,1173 @@
+---
+import Picture from '@shared/components/Picture.astro'
+import Layout from '@shared/layouts/Layout.astro'
+import { modelsJsonData } from '@entities/Model'
+import { radiatorsJsonData } from '@entities/Radiator'
+import { getModelSlug } from '@shared/utils/getModelSlug'
+import { getModelMainImagePath } from '@shared/utils/getModelMainImagePath'
+import JsonLd from '../../components/seo/JsonLd.astro'
+import { getCategorySeo } from '../../lib/seo/categorySeo'
+
+type FilterKey =
+	| 'all'
+	| 'columns'
+	| 'design'
+	| 'tube-2'
+	| 'tube-3'
+	| 'tube-4'
+	| 'profile-flat'
+	| 'profile-square'
+	| 'profile-round'
+	| 'profile-oval'
+
+type CollectionModel = {
+	id: string
+	name: string
+	title: string
+	href: string
+	image: string
+	type: 'columns' | 'design'
+	typeLabel: string
+	subtitleLabel: string
+	heightLabel: string
+	profileLabel: string
+	powerLabel: string
+	connectionLabel: string
+	priceFrom: number
+	priceLabel: string
+	whenChoose: string
+	filters: FilterKey[]
+}
+
+const COLLECTION_URL = '/collections/verticalnye-radiatory-1800-mm'
+const HERO_IMAGE = '/images/design/hero/vertical-design-radiator.jpg'
+
+const breadcrumbs = [
+	{ title: 'Главная', url: '/' },
+	{ title: 'Подборки', url: '/collections' },
+	{ title: 'Вертикальные радиаторы 1800 мм', url: COLLECTION_URL },
+]
+
+const designMeta: Record<
+	string,
+	{ profile: string; filter: FilterKey; shortType: string; whenChoose: string }
+> = {
+	p30v: {
+		profile: 'плоский профиль',
+		filter: 'profile-flat',
+		shortType: 'спокойный минимализм',
+		whenChoose: 'если нужен спокойный вертикальный радиатор в интерьер без лишней графики.',
+	},
+	p60v: {
+		profile: 'плоский профиль',
+		filter: 'profile-flat',
+		shortType: 'плоский акцент',
+		whenChoose: 'если нужен более широкий плоский профиль и спокойная архитектурная форма.',
+	},
+	q40v: {
+		profile: 'квадрат 40x40',
+		filter: 'profile-square',
+		shortType: 'строгая геометрия',
+		whenChoose: 'если нужна строгая квадратная геометрия и сравнительно легкий силуэт.',
+	},
+	q60v: {
+		profile: 'квадрат 60x60',
+		filter: 'profile-square',
+		shortType: 'крупная квадратная форма',
+		whenChoose: 'если радиатор должен читаться в интерьере заметнее, чем Q40.',
+	},
+	q80v: {
+		profile: 'квадрат 80x80',
+		filter: 'profile-square',
+		shortType: 'выразительный квадратный акцент',
+		whenChoose: 'если нужен крупный вертикальный акцент и достаточно визуального пространства.',
+	},
+	r32v: {
+		profile: 'круг 32 мм',
+		filter: 'profile-round',
+		shortType: 'мягкий круглый силуэт',
+		whenChoose: 'если нужен мягкий жилой силуэт для прихожей, спальни или гостиной.',
+	},
+	r42v: {
+		profile: 'круг 42 мм',
+		filter: 'profile-round',
+		shortType: 'более плотный круглый профиль',
+		whenChoose: 'если R32 выглядит слишком тонко, но крупный профиль пока не нужен.',
+	},
+	r89v: {
+		profile: 'круг 89 мм',
+		filter: 'profile-round',
+		shortType: 'крупный круглый акцент',
+		whenChoose: 'если радиатор должен быть заметной частью композиции.',
+	},
+	sv: {
+		profile: 'овальный профиль',
+		filter: 'profile-oval',
+		shortType: 'плавная овальная форма',
+		whenChoose: 'если хочется уйти от плоской, квадратной или круглой геометрии.',
+	},
+	spv: {
+		profile: 'овальная секция',
+		filter: 'profile-oval',
+		shortType: 'спокойная овальная вертикаль',
+		whenChoose: 'если нужен аккуратный вертикальный радиатор с мягкой формой.',
+	},
+	rt1v: {
+		profile: 'круглый однорядный',
+		filter: 'profile-round',
+		shortType: 'легкий вертикальный акцент',
+		whenChoose: 'если нужен акцентный вертикальный радиатор с более легкой глубиной.',
+	},
+	rt2v: {
+		profile: 'круглый двухрядный',
+		filter: 'profile-round',
+		shortType: 'мощный вертикальный акцент',
+		whenChoose: 'если нужен вертикальный акцент с большей теплоотдачей.',
+	},
+	qt1v: {
+		profile: 'квадратный однорядный',
+		filter: 'profile-square',
+		shortType: 'узкая строгая вертикаль',
+		whenChoose: 'если нужна аккуратная квадратная вертикаль для минималистичного интерьера.',
+	},
+	qt2v: {
+		profile: 'квадратный двухрядный',
+		filter: 'profile-square',
+		shortType: 'мощная квадратная вертикаль',
+		whenChoose: 'если нужен строгий вертикальный радиатор с увеличенной теплоотдачей.',
+	},
+}
+
+const columnMeta: Record<
+	string,
+	{ profile: string; filter: FilterKey; shortType: string; whenChoose: string }
+> = {
+	2180: {
+		profile: '2 трубки',
+		filter: 'tube-2',
+		shortType: 'узкая трубчатая модель',
+		whenChoose: 'если нужен высокий и сравнительно неглубокий трубчатый радиатор для узкой стены.',
+	},
+	3180: {
+		profile: '3 трубки',
+		filter: 'tube-3',
+		shortType: 'универсальный баланс мощности',
+		whenChoose: 'если нужен универсальный высокий радиатор с более высокой теплоотдачей.',
+	},
+	4180: {
+		profile: '4 трубки',
+		filter: 'tube-4',
+		shortType: 'максимальная мощность',
+		whenChoose: 'если нужна максимальная мощность при той же высоте 1800 мм.',
+	},
+}
+
+const heroAdvantages = [
+	{
+		title: 'Высота около 180 см',
+		text: 'Для узких стен и вертикальных акцентов.',
+	},
+	{
+		title: 'Подбор мощности',
+		text: 'Рассчитаем секции под помещение и систему отопления.',
+	},
+	{
+		title: 'Цвета RAL',
+		text: 'Можно выбрать белый, черный, графит или цвет стены.',
+	},
+	{
+		title: 'Под заказ',
+		text: 'Изготовление под нужные параметры и подключение.',
+	},
+]
+
+const quickChoiceCards = [
+	{
+		title: 'Для узкой стены',
+		text: 'Когда нужен высокий радиатор в простенке или рядом с дверью.',
+		cta: 'Смотреть модели',
+		href: '#vertical-1800-popular',
+	},
+	{
+		title: 'Для гостиной',
+		text: 'Вертикальный радиатор как аккуратный интерьерный акцент.',
+		cta: 'Смотреть модели',
+		href: '#vertical-1800-table',
+		filter: 'design' as FilterKey,
+	},
+	{
+		title: 'Для прихожей',
+		text: 'Когда мало места по ширине, но есть свободная вертикаль.',
+		cta: 'Смотреть модели',
+		href: '#vertical-1800-table',
+		filter: 'tube-2' as FilterKey,
+	},
+	{
+		title: 'В цвет стены',
+		text: 'Профильные и трубчатые модели под окраску RAL.',
+		cta: 'Смотреть варианты',
+		href: '#vertical-1800-table',
+		filter: 'design' as FilterKey,
+	},
+	{
+		title: 'Максимально компактно',
+		text: 'Модели, которые занимают минимум ширины.',
+		cta: 'Подобрать',
+		href: '#vertical-1800-table',
+		filter: 'profile-flat' as FilterKey,
+	},
+	{
+		title: 'Нужен расчет мощности',
+		text: 'Если важно не только попасть в размер, но и закрыть теплопотери.',
+		cta: 'Получить расчет',
+		href: '/request',
+	},
+] as const
+
+const whoFits = [
+	'есть узкая стена или простенок;',
+	'нужно сохранить место под окном;',
+	'радиатор должен быть высоким интерьерным акцентом;',
+	'нужна модель в цвет RAL;',
+	'хочется заменить обычную батарею на более аккуратное решение;',
+	'нужно подобрать мощность под конкретную комнату;',
+	'важно заранее согласовать подключение и монтаж.',
+]
+
+const whoDoesNotFit = [
+	{ href: '/columns', text: 'если нужен низкий радиатор под окно - лучше смотреть низкие трубчатые модели;' },
+	{ href: '/floor', text: 'если отопление нужно поставить перед панорамным окном без стены - лучше смотреть напольные радиаторы;' },
+	{ href: '/convector', text: 'если отопление нужно скрыть в полу - лучше смотреть внутрипольные конвекторы;' },
+	{ href: '/retro', text: 'если нужен чугун, патина и исторический стиль - лучше смотреть ретро-радиаторы;' },
+	{ href: '/columns', text: 'если нужен самый бюджетный типовой прибор, высокий профильный радиатор может быть избыточным.' },
+]
+
+const chooseSections = [
+	[
+		'По типу радиатора',
+		'Если нужен спокойный стальной секционный радиатор, начинайте с 2180, 3180 и 4180. Если радиатор должен быть частью интерьера, смотрите вертикальные профильные модели P, Q, R, S, RT и QT.',
+	],
+	[
+		'По мощности',
+		'Мощность зависит не только от высоты. Важны глубина, количество труб, длина, площадь комнаты, остекление, высота потолка и температурный режим системы.',
+	],
+	[
+		'По глубине',
+		'2-трубчатые модели и часть вертикальных профильных радиаторов меньше выступают от стены. 3- и 4-трубчатые модели дают больше мощности, но требуют больше глубины.',
+	],
+	[
+		'По подключению',
+		'Если трубы уже выведены, радиатор нужно подбирать под существующую схему. Если ремонт еще идет, лучше заранее согласовать нижнее или боковое подключение с менеджером.',
+	],
+	[
+		'По цвету',
+		'Вертикальный радиатор можно сделать в цвет стены, мебели, оконных рам или использовать как акцент. Для точного цвета лучше сразу указать RAL-номер.',
+	],
+	[
+		'По ТЭНу',
+		'Возможность установки ТЭНа зависит от модели и подключения. Не стоит обещать электрическое исполнение заранее для всех вертикальных радиаторов около 180 см.',
+	],
+] as const
+
+const faqItems = [
+	{
+		question: 'Какой вертикальный радиатор 1800 мм выбрать?',
+		answer:
+			'Если нужен спокойный стальной радиатор, начните с трубчатых моделей 2180, 3180 и 4180. Если радиатор должен быть частью интерьера, смотрите вертикальные профильные модели P30 V, Q40 V, R32 V и другие серии Velar.',
+	},
+	{
+		question: 'Чем отличаются 2180, 3180 и 4180?',
+		answer:
+			'2180 - 2-трубчатая модель с меньшей глубиной, 3180 - универсальный 3-трубчатый вариант, 4180 - более мощный 4-трубчатый радиатор. Все они имеют высоту 1800 мм, но отличаются глубиной и теплоотдачей.',
+	},
+	{
+		question: 'Подойдет ли радиатор 1800 мм для квартиры?',
+		answer:
+			'Да, если есть подходящее место установки, корректное подключение и нужная мощность. Перед заказом важно проверить рабочее давление, схему подключения, размеры стены и возможность монтажа.',
+	},
+	{
+		question: 'Можно ли сделать нижнее подключение?',
+		answer:
+			'Возможность нижнего подключения зависит от модели и конфигурации. Если трубы уже выведены, отправьте фото и размеры - менеджер проверит, какие модели можно подключить без переделки.',
+	},
+	{
+		question: 'Можно ли заказать цвет RAL?',
+		answer:
+			'Да, многие модели Velar можно заказать в цвет RAL. Радиатор можно сделать в цвет стены, мебели, оконных рам или использовать как контрастный акцент.',
+	},
+	{
+		question: 'Можно ли поставить ТЭН?',
+		answer:
+			'Возможность установки ТЭНа зависит от модели, подключения и задачи. Не все вертикальные радиаторы около 180 см подходят для электрического исполнения, поэтому это нужно согласовать до заказа.',
+	},
+	{
+		question: 'Что нужно отправить для расчета?',
+		answer:
+			'Для расчета нужны город, размеры стены, фото места установки, площадь помещения, высота потолка, желаемая модель, цвет, тип подключения и параметры системы отопления. Если есть план или дизайн-проект, приложите его к заявке.',
+	},
+]
+
+const usefulLinks = [
+	{ href: '/columns', label: 'Все трубчатые радиаторы' },
+	{ href: '/design', label: 'Все профильные радиаторы' },
+	{ href: '/design/vertikalnye', label: 'Вертикальные профильные радиаторы' },
+	{ href: '/info/vertical-designer-radiators', label: 'Как работают вертикальные радиаторы' },
+	{ href: '/info/2-3-4-trubchatye-radiatory-chto-vybrat', label: '2-, 3- и 4-трубчатые радиаторы: что выбрать' },
+	{ href: '/info/tsvet-interera-i-radiator', label: 'Как подобрать радиатор в цвет интерьера' },
+]
+
+function toNumber(value?: string): number {
+	if (!value) return 0
+	const parsed = Number.parseFloat(value)
+	return Number.isFinite(parsed) ? parsed : 0
+}
+
+function normalizeModelName(name: string): string {
+	return name.replace(/([A-Za-zА-Яа-я])\s+(\d+)/g, '$1$2').replace(/\s+/g, ' ').trim()
+}
+
+function resolveConnectionText(connections: string): string {
+	const values = connections.split(',').map(item => item.trim()).filter(Boolean)
+	const labels: string[] = []
+
+	if (values.includes('lat')) labels.push('боковое')
+	if (values.some(value => ['l50', 'r50', '050'].includes(value))) labels.push('нижнее')
+	if (values.includes('lr')) labels.push('по схеме модели')
+
+	return labels.length ? labels.join(' / ') : 'уточняйте'
+}
+
+function buildModelCollectionItem(modelId: string): CollectionModel {
+	const model = modelsJsonData.find(item => item.id === modelId)
+	if (!model) throw new Error(`Model not found: ${modelId}`)
+
+	const radiators = radiatorsJsonData.filter(item => item.model_id === model.id)
+	const prices = radiators.map(item => toNumber(item.price)).filter(Boolean)
+	const powerValues = radiators.map(item => toNumber(item.dt60)).filter(Boolean)
+	const heights = [...new Set(radiators.map(item => toNumber(item.height)).filter(Boolean))].sort((a, b) => a - b)
+	const minHeight = heights[0] ?? 0
+	const maxHeight = heights[heights.length - 1] ?? 0
+	const minPrice = prices.length ? Math.min(...prices) : 0
+	const minPower = powerValues.length ? Math.min(...powerValues) : 0
+	const maxPower = powerValues.length ? Math.max(...powerValues) : 0
+	const isColumns = model.type === 'columns'
+	const meta = isColumns ? columnMeta[model.id] : designMeta[model.id]
+	const name = normalizeModelName(model.name)
+	const image = getModelMainImagePath(model.slug, isColumns)
+	const powerLabel =
+		minPower > 0 && maxPower > 0
+			? minPower === maxPower
+				? `${Math.round(minPower)} Вт`
+				: `${Math.round(minPower)}-${Math.round(maxPower)} Вт`
+			: 'по расчету'
+	const heightLabel = isColumns
+		? `${Math.round(maxHeight)} мм`
+		: minHeight > 0 && maxHeight > 0
+			? `${Math.round(minHeight)}-${Math.round(maxHeight)} мм`
+			: 'около 180 см'
+	const typeLabel = isColumns ? 'Трубчатый' : 'Профильный'
+
+	return {
+		id: model.id,
+		name,
+		title: `Velar ${name}`,
+		href: getModelSlug(model),
+		image,
+		type: isColumns ? 'columns' : 'design',
+		typeLabel,
+		subtitleLabel: `${typeLabel} · ${meta?.profile ?? model.short_comment}`,
+		heightLabel,
+		profileLabel: meta?.profile ?? model.short_comment,
+		powerLabel,
+		connectionLabel: resolveConnectionText(model.connections),
+		priceFrom: minPrice,
+		priceLabel: minPrice > 0 ? `от ${minPrice.toLocaleString('ru-RU')} ₽` : 'уточняйте',
+		whenChoose: meta?.whenChoose ?? model.short_comment,
+		filters: isColumns ? ['columns', meta.filter] : ['design', meta.filter],
+	}
+}
+
+const columnModels = ['2180', '3180', '4180'].map(buildModelCollectionItem)
+const designModels = [
+	'p30v',
+	'p60v',
+	'q40v',
+	'q60v',
+	'q80v',
+	'r32v',
+	'r42v',
+	'r89v',
+	'sv',
+	'spv',
+	'rt1v',
+	'rt2v',
+	'qt1v',
+	'qt2v',
+].map(buildModelCollectionItem)
+
+const allModels = [...columnModels, ...designModels]
+const modelById = new Map(allModels.map(item => [item.id, item]))
+
+const popularModels = ['2180', '3180', '4180', 'p30v', 'q40v', 'r32v']
+	.map(id => modelById.get(id))
+	.filter((item): item is CollectionModel => Boolean(item))
+
+const seo = getCategorySeo({
+	category: {
+		slug: 'verticalnye-radiatory-1800-mm',
+		url: COLLECTION_URL,
+		name: 'Вертикальные радиаторы 1800 мм',
+		h1: 'Вертикальные радиаторы 1800 мм',
+		seoTitle: 'Вертикальные радиаторы 1800 мм Velar - трубчатые и профильные радиаторы',
+		seoDescription:
+			'Вертикальные радиаторы Velar высотой 1800 мм и около 180 см: трубчатые 2180, 3180, 4180 и профильные модели P, Q, R. Расчет, RAL, доставка.',
+		ogTitle: 'Вертикальные радиаторы 1800 мм Velar',
+		ogDescription:
+			'Подборка вертикальных радиаторов Velar 1800 мм и около 180 см: трубчатые и профильные модели с расчетом, цветами RAL и доставкой по России.',
+		ogImage: HERO_IMAGE,
+		ogImageAlt: 'Вертикальный радиатор Velar 1800 мм',
+		breadcrumbs,
+		itemListName: 'Вертикальные радиаторы Velar 1800 мм и около 180 см',
+		products: allModels.map(model => ({
+			name: model.title,
+			url: model.href,
+		})),
+		productOffers: popularModels.map(model => ({
+			name: model.title,
+			url: model.href,
+			image: model.image,
+			category: model.typeLabel,
+			description: model.whenChoose,
+			lowPrice: model.priceFrom,
+			availability: 'https://schema.org/PreOrder',
+		})),
+		faq: faqItems,
+	},
+})
+---
+
+<Layout
+	title={seo.title}
+	description={seo.description}
+	canonicalUrl={seo.canonicalUrl}
+	robots={seo.robots}
+	ogType='website'
+	ogTitle={seo.ogTitle}
+	ogDescription={seo.ogDescription}
+	ogUrl={seo.canonicalUrl}
+	ogImageUrl={seo.ogImage}
+	ogImageAlt={seo.ogImageAlt}
+	twitterCard='summary_large_image'
+	twitterTitle={seo.twitterTitle}
+	twitterDescription={seo.twitterDescription}
+	twitterImage={seo.twitterImage}
+	twitterImageAlt={seo.twitterImageAlt}
+	breadcrumbs={breadcrumbs}
+	disableBreadcrumbJsonLd={true}
+	paddings={false}
+>
+	<JsonLd data={seo.jsonLd} />
+
+	<section class='border-b border-neutral-200 bg-white py-8 md:py-12 xl:py-16'>
+		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,1.65fr)_minmax(280px,0.95fr)] lg:items-center xl:px-8'>
+			<div>
+				<h1 class='max-w-4xl text-[34px] font-semibold leading-[1.04] tracking-tight text-neutral-950 md:text-[44px] xl:text-[58px]'>
+					Вертикальные радиаторы 1800 мм
+				</h1>
+				<p class='mt-5 max-w-4xl text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>
+					Подборка высоких радиаторов около 180 см для узких стен, простенков, прихожих,
+					гостиных и помещений, где нет места под окном. Внутри - трубчатые и профильные
+					модели Velar с изготовлением под заказ, подбором мощности, цвета RAL и
+					подключения.
+				</p>
+
+				<div class='mt-7 flex flex-col gap-3 min-[420px]:flex-row min-[420px]:flex-wrap'>
+					<a
+						href='/request'
+						class='inline-flex h-11 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'
+					>
+						Получить расчет
+					</a>
+					<a
+						href='#vertical-1800-popular'
+						class='inline-flex h-11 items-center justify-center rounded-lg border border-neutral-300 bg-white px-5 text-sm font-medium text-neutral-950 transition hover:border-neutral-950 hover:bg-neutral-50'
+					>
+						Смотреть модели
+					</a>
+					<a
+						href='/request'
+						class='inline-flex h-11 items-center justify-center rounded-lg border border-neutral-300 bg-white px-5 text-sm font-medium text-neutral-950 transition hover:border-neutral-950 hover:bg-neutral-50'
+					>
+						Задать вопрос
+					</a>
+				</div>
+			</div>
+
+			<div class='mx-auto w-full max-w-[180px] sm:max-w-[220px] lg:max-w-[420px]'>
+				<div class='flex items-center justify-center rounded-[28px] bg-neutral-50 px-5 py-4 sm:px-6 lg:min-h-[360px] lg:px-8'>
+					<Picture
+						src={HERO_IMAGE}
+						alt='Высокий вертикальный радиатор Velar'
+						title='Высокий вертикальный радиатор Velar'
+						loading='eager'
+						width={420}
+						height={1412}
+						sizes='(max-width: 639px) 160px, (max-width: 1023px) 220px, 32vw'
+						class='h-auto max-h-[220px] w-full object-contain sm:max-h-[280px] lg:max-h-[400px]'
+					/>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class='bg-neutral-50 py-8 md:py-10'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<div class='grid gap-3 md:grid-cols-2 xl:grid-cols-4'>
+				{heroAdvantages.map(item => (
+					<article class='rounded-2xl border border-neutral-200 bg-white px-4 py-3'>
+						<h2 class='text-sm font-semibold leading-[1.25] text-neutral-950'>{item.title}</h2>
+						<p class='mt-1 text-[13px] font-normal leading-[1.32] text-neutral-600'>{item.text}</p>
+					</article>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section id='vertical-1800-popular' class='bg-white py-10 md:py-14 xl:py-16'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<div class='max-w-4xl'>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>
+					Популярные модели
+				</h2>
+				<p class='mt-4 text-sm font-normal leading-6 text-neutral-700 md:text-base'>
+					Быстрый вход в подборку: трубчатые модели 2180, 3180, 4180 и популярные
+					профильные радиаторы P30 V, Q40 V, R32 V.
+				</p>
+			</div>
+
+			<div class='mt-8 grid gap-4'>
+				{popularModels.map(model => (
+					<article class='grid gap-4 rounded-2xl border border-neutral-200 bg-white p-4 md:grid-cols-[92px_minmax(0,1fr)_auto] md:items-center md:gap-5'>
+						<a href={model.href} class='mx-auto flex w-full max-w-[92px] items-center justify-center md:mx-0'>
+							<Picture
+								src={model.image}
+								alt={model.title}
+								title={model.title}
+								loading='lazy'
+								width={92}
+								height={112}
+								sizes='92px'
+								class='h-[112px] w-full object-contain'
+							/>
+						</a>
+						<div class='min-w-0'>
+							<h3 class='text-base font-semibold leading-tight text-neutral-950'>{model.title}</h3>
+							<p class='mt-1 text-sm font-medium leading-5 text-neutral-500'>
+								{model.subtitleLabel} · высота {model.heightLabel}
+							</p>
+							<p class='mt-2 text-sm font-normal leading-5 text-neutral-700'>
+								{model.whenChoose}
+							</p>
+						</div>
+						<div class='flex flex-col gap-2 md:min-w-[132px] md:items-end'>
+							<div class='text-left md:text-right'>
+								<div class='whitespace-nowrap text-sm font-semibold leading-5 text-neutral-950'>
+									{model.priceLabel}
+								</div>
+								<div class='mt-1 whitespace-nowrap text-xs font-medium uppercase tracking-[0.1em] text-neutral-500'>
+									Под заказ
+								</div>
+							</div>
+							<a
+								href={model.href}
+								class='inline-flex h-10 items-center justify-center rounded-lg border border-neutral-300 px-4 text-sm font-medium text-neutral-950 transition hover:border-neutral-950 hover:bg-neutral-50'
+							>
+								Подробнее
+							</a>
+							<a
+								href={`/request?model=${encodeURIComponent(model.title)}`}
+								class='inline-flex h-10 items-center justify-center rounded-lg px-4 text-sm font-medium text-red-700 transition hover:text-red-800'
+							>
+								В запрос
+							</a>
+						</div>
+					</article>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section id='vertical-1800-table' class='bg-neutral-50 py-10 md:py-14 xl:py-16'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<div class='max-w-4xl'>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>
+					Все вертикальные радиаторы 1800 мм и около 180 см
+				</h2>
+				<p class='mt-4 text-sm font-normal leading-6 text-neutral-700 md:text-base'>
+					В таблице собраны точные трубчатые модели высотой 1800 мм и профильные радиаторы,
+					где доступна высота около 180 см. Сравните варианты по высоте, профилю, мощности,
+					подключению и цене, а затем отправьте параметры помещения для точного расчета.
+				</p>
+			</div>
+
+			<div class='mt-6 flex flex-wrap gap-2' id='vertical-1800-filters'>
+				{[
+					['all', 'Все'],
+					['columns', 'Трубчатые'],
+					['design', 'Профильные'],
+					['tube-2', '2 трубки'],
+					['tube-3', '3 трубки'],
+					['tube-4', '4 трубки'],
+					['profile-flat', 'Плоский профиль'],
+					['profile-square', 'Квадратный профиль'],
+					['profile-round', 'Круглый профиль'],
+					['profile-oval', 'Овальный профиль'],
+				].map(([value, label], index) => (
+					<button
+						type='button'
+						data-vertical-filter={value}
+						aria-pressed={index === 0 ? 'true' : 'false'}
+						class:list={[
+							'inline-flex min-h-9 items-center rounded-full border px-4 py-2 text-sm font-medium transition',
+							index === 0
+								? 'border-neutral-950 bg-neutral-950 text-white'
+								: 'border-neutral-300 bg-white text-neutral-800 hover:border-neutral-950 hover:text-neutral-950',
+						]}
+					>
+						{label}
+					</button>
+				))}
+			</div>
+
+			<div class='mt-4 rounded-2xl border border-neutral-200 bg-white p-4 md:p-5'>
+				<p class='text-sm font-normal leading-6 text-neutral-700 md:text-base'>
+					Нужно нижнее подключение? Отправьте фото вывода труб и размеры стены -
+					проверим, какие из этих моделей можно подключить без переделки.
+					<a href='/request' class='collection-text-link ml-1'>Уточнить подключение</a>
+				</p>
+			</div>
+
+			<div class='mt-6 overflow-hidden rounded-2xl border border-neutral-200 bg-white'>
+				<div class='overflow-x-auto'>
+					<table class='collection-products-table min-w-[980px] border-collapse text-left'>
+						<thead>
+							<tr class='border-b border-neutral-200 text-neutral-500'>
+								<th class='model-cell px-4 py-3 font-medium'>Модель</th>
+								<th class='px-4 py-3 font-medium'>Тип</th>
+								<th class='px-4 py-3 font-medium'>Высота</th>
+								<th class='px-4 py-3 font-medium'>Глубина / профиль</th>
+								<th class='px-4 py-3 font-medium'>Мощность</th>
+								<th class='px-4 py-3 font-medium'>Подключение</th>
+								<th class='px-4 py-3 font-medium'>Цвет RAL</th>
+								<th class='px-4 py-3 font-medium'>Цена от</th>
+								<th class='px-4 py-3 font-medium'>Действие</th>
+							</tr>
+						</thead>
+						<tbody>
+							{allModels.map(model => (
+								<tr
+									data-vertical-row
+									data-vertical-filters={model.filters.join(' ')}
+									class='border-b border-neutral-200 last:border-b-0'
+								>
+									<td class='model-cell px-4 py-3 align-middle'>
+										<div class='model-cell-inner'>
+											<a href={model.href} class='model-thumb-link'>
+												<Picture
+													src={model.image}
+													alt={model.title}
+													title={model.title}
+													loading='lazy'
+													width={40}
+													height={54}
+													sizes='40px'
+													class='model-thumb'
+												/>
+											</a>
+											<div class='min-w-0'>
+												<a href={model.href} class='model-title transition hover:text-red-700'>
+													{model.title}
+												</a>
+												<p class='model-subtitle'>{model.subtitleLabel}</p>
+											</div>
+										</div>
+									</td>
+									<td class='px-4 py-3 align-middle text-neutral-700'>{model.typeLabel}</td>
+									<td class='px-4 py-3 align-middle text-neutral-700'>{model.heightLabel}</td>
+									<td class='px-4 py-3 align-middle text-neutral-700'>{model.profileLabel}</td>
+									<td class='px-4 py-3 align-middle text-neutral-700'>{model.powerLabel}</td>
+									<td class='px-4 py-3 align-middle text-neutral-700'>{model.connectionLabel}</td>
+									<td class='px-4 py-3 align-middle text-neutral-700'>Да</td>
+									<td class='px-4 py-3 align-middle font-medium text-neutral-950'>{model.priceLabel}</td>
+									<td class='px-4 py-3 align-middle'>
+										<a
+											href={model.href}
+											class='inline-flex h-9 items-center justify-center rounded-lg border border-neutral-300 px-3 text-sm font-medium text-neutral-950 transition hover:border-neutral-950 hover:bg-neutral-50'
+										>
+											Подробнее
+										</a>
+									</td>
+								</tr>
+							))}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class='bg-white py-10 md:py-14 xl:py-16'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<div class='max-w-4xl'>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>
+					Быстрый выбор по задаче
+				</h2>
+				<p class='mt-4 text-sm font-normal leading-6 text-neutral-700 md:text-base'>
+					Выберите сценарий - покажем подходящие модели из подборки.
+				</p>
+			</div>
+
+			<div class='mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3'>
+				{quickChoiceCards.map(card => (
+					<article class='flex h-full flex-col rounded-2xl border border-neutral-200 bg-neutral-50 p-4 md:p-5'>
+						<h3 class='text-base font-semibold leading-tight text-neutral-950'>{card.title}</h3>
+						<p class='mt-2 flex-1 text-sm font-normal leading-5 text-neutral-600'>{card.text}</p>
+						<div class='mt-4'>
+							<a
+								href={card.href}
+								data-quick-filter={card.filter}
+								class='inline-flex h-10 items-center justify-center rounded-lg border border-neutral-300 bg-white px-4 text-sm font-medium text-neutral-950 transition hover:border-neutral-950 hover:bg-neutral-50'
+							>
+								{card.cta}
+							</a>
+						</div>
+					</article>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class='bg-neutral-50 py-10 md:py-14 xl:py-16'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<div class='grid gap-10 lg:grid-cols-2'>
+				<section>
+					<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px]'>
+						Трубчатые радиаторы 1800 мм
+					</h2>
+					<p class='mt-4 max-w-3xl text-sm font-normal leading-6 text-neutral-700 md:text-base'>
+						Трубчатые радиаторы 1800 мм выбирают, когда нужен высокий стальной радиатор с
+						понятной секционной конструкцией. Модель 2180 меньше выступает от стены, 3180
+						дает более универсальную теплоотдачу, 4180 подходит для помещений с повышенными
+						теплопотерями.
+					</p>
+
+					<div class='mt-6 overflow-hidden rounded-2xl border border-neutral-200'>
+						<table class='w-full border-collapse text-left'>
+							<tbody>
+								<tr class='border-b border-neutral-200'>
+									<td class='px-4 py-4 text-sm font-semibold text-neutral-950'>2180</td>
+									<td class='px-4 py-4 text-sm text-neutral-700'>2 трубки</td>
+									<td class='px-4 py-4 text-sm text-neutral-700'>меньше глубина</td>
+									<td class='px-4 py-4 text-sm text-neutral-700'>для узкой стены</td>
+								</tr>
+								<tr class='border-b border-neutral-200'>
+									<td class='px-4 py-4 text-sm font-semibold text-neutral-950'>3180</td>
+									<td class='px-4 py-4 text-sm text-neutral-700'>3 трубки</td>
+									<td class='px-4 py-4 text-sm text-neutral-700'>баланс глубины и мощности</td>
+									<td class='px-4 py-4 text-sm text-neutral-700'>универсальный высокий радиатор</td>
+								</tr>
+								<tr>
+									<td class='px-4 py-4 text-sm font-semibold text-neutral-950'>4180</td>
+									<td class='px-4 py-4 text-sm text-neutral-700'>4 трубки</td>
+									<td class='px-4 py-4 text-sm text-neutral-700'>больше мощность</td>
+									<td class='px-4 py-4 text-sm text-neutral-700'>для больших помещений</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class='mt-6 flex flex-wrap gap-2'>
+						{columnModels.map(model => (
+							<a
+								href={model.href}
+								class='inline-flex min-h-9 items-center rounded-full border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-950 transition hover:border-neutral-950 hover:bg-neutral-50'
+							>
+								{model.name}
+							</a>
+						))}
+						<a
+							href='/columns'
+							class='inline-flex min-h-9 items-center rounded-full border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-950 transition hover:border-neutral-950 hover:bg-neutral-50'
+						>
+							Смотреть все трубчатые радиаторы
+						</a>
+					</div>
+				</section>
+
+				<section>
+					<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px]'>
+						Профильные радиаторы высотой около 180 см
+					</h2>
+					<p class='mt-4 max-w-3xl text-sm font-normal leading-6 text-neutral-700 md:text-base'>
+						Профильные радиаторы около 180 см выбирают, когда радиатор должен быть частью
+						интерьера. Плоские P-серии выглядят спокойнее, Q-серии дают строгую квадратную
+						геометрию, R-серии делают силуэт мягче, а RT и QT подходят для акцентных
+						решений.
+					</p>
+
+					<div class='mt-6 overflow-hidden rounded-2xl border border-neutral-200'>
+						<table class='w-full border-collapse text-left'>
+							<tbody>
+								<tr class='border-b border-neutral-200'>
+									<td class='px-4 py-4 text-sm font-semibold text-neutral-950'>P30 V / P60 V</td>
+									<td class='px-4 py-4 text-sm text-neutral-700'>спокойный плоский профиль</td>
+								</tr>
+								<tr class='border-b border-neutral-200'>
+									<td class='px-4 py-4 text-sm font-semibold text-neutral-950'>Q40 V / Q60 V / Q80 V</td>
+									<td class='px-4 py-4 text-sm text-neutral-700'>строгая квадратная геометрия</td>
+								</tr>
+								<tr class='border-b border-neutral-200'>
+									<td class='px-4 py-4 text-sm font-semibold text-neutral-950'>R32 V / R42 V / R89 V</td>
+									<td class='px-4 py-4 text-sm text-neutral-700'>круглый профиль от мягкого до акцентного</td>
+								</tr>
+								<tr>
+									<td class='px-4 py-4 text-sm font-semibold text-neutral-950'>RT / QT / S / SP</td>
+									<td class='px-4 py-4 text-sm text-neutral-700'>вертикальные акцентные и овальные модели</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class='mt-6 flex flex-wrap gap-2'>
+						{['p30v', 'p60v', 'q40v', 'q60v', 'q80v', 'r32v', 'r42v', 'r89v'].map(id => {
+							const model = modelById.get(id)
+							if (!model) return null
+
+							return (
+								<a
+									href={model.href}
+									class='inline-flex min-h-9 items-center rounded-full border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-950 transition hover:border-neutral-950 hover:bg-neutral-50'
+								>
+									{model.name}
+								</a>
+							)
+						})}
+						<a
+							href='/design'
+							class='inline-flex min-h-9 items-center rounded-full border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-950 transition hover:border-neutral-950 hover:bg-neutral-50'
+						>
+							Смотреть все профильные радиаторы
+						</a>
+					</div>
+				</section>
+			</div>
+		</div>
+	</section>
+
+	<section class='bg-white py-10 md:py-14 xl:py-16'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<div class='max-w-4xl'>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>
+					Когда нужен именно 1800 мм
+				</h2>
+				<p class='mt-4 text-sm font-normal leading-6 text-neutral-700 md:text-base'>
+					Запрос “радиатор 1800 мм” обычно означает, что нужен высокий вертикальный радиатор
+					около 180 см. Такой размер удобен, когда нужно заполнить узкую стену, сохранить
+					место под окном или сделать радиатор вертикальным акцентом. Если есть ограничение по
+					высоте или нужна большая теплоотдача, стоит сравнить и другие варианты из разделов
+					<a href='/columns' class='collection-text-link ml-1'>трубчатых</a>
+					и
+					<a href='/design' class='collection-text-link ml-1'>профильных радиаторов</a>.
+				</p>
+			</div>
+			<div class='mt-6 flex flex-wrap gap-2'>
+				<a
+					href='/columns'
+					class='inline-flex min-h-9 items-center rounded-full border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-950 transition hover:border-neutral-950 hover:bg-neutral-50'
+				>
+					Трубчатые радиаторы
+				</a>
+				<a
+					href='/design'
+					class='inline-flex min-h-9 items-center rounded-full border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-950 transition hover:border-neutral-950 hover:bg-neutral-50'
+				>
+					Профильные радиаторы
+				</a>
+				<a
+					href='/request'
+					class='inline-flex min-h-9 items-center rounded-full border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-950 transition hover:border-neutral-950 hover:bg-neutral-50'
+				>
+					Получить расчет
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<section class='bg-neutral-50 py-10 md:py-14 xl:py-16'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<div class='max-w-4xl'>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>
+					Кому подходят вертикальные радиаторы 1800 мм
+				</h2>
+				<p class='mt-4 text-sm font-normal leading-6 text-neutral-700 md:text-base'>
+					Высокие радиаторы 1800 мм подходят, когда под окном нет места, стена узкая, нужен
+					вертикальный акцент или отопление нужно разместить рядом с панорамным окном. Такие
+					модели часто выбирают для прихожих, гостиных, кухонь-гостиных, спален, лофтов,
+					частных домов и квартир с современным интерьером.
+				</p>
+			</div>
+			<div class='mt-8 grid gap-8 lg:grid-cols-2'>
+				<section class='border-t border-neutral-200 pt-4'>
+					<h3 class='text-lg font-semibold text-neutral-950'>Хороший выбор, если</h3>
+					<ul class='mt-4 space-y-3 text-sm font-normal leading-6 text-neutral-700 md:text-base'>
+						{whoFits.map(item => (
+							<li class='flex gap-3'>
+								<span class='mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full bg-red-700'></span>
+								<span>{item}</span>
+							</li>
+						))}
+					</ul>
+				</section>
+				<section class='border-t border-neutral-200 pt-4'>
+					<h3 class='text-lg font-semibold text-neutral-950'>Лучше выбрать другое решение, если</h3>
+					<ul class='mt-4 space-y-3 text-sm font-normal leading-6 text-neutral-700 md:text-base'>
+						{whoDoesNotFit.map(item => (
+							<li class='flex gap-3'>
+								<span class='mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-400'></span>
+								<a href={item.href} class='collection-text-link'>
+									{item.text}
+								</a>
+							</li>
+						))}
+					</ul>
+				</section>
+			</div>
+		</div>
+	</section>
+
+	<section class='bg-white py-10 md:py-14 xl:py-16'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<div class='max-w-4xl'>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>
+					Как выбрать вертикальный радиатор 1800 мм
+				</h2>
+			</div>
+			<div class='mt-8 grid gap-4 lg:grid-cols-2'>
+				{chooseSections.map(([title, text]) => (
+					<div class='border-t border-neutral-200 py-4'>
+						<h3 class='text-base font-semibold text-neutral-950'>{title}</h3>
+						<p class='mt-2 text-sm font-normal leading-6 text-neutral-600 md:text-base'>{text}</p>
+					</div>
+				))}
+			</div>
+			<div class='mt-8 border-t border-neutral-200 pt-5'>
+				<p class='text-sm font-normal leading-6 text-neutral-700 md:text-base'>
+					Если нужно сравнить типы радиаторов, понять глубину 2-, 3- и 4-трубчатых моделей
+					или подобрать цвет под интерьер, начните с этих материалов и разделов каталога.
+				</p>
+				<div class='mt-4 flex flex-wrap gap-2'>
+					{usefulLinks.map(link => (
+						<a
+							href={link.href}
+							class='inline-flex min-h-9 items-center rounded-full border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-950 transition hover:border-neutral-950 hover:bg-neutral-50'
+						>
+							{link.label}
+						</a>
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class='bg-neutral-50 py-10 md:py-14 xl:py-16'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<div class='max-w-4xl'>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>
+					Как заказать вертикальный радиатор 1800 мм
+				</h2>
+			</div>
+			<ol class='mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3'>
+				{[
+					['01', 'Выберите модель', 'Можно начать с популярной модели или полной таблицы подборки.'],
+					['02', 'Укажите параметры', 'Нужны высота, ширина или количество секций, тип подключения, цвет и город доставки.'],
+					['03', 'Получите расчет', 'Подберем мощность, количество секций, стоимость и срок изготовления.'],
+					['04', 'Подтвердите заказ', 'После согласования параметров радиатор уходит в производство.'],
+					['05', 'Доставка', 'Доставляем по России транспортной компанией.'],
+					['06', 'Гарантия', 'Предоставляем гарантию и документы на изделие.'],
+				].map(([step, title, text]) => (
+					<li class='list-none rounded-2xl border border-neutral-200 bg-white p-5'>
+						<div class='text-xs font-medium uppercase tracking-[0.12em] text-neutral-500'>{step}</div>
+						<h3 class='mt-2 text-base font-semibold text-neutral-950'>{title}</h3>
+						<p class='mt-3 text-sm font-normal leading-5 text-neutral-600'>{text}</p>
+					</li>
+				))}
+			</ol>
+			<div class='mt-8'>
+				<a
+					href='/request'
+					class='inline-flex h-11 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'
+				>
+					Получить расчет радиатора
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<section class='bg-white py-10 md:py-14 xl:py-16'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>
+				Частые вопросы
+			</h2>
+			<div class='mt-6 max-w-[920px] border-t border-neutral-200'>
+				{faqItems.map(item => (
+					<details class='group border-b border-neutral-200'>
+						<summary class='flex min-h-[52px] cursor-pointer list-none items-center gap-4 py-3 text-sm font-medium leading-6 text-neutral-900 transition hover:bg-neutral-50'>
+							<span>{item.question}</span>
+							<span
+								class='ml-auto flex h-6 w-6 shrink-0 items-center justify-center text-base font-normal text-neutral-500 transition group-open:rotate-180'
+								aria-hidden='true'
+							>
+								⌄
+							</span>
+						</summary>
+						<p class='pb-4 pr-8 text-sm font-normal leading-6 text-neutral-700 md:text-base'>
+							{item.answer}
+						</p>
+					</details>
+				))}
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<script is:inline>
+	const filterButtons = document.querySelectorAll('[data-vertical-filter]')
+	const rows = document.querySelectorAll('[data-vertical-row]')
+	const quickFilterLinks = document.querySelectorAll('[data-quick-filter]')
+
+	function applyVerticalFilter(value) {
+		rows.forEach(row => {
+			if (!(row instanceof HTMLElement)) return
+			const filters = row.dataset.verticalFilters || ''
+			const isVisible = value === 'all' || filters.split(' ').includes(value)
+			row.style.display = isVisible ? '' : 'none'
+		})
+
+		filterButtons.forEach(button => {
+			if (!(button instanceof HTMLElement)) return
+			const isActive = button.dataset.verticalFilter === value
+			button.classList.toggle('border-neutral-950', isActive)
+			button.classList.toggle('bg-neutral-950', isActive)
+			button.classList.toggle('text-white', isActive)
+			button.classList.toggle('border-neutral-300', !isActive)
+			button.classList.toggle('bg-white', !isActive)
+			button.classList.toggle('text-neutral-800', !isActive)
+			button.setAttribute('aria-pressed', isActive ? 'true' : 'false')
+		})
+	}
+
+	filterButtons.forEach(button => {
+		button.addEventListener('click', () => {
+			applyVerticalFilter(button.dataset.verticalFilter || 'all')
+		})
+	})
+
+	quickFilterLinks.forEach(link => {
+		link.addEventListener('click', event => {
+			if (!(link instanceof HTMLAnchorElement)) return
+			const filterValue = link.dataset.quickFilter
+			if (!filterValue) return
+
+			applyVerticalFilter(filterValue)
+
+			const targetId = link.getAttribute('href')
+			if (!targetId?.startsWith('#')) return
+
+			const target = document.querySelector(targetId)
+			if (!(target instanceof HTMLElement)) return
+
+			event.preventDefault()
+			target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+		})
+	})
+</script>
+
+<style>
+	.collection-text-link {
+		color: #b91c1c;
+		text-decoration-line: underline;
+		text-decoration-thickness: 1px;
+		text-decoration-color: rgba(185, 28, 28, 0.4);
+		text-underline-offset: 0.18em;
+	}
+
+	.collection-text-link:hover {
+		text-decoration-color: rgba(185, 28, 28, 0.9);
+	}
+
+	.collection-products-table {
+		font-size: 12px;
+		line-height: 1.25;
+	}
+
+	.collection-products-table th,
+	.collection-products-table td {
+		padding-top: 8px;
+		padding-bottom: 8px;
+		vertical-align: middle;
+	}
+
+	.collection-products-table th:not(.model-cell),
+	.collection-products-table td:not(.model-cell) {
+		white-space: nowrap;
+	}
+
+	.model-cell {
+		min-width: 240px;
+	}
+
+	.model-cell-inner {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
+
+	.model-thumb-link {
+		display: flex;
+		flex: 0 0 auto;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.model-thumb {
+		width: 40px;
+		height: 54px;
+		flex: 0 0 auto;
+		object-fit: contain;
+	}
+
+	.model-title {
+		display: inline-block;
+		font-size: 13px;
+		font-weight: 600;
+		line-height: 1.25;
+		color: #0a0a0a;
+	}
+
+	.model-subtitle {
+		margin-top: 4px;
+		font-size: 11px;
+		line-height: 1.2;
+		color: #737373;
+	}
+
+	@media (max-width: 767px) {
+		.collection-products-table {
+			font-size: 12px;
+		}
+
+		.model-cell {
+			min-width: 220px;
+		}
+	}
+</style>

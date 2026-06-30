@@ -4,21 +4,24 @@ import JsonLd from '../components/seo/JsonLd.astro'
 
 import ColumnsCatalog from '../components/columns/ColumnsCatalog.astro'
 import ColumnsComparison from '../components/columns/ColumnsComparison.astro'
+import ColumnsCalculator from '../components/columns/ColumnsCalculator.astro'
 import ColumnsFaq from '../components/columns/ColumnsFaq.astro'
 import ColumnsHero from '../components/columns/ColumnsHero.astro'
-import ColumnsHowToOrder from '../components/columns/ColumnsHowToOrder.astro'
+import ColumnsHowToOrderShort from '../components/columns/ColumnsHowToOrderShort.astro'
 import ColumnsInteriors from '../components/columns/ColumnsInteriors.astro'
 import PopularModels from '../components/columns/PopularModels.astro'
+import ColumnsTaskSelector from '../components/columns/ColumnsTaskSelector.astro'
 import ColumnsTubeDifferences from '../components/columns/ColumnsTubeDifferences.astro'
 import ColumnsUseCases from '../components/columns/ColumnsUseCases.astro'
 import ColumnsWhatIs from '../components/columns/ColumnsWhatIs.astro'
+import ColumnsWhoFits from '../components/columns/ColumnsWhoFits.astro'
 import ColumnsWhyVelar from '../components/columns/ColumnsWhyVelar.astro'
 import UsefulArticles from '../components/columns/UsefulArticles.astro'
 import {
 	columnsFaqItems,
 	columnsModels,
 	popularModels,
-	usefulArticles,
+	usefulArticleGroups,
 } from '../components/columns/columnsData'
 import { getCategorySeo } from '../lib/seo/categorySeo'
 
@@ -33,10 +36,10 @@ const seo = getCategorySeo({
 		url: '/columns',
 		name: 'Трубчатые радиаторы',
 		h1: 'Трубчатые радиаторы Velar',
-		seoTitle: 'Трубчатые радиаторы Velar — стальные радиаторы отопления на заказ',
+		seoTitle: 'Трубчатые радиаторы Velar - стальные радиаторы отопления на заказ',
 		seoDescription:
-			'Стальные трубчатые радиаторы Velar для квартир, домов и дизайнерских интерьеров. Разные высоты, количество секций, цвета RAL, производство под заказ.',
-		ogTitle: 'Трубчатые радиаторы Velar — каталог моделей',
+			'Стальные трубчатые радиаторы Velar для квартиры, дома и дизайн-проекта. Подбор по высоте, мощности, секциям, цвету RAL, подключению и доставке по России.',
+		ogTitle: 'Трубчатые радиаторы Velar - каталог моделей',
 		ogDescription:
 			'Стальные трубчатые радиаторы Velar разных высот и секционности. Подбор мощности, цвета RAL и доставка по России.',
 		ogImage: '/images/models/columns/hero-black-column-radiator.png',
@@ -46,6 +49,13 @@ const seo = getCategorySeo({
 		products: columnsModels.map(model => ({
 			name: `Velar ${model.name}`,
 			url: model.href,
+		})),
+		productOffers: popularModels.map(model => ({
+			name: `Velar ${model.name}`,
+			url: model.href,
+			image: model.image,
+			lowPrice: model.minPrice,
+			availability: 'https://schema.org/PreOrder',
 		})),
 		faq: columnsFaqItems.map(item => ({
 			question: item.question,
@@ -84,13 +94,19 @@ const seo = getCategorySeo({
 
 	<ColumnsCatalog models={columnsModels} />
 
+	<ColumnsCalculator />
+
+	<ColumnsTaskSelector variant='expanded' />
+
+	<ColumnsHowToOrderShort />
+
 	<ColumnsTubeDifferences />
+
+	<ColumnsWhoFits />
 
 	<ColumnsInteriors />
 
 	<ColumnsWhatIs />
-
-	<ColumnsHowToOrder />
 
 	<ColumnsComparison />
 
@@ -98,7 +114,7 @@ const seo = getCategorySeo({
 
 	<ColumnsWhyVelar />
 
-	<UsefulArticles articles={usefulArticles} />
-
 	<ColumnsFaq />
+
+	<UsefulArticles groups={usefulArticleGroups} />
 </Layout>

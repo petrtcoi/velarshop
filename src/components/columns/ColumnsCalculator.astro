@@ -1,0 +1,60 @@
+---
+import HeroQuickConfigurator from '@widgets/pageMain/HeroQuickConfigurator'
+import type { ModelDetails } from '@widgets/pageMain/HeroQuickConfigurator'
+import { buildQuickConfiguratorModels } from '@widgets/pageMain/quickConfiguratorData'
+import { get as getHeroConfiguratorData } from '../../pages/api/hero-configurator/[model].json'
+import { columnsSectionSubtitleClass, columnsSectionTitleClass } from './columnsTypography'
+
+const modelOptions = buildQuickConfiguratorModels({ type: 'columns' })
+const defaultModelId = '3057'
+let initialDetails: ModelDetails | null = null
+
+try {
+	const response = await getHeroConfiguratorData({
+		params: { model: defaultModelId },
+	} as any)
+	if (response.ok) initialDetails = (await response.json()) as ModelDetails
+} catch (error) {
+	console.error('Failed to preload columns calculator model:', error)
+}
+---
+
+<section id='columns-calculator' class='bg-white py-12 md:py-16 xl:py-20'>
+	<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+		<div class='grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1fr)] lg:items-start'>
+			<div>
+				<h2 class={columnsSectionTitleClass}>Подобрать трубчатый радиатор по параметрам</h2>
+				<p class={`mt-3 max-w-3xl ${columnsSectionSubtitleClass}`}>
+					Если не знаете, какая модель подойдет, выберите высоту, количество труб, секции, подключение и цвет - добавьте вариант в запрос или отправьте параметры менеджеру.
+				</p>
+				<div class='mt-5 rounded-2xl border border-neutral-200 bg-neutral-50 p-4 md:p-5'>
+					<div class='text-xs font-medium uppercase tracking-wide text-neutral-500'>Что можно уточнить в запросе</div>
+					<ul class='mt-3 space-y-2 text-sm leading-6 text-neutral-700'>
+						<li>Помещение и задачу: под окно, замена батареи, узкая стена, частный дом.</li>
+						<li>Размер комнаты, высоту потолка, тип подключения и желаемый цвет RAL.</li>
+						<li>Если точной модели нет, менеджер предложит близкий вариант по мощности и бюджету.</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class='min-w-0'>
+				<HeroQuickConfigurator
+					client:load
+					models={modelOptions}
+					defaultModelId={defaultModelId}
+					initialDetails={initialDetails}
+					variant='category'
+					title='Быстрый подбор по параметрам'
+					subtitle='Выберите модель и параметры, затем добавьте подходящий вариант в запрос.'
+					modelResolutionMode='family-by-height'
+					category='tubular'
+					addToCartLabel='Добавить в запрос'
+					goToCartLabel='Перейти к запросу'
+					cartPillLabel='Запрос'
+					cartHref='/request'
+					resultNote='Если задача нестандартная, отправьте помещение и фото узла подключения - менеджер проверит мощность, цену и срок.'
+				/>
+			</div>
+		</div>
+	</div>
+</section>

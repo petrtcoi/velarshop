@@ -79,6 +79,20 @@ type Props = {
 	modelResolutionMode?: ModelResolutionMode
 	category?: ConfiguratorCategory
 	onNavigate?: () => void
+	/** Подпись основной кнопки добавления (по умолчанию «Добавить в корзину»). */
+	addToCartLabel?: string
+	/** Подпись ссылки перехода в корзину (по умолчанию «Перейти в корзину»). */
+	goToCartLabel?: string
+	/** Подпись компактной ссылки-пилюли в шапке конфигуратора (по умолчанию «Корзина»). */
+	cartPillLabel?: string
+	/** Ссылка для компактной пилюли и CTA перехода (по умолчанию `/cart`). */
+	cartHref?: string
+	/** Дополнительное пояснение под найденным вариантом. */
+	resultNote?: string
+	/** Разрешает сворачивать конфигуратор на мобильных экранах. */
+	collapsibleOnMobile?: boolean
+	/** Подпись кнопки раскрытия на мобильных экранах. */
+	mobileToggleLabel?: string
 }
 
 type InlineSelectOption = {
@@ -390,11 +404,19 @@ export default function HeroQuickConfigurator({
 	subtitle,
 	modelResolutionMode = 'exact-model',
 	onNavigate,
+	addToCartLabel = 'Добавить в корзину',
+	goToCartLabel = 'Перейти в корзину',
+	cartPillLabel = 'Корзина',
+	cartHref = '/cart',
+	resultNote,
+	collapsibleOnMobile = false,
+	mobileToggleLabel = 'Открыть подбор',
 }: Props) {
 	const shoppingCart = useStore(storeShoppingCart)
 	const [selectedModelId, setSelectedModelId] = useState(defaultModelId)
 	const [query, setQuery] = useState('')
 	const [open, setOpen] = useState(false)
+	const [mobileExpanded, setMobileExpanded] = useState(!collapsibleOnMobile)
 	const [details, setDetails] = useState<ModelDetails | null>(initialDetails)
 	const [selection, setSelection] = useState<Selection>(() => (initialDetails ? buildInitialSelection(initialDetails) : emptySelection))
 	const [loading, setLoading] = useState(false)
@@ -433,6 +455,20 @@ export default function HeroQuickConfigurator({
 		})
 		return () => window.cancelAnimationFrame(rafId)
 	}, [open])
+
+	useEffect(() => {
+		if (!collapsibleOnMobile) {
+			setMobileExpanded(true)
+			return
+		}
+
+		const mediaQuery = window.matchMedia('(max-width: 767px)')
+		const apply = () => setMobileExpanded(!mediaQuery.matches)
+
+		apply()
+		mediaQuery.addEventListener('change', apply)
+		return () => mediaQuery.removeEventListener('change', apply)
+	}, [collapsibleOnMobile])
 
 	useEffect(() => {
 		if (!selectedModelId) return
@@ -524,6 +560,7 @@ export default function HeroQuickConfigurator({
 	const isCategory = variant === 'category'
 	const useFamilyByHeight = modelResolutionMode === 'family-by-height'
 	const isFloorModel = details?.model.type === 'floor'
+	const showConfiguratorBody = !collapsibleOnMobile || mobileExpanded
 	const titleClass = isModal ? 'text-sm font-semibold tracking-tight' : 'text-sm font-semibold tracking-tight md:text-base'
 	const contentSpacingClass = isModal ? 'mt-2.5 space-y-2' : 'mt-2.5 space-y-2 md:mt-3 md:space-y-2'
 	const gridGapClass = isFloorModel
@@ -554,20 +591,33 @@ export default function HeroQuickConfigurator({
 						</p>
 					)}
 				</div>
-				{!isModal && (
-					<a
-						href='/cart'
-						class='shrink-0 rounded-full border border-neutral-200 px-2.5 py-1 text-[11px] font-medium text-neutral-700 transition hover:border-red-200 hover:text-red-700 md:px-3 md:text-xs'
-					>
-						Корзина
-					</a>
-				)}
+				<div class='flex items-center gap-2'>
+					{collapsibleOnMobile && (
+						<button
+							type='button'
+							class='inline-flex h-8 items-center rounded-full border border-neutral-200 px-3 text-[11px] font-medium text-neutral-700 transition hover:border-red-200 hover:text-red-700 md:hidden'
+							onClick={() => setMobileExpanded(current => !current)}
+						>
+							{mobileExpanded ? 'Скрыть подбор' : mobileToggleLabel}
+						</button>
+					)}
+					{!isModal && (
+						<a
+							href={cartHref}
+							class='shrink-0 rounded-full border border-neutral-200 px-2.5 py-1 text-[11px] font-medium text-neutral-700 transition hover:border-red-200 hover:text-red-700 md:px-3 md:text-xs'
+						>
+							{cartPillLabel}
+						</a>
+					)}
+				</div>
 			</div>
 
-			<div
-				class='mt-0'
-				ref={comboboxRef}
-			>
+			{showConfiguratorBody && (
+				<>
+					<div
+						class='mt-0'
+						ref={comboboxRef}
+					>
 				<label
 					class={fieldLabelClass()}
 					id='hero_model_label'
@@ -823,7 +873,7 @@ export default function HeroQuickConfigurator({
 										disabled={!totalPrice}
 										onClick={handleAddToCart}
 									>
-										Добавить в корзину
+										{addToCartLabel}
 									</button>
 								)}
 							</div>
@@ -837,13 +887,18 @@ export default function HeroQuickConfigurator({
 									Подробнее о модели
 								</a>
 								<a
-									href='/cart'
+									href={cartHref}
 									onClick={() => onNavigate?.()}
 									class='font-medium text-red-700 hover:underline'
 								>
-									Перейти в корзину
+									{goToCartLabel}
 								</a>
 							</div>
+							{resultNote && (
+								<p class='mt-2 text-xs leading-5 text-neutral-600 md:text-[13px]'>
+									{resultNote}
+								</p>
+							)}
 						</div>
 					) : (
 						<div class='rounded-xl border border-neutral-200 bg-neutral-50 p-2.5 text-xs text-neutral-600 md:p-3 md:text-[13px]'>
@@ -867,6 +922,8 @@ export default function HeroQuickConfigurator({
 						</div>
 					)}
 				</div>
+			)}
+				</>
 			)}
 		</div>
 	)

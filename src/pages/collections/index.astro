@@ -1,0 +1,180 @@
+---
+import Layout from '@shared/layouts/Layout.astro'
+import Picture from '@shared/components/Picture.astro'
+import JsonLd from '../../components/seo/JsonLd.astro'
+import { featuredCollections } from '../../lib/featuredCollections'
+import { getCategorySeo } from '../../lib/seo/categorySeo'
+
+const breadcrumbs = [
+	{ title: 'Главная', url: '/' },
+	{ title: 'Подборки', url: '/collections' },
+]
+
+const seo = getCategorySeo({
+	category: {
+		slug: 'collections',
+		url: '/collections',
+		name: 'Подборки',
+		h1: 'Подборки Velar',
+		seoTitle: 'Подборки Velar - готовые коммерческие подборки радиаторов',
+		seoDescription:
+			'Подборки радиаторов Velar по задачам: вертикальные модели 1800 мм, решения для узких стен, интерьеров и коммерческих объектов.',
+		ogTitle: 'Подборки Velar',
+		ogDescription:
+			'Готовые подборки радиаторов Velar по размерам, сценариям установки и типу моделей.',
+		ogImage: '/images/models/columns/vertical.jpg',
+		ogImageAlt: 'Подборки радиаторов Velar',
+		breadcrumbs,
+		itemListName: 'Подборки Velar',
+		products: featuredCollections.map(item => ({
+			name: item.title,
+			url: item.href,
+		})),
+	},
+})
+---
+
+<Layout
+	title={seo.title}
+	description={seo.description}
+	canonicalUrl={seo.canonicalUrl}
+	robots={seo.robots}
+	ogType='website'
+	ogTitle={seo.ogTitle}
+	ogDescription={seo.ogDescription}
+	ogUrl={seo.canonicalUrl}
+	ogImageUrl={seo.ogImage}
+	ogImageAlt={seo.ogImageAlt}
+	twitterCard='summary_large_image'
+	twitterTitle={seo.twitterTitle}
+	twitterDescription={seo.twitterDescription}
+	twitterImage={seo.twitterImage}
+	twitterImageAlt={seo.twitterImageAlt}
+	breadcrumbs={breadcrumbs}
+	disableBreadcrumbJsonLd={true}
+	paddings={false}
+>
+	<JsonLd data={seo.jsonLd} />
+
+	<section class='border-b border-neutral-200 bg-white py-10 md:py-14 xl:py-16'>
+		<div class='mx-auto max-w-[1180px] px-4 md:px-6 xl:px-8'>
+			<h1 class='max-w-4xl text-[34px] font-semibold leading-[1.04] tracking-tight text-neutral-950 md:text-[44px] xl:text-[56px]'>
+				Подборки Velar
+			</h1>
+			<p class='mt-5 max-w-3xl text-sm leading-6 text-neutral-700 md:text-base md:leading-7'>
+				Здесь собраны коммерческие подборки по типовым задачам: размеры, сценарии монтажа,
+				узкие стены, интерьерные акценты и подбор под конкретный запрос. Это короткий путь к
+				моделям, когда нужен не весь каталог, а конкретный сценарий выбора.
+			</p>
+		</div>
+	</section>
+
+	<section class='bg-white py-10 md:py-14 xl:py-16'>
+		<div class='mx-auto max-w-[1180px] px-4 md:px-6 xl:px-8'>
+			<div class='grid justify-center gap-5 [grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),420px))]'>
+				{featuredCollections.map(item => (
+					<article class='w-full'>
+						<a
+							href={item.href}
+							class='group flex h-full flex-col gap-5 rounded-[24px] border border-neutral-200 bg-white p-5 transition hover:border-neutral-300 hover:shadow-[0_16px_40px_rgba(15,23,42,0.06)] md:flex-row md:items-start md:gap-4'
+						>
+							<div class='mx-auto flex h-24 w-24 shrink-0 items-center justify-center rounded-2xl bg-neutral-50 p-3 md:mx-0 md:h-28 md:w-28'>
+								<Picture
+									src={item.image}
+									alt={item.imageAlt}
+									title={item.title}
+									loading='lazy'
+									width={112}
+									height={112}
+									sizes='(max-width: 767px) 96px, 112px'
+									class='h-full w-full object-contain'
+								/>
+							</div>
+
+							<div class='flex min-w-0 flex-1 flex-col'>
+								<h2 class='text-[24px] font-semibold leading-tight text-neutral-950'>
+									{item.title}
+								</h2>
+								<p class='mt-3 text-sm font-normal leading-6 text-neutral-700 md:text-base'>
+									{item.description}
+								</p>
+								<ul class='mt-4 grid gap-2 text-sm leading-5 text-neutral-600 min-[560px]:grid-cols-2 md:grid-cols-1 lg:grid-cols-2'>
+									{item.facts.map(fact => (
+										<li class='flex items-start gap-2.5'>
+											<span class='mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-red-700'></span>
+											<span>{fact}</span>
+										</li>
+									))}
+								</ul>
+								<div class='mt-5'>
+									<span class='inline-flex h-11 items-center justify-center rounded-lg border border-neutral-300 px-5 text-sm font-medium text-neutral-950 transition group-hover:border-neutral-950 group-hover:bg-neutral-50'>
+										Открыть подборку
+									</span>
+								</div>
+							</div>
+						</a>
+					</article>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class='border-t border-neutral-200 bg-neutral-50 py-10 md:py-14 xl:py-16'>
+		<div class='mx-auto max-w-[1180px] px-4 md:px-6 xl:px-8'>
+			<div class='max-w-3xl'>
+				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>
+					Как заказать радиатор по подборке
+				</h2>
+				<p class='mt-4 text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>
+					Откройте подходящую подборку, выберите модель или отправьте параметры помещения.
+					Мы рассчитаем мощность, количество секций, подключение, цвет и стоимость
+					изготовления.
+				</p>
+			</div>
+
+			<ol class='mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4'>
+				{[
+					[
+						'Выберите сценарий',
+						'Подборки помогают быстро перейти к моделям под конкретную высоту, монтаж или интерьерную задачу.',
+					],
+					[
+						'Отправьте параметры',
+						'Можно указать размеры помещения, высоту стены, тип подключения, город доставки и пожелания по цвету.',
+					],
+					[
+						'Получите расчет',
+						'Менеджер подберет модель, мощность, количество секций и ориентировочную стоимость.',
+					],
+					[
+						'Производство и доставка',
+						'Радиаторы изготавливаются под заказ, доставляются по России, гарантия - до 10 лет.',
+					],
+				].map(([title, text], index) => (
+					<li class='list-none rounded-2xl border border-neutral-200 bg-white p-4 md:p-5'>
+						<div class='text-xs font-medium uppercase tracking-[0.12em] text-neutral-500'>
+							0{index + 1}
+						</div>
+						<h3 class='mt-2 text-base font-semibold leading-tight text-neutral-950'>{title}</h3>
+						<p class='mt-2 text-sm font-normal leading-5 text-neutral-600'>{text}</p>
+					</li>
+				))}
+			</ol>
+
+			<div class='mt-8 flex flex-col gap-3 min-[420px]:flex-row min-[420px]:flex-wrap'>
+				<a
+					href='/request'
+					class='inline-flex h-11 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'
+				>
+					Получить расчет
+				</a>
+				<a
+					href='/delivery'
+					class='inline-flex h-11 items-center justify-center rounded-lg border border-neutral-300 bg-white px-5 text-sm font-medium text-neutral-950 transition hover:border-neutral-950 hover:bg-neutral-50'
+				>
+					Доставка и оплата
+				</a>
+			</div>
+		</div>
+	</section>
+</Layout>

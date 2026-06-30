@@ -292,6 +292,26 @@ function getRelatedModels(currentModel: ModelJson): ModelJson[] {
 
 const relatedModels = getRelatedModels(model)
 const relatedTitle = model.type === 'design' ? 'Похожие дизайн-радиаторы' : 'Похожие модели Velar'
+const vertical1800CollectionModelIds = new Set([
+	'2180',
+	'3180',
+	'4180',
+	'p30v',
+	'p60v',
+	'q40v',
+	'q60v',
+	'q80v',
+	'r32v',
+	'r42v',
+	'r89v',
+	'sv',
+	'spv',
+	'rt1v',
+	'rt2v',
+	'qt1v',
+	'qt2v',
+])
+const isInVertical1800Collection = vertical1800CollectionModelIds.has(model.id)
 
 const seo = getModelSeo({
 	model,
@@ -456,6 +476,26 @@ const seo = getModelSeo({
 			</ul>
 		</div>
 	</section>
+
+	{isInVertical1800Collection && (
+		<section class='border-t border-neutral-200 bg-neutral-50 py-8 md:py-12'>
+			<div class='mx-auto max-w-[1180px] px-3 md:px-5'>
+				<div class='flex flex-col gap-4 rounded-2xl border border-neutral-200 bg-white p-5 md:flex-row md:items-center md:justify-between'>
+					<div class='max-w-3xl'>
+						<p class='text-lg font-semibold leading-tight text-neutral-950'>Модель входит в подборку вертикальных радиаторов 1800 мм</p>
+						<p class='mt-2 text-sm leading-6 text-neutral-700 md:text-base'>
+							Если сравниваете высокие трубчатые и вертикальные дизайн-радиаторы около 180 см,
+							откройте общую подборку: там собраны 2180, 3180, 4180 и вертикальные модели P,
+							Q, R, S, RT и QT с быстрым выбором и общей таблицей.
+						</p>
+					</div>
+					<a href='/collections/verticalnye-radiatory-1800-mm' class='inline-flex h-11 shrink-0 items-center justify-center rounded-lg border border-neutral-300 bg-white px-5 text-sm font-medium text-neutral-950 transition hover:border-neutral-950 hover:bg-neutral-50'>
+						Смотреть все вертикальные радиаторы 1800 мм
+					</a>
+				</div>
+			</div>
+		</section>
+	)}
 
 	<section id='model-extra-content' class='border-t border-neutral-200 bg-white py-10 md:py-16'>
 		<div class='mx-auto max-w-[1180px] px-3 md:px-5'>

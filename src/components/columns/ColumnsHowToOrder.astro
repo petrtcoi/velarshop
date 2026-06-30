@@ -11,17 +11,12 @@ import { columnsCardTextClass, columnsSectionTitleClass } from './columnsTypogra
 				Получить расчет
 			</a>
 		</div>
-		<ol class='mt-7 grid gap-3 md:grid-cols-2 xl:grid-cols-4'>
+		<ol class='mt-7 grid gap-3 md:grid-cols-2 xl:grid-cols-3'>
 			{columnsHowToSteps.map((step, index) => (
 				<li class='rounded-[20px] border border-neutral-200 bg-white p-5'>
 					<div class='text-sm font-semibold text-red-700'>{String(index + 1).padStart(2, '0')}</div>
-					<h3 class='mt-5 text-base font-semibold leading-tight text-neutral-950'>{step}</h3>
-					<p class={`mt-2 ${columnsCardTextClass}`}>
-						{index === 0 && 'Оцените помещение и нужную теплоотдачу.'}
-						{index === 1 && 'Выберите глубину секции: 2, 3, 4 или 5 труб.'}
-						{index === 2 && 'Согласуйте габарит и количество секций.'}
-						{index === 3 && 'Подберите узел подключения и цвет RAL.'}
-					</p>
+					<h3 class='mt-5 text-base font-semibold leading-tight text-neutral-950'>{step.title}</h3>
+					<p class={`mt-2 ${columnsCardTextClass}`}>{step.text}</p>
 				</li>
 			))}
 		</ol>

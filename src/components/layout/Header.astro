@@ -8,6 +8,7 @@ import {
   getDefaultConfiguratorModel,
   resolveExistingModelId,
 } from "@widgets/pageMain/quickConfiguratorData";
+import { featuredCollections } from "../../lib/featuredCollections";
 
 interface Props {
   currentPath?: string;
@@ -61,6 +62,11 @@ const catalogLinks = [
     url: "/convector",
     text: "Конвекторы для остекления в пол",
   },
+  {
+    title: "Подборки",
+    url: "/collections",
+    text: featuredCollections[0].title,
+  },
 ];
 
 const mobileCatalogLinks: Array<{
@@ -98,6 +104,12 @@ const mobileCatalogLinks: Array<{
     description: "Решения для нестандартного монтажа",
     url: "/floor",
     icon: "floor",
+  },
+  {
+    title: "Подборки",
+    description: featuredCollections[0].title,
+    url: "/collections",
+    icon: "book",
   },
 ];
 

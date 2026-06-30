@@ -1,30 +1,40 @@
 ---
 import { columnsSectionTitleClass } from './columnsTypography'
 
-const rows = [
+type Row = {
+	type: string
+	href?: string
+	pros: string
+	cons: string
+	when: string
+}
+
+const rows: Row[] = [
 	{
-		type: 'Трубчатые',
-		pros: 'Гибкий выбор размеров, аккуратный вид, подходят для современных интерьеров.',
+		type: 'Трубчатые радиаторы',
+		pros: 'Гибкий выбор размеров, аккуратный вид, разные высоты, секции, подключение и цвет RAL.',
 		cons: 'Обычно дороже базовых панельных решений.',
-		when: 'Если важны дизайн, вариативность и подбор под проект.',
+		when: 'Если нужен радиатор под конкретное помещение, интерьер и параметры отопления.',
 	},
 	{
-		type: 'Панельные',
-		pros: 'Доступная цена, быстрый монтаж, хорошая теплоотдача.',
-		cons: 'Меньше вариантов по геометрии и дизайну.',
-		when: 'Для типовых помещений и ограниченного бюджета.',
+		type: 'Панельные радиаторы',
+		pros: 'Доступная цена, быстрый монтаж, хорошая теплоотдача в типовых размерах.',
+		cons: 'Меньше вариантов по высоте, глубине, цвету и дизайну.',
+		when: 'Если нужен простой бюджетный радиатор без индивидуального подбора.',
 	},
 	{
-		type: 'Чугунные',
-		pros: 'Высокая инерционность и устойчивость к качеству теплоносителя.',
-		cons: 'Большой вес и более сложный монтаж.',
-		when: 'Для классических интерьеров и систем с перепадами параметров.',
+		type: 'Чугунные радиаторы',
+		href: '/retro',
+		pros: 'Высокая теплоемкость, классический внешний вид, декоративные варианты.',
+		cons: 'Большой вес, более сложный монтаж, специфический стиль.',
+		when: 'Для классического интерьера, ретро-проекта, ресторана, отеля или загородного дома.',
 	},
 	{
 		type: 'Дизайн-радиаторы',
-		pros: 'Максимальный выбор форм и интерьерных решений.',
-		cons: 'Требуют точного подбора под задачу и проект.',
-		when: 'Если радиатор должен быть частью визуальной концепции.',
+		href: '/design',
+		pros: 'Максимум форм, профилей, вертикальных и горизонтальных решений.',
+		cons: 'Требуют точного подбора по интерьеру, мощности и месту установки.',
+		when: 'Если радиатор должен быть заметной частью визуальной концепции.',
 	},
 ]
 ---
@@ -47,8 +57,14 @@ const rows = [
 				<tbody>
 					{
 						rows.map(row => (
-							<tr class='border-t border-neutral-200'>
-								<td class='px-4 py-3 text-sm font-semibold text-neutral-900'>{row.type}</td>
+							<tr class='border-t border-neutral-200 align-top'>
+								<td class='px-4 py-3 text-sm font-semibold text-neutral-900'>
+									{row.href ? (
+										<a href={row.href} class='text-red-700 underline decoration-red-200 underline-offset-2 transition hover:decoration-red-500'>{row.type}</a>
+									) : (
+										row.type
+									)}
+								</td>
 								<td class='px-4 py-3 text-sm leading-6 text-neutral-700'>{row.pros}</td>
 								<td class='px-4 py-3 text-sm leading-6 text-neutral-700'>{row.cons}</td>
 								<td class='px-4 py-3 text-sm leading-6 text-neutral-700'>{row.when}</td>
@@ -61,11 +77,27 @@ const rows = [
 		<div class='mt-6 grid gap-3 md:hidden'>
 			{rows.map(row => (
 				<article class='rounded-[20px] border border-neutral-200 bg-white p-4'>
-					<h3 class='text-base font-semibold text-neutral-950'>{row.type}</h3>
+					<h3 class='text-base font-semibold text-neutral-950'>
+						{row.href ? (
+							<a href={row.href} class='text-red-700 underline decoration-red-200 underline-offset-2'>{row.type}</a>
+						) : (
+							row.type
+						)}
+					</h3>
 					<p class='mt-3 text-sm leading-6 text-neutral-700'><span class='font-medium text-neutral-950'>Плюсы: </span>{row.pros}</p>
+					<p class='mt-2 text-sm leading-6 text-neutral-700'><span class='font-medium text-neutral-950'>Минусы: </span>{row.cons}</p>
 					<p class='mt-2 text-sm leading-6 text-neutral-700'><span class='font-medium text-neutral-950'>Когда выбрать: </span>{row.when}</p>
 				</article>
 			))}
+		</div>
+
+		<div class='mt-8 flex flex-col gap-3 rounded-2xl border border-neutral-200 bg-white p-5 md:flex-row md:items-center md:justify-between'>
+			<p class='max-w-2xl text-sm leading-6 text-neutral-700 md:text-base'>
+				Если сомневаетесь между трубчатым, панельным, чугунным и дизайн-радиатором, отправьте фото помещения - подскажем, какой тип лучше подойдет.
+			</p>
+			<a href='/request' class='inline-flex h-11 shrink-0 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>
+				Подобрать радиатор
+			</a>
 		</div>
 	</div>
 </section>

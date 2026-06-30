@@ -1,23 +1,29 @@
 ---
-import { designUsefulLinks } from './designData'
+import { designUsefulLinkGroups } from './designData'
 ---
 
 <section class='bg-white py-12 md:py-16 xl:py-20'>
-	<div class='mx-auto max-w-[900px] px-4 md:px-6 xl:px-8'>
+	<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 		<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Полезные материалы</h2>
 		<p class='mt-4 text-sm leading-6 text-neutral-600 md:text-base'>
-			Статьи о выборе дизайнерских радиаторов, мощности, форме труб, безопасности и подборе под интерьер.
+			Собрали материалы, которые помогут выбрать форму радиатора, рассчитать мощность, подобрать модель под интерьер и избежать ошибок при заказе.
 		</p>
-		<ul class='mt-7 divide-y divide-neutral-200 border-y border-neutral-200'>
-			{designUsefulLinks.map(([href, title]) => (
-				<li>
-					<a href={href} class='group flex gap-3 py-3.5 text-sm leading-6 text-neutral-700 transition hover:text-red-700 md:text-base'>
-						<span class='text-neutral-400 transition group-hover:text-red-700'>→</span>
-						<span>{title}</span>
-					</a>
-				</li>
+		<div class='mt-7 grid gap-8 lg:grid-cols-3'>
+			{designUsefulLinkGroups.map(group => (
+				<section class='border-t border-neutral-200 pt-4'>
+					<h3 class='text-base font-semibold text-neutral-950'>{group.title}</h3>
+					<ul class='mt-3 space-y-1'>
+						{group.links.map(([href, title]) => (
+							<li>
+								<a href={href} class='group flex gap-3 py-2 text-sm leading-6 text-neutral-700 transition hover:text-red-700 md:text-base'>
+									<span class='text-neutral-400 transition group-hover:text-red-700'>→</span>
+									<span>{title}</span>
+								</a>
+							</li>
+						))}
+					</ul>
+				</section>
 			))}
-		</ul>
+		</div>
 	</div>
 </section>
-
