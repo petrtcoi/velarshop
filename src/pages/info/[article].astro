@@ -407,7 +407,7 @@ const crumbs = [
     </header>
 
     <div class='article-shell article-shell--reading article-layout'>
-      <article class:list={['article-content', 'article-prose', shouldHideDuplicateIntroHeading && 'article-prose--hide-duplicate-intro-heading']}>
+      <article class:list={['article-content', 'article-prose', shouldHideDuplicateIntroHeading && 'article-prose--hide-duplicate-intro-heading', article.slug === 'wall' && 'muted-links']}>
         <Content />
 
         <ArticleCta

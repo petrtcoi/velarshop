@@ -682,3 +682,222 @@ a[class*="cta"],
     padding-block: 56px 88px;
   }
 }
+
+/* Responsive data table: real <table> on desktop, card-style rows on mobile.
+   Cells need a data-label attribute for the mobile ::before label. */
+.responsive-table {
+  margin-block: 1.5em;
+}
+
+.responsive-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+@media (max-width: 767px) {
+  .responsive-table table,
+  .responsive-table thead,
+  .responsive-table tbody,
+  .responsive-table th,
+  .responsive-table td,
+  .responsive-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  .responsive-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .responsive-table tbody tr {
+    margin-bottom: 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 14px 16px;
+  }
+
+  .responsive-table tbody tr:last-child {
+    margin-bottom: 0;
+  }
+
+  .responsive-table td {
+    border: none;
+    padding: 6px 0;
+    font-size: 0.875rem;
+  }
+
+  .responsive-table td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 2px;
+    color: #9ca3af;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+}
+
+/* Compact chip link, reuses the same visual language as .article-related__chips a */
+.table-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  background: #fafafa;
+  padding: 6px 12px;
+  color: #374151 !important;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-decoration: none !important;
+  transition:
+    border-color 160ms ease,
+    color 160ms ease,
+    background-color 160ms ease;
+}
+
+.table-chip:hover,
+.table-chip:focus-visible {
+  border-color: #fecaca;
+  background: #fff8f8;
+  color: #991b1b !important;
+}
+
+.table-chip-row {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Compact card grid, used for advantages and the "check before ordering" groups */
+.info-card-grid {
+  margin-block: 1.25em;
+  display: grid;
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .info-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.info-card {
+  border: 1px solid #ececec;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.info-card > h3,
+.info-card > h4 {
+  margin-top: 0 !important;
+}
+
+.info-card > p:last-child,
+.info-card > ul:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Accordion built on native <details>/<summary>, no JS required */
+.accordion-item {
+  border: 1px solid #ececec;
+  border-radius: 14px;
+  padding: 4px 16px;
+}
+
+.accordion-item + .accordion-item {
+  margin-top: 10px;
+}
+
+.accordion-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  list-style: none;
+  padding-block: 12px;
+}
+
+.accordion-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion-item summary h3,
+.accordion-item summary h4 {
+  display: inline;
+  margin: 0 !important;
+  font-size: 0.9375rem !important;
+}
+
+.accordion-icon {
+  transition: transform 160ms ease;
+}
+
+.accordion-item[open] .accordion-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-item__body {
+  padding-bottom: 14px;
+}
+
+.accordion-item__body > :first-child {
+  margin-top: 0 !important;
+}
+
+.accordion-item__body > :last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Muted internal links, opt-in via .muted-links on .article-prose so other articles keep the default red links.
+   Normal prose links become dark + underline; red is reserved for hover/focus. Anything under a
+   not-prose wrapper (ArticleCta, table-chip grids, custom card grids) already styles its own links
+   and is excluded here, mirroring the existing .prose :where(a):not(...) pattern above. */
+.article-prose.muted-links :where(a):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  color: #27272a;
+  text-decoration-color: rgba(39, 39, 42, 0.35);
+}
+
+.article-prose.muted-links :where(a):not(:where([class~="not-prose"], [class~="not-prose"] *)):hover,
+.article-prose.muted-links :where(a):not(:where([class~="not-prose"], [class~="not-prose"] *)):focus-visible {
+  color: #b91c1c;
+  text-decoration-color: rgba(185, 28, 28, 0.5);
+}
+
+/* Mobile-compact variant for ArticleCta, opt-in via className so other pages are unaffected */
+@media (max-width: 767px) {
+  .article-cta.cta-compact {
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 16px;
+    gap: 10px;
+  }
+
+  .article-cta.cta-compact .article-cta__title {
+    font-size: 1.0625rem;
+  }
+
+  .article-cta.cta-compact .article-cta__description {
+    margin-top: 6px;
+    font-size: 0.875rem;
+  }
+
+  .article-cta.cta-compact .article-cta__actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .article-cta.cta-compact .article-cta__button {
+    min-height: 42px;
+    width: 100%;
+  }
+}
