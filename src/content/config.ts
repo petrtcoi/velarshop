@@ -20,6 +20,10 @@ const articleSchema = defineCollection({
     metaDescription: z.string().optional(),
     datePublished: z.string().optional(),
     dateModified: z.string().optional(),
+    faq: z.array(z.object({
+      question: z.string(),
+      answer: z.string(),
+    })).optional(),
   }),
 });
 

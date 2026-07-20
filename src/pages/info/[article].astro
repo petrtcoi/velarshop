@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import Layout from "@shared/layouts/Layout.astro";
 import type { CollectionEntry } from "astro:content";
 import ArticleCta from "../../components/articles/ArticleCta.astro";
-import { buildArticleJsonLd } from "../../lib/seo/articleSeo";
+import { buildArticleJsonLd, buildFaqPageJsonLd } from "../../lib/seo/articleSeo";
 
 export async function getStaticPaths() {
   const articles = await getCollection("articles");
@@ -19,7 +19,7 @@ type Props = {
 
 const { article } = Astro.props as Props;
 const { Content } = await article.render();
-const { title, short_description, metaTitle, metaDescription, thumbnail, datePublished, dateModified } = article.data;
+const { title, short_description, metaTitle, metaDescription, thumbnail, datePublished, dateModified, faq = [] } = article.data;
 const allArticles = await getCollection("articles");
 const articleTitleBySlug = new Map(allArticles.map((entry) => [entry.slug, entry.data.title]));
 const siteOrigin = (Astro.site ?? new URL("https://velarshop.ru")).origin;
@@ -33,6 +33,7 @@ const articleJsonLd = buildArticleJsonLd({
   datePublished,
   dateModified,
 });
+const faqPageJsonLd = buildFaqPageJsonLd(faq);
 
 type Topic = "safety" | "design" | "columns" | "convector" | "retro" | "generic";
 
@@ -70,12 +71,14 @@ const relatedArticleSets: Record<Topic, ArticleCandidate[]> = {
   ],
   columns: [
     { slug: "steel-tube-radiators-guide", label: "Как выбрать трубчатый радиатор" },
+    { slug: "trubchatye-radiatory-velar-dlya-kvartiry", label: "Трубчатые радиаторы для квартиры" },
     { slug: "2-3-4-trubchatye-radiatory-chto-vybrat", label: "2-, 3- и 4-трубчатые радиаторы: что выбрать" },
     { slug: "power", label: "Как рассчитать мощность радиатора" },
     { slug: "column-radiators-pros-cons", label: "Трубчатые или панельные радиаторы" },
     { slug: "tube-radiators", label: "Трубчатые радиаторы для квартиры" },
   ],
   convector: [
+    { slug: "kwh-kwhv-kwhv24-chto-vybrat", label: "KWH, KWHV или KWHV 24V - что выбрать" },
     { slug: "kak-vybirat-vnutripolnye-konvektory", label: "Как выбрать внутрипольный конвектор" },
     { slug: "vnutripolnye-konvektory-s-ventilyatorom", label: "Конвекторы с вентилятором" },
     { slug: "teplovaya-zavesa-u-panoramnyh-okon", label: "Конвекторы для панорамных окон" },
@@ -397,6 +400,7 @@ const crumbs = [
 >
   <Fragment slot='head'>
     <script type='application/ld+json' set:html={JSON.stringify(articleJsonLd)} />
+    {faqPageJsonLd && <script type='application/ld+json' set:html={JSON.stringify(faqPageJsonLd)} />}
   </Fragment>
   <div class='article-page article-page--info'>
     <header class='article-hero'>

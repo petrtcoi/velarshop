@@ -194,6 +194,10 @@ const usefulArticleGroups = [
 		title: 'Выбор трубчатого радиатора',
 		items: [
 			{
+				href: '/info/trubchatye-radiatory-velar-dlya-kvartiry',
+				title: 'Трубчатые радиаторы для квартиры - как выбрать',
+			},
+			{
 				href: '/info/column-radiators-pros-cons',
 				title: 'Трубчатые радиаторы: преимущества и недостатки',
 			},

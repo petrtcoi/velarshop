@@ -37,3 +37,22 @@ export function buildArticleJsonLd(input: ArticleSeoInput): Record<string, unkno
 
 	return jsonLd
 }
+
+export function buildFaqPageJsonLd(
+	items: Array<{ question: string; answer: string }>,
+): Record<string, unknown> | null {
+	if (items.length === 0) return null
+
+	return {
+		'@context': 'https://schema.org',
+		'@type': 'FAQPage',
+		mainEntity: items.map(item => ({
+			'@type': 'Question',
+			name: item.question,
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: item.answer,
+			},
+		})),
+	}
+}

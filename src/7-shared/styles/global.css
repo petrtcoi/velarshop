@@ -177,13 +177,29 @@ a[class*="cta"],
 
 .article-prose ul,
 .article-prose ol {
-  margin-block: 1.15em;
+  margin-block: 1em;
   padding-left: 1.35rem;
 }
 
+.article-prose ul {
+  list-style-type: disc;
+}
+
+.article-prose ol {
+  list-style-type: decimal;
+}
+
 .article-prose li {
-  margin-block: 0.4em;
+  margin-block: 0.28em;
   padding-left: 0.15rem;
+}
+
+.article-prose li > p {
+  margin-block: 0;
+}
+
+.article-prose li > :is(ul, ol) {
+  margin-block: 0.45em;
 }
 
 .article-prose ul li::marker {
