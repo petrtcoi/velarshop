@@ -177,7 +177,7 @@ VelarShop — коммерческий сайт, поэтому статьи н�
         ├── [есть] /info/termostats
         ├── [есть] /info/termostat-installation-errors
         ├── [добавить] /info/kak-uhazhivat-za-trubchatym-radiatorom
-        └── [добавить] /info/oshibki-ekspluatacii-trubchatyh-radiatorov
+        └── [2026.08.05] /info/oshibki-ekspluatacii-trubchatyh-radiatorov
 ```
 
 ## Роли страниц
@@ -591,7 +591,7 @@ Tier-2. Большая сравнительная статья по сериям
     ├── [добавить] /info/kakoy-radiator-vybrat-dlya-chastnogo-doma
     ├── [добавить] /info/radiator-dlya-detskoy-komnaty
     ├── [добавить] /info/radiator-dlya-spalni
-    └── [добавить] /info/kak-podgotovit-dannye-dlya-rascheta-radiatora
+    └── [2026.08.05] /info/kak-podgotovit-dannye-dlya-rascheta-radiatora
 ```
 
 ## Зачем нужен кластер
@@ -615,7 +615,7 @@ Tier-1. Общий гид выбора радиатора для квартир�
 
 Tier-1. Выбор радиаторов для дома: автономное отопление, большие помещения, панорамные окна, дизайн-проект.
 
-### `/info/kak-podgotovit-dannye-dlya-rascheta-radiatora`
+### `[2026.08.05] /info/kak-podgotovit-dannye-dlya-rascheta-radiatora`
 
 Tier-2. Практическая статья перед заявкой: какие данные нужны менеджеру для подбора и расчета.
 
@@ -954,7 +954,7 @@ H1 выводится шаблоном страницы из поля `title`, �
 /info/nostalgia-ili-historic-chto-vybrat
 /info/p30-p60-q40-r32-chto-vybrat
 /info/sravnenie-modeley-dizayn-radiatorov-velar
-/info/kak-podgotovit-dannye-dlya-rascheta-radiatora
+/info/kak-podgotovit-dannye-dlya-rascheta-radiatora - добавлено 2026.08.05
 ```
 
 ## Этап 4. После статей — усилить коммерческие страницы
@@ -1018,7 +1018,7 @@ H1 выводится шаблоном страницы из поля `title`, �
 /info/radiator-v-cvet-steny-ili-akcentnyy
 /info/belyy-chernyy-ili-cvetnoy-dizayn-radiator
 /info/dizayn-radiator-s-tenom-kogda-nuzhen
-/info/kak-podgotovit-dannye-dlya-rascheta-radiatora
+/info/kak-podgotovit-dannye-dlya-rascheta-radiatora - добавлено 2026.08.05
 /info/kak-uhazhivat-za-trubchatym-radiatorom
 ```
 
