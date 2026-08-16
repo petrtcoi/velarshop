@@ -127,6 +127,14 @@ const quickSelectionItems = [
 // Плоский список сохранён для обратной совместимости и для разметки/ссылок.
 const usefulArticles = [
 	{
+		href: '/info/kakoy-radiator-vybrat-dlya-kvartiry',
+		title: 'Какой радиатор выбрать для квартиры',
+	},
+	{
+		href: '/info/kakoy-radiator-vybrat-dlya-chastnogo-doma',
+		title: 'Какой радиатор выбрать для частного дома',
+	},
+	{
 		href: '/info/termostats',
 		title: 'Как правильно устанавливать термоголовки для радиаторов',
 	},
@@ -190,6 +198,19 @@ const usefulArticles = [
 
 // Те же ссылки, сгруппированные по смыслу. Все href сохранены.
 const usefulArticleGroups = [
+	{
+		title: 'Выбор для квартиры и дома',
+		items: [
+			{
+				href: '/info/kakoy-radiator-vybrat-dlya-kvartiry',
+				title: 'Какой радиатор выбрать для квартиры',
+			},
+			{
+				href: '/info/kakoy-radiator-vybrat-dlya-chastnogo-doma',
+				title: 'Какой радиатор выбрать для частного дома',
+			},
+		],
+	},
 	{
 		title: 'Выбор трубчатого радиатора',
 		items: [

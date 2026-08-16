@@ -238,6 +238,13 @@ export function getDesignSeriesBySlug(slug: string): DesignSeries | undefined {
 
 export const designUsefulLinkGroups = [
 	{
+		title: 'Выбор для квартиры и дома',
+		links: [
+			['/info/kakoy-radiator-vybrat-dlya-kvartiry', 'Какой радиатор выбрать для квартиры'],
+			['/info/kakoy-radiator-vybrat-dlya-chastnogo-doma', 'Какой радиатор выбрать для частного дома'],
+		],
+	},
+	{
 		title: 'Выбор дизайн-радиатора',
 		links: [
 			['/info/wall', 'Настенные дизайнерские радиаторы отопления'],

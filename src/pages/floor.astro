@@ -123,6 +123,8 @@ const p300Href = modelById.p300?.href ?? '/model/p300'
 const heroFacts = ['Q500, P200, P300', 'длина до 2500 мм', 'цвета RAL', 'доставка по России']
 
 const usefulLinks = [
+	['/info/kakoy-radiator-vybrat-dlya-kvartiry', 'Какой радиатор выбрать для квартиры'],
+	['/info/kakoy-radiator-vybrat-dlya-chastnogo-doma', 'Какой радиатор выбрать для частного дома'],
 	['/info/floor-design-radiators', 'Напольные дизайн-радиаторы: особенности, преимущества и недостатки'],
 	['/info/radiatory-dlya-panoramnykh-okon-tipy-osobennosti', 'Радиаторы для панорамных окон: типы и особенности'],
 	['/info/teplovaya-zavesa-u-panoramnyh-okon', 'Тепловая завеса у панорамных окон'],
@@ -266,6 +268,15 @@ const faqItems = [
 ]
 
 const usefulLinkGroups = [
+	{
+		title: 'Выбор радиатора для квартиры и дома',
+		items: usefulLinks.filter(([, title]) =>
+			[
+				'Какой радиатор выбрать для квартиры',
+				'Какой радиатор выбрать для частного дома',
+			].includes(title),
+		),
+	},
 	{
 		title: 'Выбор решения для панорамных окон',
 		items: usefulLinks.filter(([, title]) =>

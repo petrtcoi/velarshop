@@ -12,6 +12,8 @@
 
 В первую очередь добавлены два материала с разными и коммерчески понятными интентами: сравнение `/info/kwh-kwhv-kwhv24-chto-vybrat` и сценарный гид `/info/trubchatye-radiatory-velar-dlya-kvartiry`. Первый получает входящие ссылки из `/convector` и главного гида по выбору конвекторов, второй - из `/columns`, `/info/tube-radiators` и `/info/column-radiators-pros-cons`. Обе статьи возвращают пользователя к коммерческому хабу, конкретным моделям, связанным техническим материалам и форме расчета.
 
+Проверка от 2026-08-16 показала, что отдельные URL `/info/sravnenie-modeley-dizayn-radiatorov-velar` и `/info/napolnyy-radiator-ili-vnutripolnyy-konvektor` пока создавать не нужно. Первый интент подробно закрывает коммерческая страница `/design` с таблицей серий и блоком «Какую серию Velar выбрать», второй - страница `/floor`, статья `/info/chto-postavit-pered-panoramnym-oknom` и сценарный гид по конвекторам. Вместо конкурирующих страниц добавлены две самостоятельные Tier-1 статьи: `/info/kakoy-radiator-vybrat-dlya-kvartiry` и `/info/kakoy-radiator-vybrat-dlya-chastnogo-doma`. Они разделены по типу системы и ведут в коммерческие разделы `/columns`, `/design`, `/floor`, `/convector`, `/retro` и на `/request`. Входящие ссылки добавлены из этих коммерческих разделов, `/info/oshibki-pri-vybore-radiatorov`, `/info/radiator-types`, `/info/kak-podgotovit-dannye-dlya-rascheta-radiatora` и общего списка материалов.
+
 Здесь **не расписываем tier-3**. Идея текущего этапа — собрать кластеры вокруг существующих коммерческих страниц и понять:
 
 - какие статьи уже есть;
@@ -263,7 +265,7 @@ Tier-2. Подбор низких трубчатых радиаторов под
     │   ├── [есть] /info/radiatory-dlya-panoramnykh-okon-tipy-osobennosti
     │   ├── [добавить] /info/napolnye-radiatory-velar-obzor
     │   ├── [добавить] /info/napolnye-radiatory-dlya-panoramnyh-okon
-    │   ├── [добавить] /info/napolnyy-radiator-ili-vnutripolnyy-konvektor
+    │   ├── [не создавать - каннибализация] /info/napolnyy-radiator-ili-vnutripolnyy-konvektor
     │   └── [добавить] /info/napolnye-radiatory-v-interere
     │
     └── [есть / углубить] /info/radiatory-dlya-panoramnykh-okon-tipy-osobennosti
@@ -294,7 +296,7 @@ Tier-1. Опорный обзор напольных радиаторов Velar.
 
 Связи: `/floor`, `/design`, `/convector`, `/request`.
 
-### `/info/napolnyy-radiator-ili-vnutripolnyy-konvektor`
+### `[не создавать - каннибализация] /info/napolnyy-radiator-ili-vnutripolnyy-konvektor`
 
 Tier-2. Сравнение двух решений для панорамных окон: напольный радиатор и внутрипольный конвектор.
 
@@ -511,10 +513,10 @@ Tier-2. Цвета и декоративная отделка ретро-рад�
     │   └── [добавить] /info/radiatory-ral-v-interere
     │
     └── [не создавать отдельно: интент закрывает /design] /info/dizayn-radiatory-velar-kak-vybrat
-        ├── [добавить] /info/p30-p60-q40-r32-chto-vybrat
+        ├── [не создавать - каннибализация] /info/p30-p60-q40-r32-chto-vybrat
         ├── [добавить] /info/ploskiy-kvadratnyy-kruglyy-profil-radiatora
         ├── [добавить] /info/dizayn-radiator-s-tenom-kogda-nuzhen
-        └── [добавить] /info/sravnenie-modeley-dizayn-radiatorov-velar
+        └── [не создавать - каннибализация] /info/sravnenie-modeley-dizayn-radiatorov-velar
 ```
 
 ## Роли страниц
@@ -551,7 +553,7 @@ Tier-1. Статья про настенные дизайнерские ради
 
 Связи: `/design`, все серии P/Q/R/S, `/info/vertical-designer-radiators`, `/info/horizontal-designer-radiators`, `/request`.
 
-### `/info/p30-p60-q40-r32-chto-vybrat`
+### `[не создавать - каннибализация] /info/p30-p60-q40-r32-chto-vybrat`
 
 Tier-2. Сравнение популярных серий по форме профиля, визуальной массе, мощности и сценариям.
 
@@ -569,7 +571,7 @@ Tier-2. Когда нужен электрический ТЭН в дизайн�
 
 Связи: `/design`, модельные страницы с возможностью ТЭНа, `/request`.
 
-### `/info/sravnenie-modeley-dizayn-radiatorov-velar`
+### `[не создавать - каннибализация] /info/sravnenie-modeley-dizayn-radiatorov-velar`
 
 Tier-2. Большая сравнительная статья по сериям Velar. Хорошая страница для AI-выдачи.
 
@@ -587,8 +589,8 @@ Tier-2. Большая сравнительная статья по сериям
     ├── [есть] /info/bezopasnost-radiatorov-dlya-detej
     ├── [есть] /info/power
     ├── [есть] /info/radiator-types
-    ├── [добавить] /info/kakoy-radiator-vybrat-dlya-kvartiry
-    ├── [добавить] /info/kakoy-radiator-vybrat-dlya-chastnogo-doma
+    ├── [добавлено 2026.08.16] /info/kakoy-radiator-vybrat-dlya-kvartiry
+    ├── [добавлено 2026.08.16] /info/kakoy-radiator-vybrat-dlya-chastnogo-doma
     ├── [добавить] /info/radiator-dlya-detskoy-komnaty
     ├── [добавить] /info/radiator-dlya-spalni
     └── [2026.08.05] /info/kak-podgotovit-dannye-dlya-rascheta-radiatora
@@ -607,13 +609,13 @@ Tier-2. Большая сравнительная статья по сериям
 
 ## Что добавить
 
-### `/info/kakoy-radiator-vybrat-dlya-kvartiry`
+### `[добавлено 2026.08.16] /info/kakoy-radiator-vybrat-dlya-kvartiry`
 
-Tier-1. Общий гид выбора радиатора для квартиры. Должен вести в `/columns`, `/design`, `/floor`, `/convector` в зависимости от сценария.
+Tier-1. Общий гид выбора радиатора для квартиры добавлен. Исходящие ссылки ведут в `/columns`, `/design`, `/floor`, `/convector`, `/retro`, на модели, связанные технические статьи, парный гид для частного дома и `/request`. Входящие ссылки установлены с `/columns`, `/design`, `/floor`, `/convector`, `/retro`, общего списка `/info`, статей `/info/oshibki-pri-vybore-radiatorov`, `/info/radiator-types` и `/info/kak-podgotovit-dannye-dlya-rascheta-radiatora`.
 
-### `/info/kakoy-radiator-vybrat-dlya-chastnogo-doma`
+### `[добавлено 2026.08.16] /info/kakoy-radiator-vybrat-dlya-chastnogo-doma`
 
-Tier-1. Выбор радиаторов для дома: автономное отопление, большие помещения, панорамные окна, дизайн-проект.
+Tier-1. Гид по выбору радиаторов для частного дома добавлен: автономное отопление, температурный график, материалы, гидравлика, большие помещения и панорамные окна. Исходящие ссылки ведут в основные коммерческие разделы, на модели конвекторов, связанные технические статьи, парный гид для квартиры и `/request`. Входящие ссылки установлены с `/columns`, `/design`, `/floor`, `/convector`, `/retro`, общего списка `/info`, статей `/info/oshibki-pri-vybore-radiatorov`, `/info/radiator-types` и `/info/kak-podgotovit-dannye-dlya-rascheta-radiatora`.
 
 ### `[2026.08.05] /info/kak-podgotovit-dannye-dlya-rascheta-radiatora`
 
@@ -936,8 +938,8 @@ H1 выводится шаблоном страницы из поля `title`, �
 ## Этап 2. Создать самые важные Tier-1
 
 ```txt
-/info/kakoy-radiator-vybrat-dlya-kvartiry
-/info/kakoy-radiator-vybrat-dlya-chastnogo-doma
+/info/kakoy-radiator-vybrat-dlya-kvartiry - добавлено 2026.08.16
+/info/kakoy-radiator-vybrat-dlya-chastnogo-doma - добавлено 2026.08.16
 ```
 
 Общие брендовые обзоры дизайн-радиаторов, конвекторов, напольных и ретро-моделей исключены из плана отдельных URL. Эти интенты уже должны закрывать соответствующие коммерческие хабы `/design`, `/convector`, `/floor` и `/retro`. Новая Tier-1 создается только при наличии отдельного интента, который нельзя полноценно закрыть на money page без ухудшения ее коммерческой структуры.
@@ -950,10 +952,10 @@ H1 выводится шаблоном страницы из поля `title`, �
 /info/2-3-4-trubchatye-radiatory-chto-vybrat - добавлено 2026.06.25
 /info/kwh-kwhv-kwhv24-chto-vybrat - добавлено 2026.07.20
 /info/konvektor-dlya-panoramnogo-okna
-/info/napolnyy-radiator-ili-vnutripolnyy-konvektor
+/info/napolnyy-radiator-ili-vnutripolnyy-konvektor - не создавать, интент закрыт существующими страницами
 /info/nostalgia-ili-historic-chto-vybrat
-/info/p30-p60-q40-r32-chto-vybrat
-/info/sravnenie-modeley-dizayn-radiatorov-velar
+/info/p30-p60-q40-r32-chto-vybrat - не создавать, интент закрывает /design
+/info/sravnenie-modeley-dizayn-radiatorov-velar - не создавать, интент закрывает /design
 /info/kak-podgotovit-dannye-dlya-rascheta-radiatora - добавлено 2026.08.05
 ```
 
@@ -994,7 +996,7 @@ H1 выводится шаблоном страницы из поля `title`, �
 /info/kwh-kwhv-kwhv24-chto-vybrat - добавлено 2026.07.20
 /info/trubchatye-radiatory-velar-dlya-kvartiry - добавлено 2026.07.20
 /info/2-3-4-trubchatye-radiatory-chto-vybrat - добавлено 2026.06.25
-/info/sravnenie-modeley-dizayn-radiatorov-velar — добавить
+/info/sravnenie-modeley-dizayn-radiatorov-velar — не создавать, интент закрывает /design
 ```
 
 ## Высокий приоритет
@@ -1003,11 +1005,11 @@ H1 выводится шаблоном страницы из поля `title`, �
 /info/floor-design-radiators — углубить
 /info/iron-cast-radiators — углубить
 /info/panoramnie-okna — углубить
-/info/napolnyy-radiator-ili-vnutripolnyy-konvektor — добавить
+/info/napolnyy-radiator-ili-vnutripolnyy-konvektor — не создавать, интент закрывают /floor и /info/chto-postavit-pered-panoramnym-oknom
 /info/retro-radiatory-velar-obzor — добавить
 /info/nostalgia-ili-historic-chto-vybrat — добавить
-/info/p30-p60-q40-r32-chto-vybrat — добавить
-/info/kakoy-radiator-vybrat-dlya-kvartiry — добавить
+/info/p30-p60-q40-r32-chto-vybrat — не создавать, сравнение серий закрывает /design
+/info/kakoy-radiator-vybrat-dlya-kvartiry — добавлено 2026.08.16
 ```
 
 ## Средний приоритет

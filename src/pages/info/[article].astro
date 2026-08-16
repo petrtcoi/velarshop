@@ -58,6 +58,8 @@ type CtaConfig = {
 
 const relatedArticleSets: Record<Topic, ArticleCandidate[]> = {
   safety: [
+    { slug: "kakoy-radiator-vybrat-dlya-kvartiry", label: "Какой радиатор выбрать для квартиры" },
+    { slug: "kakoy-radiator-vybrat-dlya-chastnogo-doma", label: "Какой радиатор выбрать для частного дома" },
     { slug: "power" },
     { slug: "oshibki-pri-vybore-radiatorov", label: "Как выбрать радиатор отопления для квартиры" },
     { slug: "column-radiators-pros-cons", label: "Трубчатые радиаторы: особенности и выбор" },
@@ -92,6 +94,8 @@ const relatedArticleSets: Record<Topic, ArticleCandidate[]> = {
     { slug: "restavratsiya-chugunnyh-radiatorov", label: "Ретро-радиаторы в интерьере" },
   ],
   generic: [
+    { slug: "kakoy-radiator-vybrat-dlya-kvartiry", label: "Какой радиатор выбрать для квартиры" },
+    { slug: "kakoy-radiator-vybrat-dlya-chastnogo-doma", label: "Какой радиатор выбрать для частного дома" },
     { slug: "power" },
     { slug: "kak-podobrat-radiator-pod-dizajn-kvartiry" },
     { slug: "steel-tube-radiators-guide" },
@@ -220,7 +224,7 @@ function getTopicBySlug(slug: string): Topic {
   if (/trubchat|tube|column|sekci|panelnyh|termostat|chistit/.test(slug)) return "columns";
   if (/chugun|retro|iron|lite|restavrats|nostalgi|histor/.test(slug)) return "retro";
   if (/design|vertical|horizontal|tsvet|interer|colors|wall|kuhni|chernye|forma-trub/.test(slug)) return "design";
-  if (/bezopasnost|vybor|oshibki|power|radiator-ne-greet|kreplenie|teplootdacha|heating/.test(slug)) return "safety";
+  if (/bezopasnost|vybor|vybrat|oshibki|power|radiator-ne-greet|kreplenie|teplootdacha|heating/.test(slug)) return "safety";
   return "generic";
 }
 
