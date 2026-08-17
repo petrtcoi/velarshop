@@ -88,6 +88,14 @@ const crumbs = [
 
 const modelRadiators = radiatorsJsonData.filter(radiator => radiator.model_id === model.id)
 
+const interAxisValues = [...new Set(modelRadiators.map(radiator => radiator.n_spacing).filter((value): value is string => Boolean(value)))]
+	.sort((a, b) => Number.parseFloat(a) - Number.parseFloat(b))
+const interAxisValue = interAxisValues.length === 1
+	? `${interAxisValues[0]} мм`
+	: interAxisValues.length > 1
+		? `${interAxisValues[0]}–${interAxisValues[interAxisValues.length - 1]} мм`
+		: ''
+
 function toNumber(value?: string): number {
 	if (!value) return 0
 	const parsed = Number.parseFloat(value)
@@ -204,6 +212,7 @@ const maxPower = powerValues.length ? Math.max(...powerValues).toLocaleString('r
 const specs: Array<{ label: string; value: string }> = [
 	{ label: 'Тип', value: model.prefix.toLowerCase() },
 	{ label: 'Исполнение', value: isHorizontal ? 'горизонтальное' : isVertical ? 'вертикальное' : '' },
+	{ label: 'Межосевое расстояние', value: model.type === 'columns' ? interAxisValue : '' },
 	{ label: 'Форма труб', value: tubeShape === 'по серии' ? '' : tubeShape },
 	{ label: 'Диаметр / профиль труб', value: tubeSize ? `${tubeSize} мм` : '' },
 	{ label: 'Материал', value: 'сталь' },

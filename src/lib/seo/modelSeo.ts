@@ -144,16 +144,20 @@ function buildModelDescription(params: {
 	isDesign: boolean
 	prefix: string
 	profilePhrase: string
+	interaxialSpacing: string
 }): string {
-	const { modelFullName, orientationLabel, isDesign, prefix, profilePhrase } = params
+	const { modelFullName, orientationLabel, isDesign, prefix, profilePhrase, interaxialSpacing } = params
 	const descriptor = isDesign
 		? orientationLabel
 			? `${capitalizeFirst(orientationLabel)} дизайн-радиатор`
 			: 'Дизайн-радиатор'
 		: `${capitalizeFirst(prefix.toLowerCase())}`
 	const profileChunk = profilePhrase ? ` ${profilePhrase}` : ''
+	const interaxialChunk = interaxialSpacing ? ` Межосевое расстояние — ${interaxialSpacing}.` : ''
 
-	return `Купить ${modelFullName} с доставкой по России. ${descriptor} Velar${profileChunk}: подбор размера, цвета RAL и подключения.`
+	return interaxialChunk
+		? `Купить ${modelFullName} с доставкой по России. ${descriptor} Velar${profileChunk}.${interaxialChunk} Подбор размера, цвета RAL и подключения.`
+		: `Купить ${modelFullName} с доставкой по России. ${descriptor} Velar${profileChunk}: подбор размера, цвета RAL и подключения.`
 }
 
 function getOgDescription(params: {
@@ -162,6 +166,7 @@ function getOgDescription(params: {
 	profilePhrase: string
 	isDesign: boolean
 	prefix: string
+	interaxialSpacing: string
 }): string {
 	const descriptor = params.isDesign
 		? params.orientationLabel
@@ -170,7 +175,18 @@ function getOgDescription(params: {
 		: capitalizeFirst(params.prefix.toLowerCase())
 	const priceChunk = params.priceMin ? `Цена от ${params.priceMin.toLocaleString('ru-RU')} ₽. ` : ''
 	const profileChunk = params.profilePhrase ? ` ${params.profilePhrase}` : ''
-	return `${priceChunk}${descriptor}${profileChunk}. Подбор размера, цвета RAL, подключения и доставка по России.`
+	const interaxialChunk = params.interaxialSpacing ? ` Межосевое расстояние — ${params.interaxialSpacing}.` : ''
+	return `${priceChunk}${descriptor}${profileChunk}.${interaxialChunk} Подбор размера, цвета RAL, подключения и доставка по России.`
+}
+
+function getInteraxialSpacing(model: ModelJson, radiators: RadiatorJson[]): string {
+	if (model.type !== 'columns') return ''
+
+	const values = [...new Set(radiators.map(radiator => radiator.n_spacing).filter((value): value is string => Boolean(value)))]
+		.sort((a, b) => Number.parseFloat(a) - Number.parseFloat(b))
+	if (values.length === 0) return ''
+	if (values.length === 1) return `${values[0]} мм`
+	return `${values[0]}–${values[values.length - 1]} мм`
 }
 
 function getMaterialValue(model: ModelJson): string {
@@ -354,6 +370,7 @@ export function getModelSeo(input: ModelSeoInput): ModelSeoResult {
 	const priceMin = prices.length ? Math.min(...prices) : undefined
 	const priceMax = prices.length ? Math.max(...prices) : undefined
 	const profilePhrase = isDesign ? getProfilePhrase(input.model.short_comment) : ''
+	const interaxialSpacing = getInteraxialSpacing(input.model, input.radiators)
 
 	const titleSuffix = isDesign
 		? `${orientationLabel ? `${orientationLabel} ` : ''}дизайн-радиатор Velar`
@@ -366,6 +383,7 @@ export function getModelSeo(input: ModelSeoInput): ModelSeoResult {
 		isDesign,
 		prefix: input.model.prefix,
 		profilePhrase,
+		interaxialSpacing,
 	})
 
 	const ogTitle = isDesign
@@ -377,6 +395,7 @@ export function getModelSeo(input: ModelSeoInput): ModelSeoResult {
 		profilePhrase,
 		isDesign,
 		prefix: input.model.prefix,
+		interaxialSpacing,
 	})
 	const ogImage = resolveModelImage(input.model, siteUrl)
 	const ogImageAlt = isDesign

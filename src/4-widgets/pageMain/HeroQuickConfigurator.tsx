@@ -135,12 +135,36 @@ function fieldLabelClass(): string {
 	return 'mb-0.5 block text-[9px] font-thin uppercase tracking-tight text-neutral-600'
 }
 
-function modelTypeLabel(model: Pick<ModelOption, 'type' | 'orientation'>): string {
-	if (model.type === 'columns') return 'Трубчатый радиатор'
+function modelTypeLabel(model: Pick<ModelOption, 'id' | 'type' | 'orientation'>): string {
+	if (model.type === 'columns') return `${model.id.slice(0, 1)}-трубчатый радиатор`
 	if (model.type === 'convector') return 'Конвектор'
 	if (model.type === 'floor') return 'Напольный радиатор'
 	if (model.type === 'ironcast') return 'Ретро-радиатор'
 	return model.orientation === 'horizontal' ? 'Горизонтальный дизайн' : 'Вертикальный дизайн'
+}
+
+function isSubsequence(value: string, query: string): boolean {
+	let queryIndex = 0
+
+	for (const character of value) {
+		if (character === query[queryIndex]) queryIndex += 1
+		if (queryIndex === query.length) return true
+	}
+
+	return false
+}
+
+function getModelSearchScore(model: ModelOption, query: string): number {
+	const id = model.id.toLowerCase()
+	const name = model.name.toLowerCase()
+
+	if (id === query || name === query) return 0
+	if (id.startsWith(query) || name.startsWith(query)) return 1
+	if (id.includes(query) || name.includes(query)) return 2
+	if (/^\d+$/.test(query) && isSubsequence(id, query)) return 3
+	if (model.search.includes(query)) return 4
+
+	return Number.POSITIVE_INFINITY
 }
 
 function getVariantDimension(variant: Variant, key: DimensionKey, model?: ModelOption): string {
@@ -433,7 +457,13 @@ export default function HeroQuickConfigurator({
 	const filteredModels = useMemo(() => {
 		const normalizedQuery = query.trim().toLowerCase()
 		if (!normalizedQuery) return models.slice(0, 12)
-		return models.filter(model => model.search.includes(normalizedQuery)).slice(0, 18)
+
+		return models
+			.map(model => ({ model, score: getModelSearchScore(model, normalizedQuery) }))
+			.filter(result => Number.isFinite(result.score))
+			.sort((a, b) => a.score - b.score || a.model.id.localeCompare(b.model.id, 'ru', { numeric: true }))
+			.slice(0, 24)
+			.map(result => result.model)
 	}, [models, query])
 
 	useEffect(() => {
@@ -652,7 +682,7 @@ export default function HeroQuickConfigurator({
 									ref={modelSearchInputRef}
 									class='h-8 w-full rounded-lg border border-neutral-200 px-2 text-xs outline-none focus:border-red-500 focus:ring-2 focus:ring-red-100'
 									value={query}
-									placeholder='P30, P60, Q40, 3030, KWH...'
+									placeholder='P30, P60, Q40, 3030, 5052, KWH...'
 									onInput={event => setQuery((event.currentTarget as HTMLInputElement).value)}
 								/>
 							</div>
