@@ -185,7 +185,8 @@ const galleryImages = [
 		title: index === 0 ? `${productName} в интерьере` : productName,
 	})),
 ]
-const hasModelDescription = Boolean(await getEntryBySlug('modelDescriptions', model.slug))
+const modelDescriptionSlug = model.type === 'columns' ? 'columns' : model.slug
+const hasModelDescription = Boolean(await getEntryBySlug('modelDescriptions', modelDescriptionSlug))
 
 const heroDescription = isHorizontal
 	? `Горизонтальный дизайн-радиатор ${productName} с ${tubeShapeInstrumental} формой труб${tubeSize ? ` ${tubeSize} мм` : ''}. Подходит для установки под окнами, в гостиных, спальнях и современных интерьерах. Доступен в разных размерах, цветах RAL и вариантах подключения.`
@@ -296,6 +297,7 @@ const vertical1800CollectionModelIds = new Set([
 	'2180',
 	'3180',
 	'4180',
+	'5180',
 	'p30v',
 	'p60v',
 	'q40v',
@@ -446,7 +448,7 @@ const seo = getModelSeo({
 			<h2 class='text-2xl font-semibold leading-tight tracking-tight text-neutral-950'>О модели {productName}</h2>
 			{hasModelDescription ? (
 				<div class='model-description-content mt-5 max-w-[820px] text-base font-normal leading-7 text-neutral-700'>
-					<ModelDescription slug={model.slug} isColumns={false} class='model-description-body' />
+					<ModelDescription slug={model.slug} isColumns={model.type === 'columns'} class='model-description-body' />
 				</div>
 			) : (
 				<div class='mt-5 max-w-[820px] space-y-4 text-base font-normal leading-7 text-neutral-700'>
@@ -485,7 +487,7 @@ const seo = getModelSeo({
 						<p class='text-lg font-semibold leading-tight text-neutral-950'>Модель входит в подборку вертикальных радиаторов 1800 мм</p>
 						<p class='mt-2 text-sm leading-6 text-neutral-700 md:text-base'>
 							Если сравниваете высокие трубчатые и вертикальные дизайн-радиаторы около 180 см,
-							откройте общую подборку: там собраны 2180, 3180, 4180 и вертикальные модели P,
+							откройте общую подборку: там собраны 2180, 3180, 4180, 5180 и вертикальные модели P,
 							Q, R, S, RT и QT с быстрым выбором и общей таблицей.
 						</p>
 					</div>

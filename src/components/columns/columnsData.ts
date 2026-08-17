@@ -1,6 +1,7 @@
 import { modelsJsonData, type ModelJson } from '@entities/Model'
 import { radiatorsJsonData } from '@entities/Radiator'
 import { getModelSlug } from '@shared/utils/getModelSlug'
+import { getModelMainImagePath } from '@shared/utils/getModelMainImagePath'
 
 export type ColumnsModelCard = {
 	id: string
@@ -86,7 +87,7 @@ const columnsModels = getColumnsModelsSource().map(model => {
 
 	const tubeCount = Number.parseInt(model.id[0], 10)
 	const href = getModelSlug(model)
-	const image = `/images/models/columns/main${model.id[0]}b.jpg`
+	const image = getModelMainImagePath(model.slug, true)
 
 	return {
 		id: model.id,
@@ -336,12 +337,12 @@ const columnsFaqItems = [
 	{
 		question: 'Какой трубчатый радиатор выбрать под окно?',
 		answer:
-			'Под окно обычно выбирают низкие или стандартные модели высотой 300-600 мм. Если важна небольшая глубина, смотрите 2-трубчатые модели. Если нужна большая теплоотдача при похожей высоте, лучше рассмотреть 3- или 4-трубчатые варианты.',
+			'Под окно обычно выбирают низкие или стандартные модели высотой 300-600 мм. Если важна небольшая глубина, смотрите 2-трубчатые модели. Если нужна большая теплоотдача при похожей высоте, лучше рассмотреть 3-, 4- или 5-трубчатые варианты.',
 	},
 	{
 		question: 'Какой трубчатый радиатор выбрать на узкую стену?',
 		answer:
-			'Для узкой стены, простенка или прихожей подходят высокие модели 1500-2000 мм. 2-трубчатые высокие радиаторы выглядят легче и меньше выступают от стены, 3- и 4-трубчатые дают больше теплоотдачи.',
+			'Для узкой стены, простенка или прихожей подходят высокие модели 1500-2000 мм. 2-трубчатые высокие радиаторы выглядят легче и меньше выступают от стены, 3-, 4- и 5-трубчатые дают больше теплоотдачи.',
 	},
 	{
 		question: 'Что нужно отправить для расчета?',

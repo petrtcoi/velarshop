@@ -29,6 +29,7 @@ const tubeOptions = [
 	{ value: '2', label: '2' },
 	{ value: '3', label: '3' },
 	{ value: '4', label: '4' },
+	{ value: '5', label: '5' },
 ]
 
 type QuickTab = {
@@ -45,6 +46,7 @@ const quickTabs: QuickTab[] = [
 	{ label: '2 трубки', field: 'tubes', value: '2' },
 	{ label: '3 трубки', field: 'tubes', value: '3' },
 	{ label: '4 трубки', field: 'tubes', value: '4' },
+	{ label: '5 трубок', field: 'tubes', value: '5' },
 ]
 
 function matchesHeight(height: number, value: string): boolean {

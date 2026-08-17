@@ -11,10 +11,10 @@ type Props = {
 const { models } = Astro.props as Props
 
 function depthByTubes(tubes: number): number {
-	if (tubes === 2) return 78
-	if (tubes === 3) return 110
-	if (tubes === 4) return 142
-	if (tubes === 5) return 174
+	if (tubes === 2) return 70
+	if (tubes === 3) return 100
+	if (tubes === 4) return 140
+	if (tubes === 5) return 180
 	return 110
 }
 ---
@@ -37,7 +37,7 @@ function depthByTubes(tubes: number): number {
 		<ColumnsFilters client:load />
 
 		<p class='mt-4 rounded-xl border border-neutral-200 bg-white px-4 py-3 text-[13px] leading-[1.6] text-neutral-600 md:text-sm'>
-			<span class='font-medium text-neutral-900'>Подсказка:</span> 300 мм - под низкое окно. 576 мм - замена стандартной батареи. 1500-2000 мм - высокий радиатор на узкую стену. 2 трубки - меньше глубина. 3-4 трубки - больше мощность.
+			<span class='font-medium text-neutral-900'>Подсказка:</span> 300 мм - под низкое окно. 576 мм - замена стандартной батареи. 1500-2000 мм - высокий радиатор на узкую стену. 2 трубки - меньше глубина. 3-5 трубок - больше мощность.
 		</p>
 
 		<div aria-label='Список моделей трубчатых радиаторов Velar' class='mt-4 overflow-hidden rounded-2xl border border-neutral-200 bg-white'>

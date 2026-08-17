@@ -3,7 +3,7 @@ import { columnsSectionSubtitleClass, columnsSectionTitleClass } from './columns
 
 type FilterState = {
 	height?: 'all' | 'low' | 'middle' | 'high'
-	tubes?: 'all' | '2' | '3' | '4'
+	tubes?: 'all' | '2' | '3' | '4' | '5'
 }
 
 type SelectorAction =
@@ -32,12 +32,13 @@ const { variant = 'expanded' } = Astro.props as Props
 const compactChips: Chip[] = [
 	{ label: 'Под окно', action: { filters: { height: 'low' }, modelIds: ['2030', '3030', '4030', '2057', '3057', '4057'], scrollTo: 'columns-models' } },
 	{ label: 'Замена батареи', action: { filters: { height: 'middle' }, modelIds: ['2057', '3057', '4057'], scrollTo: 'columns-models' } },
-	{ label: 'Высокие 1800 мм', action: { filters: { height: 'high' }, modelIds: ['2180', '3180', '4180'], scrollTo: 'columns-models' } },
+	{ label: 'Высокие 1800 мм', action: { filters: { height: 'high' }, modelIds: ['2180', '3180', '4180', '5180'], scrollTo: 'columns-models' } },
 	{ label: 'Для квартиры', action: { modelIds: ['2057', '3057', '3030'], scrollTo: 'columns-models' } },
-	{ label: 'Для частного дома', action: { modelIds: ['3057', '4057', '3180', '4180'], scrollTo: 'columns-models' } },
+	{ label: 'Для частного дома', action: { modelIds: ['3057', '4057', '5057', '3180', '4180', '5180'], scrollTo: 'columns-models' } },
 	{ label: '2 трубки', action: { filters: { tubes: '2' }, modelIds: ['2030', '2057', '2180'], scrollTo: 'columns-models' } },
 	{ label: '3 трубки', action: { filters: { tubes: '3' }, modelIds: ['3030', '3057', '3180'], scrollTo: 'columns-models' } },
 	{ label: '4 трубки', action: { filters: { tubes: '4' }, modelIds: ['4030', '4057', '4180'], scrollTo: 'columns-models' } },
+	{ label: '5 трубок', action: { filters: { tubes: '5' }, modelIds: ['5030', '5057', '5180'], scrollTo: 'columns-models' } },
 	{ label: 'В цвет RAL', action: { href: '#columns-calculator' } },
 ]
 
@@ -57,8 +58,8 @@ const cards: TaskCard[] = [
 	{
 		title: 'Высокий трубчатый радиатор',
 		description: 'Для узкой стены, прихожей и лофта, высота 1500-2000 мм.',
-		models: ['2180', '3180', '4180'],
-		primary: { label: 'Смотреть варианты', filters: { height: 'high' }, modelIds: ['2180', '3180', '4180'], scrollTo: 'columns-models' },
+		models: ['2180', '3180', '4180', '5180'],
+		primary: { label: 'Смотреть варианты', filters: { height: 'high' }, modelIds: ['2180', '3180', '4180', '5180'], scrollTo: 'columns-models' },
 		note: { label: 'Вертикальные радиаторы 1800 мм', href: '/collections/verticalnye-radiatory-1800-mm' },
 	},
 	{
@@ -70,9 +71,9 @@ const cards: TaskCard[] = [
 	},
 	{
 		title: 'Для частного дома',
-		description: '3-4 трубки, для больших комнат - высокие модели.',
-		models: ['3057', '4057', '3180', '4180'],
-		primary: { label: 'Смотреть варианты', modelIds: ['3057', '4057', '3180', '4180'], scrollTo: 'columns-models' },
+		description: '3-5 трубок, для больших комнат - высокие модели.',
+		models: ['3057', '4057', '5057', '3180', '4180', '5180'],
+		primary: { label: 'Смотреть варианты', modelIds: ['3057', '4057', '5057', '3180', '4180', '5180'], scrollTo: 'columns-models' },
 	},
 	{
 		title: 'В цвет RAL',

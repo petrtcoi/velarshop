@@ -160,10 +160,14 @@ function getOgDescription(params: {
 	priceMin?: number
 	orientationLabel: string
 	profilePhrase: string
+	isDesign: boolean
+	prefix: string
 }): string {
-	const descriptor = params.orientationLabel
-		? `${capitalizeFirst(params.orientationLabel)} дизайн-радиатор`
-		: 'Дизайн-радиатор'
+	const descriptor = params.isDesign
+		? params.orientationLabel
+			? `${capitalizeFirst(params.orientationLabel)} дизайн-радиатор`
+			: 'Дизайн-радиатор'
+		: capitalizeFirst(params.prefix.toLowerCase())
 	const priceChunk = params.priceMin ? `Цена от ${params.priceMin.toLocaleString('ru-RU')} ₽. ` : ''
 	const profileChunk = params.profilePhrase ? ` ${params.profilePhrase}` : ''
 	return `${priceChunk}${descriptor}${profileChunk}. Подбор размера, цвета RAL, подключения и доставка по России.`
@@ -349,7 +353,7 @@ export function getModelSeo(input: ModelSeoInput): ModelSeoResult {
 	const prices = input.radiators.map(radiator => toNumber(radiator.price)).filter(value => value > 0)
 	const priceMin = prices.length ? Math.min(...prices) : undefined
 	const priceMax = prices.length ? Math.max(...prices) : undefined
-	const profilePhrase = getProfilePhrase(input.model.short_comment)
+	const profilePhrase = isDesign ? getProfilePhrase(input.model.short_comment) : ''
 
 	const titleSuffix = isDesign
 		? `${orientationLabel ? `${orientationLabel} ` : ''}дизайн-радиатор Velar`
@@ -371,9 +375,13 @@ export function getModelSeo(input: ModelSeoInput): ModelSeoResult {
 		priceMin,
 		orientationLabel,
 		profilePhrase,
+		isDesign,
+		prefix: input.model.prefix,
 	})
 	const ogImage = resolveModelImage(input.model, siteUrl)
-	const ogImageAlt = `${modelFullName} — дизайн-радиатор Velar`
+	const ogImageAlt = isDesign
+		? `${modelFullName} — дизайн-радиатор Velar`
+		: `${modelFullName} — ${input.model.prefix.toLowerCase()} Velar`
 
 	const hasHiddenFlag = Boolean((input.model as unknown as { hidden?: boolean; noindex?: boolean }).hidden)
 	const hasNoindexFlag = Boolean((input.model as unknown as { hidden?: boolean; noindex?: boolean }).noindex)
