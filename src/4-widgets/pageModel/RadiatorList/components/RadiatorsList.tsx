@@ -196,7 +196,7 @@ function RadiatorList(props: Props) {
 		>
 			<div>
 				{hasConfiguratorOptions && (
-					<div class='mb-4 grid gap-3 border-y border-neutral-200 py-4 md:grid-cols-2 lg:grid-cols-3'>
+					<div class='mb-4 grid gap-3 border-y border-neutral-200 py-4 md:grid-cols-2'>
 						{(model.type === 'design' || model.type === 'floor') && <SelectConnection model={model} />}
 						{model.type === 'design' && <SelectDesignColor />}
 						{model.type === 'columns' && <SelectColumnConnection model={model} />}

@@ -16,7 +16,7 @@ function Select({ options, selected, onChange, id }: Props) {
   return (
     <select
       id={id}
-      class="appearance-none  w-[90vw] bg-transparent sm:w-auto block mt-1 text-xs p-3 border relative border-neutral-300 rounded-lg focus:ring-1 focus:ring-blue-500 min-w-[350px]"
+      class="relative mt-1 block w-full min-w-0 appearance-none rounded-lg border border-neutral-300 bg-transparent p-3 text-xs focus:ring-1 focus:ring-blue-500"
       role="listbox"
       disabled={!selected}
       onChange={e => handleChange(e)}
