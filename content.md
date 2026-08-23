@@ -14,6 +14,8 @@
 
 Проверка от 2026-08-16 показала, что отдельные URL `/info/sravnenie-modeley-dizayn-radiatorov-velar` и `/info/napolnyy-radiator-ili-vnutripolnyy-konvektor` пока создавать не нужно. Первый интент подробно закрывает коммерческая страница `/design` с таблицей серий и блоком «Какую серию Velar выбрать», второй - страница `/floor`, статья `/info/chto-postavit-pered-panoramnym-oknom` и сценарный гид по конвекторам. Вместо конкурирующих страниц добавлены две самостоятельные Tier-1 статьи: `/info/kakoy-radiator-vybrat-dlya-kvartiry` и `/info/kakoy-radiator-vybrat-dlya-chastnogo-doma`. Они разделены по типу системы и ведут в коммерческие разделы `/columns`, `/design`, `/floor`, `/convector`, `/retro` и на `/request`. Входящие ссылки добавлены из этих коммерческих разделов, `/info/oshibki-pri-vybore-radiatorov`, `/info/radiator-types`, `/info/kak-podgotovit-dannye-dlya-rascheta-radiatora` и общего списка материалов.
 
+Проверка от 2026-08-23 выделила два следующих самостоятельных интента без прямого дубля в коллекции: `/info/nizkie-trubchatye-radiatory-pod-okno` и `/info/dizayn-radiator-s-tenom-kogda-nuzhen`. Первый углубляет короткие упоминания низких моделей в общем трубчатом гиде и ведет к `/columns`, второй раскрывает отдельный режим эксплуатации, а не повторяет коммерческий выбор серий на `/design`. Входящие ссылки установлены из коммерческих хабов и соответствующих Tier-1 статей, исходящие - на модели, расчет, альтернативные решения и `/request`.
+
 Здесь **не расписываем tier-3**. Идея текущего этапа — собрать кластеры вокруг существующих коммерческих страниц и понять:
 
 - какие статьи уже есть;
@@ -167,7 +169,7 @@ VelarShop — коммерческий сайт, поэтому статьи н�
     │   ├── [есть] /info/zamena-panelnyh-radiatorov-na-trubchatye-velar
     │   ├── [добавить] /info/kak-rasschitat-trubchatyy-radiator-velar
     │   ├── [2026.06.25] /info/2-3-4-trubchatye-radiatory-chto-vybrat
-    │   └── [добавить] /info/nizkie-trubchatye-radiatory-pod-okno
+    │   └── [2026.08.23] /info/nizkie-trubchatye-radiatory-pod-okno
     │
     ├── [2026.07.08 - updated] /info/column-radiators-pros-cons
     │   ├── [есть] /info/zamena-panelnyh-radiatorov-na-trubchatye-velar
@@ -246,7 +248,7 @@ Tier-2. Как выбрать количество труб: глубина, м�
 
 Связи: `/columns`, модели 2030/3030/4030/2057/3057/4057, `/request`.
 
-### `/info/nizkie-trubchatye-radiatory-pod-okno`
+### `[2026.08.23] /info/nizkie-trubchatye-radiatory-pod-okno`
 
 Tier-2. Подбор низких трубчатых радиаторов под подоконник, для низких окон и ограниченной высоты.
 
@@ -515,7 +517,7 @@ Tier-2. Цвета и декоративная отделка ретро-рад�
     └── [не создавать отдельно: интент закрывает /design] /info/dizayn-radiatory-velar-kak-vybrat
         ├── [не создавать - каннибализация] /info/p30-p60-q40-r32-chto-vybrat
         ├── [добавить] /info/ploskiy-kvadratnyy-kruglyy-profil-radiatora
-        ├── [добавить] /info/dizayn-radiator-s-tenom-kogda-nuzhen
+        ├── [2026.08.23] /info/dizayn-radiator-s-tenom-kogda-nuzhen
         └── [не создавать - каннибализация] /info/sravnenie-modeley-dizayn-radiatorov-velar
 ```
 
@@ -565,7 +567,7 @@ Tier-2. Разбор формы труб дизайн-радиаторов: пл
 
 Связи: `/info/forma-trub-dizayn-radiatorov`, `/design`, серии P/Q/R.
 
-### `/info/dizayn-radiator-s-tenom-kogda-nuzhen`
+### `[2026.08.23] /info/dizayn-radiator-s-tenom-kogda-nuzhen`
 
 Tier-2. Когда нужен электрический ТЭН в дизайнерском радиаторе, ограничения, сезонное использование, ванная/прихожая/кухня.
 
@@ -665,7 +667,7 @@ CTA “Получить расчет”.
 
 ```txt
 /info/kak-rasschitat-trubchatyy-radiator-velar
-/info/nizkie-trubchatye-radiatory-pod-okno
+/info/nizkie-trubchatye-radiatory-pod-okno - добавлено 2026.08.23
 /info/trubchatyy-radiator-ili-panelnyy
 ```
 
@@ -1019,7 +1021,7 @@ H1 выводится шаблоном страницы из поля `title`, �
 /info/chto-postavit-pered-panoramnym-oknom
 /info/radiator-v-cvet-steny-ili-akcentnyy
 /info/belyy-chernyy-ili-cvetnoy-dizayn-radiator
-/info/dizayn-radiator-s-tenom-kogda-nuzhen
+/info/dizayn-radiator-s-tenom-kogda-nuzhen - добавлено 2026.08.23
 /info/kak-podgotovit-dannye-dlya-rascheta-radiatora - добавлено 2026.08.05
 /info/kak-uhazhivat-za-trubchatym-radiatorom
 ```

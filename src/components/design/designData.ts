@@ -256,6 +256,7 @@ export const designUsefulLinkGroups = [
 	{
 		title: 'Мощность и безопасность',
 		links: [
+			['/info/dizayn-radiator-s-tenom-kogda-nuzhen', 'Дизайн-радиатор с ТЭНом - когда он нужен'],
 			['/info/power', 'Как определить требуемую мощность радиатора'],
 			['/info/oshibki-pri-vybore-radiatorov', 'Ошибки при выборе радиаторов отопления'],
 			['/info/bezopasnost-radiatorov-dlya-detej', 'Безопасность радиаторов в доме'],

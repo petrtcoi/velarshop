@@ -172,6 +172,10 @@ const usefulArticles = [
 		title: '2-, 3- и 4-трубчатые радиаторы: что выбрать',
 	},
 	{
+		href: '/info/nizkie-trubchatye-radiatory-pod-okno',
+		title: 'Низкие трубчатые радиаторы под окно - как выбрать',
+	},
+	{
 		href: '/info/kak-chistit-trubchatyj-radiator-otopleniya',
 		title: 'Как правильно чистить трубчатый радиатор отопления',
 	},
@@ -234,6 +238,10 @@ const usefulArticleGroups = [
 			{
 				href: '/info/2-3-4-trubchatye-radiatory-chto-vybrat',
 				title: '2-, 3- и 4-трубчатые радиаторы: что выбрать',
+			},
+			{
+				href: '/info/nizkie-trubchatye-radiatory-pod-okno',
+				title: 'Низкие трубчатые радиаторы под окно - как выбрать',
 			},
 			{
 				href: '/info/trubchatye-radiatory-vs-panelnye',
