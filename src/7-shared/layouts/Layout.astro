@@ -287,6 +287,10 @@ const finalTwitterImage = twitterImage
 					trackLinks: true,
 					accurateTrackBounce: true,
 				})
+
+				window.__velarMetrikaGoals?.splice(0).forEach(goal => {
+					ym(93362045, 'reachGoal', goal)
+				})
 			}, 5000)
 		</script>
 		<noscript
@@ -395,6 +399,26 @@ const finalTwitterImage = twitterImage
 </div>
 
 <script>
+	import { reachMetrikaGoal } from '@shared/utils/metrika'
+
+	document.addEventListener('click', event => {
+		const target = event.target
+		if (!(target instanceof Element)) return
+
+		const link = target.closest('a[href]')
+		if (!(link instanceof HTMLAnchorElement)) return
+
+		const href = link.href.toLowerCase()
+		if (href.startsWith('tel:')) {
+			reachMetrikaGoal('phone_click')
+			return
+		}
+
+		if (href.includes('wa.me/') || href.includes('whatsapp.com/') || href.includes('t.me/')) {
+			reachMetrikaGoal('messenger_click')
+		}
+	})
+
     function setCookie(name: string, value: string, days: number) {
         let expires = "";
         if (days) {

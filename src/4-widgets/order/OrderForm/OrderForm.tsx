@@ -2,6 +2,7 @@ import sendOrderConfirmation from '@features/order/SendEmailOrderConfirmation/se
 import { storeShoppingCart } from '@features/order/ShoppingCart'
 import { useStore } from '@nanostores/preact'
 import { computed, signal } from '@preact/signals'
+import { reachMetrikaGoal } from '@shared/utils/metrika'
 import { deleteRuPhoneInputDigit, formatRuPhoneInput, getRuPhoneSubscriberDigits, normalizeRuPhone } from '@shared/utils/phone'
 
 const FORM_ID = 'order-form'
@@ -92,6 +93,7 @@ function OrderForm() {
 		})
 		fetching.value = false
 		if (result === 'ok') {
+			reachMetrikaGoal('form_submit')
 			storeShoppingCart.set({ items: [] })
 			window.location.href = '/success'
 			return

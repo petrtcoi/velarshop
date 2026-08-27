@@ -1,4 +1,5 @@
 import { useMemo, useRef, useState } from 'preact/hooks'
+import { reachMetrikaGoal } from '@shared/utils/metrika'
 import { deleteRuPhoneInputDigit, formatRuPhoneInput, getRuPhoneSubscriberDigits, normalizeRuPhone } from '@shared/utils/phone'
 
 type LeadWidgetProps = {
@@ -153,6 +154,8 @@ function LeadWidget({
 			const result = await response.json()
 
 			if (result.status === 'OK') {
+				reachMetrikaGoal('form_submit')
+				reachMetrikaGoal('calculation_submit')
 				setMessage('Успешно! Перенаправляем...')
 				setMessageType('ok')
 				window.setTimeout(() => {
