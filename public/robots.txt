@@ -3,6 +3,6 @@ Allow: /
 
 User-agent: Yandex
 Clean-param: etext
+Clean-param: model /request
 
 Sitemap: https://velarshop.ru/sitemap-index.xml
-

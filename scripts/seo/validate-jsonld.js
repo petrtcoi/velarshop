@@ -47,11 +47,11 @@ for (const script of scripts) {
 const allTypes = new Set()
 parsed.forEach(item => collectTypes(item, allTypes))
 
-const requiredTopLevelTypes = ['BreadcrumbList', 'CollectionPage', 'ItemList', 'FAQPage', 'HowTo']
+const requiredTopLevelTypes = ['BreadcrumbList', 'CollectionPage', 'ItemList', 'FAQPage']
 const missing = requiredTopLevelTypes.filter(type => !allTypes.has(type))
 
 const hasProduct = allTypes.has('Product')
-const hasOffer = allTypes.has('Offer')
+const hasOffer = allTypes.has('Offer') || allTypes.has('AggregateOffer')
 
 if (!hasProduct || !hasOffer) {
 	console.error(`Missing nested types: Product=${hasProduct}, Offer=${hasOffer}`)

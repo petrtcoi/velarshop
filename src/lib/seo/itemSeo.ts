@@ -11,6 +11,9 @@ function normalizeAbsoluteUrl(inputUrl: string): string {
 	const url = new URL(inputUrl, SITE_URL)
 	url.search = ''
 	url.hash = ''
+	if (url.pathname.length > 1) {
+		url.pathname = url.pathname.replace(/\/+$/, '')
+	}
 	return url.toString()
 }
 
@@ -24,13 +27,13 @@ export function getItemSeo(item: ItemJson) {
 	const itemTitle = `Velar ${item.title}`
 	const metaTitle = `${itemTitle} купить в магазине VelarShop.ru`
 	const metaDescription = `Купить ${itemTitle} с доставкой по России. Помощь с подбором и консультация по совместимости.`
-	const canonicalUrl = normalizeAbsoluteUrl(`/item/${item.slug}/`)
+	const canonicalUrl = normalizeAbsoluteUrl(`/item/${item.slug}`)
 	const imageUrl = normalizeAbsoluteUrl(`/images/items/${item.image_slug || 'empty'}/main.jpg`)
 	const price = toPrice(item.price)
 
 	const breadcrumbs: BreadcrumbItem[] = [
 		{ title: 'Главная', url: '/' },
-		{ title: 'Комплектующие Velar', url: '/item/' },
+		{ title: 'Комплектующие Velar', url: '/item' },
 		{ title: `${item.prefix} ${item.title}`, url: `/item/${item.slug}` },
 	]
 

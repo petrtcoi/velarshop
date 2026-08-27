@@ -290,7 +290,7 @@ export function buildModelJsonLd(input: BuildModelJsonLdInput): Record<string, u
 				'@type': 'AggregateOffer',
 				priceCurrency: 'RUB',
 				lowPrice: String(input.priceMin),
-				highPrice: input.priceMax && input.priceMax > input.priceMin ? String(input.priceMax) : undefined,
+				highPrice: String(input.priceMax || input.priceMin),
 				offerCount: String(input.offerCount),
 				availability: input.availabilityUrl,
 				url: input.canonicalUrl,

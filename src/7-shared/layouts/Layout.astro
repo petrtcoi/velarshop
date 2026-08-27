@@ -42,6 +42,16 @@ export interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 
+function normalizePageUrl(input: string | URL, base: string | URL): string {
+	const url = new URL(input, base)
+	url.search = ''
+	url.hash = ''
+	if (url.pathname.length > 1) {
+		url.pathname = url.pathname.replace(/\/+$/, '')
+	}
+	return url.toString()
+}
+
 const {
 	title = 'Velar дизайн-радиаторы отопления | VelarShop.ru',
 	description = 'Интернет-магазин радиаторов отопления Velar. Подбор модели, расчет мощности и доставка по России.',
@@ -67,14 +77,9 @@ const {
 } = Astro.props as Props as Props
 
 const baseUrl = Astro.site ?? Astro.url
-const canonicalHref = (
-	canonicalUrl ? new URL(canonicalUrl, baseUrl) : canonicalURL
-)
-	.toString()
-	.split('?')[0]
-	.split('#')[0]
+const canonicalHref = normalizePageUrl(canonicalUrl ?? canonicalURL, baseUrl)
 const ogImageHref = new URL(ogImageUrl, baseUrl).toString()
-const finalOgUrl = ogUrl ?? canonicalHref
+const finalOgUrl = ogUrl ? normalizePageUrl(ogUrl, baseUrl) : canonicalHref
 const finalOgTitle = ogTitle ?? title
 const finalOgDescription = ogDescription ?? description
 const finalTwitterTitle = twitterTitle ?? finalOgTitle

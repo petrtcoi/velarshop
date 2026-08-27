@@ -23,7 +23,7 @@ const { title, short_description, metaTitle, metaDescription, thumbnail, datePub
 const allArticles = await getCollection("articles");
 const articleTitleBySlug = new Map(allArticles.map((entry) => [entry.slug, entry.data.title]));
 const siteOrigin = (Astro.site ?? new URL("https://velarshop.ru")).origin;
-const canonicalUrl = new URL(`/info/${article.slug}/`, `${siteOrigin}/`).toString();
+const canonicalUrl = new URL(`/info/${article.slug}`, `${siteOrigin}/`).toString();
 const articleImageUrl = thumbnail ? new URL(`/images/articles/${thumbnail}`, `${siteOrigin}/`).toString() : undefined;
 const articleJsonLd = buildArticleJsonLd({
   title,

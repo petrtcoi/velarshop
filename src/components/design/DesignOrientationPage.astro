@@ -14,7 +14,7 @@ const { orientation } = Astro.props as Props
 const isVertical = orientation === 'vertical'
 const series = isVertical ? verticalDesignSeries : horizontalDesignSeries
 const pagePath = isVertical ? '/design/vertikalnye' : '/design/gorizontalnye'
-const canonicalUrl = `https://velarshop.ru${pagePath}/`
+const canonicalUrl = `https://velarshop.ru${pagePath}`
 const pageTitle = isVertical
 	? 'Вертикальные дизайн-радиаторы Velar | VelarShop.ru'
 	: 'Горизонтальные дизайн-радиаторы Velar | VelarShop.ru'
