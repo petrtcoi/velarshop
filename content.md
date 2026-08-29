@@ -16,6 +16,21 @@
 
 Проверка от 2026-08-23 выделила два следующих самостоятельных интента без прямого дубля в коллекции: `/info/nizkie-trubchatye-radiatory-pod-okno` и `/info/dizayn-radiator-s-tenom-kogda-nuzhen`. Первый углубляет короткие упоминания низких моделей в общем трубчатом гиде и ведет к `/columns`, второй раскрывает отдельный режим эксплуатации, а не повторяет коммерческий выбор серий на `/design`. Входящие ссылки установлены из коммерческих хабов и соответствующих Tier-1 статей, исходящие - на модели, расчет, альтернативные решения и `/request`.
 
+## Перепроверка приоритетов от 2026-08-30
+
+После сверки плана с фактическими статьями, коммерческими страницами и текущей поисковой выдачей выбраны четыре следующих материала. У каждого есть отдельный коммерческий микрозапрос, понятная роль в кластере и маршрут к заявке:
+
+```txt
+1. /info/trubchatye-radiatory-dlya-chastnogo-doma — добавлено 2026.08.30
+2. /info/kak-podobrat-dizayn-radiator-pod-gotovye-vyvody-trub — добавлено 2026.08.30
+3. /info/raschet-sekciy-chugunnogo-retro-radiatora — добавлено 2026.08.30
+4. /info/kak-vybrat-reshetku-dlya-vnutripolnogo-konvektora — добавлено 2026.08.30
+```
+
+Порядок публикации: сначала статьи 1 и 2 как наиболее близкие к выбору и замене отопительного прибора, затем расчет ретро-радиатора, затем выбор решетки конвектора. Статьи должны содержать не общий обзор категории, а таблицу принятия решения, фактические данные моделей Velar, список исходных данных для подбора и один основной CTA «Получить расчет».
+
+Не создавать отдельные страницы про трубчатые радиаторы для центрального отопления, конвектор для панорамного окна, обзор KWH/KWHV/KWHV 24V, обзор ретро-линейки Velar, вертикальный радиатор для узкой стены, горизонтальный дизайн-радиатор под окно и отдельный разбор плоского/квадратного/круглого профиля. Эти интенты уже закрыты существующими статьями или коммерческими страницами. Их развитие должно идти через обновление текущего URL, а не через новый документ.
+
 Здесь **не расписываем tier-3**. Идея текущего этапа — собрать кластеры вокруг существующих коммерческих страниц и понять:
 
 - какие статьи уже есть;
@@ -160,16 +175,16 @@ VelarShop — коммерческий сайт, поэтому статьи н�
     │   ├── [есть] /info/tube-radiators-myths-and-facts
     │   ├── [есть] /info/radiator-types
     │   ├── [2026.07.20] /info/trubchatye-radiatory-velar-dlya-kvartiry
-    │   ├── [добавить] /info/trubchatye-radiatory-velar-dlya-chastnogo-doma
-    │   └── [добавить] /info/trubchatye-radiatory-dlya-centralnogo-otopleniya
+    │   ├── [добавлено 2026.08.30] /info/trubchatye-radiatory-dlya-chastnogo-doma
+    │   └── [не создавать отдельно: интент закрывает статья для квартиры] /info/trubchatye-radiatory-dlya-centralnogo-otopleniya
     │
     ├── [есть / углубить] /info/steel-tube-radiators-guide
     │   ├── [есть] /info/raschet-radiatorov-dlya-uglovoy-komnaty
     │   ├── [есть] /info/teplootdacha-radiatora-delta-t-chto-eto
     │   ├── [есть] /info/zamena-panelnyh-radiatorov-na-trubchatye-velar
-    │   ├── [добавить] /info/kak-rasschitat-trubchatyy-radiator-velar
+    │   ├── [не создавать отдельно: усилить расчет в текущем техническом гиде] /info/kak-rasschitat-trubchatyy-radiator-velar
     │   ├── [2026.06.25] /info/2-3-4-trubchatye-radiatory-chto-vybrat
-    │   └── [2026.08.23] /info/nizkie-trubchatye-radiatory-pod-okno
+    │   └── [добавлено 2026.08.23] /info/nizkie-trubchatye-radiatory-pod-okno
     │
     ├── [2026.07.08 - updated] /info/column-radiators-pros-cons
     │   ├── [есть] /info/zamena-panelnyh-radiatorov-na-trubchatye-velar
@@ -180,7 +195,7 @@ VelarShop — коммерческий сайт, поэтому статьи н�
     └── [есть / углубить] /info/kak-chistit-trubchatyj-radiator-otopleniya
         ├── [есть] /info/termostats
         ├── [есть] /info/termostat-installation-errors
-        ├── [добавить] /info/kak-uhazhivat-za-trubchatym-radiatorom
+        ├── [не создавать отдельно: закрыто статьями о чистке и ошибках эксплуатации] /info/kak-uhazhivat-za-trubchatym-radiatorom
         └── [2026.08.05] /info/oshibki-ekspluatacii-trubchatyh-radiatorov
 ```
 
@@ -230,15 +245,15 @@ Tier-2. О выборе трубчатых радиаторов в кварти�
 
 Связи: `/columns`, `/info/zamena-panelnyh-radiatorov-na-trubchatye-velar`, `/info/teplootdacha-radiatora-delta-t-chto-eto`, `/request`.
 
-### `/info/trubchatye-radiatory-velar-dlya-chastnogo-doma`
+### `[добавлено 2026.08.30] /info/trubchatye-radiatory-dlya-chastnogo-doma`
 
-Tier-2. О выборе для частного дома: автономное отопление, большие помещения, гостиные, панорамные окна, дизайнерский интерьер, нестандартные цвета.
+Tier-2. О выборе именно трубчатого радиатора для частного дома: автономная и низкотемпературная система, фактическая мощность при рабочем ΔT, большие помещения, подключение, балансировка и сочетание с теплыми полами. Не повторяет общий материал `/info/kakoy-radiator-vybrat-dlya-chastnogo-doma`, который сравнивает разные типы приборов.
 
-Связи: `/columns`, `/floor`, `/convector`, `/design`, `/request`.
+Связи: `/columns`, `/info/kakoy-radiator-vybrat-dlya-chastnogo-doma`, `/info/teplootdacha-radiatora-delta-t-chto-eto`, `/info/2-3-4-trubchatye-radiatory-chto-vybrat`, `/request`.
 
-### `/info/trubchatye-radiatory-dlya-centralnogo-otopleniya`
+### `[не создавать отдельно] /info/trubchatye-radiatory-dlya-centralnogo-otopleniya`
 
-Tier-2. Снимает страх “можно ли трубчатые радиаторы в центральное отопление”.
+Интент уже подробно закрыт на `/info/trubchatye-radiatory-velar-dlya-kvartiry`: там есть отдельные блоки про рабочее и опрессовочное давление, требования управляющей организации, разводку и монтаж. Дополнительный URL будет конкурировать с этой статьей. Усиливать нужно существующий материал и его FAQ.
 
 Связи: `/columns`, `/info/trubchatye-radiatory-velar-dlya-kvartiry`, `/info/zamena-panelnyh-radiatorov-na-trubchatye-velar`, `/request`.
 
@@ -248,7 +263,7 @@ Tier-2. Как выбрать количество труб: глубина, м�
 
 Связи: `/columns`, модели 2030/3030/4030/2057/3057/4057, `/request`.
 
-### `[2026.08.23] /info/nizkie-trubchatye-radiatory-pod-okno`
+### `[добавлено 2026.08.23] /info/nizkie-trubchatye-radiatory-pod-okno`
 
 Tier-2. Подбор низких трубчатых радиаторов под подоконник, для низких окон и ограниченной высоты.
 
@@ -326,28 +341,29 @@ Tier-2. AI-friendly статья с таблицей: напольный рад�
     │   ├── [есть] /info/vnutripolnye-konvektory-podbor-i-montazh
     │   ├── [не создавать отдельно: интент закрывает /convector] /info/vnutripolnye-konvektory-velar-obzor
     │   ├── [2026.07.20] /info/kwh-kwhv-kwhv24-chto-vybrat
-    │   └── [добавить] /info/vnutripolnyy-konvektor-dlya-kvartiry
+    │   └── [не создавать отдельно: закрыто гидом и сценарной статьей] /info/vnutripolnyy-konvektor-dlya-kvartiry
     │
     ├── [2026.07.08 - updated] /info/panoramnie-okna
     │   ├── [есть] /info/teplovaya-zavesa-u-panoramnyh-okon
     │   ├── [есть] /info/vnutripolnye-konvektory-prinuditelnaia-vs-estestvennaia-konvekciia
-    │   ├── [добавить] /info/konvektor-dlya-panoramnogo-okna
-    │   └── [добавить] /info/kak-ubrat-holod-ot-panoramnogo-okna
+    │   ├── [не создавать отдельно: прямой дубль /info/panoramnie-okna] /info/konvektor-dlya-panoramnogo-okna
+    │   └── [не создавать отдельно: интент закрывает статья о тепловой завесе] /info/kak-ubrat-holod-ot-panoramnogo-okna
     │
     ├── [есть] /model/kwh
     │   ├── [есть] /info/convectors
     │   ├── [есть] /info/convectors-pros-cons
-    │   └── [добавить] /info/velar-kwh-obzor
+    │   └── [не создавать отдельно: интент закрывает /model/kwh] /info/velar-kwh-obzor
     │
     ├── [есть] /model/kwhv
     │   ├── [есть] /info/vnutripolnye-konvektory-s-ventilyatorom
     │   ├── [есть] /info/vnutripolnye-konvektory-prinuditelnaia-vs-estestvennaia-konvekciia
-    │   └── [добавить] /info/velar-kwhv-obzor
+    │   └── [не создавать отдельно: интент закрывает /model/kwhv] /info/velar-kwhv-obzor
     │
     └── [есть] /model/kwhv24
         ├── [есть] /info/220v-vs-24v
         ├── [есть] /info/vnutripolnye-konvektory-s-ventilyatorom
-        └── [добавить] /info/velar-kwhv24-obzor
+        ├── [не создавать отдельно: интент закрывает /model/kwhv24] /info/velar-kwhv24-obzor
+        └── [добавлено 2026.08.30] /info/kak-vybrat-reshetku-dlya-vnutripolnogo-konvektora
 ```
 
 ## Роли страниц
@@ -382,29 +398,35 @@ Tier-2. Сравнение трех моделей. Очень важная ст
 
 Связи: `/convector`, `/model/kwh`, `/model/kwhv`, `/model/kwhv24`, `/request`.
 
-### `/info/konvektor-dlya-panoramnogo-okna`
+### `[не создавать отдельно] /info/konvektor-dlya-panoramnogo-okna`
 
-Tier-2. Практическая статья: какой конвектор выбрать под панорамное окно, когда хватит естественной конвекции, когда нужен вентилятор.
+Практический интент уже закрывает `/info/panoramnie-okna`, а выбор между естественной и принудительной конвекцией - отдельная существующая статья. Новый URL будет прямым семантическим дублем.
 
 Связи: `/convector`, `/info/panoramnie-okna`, `/info/teplovaya-zavesa-u-panoramnyh-okon`.
 
-### `/info/velar-kwh-obzor`
+### `[не создавать отдельно] /info/velar-kwh-obzor`
 
-Tier-2. Модельный обзор KWH как конвектора с естественной конвекцией.
+Модельный интент должен оставаться на `/model/kwh`. Информацию о сценариях естественной конвекции нужно усиливать в карточке модели и существующих сравнительных статьях.
 
 Связи: `/model/kwh`, `/convector`, `/info/convectors-pros-cons`.
 
-### `/info/velar-kwhv-obzor`
+### `[не создавать отдельно] /info/velar-kwhv-obzor`
 
-Tier-2. Модельный обзор KWHV как конвектора с вентилятором.
+Модельный интент должен оставаться на `/model/kwhv`. Отдельная статья будет конкурировать с карточкой модели; информационный вопрос уже закрывает материал о конвекторах с вентилятором.
 
 Связи: `/model/kwhv`, `/convector`, `/info/vnutripolnye-konvektory-s-ventilyatorom`.
 
-### `/info/velar-kwhv24-obzor`
+### `[не создавать отдельно] /info/velar-kwhv24-obzor`
 
-Tier-2. Модельный обзор KWHV 24V и отличие от 220V-решений.
+Модельный интент должен оставаться на `/model/kwhv24`, а отличие от 220V уже раскрыто на `/info/220v-vs-24v`. Новый обзорный URL не нужен.
 
 Связи: `/model/kwhv24`, `/info/220v-vs-24v`, `/convector`.
+
+### `[добавлено 2026.08.30] /info/kak-vybrat-reshetku-dlya-vnutripolnogo-konvektora`
+
+Tier-2. Выбор видимой и функциональной части конвектора: алюминиевая или деревянная решетка, рулонное или линейное исполнение, направление ламелей, нагрузка, влажность, цвет, рамка и сочетание с напольным покрытием. Это самостоятельный товарный выбор, который не повторяет существующие статьи о мощности, типе конвекции, размерах ниши и монтаже.
+
+Связи: `/convector`, `/model/kwh`, `/model/kwhv`, `/model/kwhv24`, `/info/vnutripolnye-konvektory-podbor-i-montazh`, `/request`.
 
 ---
 
@@ -420,9 +442,10 @@ Tier-2. Модельный обзор KWHV 24V и отличие от 220V-ре�
     │   ├── [есть] /info/pravila-ekspluatacii-chugunnyh-radiatorov
     │   ├── [есть] /info/kak-otlichit-kachestvennoe-lite-radiatorov
     │   ├── [есть] /info/restavratsiya-chugunnyh-radiatorov
-    │   ├── [добавить] /info/retro-radiatory-velar-obzor
-    │   ├── [добавить] /info/chugunnye-retro-radiatory-dlya-kvartiry
-    │   └── [добавить] /info/chugunnye-retro-radiatory-dlya-chastnogo-doma
+    │   ├── [не создавать отдельно: интент закрывает /retro] /info/retro-radiatory-velar-obzor
+    │   ├── [не создавать отдельно: усилить /retro и общий квартирный гид] /info/chugunnye-retro-radiatory-dlya-kvartiry
+    │   ├── [не создавать отдельно: усилить /retro и общий гид для дома] /info/chugunnye-retro-radiatory-dlya-chastnogo-doma
+    │   └── [добавлено 2026.08.30] /info/raschet-sekciy-chugunnogo-retro-radiatora
     │
     ├── [2026.06.08] /info/nostalgia-ili-historic-chto-vybrat
     │   ├── [2026.06.25] /info/radiatory-s-ornamentom-ili-bez
@@ -455,9 +478,9 @@ Tier-1/Tier-2. Общая статья про особенности чугун�
 
 ## Что добавить
 
-### `/info/retro-radiatory-velar-obzor`
+### `[не создавать отдельно] /info/retro-radiatory-velar-obzor`
 
-Tier-1. Обзор ретро-линейки Velar: модели, высоты, орнамент, цвет, патина, сценарии интерьера.
+Обзор линейки, моделей, высот, орнамента, цвета и патины уже является задачей коммерческого хаба `/retro`. Отдельная брендовая статья будет конкурировать с money page.
 
 Связи: `/retro`, будущие `/retro/nostalgia`, `/retro/historic`, `/request`.
 
@@ -479,6 +502,12 @@ Tier-2. Цвета и декоративная отделка ретро-рад�
 
 Связи: `/retro`, `/info/kak-vybrat-cvet-chugunnogo-radiatora`, `/request`.
 
+### `[добавлено 2026.08.30] /info/raschet-sekciy-chugunnogo-retro-radiatora`
+
+Tier-2. Коммерческий расчет: сколько секций Nostalgia или Historic нужно для комнаты, как учитывать паспортную теплоотдачу одной секции, ΔT, угловую комнату, высоту потолка, окна, нишу и потери от подключения. В существующих статьях расчет только упоминается, поэтому отдельный практический URL не дублирует `/retro` или общие материалы о чугуне.
+
+Связи: `/retro`, модели Nostalgia и Historic, `/info/iron-cast-radiators`, `/info/teplootdacha-radiatora-delta-t-chto-eto`, `/request`.
+
 ---
 
 # 7. Кластер “Дизайн-радиаторы Velar”
@@ -492,21 +521,22 @@ Tier-2. Цвета и декоративная отделка ретро-рад�
     │   ├── [есть] /info/power
     │   ├── [есть] /info/oshibki-pri-vybore-dizain-radiatorov
     │   ├── [есть] /info/forma-trub-dizayn-radiatorov
-    │   ├── [добавить] /info/vertikalnye-dizayn-radiatory-velar-dlya-kvartiry
-    │   ├── [добавить] /info/vertikalnyy-radiator-dlya-uzkoy-steny
-    │   └── [добавить] /info/kak-rasschitat-moshchnost-vertikalnogo-dizayn-radiatora
+    │   ├── [не создавать отдельно: интент закрывают /design/vertikalnye и текущие статьи] /info/vertikalnye-dizayn-radiatory-velar-dlya-kvartiry
+    │   ├── [не создавать отдельно: интент закрывает /design/vertikalnye] /info/vertikalnyy-radiator-dlya-uzkoy-steny
+    │   └── [не создавать отдельно: усилить /info/power и вертикальный хаб] /info/kak-rasschitat-moshchnost-vertikalnogo-dizayn-radiatora
     │
     ├── [есть / углубить] /info/horizontal-designer-radiators
     │   ├── [есть] /info/kak-podobrat-radiatory-dlya-kuhni
-    │   ├── [добавить] /info/gorizontalnye-dizayn-radiatory-pod-okno
+    │   ├── [не создавать отдельно: интент закрывает /design/gorizontalnye] /info/gorizontalnye-dizayn-radiatory-pod-okno
     │   ├── [добавить] /info/gorizontalnyy-dizayn-radiator-ili-trubchatyy
     │   └── [добавить] /info/dizayn-radiator-dlya-kuhni-gostinoy
     │
     ├── [2026.07.08] /info/wall
     │   ├── [есть] /info/vertical-designer-radiators
     │   ├── [есть] /info/horizontal-designer-radiators
-    │   ├── [добавить] /info/nastennyy-ili-napolnyy-dizayn-radiator
-    │   └── [добавить] /info/dizayn-radiator-vmesto-obychnoi-batarei
+    │   ├── [добавить позже] /info/nastennyy-ili-napolnyy-dizayn-radiator
+    │   ├── [не создавать в общей формулировке] /info/dizayn-radiator-vmesto-obychnoi-batarei
+    │   └── [добавлено 2026.08.30] /info/kak-podobrat-dizayn-radiator-pod-gotovye-vyvody-trub
     │
     ├── [есть / углубить] /info/tsvet-interera-i-radiator
     │   ├── [есть] /info/chernye-dizainerskie-radiatory-otopleniya
@@ -516,8 +546,8 @@ Tier-2. Цвета и декоративная отделка ретро-рад�
     │
     └── [не создавать отдельно: интент закрывает /design] /info/dizayn-radiatory-velar-kak-vybrat
         ├── [не создавать - каннибализация] /info/p30-p60-q40-r32-chto-vybrat
-        ├── [добавить] /info/ploskiy-kvadratnyy-kruglyy-profil-radiatora
-        ├── [2026.08.23] /info/dizayn-radiator-s-tenom-kogda-nuzhen
+        ├── [не создавать отдельно: дубль /info/forma-trub-dizayn-radiatorov] /info/ploskiy-kvadratnyy-kruglyy-profil-radiatora
+        ├── [добавлено 2026.08.23] /info/dizayn-radiator-s-tenom-kogda-nuzhen
         └── [не создавать - каннибализация] /info/sravnenie-modeley-dizayn-radiatorov-velar
 ```
 
@@ -561,17 +591,23 @@ Tier-2. Сравнение популярных серий по форме пр�
 
 Связи: `/design`, `/design/p30`, `/design/p60`, `/design/q40`, `/design/r32`.
 
-### `/info/ploskiy-kvadratnyy-kruglyy-profil-radiatora`
+### `[не создавать отдельно] /info/ploskiy-kvadratnyy-kruglyy-profil-radiatora`
 
-Tier-2. Разбор формы труб дизайн-радиаторов: плоский, квадратный, круглый профиль. Может углублять уже существующую статью `/info/forma-trub-dizayn-radiatorov`.
+Интент уже закрывает `/info/forma-trub-dizayn-radiatorov`. Таблицу плоского, квадратного, круглого и овального профиля нужно добавить в существующую статью, сохранив один URL.
 
 Связи: `/info/forma-trub-dizayn-radiatorov`, `/design`, серии P/Q/R.
 
-### `[2026.08.23] /info/dizayn-radiator-s-tenom-kogda-nuzhen`
+### `[добавлено 2026.08.23] /info/dizayn-radiator-s-tenom-kogda-nuzhen`
 
 Tier-2. Когда нужен электрический ТЭН в дизайнерском радиаторе, ограничения, сезонное использование, ванная/прихожая/кухня.
 
 Связи: `/design`, модельные страницы с возможностью ТЭНа, `/request`.
+
+### `[добавлено 2026.08.30] /info/kak-podobrat-dizayn-radiator-pod-gotovye-vyvody-trub`
+
+Tier-2. Сценарий замены после разведения труб или в готовом ремонте: какие размеры снять, как проверить межосевое расстояние, когда сохранить боковое подключение, когда возможно нижнее, как учесть термовентиль, габариты арматуры и фактическую мощность. Узкая постановка не конкурирует с каталогом `/design`, который отвечает на запрос выбора категории и серии.
+
+Связи: `/design`, `/design/vertikalnye`, `/design/gorizontalnye`, подходящие модельные страницы, `/info/kak-podgotovit-dannye-dlya-rascheta-radiatora`, `/request`.
 
 ### `[не создавать - каннибализация] /info/sravnenie-modeley-dizayn-radiatorov-velar`
 
@@ -950,12 +986,16 @@ H1 выводится шаблоном страницы из поля `title`, �
 
 ```txt
 /info/trubchatye-radiatory-velar-dlya-kvartiry - добавлено 2026.07.20
-/info/trubchatye-radiatory-dlya-centralnogo-otopleniya
 /info/2-3-4-trubchatye-radiatory-chto-vybrat - добавлено 2026.06.25
 /info/kwh-kwhv-kwhv24-chto-vybrat - добавлено 2026.07.20
-/info/konvektor-dlya-panoramnogo-okna
+/info/trubchatye-radiatory-dlya-chastnogo-doma - добавлено 2026.08.30
+/info/kak-podobrat-dizayn-radiator-pod-gotovye-vyvody-trub - добавлено 2026.08.30
+/info/raschet-sekciy-chugunnogo-retro-radiatora - добавлено 2026.08.30
+/info/kak-vybrat-reshetku-dlya-vnutripolnogo-konvektora - добавлено 2026.08.30
+/info/trubchatye-radiatory-dlya-centralnogo-otopleniya - не создавать, интент закрывает статья для квартиры
+/info/konvektor-dlya-panoramnogo-okna - не создавать, прямой дубль /info/panoramnie-okna
 /info/napolnyy-radiator-ili-vnutripolnyy-konvektor - не создавать, интент закрыт существующими страницами
-/info/nostalgia-ili-historic-chto-vybrat
+/info/nostalgia-ili-historic-chto-vybrat - добавлено 2026.06.08
 /info/p30-p60-q40-r32-chto-vybrat - не создавать, интент закрывает /design
 /info/sravnenie-modeley-dizayn-radiatorov-velar - не создавать, интент закрывает /design
 /info/kak-podgotovit-dannye-dlya-rascheta-radiatora - добавлено 2026.08.05
@@ -989,41 +1029,28 @@ H1 выводится шаблоном страницы из поля `title`, �
 ## Очень высокий приоритет
 
 ```txt
-/info/tube-radiators — углубить
-/info/steel-tube-radiators-guide — углубить
-/info/kak-vybirat-vnutripolnye-konvektory — углубить
-/info/vertical-designer-radiators — углубить
-/info/horizontal-designer-radiators — углубить
-/info/dizayn-radiatory-velar-kak-vybrat - не создавать, интент закрывает /design
-/info/kwh-kwhv-kwhv24-chto-vybrat - добавлено 2026.07.20
-/info/trubchatye-radiatory-velar-dlya-kvartiry - добавлено 2026.07.20
-/info/2-3-4-trubchatye-radiatory-chto-vybrat - добавлено 2026.06.25
-/info/sravnenie-modeley-dizayn-radiatorov-velar — не создавать, интент закрывает /design
+/info/trubchatye-radiatory-dlya-chastnogo-doma — добавлено 2026.08.30
+/info/kak-podobrat-dizayn-radiator-pod-gotovye-vyvody-trub — добавлено 2026.08.30
 ```
 
 ## Высокий приоритет
 
 ```txt
-/info/floor-design-radiators — углубить
-/info/iron-cast-radiators — углубить
-/info/panoramnie-okna — углубить
-/info/napolnyy-radiator-ili-vnutripolnyy-konvektor — не создавать, интент закрывают /floor и /info/chto-postavit-pered-panoramnym-oknom
-/info/retro-radiatory-velar-obzor — добавить
-/info/nostalgia-ili-historic-chto-vybrat — добавить
-/info/p30-p60-q40-r32-chto-vybrat — не создавать, сравнение серий закрывает /design
-/info/kakoy-radiator-vybrat-dlya-kvartiry — добавлено 2026.08.16
+/info/raschet-sekciy-chugunnogo-retro-radiatora — добавлено 2026.08.30
+/info/kak-vybrat-reshetku-dlya-vnutripolnogo-konvektora — добавлено 2026.08.30
 ```
 
-## Средний приоритет
+## Сначала обновить существующие URL, не создавать новые
 
 ```txt
-/info/napolnye-radiatory-velar-obzor
-/info/chto-postavit-pered-panoramnym-oknom
-/info/radiator-v-cvet-steny-ili-akcentnyy
-/info/belyy-chernyy-ili-cvetnoy-dizayn-radiator
-/info/dizayn-radiator-s-tenom-kogda-nuzhen - добавлено 2026.08.23
-/info/kak-podgotovit-dannye-dlya-rascheta-radiatora - добавлено 2026.08.05
-/info/kak-uhazhivat-za-trubchatym-radiatorom
+/info/trubchatye-radiatory-velar-dlya-kvartiry — усилить блок о центральном отоплении
+/info/steel-tube-radiators-guide — усилить универсальный расчет
+/info/panoramnie-okna — сохранить главным URL про конвектор у панорамного окна
+/info/forma-trub-dizayn-radiatorov — добавить сравнительную таблицу профилей
+/design/vertikalnye — усилить выбор для узкой стены и расчет мощности
+/design/gorizontalnye — усилить выбор радиатора под окно
+/retro — сохранить обзор линейки Nostalgia/Historic на коммерческой странице
+/model/kwh, /model/kwhv, /model/kwhv24 — развивать модельный интент в карточках, не в обзорах
 ```
 
 ---

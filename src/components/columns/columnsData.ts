@@ -136,6 +136,10 @@ const usefulArticles = [
 		title: 'Какой радиатор выбрать для частного дома',
 	},
 	{
+		href: '/info/trubchatye-radiatory-dlya-chastnogo-doma',
+		title: 'Трубчатые радиаторы для частного дома - как выбрать',
+	},
+	{
 		href: '/info/termostats',
 		title: 'Как правильно устанавливать термоголовки для радиаторов',
 	},
@@ -213,6 +217,10 @@ const usefulArticleGroups = [
 			{
 				href: '/info/kakoy-radiator-vybrat-dlya-chastnogo-doma',
 				title: 'Какой радиатор выбрать для частного дома',
+			},
+			{
+				href: '/info/trubchatye-radiatory-dlya-chastnogo-doma',
+				title: 'Трубчатые радиаторы для частного дома - как выбрать',
 			},
 		],
 	},

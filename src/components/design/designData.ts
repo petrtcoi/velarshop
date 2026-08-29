@@ -247,6 +247,7 @@ export const designUsefulLinkGroups = [
 	{
 		title: 'Выбор дизайн-радиатора',
 		links: [
+			['/info/kak-podobrat-dizayn-radiator-pod-gotovye-vyvody-trub', 'Как подобрать дизайн-радиатор под готовые выводы труб'],
 			['/info/wall', 'Настенные дизайнерские радиаторы отопления'],
 			['/info/vertical-designer-radiators', 'Вертикальные дизайнерские радиаторы: экономия места и стиль'],
 			['/info/horizontal-designer-radiators', 'Горизонтальные дизайн-радиаторы: где использовать лучше'],
