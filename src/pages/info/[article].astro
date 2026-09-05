@@ -223,8 +223,8 @@ function getTopicBySlug(slug: string): Topic {
   if (/convektor|konvektor|convector|panoram|teplovaya-zavesa|220v|24v|kwh/.test(slug)) return "convector";
   if (/trubchat|tube|column|sekci|panelnyh|termostat|chistit/.test(slug)) return "columns";
   if (/chugun|retro|iron|lite|restavrats|nostalgi|histor/.test(slug)) return "retro";
-  if (/design|vertical|horizontal|tsvet|interer|colors|wall|kuhni|chernye|forma-trub/.test(slug)) return "design";
-  if (/bezopasnost|vybor|vybrat|oshibki|power|radiator-ne-greet|kreplenie|teplootdacha|heating/.test(slug)) return "safety";
+  if (/design|vertical|horizontal|tsvet|interer|colors|wall|kuhni|chernye|forma-trub|matov|glyant/.test(slug)) return "design";
+  if (/bezopasnost|vybor|vybrat|oshibki|power|radiator-ne-greet|kreplenie|teplootdacha|heating|spalni/.test(slug)) return "safety";
   return "generic";
 }
 

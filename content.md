@@ -2,11 +2,39 @@
 
 Документ сделан как рабочий план развития коммерческого SEO для velarshop.ru. Логика такая же, как в плане для k-radiator: не просто список статей, а структура `коммерческая страница → tier-1 → tier-2`, где каждая статья усиливает конкретную money page и возвращает пользователя к категории, модели, расчету или заявке.
 
+## Перепроверка по Google Search Console от 2026-09-05
+
+План дополнительно сверен с отчетом Google Search Console по домену `velarshop.ru` за последние 3 месяца (04.06.2026-03.09.2026). За период сайт получил 2,68 тыс. кликов и 110 тыс. показов; средний CTR составил 2,4%, средняя позиция — 8,3. Главный вывод: перед расширением контента нужно исправить уже видимое смешение информационных и коммерческих интентов.
+
+### Что исправить до публикации новых статей
+
+1. Консолидировать две статьи про сравнение трубчатых и панельных радиаторов. Основным URL оставить `/info/trubchatye-radiatory-vs-panelnye`: 643 показа, 6 кликов, средняя позиция 5,3. Полезные уникальные фрагменты со страницы `/info/trubchatyy-radiator-ili-panelnyy` (87 показов, 0 кликов, позиция 6,7) перенести на основной URL, все внутренние ссылки обновить, со второго URL поставить 301 redirect.
+2. Развести `/columns` и `/info/column-radiators-pros-cons`. По точному запросу «трубчатые радиаторы» информационная статья получила 796 из 797 показов при средней позиции 16,7, а `/columns` — только 2 показа. `/columns` должен быть основной страницей для общих и коммерческих запросов, а статья — для формулировок «плюсы и минусы», «преимущества и недостатки», «стоит ли выбирать». Не создавать рядом еще один общий гид.
+3. Усилить `/floor`, а не создавать новые общие статьи про напольные радиаторы у панорамных окон. По точному запросу «напольные радиаторы для панорамных окон» `/floor` получил 125 показов и 6 кликов при позиции 11,9, а `/info/radiatory-dlya-panoramnykh-okon-tipy-osobennosti` — 235 показов и 3 клика при позиции 8,3. Новый близкий URL только усилит каннибализацию.
+4. Усилить `/convector` под коммерческий запрос «внутрипольные конвекторы». Сейчас `/convector` имеет 23 показа и позицию 15,8, `/info/convectors` — 35 показов и позицию 52. Общие обзоры конвекторов не добавлять; существующую статью `/info/convectors` сузить до объяснительного интента, а выбор и покупку закрепить за `/convector`.
+5. По запросу «дизайнерские радиаторы» основная страница уже выбрана правильно: `/design` получил 579 показов и 14 кликов при позиции 10,0. Не создавать общий обзор дизайн-радиаторов; новые материалы должны закрывать только узкие сценарии.
+
+### Следующие три самостоятельных материала
+
+```txt
+1. /info/trubchatye-radiatory-v-interere — публиковать первой
+2. /info/radiator-dlya-spalni — публиковать второй
+3. /info/matovyy-ili-glyantsevyy-radiator — публиковать третьей
+```
+
+У этих страниц разные интенты:
+
+- `/info/trubchatye-radiatory-v-interere` — выбор расположения, высоты, цвета и визуальной роли трубчатого радиатора; точный запрос уже дал 27 показов, но сейчас ведет на нерелевантную статью о плюсах и минусах;
+- `/info/radiator-dlya-spalni` — сценарий конкретной комнаты: мощность, место установки, терморегулирование, тишина и уход; не дублирует общие гиды для квартиры и частного дома;
+- `/info/matovyy-ili-glyantsevyy-radiator` — выбор именно типа заводского покрытия: гладкое матовое, глянцевое или текстурное; уход, блики, следы, заводская окраска и влияние финиша на теплоотдачу. Статья не должна повторять подбор оттенка из `/info/colors`, психологию цвета или материал о черных радиаторах. Короткий FAQ про матовую и глянцевую отделку на `/info/colors` нужно оставить как краткий ответ и связать ссылкой с новым подробным материалом.
+
+Первые две статьи — ближайшая очередь. Третья публикуется следом и связывает кластеры `/design`, `/columns` и `/retro` без создания еще одного общего каталожного обзора.
+
 ## Аудит плана и фактической реализации от 2026-07-20
 
 Проверка репозитория показала, что кластерная логика в целом верная, но исходный план смешивал новые информационные страницы с интентами, которые уже подробно закрыты коммерческими хабами. Страницы `/design`, `/convector`, `/floor` и `/retro` уже содержат выбор серий, сценарии, FAQ и ссылки на модели. Поэтому статьи с названиями вида `*-velar-obzor` или общий гид `dizayn-radiatory-velar-kak-vybrat` не следует создавать автоматически: они могут конкурировать с money page по одному запросу и размывать внутренний вес. Вместо них приоритет получают сравнительные и сценарные материалы с отдельным интентом, а обзор линейки остается частью коммерческого хаба.
 
-Фактическая проверка также выявила две пары страниц с риском каннибализации: `/info/trubchatye-radiatory-vs-panelnye` и `/info/trubchatyy-radiator-ili-panelnyy`, а также несколько общих материалов про выбор и монтаж внутрипольных конвекторов. Для этих пар нужен отдельный анализ показов и запросов в Search Console. После выбора сильнейшего URL полезный текст и ссылки переносятся на него, а второй URL получает 301 redirect; создавать дополнительные близкие сравнения до консолидации не нужно.
+Фактическая проверка также выявила две страницы с риском каннибализации: `/info/trubchatye-radiatory-vs-panelnye` и `/info/trubchatyy-radiator-ili-panelnyy`, а также несколько общих материалов про выбор и монтаж внутрипольных конвекторов. Анализ Search Console выполнен 2026-09-05: сильнейшим выбран `/info/trubchatye-radiatory-vs-panelnye`, полезный текст и ссылки нужно перенести на него, а второй URL направить на основной через 301 redirect. Дополнительные близкие сравнения до консолидации создавать не нужно.
 
 Исправлен фактический URL расчета для угловой комнаты: в коллекции статья публикуется как `/info/raschet-radiatorov-dlya-uglovoy-komnaty`, хотя имя исходного файла отличается. Канонический URL низковольтного конвектора - `/model/kwhv24`; путь `/convector/kwhv-24v` является переадресацией и не должен использоваться для внутренней перелинковки. Статус `есть` далее означает наличие конечного URL, а не совпадение имени файла с планом.
 
@@ -188,9 +216,10 @@ VelarShop — коммерческий сайт, поэтому статьи н�
     │
     ├── [2026.07.08 - updated] /info/column-radiators-pros-cons
     │   ├── [есть] /info/zamena-panelnyh-radiatorov-na-trubchatye-velar
-    │   ├── [2026.06.08] /info/trubchatyy-radiator-ili-panelnyy
+    │   ├── [оставить основным] /info/trubchatye-radiatory-vs-panelnye
+    │   ├── [объединить и поставить 301] /info/trubchatyy-radiator-ili-panelnyy
     │   ├── [добавить] /info/trubchatyy-radiator-ili-dizayn-radiator
-    │   └── [добавить] /info/trubchatye-radiatory-v-interere
+    │   └── [добавить 2026.09.05] /info/trubchatye-radiatory-v-interere
     │
     └── [есть / углубить] /info/kak-chistit-trubchatyj-radiator-otopleniya
         ├── [есть] /info/termostats
@@ -280,15 +309,15 @@ Tier-2. Подбор низких трубчатых радиаторов под
 └── [есть] /floor
     ├── [есть / углубить] /info/floor-design-radiators
     │   ├── [есть] /info/radiatory-dlya-panoramnykh-okon-tipy-osobennosti
-    │   ├── [добавить] /info/napolnye-radiatory-velar-obzor
-    │   ├── [добавить] /info/napolnye-radiatory-dlya-panoramnyh-okon
+    │   ├── [не создавать: интент закрывают /floor и /info/floor-design-radiators] /info/napolnye-radiatory-velar-obzor
+    │   ├── [не создавать: усиливает каннибализацию /floor и статьи о панорамных окнах] /info/napolnye-radiatory-dlya-panoramnyh-okon
     │   ├── [не создавать - каннибализация] /info/napolnyy-radiator-ili-vnutripolnyy-konvektor
-    │   └── [добавить] /info/napolnye-radiatory-v-interere
+    │   └── [не создавать: интент закрывает /info/floor-design-radiators] /info/napolnye-radiatory-v-interere
     │
     └── [есть / углубить] /info/radiatory-dlya-panoramnykh-okon-tipy-osobennosti
         ├── [2026.06.08] /info/chto-postavit-pered-panoramnym-oknom
-        ├── [добавить] /info/nizkiy-radiator-ili-konvektor
-        └── [добавить] /info/radiator-pered-oknom-v-pol
+        ├── [не создавать: сравнение уже есть в /info/chto-postavit-pered-panoramnym-oknom] /info/nizkiy-radiator-ili-konvektor
+        └── [не создавать: интент закрыт статьями о панорамных окнах] /info/radiator-pered-oknom-v-pol
 ```
 
 ## Роли страниц
@@ -305,17 +334,17 @@ Tier-1. Уже есть статья про напольные дизайн-ра
 
 Связи: `/floor`, `/convector`, `/info/radiatory-dlya-panoramnykh-okon-tipy-osobennosti`.
 
-## Что добавить
+## Что не создавать отдельно
 
-### `/info/napolnye-radiatory-velar-obzor`
+### `[не создавать] /info/napolnye-radiatory-velar-obzor`
 
-Tier-1. Опорный обзор напольных радиаторов Velar. Нужен, если текущая статья `/info/floor-design-radiators` останется более общей и информационной.
+Отдельный обзор повторит коммерческий хаб `/floor` и существующую статью `/info/floor-design-radiators`. Вместо нового URL нужно усилить `/floor` под выбор и покупку, а текущую статью оставить главным информационным гидом.
 
 Связи: `/floor`, `/design`, `/convector`, `/request`.
 
 ### `[не создавать - каннибализация] /info/napolnyy-radiator-ili-vnutripolnyy-konvektor`
 
-Tier-2. Сравнение двух решений для панорамных окон: напольный радиатор и внутрипольный конвектор.
+Сравнение двух решений уже есть в `/info/chto-postavit-pered-panoramnym-oknom` и материалах о панорамных окнах. Новый URL разделит один и тот же запрос между несколькими страницами.
 
 Связи: `/floor`, `/convector`, `/info/radiatory-dlya-panoramnykh-okon-tipy-osobennosti`, `/request`.
 
@@ -449,13 +478,13 @@ Tier-2. Выбор видимой и функциональной части к�
     │
     ├── [2026.06.08] /info/nostalgia-ili-historic-chto-vybrat
     │   ├── [2026.06.25] /info/radiatory-s-ornamentom-ili-bez
-    │   ├── [добавить] /info/retro-radiator-v-klassicheskom-interere
-    │   └── [добавить] /info/retro-radiator-v-loft-interere
+    │   ├── [не создавать: раздел есть в /info/chugunnye-retro-radiatory-v-interere] /info/retro-radiator-v-klassicheskom-interere
+    │   └── [не создавать: раздел есть в /info/chugunnye-retro-radiatory-v-interere] /info/retro-radiator-v-loft-interere
     │
     └── [есть / углубить] /info/kak-otlichit-kachestvennoe-lite-radiatorov
         ├── [есть] /info/restavratsiya-chugunnyh-radiatorov
-        ├── [добавить] /info/patina-bronza-zoloto-serebro-dlya-retro-radiatorov
-        └── [добавить] /info/kak-vybrat-cvet-chugunnogo-radiatora
+        ├── [не создавать отдельно: усилить текущую статью про ретро-радиаторы в интерьере] /info/patina-bronza-zoloto-serebro-dlya-retro-radiatorov
+        └── [не создавать отдельно: усилить текущую статью про ретро-радиаторы в интерьере] /info/kak-vybrat-cvet-chugunnogo-radiatora
 ```
 
 ## Роли страниц
@@ -494,13 +523,13 @@ Tier-2. Сравнение двух основных ретро-серий.
 
 Tier-2. Как выбрать между декоративным орнаментом и спокойной классикой.
 
-Связи: `/retro`, `/info/retro-radiator-v-klassicheskom-interere`.
+Связи: `/retro`, `/info/chugunnye-retro-radiatory-v-interere`.
 
-### `/info/patina-bronza-zoloto-serebro-dlya-retro-radiatorov`
+### `[не создавать отдельно] /info/patina-bronza-zoloto-serebro-dlya-retro-radiatorov`
 
-Tier-2. Цвета и декоративная отделка ретро-радиаторов.
+Цвета, патина и декоративная отделка уже подробно относятся к интенту `/info/chugunnye-retro-radiatory-v-interere`. Нужные примеры следует добавить в существующую статью, не создавая еще одну страницу про тот же выбор.
 
-Связи: `/retro`, `/info/kak-vybrat-cvet-chugunnogo-radiatora`, `/request`.
+Связи: `/retro`, `/info/chugunnye-retro-radiatory-v-interere`, `/request`.
 
 ### `[добавлено 2026.08.30] /info/raschet-sekciy-chugunnogo-retro-radiatora`
 
@@ -540,9 +569,10 @@ Tier-2. Коммерческий расчет: сколько секций Nosta
     │
     ├── [есть / углубить] /info/tsvet-interera-i-radiator
     │   ├── [есть] /info/chernye-dizainerskie-radiatory-otopleniya
-    │   ├── [добавить] /info/radiator-v-cvet-steny-ili-akcentnyy
-    │   ├── [добавить] /info/belyy-chernyy-ili-cvetnoy-dizayn-radiator
-    │   └── [добавить] /info/radiatory-ral-v-interere
+    │   ├── [не создавать отдельно: интент закрывает /info/tsvet-interera-i-radiator] /info/radiator-v-cvet-steny-ili-akcentnyy
+    │   ├── [не создавать отдельно: интент закрывают статьи о цвете и черных радиаторах] /info/belyy-chernyy-ili-cvetnoy-dizayn-radiator
+    │   ├── [не создавать отдельно: интент закрывает /info/tsvet-interera-i-radiator] /info/radiatory-ral-v-interere
+    │   └── [добавить 2026.09.05] /info/matovyy-ili-glyantsevyy-radiator
     │
     └── [не создавать отдельно: интент закрывает /design] /info/dizayn-radiatory-velar-kak-vybrat
         ├── [не создавать - каннибализация] /info/p30-p60-q40-r32-chto-vybrat
@@ -629,8 +659,8 @@ Tier-2. Большая сравнительная статья по сериям
     ├── [есть] /info/radiator-types
     ├── [добавлено 2026.08.16] /info/kakoy-radiator-vybrat-dlya-kvartiry
     ├── [добавлено 2026.08.16] /info/kakoy-radiator-vybrat-dlya-chastnogo-doma
-    ├── [добавить] /info/radiator-dlya-detskoy-komnaty
-    ├── [добавить] /info/radiator-dlya-spalni
+    ├── [не создавать: интент закрывает /info/bezopasnost-radiatorov-dlya-detej] /info/radiator-dlya-detskoy-komnaty
+    ├── [добавить 2026.09.05] /info/radiator-dlya-spalni
     └── [2026.08.05] /info/kak-podgotovit-dannye-dlya-rascheta-radiatora
 ```
 
@@ -1029,15 +1059,25 @@ H1 выводится шаблоном страницы из поля `title`, �
 ## Очень высокий приоритет
 
 ```txt
-/info/trubchatye-radiatory-dlya-chastnogo-doma — добавлено 2026.08.30
-/info/kak-podobrat-dizayn-radiator-pod-gotovye-vyvody-trub — добавлено 2026.08.30
+/info/trubchatye-radiatory-v-interere — новый отдельный интерьерный интент; публиковать первой
+/info/radiator-dlya-spalni — отдельный комнатный сценарий; публиковать второй
 ```
 
 ## Высокий приоритет
 
 ```txt
-/info/raschet-sekciy-chugunnogo-retro-radiatora — добавлено 2026.08.30
-/info/kak-vybrat-reshetku-dlya-vnutripolnogo-konvektora — добавлено 2026.08.30
+/info/matovyy-ili-glyantsevyy-radiator — отдельный интент покрытия и ухода; публиковать третьей
+```
+
+## До новых публикаций
+
+```txt
+/info/trubchatye-radiatory-vs-panelnye — оставить основным сравнительным URL
+/info/trubchatyy-radiator-ili-panelnyy — объединить с основным URL и поставить 301
+/columns — усилить под общий коммерческий запрос «трубчатые радиаторы»
+/info/column-radiators-pros-cons — сузить под «плюсы и минусы», не под общий запрос
+/floor — усилить под коммерческий запрос о напольных радиаторах для панорамных окон
+/convector — усилить под коммерческий запрос «внутрипольные конвекторы»
 ```
 
 ## Сначала обновить существующие URL, не создавать новые
