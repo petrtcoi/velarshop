@@ -132,7 +132,7 @@ main :where(.animate-spin) {
 /* Compact commercial rhythm: clear section boundaries and more useful content per screen. */
 .commercial-page main > section:not(:first-of-type) {
   border-top: 1px solid var(--color-border);
-  margin-top: 0.875rem;
+  margin-top: 2rem;
 }
 
 .commercial-page main > section:nth-of-type(even) {
@@ -143,9 +143,9 @@ main :where(.animate-spin) {
   background-color: #ffffff !important;
 }
 
-.commercial-page main > section:not(:first-child):not([class~="py-3"]) {
-  padding-top: 2rem !important;
-  padding-bottom: 2rem !important;
+.commercial-page main > section:not(:first-of-type):not([class~="py-3"]) {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
 }
 
 .commercial-page main section[class~="py-12"][class~="xl:py-20"] {
@@ -218,9 +218,9 @@ main :where(.animate-spin) {
 }
 
 @media (min-width: 768px) {
-  .commercial-page main > section:not(:first-child):not([class~="py-3"]) {
-    padding-top: 2.5rem !important;
-    padding-bottom: 2.5rem !important;
+  .commercial-page main > section:not(:first-of-type):not([class~="py-3"]) {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
   }
 
   .commercial-page main section[class~="py-12"][class~="xl:py-20"] {
@@ -264,7 +264,7 @@ main :where(.animate-spin) {
   }
 
   .commercial-page main > section:not(:first-of-type) {
-    margin-top: 1.125rem;
+    margin-top: 3rem;
   }
 }
 
