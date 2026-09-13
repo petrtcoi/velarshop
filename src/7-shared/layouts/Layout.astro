@@ -87,6 +87,10 @@ const finalTwitterDescription = twitterDescription ?? finalOgDescription
 const finalTwitterImage = twitterImage
 	? new URL(twitterImage, baseUrl).toString()
 	: ogImageHref
+const commercialPaths = ['/', '/columns', '/design', '/retro', '/convector', '/floor']
+const commercialPrefixes = ['/collections', '/model/', '/columns/', '/design/', '/retro/', '/convector/', '/floor/', '/item/']
+const isCommercialPage = commercialPaths.includes(Astro.url.pathname)
+	|| commercialPrefixes.some(prefix => Astro.url.pathname.startsWith(prefix))
 ---
 
 <!DOCTYPE html>
@@ -146,7 +150,7 @@ const finalTwitterImage = twitterImage
 			crossorigin
 		/>
 		<link
-			href='https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap'
+			href='https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap'
 			rel='stylesheet'
 		/>
 
@@ -310,14 +314,14 @@ const finalTwitterImage = twitterImage
 />
 		
 	</head>
-	<body class='text-neutral-900 dark:text-neutral-200 bg-white dark:bg-neutral-800'>
+	<body class:list={['bg-white text-neutral-900 dark:bg-neutral-800 dark:text-neutral-200', { 'commercial-page': isCommercialPage }]}>
 
 		
 			<Header currentPath={Astro.url.pathname} />
 
 			{breadcrumbs.length > 0 && (
 				<div class='bg-white'>
-					<div class='mx-auto max-w-[1240px] px-4 pb-0 pt-3 text-[13px] text-neutral-500 md:px-6 md:pt-5 xl:px-8'>
+					<div class='mx-auto max-w-[1180px] px-4 pb-0 pt-3 text-xs text-neutral-500 md:px-6 md:pt-4 xl:px-8'>
 						<Breadcrumbs items={breadcrumbs} separator='/' withJsonLd={!disableBreadcrumbJsonLd} />
 					</div>
 				</div>
@@ -340,9 +344,10 @@ const finalTwitterImage = twitterImage
 				z-index: 100;
 				bottom: 15px;
 				left: 50%;
-				max-width: 80%;
+				width: min(680px, calc(100% - 24px));
+				max-width: none;
 				transform: translateX(-50%);
-				padding: 20px;
+				padding: 12px 14px;
 				background-color: white;
 				border-radius: 4px;
 				box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.4);
@@ -353,14 +358,15 @@ const finalTwitterImage = twitterImage
 			}
 			#cookie_note p {
 				margin: 0;
-				font-size: 0.7rem;
+				font-size: 0.75rem;
+				line-height: 1.45;
 				text-align: left;
 				color: black;
 			}
 
 			.cookie_accept {
-				min-width: 100px;
-				font-size: 0.8rem;
+				min-width: 88px;
+				font-size: 0.75rem;
 				border: 1px solid black;
 				border-radius: 8px;
 				padding: 5px 10px;

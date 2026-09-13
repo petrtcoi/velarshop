@@ -42,16 +42,16 @@ const statItems = [
 ---
 
 <section id='columns-hero' class='border-b border-neutral-200 bg-white'>
-	<div class='mx-auto max-w-[1240px] px-4 pb-8 pt-6 md:px-6 md:pb-12 md:pt-9 xl:px-8 xl:py-12'>
-		<div class='grid gap-7 min-[900px]:grid-cols-[minmax(0,1fr)_minmax(420px,520px)] min-[900px]:items-start min-[900px]:gap-8 min-[1250px]:grid-cols-[minmax(0,1fr)_minmax(220px,320px)_minmax(360px,420px)] min-[1250px]:gap-10'>
+	<div class='mx-auto max-w-[1180px] px-4 pb-8 pt-6 md:px-6 md:py-10 xl:px-8'>
+		<div class='grid gap-7 min-[900px]:grid-cols-[minmax(0,1fr)_minmax(360px,420px)] min-[900px]:items-start min-[900px]:gap-8 min-[1250px]:grid-cols-[minmax(0,1fr)_minmax(160px,220px)_minmax(340px,390px)] min-[1250px]:gap-8'>
 			<div class='min-w-0'>
-				<h1 class='max-w-[620px] text-[34px] font-medium leading-[1.04] tracking-tight text-neutral-950 md:text-[38px] xl:text-[56px]'>
+				<h1 class='max-w-[620px] text-4xl font-semibold leading-tight tracking-tight text-neutral-950 md:text-5xl'>
 					Трубчатые радиаторы
 				</h1>
-				<p class='mt-5 max-w-[560px] text-sm leading-6 text-neutral-700 md:text-base md:leading-7'>
+				<p class='mt-4 max-w-[520px] text-sm leading-6 text-neutral-700 md:text-base md:leading-6'>
 					Стальные трубчатые радиаторы подходят для квартир, домов и дизайн-проектов. В каталоге Velar можно подобрать модель по высоте, количеству труб, секциям, подключению и цвету RAL: под окно, для замены старой батареи или как высокий радиатор на узкую стену. Выберите модель ниже или отправьте параметры помещения - менеджер рассчитает мощность, стоимость, оплату и доставку по России.
 				</p>
-				<div class='mt-7 flex flex-col gap-3 min-[420px]:flex-row min-[420px]:flex-wrap'>
+				<div class='mt-6 flex flex-col gap-3 min-[420px]:flex-row min-[420px]:flex-wrap'>
 					<a href='/request' class='inline-flex h-11 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>
 						Получить расчет
 					</a>
@@ -62,7 +62,7 @@ const statItems = [
 						Подобрать по параметрам
 					</a>
 				</div>
-				<div class='mt-7 flex flex-wrap items-center gap-x-7 gap-y-3 text-[13px] leading-tight text-neutral-700 md:text-sm'>
+				<div class='mt-6 flex flex-wrap items-center gap-x-5 gap-y-3 text-xs leading-tight text-neutral-700 md:text-sm'>
 					{statItems.map(item => (
 						<div class='inline-flex items-center gap-2.5'>
 							<span class='inline-flex h-5 w-5 shrink-0 items-center justify-center text-red-700' aria-hidden='true'>
@@ -90,7 +90,7 @@ const statItems = [
 					alt='Черный вертикальный трубчатый радиатор Velar'
 					title='Черный вертикальный трубчатый радиатор Velar'
 					loading='eager'
-					class='h-auto max-h-[700px] w-full max-w-[380px] bg-transparent object-contain shadow-none'
+					class='h-auto max-h-[500px] w-full max-w-[220px] bg-transparent object-contain shadow-none'
 				/>
 				<p class='mt-3 text-center text-xs font-medium text-neutral-500'>Высота от 300 до 2000 мм</p>
 			</div>
@@ -128,7 +128,7 @@ const statItems = [
 								cartPillLabel='Запрос'
 								cartHref='/request'
 							/>
-							<p class='mt-2.5 text-[12px] leading-[1.45] text-neutral-500 md:text-[13px]'>
+							<p class='mt-2.5 text-xs leading-5 text-neutral-500'>
 								Добавьте вариант в запрос - менеджер проверит мощность, подключение, наличие или срок производства и рассчитает итоговую стоимость с доставкой.
 							</p>
 						</div>

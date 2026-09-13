@@ -263,7 +263,7 @@ const scenarios = [
   .hero {
     position: relative;
     width: 100%;
-    min-height: 560px;
+    min-height: 500px;
     overflow: hidden;
     background: #fff;
   }
@@ -298,26 +298,26 @@ const scenarios = [
     z-index: 2;
     max-width: 1180px;
     margin: 0 auto;
-    padding: 68px 32px 36px;
+    padding: 48px 24px 28px;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(390px, 440px);
-    gap: 42px;
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 410px);
+    gap: 32px;
     align-items: start;
   }
 
   .hero-left h1 {
     font-family: var(--font-heading);
-    font-size: 56px;
-    line-height: 1.08;
-    font-weight: 500;
-    letter-spacing: 0;
+    font-size: 3rem;
+    line-height: 1.05;
+    font-weight: 600;
+    letter-spacing: -0.03em;
     color: #fff;
     max-width: 640px;
-    margin: 0 0 24px;
+    margin: 0 0 20px;
   }
 
   .hero-left {
-    min-height: 420px;
+    min-height: 370px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -331,12 +331,12 @@ const scenarios = [
   }
 
   .hero-left p {
-    font-size: 18px;
-    line-height: 1.55;
+    font-size: 1rem;
+    line-height: 1.5;
     font-weight: 400 !important;
     color: rgba(255, 255, 255, 0.88);
     max-width: 620px;
-    margin: 0 0 32px;
+    margin: 0 0 24px;
   }
 
   .hero-subtitle-mobile,
@@ -347,7 +347,7 @@ const scenarios = [
 
   .hero-actions {
     display: flex;
-    gap: 16px;
+    gap: 12px;
   }
 
   .hero-btn {
@@ -355,10 +355,11 @@ const scenarios = [
     align-items: center;
     justify-content: center;
     border-radius: 3px;
-    padding: 16px 28px;
+    min-height: 44px;
+    padding: 12px 22px;
     font-size: 14px;
     font-weight: 600;
-    min-width: 210px;
+    min-width: 184px;
     text-decoration: none;
     transition: background 0.2s, border-color 0.2s;
   }
@@ -387,15 +388,15 @@ const scenarios = [
     position: relative;
     z-index: 2;
     max-width: 1180px;
-    margin: 24px auto;
-    padding: 4px 0px 32px;
+    margin: 18px auto 0;
+    padding: 0 0 24px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
   }
 
   .hero-feature {
-    min-height: 64px;
-    padding: 0 22px;
+    min-height: 52px;
+    padding: 0 18px;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -424,7 +425,7 @@ const scenarios = [
 
   .category-entry-section {
     background: #fff;
-    padding: 34px 32px 28px;
+    padding: 28px 24px 24px;
   }
 
   .category-entry-wrap {
