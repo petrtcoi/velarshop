@@ -24,6 +24,13 @@ const widths = [...new Set(radiators.map((r) => r.width))].sort(
 const lengths = [...new Set(radiators.map((r) => r.length))].sort(
   sortStringsAsInts
 );
+const interAxes = [
+  ...new Set(
+    radiators
+      .map((r) => r.n_spacing)
+      .filter((value): value is string => Boolean(value))
+  ),
+].sort(sortStringsAsInts);
 
 const { filterByHeight, filterByWidth, filterByLength } =
   getModelFilters(model);
@@ -33,6 +40,7 @@ const initialFilteredRadiators = filterRadiators({
   selectedHeight: ALL,
   selectedLength: ALL,
   selectedWidth: ALL,
+  selectedInterAxis: ALL,
 });
 ---
 
@@ -47,5 +55,6 @@ const initialFilteredRadiators = filterRadiators({
   heights={heights}
   widths={widths}
   lengths={lengths}
+  interAxes={interAxes}
   
 />

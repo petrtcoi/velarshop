@@ -30,15 +30,15 @@ type Props = {
 const { variant = 'expanded' } = Astro.props as Props
 
 const compactChips: Chip[] = [
-	{ label: 'Под окно', action: { filters: { height: 'low' }, modelIds: ['2030', '3030', '4030', '2057', '3057', '4057'], scrollTo: 'columns-models' } },
+	{ label: 'Под окно', action: { href: '/collections/nizkie-trubchatye-radiatory' } },
 	{ label: 'Замена батареи', action: { filters: { height: 'middle' }, modelIds: ['2057', '3057', '4057'], scrollTo: 'columns-models' } },
 	{ label: 'Высокие 1800 мм', action: { filters: { height: 'high' }, modelIds: ['2180', '3180', '4180', '5180'], scrollTo: 'columns-models' } },
 	{ label: 'Для квартиры', action: { modelIds: ['2057', '3057', '3030'], scrollTo: 'columns-models' } },
 	{ label: 'Для частного дома', action: { modelIds: ['3057', '4057', '5057', '3180', '4180', '5180'], scrollTo: 'columns-models' } },
-	{ label: '2 трубки', action: { filters: { tubes: '2' }, modelIds: ['2030', '2057', '2180'], scrollTo: 'columns-models' } },
-	{ label: '3 трубки', action: { filters: { tubes: '3' }, modelIds: ['3030', '3057', '3180'], scrollTo: 'columns-models' } },
-	{ label: '4 трубки', action: { filters: { tubes: '4' }, modelIds: ['4030', '4057', '4180'], scrollTo: 'columns-models' } },
-	{ label: '5 трубок', action: { filters: { tubes: '5' }, modelIds: ['5030', '5057', '5180'], scrollTo: 'columns-models' } },
+	{ label: '2 трубки', action: { href: '/collections/2-trubchatye-radiatory' } },
+	{ label: '3 трубки', action: { href: '/collections/3-trubchatye-radiatory' } },
+	{ label: '4 трубки', action: { href: '/collections/4-trubchatye-radiatory' } },
+	{ label: '5 трубок', action: { href: '/collections/5-trubchatye-radiatory' } },
 	{ label: 'В цвет RAL', action: { href: '#columns-calculator' } },
 ]
 
@@ -54,6 +54,7 @@ const cards: TaskCard[] = [
 		description: 'Межосевое расстояние 500 мм подходит для замены стандартных алюминиевых или чугунных батарей без сложной переделки.',
 		models: ['2057', '3057', '4057'],
 		primary: { label: 'Смотреть варианты', filters: { height: 'middle' }, modelIds: ['2057', '3057', '4057'], scrollTo: 'columns-models' },
+		note: { label: 'Все модели с межосевым 500 мм', href: '/collections/radiatory-mezhosevoe-rasstoyanie-500-mm' },
 	},
 	{
 		title: 'Высокий трубчатый радиатор',
@@ -166,6 +167,14 @@ const cards: TaskCard[] = [
 				</div>
 			</>
 		)}
+
+		<nav aria-label='Подбор по межосевому расстоянию' class='mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 border-y border-neutral-200 py-4 text-sm'>
+			<span class='font-medium text-neutral-950'>По межосевому расстоянию:</span>
+			<a href='/collections/radiatory-mezhosevoe-rasstoyanie-300-mm' class='text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'>300 мм</a>
+			<a href='/collections/radiatory-mezhosevoe-rasstoyanie-450-mm' class='text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'>450 мм</a>
+			<a href='/collections/radiatory-mezhosevoe-rasstoyanie-500-mm' class='text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'>500 мм</a>
+			<a href='/collections/radiatory-po-mezhosevomu-rasstoyaniyu' class='text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'>как выбрать</a>
+		</nav>
 	</div>
 </section>
 

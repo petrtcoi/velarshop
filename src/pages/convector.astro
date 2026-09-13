@@ -10,7 +10,7 @@ import JsonLd from '../components/seo/JsonLd.astro'
 import { getCategorySeo } from '../lib/seo/categorySeo'
 
 const pageDescription =
-	'Внутрипольные конвекторы Velar для панорамных окон и скрытого отопления. KWH, KWHV, KWHV 24V, решетки, расчет мощности, доставка по России.'
+	'Внутрипольные конвекторы для панорамных окон и скрытого отопления: каталог Velar, цены, модели с вентилятором и без, решетки, расчет и доставка по России.'
 
 const breadcrumbs = [
 	{ title: 'Главная', url: '/' },
@@ -128,21 +128,21 @@ const scenarioCards: ScenarioCard[] = [
 		description:
 			'Тихий вариант без вентиляторов для умеренных теплопотерь и спокойной тепловой завесы.',
 		links: [{ href: '/model/kwh', label: 'Velar KWH' }],
-		cta: { href: '/model/kwh', label: 'Смотреть KWH' },
+		cta: { href: '/collections/vnutripolnye-konvektory-bez-ventilyatora', label: 'Все без вентилятора' },
 	},
 	{
 		title: 'С вентилятором',
 		description:
 			'Чаще выбирают у панорамных окон и в холодных зонах, когда нужна более высокая теплоотдача.',
 		links: [{ href: '/model/kwhv', label: 'Velar KWHV' }],
-		cta: { href: '/model/kwhv', label: 'Смотреть KWHV' },
+		cta: { href: '/collections/vnutripolnye-konvektory-s-ventilyatorom', label: 'Все с вентилятором' },
 	},
 	{
 		title: 'Вентиляторы 24V',
 		description:
 			'Для проектов с автоматикой, низковольтным питанием и гибким управлением вентиляторами.',
 		links: [{ href: '/model/kwhv24', label: 'Velar KWHV 24V' }],
-		cta: { href: '/model/kwhv24', label: 'Смотреть KWHV 24V' },
+		cta: { href: '/collections/vnutripolnye-konvektory-s-ventilyatorom', label: 'Сравнить модели' },
 	},
 	{
 		title: 'Для панорамного окна',
@@ -395,10 +395,10 @@ const seo = getCategorySeo({
 		slug: 'convector',
 		url: '/convector',
 		name: 'Внутрипольные конвекторы',
-		h1: 'Внутрипольные конвекторы Velar',
-		seoTitle: 'Внутрипольные конвекторы Velar - для панорамных окон',
+		h1: 'Внутрипольные конвекторы',
+		seoTitle: 'Внутрипольные конвекторы - каталог, подбор и цены',
 		seoDescription: pageDescription,
-		ogTitle: 'Внутрипольные конвекторы Velar - подбор и каталог',
+		ogTitle: 'Внутрипольные конвекторы - подбор и каталог',
 		ogDescription:
 			'KWH, KWHV и KWHV 24V для панорамных окон и скрытого отопления. Поможем выбрать тип конвекции, размеры, решетку и доставку.',
 		ogImage: '/images/convector/hero/top-view-convector.png',
@@ -453,9 +453,9 @@ const textLinkClass =
 	<section class='bg-white pb-10 pt-7 md:pb-14 xl:pb-16'>
 		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 min-[980px]:grid-cols-[minmax(0,1fr)_minmax(320px,380px)] min-[980px]:items-start min-[980px]:gap-10 min-[1250px]:grid-cols-[minmax(0,1fr)_240px_minmax(320px,380px)] min-[1250px]:items-center xl:px-8 xl:gap-12'>
 			<div class='min-w-0 max-w-[760px]'>
-				<h1 class='max-w-[760px] text-4xl font-bold leading-tight tracking-tight text-neutral-950 md:text-5xl xl:text-6xl'>Внутрипольные конвекторы Velar</h1>
+				<h1 class='max-w-[760px] text-4xl font-bold leading-tight tracking-tight text-neutral-950 md:text-5xl xl:text-6xl'>Внутрипольные конвекторы</h1>
 				<p class='mt-5 max-w-[760px] text-base font-normal leading-7 text-neutral-700'>
-					Внутрипольные конвекторы Velar - решение для панорамных окон, остекления в пол, квартир, домов и коммерческих помещений, где отопление нужно скрыть в полу. В линейке есть KWH без вентиляторов, KWHV с принудительной конвекцией и KWHV 24V с низковольтными вентиляторами. Выберите модель ниже или отправьте план помещения - менеджер рассчитает размеры, мощность, решетку, подключение, оплату и доставку по России.
+					Внутрипольные конвекторы скрывают отопление в полу у панорамных окон и остекления в пол. В каталоге Velar есть KWH без вентиляторов, KWHV с принудительной конвекцией и KWHV 24V с низковольтными вентиляторами. Выберите модель ниже или отправьте план помещения - менеджер рассчитает размеры, мощность, решетку, подключение, оплату и доставку по России.
 				</p>
 				<div class='mt-7 flex flex-wrap gap-3'>
 					<a href='/request' class='inline-flex h-11 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>Получить расчет</a>

@@ -1,0 +1,289 @@
+---
+import type { ModelJson } from '@entities/Model'
+import { modelsJsonData } from '@entities/Model'
+import type { RadiatorJson } from '@entities/Radiator'
+import { radiatorsJsonData } from '@entities/Radiator'
+import Picture from '@shared/components/Picture.astro'
+import Layout from '@shared/layouts/Layout.astro'
+import { getModelMainImagePath } from '@shared/utils/getModelMainImagePath'
+import { getModelSlug } from '@shared/utils/getModelSlug'
+import JsonLd from '../../components/seo/JsonLd.astro'
+import {
+	catalogCollections,
+	collectionMatchesModel,
+	collectionMatchesRadiator,
+	type CatalogCollectionConfig,
+} from '../../lib/catalogCollections'
+import { getCategorySeo } from '../../lib/seo/categorySeo'
+
+export function getStaticPaths() {
+	return catalogCollections.map(collection => ({
+		params: { collection: collection.slug },
+		props: { collection },
+	}))
+}
+
+type ModelRow = {
+	id: string
+	name: string
+	href: string
+	filteredHref: string
+	image: string
+	type: ModelJson['type']
+	typeLabel: string
+	description: string
+	heightLabel: string
+	depthLabel: string
+	lengthLabel: string
+	powerLabel: string
+	connectionLabel: string
+	variantCount: number
+	priceFrom: number
+	priceLabel: string
+}
+
+const { collection } = Astro.props as { collection: CatalogCollectionConfig }
+
+function toNumber(value?: string | number): number {
+	if (value === undefined || value === null || value === '') return 0
+	const parsed = Number.parseFloat(String(value).replace(/\s/g, '').replace(',', '.'))
+	return Number.isFinite(parsed) ? parsed : 0
+}
+
+function normalizeModelName(name: string): string {
+	return name.replace(/([A-Za-zА-Яа-я])\s+(\d+)/g, '$1$2').replace(/\s+/g, ' ').trim()
+}
+
+function valuesFor(radiators: RadiatorJson[], key: keyof RadiatorJson): number[] {
+	return [
+		...new Set(
+			radiators
+				.map(radiator => toNumber(radiator[key] as string | undefined))
+				.filter(Boolean),
+		),
+	].sort((a, b) => a - b)
+}
+
+function formatRange(values: number[], suffix = 'мм'): string {
+	if (!values.length) return 'уточняйте'
+	const min = Math.round(values[0])
+	const max = Math.round(values[values.length - 1])
+	return min === max ? `${min} ${suffix}` : `${min}–${max} ${suffix}`
+}
+
+function resolveTypeLabel(type: ModelJson['type']): string {
+	if (type === 'columns') return 'Трубчатые радиаторы'
+	if (type === 'design') return 'Дизайн-радиаторы'
+	if (type === 'ironcast') return 'Чугунные радиаторы'
+	if (type === 'floor') return 'Напольные радиаторы'
+	if (type === 'convector') return 'Внутрипольные конвекторы'
+	return 'Другие модели'
+}
+
+function buildFilteredHref(href: string): string {
+	if (collection.kind === 'interaxial') return `${href}?mo=${collection.spacing}&connection=side#model-variants`
+	if (collection.kind === 'height') return `${href}?height=${collection.height}&collection=height-${collection.height}#model-variants`
+	return `${href}#model-variants`
+}
+
+function buildModelRow(model: ModelJson, radiators: RadiatorJson[]): ModelRow {
+	const heights = valuesFor(radiators, 'height')
+	const depths = valuesFor(radiators, 'width')
+	const lengths = valuesFor(radiators, 'length')
+	const powers = valuesFor(radiators, 'dt70')
+	const prices = valuesFor(radiators, 'price')
+	const href = getModelSlug(model)
+
+	return {
+		id: model.id,
+		name: `${model.prefix} Velar ${normalizeModelName(model.name)}`,
+		href,
+		filteredHref: buildFilteredHref(href),
+		image: getModelMainImagePath(model.slug, model.type === 'columns'),
+		type: model.type,
+		typeLabel: resolveTypeLabel(model.type),
+		description: model.short_comment,
+		heightLabel: formatRange(heights),
+		depthLabel: formatRange(depths),
+		lengthLabel: formatRange(lengths),
+		powerLabel: powers.length ? formatRange(powers, 'Вт') : 'по расчету',
+		connectionLabel: collection.connectionLabel ?? 'по модели',
+		variantCount: radiators.length,
+		priceFrom: prices[0] ?? 0,
+		priceLabel: prices.length ? `от ${Math.round(prices[0]).toLocaleString('ru-RU')} ₽` : 'по запросу',
+	}
+}
+
+const candidateModels = modelsJsonData.filter(model => collectionMatchesModel(collection, model))
+const matchingRadiatorsByModel = new Map<string, RadiatorJson[]>()
+
+for (const model of candidateModels) {
+	const variants = radiatorsJsonData.filter(
+		radiator => radiator.model_id === model.id && collectionMatchesRadiator(collection, model, radiator),
+	)
+	if (variants.length) matchingRadiatorsByModel.set(model.id, variants)
+}
+
+const matchingRadiators = [...matchingRadiatorsByModel.values()].flat()
+const modelRows = candidateModels
+	.map(model => {
+		const variants = matchingRadiatorsByModel.get(model.id)
+		return variants?.length ? buildModelRow(model, variants) : null
+	})
+	.filter((model): model is ModelRow => Boolean(model))
+
+const groupOrder: ModelJson['type'][] = ['columns', 'design', 'ironcast', 'floor', 'convector']
+const modelGroups = groupOrder
+	.map(type => ({ type, title: resolveTypeLabel(type), items: modelRows.filter(model => model.type === type) }))
+	.filter(group => group.items.length)
+
+const heights = valuesFor(matchingRadiators, 'height')
+const prices = valuesFor(matchingRadiators, 'price')
+const siblings = catalogCollections.filter(
+	item => item.siblingGroup === collection.siblingGroup && item.slug !== collection.slug,
+)
+
+const breadcrumbs = [
+	{ title: 'Главная', url: '/' },
+	{ title: 'Подборки', url: '/collections' },
+	{ title: collection.parentLabel, url: collection.parentHref },
+	{ title: collection.shortTitle, url: collection.href },
+]
+
+function buildFaqItems() {
+	if (collection.kind === 'interaxial') {
+		return [
+			{ question: `Какая полная высота у радиатора с межосевым расстоянием ${collection.spacing} мм?`, answer: `В доступных моделях Velar полная высота составляет ${formatRange(heights)}. Точное значение зависит от серии: межосевое расстояние ${collection.spacing} мм не равно высоте корпуса.` },
+			{ question: `Какие радиаторы есть с межосевым расстоянием ${collection.spacing} мм?`, answer: `В подборке ${modelRows.length} моделей и ${matchingRadiators.length} конфигураций. Отдельно показаны трубчатые, дизайнерские и чугунные модели, если они есть в технических данных.` },
+			{ question: 'Можно ли поставить такой радиатор на готовые выводы?', answer: 'Можно, если совпадают межосевое расстояние и схема подключения, а корпус и арматура помещаются по высоте, ширине и глубине. До заказа нужно сверить монтажный чертеж.' },
+			{ question: 'Как рассчитать мощность радиатора?', answer: 'Мощность считают по теплопотерям помещения и температурному режиму системы. Окончательный размер лучше подтвердить расчетом.' },
+		]
+	}
+
+	if (collection.kind === 'height') {
+		return [
+			{ question: `Какие радиаторы высотой ${collection.height} мм представлены?`, answer: `В подборке ${modelRows.length} моделей и ${matchingRadiators.length} конфигураций с точной полной высотой ${collection.height} мм. Доступные типы показаны отдельными группами.` },
+			{ question: `Высота ${collection.height} мм — это межосевое расстояние?`, answer: 'Нет. Полная высота — размер корпуса снизу вверх, а межосевое расстояние измеряется между центрами подключений. Оба параметра нужно проверять отдельно.' },
+			{ question: 'Какой зазор оставить для установки?', answer: 'Зазоры зависят от модели, крепления и схемы подключения. До заказа сверьте монтажный чертеж и предусмотрите свободную циркуляцию воздуха.' },
+			{ question: 'Как подобрать мощность?', answer: 'Нужная мощность зависит от площади, высоты потолка, остекления, утепления и температуры теплоносителя. Конкретную длину лучше выбирать после расчета теплопотерь.' },
+		]
+	}
+
+	if (collection.kind === 'tube-count' || collection.kind === 'low-tubular') {
+		return [
+			{ question: `Сколько моделей входит в подборку «${collection.title}»?`, answer: `Сейчас в подборке ${modelRows.length} моделей и ${matchingRadiators.length} конфигураций разных размеров и мощности.` },
+			{ question: 'Как количество труб влияет на радиатор?', answer: 'Чем больше рядов труб в секции, тем обычно больше глубина и теплоотдача. Двухтрубчатые модели компактнее, четырех- и пятитрубчатые помогают получить больше мощности на меньшей длине.' },
+			{ question: 'Как выбрать количество секций?', answer: 'Количество секций подбирают по расчетной мощности помещения. Учитываются площадь, высота потолка, наружные стены, окна и температурный режим системы.' },
+			{ question: 'Можно ли выбрать цвет и подключение?', answer: 'Да, трубчатые радиаторы производятся в цветах RAL и доступны с разными схемами подключения. Возможности зависят от конкретной модели.' },
+		]
+	}
+
+	return [
+		{ question: `Какие модели представлены в подборке «${collection.title}»?`, answer: `На странице ${modelRows.length} модели и ${matchingRadiators.length} размерных исполнений. Для каждого показаны диапазоны размеров, мощности и цены.` },
+		{ question: 'Как выбрать длину внутрипольного конвектора?', answer: 'Длину и мощность подбирают по ширине остекления и теплопотерям помещения. Для полноценной тепловой завесы прибор обычно размещают вдоль холодной зоны окна.' },
+		{ question: 'Когда нужен вентилятор?', answer: 'Вентилятор повышает теплоотдачу и нужен при больших площадях остекления или высоких теплопотерях. Естественная конвекция подходит для более спокойных режимов.' },
+		{ question: 'Что предусмотреть до монтажа?', answer: 'Нужно согласовать размеры канала, уровень чистового пола, подводку труб, решетку и доступ для обслуживания. Для моделей с вентиляторами также требуется питание и управление.' },
+	]
+}
+
+const faqItems = buildFaqItems()
+const checkItems = collection.kind === 'interaxial'
+	? ['Фото выводов и стены целиком.', 'Расстояние между центрами труб.', 'Расстояние от пола до подоконника.', 'Доступную ширину и глубину.', 'Площадь помещения, высоту потолка и город.']
+	: collection.kind === 'convector'
+		? ['Размеры панорамного окна.', 'Длину, ширину и глубину канала в полу.', 'Пирог пола и уровень чистовой отделки.', 'Расчетные теплопотери или параметры помещения.', 'Для вентиляторов — питание и способ управления.']
+		: ['Полную доступную высоту и ширину.', 'Фото стены или оконной зоны.', 'Желаемую глубину прибора.', 'Положение и тип подключения.', 'Площадь помещения, высоту потолка и город.']
+
+const seo = getCategorySeo({
+	category: {
+		slug: collection.slug,
+		url: collection.href,
+		name: collection.title,
+		h1: collection.title,
+		seoTitle: collection.seoTitle,
+		seoDescription: collection.seoDescription,
+		ogTitle: collection.title,
+		ogDescription: collection.intro,
+		ogImage: modelRows[0]?.image ?? collection.image,
+		ogImageAlt: modelRows[0]?.name ?? collection.imageAlt,
+		breadcrumbs,
+		itemListName: collection.title,
+		products: modelRows.map(model => ({ name: model.name, url: model.href })),
+		productOffers: modelRows.map(model => ({ name: model.name, url: model.href, image: model.image, category: model.typeLabel, description: `${model.description} ${collection.title}.`, lowPrice: model.priceFrom, availability: 'https://schema.org/PreOrder' })),
+		faq: faqItems,
+	},
+})
+---
+
+<Layout title={seo.title} description={seo.description} canonicalUrl={seo.canonicalUrl} robots={seo.robots} ogType='website' ogTitle={seo.ogTitle} ogDescription={seo.ogDescription} ogUrl={seo.canonicalUrl} ogImageUrl={seo.ogImage} ogImageAlt={seo.ogImageAlt} twitterCard='summary_large_image' twitterTitle={seo.twitterTitle} twitterDescription={seo.twitterDescription} twitterImage={seo.twitterImage} twitterImageAlt={seo.twitterImageAlt} breadcrumbs={breadcrumbs} disableBreadcrumbJsonLd={true} paddings={false}>
+	<JsonLd data={seo.jsonLd} />
+
+	<section class='border-b border-neutral-200 bg-white py-8 md:py-12 xl:py-16'>
+		<div class='mx-auto max-w-[1180px] px-4 md:px-6 xl:px-8'>
+			<p class='text-xs font-medium uppercase tracking-[0.12em] text-red-700'>{collection.eyebrow}</p>
+			<h1 class='mt-3 max-w-4xl text-3xl font-semibold leading-tight tracking-tight text-neutral-950 md:text-4xl xl:text-5xl'>{collection.title}</h1>
+			<p class='mt-5 max-w-3xl text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>{collection.intro}</p>
+			<dl class='mt-7 flex flex-wrap gap-x-8 gap-y-4 border-y border-neutral-200 py-4'>
+				<div><dt class='text-xs font-normal text-neutral-500'>Моделей</dt><dd class='mt-1 text-lg font-semibold text-neutral-950'>{modelRows.length}</dd></div>
+				<div><dt class='text-xs font-normal text-neutral-500'>Конфигураций</dt><dd class='mt-1 text-lg font-semibold text-neutral-950'>{matchingRadiators.length}</dd></div>
+				<div><dt class='text-xs font-normal text-neutral-500'>{collection.kind === 'convector' ? 'Высота канала' : 'Полная высота'}</dt><dd class='mt-1 text-lg font-semibold text-neutral-950'>{formatRange(heights)}</dd></div>
+				<div><dt class='text-xs font-normal text-neutral-500'>Цена</dt><dd class='mt-1 text-lg font-semibold text-neutral-950'>{prices.length ? `от ${Math.round(prices[0]).toLocaleString('ru-RU')} ₽` : 'по запросу'}</dd></div>
+			</dl>
+			<div class='mt-6 flex flex-col gap-3 min-[420px]:flex-row min-[420px]:flex-wrap'>
+				<a href='#models' class='inline-flex h-11 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>Смотреть модели</a>
+				<a href='/request' class='inline-flex h-11 items-center justify-center rounded-lg border border-neutral-300 bg-white px-5 text-sm font-medium text-neutral-950 transition hover:border-neutral-950'>Получить расчет</a>
+			</div>
+		</div>
+	</section>
+
+	<nav aria-label='Связанные подборки' class='border-b border-neutral-200 bg-neutral-50'>
+		<div class='mx-auto flex max-w-[1180px] flex-wrap items-center gap-x-5 gap-y-2 px-4 py-4 text-sm md:px-6 xl:px-8'>
+			<span class='font-medium text-neutral-950'>Другие варианты:</span>
+			{siblings.map(item => <a href={item.href} class='text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'>{item.shortTitle}</a>)}
+			<a href={collection.parentHref} class='text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'>{collection.parentLabel.toLocaleLowerCase('ru-RU')}</a>
+		</div>
+	</nav>
+
+	<main id='models' class='bg-white py-10 md:py-14 xl:py-16'>
+		<div class='mx-auto max-w-[1180px] px-4 md:px-6 xl:px-8'>
+			<div class='max-w-3xl'>
+				<h2 class='text-2xl font-semibold leading-tight tracking-tight text-neutral-950 md:text-3xl'>{collection.modelSectionTitle}</h2>
+				<p class='mt-4 text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>{collection.modelSectionIntro}</p>
+			</div>
+			<div class='mt-9 space-y-12 md:mt-12 md:space-y-16'>
+				{modelGroups.map(group => (
+					<section>
+						<div class='flex items-end justify-between gap-4'><h3 class='text-xl font-semibold leading-tight text-neutral-950 md:text-2xl'>{group.title}</h3><span class='text-sm text-neutral-500'>{group.items.length} моделей</span></div>
+						<div class='mt-4 border-y border-neutral-200'>
+							{group.items.map((model, index) => (
+								<article class:list={['py-5 md:py-6', index > 0 && 'border-t border-neutral-200']}>
+									<div class='grid gap-5 sm:grid-cols-[104px_minmax(0,1fr)] lg:grid-cols-[104px_minmax(210px,1fr)_minmax(360px,1.35fr)_auto] lg:items-center lg:gap-6'>
+										<a href={model.href} class='flex h-24 w-24 items-center justify-center bg-neutral-50 p-2'><Picture src={model.image} alt={model.name} title={model.name} loading='lazy' width={96} height={96} sizes='96px' class='h-full w-full object-contain' /></a>
+										<div class='min-w-0'><a href={model.href} class='text-base font-semibold leading-tight text-neutral-950 transition hover:text-red-700 md:text-lg'>{model.name}</a><p class='mt-2 text-sm font-normal leading-5 text-neutral-600'>{model.description}</p><p class='mt-2 text-xs text-neutral-500'>{model.variantCount} конфигураций</p></div>
+										<dl class='grid grid-cols-2 gap-x-5 gap-y-3 text-sm sm:col-start-2 md:grid-cols-3 lg:col-start-auto'>
+											<div><dt class='text-xs text-neutral-500'>Высота</dt><dd class='mt-1 font-medium text-neutral-950'>{model.heightLabel}</dd></div><div><dt class='text-xs text-neutral-500'>Глубина</dt><dd class='mt-1 font-medium text-neutral-950'>{model.depthLabel}</dd></div><div><dt class='text-xs text-neutral-500'>Длина</dt><dd class='mt-1 font-medium text-neutral-950'>{model.lengthLabel}</dd></div><div><dt class='text-xs text-neutral-500'>Мощность ΔT70</dt><dd class='mt-1 font-medium text-neutral-950'>{model.powerLabel}</dd></div><div><dt class='text-xs text-neutral-500'>{collection.kind === 'convector' ? 'Тип' : 'Подключение'}</dt><dd class='mt-1 font-medium text-neutral-950'>{model.connectionLabel}</dd></div>
+										</dl>
+										<div class='sm:col-start-2 lg:col-start-auto lg:text-right'><p class='text-base font-semibold text-neutral-950'>{model.priceLabel}</p><a href={model.filteredHref} rel={model.filteredHref.includes('?') ? 'nofollow' : undefined} class='mt-2 inline-flex text-sm font-medium text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'>Выбрать размер</a></div>
+									</div>
+								</article>
+							))}
+						</div>
+					</section>
+				))}
+			</div>
+		</div>
+	</main>
+
+	<section class='border-t border-neutral-200 bg-neutral-50 py-10 md:py-14 xl:py-16'>
+		<div class='mx-auto grid max-w-[1180px] gap-8 px-4 md:grid-cols-2 md:gap-12 md:px-6 xl:px-8'>
+			<div><h2 class='text-2xl font-semibold leading-tight text-neutral-950 md:text-3xl'>{collection.useCaseTitle}</h2><p class='mt-4 text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>{collection.useCaseText}</p><p class='mt-4 text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>{collection.selectionNote}</p></div>
+			<div><h2 class='text-2xl font-semibold leading-tight text-neutral-950 md:text-3xl'>Что прислать для проверки</h2><ul class='mt-5 space-y-3 text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>{checkItems.map(item => <li>{item}</li>)}</ul><a href='/request' class='mt-6 inline-flex h-11 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>Получить расчет</a></div>
+		</div>
+	</section>
+
+	<section class='border-t border-neutral-200 bg-white py-10 md:py-14 xl:py-16'>
+		<div class='mx-auto max-w-[860px] px-4 md:px-6 xl:px-8'>
+			<h2 class='text-2xl font-semibold leading-tight text-neutral-950 md:text-3xl'>Частые вопросы</h2>
+			<div class='mt-6 border-y border-neutral-200'>{faqItems.map((item, index) => <details class:list={['group py-5', index > 0 && 'border-t border-neutral-200']}><summary class='flex cursor-pointer list-none items-start justify-between gap-4 text-base font-semibold text-neutral-950'>{item.question}<span aria-hidden='true' class='text-red-700 transition-transform group-open:rotate-45'>＋</span></summary><p class='mt-3 max-w-3xl text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>{item.answer}</p></details>)}</div>
+		</div>
+	</section>
+</Layout>

@@ -26,6 +26,7 @@ type CollectionModel = {
 	name: string
 	title: string
 	href: string
+	filteredHref: string
 	image: string
 	type: 'columns' | 'design'
 	typeLabel: string
@@ -373,12 +374,17 @@ function buildModelCollectionItem(modelId: string): CollectionModel {
 			? `${Math.round(minHeight)}-${Math.round(maxHeight)} мм`
 			: 'около 180 см'
 	const typeLabel = isColumns ? 'Трубчатый' : 'Профильный'
+	const filteredHeight = heights
+		.slice()
+		.sort((a, b) => Math.abs(a - 1800) - Math.abs(b - 1800))[0]
+	const href = getModelSlug(model)
 
 	return {
 		id: model.id,
 		name,
 		title: `Velar ${name}`,
-		href: getModelSlug(model),
+		href,
+		filteredHref: `${href}?height=${Math.round(filteredHeight)}&collection=vertical-1800#model-variants`,
 		image,
 		type: isColumns ? 'columns' : 'design',
 		typeLabel,
@@ -586,10 +592,11 @@ const seo = getCategorySeo({
 								</div>
 							</div>
 							<a
-								href={model.href}
+								href={model.filteredHref}
+								rel='nofollow'
 								class='inline-flex h-10 items-center justify-center rounded-lg border border-neutral-300 px-4 text-sm font-medium text-neutral-950 transition hover:border-neutral-950 hover:bg-neutral-50'
 							>
-								Подробнее
+								Выбрать размер
 							</a>
 							<a
 								href={`/request?model=${encodeURIComponent(model.title)}`}
@@ -710,10 +717,11 @@ const seo = getCategorySeo({
 									<td class='px-4 py-3 align-middle font-medium text-neutral-950'>{model.priceLabel}</td>
 									<td class='px-4 py-3 align-middle'>
 										<a
-											href={model.href}
+											href={model.filteredHref}
+											rel='nofollow'
 											class='inline-flex h-9 items-center justify-center rounded-lg border border-neutral-300 px-3 text-sm font-medium text-neutral-950 transition hover:border-neutral-950 hover:bg-neutral-50'
 										>
-											Подробнее
+											Выбрать размер
 										</a>
 									</td>
 								</tr>

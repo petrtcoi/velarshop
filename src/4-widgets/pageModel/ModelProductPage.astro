@@ -17,6 +17,8 @@ import { radiatorsJsonData } from '@entities/Radiator'
 import { getModelSlug } from '@shared/utils/getModelSlug'
 import { getModelMainImagePath } from '@shared/utils/getModelMainImagePath'
 import { getModelSeo } from '../../lib/seo/modelSeo'
+import { interaxialCollections } from '../../lib/interaxialCollections'
+import { convectorModeCollections, exactHeightCollections, tubularCollections } from '../../lib/catalogCollections'
 
 import type { ModelJson } from '@entities/Model'
 import type { RadiatorJson } from '@entities/Radiator'
@@ -335,6 +337,39 @@ const vertical1800CollectionModelIds = new Set([
 	'qt2v',
 ])
 const isInVertical1800Collection = vertical1800CollectionModelIds.has(model.id)
+const vertical1800Height = isInVertical1800Collection
+	? modelRadiators
+			.map(radiator => Number.parseFloat(radiator.height))
+			.filter(Number.isFinite)
+			.sort((a, b) => Math.abs(a - 1800) - Math.abs(b - 1800))[0]
+	: undefined
+const supportsSideConnection =
+	model.type === 'columns' ||
+	model.type === 'ironcast' ||
+	((model.type === 'design' || model.type === 'floor') && model.connections.split(',').includes('lat'))
+const interaxialCollectionLinks = supportsSideConnection
+	? interaxialCollections.filter(collection => interAxisValues.includes(String(collection.spacing)))
+	: []
+const modelHeightValues = new Set(modelRadiators.map(radiator => Number.parseFloat(radiator.height)).filter(Number.isFinite))
+const exactHeightCollectionLinks = exactHeightCollections.filter(collection =>
+	collection.height ? modelHeightValues.has(collection.height) : false,
+)
+const tubularCollectionLinks = model.type === 'columns'
+	? tubularCollections.filter(collection =>
+		collection.kind === 'tube-count'
+			? model.id.startsWith(String(collection.tubeCount))
+			: modelRadiators.some(radiator => Number.parseFloat(radiator.height) <= 600),
+	)
+	: []
+const convectorCollectionLinks = model.type === 'convector'
+	? convectorModeCollections.filter(collection => collection.modelIds?.includes(model.id))
+	: []
+const hasPopularCollectionLinks =
+	interaxialCollectionLinks.length > 0 ||
+	exactHeightCollectionLinks.length > 0 ||
+	tubularCollectionLinks.length > 0 ||
+	convectorCollectionLinks.length > 0 ||
+	isInVertical1800Collection
 
 const seo = getModelSeo({
 	model,
@@ -450,6 +485,49 @@ const seo = getModelSeo({
 				</p>
 			</div>
 
+			{hasPopularCollectionLinks && (
+				<nav aria-label='Популярные подборки для модели' class='mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 border-y border-neutral-200 py-4 text-sm'>
+					<span class='font-medium text-neutral-950'>Популярное:</span>
+					{interaxialCollectionLinks.map(collection => (
+						<a
+							href={`${modelUrl}?mo=${collection.spacing}&connection=side#model-variants`}
+							rel='nofollow'
+							class='text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'
+						>
+							М/о {collection.spacing} мм · боковое
+						</a>
+					))}
+					{exactHeightCollectionLinks.map(collection => (
+						<a
+							href={`${modelUrl}?height=${collection.height}&collection=height-${collection.height}#model-variants`}
+							rel='nofollow'
+							class='text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'
+						>
+							Высота {collection.height} мм
+						</a>
+					))}
+					{vertical1800Height && (
+						<a
+							href={`${modelUrl}?height=${vertical1800Height}&collection=vertical-1800#model-variants`}
+							rel='nofollow'
+							class='text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'
+						>
+							Высота около 1800 мм
+						</a>
+					)}
+					{tubularCollectionLinks.map(collection => (
+						<a href={collection.href} class='text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'>
+							Все {collection.shortTitle.toLocaleLowerCase('ru-RU')}
+						</a>
+					))}
+					{convectorCollectionLinks.map(collection => (
+						<a href={collection.href} class='text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'>
+							Все модели: {collection.shortTitle.toLocaleLowerCase('ru-RU')}
+						</a>
+					))}
+				</nav>
+			)}
+
 			<RadiatorList model={model} />
 
 			<div class='mt-5 border-t border-neutral-200 pt-5'>
@@ -526,6 +604,28 @@ const seo = getModelSeo({
 					<a href='/collections/verticalnye-radiatory-1800-mm' class='inline-flex h-11 shrink-0 items-center justify-center rounded-lg border border-neutral-300 bg-white px-5 text-sm font-medium text-neutral-950 transition hover:border-neutral-950 hover:bg-neutral-50'>
 						Смотреть все вертикальные радиаторы 1800 мм
 					</a>
+				</div>
+			</div>
+		</section>
+	)}
+
+	{interaxialCollectionLinks.length > 0 && (
+		<section class='border-t border-neutral-200 bg-white py-8 md:py-12'>
+			<div class='mx-auto max-w-[1180px] px-3 md:px-5'>
+				<div class='grid gap-4 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] md:items-start md:gap-10'>
+					<div>
+						<p class='text-lg font-semibold leading-tight text-neutral-950'>Подбор по межосевому расстоянию</p>
+						<p class='mt-2 text-sm font-normal leading-6 text-neutral-700 md:text-base'>
+							Сравните эту модель с другими сериями, которые подходят к тем же монтажным размерам.
+						</p>
+					</div>
+					<nav aria-label='Подборки модели по межосевому расстоянию' class='flex flex-wrap gap-x-6 gap-y-3 border-y border-neutral-200 py-4'>
+						{interaxialCollectionLinks.map(collection => (
+							<a href={collection.href} class='text-sm font-medium text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'>
+								Межосевое {collection.spacing} мм
+							</a>
+						))}
+					</nav>
 				</div>
 			</div>
 		</section>

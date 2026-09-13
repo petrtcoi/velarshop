@@ -7,6 +7,7 @@ type Props = {
   selectedHeight: string,
   selectedWidth: string,
   selectedLength: string,
+  selectedInterAxis?: string,
 }
 
 export function filterRadiators ({
@@ -14,6 +15,7 @@ export function filterRadiators ({
   selectedHeight,
   selectedWidth,
   selectedLength,
+  selectedInterAxis = ALL,
 }: Props) {
 
 
@@ -22,7 +24,8 @@ export function filterRadiators ({
       const heightMatch = selectedHeight === ALL || radiator.height === selectedHeight
       const widthMatch = selectedWidth === ALL || radiator.width === selectedWidth
       const lengthMatch = selectedLength === ALL || radiator.length === selectedLength
-      return heightMatch && widthMatch && lengthMatch
+      const interAxisMatch = selectedInterAxis === ALL || radiator.n_spacing === selectedInterAxis
+      return heightMatch && widthMatch && lengthMatch && interAxisMatch
     })
 
 } 

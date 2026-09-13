@@ -1,6 +1,6 @@
 ---
 import { contacts } from "@shared/constants/contacts";
-import { featuredCollections } from "../../../lib/featuredCollections";
+import { footerCollectionLinks } from "../../../lib/featuredCollections";
 
 const {
   phone495String,
@@ -32,11 +32,6 @@ const infoLinks = [
   { href: "/info", label: "Полезная информация" },
   { href: "/news", label: "Новости" },
 ];
-
-const collectionLinks = featuredCollections.map((item) => ({
-  href: item.href,
-  label: item.title,
-}));
 
 const socialLinks = [
   { href: `https://vk.com/${vk}`, label: "VK" },
@@ -81,7 +76,7 @@ const socialLinks = [
 
     <nav class="footer-column" aria-label="Популярные подборки">
       <h2>Подборки</h2>
-      {collectionLinks.map((link) => <a href={link.href}>{link.label}</a>)}
+      {footerCollectionLinks.map((link) => <a href={link.href}>{link.label}</a>)}
     </nav>
 
     <div class="footer-contacts">

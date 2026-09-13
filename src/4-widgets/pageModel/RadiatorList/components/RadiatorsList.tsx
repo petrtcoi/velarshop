@@ -7,10 +7,10 @@ import RadiatorRow from './RadiatorRow'
 
 import SelectAddon from '@features/options/SelectAddons'
 import SelectColumnColor from '@features/options/SelectColumnColor'
-import SelectColumnConnection from '@features/options/SelectColumnConnection'
+import SelectColumnConnection, { columnConnId } from '@features/options/SelectColumnConnection'
 import SelectConvectorGrill from '@features/options/SelectConvectorGrill'
 import SelectDesignColor from '@features/options/SelectDesignColor'
-import SelectConnection from '@features/options/SelectConnection'
+import SelectConnection, { radiatorConnId } from '@features/options/SelectConnection'
 import SelectIroncastColor from '@features/options/SelectIroncastColor'
 import { addToCart, storeShoppingCart } from '@features/order/ShoppingCart'
 import { getRadiatorTotalCost } from '@features/radiator/RadiatorTotalCost'
@@ -29,6 +29,7 @@ type Props = {
 	heights: string[]
 	lengths: string[]
 	widths: string[]
+	interAxes: string[]
 	filterByHeight?: boolean
 	filterByWidth?: boolean
 	filterByLength?: boolean
@@ -65,15 +66,20 @@ function RadiatorList(props: Props) {
 		heights,
 		lengths,
 		widths,
+		interAxes,
 		filterByHeight = false,
 		filterByWidth = false,
 		filterByLength = false,
 	} = props
 
-	const [lastFilterUpdate, setLastFilterUpdate] = useState<'length' | 'height' | 'width'>('height')
+	const [lastFilterUpdate, setLastFilterUpdate] = useState<'length' | 'height' | 'width' | 'interAxis'>('height')
 	const [selectedHeight, setSelectedHeight] = useState<string>(ALL)
 	const [selectedWidth, setSelectedWidth] = useState<string>(ALL)
 	const [selectedLength, setSelectedLength] = useState<string>(ALL)
+	const [selectedInterAxis, setSelectedInterAxis] = useState<string>(ALL)
+	const [requestedHeight, setRequestedHeight] = useState<string | null>(null)
+	const [requestedCollection, setRequestedCollection] = useState<string | null>(null)
+	const [requestedConnection, setRequestedConnection] = useState<string | null>(null)
 	const [filteredRadiators, setFilteredRadiators] = useState<RadiatorJson[]>(initialFilteredRadiators)
 	const shoppingCart = useStore(storeShoppingCart)
 	const getTotalCost = useStore(getRadiatorTotalCost)
@@ -82,6 +88,14 @@ function RadiatorList(props: Props) {
 	const changeHeightFilter = (height: string) => {
 		setSelectedHeight(height)
 		setLastFilterUpdate('height')
+
+		if (requestedHeight) {
+			setRequestedHeight(null)
+			const url = new URL(window.location.href)
+			url.searchParams.delete('height')
+			url.searchParams.delete('collection')
+			window.history.replaceState({}, '', `${url.pathname}${url.search}${url.hash}`)
+		}
 	}
 	const changeWidthFilter = (width: string) => {
 		setSelectedWidth(width)
@@ -93,11 +107,44 @@ function RadiatorList(props: Props) {
 	}
 
 	useEffect(() => {
+		const searchParams = new URLSearchParams(window.location.search)
+		const requestedInterAxis = searchParams.get('mo')
+		const height = searchParams.get('height')
+		const collection = searchParams.get('collection')
+		const connection = searchParams.get('connection')
+
+		if (requestedInterAxis && interAxes.includes(requestedInterAxis)) {
+			setSelectedInterAxis(requestedInterAxis)
+			setLastFilterUpdate('interAxis')
+		}
+
+		if (height && heights.includes(height)) {
+			setSelectedHeight(height)
+			setLastFilterUpdate('height')
+			setRequestedHeight(height)
+			setRequestedCollection(collection)
+		}
+
+		if (connection === 'side') {
+			if (model.type === 'design' && model.connections.split(',').includes('lat')) {
+				radiatorConnId.set('lat')
+			}
+			if (model.type === 'columns') columnConnId.set('lat1/2')
+			setRequestedConnection('side')
+		}
+
+		const clearConnectionContext = () => setRequestedConnection(null)
+		window.addEventListener('model:connection-context-cleared', clearConnectionContext)
+		return () => window.removeEventListener('model:connection-context-cleared', clearConnectionContext)
+	}, [])
+
+	useEffect(() => {
 		const radiator = radiators.find(
 			r =>
 				(selectedHeight === ALL || r.height === selectedHeight) &&
 				(selectedWidth === ALL || r.width === selectedWidth) &&
-				(selectedLength === ALL || r.length === selectedLength),
+				(selectedLength === ALL || r.length === selectedLength) &&
+				(selectedInterAxis === ALL || r.n_spacing === selectedInterAxis),
 		)
 		if (radiator) return
 
@@ -105,13 +152,15 @@ function RadiatorList(props: Props) {
 			r =>
 				(selectedHeight === ALL || lastFilterUpdate !== 'height' || r.height === selectedHeight) &&
 				(selectedWidth === ALL || lastFilterUpdate !== 'width' || r.width === selectedWidth) &&
-				(selectedLength === ALL || lastFilterUpdate !== 'length' || r.length === selectedLength),
+				(selectedLength === ALL || lastFilterUpdate !== 'length' || r.length === selectedLength) &&
+				(selectedInterAxis === ALL || lastFilterUpdate !== 'interAxis' || r.n_spacing === selectedInterAxis),
 		)
 
 		if (escapeRadiator) {
 			if (lastFilterUpdate !== 'height' && selectedHeight !== ALL) setSelectedHeight(escapeRadiator.height)
 			if (lastFilterUpdate !== 'width' && selectedWidth !== ALL) setSelectedWidth(escapeRadiator.width)
 			if (lastFilterUpdate !== 'length' && selectedLength !== ALL) setSelectedLength(escapeRadiator.length)
+			if (lastFilterUpdate !== 'interAxis' && selectedInterAxis !== ALL) setSelectedInterAxis(escapeRadiator.n_spacing || ALL)
 		}
 	}, [filteredRadiators])
 
@@ -124,11 +173,10 @@ function RadiatorList(props: Props) {
 			heights.filter(h =>
 				radiators.some(
 					r =>
-						lastFilterUpdate === 'height' ||
-						selectedHeight === ALL ||
-						(h === r.height &&
-							(selectedWidth === ALL || r.width === selectedWidth) &&
-							(selectedLength === ALL || r.length === selectedLength)),
+						h === r.height &&
+						(selectedWidth === ALL || r.width === selectedWidth) &&
+						(selectedLength === ALL || r.length === selectedLength) &&
+						(selectedInterAxis === ALL || r.n_spacing === selectedInterAxis),
 				),
 			),
 		)
@@ -136,11 +184,10 @@ function RadiatorList(props: Props) {
 			widths.filter(w =>
 				radiators.some(
 					r =>
-						lastFilterUpdate === 'width' ||
-						selectedWidth === ALL ||
-						(w === r.width &&
-							(selectedHeight === ALL || r.height === selectedHeight) &&
-							(selectedLength === ALL || r.length === selectedLength)),
+						w === r.width &&
+						(selectedHeight === ALL || r.height === selectedHeight) &&
+						(selectedLength === ALL || r.length === selectedLength) &&
+						(selectedInterAxis === ALL || r.n_spacing === selectedInterAxis),
 				),
 			),
 		)
@@ -148,15 +195,14 @@ function RadiatorList(props: Props) {
 			lengths.filter(l =>
 				radiators.some(
 					r =>
-						lastFilterUpdate === 'length' ||
-						selectedLength === ALL ||
-						(l === r.length &&
-							(selectedHeight === ALL || r.height === selectedHeight) &&
-							(selectedWidth === ALL || r.width === selectedWidth)),
+						l === r.length &&
+						(selectedHeight === ALL || r.height === selectedHeight) &&
+						(selectedWidth === ALL || r.width === selectedWidth) &&
+						(selectedInterAxis === ALL || r.n_spacing === selectedInterAxis),
 				),
 			),
 		)
-	}, [filteredRadiators])
+	}, [selectedHeight, selectedWidth, selectedLength, selectedInterAxis])
 
 	useEffect(() => {
 		setFilteredRadiators(
@@ -165,13 +211,32 @@ function RadiatorList(props: Props) {
 				selectedHeight,
 				selectedLength,
 				selectedWidth,
+				selectedInterAxis,
 			}),
 		)
-	}, [selectedHeight, selectedWidth, selectedLength])
+	}, [selectedHeight, selectedWidth, selectedLength, selectedInterAxis])
 
 	const showInterAxis = model.type !== 'convector' && model.type !== 'floor'
 	const modelHref = getModelSlug(model)
 	const hasConfiguratorOptions = model.type !== 'convector'
+	const hasContextFilter = Boolean(requestedHeight) || selectedInterAxis !== ALL || requestedConnection === 'side'
+	const hasLockedSideConnection = requestedConnection === 'side'
+	const hasInterAxisCollection = ['300', '450', '500'].includes(selectedInterAxis)
+	const interAxisCollectionHref = hasInterAxisCollection
+		? `/collections/radiatory-mezhosevoe-rasstoyanie-${selectedInterAxis}-mm`
+		: ''
+	const heightCollectionHref = requestedHeight && requestedCollection === `height-${requestedHeight}`
+		? `/collections/radiatory-vysotoy-${requestedHeight}-mm`
+		: requestedHeight && requestedCollection === 'vertical-1800'
+			? '/collections/verticalnye-radiatory-1800-mm'
+			: ''
+	const heightCollectionLabel = requestedCollection === 'vertical-1800'
+		? 'Смотреть все модели высотой около 1800 мм'
+		: `Смотреть все модели высотой ${requestedHeight} мм`
+
+	const resetContextFilter = () => {
+		window.location.assign(`${modelHref}#model-variants`)
+	}
 
 	const addRadiatorToRequest = (radiator: RadiatorJson) => {
 		const title = getTotalTitle(model, radiator)
@@ -195,11 +260,41 @@ function RadiatorList(props: Props) {
 			class='mt-5'
 		>
 			<div>
+				{hasContextFilter && (
+					<div class='mb-4 flex flex-col gap-3 border-y border-red-200 bg-red-50 px-3 py-3 sm:flex-row sm:items-center sm:justify-between'>
+						<div>
+							<div class='text-sm font-medium text-neutral-950'>Показаны подходящие конфигурации</div>
+							<div class='mt-1 text-xs font-normal leading-5 text-neutral-700'>
+								{requestedHeight ? `Высота ${requestedHeight} мм` : ''}
+								{requestedHeight && (selectedInterAxis !== ALL || requestedConnection === 'side') ? ' · ' : ''}
+								{selectedInterAxis !== ALL ? `Межосевое расстояние ${selectedInterAxis} мм` : ''}
+								{selectedInterAxis !== ALL && requestedConnection === 'side' ? ' · ' : ''}
+								{requestedConnection === 'side' ? 'боковое подключение' : ''}
+							</div>
+						</div>
+						<button type='button' onClick={resetContextFilter} class='inline-flex h-9 shrink-0 items-center justify-center rounded-[3px] border border-red-300 bg-white px-3 text-xs font-medium text-red-700 transition hover:border-red-700'>
+							Сбросить подборку
+						</button>
+					</div>
+				)}
+
 				{hasConfiguratorOptions && (
 					<div class='mb-4 grid gap-3 border-y border-neutral-200 py-4 md:grid-cols-2'>
-						{(model.type === 'design' || model.type === 'floor') && <SelectConnection model={model} />}
+						{hasLockedSideConnection && (model.type === 'design' || model.type === 'floor' || model.type === 'columns') ? (
+							<div class='mt-5 mb-2'>
+								<div class='text-xs font-normal text-neutral-600'>Подключение радиатора:</div>
+								<div class='mt-2 flex min-h-10 items-center justify-between gap-3 rounded-[3px] border border-neutral-300 bg-neutral-50 px-3 py-2 text-sm text-neutral-950'>
+									<span class='font-medium'>Боковое подключение</span>
+									<span class='text-xs font-normal text-neutral-500'>зафиксировано подборкой</span>
+								</div>
+							</div>
+						) : (
+							<>
+								{(model.type === 'design' || model.type === 'floor') && <SelectConnection model={model} />}
+								{model.type === 'columns' && <SelectColumnConnection model={model} />}
+							</>
+						)}
 						{model.type === 'design' && <SelectDesignColor />}
-						{model.type === 'columns' && <SelectColumnConnection model={model} />}
 						{model.type === 'columns' && <SelectColumnColor />}
 						{model.type === 'ironcast' && <SelectIroncastColor />}
 					</div>
@@ -291,6 +386,7 @@ function RadiatorList(props: Props) {
 								<tr class='border-b border-neutral-200 bg-neutral-100 text-xs font-normal uppercase tracking-[0.04em] text-neutral-600'>
 									<th class='px-2.5 py-2 font-normal'>Модель / размер</th>
 									<th class='px-2.5 py-2 text-center font-normal'>Высота</th>
+									<th class='px-2.5 py-2 text-center font-normal'>М/о</th>
 									<th class='px-2.5 py-2 text-center font-normal'>Длина</th>
 									<th class='px-2.5 py-2 text-center font-normal'>Мощность</th>
 									<th class='px-2.5 py-2 text-right font-normal'>Цена</th>
@@ -310,6 +406,7 @@ function RadiatorList(props: Props) {
 												</div>
 											</td>
 											<td class='px-2.5 py-2.5 text-center'>{radiator.height} мм</td>
+											<td class='px-2.5 py-2.5 text-center'>{radiator.n_spacing ? `${radiator.n_spacing} мм` : '—'}</td>
 											<td class='px-2.5 py-2.5 text-center'>{radiator.length} мм</td>
 											<td class='px-2.5 py-2.5 text-center'>{getPowerValue(radiator)} Вт</td>
 											<td class='px-2.5 py-2.5 text-right font-normal'>
@@ -344,7 +441,7 @@ function RadiatorList(props: Props) {
 										{totalTitle}
 									</div>
 									<div class='mt-1 text-xs leading-5 text-neutral-700'>
-										Высота: {radiator.height} мм · Длина: {radiator.length} мм · Мощность: {getPowerValue(radiator)} Вт
+										Высота: {radiator.height} мм · М/о: {radiator.n_spacing || '—'} мм · Длина: {radiator.length} мм · Мощность: {getPowerValue(radiator)} Вт
 									</div>
 									<div class='mt-2 flex items-center justify-between gap-3'>
 										<div class='text-xs font-normal text-neutral-950'>
@@ -361,6 +458,28 @@ function RadiatorList(props: Props) {
 								</article>
 							)
 						})}
+					</div>
+				)}
+
+				{interAxisCollectionHref && (
+					<div class='mt-5'>
+						<a
+							href={interAxisCollectionHref}
+							class='text-sm font-medium text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'
+						>
+							Смотреть все модели с м/о {selectedInterAxis} мм
+						</a>
+					</div>
+				)}
+
+				{heightCollectionHref && (
+					<div class='mt-5'>
+						<a
+							href={heightCollectionHref}
+							class='text-sm font-medium text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'
+						>
+							{heightCollectionLabel}
+						</a>
 					</div>
 				)}
 			</div>

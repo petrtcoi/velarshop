@@ -1,0 +1,197 @@
+---
+import Layout from '@shared/layouts/Layout.astro'
+import JsonLd from '../../components/seo/JsonLd.astro'
+import { interaxialCollections } from '../../lib/interaxialCollections'
+import { getCategorySeo } from '../../lib/seo/categorySeo'
+
+const COLLECTION_URL = '/collections/radiatory-po-mezhosevomu-rasstoyaniyu'
+const breadcrumbs = [
+	{ title: 'Главная', url: '/' },
+	{ title: 'Подборки', url: '/collections' },
+	{ title: 'По межосевому расстоянию', url: COLLECTION_URL },
+]
+
+const faqItems = [
+	{
+		question: 'Что такое межосевое расстояние радиатора?',
+		answer:
+			'Это расстояние между центрами входного и выходного отверстий радиатора. Для бокового подключения его обычно измеряют по вертикали, для некоторых нижних схем — по горизонтали. Ориентироваться нужно на монтажную схему конкретной модели.',
+	},
+	{
+		question: 'Межосевое расстояние равно высоте радиатора?',
+		answer:
+			'Нет. Полная высота корпуса всегда определяется конструкцией модели и обычно больше межосевого расстояния. Например, при межосевом 500 мм корпус может иметь высоту 530, 570 мм или другое значение.',
+	},
+	{
+		question: 'Можно ли подобрать радиатор к уже выведенным трубам?',
+		answer:
+			'Да. Для проверки нужны расстояние между центрами выводов, схема подключения, расстояние от пола и подоконника, глубина ниши и фото места установки.',
+	},
+	{
+		question: 'Достаточно ли выбрать только межосевое расстояние?',
+		answer:
+			'Нет. После совпадения межосевого расстояния нужно проверить полную высоту и длину, глубину, мощность, рабочее давление, резьбу и расположение арматуры.',
+	},
+]
+
+const seo = getCategorySeo({
+	category: {
+		slug: 'radiatory-po-mezhosevomu-rasstoyaniyu',
+		url: COLLECTION_URL,
+		name: 'Радиаторы по межосевому расстоянию',
+		h1: 'Радиаторы по межосевому расстоянию',
+		seoTitle: 'Радиаторы по межосевому расстоянию 300, 450 и 500 мм — Velar',
+		seoDescription:
+			'Подбор радиаторов Velar по межосевому расстоянию: 300, 450 и 500 мм. Как правильно измерить выводы, проверить полную высоту и выбрать модель.',
+		ogTitle: 'Радиаторы Velar по межосевому расстоянию',
+		ogDescription:
+			'Подборки моделей Velar для готовых выводов 300, 450 и 500 мм с пояснениями по измерению и монтажу.',
+		ogImage: '/images/models/columns/hero-black-column-radiator.png',
+		ogImageAlt: 'Трубчатый радиатор Velar',
+		breadcrumbs,
+		itemListName: 'Подборки радиаторов по межосевому расстоянию',
+		products: interaxialCollections.map(item => ({ name: item.title, url: item.href })),
+		faq: faqItems,
+	},
+})
+---
+
+<Layout
+	title={seo.title}
+	description={seo.description}
+	canonicalUrl={seo.canonicalUrl}
+	robots={seo.robots}
+	ogType='website'
+	ogTitle={seo.ogTitle}
+	ogDescription={seo.ogDescription}
+	ogUrl={seo.canonicalUrl}
+	ogImageUrl={seo.ogImage}
+	ogImageAlt={seo.ogImageAlt}
+	twitterCard='summary_large_image'
+	twitterTitle={seo.twitterTitle}
+	twitterDescription={seo.twitterDescription}
+	twitterImage={seo.twitterImage}
+	twitterImageAlt={seo.twitterImageAlt}
+	breadcrumbs={breadcrumbs}
+	disableBreadcrumbJsonLd={true}
+	paddings={false}
+>
+	<JsonLd data={seo.jsonLd} />
+
+	<section class='border-b border-neutral-200 bg-white py-10 md:py-14 xl:py-16'>
+		<div class='mx-auto max-w-[1180px] px-4 md:px-6 xl:px-8'>
+			<p class='text-xs font-medium uppercase tracking-[0.12em] text-red-700'>Подбор под готовые выводы</p>
+			<h1 class='mt-3 max-w-4xl text-3xl font-semibold leading-tight tracking-tight text-neutral-950 md:text-5xl'>
+				Радиаторы по межосевому расстоянию
+			</h1>
+			<p class='mt-5 max-w-3xl text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>
+				Межосевое расстояние — это расстояние между центрами подключений, а не полная
+				высота корпуса. Подборки ниже помогают начать с монтажной геометрии, а затем
+				сравнить модели по мощности, глубине, длине и цене.
+			</p>
+		</div>
+	</section>
+
+	<section class='bg-white py-10 md:py-14 xl:py-16'>
+		<div class='mx-auto max-w-[1180px] px-4 md:px-6 xl:px-8'>
+			<div class='grid gap-5 md:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)] md:gap-10'>
+				<h2 class='text-2xl font-semibold leading-tight text-neutral-950 md:text-3xl'>Выберите размер</h2>
+				<p class='max-w-2xl text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>
+					300 мм часто встречается у невысоких алюминиевых и чугунных радиаторов, 450 мм —
+					у панельных радиаторов высотой 500 мм с боковым подключением, а 500 мм является
+					распространенным стандартным размером. В каждой подборке показаны только
+					подтвержденные модели и конфигурации.
+				</p>
+			</div>
+
+			<div class='mt-8 border-y border-neutral-200 md:mt-10'>
+				{interaxialCollections.map((item, index) => (
+					<a
+						href={item.href}
+						class:list={[
+							'group grid gap-3 py-5 sm:grid-cols-[116px_minmax(0,1fr)_auto] sm:items-center sm:gap-6 md:py-6',
+							index > 0 && 'border-t border-neutral-200',
+						]}
+					>
+						<div class='text-3xl font-semibold tracking-tight text-neutral-950 md:text-4xl'>
+							{item.spacing}<span class='ml-1 text-sm font-normal text-neutral-500'>мм</span>
+						</div>
+						<div>
+							<h3 class='text-lg font-semibold leading-tight text-neutral-950 transition group-hover:text-red-700'>
+								{item.title}
+							</h3>
+							<p class='mt-2 max-w-2xl text-sm font-normal leading-6 text-neutral-600'>{item.intro}</p>
+						</div>
+						<span class='inline-flex items-center gap-2 text-sm font-medium text-neutral-950'>
+							Открыть <span aria-hidden='true' class='text-red-700 transition-transform group-hover:translate-x-1'>→</span>
+						</span>
+					</a>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class='border-t border-neutral-200 bg-neutral-50 py-10 md:py-14 xl:py-16'>
+		<div class='mx-auto grid max-w-[1180px] gap-8 px-4 md:grid-cols-2 md:gap-12 md:px-6 xl:px-8'>
+			<div>
+				<h2 class='text-2xl font-semibold leading-tight text-neutral-950 md:text-3xl'>Как измерить межосевое</h2>
+				<ol class='mt-6 border-y border-neutral-200'>
+					{[
+						['Определите центры выводов', 'Измеряйте не от края трубы и не от пола.'],
+						['Снимите расстояние', 'Для бокового подключения обычно измеряют по вертикали между центрами.'],
+						['Проверьте свободное место', 'Отдельно измерьте полную допустимую высоту, ширину и глубину.'],
+						['Сверьте монтажную схему', 'Финальную геометрию проверяют по чертежу выбранной модели.'],
+					].map(([title, text], index) => (
+						<li class:list={['grid grid-cols-[40px_1fr] gap-3 py-4', index > 0 && 'border-t border-neutral-200']}>
+							<span class='text-sm font-medium text-red-700'>0{index + 1}</span>
+							<div>
+								<h3 class='text-base font-semibold text-neutral-950'>{title}</h3>
+								<p class='mt-1 text-sm font-normal leading-6 text-neutral-600'>{text}</p>
+							</div>
+						</li>
+					))}
+				</ol>
+			</div>
+
+			<div>
+				<h2 class='text-2xl font-semibold leading-tight text-neutral-950 md:text-3xl'>Что проверить кроме размера</h2>
+				<ul class='mt-6 space-y-4 text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>
+					<li><span class='font-medium text-neutral-950'>Полную высоту:</span> корпус больше расстояния между осями.</li>
+					<li><span class='font-medium text-neutral-950'>Тепловую мощность:</span> она определяет длину и количество секций.</li>
+					<li><span class='font-medium text-neutral-950'>Схему подключения:</span> боковую, нижнюю или специальную для серии.</li>
+					<li><span class='font-medium text-neutral-950'>Глубину и арматуру:</span> радиатор, краны и термоголовка должны поместиться.</li>
+				</ul>
+				<p class='mt-6 text-sm leading-6 text-neutral-700'>
+					Подробнее — в материале
+					<a href='/info/kak-podobrat-dizayn-radiator-pod-gotovye-vyvody-trub' class='text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'>как подобрать дизайн-радиатор под готовые выводы труб</a>.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class='border-t border-neutral-200 bg-white py-10 md:py-14 xl:py-16'>
+		<div class='mx-auto max-w-[860px] px-4 md:px-6 xl:px-8'>
+			<h2 class='text-2xl font-semibold leading-tight text-neutral-950 md:text-3xl'>Вопросы о межосевом расстоянии</h2>
+			<div class='mt-6 border-y border-neutral-200'>
+				{faqItems.map((item, index) => (
+					<details class:list={['group py-5', index > 0 && 'border-t border-neutral-200']}>
+						<summary class='flex cursor-pointer list-none items-start justify-between gap-4 text-base font-semibold text-neutral-950'>
+							{item.question}<span aria-hidden='true' class='text-red-700 transition-transform group-open:rotate-45'>＋</span>
+						</summary>
+						<p class='mt-3 max-w-3xl text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>{item.answer}</p>
+					</details>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class='border-t border-neutral-200 bg-neutral-950 py-10 text-white md:py-14'>
+		<div class='mx-auto flex max-w-[1180px] flex-col gap-6 px-4 md:flex-row md:items-center md:justify-between md:px-6 xl:px-8'>
+			<div>
+				<h2 class='text-2xl font-semibold leading-tight'>Проверим размеры до заказа</h2>
+				<p class='mt-2 max-w-2xl text-sm font-normal leading-6 text-neutral-300 md:text-base'>Пришлите фото выводов и три размера: межосевое, доступную высоту и ширину стены.</p>
+			</div>
+			<a href='/request' class='inline-flex h-11 shrink-0 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>Получить расчет</a>
+		</div>
+	</section>
+</Layout>

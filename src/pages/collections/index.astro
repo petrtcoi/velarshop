@@ -2,7 +2,7 @@
 import Layout from '@shared/layouts/Layout.astro'
 import Picture from '@shared/components/Picture.astro'
 import JsonLd from '../../components/seo/JsonLd.astro'
-import { featuredCollections } from '../../lib/featuredCollections'
+import { collectionGroups, featuredCollections } from '../../lib/featuredCollections'
 import { getCategorySeo } from '../../lib/seo/categorySeo'
 
 const breadcrumbs = [
@@ -15,17 +15,17 @@ const seo = getCategorySeo({
 		slug: 'collections',
 		url: '/collections',
 		name: 'Подборки',
-		h1: 'Подборки Velar',
-		seoTitle: 'Подборки Velar - готовые коммерческие подборки радиаторов',
+		h1: 'Подборки радиаторов Velar',
+		seoTitle: 'Подборки радиаторов по высоте, размерам и типу - Velar',
 		seoDescription:
-			'Подборки радиаторов Velar по задачам: вертикальные модели 1800 мм, решения для узких стен, интерьеров и коммерческих объектов.',
-		ogTitle: 'Подборки Velar',
+			'Подборки радиаторов Velar по межосевому расстоянию, полной высоте, числу труб и типу конвекции. Сравнение моделей, размеров, мощности и цен.',
+		ogTitle: 'Подборки радиаторов Velar',
 		ogDescription:
-			'Готовые подборки радиаторов Velar по размерам, сценариям установки и типу моделей.',
+			'Радиаторы Velar, сгруппированные по межосевому расстоянию, полной высоте, числу труб и типу конвекции.',
 		ogImage: '/images/models/columns/vertical.jpg',
 		ogImageAlt: 'Подборки радиаторов Velar',
 		breadcrumbs,
-		itemListName: 'Подборки Velar',
+		itemListName: 'Подборки радиаторов Velar',
 		products: featuredCollections.map(item => ({
 			name: item.title,
 			url: item.href,
@@ -58,122 +58,130 @@ const seo = getCategorySeo({
 
 	<section class='border-b border-neutral-200 bg-white py-10 md:py-14 xl:py-16'>
 		<div class='mx-auto max-w-[1180px] px-4 md:px-6 xl:px-8'>
-			<h1 class='max-w-4xl text-[34px] font-semibold leading-[1.04] tracking-tight text-neutral-950 md:text-[44px] xl:text-[56px]'>
-				Подборки Velar
+			<p class='text-xs font-medium uppercase tracking-[0.12em] text-red-700'>Каталог по параметрам</p>
+			<h1 class='mt-3 max-w-4xl text-3xl font-semibold leading-tight tracking-tight text-neutral-950 md:text-5xl'>
+				Подборки радиаторов Velar
 			</h1>
-			<p class='mt-5 max-w-3xl text-sm leading-6 text-neutral-700 md:text-base md:leading-7'>
-				Здесь собраны коммерческие подборки по типовым задачам: размеры, сценарии монтажа,
-				узкие стены, интерьерные акценты и подбор под конкретный запрос. Это короткий путь к
-				моделям, когда нужен не весь каталог, а конкретный сценарий выбора.
+			<p class='mt-5 max-w-3xl text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>
+				Здесь модели сгруппированы по параметрам, которые действительно важны при монтаже.
+				Если трубы уже выведены, начинайте с межосевого расстояния. Если место еще можно
+				спланировать — выбирайте по полной высоте, числу труб или типу конвекции.
 			</p>
 		</div>
 	</section>
 
-	<section class='bg-white py-10 md:py-14 xl:py-16'>
-		<div class='mx-auto max-w-[1180px] px-4 md:px-6 xl:px-8'>
-			<div class='grid justify-center gap-5 [grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),420px))]'>
-				{featuredCollections.map(item => (
-					<article class='w-full'>
-						<a
-							href={item.href}
-							class='group flex h-full flex-col gap-5 rounded-[24px] border border-neutral-200 bg-white p-5 transition hover:border-neutral-300 hover:shadow-[0_16px_40px_rgba(15,23,42,0.06)] md:flex-row md:items-start md:gap-4'
-						>
-							<div class='mx-auto flex h-24 w-24 shrink-0 items-center justify-center rounded-2xl bg-neutral-50 p-3 md:mx-0 md:h-28 md:w-28'>
-								<Picture
-									src={item.image}
-									alt={item.imageAlt}
-									title={item.title}
-									loading='lazy'
-									width={112}
-									height={112}
-									sizes='(max-width: 767px) 96px, 112px'
-									class='h-full w-full object-contain'
-								/>
-							</div>
+	<div class='bg-white'>
+		{collectionGroups.map((group, groupIndex) => (
+			<section
+				id={group.id}
+				class:list={[
+					'py-10 md:py-14 xl:py-16',
+					groupIndex > 0 && 'border-t border-neutral-200',
+				]}
+			>
+				<div class='mx-auto max-w-[1180px] px-4 md:px-6 xl:px-8'>
+					<div class='grid gap-4 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] md:gap-10'>
+						<h2 class='text-2xl font-semibold leading-tight tracking-tight text-neutral-950 md:text-3xl'>
+							{group.title}
+						</h2>
+						<div>
+							<p class='max-w-2xl text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>
+								{group.description}
+							</p>
+							{group.href && group.linkLabel && (
+								<a
+									href={group.href}
+									class='mt-3 inline-flex text-sm font-medium text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'
+								>
+									{group.linkLabel}
+								</a>
+							)}
+						</div>
+					</div>
 
-							<div class='flex min-w-0 flex-1 flex-col'>
-								<h2 class='text-[24px] font-semibold leading-tight text-neutral-950'>
-									{item.title}
-								</h2>
-								<p class='mt-3 text-sm font-normal leading-6 text-neutral-700 md:text-base'>
-									{item.description}
-								</p>
-								<ul class='mt-4 grid gap-2 text-sm leading-5 text-neutral-600 min-[560px]:grid-cols-2 md:grid-cols-1 lg:grid-cols-2'>
-									{item.facts.map(fact => (
-										<li class='flex items-start gap-2.5'>
-											<span class='mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-red-700'></span>
-											<span>{fact}</span>
-										</li>
-									))}
-								</ul>
-								<div class='mt-5'>
-									<span class='inline-flex h-11 items-center justify-center rounded-lg border border-neutral-300 px-5 text-sm font-medium text-neutral-950 transition group-hover:border-neutral-950 group-hover:bg-neutral-50'>
-										Открыть подборку
+					<div class='mt-8 border-y border-neutral-200 md:mt-10'>
+						{group.items.map((item, index) => (
+							<article class:list={['py-5 md:py-6', index > 0 && 'border-t border-neutral-200']}>
+								<a
+									href={item.href}
+									class='group grid gap-5 sm:grid-cols-[112px_minmax(0,1fr)] md:grid-cols-[128px_minmax(0,1fr)_auto] md:items-center md:gap-7'
+								>
+									<div class='flex h-28 w-28 items-center justify-center bg-neutral-50 p-3 md:h-32 md:w-32'>
+										<Picture
+											src={item.image}
+											alt={item.imageAlt}
+											title={item.title}
+											loading='lazy'
+											width={128}
+											height={128}
+											sizes='(max-width: 767px) 112px, 128px'
+											class='h-full w-full object-contain'
+										/>
+									</div>
+
+									<div class='min-w-0'>
+										<h3 class='text-lg font-semibold leading-tight text-neutral-950 transition group-hover:text-red-700 md:text-xl'>
+											{item.title}
+										</h3>
+										<p class='mt-2 max-w-2xl text-sm font-normal leading-6 text-neutral-600'>
+											{item.description}
+										</p>
+										<ul class='mt-3 flex flex-wrap gap-x-5 gap-y-1 text-sm leading-5 text-neutral-500'>
+											{item.facts.map(fact => (
+												<li>{fact}</li>
+											))}
+										</ul>
+									</div>
+
+									<span class='inline-flex items-center gap-2 text-sm font-medium text-neutral-950 md:justify-self-end'>
+										Смотреть подборку
+										<span aria-hidden='true' class='text-red-700 transition-transform group-hover:translate-x-1'>→</span>
 									</span>
-								</div>
-							</div>
-						</a>
-					</article>
-				))}
-			</div>
-		</div>
-	</section>
+								</a>
+							</article>
+						))}
+					</div>
+				</div>
+			</section>
+		))}
+	</div>
 
 	<section class='border-t border-neutral-200 bg-neutral-50 py-10 md:py-14 xl:py-16'>
 		<div class='mx-auto max-w-[1180px] px-4 md:px-6 xl:px-8'>
-			<div class='max-w-3xl'>
-				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>
-					Как заказать радиатор по подборке
-				</h2>
-				<p class='mt-4 text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>
-					Откройте подходящую подборку, выберите модель или отправьте параметры помещения.
-					Мы рассчитаем мощность, количество секций, подключение, цвет и стоимость
-					изготовления.
-				</p>
-			</div>
+			<div class='grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-12'>
+				<div>
+					<h2 class='text-2xl font-semibold leading-tight tracking-tight text-neutral-950 md:text-3xl'>
+						Не уверены, с чего начать
+					</h2>
+					<p class='mt-4 max-w-xl text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>
+						Пришлите фото места установки, расстояние между центрами выводов и размеры стены.
+						Мы проверим геометрию, рассчитаем мощность и предложим подходящие модели.
+					</p>
+					<div class='mt-6 flex flex-col gap-3 min-[420px]:flex-row min-[420px]:flex-wrap'>
+						<a href='/request' class='inline-flex h-11 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>
+							Получить расчет
+						</a>
+						<a href='/delivery' class='inline-flex h-11 items-center justify-center rounded-lg border border-neutral-300 bg-white px-5 text-sm font-medium text-neutral-950 transition hover:border-neutral-950'>
+							Доставка и оплата
+						</a>
+					</div>
+				</div>
 
-			<ol class='mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4'>
-				{[
-					[
-						'Выберите сценарий',
-						'Подборки помогают быстро перейти к моделям под конкретную высоту, монтаж или интерьерную задачу.',
-					],
-					[
-						'Отправьте параметры',
-						'Можно указать размеры помещения, высоту стены, тип подключения, город доставки и пожелания по цвету.',
-					],
-					[
-						'Получите расчет',
-						'Менеджер подберет модель, мощность, количество секций и ориентировочную стоимость.',
-					],
-					[
-						'Производство и доставка',
-						'Радиаторы изготавливаются под заказ, доставляются по России, гарантия - до 10 лет.',
-					],
-				].map(([title, text], index) => (
-					<li class='list-none rounded-2xl border border-neutral-200 bg-white p-4 md:p-5'>
-						<div class='text-xs font-medium uppercase tracking-[0.12em] text-neutral-500'>
-							0{index + 1}
-						</div>
-						<h3 class='mt-2 text-base font-semibold leading-tight text-neutral-950'>{title}</h3>
-						<p class='mt-2 text-sm font-normal leading-5 text-neutral-600'>{text}</p>
-					</li>
-				))}
-			</ol>
-
-			<div class='mt-8 flex flex-col gap-3 min-[420px]:flex-row min-[420px]:flex-wrap'>
-				<a
-					href='/request'
-					class='inline-flex h-11 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'
-				>
-					Получить расчет
-				</a>
-				<a
-					href='/delivery'
-					class='inline-flex h-11 items-center justify-center rounded-lg border border-neutral-300 bg-white px-5 text-sm font-medium text-neutral-950 transition hover:border-neutral-950 hover:bg-neutral-50'
-				>
-					Доставка и оплата
-				</a>
+				<ol class='border-y border-neutral-200'>
+					{[
+						['Измерьте выводы', 'Расстояние считают от центра одной трубы до центра другой.'],
+						['Выберите подборку', 'Сравните модели с подходящей монтажной геометрией.'],
+						['Проверьте мощность', 'Финальный размер радиатора зависит от теплопотерь помещения.'],
+					].map(([title, description], index) => (
+						<li class:list={['grid grid-cols-[40px_1fr] gap-3 py-4', index > 0 && 'border-t border-neutral-200']}>
+							<span class='text-sm font-medium text-red-700'>0{index + 1}</span>
+							<div>
+								<h3 class='text-base font-semibold text-neutral-950'>{title}</h3>
+								<p class='mt-1 text-sm font-normal leading-6 text-neutral-600'>{description}</p>
+							</div>
+						</li>
+					))}
+				</ol>
 			</div>
 		</div>
 	</section>
