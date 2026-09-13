@@ -55,6 +55,14 @@ function toFeatured(collection: CatalogCollectionConfig): FeaturedCollection {
 	}
 }
 
+const vertical1800ModelIds = new Set([
+	'2180', '3180', '4180', '5180',
+	'p30v', 'p60v', 'q40v', 'q60v', 'q80v', 'r32v', 'r42v', 'r89v', 'sv', 'spv', 'rt1v', 'rt2v', 'qt1v', 'qt2v',
+])
+const vertical1800ModelCount = modelsJsonData.filter(model =>
+	vertical1800ModelIds.has(model.id) && radiatorsJsonData.some(radiator => radiator.model_id === model.id),
+).length
+
 const vertical1800Collection: FeaturedCollection = {
 	slug: 'verticalnye-radiatory-1800-mm',
 	href: '/collections/verticalnye-radiatory-1800-mm',
@@ -63,7 +71,7 @@ const vertical1800Collection: FeaturedCollection = {
 	description: 'Высокие трубчатые и профильные радиаторы около 180 см для узких стен, простенков, гостиных, прихожих и современных интерьеров.',
 	image: '/images/models/p30v/main.jpg',
 	imageAlt: 'Вертикальный радиатор Velar высотой около 1800 мм',
-	facts: ['18 моделей', 'высота около 180 см'],
+	facts: [`${vertical1800ModelCount} моделей`, 'высота около 180 см'],
 }
 
 const interaxialItems = catalogCollections.filter(item => item.siblingGroup === 'interaxial').map(toFeatured)

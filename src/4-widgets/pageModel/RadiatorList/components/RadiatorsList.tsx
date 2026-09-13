@@ -1,5 +1,5 @@
 import { useStore } from '@nanostores/preact'
-import { useEffect, useState } from 'preact/hooks'
+import { useEffect, useRef, useState } from 'preact/hooks'
 
 import RadiatorFilter from './RadiatorFilter'
 import RadiatorListHeader from './RadiatorListHeader'
@@ -80,6 +80,8 @@ function RadiatorList(props: Props) {
 	const [requestedHeight, setRequestedHeight] = useState<string | null>(null)
 	const [requestedCollection, setRequestedCollection] = useState<string | null>(null)
 	const [requestedConnection, setRequestedConnection] = useState<string | null>(null)
+	const [urlFiltersReady, setUrlFiltersReady] = useState(false)
+	const shouldScrollToVariants = useRef(false)
 	const [filteredRadiators, setFilteredRadiators] = useState<RadiatorJson[]>(initialFilteredRadiators)
 	const shoppingCart = useStore(storeShoppingCart)
 	const getTotalCost = useStore(getRadiatorTotalCost)
@@ -112,10 +114,12 @@ function RadiatorList(props: Props) {
 		const height = searchParams.get('height')
 		const collection = searchParams.get('collection')
 		const connection = searchParams.get('connection')
+		let hasValidContextFilter = false
 
 		if (requestedInterAxis && interAxes.includes(requestedInterAxis)) {
 			setSelectedInterAxis(requestedInterAxis)
 			setLastFilterUpdate('interAxis')
+			hasValidContextFilter = true
 		}
 
 		if (height && heights.includes(height)) {
@@ -123,19 +127,27 @@ function RadiatorList(props: Props) {
 			setLastFilterUpdate('height')
 			setRequestedHeight(height)
 			setRequestedCollection(collection)
+			hasValidContextFilter = true
 		}
 
 		if (connection === 'side') {
-			if (model.type === 'design' && model.connections.split(',').includes('lat')) {
+			let sideConnectionApplied = model.type === 'ironcast'
+			if ((model.type === 'design' || model.type === 'floor') && model.connections.split(',').includes('lat')) {
 				radiatorConnId.set('lat')
+				sideConnectionApplied = true
 			}
-			if (model.type === 'columns') columnConnId.set('lat1/2')
-			setRequestedConnection('side')
+			if (model.type === 'columns') {
+				columnConnId.set('lat1/2')
+				sideConnectionApplied = true
+			}
+			if (sideConnectionApplied) {
+				setRequestedConnection('side')
+				hasValidContextFilter = true
+			}
 		}
 
-		const clearConnectionContext = () => setRequestedConnection(null)
-		window.addEventListener('model:connection-context-cleared', clearConnectionContext)
-		return () => window.removeEventListener('model:connection-context-cleared', clearConnectionContext)
+		shouldScrollToVariants.current = hasValidContextFilter
+		setUrlFiltersReady(true)
 	}, [])
 
 	useEffect(() => {
@@ -150,19 +162,18 @@ function RadiatorList(props: Props) {
 
 		const escapeRadiator = radiators.find(
 			r =>
-				(selectedHeight === ALL || lastFilterUpdate !== 'height' || r.height === selectedHeight) &&
+				(selectedHeight === ALL || (!requestedHeight && lastFilterUpdate !== 'height') || r.height === selectedHeight) &&
 				(selectedWidth === ALL || lastFilterUpdate !== 'width' || r.width === selectedWidth) &&
 				(selectedLength === ALL || lastFilterUpdate !== 'length' || r.length === selectedLength) &&
-				(selectedInterAxis === ALL || lastFilterUpdate !== 'interAxis' || r.n_spacing === selectedInterAxis),
+				(selectedInterAxis === ALL || r.n_spacing === selectedInterAxis),
 		)
 
 		if (escapeRadiator) {
-			if (lastFilterUpdate !== 'height' && selectedHeight !== ALL) setSelectedHeight(escapeRadiator.height)
+			if (!requestedHeight && lastFilterUpdate !== 'height' && selectedHeight !== ALL) setSelectedHeight(escapeRadiator.height)
 			if (lastFilterUpdate !== 'width' && selectedWidth !== ALL) setSelectedWidth(escapeRadiator.width)
 			if (lastFilterUpdate !== 'length' && selectedLength !== ALL) setSelectedLength(escapeRadiator.length)
-			if (lastFilterUpdate !== 'interAxis' && selectedInterAxis !== ALL) setSelectedInterAxis(escapeRadiator.n_spacing || ALL)
 		}
-	}, [filteredRadiators])
+	}, [filteredRadiators, lastFilterUpdate, requestedHeight, selectedHeight, selectedInterAxis, selectedLength, selectedWidth])
 
 	const [availableHeights, setAvailableHeights] = useState<string[]>(heights)
 	const [availableWidths, setAvailableWidths] = useState<string[]>(widths)
@@ -205,16 +216,39 @@ function RadiatorList(props: Props) {
 	}, [selectedHeight, selectedWidth, selectedLength, selectedInterAxis])
 
 	useEffect(() => {
-		setFilteredRadiators(
-			filterRadiators({
-				radiators,
-				selectedHeight,
-				selectedLength,
-				selectedWidth,
-				selectedInterAxis,
-			}),
-		)
-	}, [selectedHeight, selectedWidth, selectedLength, selectedInterAxis])
+		if (!urlFiltersReady) return
+
+		setFilteredRadiators(filterRadiators({
+			radiators,
+			selectedHeight,
+			selectedLength,
+			selectedWidth,
+			selectedInterAxis,
+		}))
+
+		if (!shouldScrollToVariants.current) {
+			document.documentElement.classList.remove('model-context-pending')
+			return
+		}
+
+		shouldScrollToVariants.current = false
+		let secondFrame = 0
+		const firstFrame = window.requestAnimationFrame(() => {
+			secondFrame = window.requestAnimationFrame(() => {
+				document.documentElement.classList.remove('model-context-pending')
+				const root = document.documentElement
+				const previousScrollBehavior = root.style.scrollBehavior
+				root.style.scrollBehavior = 'auto'
+				document.getElementById('model-variants')?.scrollIntoView({ block: 'start' })
+				root.style.scrollBehavior = previousScrollBehavior
+			})
+		})
+
+		return () => {
+			window.cancelAnimationFrame(firstFrame)
+			if (secondFrame) window.cancelAnimationFrame(secondFrame)
+		}
+	}, [selectedHeight, selectedWidth, selectedLength, selectedInterAxis, urlFiltersReady])
 
 	const showInterAxis = model.type !== 'convector' && model.type !== 'floor'
 	const modelHref = getModelSlug(model)
@@ -363,11 +397,11 @@ function RadiatorList(props: Props) {
 											Размер: {getSizeLabel(model, radiator)} · Мощность: {getPowerValue(radiator)} Вт
 										</div>
 										<div class='mt-2 flex items-center justify-between gap-3'>
-											<div class='text-xs font-normal text-neutral-950'>от {totalPrice.toLocaleString('ru-RU')} ₽</div>
+											<div class='text-base font-semibold text-neutral-950'>от {totalPrice.toLocaleString('ru-RU')} ₽</div>
 											<button
 												type='button'
 												onClick={() => addRadiatorToRequest(radiator)}
-												class='inline-flex h-7 shrink-0 items-center justify-center rounded-[3px] border border-red-200 bg-white px-2.5 text-xs font-normal text-red-700 transition hover:border-red-700 hover:bg-red-50'
+												class='inline-flex min-h-11 shrink-0 items-center justify-center rounded-[3px] border border-red-300 bg-white px-4 text-sm font-medium text-red-700 transition hover:border-red-700 hover:bg-red-50'
 											>
 												{qnty > 0 ? `В корзине: ${qnty}` : 'В корзину'}
 											</button>
@@ -444,13 +478,13 @@ function RadiatorList(props: Props) {
 										Высота: {radiator.height} мм · М/о: {radiator.n_spacing || '—'} мм · Длина: {radiator.length} мм · Мощность: {getPowerValue(radiator)} Вт
 									</div>
 									<div class='mt-2 flex items-center justify-between gap-3'>
-										<div class='text-xs font-normal text-neutral-950'>
+										<div class='text-base font-semibold text-neutral-950'>
 											от {totalPrice.toLocaleString('ru-RU')} ₽
 										</div>
 										<button
 											type='button'
 											onClick={() => addRadiatorToRequest(radiator)}
-											class='inline-flex h-7 shrink-0 items-center justify-center rounded-[3px] border border-red-200 bg-white px-2.5 text-xs font-normal text-red-700 transition hover:border-red-700 hover:bg-red-50'
+											class='inline-flex min-h-11 shrink-0 items-center justify-center rounded-[3px] border border-red-300 bg-white px-4 text-sm font-medium text-red-700 transition hover:border-red-700 hover:bg-red-50'
 										>
 											{qnty > 0 ? `В корзине: ${qnty}` : 'В корзину'}
 										</button>

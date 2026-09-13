@@ -1,8 +1,21 @@
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/geist/Geist-Variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 :root {
@@ -26,7 +39,13 @@ body {
   color: var(--color-text);
   background: var(--color-bg);
   overflow-x: clip;
-  text-rendering: optimizeLegibility;
+}
+
+html.model-context-pending #radiators-list {
+  min-height: 24rem;
+  max-height: 24rem;
+  overflow: hidden;
+  visibility: hidden;
 }
 
 @media (max-width: 768px) {
@@ -74,23 +93,23 @@ a[class*="cta"],
   border-top: 1px solid var(--color-border);
 }
 
-.commercial-page main section[class*="py-12"][class*="xl:py-20"] {
-  padding-block: 2.5rem !important;
+.commercial-page main section[class~="py-12"][class~="xl:py-20"] {
+  padding-block: 2.5rem;
 }
 
-.commercial-page main h1[class*="text-[34px]"],
-.commercial-page main h1[class*="text-4xl"] {
-  font-size: 2.25rem !important;
-  font-weight: 600 !important;
-  line-height: 1.05 !important;
-  letter-spacing: -0.03em !important;
+.commercial-page main h1[class~="text-[34px]"],
+.commercial-page main h1[class~="text-4xl"] {
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
 }
 
-.commercial-page main h2[class*="text-[28px]"],
-.commercial-page main h2[class*="text-3xl"] {
-  font-size: 1.5rem !important;
-  font-weight: 600 !important;
-  line-height: 1.15 !important;
+.commercial-page main h2[class~="text-[28px]"],
+.commercial-page main h2[class~="text-3xl"] {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.15;
 }
 
 .commercial-page :is(
@@ -104,7 +123,7 @@ a[class*="cta"],
   .news-section,
   .scenario-cta-section
 ) {
-  padding-block: 2.5rem !important;
+  padding-block: 2.5rem;
 }
 
 .commercial-page :is(
@@ -118,24 +137,24 @@ a[class*="cta"],
   .news-section,
   .scenario-cta-section
 ) h2 {
-  font-size: 1.5rem !important;
-  font-weight: 600 !important;
-  line-height: 1.15 !important;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.15;
 }
 
 @media (min-width: 768px) {
-  .commercial-page main section[class*="py-12"][class*="xl:py-20"] {
-    padding-block: 3rem !important;
+  .commercial-page main section[class~="py-12"][class~="xl:py-20"] {
+    padding-block: 3rem;
   }
 
-  .commercial-page main h1[class*="text-[34px]"],
-  .commercial-page main h1[class*="text-4xl"] {
-    font-size: 3rem !important;
+  .commercial-page main h1[class~="text-[34px]"],
+  .commercial-page main h1[class~="text-4xl"] {
+    font-size: 3rem;
   }
 
-  .commercial-page main h2[class*="text-[28px]"],
-  .commercial-page main h2[class*="text-3xl"] {
-    font-size: 1.875rem !important;
+  .commercial-page main h2[class~="text-[28px]"],
+  .commercial-page main h2[class~="text-3xl"] {
+    font-size: 1.875rem;
   }
 
   .commercial-page :is(
@@ -149,7 +168,7 @@ a[class*="cta"],
     .news-section,
     .scenario-cta-section
   ) {
-    padding-block: 3rem !important;
+    padding-block: 3rem;
   }
 
   .commercial-page :is(
@@ -163,13 +182,13 @@ a[class*="cta"],
     .news-section,
     .scenario-cta-section
   ) h2 {
-    font-size: 1.875rem !important;
+    font-size: 1.875rem;
   }
 }
 
 @media (min-width: 1280px) {
-  .commercial-page main section[class*="py-12"][class*="xl:py-20"] {
-    padding-block: 3.5rem !important;
+  .commercial-page main section[class~="py-12"][class~="xl:py-20"] {
+    padding-block: 3.5rem;
   }
 
   .commercial-page :is(
@@ -183,7 +202,7 @@ a[class*="cta"],
     .news-section,
     .scenario-cta-section
   ) {
-    padding-block: 3.5rem !important;
+    padding-block: 3.5rem;
   }
 }
 

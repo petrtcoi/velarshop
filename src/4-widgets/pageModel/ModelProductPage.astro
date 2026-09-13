@@ -357,7 +357,7 @@ const exactHeightCollectionLinks = exactHeightCollections.filter(collection =>
 const tubularCollectionLinks = model.type === 'columns'
 	? tubularCollections.filter(collection =>
 		collection.kind === 'tube-count'
-			? model.id.startsWith(String(collection.tubeCount))
+			? collection.modelIds?.includes(model.id)
 			: modelRadiators.some(radiator => Number.parseFloat(radiator.height) <= 600),
 	)
 	: []
@@ -522,7 +522,7 @@ const seo = getModelSeo({
 					))}
 					{convectorCollectionLinks.map(collection => (
 						<a href={collection.href} class='text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'>
-							Все модели: {collection.shortTitle.toLocaleLowerCase('ru-RU')}
+							Все {collection.shortTitle.toLocaleLowerCase('ru-RU')}
 						</a>
 					))}
 				</nav>

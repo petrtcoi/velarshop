@@ -141,18 +141,20 @@ const isCommercialPage = commercialPaths.includes(Astro.url.pathname)
 			content={Astro.generator}
 		/>
 		<link
-			rel='preconnect'
-			href='https://fonts.googleapis.com'
-		/>
-		<link
-			rel='preconnect'
-			href='https://fonts.gstatic.com'
+			rel='preload'
+			href='/fonts/geist/Geist-Variable.woff2'
+			as='font'
+			type='font/woff2'
 			crossorigin
 		/>
-		<link
-			href='https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap'
-			rel='stylesheet'
-		/>
+		<script is:inline>
+			(() => {
+				const params = new URLSearchParams(window.location.search)
+				if (!params.has('mo') && !params.has('height')) return
+				document.documentElement.classList.add('model-context-pending')
+				window.setTimeout(() => document.documentElement.classList.remove('model-context-pending'), 5000)
+			})()
+		</script>
 
 		<title>{title}</title>
 		<meta

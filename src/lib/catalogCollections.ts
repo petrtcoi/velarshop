@@ -124,7 +124,7 @@ const heightCollections: CatalogCollectionConfig[] = Object.entries(heightCopy).
 		useCaseTitle: copy.useCaseTitle,
 		useCaseText: copy.useCaseText,
 		selectionNote: copy.selectionNote,
-		parentHref: '/collections#height',
+		parentHref: '/collections',
 		parentLabel: 'Все подборки по высоте',
 		siblingGroup: 'height',
 		connectionLabel: 'по модели',
@@ -164,16 +164,24 @@ const tubeCopy: Record<number, { word: string; intro: string; useCaseText: strin
 	},
 }
 
+const tubeModelIds: Record<number, string[]> = {
+	2: ['2030', '2037', '2040', '2045', '2050', '2052', '2055', '2057', '2060', '2075', '2090', '2100', '2110', '2120', '2150', '2180', '2200'],
+	3: ['3020', '3030', '3037', '3040', '3045', '3050', '3052', '3055', '3057', '3060', '3075', '3090', '3100', '3110', '3120', '3150', '3180', '3200'],
+	4: ['4030', '4037', '4040', '4045', '4050', '4052', '4055', '4057', '4060', '4075', '4090', '4100', '4110', '4120', '4150', '4180', '4200'],
+	5: ['5030', '5037', '5040', '5045', '5050', '5052', '5055', '5057', '5060', '5075', '5090', '5100', '5110', '5120', '5150', '5180', '5200'],
+}
+
 const tubeCollections: CatalogCollectionConfig[] = Object.entries(tubeCopy).map(([rawCount, copy]) => {
 	const tubeCount = Number(rawCount)
 	const lowerWord = copy.word.toLocaleLowerCase('ru-RU')
 	return {
 		kind: 'tube-count',
 		tubeCount,
+		modelIds: tubeModelIds[tubeCount],
 		slug: `${tubeCount}-trubchatye-radiatory`,
 		href: `/collections/${tubeCount}-trubchatye-radiatory`,
 		title: `${copy.word} радиаторы`,
-		shortTitle: `${tubeCount} трубки`,
+		shortTitle: `${copy.word} радиаторы`,
 		seoTitle: `${copy.word} радиаторы (${tubeCount}-трубчатые) - каталог и цены`,
 		seoDescription: `${copy.word} стальные трубчатые радиаторы Velar: модели разных высот, число секций, мощность, размеры и цены. Подбор и доставка по России.`,
 		intro: copy.intro,
@@ -222,7 +230,7 @@ const convectorCollections: CatalogCollectionConfig[] = [
 		slug: 'vnutripolnye-konvektory-bez-ventilyatora',
 		href: '/collections/vnutripolnye-konvektory-bez-ventilyatora',
 		title: 'Внутрипольные конвекторы без вентилятора',
-		shortTitle: 'Без вентилятора',
+		shortTitle: 'Конвекторы без вентилятора',
 		seoTitle: 'Внутрипольные конвекторы без вентилятора - каталог и цены',
 		seoDescription: 'Внутрипольные конвекторы без вентилятора Velar KWH с естественной конвекцией: длина, глубина, высота, мощность, решетки и цены.',
 		intro: 'Внутрипольные конвекторы без вентилятора работают за счет естественной конвекции, не требуют электропитания и подходят для спокойной тепловой завесы у панорамных окон.',
@@ -245,7 +253,7 @@ const convectorCollections: CatalogCollectionConfig[] = [
 		slug: 'vnutripolnye-konvektory-s-ventilyatorom',
 		href: '/collections/vnutripolnye-konvektory-s-ventilyatorom',
 		title: 'Внутрипольные конвекторы с вентилятором',
-		shortTitle: 'С вентилятором',
+		shortTitle: 'Конвекторы с вентилятором',
 		seoTitle: 'Внутрипольные конвекторы с вентилятором - каталог и цены',
 		seoDescription: 'Внутрипольные конвекторы с вентилятором Velar KWHV и KWHV 24V для панорамных окон. Размеры, мощность, управление, решетки и цены.',
 		intro: 'Внутрипольные конвекторы с вентилятором создают принудительную конвекцию и повышенную теплоотдачу у панорамных окон. В подборке представлены модели KWHV и низковольтная KWHV 24V.',
@@ -299,7 +307,7 @@ export function collectionMatchesModel(collection: CatalogCollectionConfig, mode
 		return model.type === 'columns' || model.type === 'ironcast'
 	}
 	if (collection.kind === 'height') return model.type !== 'convector'
-	if (collection.kind === 'tube-count') return model.type === 'columns' && model.id.startsWith(String(collection.tubeCount))
+	if (collection.kind === 'tube-count') return model.type === 'columns' && (collection.modelIds?.includes(model.id) ?? false)
 	if (collection.kind === 'low-tubular') return model.type === 'columns'
 	return collection.modelIds?.includes(model.id) ?? false
 }

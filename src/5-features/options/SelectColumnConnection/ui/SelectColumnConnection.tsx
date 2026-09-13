@@ -39,13 +39,6 @@ function SelectColumnConnection({ model }: Props) {
   const handleChange = (id: string) => {
     storeColumnConnId.set(id)
     storeColumnConnIdBackup.set(id)
-
-    const url = new URL(window.location.href)
-    if (url.searchParams.has('connection')) {
-      url.searchParams.delete('connection')
-      window.history.replaceState({}, '', `${url.pathname}${url.search}${url.hash}`)
-      window.dispatchEvent(new CustomEvent('model:connection-context-cleared'))
-    }
   }
 
   if (connections.length === 0) return null
