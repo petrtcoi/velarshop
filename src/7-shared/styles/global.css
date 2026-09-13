@@ -152,14 +152,43 @@ main :where(.animate-spin) {
   background-color: #ffffff !important;
 }
 
-/* The tubular catalogue uses explicit chapter surfaces. */
-.commercial-page main > .columns-popular-section,
-.commercial-page main > .columns-catalog-section {
+/*
+ * Tubular landing: explicit surfaces and firm chapter dividers, following
+ * the technical rhythm used on Tubogshop while retaining Velar colours.
+ */
+.commercial-page main > section#columns-popular,
+.commercial-page main > section#columns-models,
+.commercial-page main > section#columns-who-fits,
+.commercial-page main > section#columns-interiors,
+.commercial-page main > section#columns-what-is,
+.commercial-page main > section#columns-faq,
+.commercial-page main > section#columns-useful-articles {
   background-color: #f7f7f7 !important;
 }
 
-.commercial-page main > section#columns-calculator.columns-calculator-section {
+.commercial-page main > section#columns-calculator,
+.commercial-page main > section#columns-task-selector,
+.commercial-page main > section#columns-how-order-short,
+.commercial-page main > section#columns-tube-differences,
+.commercial-page main > section#columns-comparison,
+.commercial-page main > section#columns-use-cases,
+.commercial-page main > section#columns-why-velar {
   background-color: #ffffff !important;
+}
+
+.commercial-page main > section#columns-hero {
+  border-bottom: 0;
+}
+
+.commercial-page main > section#columns-popular,
+.commercial-page main > section#columns-who-fits,
+.commercial-page main > section#columns-comparison,
+.commercial-page main > section#columns-faq {
+  border-top: 2px solid var(--color-text) !important;
+}
+
+.commercial-page main > section#columns-calculator {
+  border-top: 4px solid var(--color-primary) !important;
 }
 
 .commercial-page main > section:not(:first-of-type):not([class~="py-3"]) {
