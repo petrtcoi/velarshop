@@ -22,7 +22,7 @@ const whenToChoose: Record<string, string> = {
 }
 ---
 
-<section id='columns-popular' class='bg-white py-8 md:py-10'>
+<section id='columns-popular' class='columns-popular-section bg-neutral-50 py-8 md:py-10'>
 	<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 		<h2 class={columnsSectionTitleClass}>Популярные модели трубчатых радиаторов</h2>
 		<p class={`mt-3 max-w-3xl ${columnsSectionSubtitleClass}`}>
@@ -32,7 +32,7 @@ const whenToChoose: Record<string, string> = {
 			{
 				visibleModels.map(model => (
 					<article class='flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white transition hover:border-neutral-300 sm:min-h-[190px] sm:flex-row'>
-						<div class='flex shrink-0 items-center justify-center bg-neutral-50 p-4 sm:w-[35%] sm:p-4'>
+						<div class='flex shrink-0 items-center justify-center bg-white p-4 sm:w-[35%] sm:p-4'>
 							<Picture
 								src={model.image}
 								alt={`${model.prefix} Velar ${model.name}`}

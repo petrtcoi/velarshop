@@ -131,8 +131,9 @@ main :where(.animate-spin) {
 
 /*
  * Commercial pages are arranged as larger visual chapters. Three related
- * sections share one surface; the larger gap appears only between chapters.
- * This avoids a mechanical white/grey stripe for every small section.
+ * sections share one surface. Chapter boundaries are expressed by the next
+ * section's background and internal padding, without an empty strip between
+ * the two surfaces.
  */
 .commercial-page main > section:not(:first-of-type) {
   border-top: 1px solid var(--color-border);
@@ -151,14 +152,24 @@ main :where(.animate-spin) {
   background-color: #ffffff !important;
 }
 
-.commercial-page main > section:nth-of-type(3n + 2),
-.commercial-page main > .scenario-cta-section + section {
-  margin-top: 2rem;
+/* The tubular catalogue uses explicit chapter surfaces. */
+.commercial-page main > .columns-popular-section,
+.commercial-page main > .columns-catalog-section {
+  background-color: #f7f7f7 !important;
+}
+
+.commercial-page main > section#columns-calculator.columns-calculator-section {
+  background-color: #ffffff !important;
 }
 
 .commercial-page main > section:not(:first-of-type):not([class~="py-3"]) {
   padding-top: 1.5rem !important;
   padding-bottom: 1.5rem !important;
+}
+
+.commercial-page main > section.columns-catalog-section:not(:first-of-type),
+.commercial-page main > section.columns-calculator-section:not(:first-of-type) {
+  padding-top: 2.5rem !important;
 }
 
 .commercial-page main section[class~="py-12"][class~="xl:py-20"] {
@@ -244,6 +255,11 @@ main :where(.animate-spin) {
     font-size: 2.5rem;
   }
 
+  .commercial-page main > section.columns-catalog-section:not(:first-of-type),
+  .commercial-page main > section.columns-calculator-section:not(:first-of-type) {
+    padding-top: 3.5rem !important;
+  }
+
   .commercial-page main h2:not([class~="text-sm"]):not([class~="text-base"]) {
     font-size: 1.625rem;
   }
@@ -276,10 +292,6 @@ main :where(.animate-spin) {
     font-size: 1.625rem;
   }
 
-  .commercial-page main > section:nth-of-type(3n + 2),
-  .commercial-page main > .scenario-cta-section + section {
-    margin-top: 3rem;
-  }
 }
 
 @media (min-width: 1280px) {
