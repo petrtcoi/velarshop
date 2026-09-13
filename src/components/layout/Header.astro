@@ -8,7 +8,6 @@ import {
   getDefaultConfiguratorModel,
   resolveExistingModelId,
 } from "@widgets/pageMain/quickConfiguratorData";
-import { featuredCollections } from "../../lib/featuredCollections";
 
 interface Props {
   currentPath?: string;
@@ -65,7 +64,7 @@ const catalogLinks = [
   {
     title: "Подборки",
     url: "/collections",
-    text: featuredCollections[0].title,
+    text: "По размерам, подключению и типу радиатора",
   },
 ];
 
@@ -107,7 +106,7 @@ const mobileCatalogLinks: Array<{
   },
   {
     title: "Подборки",
-    description: featuredCollections[0].title,
+    description: "По размерам, подключению и типу радиатора",
     url: "/collections",
     icon: "book",
   },
@@ -411,6 +410,41 @@ const mobileIconSvg: Record<MobileIconName, string> = {
 
 <script is:inline>
   document.querySelectorAll(".mobile-menu").forEach((menu) => {
+    let scrollPosition = 0;
+
+    const lockPage = () => {
+      scrollPosition = window.scrollY;
+      document.documentElement.classList.add("mobile-menu-open");
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollPosition}px`;
+      document.body.style.left = "0";
+      document.body.style.right = "0";
+      document.body.style.width = "100%";
+    };
+
+    const unlockPage = () => {
+      document.documentElement.classList.remove("mobile-menu-open");
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      document.body.style.width = "";
+      window.scrollTo(0, scrollPosition);
+    };
+
+    menu.addEventListener("toggle", () => {
+      if (!(menu instanceof HTMLDetailsElement)) return;
+
+      const summary = menu.querySelector("summary");
+      if (menu.open) {
+        lockPage();
+        summary?.setAttribute("aria-label", "Закрыть меню");
+      } else {
+        unlockPage();
+        summary?.setAttribute("aria-label", "Открыть меню");
+      }
+    });
+
     const closeItems = menu.querySelectorAll(
       "[data-close-sheet], [data-close-sheet-link]"
     );
@@ -421,10 +455,21 @@ const mobileIconSvg: Record<MobileIconName, string> = {
         }
       });
     });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && menu instanceof HTMLDetailsElement && menu.open) {
+        menu.removeAttribute("open");
+      }
+    });
   });
 </script>
 
 <style>
+  :global(html.mobile-menu-open) {
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+
   .topbar {
     height: 26px;
     background: #080808;
@@ -659,6 +704,8 @@ const mobileIconSvg: Record<MobileIconName, string> = {
     transition: transform 0.25s ease;
     z-index: 70;
     overflow-y: auto;
+    overscroll-behavior: contain;
+    touch-action: pan-y;
     box-shadow: -20px 0 40px rgba(0, 0, 0, 0.22);
   }
 
