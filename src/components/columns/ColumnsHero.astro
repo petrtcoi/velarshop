@@ -58,9 +58,6 @@ const statItems = [
 					<a href='#columns-models' class='inline-flex h-11 items-center justify-center rounded-lg border border-neutral-300 bg-white px-5 text-sm font-semibold text-neutral-950 transition hover:border-neutral-400 hover:bg-neutral-50'>
 						Смотреть модели
 					</a>
-					<a href='#columns-calculator' class='inline-flex h-11 items-center justify-center rounded-lg border border-neutral-300 bg-white px-5 text-sm font-semibold text-neutral-950 transition hover:border-neutral-400 hover:bg-neutral-50'>
-						Подобрать по параметрам
-					</a>
 				</div>
 				<div class='mt-6 flex flex-wrap items-center gap-x-5 gap-y-3 text-xs leading-tight text-neutral-700 md:text-sm'>
 					{statItems.map(item => (
@@ -109,9 +106,8 @@ const statItems = [
 
 				<aside class='min-w-0'>
 					<details id='columns-configurator-collapse' open class='columns-configurator-collapse'>
-						<summary class='mb-3 flex cursor-pointer list-none items-center justify-between gap-3 rounded-[18px] border border-neutral-200 bg-white px-4 py-3 text-sm font-semibold text-neutral-950 transition hover:border-neutral-300 min-[900px]:hidden [&::-webkit-details-marker]:hidden'>
-							<span>Быстрый расчет по параметрам</span>
-							<span class='inline-flex h-9 items-center justify-center rounded-lg bg-red-700 px-3.5 text-xs font-semibold text-white'>Открыть подбор</span>
+						<summary class='mb-3 flex cursor-pointer list-none items-center justify-end text-sm font-semibold text-neutral-950 min-[900px]:hidden [&::-webkit-details-marker]:hidden'>
+							<span class='inline-flex h-9 items-center justify-center whitespace-nowrap rounded-[2px] bg-red-700 px-4 text-xs font-semibold text-white transition hover:bg-red-800'>Открыть подбор</span>
 						</summary>
 						<div>
 							<HeroQuickConfigurator
