@@ -1,4 +1,4 @@
-import type { ModelJson } from '@entities/Model'
+import { modelsJsonData, type ModelJson } from '@entities/Model'
 import type { RadiatorJson } from '@entities/Radiator'
 import {
 	interaxialCollections,
@@ -199,6 +199,28 @@ const tubeCollections: CatalogCollectionConfig[] = Object.entries(tubeCopy).map(
 		imageAlt: `${copy.word} трубчатый радиатор Velar`,
 	}
 })
+
+function assertTubularCollectionCoverage() {
+	const columnModelIds = modelsJsonData
+		.filter(model => model.type === 'columns')
+		.map(model => model.id)
+	const groupedModelIds = tubeCollections.flatMap(collection => collection.modelIds ?? [])
+	const duplicateModelIds = [...new Set(groupedModelIds.filter((id, index) => groupedModelIds.indexOf(id) !== index))]
+	const missingModelIds = columnModelIds.filter(id => !groupedModelIds.includes(id))
+	const unknownModelIds = groupedModelIds.filter(id => !columnModelIds.includes(id))
+
+	if (!duplicateModelIds.length && !missingModelIds.length && !unknownModelIds.length) return
+
+	const details = [
+		duplicateModelIds.length ? `повторяются: ${duplicateModelIds.join(', ')}` : '',
+		missingModelIds.length ? `не распределены: ${missingModelIds.join(', ')}` : '',
+		unknownModelIds.length ? `не найдены среди трубчатых моделей: ${unknownModelIds.join(', ')}` : '',
+	].filter(Boolean)
+
+	throw new Error(`Некорректное распределение трубчатых моделей по числу труб — ${details.join('; ')}`)
+}
+
+assertTubularCollectionCoverage()
 
 const lowTubularCollection: CatalogCollectionConfig = {
 	kind: 'low-tubular',

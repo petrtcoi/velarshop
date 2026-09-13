@@ -143,12 +143,15 @@ const siblings = catalogCollections.filter(
 	item => item.siblingGroup === collection.siblingGroup && item.slug !== collection.slug,
 )
 
-const breadcrumbs = [
+const breadcrumbCandidates = [
 	{ title: 'Главная', url: '/' },
 	{ title: 'Подборки', url: '/collections' },
 	{ title: collection.parentLabel, url: collection.parentHref },
 	{ title: collection.shortTitle, url: collection.href },
 ]
+const breadcrumbs = breadcrumbCandidates.filter(
+	(item, index, items) => items.findIndex(candidate => candidate.url === item.url) === index,
+)
 
 function buildFaqItems() {
 	if (collection.kind === 'interaxial') {

@@ -34,4 +34,28 @@ test.describe('Collection context on model pages', () => {
 		await page.goto('/collections/radiatory-mezhosevoe-rasstoyanie-500-mm')
 		await expect(page.locator('main')).toHaveCount(1)
 	})
+
+	test('does not duplicate the collections URL in height breadcrumbs', async ({ page }) => {
+		await page.goto('/collections/radiatory-vysotoy-500-mm')
+
+		const breadcrumbs = page.getByRole('navigation', { name: 'Breadcrumb' })
+		await expect(breadcrumbs.locator('li')).toHaveCount(3)
+		const labels = await breadcrumbs.locator('li').allTextContents()
+		expect(labels.map(label => label.replace(/\s+/g, ' ').trim())).toEqual(['Главная /', 'Подборки /', '500 мм'])
+
+		const hrefs = await breadcrumbs.locator('a').evaluateAll(links => links.map(link => link.getAttribute('href')))
+		expect(hrefs).toEqual(['/', '/collections'])
+
+		const schemas = await page.locator('script[type="application/ld+json"]').allTextContents()
+		const schemaNodes = schemas.flatMap(rawSchema => {
+			const schema = JSON.parse(rawSchema)
+			return Array.isArray(schema['@graph']) ? schema['@graph'] : [schema]
+		})
+		const breadcrumbSchema = schemaNodes.find(schema => schema['@type'] === 'BreadcrumbList')
+		const schemaUrls = breadcrumbSchema.itemListElement.map(item =>
+			typeof item.item === 'string' ? item.item : item.item['@id'],
+		)
+		expect(schemaUrls).toHaveLength(3)
+		expect(new Set(schemaUrls).size).toBe(schemaUrls.length)
+	})
 })
