@@ -58,4 +58,25 @@ test.describe('Collection context on model pages', () => {
 		expect(schemaUrls).toHaveLength(3)
 		expect(new Set(schemaUrls).size).toBe(schemaUrls.length)
 	})
+
+	test('does not offer a height shortcut when a tubular model has a fixed height', async ({ page }) => {
+		await page.goto('/columns/5030')
+
+		const popularLinks = page.getByRole('navigation', { name: 'Популярные подборки для модели' })
+		await expect(popularLinks).not.toContainText('Высота 300 мм')
+		await expect(popularLinks).toContainText('Все пятитрубчатые радиаторы')
+		await expect(popularLinks).toContainText('Все низкие трубчатые')
+		await expect(page.getByText('Высота этой модели фиксирована;', { exact: false })).toBeVisible()
+
+		await page.goto('/columns/5180')
+		await expect(page.getByRole('navigation', { name: 'Популярные подборки для модели' })).not.toContainText('Высота около 1800 мм')
+
+		await page.goto('/columns/2057')
+		await expect(page.getByRole('navigation', { name: 'Популярные подборки для модели' })).toContainText('М/о 500 мм · боковое')
+
+		await page.goto('/model/p30v')
+		const designPopularLinks = page.getByRole('navigation', { name: 'Популярные подборки для модели' })
+		await expect(designPopularLinks).toContainText('Высота 500 мм')
+		await expect(designPopularLinks).toContainText('Высота около 1800 мм')
+	})
 })

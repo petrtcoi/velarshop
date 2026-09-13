@@ -337,7 +337,9 @@ const vertical1800CollectionModelIds = new Set([
 	'qt2v',
 ])
 const isInVertical1800Collection = vertical1800CollectionModelIds.has(model.id)
-const vertical1800Height = isInVertical1800Collection
+const modelHeightValues = new Set(modelRadiators.map(radiator => Number.parseFloat(radiator.height)).filter(Number.isFinite))
+const hasSelectableHeight = modelHeightValues.size > 1
+const vertical1800Height = isInVertical1800Collection && hasSelectableHeight
 	? modelRadiators
 			.map(radiator => Number.parseFloat(radiator.height))
 			.filter(Number.isFinite)
@@ -350,10 +352,9 @@ const supportsSideConnection =
 const interaxialCollectionLinks = supportsSideConnection
 	? interaxialCollections.filter(collection => interAxisValues.includes(String(collection.spacing)))
 	: []
-const modelHeightValues = new Set(modelRadiators.map(radiator => Number.parseFloat(radiator.height)).filter(Number.isFinite))
-const exactHeightCollectionLinks = exactHeightCollections.filter(collection =>
-	collection.height ? modelHeightValues.has(collection.height) : false,
-)
+const exactHeightCollectionLinks = hasSelectableHeight
+	? exactHeightCollections.filter(collection => collection.height ? modelHeightValues.has(collection.height) : false)
+	: []
 const tubularCollectionLinks = model.type === 'columns'
 	? tubularCollections.filter(collection =>
 		collection.kind === 'tube-count'
@@ -369,7 +370,10 @@ const hasPopularCollectionLinks =
 	exactHeightCollectionLinks.length > 0 ||
 	tubularCollectionLinks.length > 0 ||
 	convectorCollectionLinks.length > 0 ||
-	isInVertical1800Collection
+	Boolean(vertical1800Height)
+const variantSelectionText = hasSelectableHeight
+	? 'Выберите подходящий размер, чтобы добавить модель в запрос. Если не знаете точные параметры, отправьте заявку — поможем подобрать высоту, длину, подключение и цвет.'
+	: 'Выберите подходящий размер, чтобы добавить модель в запрос. Высота этой модели фиксирована; поможем подобрать длину, мощность, подключение и цвет.'
 
 const seo = getModelSeo({
 	model,
@@ -481,7 +485,7 @@ const seo = getModelSeo({
 			<div class='max-w-3xl'>
 				<h2 class='text-2xl font-semibold leading-tight tracking-tight text-neutral-950'>Быстрый выбор размеров {productName}</h2>
 				<p class='mt-3 text-base leading-7 text-neutral-700'>
-					Выберите подходящий размер, чтобы добавить модель в запрос. Если не знаете точные параметры, отправьте заявку — поможем подобрать высоту, длину, подключение и цвет.
+					{variantSelectionText}
 				</p>
 			</div>
 
