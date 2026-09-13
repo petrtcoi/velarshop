@@ -91,6 +91,13 @@ const commercialPaths = ['/', '/columns', '/design', '/retro', '/convector', '/f
 const commercialPrefixes = ['/collections', '/model/', '/columns/', '/design/', '/retro/', '/convector/', '/floor/', '/item/']
 const isCommercialPage = commercialPaths.includes(Astro.url.pathname)
 	|| commercialPrefixes.some(prefix => Astro.url.pathname.startsWith(prefix))
+const editorialPaths = ['/about', '/delivery', '/guarantees', '/info', '/news']
+const editorialPrefixes = ['/info/', '/news/', '/faq/']
+const isEditorialPage = editorialPaths.includes(Astro.url.pathname)
+	|| editorialPrefixes.some(prefix => Astro.url.pathname.startsWith(prefix))
+const utilityPaths = ['/request', '/cart', '/accepted', '/success', '/privacy', '/agreement', '/oferta']
+const isUtilityPage = utilityPaths.includes(Astro.url.pathname)
+const isItemPage = Astro.url.pathname === '/item' || Astro.url.pathname.startsWith('/item/')
 ---
 
 <!DOCTYPE html>
@@ -316,7 +323,15 @@ const isCommercialPage = commercialPaths.includes(Astro.url.pathname)
 />
 		
 	</head>
-	<body class:list={['bg-white text-neutral-900 dark:bg-neutral-800 dark:text-neutral-200', { 'commercial-page': isCommercialPage }]}>
+	<body class:list={[
+		'bg-white text-neutral-900 dark:bg-neutral-800 dark:text-neutral-200 site-page',
+		{
+			'commercial-page': isCommercialPage,
+			'editorial-page': isEditorialPage,
+			'utility-page': isUtilityPage,
+			'item-page': isItemPage,
+		},
+	]}>
 
 		
 			<Header currentPath={Astro.url.pathname} />

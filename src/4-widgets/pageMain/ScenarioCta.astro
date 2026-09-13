@@ -25,20 +25,19 @@
 <style>
   .scenario-cta-section {
     padding: 40px 16px 48px;
-    background: #fff;
+    background: #111 !important;
   }
 
   .scenario-cta-wrap {
     max-width: 1180px;
     margin: 0 auto;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 24px;
-    background: linear-gradient(135deg, #111 0%, #1a1a1a 62%, #281b1b 100%);
+    border: 0;
+    background: transparent;
     color: #fff;
-    padding: 28px 22px;
+    padding: 24px 6px;
     display: grid;
     gap: 28px;
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.16);
+    box-shadow: none;
   }
 
   .scenario-cta-copy {
@@ -121,8 +120,7 @@
     }
 
     .scenario-cta-wrap {
-      border-radius: 28px;
-      padding: 42px 44px;
+      padding: 28px 20px;
       grid-template-columns: minmax(0, 1fr) 260px;
       align-items: center;
       gap: 40px;
@@ -151,7 +149,6 @@
   @media (max-width: 390px) {
     .scenario-cta-wrap {
       padding: 24px 18px;
-      border-radius: 22px;
     }
 
     .scenario-cta-title {

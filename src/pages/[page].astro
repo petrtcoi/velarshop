@@ -20,8 +20,8 @@ const { Content } = await page.render();
 const isAboutPage = page.slug === "about";
 const isDeliveryPage = page.slug === "delivery";
 const articleClass = isAboutPage
-  ? "container mx-auto max-w-6xl p-5 md:px-10"
-  : "container mx-auto max-w-4xl p-5 prose-sm md:px-10";
+  ? "content-document container mx-auto max-w-6xl p-5 md:px-10"
+  : "content-document container mx-auto max-w-4xl p-5 prose-sm md:px-10";
 
 const siteOrigin = (Astro.site ?? new URL("https://velarshop.ru")).origin;
 const homeUrl = `${siteOrigin}/`;

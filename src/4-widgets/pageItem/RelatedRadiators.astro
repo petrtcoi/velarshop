@@ -31,7 +31,8 @@ const relatedModels = relatedModelIds
 
 {
 	relatedRadiators.length > 0 && relatedRadiators.length < MAX_MODELS_QNTY && (
-		<>
+		<section class='item-page__content'>
+			<div class='item-page__inner'>
 			<h2 class='mt-14 mb-1'>Подходит для</h2>
 			<div class='mb-4 font-thin text-xs'>
 				Данный товар подходит для следующих отопительных приборов:
@@ -73,13 +74,15 @@ const relatedModels = relatedModelIds
 					)
 				})}
 			</div>
-		</>
+			</div>
+		</section>
 	)
 }
 
 {
 	relatedRadiators.length >= MAX_MODELS_QNTY && relatedModels.length > 0 && (
-		<>
+		<section class='item-page__content'>
+			<div class='item-page__inner'>
 			<h2 class='mt-14 mb-1'>Подходит для</h2>
 			<div class='mb-4 font-thin text-xs'>
 				Данный товар подходит для следующих моделей:
@@ -113,6 +116,7 @@ const relatedModels = relatedModelIds
 					)
 				})}
 			</div>
-		</>
+			</div>
+		</section>
 	)
 }

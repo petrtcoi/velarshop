@@ -129,18 +129,31 @@ main :where(.animate-spin) {
   padding-right: 1rem !important;
 }
 
-/* Compact commercial rhythm: clear section boundaries and more useful content per screen. */
+/*
+ * Commercial pages are arranged as larger visual chapters. Three related
+ * sections share one surface; the larger gap appears only between chapters.
+ * This avoids a mechanical white/grey stripe for every small section.
+ */
 .commercial-page main > section:not(:first-of-type) {
   border-top: 1px solid var(--color-border);
-  margin-top: 2rem;
+  margin-top: 0;
 }
 
-.commercial-page main > section:nth-of-type(even) {
+.commercial-page main > section:nth-of-type(6n + 2):not([class~="bg-neutral-950"]):not(.scenario-cta-section),
+.commercial-page main > section:nth-of-type(6n + 3):not([class~="bg-neutral-950"]):not(.scenario-cta-section),
+.commercial-page main > section:nth-of-type(6n + 4):not([class~="bg-neutral-950"]):not(.scenario-cta-section) {
   background-color: #f7f7f7 !important;
 }
 
-.commercial-page main > section:nth-of-type(odd) {
+.commercial-page main > section:nth-of-type(6n + 5):not([class~="bg-neutral-950"]):not(.scenario-cta-section),
+.commercial-page main > section:nth-of-type(6n + 6):not([class~="bg-neutral-950"]):not(.scenario-cta-section),
+.commercial-page main > section:nth-of-type(6n + 1):not([class~="bg-neutral-950"]):not(.scenario-cta-section) {
   background-color: #ffffff !important;
+}
+
+.commercial-page main > section:nth-of-type(3n + 2),
+.commercial-page main > .scenario-cta-section + section {
+  margin-top: 2rem;
 }
 
 .commercial-page main > section:not(:first-of-type):not([class~="py-3"]) {
@@ -263,7 +276,8 @@ main :where(.animate-spin) {
     font-size: 1.625rem;
   }
 
-  .commercial-page main > section:not(:first-of-type) {
+  .commercial-page main > section:nth-of-type(3n + 2),
+  .commercial-page main > .scenario-cta-section + section {
     margin-top: 3rem;
   }
 }
@@ -290,6 +304,137 @@ main :where(.animate-spin) {
 
 .article-page {
   background: #ffffff;
+}
+
+/* Editorial and utility templates use the same chapter rhythm as the shop. */
+.editorial-page .article-hero {
+  background: #f7f7f7;
+}
+
+.editorial-page .article-layout {
+  border-top: 1px solid var(--color-border);
+}
+
+.editorial-page .article-related {
+  margin-top: 3rem;
+  background: #f7f7f7;
+  padding: 1.5rem;
+}
+
+.listing-page__hero,
+.utility-page__hero,
+.item-page__hero {
+  border-bottom: 1px solid var(--color-border);
+  background: #f7f7f7;
+  padding-block: 1.5rem;
+}
+
+.listing-page__content,
+.utility-page__content,
+.item-page__content {
+  margin-top: 2rem;
+  padding-block: 1.5rem;
+}
+
+.listing-page__inner,
+.utility-page__inner,
+.item-page__inner {
+  width: min(100% - 24px, var(--content-width));
+  margin-inline: auto;
+}
+
+.utility-page__inner--reading,
+.item-page__inner--reading {
+  max-width: 900px;
+}
+
+.content-document {
+  padding-block: 2rem;
+}
+
+.content-document > h1:first-child {
+  margin: 0 0 1.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.content-document > h2 {
+  margin-top: 2rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 1.5rem;
+}
+
+.content-document > hr {
+  margin-block: 2rem;
+  border: 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.editorial-page main > article > div > section {
+  padding-inline: 1rem;
+  padding-block: 1.5rem;
+}
+
+.editorial-page main > article > div > section + section {
+  margin-top: 2rem !important;
+  border-top: 1px solid var(--color-border);
+}
+
+.editorial-page main > article > div > section:nth-of-type(6n + 2),
+.editorial-page main > article > div > section:nth-of-type(6n + 3),
+.editorial-page main > article > div > section:nth-of-type(6n + 4) {
+  background: #f7f7f7;
+}
+
+.editorial-page main > article > div > section:nth-of-type(3n + 2) {
+  margin-top: 3rem !important;
+}
+
+@media (min-width: 768px) {
+  .listing-page__hero,
+  .utility-page__hero,
+  .item-page__hero {
+    padding-block: 2rem;
+  }
+
+  .listing-page__content,
+  .utility-page__content,
+  .item-page__content {
+    margin-top: 3rem;
+    padding-block: 2rem;
+  }
+
+  .editorial-page main > article > div > section {
+    padding-inline: 1.5rem;
+    padding-block: 2rem;
+  }
+
+  .editorial-page main > article > div > section + section {
+    margin-top: 0 !important;
+  }
+
+  .editorial-page main > article > div > section:nth-of-type(3n + 2) {
+    margin-top: 3rem !important;
+  }
+
+  .content-document {
+    padding-block: 3rem;
+  }
+
+  .content-document > h1:first-child {
+    font-size: 2.5rem;
+  }
+
+  .content-document > h2 {
+    margin-top: 3rem;
+    padding-top: 2rem;
+  }
+
+  .content-document > hr {
+    margin-block: 3rem;
+  }
 }
 
 .article-shell {
@@ -530,6 +675,25 @@ main :where(.animate-spin) {
 .article-cta--accent {
   border-color: #f2d2d2;
   background: linear-gradient(90deg, #fff7f7, #ffffff);
+}
+
+.article-cta--footer {
+  border-color: #111111;
+  background: #111111;
+  padding: 1.5rem;
+}
+
+.article-cta--footer .article-cta__title {
+  color: #ffffff;
+}
+
+.article-cta--footer .article-cta__description {
+  color: #d4d4d4;
+}
+
+.article-cta--footer .article-cta__link {
+  color: #ffffff;
+  text-decoration-color: rgba(255, 255, 255, 0.5);
 }
 
 .article-cta--compact {

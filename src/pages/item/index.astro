@@ -13,16 +13,20 @@ const crumbs = [
 	title='Комплектующие Velar — термостаты, блоки и элементы'
 	description='Комплектующие Velar: термостаты, блоки регулирования и угловые элементы. Подбор по совместимости с моделями радиаторов и конвекторов.'
 	breadcrumbs={crumbs}
+	paddings={false}
 >
-	<section class='mt-4 md:mt-6'>
+	<section class='item-page__hero'>
+		<div class='item-page__inner'>
 		<h1 class='text-2xl font-semibold text-neutral-900 md:text-3xl'>Комплектующие Velar</h1>
 		<p class='mt-3 max-w-3xl text-sm font-normal leading-6 text-neutral-700 md:text-base'>
 			Термостаты, блоки регулирования и дополнительные элементы для радиаторов и конвекторов Velar.
 			Выберите нужную позицию и проверьте совместимость с моделью.
 		</p>
+		</div>
 	</section>
 
-	<section class='mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
+	<section class='item-page__content'>
+		<div class='item-page__inner grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
 		{itemsJsonData.map((item) => {
 			const title = `${item.prefix} Velar ${item.title}`
 			const imagePath = `/images/items/${item.image_slug || 'empty'}/main.jpg`
@@ -49,5 +53,6 @@ const crumbs = [
 				</article>
 			)
 		})}
+		</div>
 	</section>
 </Layout>

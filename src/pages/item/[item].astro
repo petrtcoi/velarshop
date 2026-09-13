@@ -32,11 +32,20 @@ const seo = getItemSeo(item);
   description={seo.metaDescription}
   canonicalUrl={seo.canonicalUrl}
   breadcrumbs={seo.breadcrumbs}
+  paddings={false}
 >
   <Fragment slot='head'>
     <script type='application/ld+json' set:html={JSON.stringify(seo.jsonLd)} />
   </Fragment>
-  <h1 class="text-2xl">{seo.itemTitle}</h1>
-  <ItemBasicInfo item={item} />
+  <section class='item-page__hero'>
+    <div class='item-page__inner'>
+      <h1 class='text-2xl font-semibold md:text-3xl'>{seo.itemTitle}</h1>
+    </div>
+  </section>
+  <section class='item-page__content'>
+    <div class='item-page__inner'>
+      <ItemBasicInfo item={item} />
+    </div>
+  </section>
   <RalatedRadiators itemId={item.id} />
 </Layout>

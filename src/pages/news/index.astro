@@ -60,23 +60,27 @@ const pageSchema = {
   title='Новости | дизайн радиаторы и конвекторы | VelarShop.ru'
   description='Новости Velar: обновления продукции, цены, сроки производства и события компании.'
   breadcrumbs={crumbs}
+  paddings={false}
 >
   <Fragment slot='head'>
     <script type='application/ld+json' set:html={JSON.stringify(pageSchema)} />
   </Fragment>
 
-  <section class='mx-auto max-w-6xl p-5 md:px-10'>
-    <div class='space-y-4'>
-      <h1 class='m-0 text-[34px] font-semibold leading-[1.08] tracking-tight text-neutral-950 md:text-[44px]'>Новости</h1>
-      <p class='max-w-[840px] text-base leading-7 text-neutral-700 md:text-[18px] md:leading-8'>
+  <section class='listing-page__hero'>
+    <div class='listing-page__inner space-y-4'>
+      <h1 class='m-0 text-3xl font-semibold leading-tight tracking-tight text-neutral-950 md:text-4xl'>Новости</h1>
+      <p class='max-w-[840px] text-base leading-7 text-neutral-700'>
         Обновления Velar по моделям, ценам, срокам производства и ключевым событиям компании.
       </p>
     </div>
+  </section>
 
+  <section class='listing-page__content'>
+    <div class='listing-page__inner'>
     <div
       id='articles_list'
       aria-label='Список новостей'
-      class='mt-10 flex flex-row flex-wrap items-start gap-8 justify-start'
+      class='flex flex-row flex-wrap items-start gap-8 justify-start'
     >
       {newsItems.map(({ article, imagePath }) => {
         const { title, short_description, slug, date } = article.data;
@@ -108,6 +112,7 @@ const pageSchema = {
           </div>
         );
       })}
+    </div>
     </div>
   </section>
 </Layout>

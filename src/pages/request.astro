@@ -9,15 +9,20 @@ import Layout from '@shared/layouts/Layout.astro';
   description='Запрос на подбор и расчет радиаторов и конвекторов Velar.'
   robots='noindex,follow'
   hideShoppingCartWidgt={true}
+  paddings={false}
 >
-<div class='mx-auto flex max-w-4xl flex-col px-4 py-8 md:px-10 md:py-12'>
-  <h1 class='mb-3 text-3xl font-semibold tracking-tight text-neutral-950 md:text-4xl'>Запрос на подбор радиаторов</h1>
-
-  <div class='mb-7 max-w-2xl text-sm leading-6 text-neutral-600 md:text-base md:leading-7'>
-    Заполните форму, и мы подготовим расчет стоимости, подберем подходящую модель, размеры, подключение и цвет.
-    Если в корзине есть выбранные позиции, они будут учтены при расчете.
+<section class='utility-page__hero'>
+  <div class='utility-page__inner utility-page__inner--reading'>
+    <h1 class='text-3xl font-semibold tracking-tight text-neutral-950 md:text-4xl'>Запрос на подбор радиаторов</h1>
+    <div class='mt-3 max-w-2xl text-sm leading-6 text-neutral-600 md:text-base md:leading-7'>
+      Заполните форму, и мы подготовим расчет стоимости, подберем подходящую модель, размеры, подключение и цвет.
+      Если в корзине есть выбранные позиции, они будут учтены при расчете.
+    </div>
   </div>
+</section>
 
+<section class='utility-page__content'>
+  <div class='utility-page__inner utility-page__inner--reading'>
   <LeadWidget
     client:load
     webhook='https://arufefet.beget.app/webhook/calc-notify'
@@ -28,8 +33,8 @@ import Layout from '@shared/layouts/Layout.astro';
     privacyUrl='/privacy'
     termsUrl='/agreement'
   />
- 
-</div>
+  </div>
+</section>
 </Layout>
 
 <script>
