@@ -265,7 +265,7 @@ const scenarios = [
     width: 100%;
     min-height: 500px;
     overflow: hidden;
-    background: #fff;
+    background: #111;
   }
 
   .hero-picture {
@@ -354,8 +354,8 @@ const scenarios = [
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: 3px;
-    min-height: 44px;
+    border-radius: 2px;
+    min-height: 48px;
     padding: 12px 22px;
     font-size: 14px;
     font-weight: 600;
@@ -451,7 +451,7 @@ const scenarios = [
   }
 
   .category-entry-all {
-    color: #b91c1c;
+    color: var(--color-primary);
     font-size: 13px;
     font-weight: 600;
     line-height: 1.2;
@@ -493,7 +493,7 @@ const scenarios = [
     gap: 10px;
     padding: 10px;
     border: 1px solid #eee;
-    border-radius: 10px;
+    border-radius: 2px;
     background: #fff;
     text-decoration: none;
     color: inherit;
@@ -511,8 +511,9 @@ const scenarios = [
   .scenario-card-image {
     width: 100%;
     height: 82px;
-    border-radius: 8px;
+    border-radius: 2px;
     object-fit: cover;
+    filter: saturate(0.72) contrast(0.95);
     flex-shrink: 0;
   }
 
@@ -724,9 +725,10 @@ const scenarios = [
 
     .hero-actions a {
       width: 100%;
-      height: 44px;
+      min-width: 0;
+      height: 48px;
       padding: 0 12px;
-      border-radius: 6px;
+      border-radius: 2px;
       font-size: 14px;
       font-weight: 600;
       display: inline-flex;
@@ -831,7 +833,7 @@ const scenarios = [
       align-items: center;
       padding: 12px 12px;
       border: 1px solid #ececec;
-      border-radius: 10px;
+      border-radius: 2px;
       color: #111;
       text-decoration: none;
       background: #fff;

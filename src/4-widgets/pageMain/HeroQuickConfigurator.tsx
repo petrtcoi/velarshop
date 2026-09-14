@@ -132,7 +132,7 @@ function parsePrice(value: string | undefined): number {
 }
 
 function fieldLabelClass(): string {
-	return 'mb-0.5 block text-[9px] font-thin uppercase tracking-tight text-neutral-600'
+	return 'mb-1 block text-xs font-medium uppercase tracking-[0.04em] text-neutral-600'
 }
 
 function modelTypeLabel(model: Pick<ModelOption, 'id' | 'type' | 'orientation'>): string {
@@ -343,7 +343,7 @@ function InlineSelect({
 			<label class={fieldLabelClass()}>{label}</label>
 			<button
 				type='button'
-				class={`mt-0 flex h-9 w-full items-center justify-between gap-2 rounded-lg border bg-neutral-50 px-2 text-left text-[12px] text-neutral-950 outline-none transition hover:border-neutral-300 focus:border-red-500 focus:ring-2 focus:ring-red-100 md:h-10 md:text-[13px] ${
+				class={`mt-0 flex h-12 w-full items-center justify-between gap-2 rounded-lg border bg-neutral-50 px-3 text-left text-sm text-neutral-950 outline-none transition hover:border-neutral-300 focus:border-red-500 focus:ring-2 focus:ring-red-100 ${
 					open ? 'border-red-500 ring-2 ring-red-100' : 'border-neutral-200'
 				}`}
 				aria-haspopup='listbox'
@@ -373,7 +373,7 @@ function InlineSelect({
 									role='option'
 									aria-selected={selected}
 									disabled={option.disabled}
-									class={`block w-full rounded-lg px-2 py-1 text-left text-[11px] leading-4 transition hover:bg-red-50 md:text-xs ${
+									class={`block min-h-[44px] w-full rounded-lg px-2 py-2 text-left text-xs leading-4 transition hover:bg-red-50 ${
 										selected ? 'bg-red-50 text-red-700' : 'text-neutral-900'
 									} ${option.disabled ? 'cursor-not-allowed opacity-35 hover:bg-transparent' : ''}`}
 									onClick={() => {
@@ -634,7 +634,7 @@ export default function HeroQuickConfigurator({
 					{!isModal && (
 						<a
 							href={cartHref}
-							class='shrink-0 rounded-full border border-neutral-200 px-2.5 py-1 text-[11px] font-medium text-neutral-700 transition hover:border-red-200 hover:text-red-700 md:px-3 md:text-xs'
+							class='inline-flex min-h-[40px] shrink-0 items-center rounded-full border border-neutral-200 px-3 text-xs font-medium text-neutral-700 transition hover:border-red-200 hover:text-red-700'
 						>
 							{cartPillLabel}
 						</a>
@@ -657,7 +657,7 @@ export default function HeroQuickConfigurator({
 				<div class='relative mt-0'>
 					<button
 						type='button'
-						class='flex h-9 w-full items-center justify-between rounded-lg border border-neutral-200 bg-neutral-50 px-2 text-left text-[12px] outline-none transition hover:border-neutral-300 focus:border-red-500 focus:ring-2 focus:ring-red-100 md:h-10 md:text-[13px]'
+						class='flex h-12 w-full items-center justify-between rounded-lg border border-neutral-200 bg-neutral-50 px-3 text-left text-sm outline-none transition hover:border-neutral-300 focus:border-red-500 focus:ring-2 focus:ring-red-100'
 						aria-haspopup='listbox'
 						aria-expanded={open}
 						aria-labelledby='hero_model_label'
@@ -698,7 +698,7 @@ export default function HeroQuickConfigurator({
 											type='button'
 											role='option'
 											aria-selected={model.id === selectedModelId}
-											class={`block w-full rounded-lg px-2 py-1 text-left transition hover:bg-red-50 ${
+											class={`block min-h-[44px] w-full rounded-lg px-2 py-2 text-left transition hover:bg-red-50 ${
 												model.id === selectedModelId ? 'bg-red-50 text-red-700' : 'text-neutral-900'
 											}`}
 											onClick={() => {
@@ -791,7 +791,7 @@ export default function HeroQuickConfigurator({
 								value={selection.connection}
 								options={details.options.connections.map(option => ({ value: option.id, label: option.label }))}
 								onChange={value => setSelection(current => ({ ...current, connection: value }))}
-								className='col-span-full'
+								className={details.model.type === 'columns' ? '' : 'col-span-full'}
 							/>
 						)}
 
@@ -832,11 +832,11 @@ export default function HeroQuickConfigurator({
 
 					{result ? (
 						<div class={`rounded-xl border border-neutral-200 bg-neutral-50 ${isModal ? 'p-2.5' : 'p-2.5 md:rounded-2xl md:p-3'}`}>
-							<div class='text-[9px] font-thin uppercase tracking-tight text-neutral-500 md:text-[10px]'>Найденный вариант</div>
+							<div class='text-xs font-medium uppercase tracking-[0.04em] text-neutral-500'>Найденный вариант</div>
 							<a
 								href={details.model.href}
 								onClick={() => onNavigate?.()}
-								class={`mt-1 block text-sm font-semibold leading-5 text-neutral-950 hover:text-red-700 ${
+								class={`mt-1 flex min-h-[44px] items-center text-sm font-semibold leading-5 text-neutral-950 hover:text-red-700 ${
 									isModal ? '' : 'md:text-sm'
 								}`}
 							>
@@ -865,7 +865,7 @@ export default function HeroQuickConfigurator({
 									<a
 										href={details.model.href}
 										onClick={() => onNavigate?.()}
-										class={`text-right text-[11px] font-medium leading-4 text-red-700 hover:underline ${isModal ? '' : 'md:text-xs'}`}
+										class={`inline-flex min-h-[44px] items-center text-right text-xs font-medium leading-4 text-red-700 hover:underline ${isModal ? '' : 'md:text-xs'}`}
 									>
 										Еще {matchedVariants.length - 1} вариантов
 									</a>
@@ -877,7 +877,7 @@ export default function HeroQuickConfigurator({
 									<>
 										<button
 											type='button'
-											class='h-9 w-9 rounded-lg border border-neutral-300 bg-white text-base transition hover:border-red-300 hover:text-red-700'
+											class='h-12 w-12 rounded-lg border border-neutral-300 bg-white text-base transition hover:border-red-300 hover:text-red-700'
 											onClick={handleRemoveFromCart}
 											aria-label='Уменьшить количество'
 										>
@@ -886,7 +886,7 @@ export default function HeroQuickConfigurator({
 										<div class='min-w-7 text-center text-sm font-semibold'>{itemInCartQnty}</div>
 										<button
 											type='button'
-											class='h-9 w-9 rounded-lg border border-neutral-300 bg-white text-base transition hover:border-red-300 hover:text-red-700'
+											class='h-12 w-12 rounded-lg border border-neutral-300 bg-white text-base transition hover:border-red-300 hover:text-red-700'
 											onClick={handleAddToCart}
 											aria-label='Увеличить количество'
 										>
@@ -897,8 +897,8 @@ export default function HeroQuickConfigurator({
 								) : (
 									<button
 										type='button'
-										class={`h-9 flex-1 rounded-lg bg-red-700 px-3 text-xs font-sm text-white transition hover:bg-red-800 disabled:cursor-not-allowed disabled:bg-neutral-300 ${
-											isModal ? '' : 'md:text-[13px]'
+										class={`h-12 flex-1 rounded-lg bg-[#c1121f] px-3 text-sm font-semibold text-white transition hover:bg-[#a30f19] disabled:cursor-not-allowed disabled:bg-neutral-300 ${
+											isModal ? '' : 'md:text-sm'
 										}`}
 										disabled={!totalPrice}
 										onClick={handleAddToCart}
@@ -912,14 +912,14 @@ export default function HeroQuickConfigurator({
 								<a
 									href={details.model.href}
 									onClick={() => onNavigate?.()}
-									class='font-medium text-neutral-700 hover:text-red-700 hover:underline'
+									class='inline-flex min-h-[44px] items-center font-medium text-neutral-700 hover:text-red-700 hover:underline'
 								>
 									Подробнее о модели
 								</a>
 								<a
 									href={cartHref}
 									onClick={() => onNavigate?.()}
-									class='font-medium text-red-700 hover:underline'
+									class='inline-flex min-h-[44px] items-center font-medium text-[#c1121f] hover:underline'
 								>
 									{goToCartLabel}
 								</a>

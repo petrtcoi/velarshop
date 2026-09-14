@@ -91,6 +91,7 @@ const commercialPaths = ['/', '/columns', '/design', '/retro', '/convector', '/f
 const commercialPrefixes = ['/collections', '/model/', '/columns/', '/design/', '/retro/', '/convector/', '/floor/', '/item/']
 const isCommercialPage = commercialPaths.includes(Astro.url.pathname)
 	|| commercialPrefixes.some(prefix => Astro.url.pathname.startsWith(prefix))
+const isHomePage = Astro.url.pathname === '/'
 const editorialPaths = ['/about', '/delivery', '/guarantees', '/info', '/news']
 const editorialPrefixes = ['/info/', '/news/', '/faq/']
 const isEditorialPage = editorialPaths.includes(Astro.url.pathname)
@@ -327,6 +328,7 @@ const isItemPage = Astro.url.pathname === '/item' || Astro.url.pathname.startsWi
 		'bg-white text-neutral-900 dark:bg-neutral-800 dark:text-neutral-200 site-page',
 		{
 			'commercial-page': isCommercialPage,
+			'home-page': isHomePage,
 			'editorial-page': isEditorialPage,
 			'utility-page': isUtilityPage,
 			'item-page': isItemPage,
