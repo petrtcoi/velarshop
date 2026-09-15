@@ -399,8 +399,6 @@ const seo = getCategorySeo({
 					goToCartLabel='Перейти к запросу'
 					cartPillLabel='Запрос'
 					resultNote='Добавьте вариант в запрос - менеджер проверит длину, мощность, подключение, цвет, срок производства и рассчитает итоговую стоимость с доставкой.'
-					collapsibleOnMobile={true}
-					mobileToggleLabel='Открыть подбор'
 				/>
 			</div>
 		</div>
@@ -410,11 +408,11 @@ const seo = getCategorySeo({
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='flex flex-col gap-3 md:flex-row md:items-center md:justify-between'>
 				<h2 class='text-base font-semibold tracking-tight text-neutral-950 md:text-lg'>Быстро выбрать по задаче</h2>
-				<div class='flex gap-2 overflow-x-auto pb-1 md:flex-wrap md:overflow-visible'>
+				<div class='flex flex-wrap gap-2'>
 					{quickChips.map(chip => (
 						<a
 							href={chip.href}
-							class='inline-flex h-9 shrink-0 items-center justify-center rounded-full border border-neutral-200 bg-white px-4 text-xs font-medium text-neutral-800 transition hover:border-red-200 hover:bg-red-50 hover:text-red-700'
+							class='inline-flex h-9 items-center justify-center whitespace-nowrap rounded-full border border-neutral-200 bg-white px-4 text-xs font-medium text-neutral-800 transition hover:border-red-200 hover:bg-red-50 hover:text-red-700'
 						>
 							{chip.label}
 						</a>

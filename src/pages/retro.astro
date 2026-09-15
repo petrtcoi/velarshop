@@ -367,7 +367,7 @@ const seo = getCategorySeo({
 
 	<section class='border-b border-neutral-200 bg-white'>
 		<div class='mx-auto max-w-[1180px] px-4 pb-8 pt-6 md:px-6 md:py-10 xl:px-8'>
-			<div class='grid gap-7 min-[980px]:grid-cols-[minmax(0,1fr)_minmax(320px,380px)] min-[980px]:items-start min-[980px]:gap-12 min-[1250px]:grid-cols-[minmax(360px,520px)_minmax(220px,300px)_minmax(320px,380px)] min-[1250px]:items-center xl:gap-12'>
+			<div class='grid gap-7 min-[980px]:grid-cols-[minmax(0,1fr)_minmax(320px,380px)] min-[980px]:items-start min-[980px]:gap-12'>
 				<div class='min-w-0 max-w-[680px] min-[1250px]:max-w-[560px]'>
 					<h1 class='retro-hero-title max-w-[680px] text-4xl font-semibold leading-tight tracking-tight text-neutral-950 md:text-5xl min-[1250px]:max-w-[560px]'>
 						Чугунные радиаторы в стиле ретро
@@ -396,27 +396,7 @@ const seo = getCategorySeo({
 					</div>
 				</div>
 
-				<div class='flex justify-center min-[980px]:hidden'>
-					<img
-						src={heroImage}
-						alt='Вертикальная секция чугунного ретро-радиатора Velar Nostalgia'
-						title='Вертикальная секция чугунного ретро-радиатора Velar Nostalgia'
-						loading='eager'
-						class='h-auto max-h-[360px] w-full max-w-[210px] object-contain md:max-h-[420px] md:max-w-[240px]'
-					/>
-				</div>
-
-				<div class='hidden justify-center min-[1250px]:flex min-[1250px]:items-center min-[1250px]:col-start-2'>
-					<img
-						src={heroImage}
-						alt='Вертикальная секция чугунного ретро-радиатора Velar Nostalgia'
-						title='Вертикальная секция чугунного ретро-радиатора Velar Nostalgia'
-						loading='eager'
-						class='h-auto max-h-[500px] w-full max-w-[260px] object-contain xl:max-h-[560px] xl:max-w-[300px]'
-					/>
-				</div>
-
-				<div id='retro-calculator' class='hidden min-[980px]:block min-[980px]:col-start-2 min-[1250px]:col-start-3'>
+				<div id='retro-calculator' class='min-w-0 min-[980px]:col-start-2'>
 					<HeroQuickConfigurator
 						client:load
 						models={retroConfiguratorModels}
@@ -438,11 +418,11 @@ const seo = getCategorySeo({
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='flex flex-col gap-3 md:flex-row md:items-center md:justify-between'>
 				<h2 class='text-base font-semibold tracking-tight text-neutral-950 md:text-lg'>Быстро выбрать</h2>
-				<div class='flex gap-2 overflow-x-auto pb-1 md:flex-wrap md:overflow-visible'>
+				<div class='flex flex-wrap gap-2'>
 					{quickChips.map(chip => (
 						<a
 							href={chip.href}
-							class='inline-flex h-9 shrink-0 items-center justify-center rounded-full border border-neutral-200 bg-white px-4 text-xs font-medium text-neutral-800 transition hover:border-red-200 hover:bg-red-50 hover:text-red-700'
+							class='inline-flex h-9 items-center justify-center whitespace-nowrap rounded-full border border-neutral-200 bg-white px-4 text-xs font-medium text-neutral-800 transition hover:border-red-200 hover:bg-red-50 hover:text-red-700'
 						>
 							{chip.label}
 						</a>

@@ -451,7 +451,7 @@ const textLinkClass =
 	<JsonLd data={seo.jsonLd} />
 
 	<section class='border-b border-neutral-200 bg-white pb-10 pt-7 md:py-10'>
-		<div class='mx-auto grid max-w-[1180px] gap-8 px-4 md:px-6 min-[980px]:grid-cols-[minmax(0,1fr)_minmax(320px,380px)] min-[980px]:items-start min-[980px]:gap-8 min-[1250px]:grid-cols-[minmax(0,1fr)_200px_minmax(320px,380px)] min-[1250px]:items-center xl:px-8 xl:gap-8'>
+		<div class='mx-auto grid max-w-[1180px] gap-8 px-4 md:px-6 min-[980px]:grid-cols-[minmax(0,1fr)_minmax(320px,380px)] min-[980px]:items-start min-[980px]:gap-8 xl:px-8'>
 			<div class='min-w-0 max-w-[760px]'>
 				<h1 class='max-w-[760px] text-4xl font-semibold leading-tight tracking-tight text-neutral-950 md:text-5xl'>Внутрипольные конвекторы</h1>
 				<p class='mt-4 max-w-[680px] text-sm font-normal leading-6 text-neutral-700 md:text-base'>
@@ -464,37 +464,7 @@ const textLinkClass =
 				</div>
 			</div>
 
-			<div class='mx-auto w-full max-w-[260px] min-[980px]:hidden'>
-				<Picture
-					src='/images/convector/hero/top-view-convector.png'
-					alt='Внутрипольный конвектор Velar вид сверху'
-					title='Внутрипольный конвектор Velar вид сверху'
-					loading='eager'
-					aspectRatio='1:4'
-					widths={[280, 360, 520]}
-					width={360}
-					height={1440}
-					sizes='(max-width: 1023px) 260px, 300px'
-					class='hero-product-image mx-auto max-h-[280px] w-full object-contain md:max-h-[320px]'
-				/>
-			</div>
-
-			<div class='hidden justify-center min-[1250px]:flex'>
-				<Picture
-					src='/images/convector/hero/top-view-convector.png'
-					alt='Внутрипольный конвектор Velar вид сверху'
-					title='Внутрипольный конвектор Velar вид сверху'
-					loading='eager'
-					aspectRatio='1:4'
-					widths={[280, 360, 520]}
-					width={360}
-					height={1440}
-					sizes='240px'
-					class='hero-product-image mx-auto max-h-[520px] w-full object-contain'
-				/>
-			</div>
-
-			<div id='convector-calculator' class='hidden min-[980px]:block min-[980px]:col-start-2 min-[1250px]:col-start-3'>
+			<div id='convector-calculator' class='min-w-0 min-[980px]:col-start-2'>
 				<HeroQuickConfigurator
 					client:load
 					models={convectorConfiguratorModels}

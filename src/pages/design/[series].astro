@@ -30,7 +30,6 @@ type Props = {
 
 const { series } = Astro.props as Props
 const hasBothOrientations = Boolean(series.verticalModel && series.horizontalModel)
-const showSeriesHeroImage = Boolean(series.heroImage) && !['q60', 'q80'].includes(series.slug)
 const seriesDisplayImage = series.heroImage ?? series.image
 const orientationText = hasBothOrientations
 	? 'вертикальные и горизонтальные модели'
@@ -196,14 +195,7 @@ const seo = getSeriesSeo({
 	<JsonLd data={seo.jsonLd} />
 
 	<section class='border-b border-neutral-200 bg-white'>
-		<div
-			class:list={[
-				'mx-auto grid max-w-[1240px] gap-7 px-4 pb-8 pt-6 md:px-6 md:pb-12 md:pt-9 min-[900px]:grid-cols-[minmax(0,1fr)_minmax(420px,520px)] min-[900px]:gap-8 min-[1250px]:items-center min-[1250px]:gap-10 xl:px-8 xl:py-12',
-				showSeriesHeroImage
-					? 'min-[1250px]:grid-cols-[minmax(0,1fr)_minmax(200px,280px)_minmax(360px,420px)]'
-					: 'min-[1250px]:grid-cols-[minmax(0,1fr)_minmax(360px,420px)]',
-			]}
-		>
+		<div class='mx-auto grid max-w-[1240px] gap-7 px-4 pb-8 pt-6 md:px-6 md:pb-12 md:pt-9 min-[900px]:grid-cols-[minmax(0,1fr)_minmax(360px,420px)] min-[900px]:items-start min-[900px]:gap-8 xl:px-8 xl:py-12'>
 			<div class='min-w-0'>
 				<h1 class='max-w-[760px] text-[34px] font-semibold leading-[1.04] tracking-tight text-neutral-950 md:text-[44px] xl:text-[58px]'>
 					Дизайн-радиатор {series.title}
@@ -228,45 +220,7 @@ const seo = getSeriesSeo({
 				</div>
 			</div>
 
-			{showSeriesHeroImage && (
-				<div class='hidden justify-center min-[1250px]:flex min-[1250px]:items-center'>
-					<Picture
-						src={seriesDisplayImage}
-						alt={`Дизайн-радиатор ${series.title}`}
-						title={`Дизайн-радиатор ${series.title}`}
-						loading='eager'
-						aspectRatio='1:4'
-						widths={[220, 320, 440]}
-						width={320}
-						height={1280}
-						sizes='260px'
-						class='h-auto max-h-[560px] w-full max-w-[260px] object-contain'
-					/>
-				</div>
-			)}
-
-			<div
-				class:list={[
-					'grid min-w-0 gap-5 sm:items-start min-[900px]:col-start-2 min-[900px]:block',
-					showSeriesHeroImage
-						? 'sm:grid-cols-[150px_minmax(0,1fr)] md:grid-cols-[180px_minmax(0,1fr)] min-[1250px]:col-start-3'
-						: '',
-				]}
-			>
-				{showSeriesHeroImage && <div class='hidden justify-center sm:flex min-[900px]:hidden'>
-					<Picture
-						src={seriesDisplayImage}
-						alt={`Дизайн-радиатор ${series.title}`}
-						title={`Дизайн-радиатор ${series.title}`}
-						loading='lazy'
-						aspectRatio='1:4'
-						widths={[180, 260, 360]}
-						width={260}
-						height={1040}
-						sizes='180px'
-						class='h-auto max-h-[430px] w-full max-w-[180px] object-contain'
-					/>
-				</div>}
+			<div class='min-w-0 min-[900px]:col-start-2'>
 				<HeroQuickConfigurator
 					client:load
 					models={seriesConfiguratorModels}
