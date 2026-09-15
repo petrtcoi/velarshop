@@ -110,7 +110,7 @@ const cards = [
     position: relative;
     min-height: 260px;
     overflow: hidden;
-    border-radius: 2px;
+    border-radius: 12px;
     background: #111;
   }
 
@@ -126,7 +126,7 @@ const cards = [
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.08) 35%, rgba(0, 0, 0, 0.68));
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.62));
   }
 
   .interior-card-copy {
@@ -150,37 +150,6 @@ const cards = [
     color: rgba(255, 255, 255, 0.78);
     font-size: 13px;
     line-height: 1.45;
-  }
-
-  @media (max-width: 599px) {
-    .interior-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .interior-card,
-    .interior-card img {
-      min-height: 220px;
-    }
-
-    .interior-card:last-child {
-      grid-column: 1 / -1;
-    }
-
-    .interior-card-copy {
-      left: 12px;
-      right: 12px;
-      bottom: 12px;
-    }
-
-    .interior-card-copy h3 {
-      font-size: 16px;
-    }
-
-    .interior-card-copy p {
-      font-size: 12px;
-      line-height: 1.35;
-    }
   }
 
   @media (min-width: 600px) {

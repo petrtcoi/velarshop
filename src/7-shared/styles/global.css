@@ -18,16 +18,12 @@
   }
 }
 
-html {
-  scroll-padding-top: 86px;
-}
-
 :root {
   --color-bg: #ffffff;
   --color-text: #111111;
-  --color-muted: #525252;
-  --color-primary: #c1121f;
-  --color-primary-hover: #a30f19;
+  --color-muted: #6b7280;
+  --color-primary: #B91C1C;
+  --color-primary-hover: #991B1B;
   --color-border: #e5e7eb;
   --radius-ui: 2px;
   --font-heading: "Geist", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -124,9 +120,9 @@ main :where(.animate-spin) {
 }
 
 /* Commercial CTAs use the same compact 36px rhythm as the configurator. */
-.commercial-page:not(.home-page) main :where(a, button)[class*="h-10"],
-.commercial-page:not(.home-page) main :where(a, button)[class*="h-11"],
-.commercial-page:not(.home-page) main :where(a, button)[class*="h-12"] {
+.commercial-page main :where(a, button)[class*="h-10"],
+.commercial-page main :where(a, button)[class*="h-11"],
+.commercial-page main :where(a, button)[class*="h-12"] {
   height: 2.25rem !important;
   min-height: 2.25rem !important;
   padding-left: 1rem !important;
@@ -166,76 +162,8 @@ main :where(.animate-spin) {
   margin-top: 0;
 }
 
-/*
- * The homepage is a premium overview, not a dense catalogue listing. Give it
- * one content edge and a calmer section rhythm while keeping the compact
- * dividers used by deeper commercial pages.
- */
 .home-page main > section:not(:first-of-type)::before {
   display: none;
-}
-
-.home-page main > section:not(:first-of-type):not(.popular-models):not(.quick-choice) {
-  padding: 48px 0 !important;
-}
-
-.home-page main > :where(.popular-models, .quick-choice) {
-  width: 100%;
-  max-width: var(--content-width);
-  margin-inline: auto;
-  padding: 48px 16px !important;
-}
-
-.home-page main > section > :where(
-  .category-entry-wrap,
-  .scenario-cta-wrap,
-  .interior-wrap,
-  .why-velar-wrap,
-  .docs-wrap,
-  .shop-wrap,
-  .how-order-wrap,
-  .news-wrap
-) {
-  width: 100%;
-  max-width: var(--content-width);
-  margin-inline: auto;
-  padding-inline: 16px !important;
-}
-
-.home-page main > .category-entry-section,
-.home-page main > .popular-models,
-.home-page main > .quick-choice,
-.home-page main > .docs-section,
-.home-page main > .how-order-section,
-.home-page main > .news-section {
-  background-color: #fff !important;
-}
-
-.home-page main > :where(.interior-section, .why-velar-section, .shop-section) {
-  background-color: #f5f5f5 !important;
-}
-
-@media (min-width: 769px) {
-  .home-page main > section:not(:first-of-type):not(.popular-models):not(.quick-choice) {
-    padding-block: 64px !important;
-  }
-
-  .home-page main > :where(.popular-models, .quick-choice) {
-    padding: 64px 24px !important;
-  }
-
-  .home-page main > section > :where(
-    .category-entry-wrap,
-    .scenario-cta-wrap,
-    .interior-wrap,
-    .why-velar-wrap,
-    .docs-wrap,
-    .shop-wrap,
-    .how-order-wrap,
-    .news-wrap
-  ) {
-    padding-inline: 24px !important;
-  }
 }
 
 .commercial-page main > section:is([class~="bg-neutral-950"], .scenario-cta-section),
@@ -244,15 +172,15 @@ main :where(.animate-spin) {
   --section-divider-size: 4px;
 }
 
-.commercial-page:not(.home-page) main > section:nth-of-type(6n + 2):not([class~="bg-neutral-950"]):not(.scenario-cta-section),
-.commercial-page:not(.home-page) main > section:nth-of-type(6n + 3):not([class~="bg-neutral-950"]):not(.scenario-cta-section),
-.commercial-page:not(.home-page) main > section:nth-of-type(6n + 4):not([class~="bg-neutral-950"]):not(.scenario-cta-section) {
+.commercial-page main > section:nth-of-type(6n + 2):not([class~="bg-neutral-950"]):not(.scenario-cta-section),
+.commercial-page main > section:nth-of-type(6n + 3):not([class~="bg-neutral-950"]):not(.scenario-cta-section),
+.commercial-page main > section:nth-of-type(6n + 4):not([class~="bg-neutral-950"]):not(.scenario-cta-section) {
   background-color: #f7f7f7 !important;
 }
 
-.commercial-page:not(.home-page) main > section:nth-of-type(6n + 5):not([class~="bg-neutral-950"]):not(.scenario-cta-section),
-.commercial-page:not(.home-page) main > section:nth-of-type(6n + 6):not([class~="bg-neutral-950"]):not(.scenario-cta-section),
-.commercial-page:not(.home-page) main > section:nth-of-type(6n + 1):not([class~="bg-neutral-950"]):not(.scenario-cta-section) {
+.commercial-page main > section:nth-of-type(6n + 5):not([class~="bg-neutral-950"]):not(.scenario-cta-section),
+.commercial-page main > section:nth-of-type(6n + 6):not([class~="bg-neutral-950"]):not(.scenario-cta-section),
+.commercial-page main > section:nth-of-type(6n + 1):not([class~="bg-neutral-950"]):not(.scenario-cta-section) {
   background-color: #ffffff !important;
 }
 
@@ -284,12 +212,12 @@ main :where(.animate-spin) {
   border-bottom: 0;
 }
 
-.commercial-page:not(.home-page) main > section:not(:first-of-type):not([class~="py-3"]) {
+.commercial-page main > section:not(:first-of-type):not([class~="py-3"]) {
   padding-top: 1.5rem !important;
   padding-bottom: 1.5rem !important;
 }
 
-.commercial-page:not(.home-page) main > section:not(:first-of-type)[class~="py-3"] {
+.commercial-page main > section:not(:first-of-type)[class~="py-3"] {
   padding-top: 1.5rem !important;
 }
 
@@ -351,7 +279,7 @@ main :where(.animate-spin) {
   padding-block: 2.5rem;
 }
 
-.commercial-page:not(.home-page) :is(
+.commercial-page :is(
   .popular-models,
   .quick-choice,
   .interior-section,
@@ -368,7 +296,7 @@ main :where(.animate-spin) {
 }
 
 @media (min-width: 768px) {
-  .commercial-page:not(.home-page) main > section:not(:first-of-type):not([class~="py-3"]) {
+  .commercial-page main > section:not(:first-of-type):not([class~="py-3"]) {
     padding-top: 2rem !important;
     padding-bottom: 2rem !important;
   }
@@ -404,7 +332,7 @@ main :where(.animate-spin) {
     padding-block: 2.5rem;
   }
 
-  .commercial-page:not(.home-page) :is(
+  .commercial-page :is(
     .popular-models,
     .quick-choice,
     .interior-section,
@@ -425,7 +353,7 @@ main :where(.animate-spin) {
     padding-block: 3rem;
   }
 
-  .commercial-page:not(.home-page) :is(
+  .commercial-page :is(
     .popular-models,
     .quick-choice,
     .interior-section,

@@ -88,8 +88,8 @@ function applyFilters(state: FilterState, visibleLimit: number): FilterStats {
 
 function filterButtonClass(active: boolean): string {
 	return active
-		? 'inline-flex h-8 !cursor-pointer items-center justify-center rounded-full border border-neutral-950 bg-neutral-950 px-3.5 text-xs font-medium text-white transition-colors hover:cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-200 focus-visible:ring-offset-1'
-		: 'inline-flex h-8 !cursor-pointer items-center justify-center rounded-full border border-neutral-200 bg-white px-3.5 text-xs font-medium text-neutral-800 transition-colors hover:cursor-pointer hover:border-neutral-300 hover:bg-neutral-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300 focus-visible:ring-offset-2'
+		? 'inline-flex h-8 !cursor-pointer items-center justify-center whitespace-nowrap rounded-full border border-neutral-950 bg-neutral-950 px-3.5 text-xs font-medium text-white transition-colors hover:cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-200 focus-visible:ring-offset-1'
+		: 'inline-flex h-8 !cursor-pointer items-center justify-center whitespace-nowrap rounded-full border border-neutral-200 bg-white px-3.5 text-xs font-medium text-neutral-800 transition-colors hover:cursor-pointer hover:border-neutral-300 hover:bg-neutral-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300 focus-visible:ring-offset-2'
 }
 
 export default function ColumnsFilters() {
@@ -187,7 +187,7 @@ export default function ColumnsFilters() {
 			<div class='rounded-[20px] border border-neutral-200 bg-white p-4 md:p-5'>
 				<div class='mb-4 border-b border-neutral-100 pb-4'>
 					<div class='text-xs font-medium uppercase tracking-wide text-neutral-500'>Быстрый выбор</div>
-					<div class='-mx-4 mt-2 flex gap-2 overflow-x-auto px-4 pb-1 md:mx-0 md:flex-wrap md:overflow-visible md:px-0 md:pb-0'>
+					<div class='mt-2 flex flex-wrap gap-2'>
 						{quickTabs.map(tab => (
 							<button
 								type='button'
@@ -205,7 +205,7 @@ export default function ColumnsFilters() {
 					<div class='space-y-3'>
 						<div class='grid gap-2 md:grid-cols-[140px_1fr] md:items-center'>
 							<div class='text-xs font-medium uppercase tracking-wide text-neutral-500'>Высота</div>
-							<div class='-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 md:mx-0 md:flex-wrap md:overflow-visible md:px-0 md:pb-0'>
+							<div class='flex flex-wrap gap-2'>
 								{heightOptions.map(option => (
 									<button
 										type='button'
@@ -226,7 +226,7 @@ export default function ColumnsFilters() {
 
 						<div class='grid gap-2 md:grid-cols-[140px_1fr] md:items-center'>
 							<div class='text-xs font-medium uppercase tracking-wide text-neutral-500'>Трубок в секции</div>
-							<div class='-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 md:mx-0 md:flex-wrap md:overflow-visible md:px-0 md:pb-0'>
+							<div class='flex flex-wrap gap-2'>
 								{tubeOptions.map(option => (
 									<button
 										type='button'
