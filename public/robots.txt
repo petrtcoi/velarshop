@@ -4,5 +4,8 @@ Allow: /
 User-agent: Yandex
 Clean-param: etext
 Clean-param: model /request
+Clean-param: mo&connection&height&collection /model
+Clean-param: mo&connection&height&collection /columns
+Clean-param: check /columns
 
 Sitemap: https://velarshop.ru/sitemap-index.xml

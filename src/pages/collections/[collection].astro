@@ -3,6 +3,7 @@ import type { ModelJson } from '@entities/Model'
 import { modelsJsonData } from '@entities/Model'
 import type { RadiatorJson } from '@entities/Radiator'
 import { radiatorsJsonData } from '@entities/Radiator'
+import ContextFilteredLink from '@shared/components/ContextFilteredLink.astro'
 import Picture from '@shared/components/Picture.astro'
 import Layout from '@shared/layouts/Layout.astro'
 import { getModelMainImagePath } from '@shared/utils/getModelMainImagePath'
@@ -269,7 +270,7 @@ const seo = getCategorySeo({
 										<dl class='grid grid-cols-2 gap-x-5 gap-y-3 text-sm sm:col-start-2 md:grid-cols-3 lg:col-start-auto'>
 											<div><dt class='text-xs text-neutral-500'>Высота</dt><dd class='mt-1 font-medium text-neutral-950'>{model.heightLabel}</dd></div><div><dt class='text-xs text-neutral-500'>Глубина</dt><dd class='mt-1 font-medium text-neutral-950'>{model.depthLabel}</dd></div><div><dt class='text-xs text-neutral-500'>Длина</dt><dd class='mt-1 font-medium text-neutral-950'>{model.lengthLabel}</dd></div><div><dt class='text-xs text-neutral-500'>Мощность ΔT70</dt><dd class='mt-1 font-medium text-neutral-950'>{model.powerLabel}</dd></div><div><dt class='text-xs text-neutral-500'>{collection.kind === 'convector' ? 'Тип' : 'Подключение'}</dt><dd class='mt-1 font-medium text-neutral-950'>{model.connectionLabel}</dd></div>
 										</dl>
-										<div class='sm:col-start-2 lg:col-start-auto lg:text-right'><p class='text-base font-semibold text-neutral-950'>{model.priceLabel}</p><a href={model.filteredHref} rel={model.filteredHref.includes('?') ? 'nofollow' : undefined} class='mt-2 inline-flex text-sm font-medium text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'>Выбрать размер</a></div>
+										<div class='sm:col-start-2 lg:col-start-auto lg:text-right'><p class='text-base font-semibold text-neutral-950'>{model.priceLabel}</p><ContextFilteredLink href={`${model.href}#model-variants`} contextHref={model.filteredHref} class='mt-2 inline-flex text-sm font-medium text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'>Выбрать размер</ContextFilteredLink></div>
 									</div>
 								</article>
 							))}

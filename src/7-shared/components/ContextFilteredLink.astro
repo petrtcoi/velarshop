@@ -1,0 +1,28 @@
+---
+type Props = {
+	href: string
+	contextHref: string
+	class?: string
+}
+
+const { href, contextHref, class: className } = Astro.props as Props
+---
+
+<a href={href} data-context-href={contextHref} class={className}>
+	<slot />
+</a>
+
+<script>
+	document.addEventListener('click', event => {
+		if (!(event instanceof MouseEvent) || event.defaultPrevented || event.button !== 0) return
+		if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return
+		if (!(event.target instanceof Element)) return
+
+		const link = event.target.closest<HTMLAnchorElement>('a[data-context-href]')
+		const contextHref = link?.dataset.contextHref
+		if (!link || !contextHref || (link.target && link.target !== '_self')) return
+
+		event.preventDefault()
+		window.location.assign(contextHref)
+	})
+</script>

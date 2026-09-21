@@ -1,5 +1,6 @@
 ---
 import Picture from '@shared/components/Picture.astro';
+import ContextFilteredLink from '@shared/components/ContextFilteredLink.astro'
 import { getEntryBySlug } from 'astro:content'
 
 import Layout from '@shared/layouts/Layout.astro'
@@ -493,31 +494,31 @@ const seo = getModelSeo({
 				<nav aria-label='Популярные подборки для модели' class='mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 border-y border-neutral-200 py-4 text-sm'>
 					<span class='font-medium text-neutral-950'>Популярное:</span>
 					{interaxialCollectionLinks.map(collection => (
-						<a
-							href={`${modelUrl}?mo=${collection.spacing}&connection=side#model-variants`}
-							rel='nofollow'
+						<ContextFilteredLink
+							href={`${modelUrl}#model-variants`}
+							contextHref={`${modelUrl}?mo=${collection.spacing}&connection=side#model-variants`}
 							class='text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'
 						>
 							М/о {collection.spacing} мм · боковое
-						</a>
+						</ContextFilteredLink>
 					))}
 					{exactHeightCollectionLinks.map(collection => (
-						<a
-							href={`${modelUrl}?height=${collection.height}&collection=height-${collection.height}#model-variants`}
-							rel='nofollow'
+						<ContextFilteredLink
+							href={`${modelUrl}#model-variants`}
+							contextHref={`${modelUrl}?height=${collection.height}&collection=height-${collection.height}#model-variants`}
 							class='text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'
 						>
 							Высота {collection.height} мм
-						</a>
+						</ContextFilteredLink>
 					))}
 					{vertical1800Height && (
-						<a
-							href={`${modelUrl}?height=${vertical1800Height}&collection=vertical-1800#model-variants`}
-							rel='nofollow'
+						<ContextFilteredLink
+							href={`${modelUrl}#model-variants`}
+							contextHref={`${modelUrl}?height=${vertical1800Height}&collection=vertical-1800#model-variants`}
 							class='text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'
 						>
 							Высота около 1800 мм
-						</a>
+						</ContextFilteredLink>
 					)}
 					{tubularCollectionLinks.map(collection => (
 						<a href={collection.href} class='text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'>
