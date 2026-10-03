@@ -1,0 +1,56 @@
+---
+import { modelsJsonData } from '@entities/Model'
+import { radiatorsJsonData } from '@entities/Radiator'
+import { getModelSlug } from '@shared/utils/getModelSlug'
+import { catalogNumber, variantsNearestHeight } from '../../lib/catalogFacts'
+
+type Props = {
+	id: string
+	title: string
+	intro: string
+	modelIds: string[]
+	sections?: number[]
+	height?: number
+	showWeight?: boolean
+}
+const { id, title, intro, modelIds, sections = [10], height, showWeight = false } = Astro.props as Props
+const rows = modelIds.flatMap(modelId => {
+	const model = modelsJsonData.find(item => item.id === modelId)
+	if (!model) return []
+	const allVariants = radiatorsJsonData.filter(item => item.model_id === modelId)
+	const variants = height ? variantsNearestHeight(allVariants, height) : allVariants
+	return sections.flatMap(count => {
+		const radiator = variants.find(item => catalogNumber(item.sections) === count && catalogNumber(item.price) > 0)
+		return radiator ? [{ model, radiator, href: getModelSlug(model) }] : []
+	})
+})
+const linkClass = 'text-red-700 underline decoration-red-300 underline-offset-2 transition hover:decoration-transparent'
+---
+
+{rows.length > 0 && <section id={id} class='bg-white py-10 md:py-16'>
+	<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+		<h2 class='text-2xl font-semibold leading-tight text-neutral-950 md:text-3xl'>{title}</h2>
+		<p class='mt-4 max-w-3xl text-sm font-normal leading-6 text-neutral-700 md:text-base'>{intro}</p>
+		<div class='mt-6 overflow-x-auto'>
+			<table class='w-full min-w-[720px] border-collapse text-left text-sm'>
+				<thead><tr class='border-y border-neutral-200 text-neutral-600'>
+					{['Модель', 'Секции', 'Полная высота', 'Межосевое', 'Длина', 'Глубина', 'Мощность ΔT70', ...(showWeight ? ['Масса'] : []), 'Цена радиатора'].map(label => <th scope='col' class='px-3 py-3 font-medium'>{label}</th>)}
+				</tr></thead>
+				<tbody>{rows.map(({ model, radiator, href }) => <tr class='border-b border-neutral-200'>
+					<th scope='row' class='px-3 py-4 font-medium'><a href={`${href}#model-variants`} class={linkClass}>Velar {model.name}</a></th>
+					<td class='px-3 py-4'>{radiator.sections}</td>
+					{(['height', 'n_spacing', 'length', 'width'] as const).map(key => <td class='whitespace-nowrap px-3 py-4'>{radiator[key] ? `${radiator[key]} мм` : 'по чертежу'}</td>)}
+					<td class='whitespace-nowrap px-3 py-4'>{radiator.dt70 ? `${catalogNumber(radiator.dt70).toLocaleString('ru-RU')} Вт` : 'по расчету'}</td>
+					{showWeight && <td class='whitespace-nowrap px-3 py-4'>{radiator.weight ? `${catalogNumber(radiator.weight).toLocaleString('ru-RU')} кг` : 'уточняйте'}</td>}
+					<td class='whitespace-nowrap px-3 py-4'>{catalogNumber(radiator.price).toLocaleString('ru-RU')} ₽</td>
+				</tr>)}</tbody>
+			</table>
+		</div>
+		<p class='mt-5 max-w-3xl text-sm font-normal leading-6 text-neutral-700'>
+			Это цены базовых конфигураций из каталога. Цвет, отделку, подключение, комплект арматуры и доставку согласуем в расчете. Мощность при ΔT70 нельзя напрямую переносить на низкотемпературную систему: <a href='/info/teplootdacha-radiatora-delta-t-chto-eto' class={linkClass}>как учитывать температурный режим</a>.
+		</p>
+		<p class='mt-3 text-sm leading-6 text-neutral-700'>
+			Изготовление под заказ; наличие и срок подтверждаем для выбранной комплектации. <a href='/request' class={linkClass}>Получить расчет</a> · <a href='/delivery' class={linkClass}>Доставка и оплата</a>.
+		</p>
+	</div>
+</section>}

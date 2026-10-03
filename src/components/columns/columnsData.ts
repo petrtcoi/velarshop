@@ -197,11 +197,7 @@ const usefulArticles = [
 	},
 	{
 		href: '/info/trubchatye-radiatory-vs-panelnye',
-		title: 'Трубчатые радиаторы vs панельные батареи',
-	},
-	{
-		href: '/info/trubchatyy-radiator-ili-panelnyy',
-		title: 'Трубчатый радиатор или панельный - что выбрать',
+		title: 'Трубчатые или панельные радиаторы: мощность, цена и подключение',
 	},
 ]
 
@@ -253,11 +249,7 @@ const usefulArticleGroups = [
 			},
 			{
 				href: '/info/trubchatye-radiatory-vs-panelnye',
-				title: 'Трубчатые радиаторы vs панельные батареи',
-			},
-			{
-				href: '/info/trubchatyy-radiator-ili-panelnyy',
-				title: 'Трубчатый радиатор или панельный - что выбрать',
+				title: 'Трубчатые или панельные радиаторы: мощность, цена и подключение',
 			},
 		],
 	},

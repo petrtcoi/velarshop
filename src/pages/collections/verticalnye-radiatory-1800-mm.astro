@@ -8,6 +8,7 @@ import { getModelSlug } from '@shared/utils/getModelSlug'
 import { getModelMainImagePath } from '@shared/utils/getModelMainImagePath'
 import JsonLd from '../../components/seo/JsonLd.astro'
 import { getCategorySeo } from '../../lib/seo/categorySeo'
+import { variantsNearestHeight, catalogRange } from '../../lib/catalogFacts'
 
 type FilterKey =
 	| 'all'
@@ -350,12 +351,10 @@ function buildModelCollectionItem(modelId: string): CollectionModel {
 	const model = modelsJsonData.find(item => item.id === modelId)
 	if (!model) throw new Error(`Model not found: ${modelId}`)
 
-	const radiators = radiatorsJsonData.filter(item => item.model_id === model.id)
+	const radiators = variantsNearestHeight(radiatorsJsonData.filter(item => item.model_id === model.id), 1800)
 	const prices = radiators.map(item => toNumber(item.price)).filter(Boolean)
-	const powerValues = radiators.map(item => toNumber(item.dt60)).filter(Boolean)
+	const powerValues = radiators.map(item => toNumber(item.dt70)).filter(Boolean)
 	const heights = [...new Set(radiators.map(item => toNumber(item.height)).filter(Boolean))].sort((a, b) => a - b)
-	const minHeight = heights[0] ?? 0
-	const maxHeight = heights[heights.length - 1] ?? 0
 	const minPrice = prices.length ? Math.min(...prices) : 0
 	const minPower = powerValues.length ? Math.min(...powerValues) : 0
 	const maxPower = powerValues.length ? Math.max(...powerValues) : 0
@@ -369,11 +368,7 @@ function buildModelCollectionItem(modelId: string): CollectionModel {
 				? `${Math.round(minPower)} Вт`
 				: `${Math.round(minPower)}-${Math.round(maxPower)} Вт`
 			: 'по расчету'
-	const heightLabel = isColumns
-		? `${Math.round(maxHeight)} мм`
-		: minHeight > 0 && maxHeight > 0
-			? `${Math.round(minHeight)}-${Math.round(maxHeight)} мм`
-			: 'около 180 см'
+	const heightLabel = catalogRange(radiators, 'height')
 	const typeLabel = isColumns ? 'Трубчатый' : 'Профильный'
 	const filteredHeight = heights
 		.slice()
@@ -432,9 +427,9 @@ const seo = getCategorySeo({
 		url: COLLECTION_URL,
 		name: 'Вертикальные радиаторы 1800 мм',
 		h1: 'Вертикальные радиаторы 1800 мм',
-		seoTitle: 'Вертикальные радиаторы 1800 мм Velar - трубчатые и профильные радиаторы',
+		seoTitle: 'Вертикальные радиаторы 1800 мм — модели, размеры и цены Velar',
 		seoDescription:
-			'Вертикальные радиаторы Velar высотой 1800 мм и около 180 см: трубчатые 2180, 3180, 4180, 5180 и профильные модели P, Q, R. Расчет, RAL, доставка.',
+			'Купить вертикальные радиаторы Velar 1800 мм и близкой высоты: цены выбранных исполнений, мощность, размеры и подключение. Трубчатые и дизайнерские модели, цвета RAL, доставка по России.',
 		ogTitle: 'Вертикальные радиаторы 1800 мм Velar',
 		ogDescription:
 			'Подборка вертикальных радиаторов Velar 1800 мм и около 180 см: трубчатые и профильные модели с расчетом, цветами RAL и доставкой по России.',
@@ -493,6 +488,10 @@ const seo = getCategorySeo({
 					гостиных и помещений, где нет места под окном. Внутри - трубчатые и профильные
 					модели Velar с изготовлением под заказ, подбором мощности, цвета RAL и
 					подключения.
+				</p>
+				<p class='mt-4 max-w-3xl text-sm leading-6 text-neutral-700'>
+					Цены выбранных по высоте исполнений — от <span class='font-medium text-neutral-950'>{Math.min(...allModels.map(model => model.priceFrom).filter(Boolean)).toLocaleString('ru-RU')} ₽</span>.
+					У трубчатых моделей полная высота 1800 мм; у профильных показана ближайшая доступная высота. В таблице цены и мощность относятся именно к этим размерам, а не ко всей серии.
 				</p>
 
 				<div class='mt-7 flex flex-col gap-3 min-[420px]:flex-row min-[420px]:flex-wrap'>
@@ -673,7 +672,7 @@ const seo = getCategorySeo({
 								<th class='px-4 py-3 font-medium'>Тип</th>
 								<th class='px-4 py-3 font-medium'>Высота</th>
 								<th class='px-4 py-3 font-medium'>Глубина / профиль</th>
-								<th class='px-4 py-3 font-medium'>Мощность</th>
+								<th class='px-4 py-3 font-medium'>Мощность при ΔT70</th>
 								<th class='px-4 py-3 font-medium'>Подключение</th>
 								<th class='px-4 py-3 font-medium'>Цвет RAL</th>
 								<th class='px-4 py-3 font-medium'>Цена от</th>

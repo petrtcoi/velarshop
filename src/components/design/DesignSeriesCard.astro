@@ -66,6 +66,12 @@ const orientationLabel = series.orientations.map(item => item === 'vertical' ? '
 					</a>
 				</div>
 			)}
+			{series.alternativeModel && (
+				<p class='mt-3 text-xs leading-5 text-neutral-600'>
+					Другая ориентация: <a href={series.alternativeModel.href} class='text-red-700 transition hover:underline'>{series.alternativeModel.name}</a>.
+					{series.seriesHref && <> <a href={series.seriesHref} class='text-red-700 transition hover:underline'>Сравнить V и H</a>.</>}
+				</p>
+			)}
 		</div>
 	</div>
 </article>

@@ -4,6 +4,7 @@ import JsonLd from '../seo/JsonLd.astro'
 import DesignSeriesGrid from './DesignSeriesGrid.astro'
 import DesignFaq from './DesignFaq.astro'
 import DesignUsefulLinks from './DesignUsefulLinks.astro'
+import DesignOrientationComparison from './DesignOrientationComparison.astro'
 import { formatRub, horizontalDesignSeries, verticalDesignSeries, type DesignOrientation } from './designData'
 
 type Props = {
@@ -16,8 +17,8 @@ const series = isVertical ? verticalDesignSeries : horizontalDesignSeries
 const pagePath = isVertical ? '/design/vertikalnye' : '/design/gorizontalnye'
 const canonicalUrl = `https://velarshop.ru${pagePath}`
 const pageTitle = isVertical
-	? 'Вертикальные дизайн-радиаторы Velar | VelarShop.ru'
-	: 'Горизонтальные дизайн-радиаторы Velar | VelarShop.ru'
+	? 'Вертикальные дизайнерские радиаторы — размеры и цены Velar'
+	: 'Горизонтальные дизайнерские радиаторы — размеры и цены Velar'
 const pageDescription = isVertical
 	? 'Вертикальные дизайнерские радиаторы Velar для квартир, домов и современных интерьеров. Серии P, Q, R, S, RT и QT, цвета RAL, подбор и доставка по России.'
 	: 'Горизонтальные дизайнерские радиаторы Velar для установки под окнами и в низких зонах. Серии P, Q, R, S и SP, цвета RAL, подбор и доставка по России.'
@@ -79,9 +80,11 @@ const schema = [
 				position: index + 1,
 				url: new URL(item.href, canonicalUrl).toString(),
 				item: {
-					'@type': 'ProductGroup',
-					name: item.title,
-					description: item.description,
+					'@type': 'Product',
+					name: item.models[0].title,
+					description: `${item.profile}. ${isVertical ? 'Вертикальное' : 'Горизонтальное'} исполнение. ${item.description}`,
+					url: new URL(item.href, canonicalUrl).toString(),
+					sku: item.models[0].id,
 					image: new URL(item.image, canonicalUrl).toString(),
 					brand: { '@type': 'Brand', name: 'Velar' },
 					offers: item.priceFrom > 0
@@ -89,7 +92,9 @@ const schema = [
 								'@type': 'AggregateOffer',
 								priceCurrency: 'RUB',
 								lowPrice: String(Math.round(item.priceFrom)),
-								availability: 'https://schema.org/InStock',
+								highPrice: String(Math.round(item.models[0].priceTo)),
+								offerCount: item.models[0].variantCount,
+								availability: 'https://schema.org/PreOrder',
 								url: new URL(item.href, canonicalUrl).toString(),
 							}
 						: undefined,
@@ -115,8 +120,11 @@ const schema = [
 	<section class='bg-white pb-12 pt-7 md:pb-16 xl:pb-20'>
 		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-end xl:px-8'>
 			<div>
-				<h1 class='max-w-4xl text-[38px] font-semibold leading-[0.98] tracking-tight text-neutral-950 md:text-[54px] xl:text-[64px]'>{h1}</h1>
-				<p class='mt-5 max-w-3xl text-[16px] leading-7 text-neutral-700 md:text-lg'>{intro}</p>
+				<h1 class='max-w-4xl text-3xl font-semibold leading-tight tracking-tight text-neutral-950 md:text-5xl'>{h1}</h1>
+				<p class='mt-5 max-w-3xl text-sm font-normal leading-6 text-neutral-700 md:text-base'>{intro}</p>
+				<p class='mt-4 text-sm leading-6 text-neutral-700'>
+					{isVertical ? 'Вертикальные' : 'Горизонтальные'} исполнения от <span class='font-medium text-neutral-950'>{formatRub(minPrice)}</span>. Под заказ; цвет, подключение и срок изготовления подтверждаем при расчете.
+				</p>
 				<div class='mt-7 flex flex-wrap gap-3'>
 					<a href='/request' class='inline-flex h-11 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>Получить расчет</a>
 					<a href='#design-orientation-series' class='inline-flex h-11 items-center justify-center rounded-lg border border-neutral-300 px-5 text-sm font-semibold text-neutral-950 transition hover:border-red-700 hover:text-red-700'>Смотреть модели</a>
@@ -140,7 +148,7 @@ const schema = [
 					{isVertical ? 'Серии с вертикальным исполнением' : 'Серии с горизонтальным исполнением'}
 				</h2>
 				<p class='mt-4 text-sm leading-6 text-neutral-600 md:text-base'>
-					Показаны только фактические серии Velar, у которых есть {isVertical ? 'вертикальная' : 'горизонтальная'} товарная страница.
+					Сравните серии Velar в {isVertical ? 'вертикальном' : 'горизонтальном'} исполнении. Цена и изображение в каждой карточке относятся к выбранной ориентации; размеры и мощность зависят от конкретного варианта.
 				</p>
 			</div>
 			<div class='mt-8'>
@@ -148,6 +156,8 @@ const schema = [
 			</div>
 		</div>
 	</section>
+
+	<DesignOrientationComparison series={series} orientation={orientation} />
 
 	<section class='bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] xl:px-8'>

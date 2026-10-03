@@ -3,6 +3,7 @@ import HeroQuickConfigurator from '@widgets/pageMain/HeroQuickConfigurator'
 import type { ModelDetails } from '@widgets/pageMain/HeroQuickConfigurator'
 import { buildQuickConfiguratorModels } from '@widgets/pageMain/quickConfiguratorData'
 import { get as getHeroConfiguratorData } from '../../pages/api/hero-configurator/[model].json'
+import { minCatalogPrice } from './columnsData'
 
 const modelOptions = buildQuickConfiguratorModels({ type: 'columns' })
 const defaultModelId = '3057'
@@ -46,10 +47,13 @@ const statItems = [
 		<div class='grid gap-7 min-[900px]:grid-cols-[minmax(0,1fr)_minmax(360px,420px)] min-[900px]:items-start min-[900px]:gap-8'>
 			<div class='min-w-0'>
 				<h1 class='max-w-[620px] text-4xl font-semibold leading-tight tracking-tight text-neutral-950 md:text-5xl'>
-					Трубчатые радиаторы
+					Трубчатые радиаторы отопления
 				</h1>
 				<p class='mt-4 max-w-[520px] text-sm leading-6 text-neutral-700 md:text-base md:leading-6'>
 					Стальные трубчатые радиаторы подходят для квартир, домов и дизайн-проектов. В каталоге Velar можно подобрать модель по высоте, количеству труб, секциям, подключению и цвету RAL: под окно, для замены старой батареи или как высокий радиатор на узкую стену. Выберите модель ниже или отправьте параметры помещения - менеджер рассчитает мощность, стоимость, оплату и доставку по России.
+				</p>
+				<p class='mt-4 text-sm font-normal leading-6 text-neutral-700'>
+					От <span class='font-medium text-neutral-950'>{minCatalogPrice.toLocaleString('ru-RU')} ₽ за радиатор</span>. Под заказ; наличие, срок изготовления и комплектацию подтверждаем при расчете.
 				</p>
 				<div class='mt-6 flex flex-col gap-3 min-[420px]:flex-row min-[420px]:flex-wrap'>
 					<a href='/request' class='inline-flex h-11 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>

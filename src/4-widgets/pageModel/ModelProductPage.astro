@@ -47,6 +47,10 @@ const categoryMeta = {
 } as const
 
 const modelCategory = categoryMeta[model.type]
+const categoryCatalogLabel = {
+	columns: 'трубчатых радиаторов', design: 'дизайнерских радиаторов', ironcast: 'чугунных ретро-радиаторов',
+	floor: 'напольных радиаторов', convector: 'внутрипольных конвекторов',
+}[model.type]
 
 function getDesignSeriesData(targetModel: ModelJson): { slug: string; title: string; url: string } | undefined {
 	if (targetModel.type !== 'design') return undefined
@@ -139,7 +143,7 @@ function getHeroBadge(targetModel: ModelJson): string {
 const heroBadge = getHeroBadge(model)
 const heroBenefits = [
 	'Цвет по RAL',
-	'Давление до 16 атм',
+	model.type === 'ironcast' ? 'Рабочее давление 10 атм' : 'Давление до 16 атм',
 	'Сделано в России',
 	'Под заказ',
 	'Доставка по России',
@@ -230,11 +234,11 @@ const specs: Array<{ label: string; value: string }> = [
 	{ label: 'Межосевое расстояние', value: model.type === 'columns' ? interAxisValue : '' },
 	{ label: 'Форма труб', value: tubeShape === 'по серии' ? '' : tubeShape },
 	{ label: 'Диаметр / профиль труб', value: tubeSize ? `${tubeSize} мм` : '' },
-	{ label: 'Материал', value: 'сталь' },
+	{ label: 'Материал', value: model.type === 'ironcast' ? 'чугун' : 'сталь' },
 	{ label: 'Подключение', value: connectionText },
 	{ label: 'Цвет', value: 'по каталогу RAL' },
 	{ label: 'Мощность (макс. по вариантам)', value: maxPower ? `${maxPower} Вт` : '' },
-	{ label: 'Монтаж', value: model.type === 'floor' ? 'напольный' : 'настенный / по проекту' },
+	{ label: 'Монтаж', value: model.type === 'floor' || model.type === 'ironcast' ? 'напольный' : 'настенный / по проекту' },
 ].filter(item => item.value)
 
 const modelCode = model.name.replace(/[HV]$/i, '').trim()
@@ -353,9 +357,8 @@ const supportsSideConnection =
 const interaxialCollectionLinks = supportsSideConnection
 	? interaxialCollections.filter(collection => interAxisValues.includes(String(collection.spacing)))
 	: []
-const exactHeightCollectionLinks = hasSelectableHeight
-	? exactHeightCollections.filter(collection => collection.height ? modelHeightValues.has(collection.height) : false)
-	: []
+const matchingHeightCollections = exactHeightCollections.filter(collection => collection.height ? modelHeightValues.has(collection.height) : false)
+const exactHeightCollectionLinks = hasSelectableHeight ? matchingHeightCollections : []
 const tubularCollectionLinks = model.type === 'columns'
 	? tubularCollections.filter(collection =>
 		collection.kind === 'tube-count'
@@ -534,6 +537,13 @@ const seo = getModelSeo({
 			)}
 
 			<RadiatorList model={model} />
+			{(model.type === 'columns' || model.type === 'design' || model.type === 'ironcast') && (
+				<p class='mt-5 max-w-3xl text-sm font-normal leading-6 text-neutral-700'>
+					Сравните другие модели в <a href={modelCategory.url} class='text-red-700 underline decoration-red-300 underline-offset-2 transition hover:decoration-transparent'>каталоге {categoryCatalogLabel}</a>.
+					{isInVertical1800Collection && <> Для высокой установки есть <a href='/collections/verticalnye-radiatory-1800-mm' class='text-red-700 underline decoration-red-300 underline-offset-2 transition hover:decoration-transparent'>подборка радиаторов около 1800 мм</a>.</>}
+					{matchingHeightCollections.map(collection => <> <a href={collection.href} class='text-red-700 underline decoration-red-300 underline-offset-2 transition hover:decoration-transparent'>Все радиаторы высотой {collection.height} мм</a>.</>)}
+				</p>
+			)}
 
 			<div class='mt-5 border-t border-neutral-200 pt-5'>
 				<p class='max-w-2xl text-base leading-7 text-neutral-700'>Добавьте подходящие типоразмеры в запрос или отправьте параметры помещения — подберем размер, подключение и цвет.</p>

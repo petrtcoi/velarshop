@@ -1,0 +1,36 @@
+---
+import { modelsJsonData } from '@entities/Model'
+import { radiatorsJsonData } from '@entities/Radiator'
+import { getModelSlug } from '@shared/utils/getModelSlug'
+import { catalogNumber } from '../../lib/catalogFacts'
+
+const rows = ['nostalgia300', 'historic300', 'nostalgia500', 'historic500'].map(id => {
+	const model = modelsJsonData.find(item => item.id === id)!
+	const variant = radiatorsJsonData.find(item => item.model_id === id)!
+	const sections = catalogNumber(variant.sections)
+	return { model, variant, power: catalogNumber(variant.dt70) / sections, weight: catalogNumber(variant.weight) / sections }
+})
+const linkClass = 'text-red-700 underline decoration-red-300 underline-offset-2 transition hover:decoration-transparent'
+---
+
+<section id='retro-technical-comparison' class='bg-white py-10 md:py-16'>
+	<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+		<h2 class='text-2xl font-semibold leading-tight text-neutral-950 md:text-3xl'>Размеры и характеристики четырех ретро-моделей</h2>
+		<p class='mt-4 max-w-3xl text-sm font-normal leading-6 text-neutral-700 md:text-base'>
+			Число 300 или 500 в названии — межосевое расстояние, а не полная высота радиатора. Для установки под окно проверяйте высоту корпуса с опорами и монтажные зазоры. Nostalgia отличается цветочным орнаментом; Historic — лаконичным литьем без активного декора.
+		</p>
+		<div class='mt-6 overflow-x-auto'><table class='w-full min-w-[740px] border-collapse text-left text-sm'>
+			<thead><tr class='border-y border-neutral-200 text-neutral-600'>
+				{['Модель', 'Межосевое', 'Высота с опорами', 'Глубина', 'Мощность секции ΔT70', 'Масса секции', 'Орнамент'].map(label => <th scope='col' class='px-3 py-3 font-medium'>{label}</th>)}
+			</tr></thead>
+			<tbody>{rows.map(({ model, variant, power, weight }) => <tr class='border-b border-neutral-200'>
+				<th scope='row' class='px-3 py-4 font-medium'><a href={getModelSlug(model)} class={linkClass}>{model.name}</a></th>
+				<td class='px-3 py-4'>{variant.n_spacing} мм</td><td class='px-3 py-4'>{variant.height} мм</td><td class='px-3 py-4'>{variant.width} мм</td>
+				<td class='px-3 py-4'>{power.toLocaleString('ru-RU')} Вт</td><td class='px-3 py-4'>{weight.toLocaleString('ru-RU')} кг</td><td class='px-3 py-4'>{model.id.startsWith('nostalgia') ? 'цветочный' : 'без орнамента'}</td>
+			</tr>)}</tbody>
+		</table></div>
+		<p class='mt-5 max-w-3xl text-sm leading-6 text-neutral-700'>
+			Рабочее давление — 10 атм по описаниям моделей; параметры системы и допустимый теплоноситель согласуйте перед заказом. <a href='/docs/passports/passport-retro.pdf' class={linkClass}>Паспорт ретро-радиаторов</a> · <a href='/info/raschet-sekciy-chugunnogo-retro-radiatora' class={linkClass}>Расчет числа секций</a>.
+		</p>
+	</div>
+</section>

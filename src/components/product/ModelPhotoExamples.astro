@@ -1,0 +1,19 @@
+---
+import Picture from '@shared/components/Picture.astro'
+type Props = { title: string; items: Array<{ src: string; name: string; href: string; caption: string }> }
+const { title, items } = Astro.props as Props
+---
+
+<section class='bg-white py-10 md:py-16'>
+	<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+		<h2 class='text-2xl font-semibold leading-tight text-neutral-950 md:text-3xl'>{title}</h2>
+		<div class='mt-6 grid gap-8 md:grid-cols-2'>
+			{items.map(item => <figure>
+				<a href={item.href}><Picture src={item.src} alt={item.caption} title={item.name} loading='lazy' width={600} height={400} sizes='(max-width: 768px) 100vw, 50vw' class='h-56 w-full bg-neutral-50 object-contain md:h-72' /></a>
+				<figcaption class='mt-4 text-sm font-normal leading-6 text-neutral-700'>
+					<a href={item.href} class='font-medium text-red-700 underline decoration-red-300 underline-offset-2 transition hover:decoration-transparent'>{item.name}</a>. {item.caption} Размер, цвет и комплектацию можно выбрать на странице модели.
+				</figcaption>
+			</figure>)}
+		</div>
+	</div>
+</section>

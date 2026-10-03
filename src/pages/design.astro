@@ -8,6 +8,7 @@ import JsonLd from '../components/seo/JsonLd.astro'
 import DesignSeriesGrid from '../components/design/DesignSeriesGrid.astro'
 import DesignUsefulLinks from '../components/design/DesignUsefulLinks.astro'
 import DesignFaq from '../components/design/DesignFaq.astro'
+import ModelPhotoExamples from '../components/product/ModelPhotoExamples.astro'
 import { designSeries, getDesignSeriesBySlug, type DesignSeries } from '../components/design/designData'
 import { get as getHeroConfiguratorData } from './api/hero-configurator/[model].json'
 import { getCategorySeo } from '../lib/seo/categorySeo'
@@ -300,7 +301,7 @@ const seo = getCategorySeo({
 		url: '/design',
 		name: 'Дизайн-радиаторы',
 		h1: 'Дизайн-радиаторы отопления Velar',
-		seoTitle: 'Дизайнерские радиаторы отопления Velar - каталог моделей',
+		seoTitle: 'Дизайнерские радиаторы отопления — модели и цены Velar',
 		seoDescription:
 			'Дизайн-радиаторы Velar для квартиры, дома и интерьера. Вертикальные и горизонтальные модели, профили P, Q, R, S, цвета RAL, расчет и доставка по России.',
 		ogTitle: 'Дизайнерские радиаторы Velar - вертикальные и горизонтальные модели',
@@ -361,6 +362,9 @@ const seo = getCategorySeo({
 				</h1>
 				<p class='mt-4 max-w-[760px] text-sm leading-6 text-neutral-700 md:text-base md:leading-7'>
 					Дизайнерские радиаторы Velar - вертикальные и горизонтальные радиаторы отопления для квартир, домов и дизайн-проектов. Выберите профиль P, Q, R или S, цвет RAL, подключение и исполнение под интерьер: на узкую стену, под окно, в цвет стены или как акцент. Если не знаете, какую серию выбрать, посмотрите популярные модели ниже или отправьте параметры помещения - менеджер рассчитает мощность, стоимость, оплату и доставку по России.
+				</p>
+				<p class='mt-4 text-sm font-normal leading-6 text-neutral-700'>
+					Цена радиатора — от <span class='font-medium text-neutral-950'>{Math.min(...designSeries.map(series => series.priceFrom).filter(Boolean)).toLocaleString('ru-RU')} ₽</span>. Изготовление под заказ; срок, наличие и стоимость выбранного размера подтверждаем при расчете.
 				</p>
 				<div class='mt-7 flex flex-col gap-3 min-[420px]:flex-row min-[420px]:flex-wrap'>
 					<a href='/request' class='inline-flex h-11 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>Получить расчет</a>
@@ -506,6 +510,11 @@ const seo = getCategorySeo({
 			</div>
 		</div>
 	</section>
+
+	<ModelPhotoExamples title='Профиль и исполнение дизайн-радиатора крупным планом' items={[
+		{ src: '/images/models/p30v/1.jpg', name: 'Velar P30V', href: '/model/p30v', caption: 'Плоские вертикальные секции и нижняя зона подключения.' },
+		{ src: '/images/models/p30h/main.jpg', name: 'Velar P30H', href: '/model/p30h', caption: 'Горизонтальная версия серии P30 для размещения под окном.' },
+	]} />
 
 	<section class='bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>

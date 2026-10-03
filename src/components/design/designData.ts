@@ -1,6 +1,7 @@
 import { modelsJsonData, type ModelJson } from '@entities/Model'
 import { radiatorsJsonData } from '@entities/Radiator'
 import { getModelSlug } from '@shared/utils/getModelSlug'
+import { catalogConnections, catalogPrices, catalogRange } from '../../lib/catalogFacts'
 
 export type DesignOrientation = 'vertical' | 'horizontal'
 
@@ -14,6 +15,7 @@ export type DesignSeries = {
 	shortUse: string
 	image: string
 	heroImage?: string
+	seriesHref?: string
 	priceFrom: number
 	href: string
 	orientations: DesignOrientation[]
@@ -26,9 +28,17 @@ export type DesignSeries = {
 		image: string
 		shortComment: string
 		priceFrom: number
+		priceTo: number
+		variantCount: number
+		heightLabel: string
+		lengthLabel: string
+		depthLabel: string
+		powerLabel: string
+		connectionLabel: string
 	}>
 	verticalModel?: DesignSeries['models'][number]
 	horizontalModel?: DesignSeries['models'][number]
+	alternativeModel?: DesignSeries['models'][number]
 }
 
 const seriesOrder = ['p30', 'p60', 'q40', 'q60', 'q80', 'r32', 'r42', 'r89', 's', 'sp', 'rt1', 'rt1w', 'rt2', 'qt1', 'qt2']
@@ -182,6 +192,8 @@ const designModels = modelsJsonData
 	.map(model => {
 		const orientation = normalizeOrientation(model)
 		const seriesSlug = getSeriesSlug(model)
+		const variants = radiatorsJsonData.filter(item => item.model_id === model.id)
+		const prices = catalogPrices(variants)
 		return {
 			id: model.id,
 			name: model.name,
@@ -191,6 +203,13 @@ const designModels = modelsJsonData
 			image: `/images/models/${model.slug}/main.jpg`,
 			shortComment: model.short_comment,
 			priceFrom: getMinPrice(model.id),
+			priceTo: prices.highPrice,
+			variantCount: prices.offerCount,
+			heightLabel: catalogRange(variants, 'height'),
+			lengthLabel: catalogRange(variants, 'length'),
+			depthLabel: catalogRange(variants, 'width'),
+			powerLabel: catalogRange(variants, 'dt70', 'Вт'),
+			connectionLabel: catalogConnections(model.connections),
 			seriesSlug,
 		}
 	})
@@ -225,8 +244,27 @@ export const designSeries: DesignSeries[] = seriesOrder
 	})
 	.filter((series): series is DesignSeries => Boolean(series))
 
-export const verticalDesignSeries = designSeries.filter(series => series.verticalModel)
-export const horizontalDesignSeries = designSeries.filter(series => series.horizontalModel)
+function seriesForOrientation(orientation: DesignOrientation): DesignSeries[] {
+	return designSeries.flatMap(series => {
+		const model = series.models.find(item => item.orientation === orientation)
+		if (!model) return []
+		return [{
+			...series,
+			seriesHref: series.models.length > 1 ? series.href : undefined,
+			alternativeModel: series.models.find(item => item.orientation !== orientation),
+			image: model.image,
+			href: model.href,
+			priceFrom: model.priceFrom,
+			orientations: [orientation],
+			models: [model],
+			verticalModel: orientation === 'vertical' ? model : undefined,
+			horizontalModel: orientation === 'horizontal' ? model : undefined,
+		}]
+	})
+}
+
+export const verticalDesignSeries = seriesForOrientation('vertical')
+export const horizontalDesignSeries = seriesForOrientation('horizontal')
 
 export function formatRub(value: number): string {
 	return `${value.toLocaleString('ru-RU')} ₽`

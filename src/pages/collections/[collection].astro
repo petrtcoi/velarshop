@@ -9,6 +9,8 @@ import Layout from '@shared/layouts/Layout.astro'
 import { getModelMainImagePath } from '@shared/utils/getModelMainImagePath'
 import { getModelSlug } from '@shared/utils/getModelSlug'
 import JsonLd from '../../components/seo/JsonLd.astro'
+import ConfigurationExamples from '../../components/product/ConfigurationExamples.astro'
+import { catalogConnections } from '../../lib/catalogFacts'
 import {
 	catalogCollections,
 	collectionMatchesModel,
@@ -108,7 +110,7 @@ function buildModelRow(model: ModelJson, radiators: RadiatorJson[]): ModelRow {
 		depthLabel: formatRange(depths),
 		lengthLabel: formatRange(lengths),
 		powerLabel: powers.length ? formatRange(powers, 'Вт') : 'по расчету',
-		connectionLabel: collection.connectionLabel ?? 'по модели',
+		connectionLabel: model.type === 'convector' ? collection.connectionLabel ?? 'по модели' : catalogConnections(model.connections),
 		variantCount: radiators.length,
 		priceFrom: prices[0] ?? 0,
 		priceLabel: prices.length ? `от ${Math.round(prices[0]).toLocaleString('ru-RU')} ₽` : 'по запросу',
@@ -191,6 +193,9 @@ function buildFaqItems() {
 }
 
 const faqItems = buildFaqItems()
+const exampleModelIds = collection.kind === 'tube-count'
+	? [`${collection.tubeCount}030`, `${collection.tubeCount}057`, `${collection.tubeCount}180`].filter(id => modelRows.some(row => row.id === id))
+	: collection.kind === 'height' ? modelRows.slice(0, 3).map(row => row.id) : []
 const checkItems = collection.kind === 'interaxial'
 	? ['Фото выводов и стены целиком.', 'Расстояние между центрами труб.', 'Расстояние от пола до подоконника.', 'Доступную ширину и глубину.', 'Площадь помещения, высоту потолка и город.']
 	: collection.kind === 'convector'
@@ -280,6 +285,14 @@ const seo = getCategorySeo({
 			</div>
 		</div>
 	</section>
+
+	{exampleModelIds.length > 0 && <ConfigurationExamples
+		id='collection-price-examples'
+		title={collection.kind === 'height' ? `Цены исполнений высотой ${collection.height} мм` : `Цены ${collection.tubeCount}-трубчатых радиаторов на 10 секций`}
+		intro={collection.kind === 'height' ? `Примеры на 10 секций с полной высотой ${collection.height} мм. Сравнивайте мощность при одинаковом температурном режиме; на странице модели можно выбрать другую длину и число секций.` : 'Примеры низкой, стандартной и высокой конфигурации с одинаковым числом секций. Размеры, мощность и цена относятся к конкретному радиатору, что помогает сравнить варианты до расчета.'}
+		modelIds={exampleModelIds}
+		height={collection.height}
+	/>}
 
 	<section class='border-t border-neutral-200 bg-neutral-50 py-10 md:py-14 xl:py-16'>
 		<div class='mx-auto grid max-w-[1180px] gap-8 px-4 md:grid-cols-2 md:gap-12 md:px-6 xl:px-8'>

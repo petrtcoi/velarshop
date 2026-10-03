@@ -1,6 +1,8 @@
 ---
 import Layout from '@shared/layouts/Layout.astro'
 import JsonLd from '../components/seo/JsonLd.astro'
+import ConfigurationExamples from '../components/product/ConfigurationExamples.astro'
+import ColumnsCollectionLinks from '../components/columns/ColumnsCollectionLinks.astro'
 
 import ColumnsCatalog from '../components/columns/ColumnsCatalog.astro'
 import ColumnsComparison from '../components/columns/ColumnsComparison.astro'
@@ -35,8 +37,8 @@ const seo = getCategorySeo({
 		slug: 'columns',
 		url: '/columns',
 		name: 'Трубчатые радиаторы',
-		h1: 'Трубчатые радиаторы',
-		seoTitle: 'Трубчатые радиаторы отопления - каталог, размеры и цены',
+		h1: 'Трубчатые радиаторы отопления',
+		seoTitle: 'Трубчатые радиаторы отопления — купить, размеры и цены Velar',
 		seoDescription:
 			'Стальные трубчатые радиаторы для квартиры и дома: каталог Velar, цены, размеры, мощность, число секций, цвета RAL и варианты подключения. Доставка по России.',
 		ogTitle: 'Трубчатые радиаторы - каталог моделей и цены',
@@ -89,8 +91,15 @@ const seo = getCategorySeo({
 	<JsonLd data={seo.jsonLd} />
 
 	<ColumnsHero />
+	<ColumnsCollectionLinks />
 
 	<PopularModels models={popularModels} />
+	<ConfigurationExamples
+		id='columns-price-examples'
+		title='Цены трубчатых радиаторов в готовых размерах'
+		intro='Сравните четыре конфигурации на 10 секций: низкую 3030, модели 2057 и 3057 с межосевым расстоянием 500 мм и высокую 2180. Цена относится ко всему радиатору с указанными размерами, а не к одной секции. Подходящее число секций определяют по теплопотерям помещения.'
+		modelIds={['3030', '2057', '3057', '2180']}
+	/>
 
 	<ColumnsCatalog models={columnsModels} />
 

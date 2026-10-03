@@ -12,6 +12,7 @@ const NON_INDEXABLE_PATHS = new Set([
 ])
 
 const CANONICAL_ALIAS_PATHS = new Set([
+	'/info/trubchatyy-radiator-ili-panelnyy',
 	'/convector/kwh',
 	'/convector/kwhv',
 	'/convector/kwhv-24v',
@@ -52,6 +53,7 @@ export default defineConfig({
 	site: 'https://velarshop.ru',
 	trailingSlash: 'never',
 	redirects: {
+		'/info/trubchatyy-radiator-ili-panelnyy': '/info/trubchatye-radiatory-vs-panelnye',
 		'/info/raschet-sekciy-trubchatogo-radiatora-uglovaya-komnata':
 			'/info/raschet-radiatorov-dlya-uglovoy-komnaty',
 		...legacyModelRedirects,
