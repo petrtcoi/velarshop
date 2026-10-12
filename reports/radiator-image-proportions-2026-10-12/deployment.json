@@ -1,0 +1,12 @@
+{
+  "commit": "fa73ba3975427f4f5e5b4a1386b2cd0f7b486e80",
+  "previous_commit": "5d8678265f3f362db4dd1df0a5de84355853851e",
+  "deployed_utc": "2026-10-12T18:06:58.963936+00:00",
+  "sitemap_urls": 303,
+  "build_routes": 317,
+  "dist_backup": "/root/sites/velarshop/dist.rollback-article-20261012-180608-fa73ba3",
+  "build_log": "/tmp/velar-article-build-20261012-180608-fa73ba3.log",
+  "nginx_changed": false,
+  "process": "velarshop",
+  "origin_article_http_status": 200
+}
