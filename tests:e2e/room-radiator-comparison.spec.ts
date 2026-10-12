@@ -54,6 +54,8 @@ test('article metadata, visible FAQ and all three illustrations agree', async ({
 	for (const raw of await page.locator('script[type="application/ld+json"]').allTextContents()) visit(JSON.parse(raw))
 	const article = nodes.find(node => node['@type'] === 'Article')
 	expect(article).toBeTruthy()
+	expect(article.datePublished).toBe('2026-10-12')
+	expect(Date.parse(article.dateModified)).toBeGreaterThanOrEqual(Date.parse(article.datePublished))
 	expect(JSON.stringify(article.image)).toContain('velar-p30v-6-same-room.webp')
 	const faq = nodes.find(node => node['@type'] === 'FAQPage')
 	expect(faq.mainEntity).toHaveLength(5)
@@ -89,7 +91,7 @@ test('mobile comparison scrolls within the table without widening the page', asy
 })
 
 test('model and category pages lead to the concrete room comparison', async ({ page }) => {
-	for (const source of ['/model/p30v', '/model/q40v', '/model/r32v', '/design', '/info/forma-trub-dizayn-radiatorov']) {
+	for (const source of ['/model/p30v', '/model/q40v', '/model/r32v', '/design', '/info/forma-trub-dizayn-radiatorov', '/info/wall', '/info/vertical-designer-radiators']) {
 		await page.goto(source)
 		await expect(page.locator(`a[href="${path}"]`)).toHaveCount(1)
 	}
