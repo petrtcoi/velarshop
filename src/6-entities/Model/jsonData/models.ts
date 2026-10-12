@@ -347,7 +347,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: '',
 		related_models: 'kwhv',
 		related_items: '',
-		short_comment: 'Естественная конвекция. Ширина 150-420 мм. Высота 65-140 мм.',
+		short_comment: 'Естественная конвекция. По каталогу: ширина 160–420 мм, высота 70–140 мм.',
 	},
 	{
 		id: 'kwhv',
@@ -359,7 +359,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: '',
 		related_models: 'kwh',
 		related_items: '',
-		short_comment: 'Принудительная конвекция. Ширина 250-420 мм. Высота 85-140 мм.',
+		short_comment: 'Принудительная конвекция. По каталогу: ширина 250–420 мм, высота 85–140 мм.',
 	},
 	{
 		id: 'kwhv24',
@@ -371,7 +371,7 @@ export const modelsJsonData: ModelJson[] = [
 		connections: '',
 		related_models: 'kwhv',
 		related_items: '',
-		short_comment: 'Принудительная конвекция. Вентиляторы 24В. Ширина 200-420 мм. Высота 85-140 мм.',
+		short_comment: 'Принудительная конвекция. Вентиляторы 24В. По каталогу: ширина 250–420 мм, высота 85–140 мм.',
 	},
 	{
 		id: 'nostalgia500',

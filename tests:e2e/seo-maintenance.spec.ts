@@ -34,6 +34,10 @@ test('convector cards and article use the same available catalog dimensions', as
 	await expect(page.getByRole('row', { name: /Ширина корпуса по каталогу/ }).locator('td')).toHaveText(['Ширина корпуса по каталогу', '160–420 мм', '250–420 мм', '250–420 мм'])
 	await expect(page.getByRole('row', { name: /Высота корпуса по каталогу/ }).locator('td')).toHaveText(['Высота корпуса по каталогу', '70–140 мм', '85–140 мм', '85–140 мм'])
 	await expect(page.getByText(/поэтому более узкий корпус/)).toContainText('диапазоны совпадают с KWHV')
+	await page.goto('/collections/vnutripolnye-konvektory-bez-ventilyatora')
+	await expect(page.getByText('Естественная конвекция. По каталогу: ширина 160–420 мм, высота 70–140 мм.', { exact: true })).toBeVisible()
+	await page.goto('/collections/vnutripolnye-konvektory-s-ventilyatorom')
+	await expect(page.getByText('Принудительная конвекция. Вентиляторы 24В. По каталогу: ширина 250–420 мм, высота 85–140 мм.', { exact: true })).toBeVisible()
 })
 
 test('delta T calculator follows the chosen passport in low temperature operation', async ({ page }) => {
