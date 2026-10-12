@@ -206,34 +206,6 @@ export function buildCategoryJsonLd(input: BuildCategoryJsonLdInput): Record<str
 		})
 	}
 
-	input.productOffers.forEach(offer => {
-		const offerUrl = normalizeAbsoluteUrl(offer.url, input.siteUrl)
-		const product: Record<string, unknown> = {
-			'@type': 'Product',
-			name: offer.name,
-			brand: {
-				'@type': 'Brand',
-				name: 'Velar',
-			},
-			offers: {
-				'@type': 'Offer',
-				price: offer.lowPrice,
-				priceCurrency: 'RUB',
-				availability: offer.availability || 'https://schema.org/PreOrder',
-				url: offerUrl,
-			},
-		}
-		if (offer.image) {
-			product.image = normalizeAbsoluteUrl(offer.image, input.siteUrl)
-		}
-		if (offer.description) {
-			product.description = offer.description
-		}
-		if (offer.category) {
-			product.category = offer.category
-		}
-		graph.push(product)
-	})
 
 	return {
 		'@context': 'https://schema.org',

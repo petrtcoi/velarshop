@@ -263,40 +263,12 @@ export function buildSeriesJsonLd(input: BuildSeriesJsonLdInput): Record<string,
 		'@id': variantsId,
 		name: `Модели серии Velar ${input.series.label}`,
 		numberOfItems: input.variants.length,
-		itemListElement: input.variants.map((item, index) => {
-			const variantUrl = normalizeAbsoluteUrl(item.url, input.siteUrl)
-			const price = getVariantPrice(item.priceFrom)
-
-			return {
-				'@type': 'ListItem',
-				position: index + 1,
-				item: {
-				'@type': 'Product',
-				'@id': `${variantUrl}#product`,
-				name: item.name,
-				url: variantUrl,
-				description: getVariantDescription(item, input.series),
-				image: item.image ? normalizeAbsoluteUrl(item.image, input.siteUrl) : undefined,
-				model: item.name,
-				brand: { '@type': 'Brand', name: 'Velar' },
-				material: 'Сталь',
-				additionalProperty,
-				offers: price > 0
-					? {
-							'@type': 'Offer',
-							url: variantUrl,
-							priceCurrency: 'RUB',
-							price: String(price),
-							availability: 'https://schema.org/PreOrder',
-							itemCondition: 'https://schema.org/NewCondition',
-							seller: {
-								'@id': organizationId,
-							},
-						}
-					: undefined,
-				},
-			}
-		}),
+		itemListElement: input.variants.map((item, index) => ({
+			'@type': 'ListItem',
+			position: index + 1,
+			name: item.name,
+			url: normalizeAbsoluteUrl(item.url, input.siteUrl),
+		})),
 	}
 
 	const graph: Record<string, unknown>[] = [

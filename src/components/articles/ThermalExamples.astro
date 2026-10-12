@@ -7,6 +7,8 @@ const specs = [{ modelId: '2057', sections: 10 }, { modelId: '3057', sections: 1
 const configurations = catalogExamples(specs).map(({ model, radiator }) => ({
 	id: radiator.slug, title: `Velar ${model.name}, ${radiator.height} × ${radiator.length} мм, ${radiator.sections} секций`,
 	q50: catalogNumber(radiator.dt50), q60: catalogNumber(radiator.dt60), q70: catalogNumber(radiator.dt70),
+	exponent: model.type === 'columns' ? 1.40 : 1.30,
+	passportUrl: model.type === 'columns' ? '/docs/passports/passport-columns.pdf' : '/docs/passports/passport-q40v.pdf',
 }))
 ---
 <CatalogExamples specs={specs} showTemperatures={true} />

@@ -3,7 +3,7 @@ import { powerAtDeltaT, type ThermalPoints } from '../../lib/thermalPower';
 
 const MIN_DT = 20;
 const MAX_DT = 70;
-type Configuration = ThermalPoints & { id: string; title: string };
+type Configuration = ThermalPoints & { id: string; title: string; exponent: number; passportUrl: string };
 type Props = { configurations: Configuration[] };
 
 export default function DeltaTPowerCalculator({ configurations }: Props) {
@@ -12,8 +12,7 @@ export default function DeltaTPowerCalculator({ configurations }: Props) {
   const [q70, setQ70] = useState(configuration.q70);
   const [dt, setDt] = useState(60);
 
-  const points = useMemo(() => ({ q70: Math.max(q70, 0), q60: q70 * configuration.q60 / configuration.q70, q50: q70 * configuration.q50 / configuration.q70 }), [q70, configuration]);
-  const power = useMemo(() => powerAtDeltaT(dt, points), [dt, points]);
+  const power = useMemo(() => powerAtDeltaT(dt, Math.max(q70, 0), configuration.exponent), [dt, q70, configuration]);
   const roundedPower = Math.round(power);
   const formattedPower = roundedPower.toLocaleString("ru-RU");
 
@@ -45,12 +44,12 @@ export default function DeltaTPowerCalculator({ configurations }: Props) {
           }}
         />
       </label>
-      <p class="mt-3 text-sm leading-6 text-neutral-600">Для выбранной конфигурации в каталоге: ΔT70 — {configuration.q70} Вт, ΔT60 — {configuration.q60} Вт, ΔT50 — {configuration.q50} Вт. При изменении мощности ΔT70 сохраняется соотношение точек выбранной модели.</p>
+      <p class="mt-3 text-sm leading-6 text-neutral-600">Для выбранной конфигурации в каталоге: ΔT70 — {configuration.q70} Вт, ΔT60 — {configuration.q60} Вт, ΔT50 — {configuration.q50} Вт. Калькулятор использует формулу паспорта Q = Q70 × (ΔT / 70)ⁿ с n = {configuration.exponent.toLocaleString("ru-RU")}. Каталожные ΔT50/60 могут отличаться от пересчета по этой формуле.</p>
 
       <div class="mt-6 rounded-xl bg-white p-4 ring-1 ring-neutral-200">
         <div class="mb-2 flex items-center justify-between text-sm text-neutral-600">
           <span>ΔT, °C</span>
-          <span class="font-semibold text-neutral-800">{dt}°</span>
+          <span class="font-semibold text-neutral-800">{dt.toLocaleString("ru-RU")}°</span>
         </div>
 
         <label class="sr-only" for="delta-t-value">Разница температур ΔT, °C</label>
@@ -82,10 +81,10 @@ export default function DeltaTPowerCalculator({ configurations }: Props) {
           {formattedPower} Вт
         </div>
       </div>
-      {dt < 50 && <p role="note" class="mt-4 text-sm leading-6 text-neutral-700">При ΔT ниже 50°C результат оценочный: используется экстраполяция. Для заказа подтвердите мощность у производителя или проектировщика.</p>}
+      {dt < 50 && <p role="note" class="mt-4 text-sm leading-6 text-neutral-700">При ΔT ниже 50°C результат оценочный: пересчет выполнен по коэффициенту n из паспорта выбранной модели. Для заказа подтвердите мощность у производителя или проектировщика.</p>}
 
       <div class="mt-4 text-xs text-neutral-600">
-        Расчет справочный, по точкам выбранной конфигурации в каталоге. Он не рассчитывает теплопотери комнаты. Реальная теплоотдача зависит от температур системы, расхода
+        Расчет справочный, по формуле <a href={configuration.passportUrl} class="text-red-700 underline decoration-red-300 underline-offset-2">паспорта выбранной модели</a>. Он не рассчитывает теплопотери комнаты. Реальная теплоотдача зависит от температур системы, расхода
         теплоносителя, схемы подключения и условий установки.
       </div>
     </section>

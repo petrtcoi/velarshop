@@ -79,24 +79,6 @@ const schema = [
 				'@type': 'ListItem',
 				position: index + 1,
 				url: new URL(item.href, canonicalUrl).toString(),
-				item: {
-					'@type': 'Product',
-					name: item.models[0].title,
-					description: `${item.profile}. ${isVertical ? 'Вертикальное' : 'Горизонтальное'} исполнение. ${item.description}`,
-					url: new URL(item.href, canonicalUrl).toString(),
-					sku: item.models[0].id,
-					image: new URL(item.image, canonicalUrl).toString(),
-					brand: { '@type': 'Brand', name: 'Velar' },
-					offers: item.priceFrom > 0
-						? {
-								'@type': 'Offer',
-								priceCurrency: 'RUB',
-								price: String(Math.round(item.priceFrom)),
-								availability: 'https://schema.org/PreOrder',
-								url: new URL(item.href, canonicalUrl).toString(),
-							}
-						: undefined,
-				},
 			})),
 		},
 	},

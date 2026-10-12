@@ -1,3 +1,4 @@
+import { formatDimensions } from '../productFormat'
 import type { ModelJson } from '@entities/Model'
 import type { RadiatorJson } from '@entities/Radiator'
 import { getModelSlug } from '@shared/utils/getModelSlug'
@@ -288,10 +289,11 @@ export function buildModelJsonLd(input: BuildModelJsonLdInput): Record<string, u
 			availability: input.availabilityUrl,
 			itemCondition: 'https://schema.org/NewCondition',
 			seller: { '@id': organizationId },
+			...(input.model.type === 'convector' ? { description: 'Цена прибора без решетки, управления и доставки' } : {}),
 		}
 		if (input.baseConfiguration) {
 			baseProduct.sku = input.baseConfiguration.slug
-			baseProduct.size = `${input.baseConfiguration.height} × ${input.baseConfiguration.length} мм`
+			baseProduct.size = formatDimensions(input.model.type, input.baseConfiguration)
 		}
 	}
 

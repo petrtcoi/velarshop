@@ -1,6 +1,7 @@
 ---
 import { catalogExamples, type ExampleSpec } from '../../lib/catalogExamples'
 import { catalogNumber } from '../../lib/catalogFacts'
+import { formatDimensions, formatSections } from '../../lib/productFormat'
 type Props = { specs: ExampleSpec[]; title?: string; showMass?: boolean; showTemperatures?: boolean; id?: string }
 const { specs, title, showMass = false, showTemperatures = false, id } = Astro.props as Props
 const rows = catalogExamples(specs)
@@ -12,11 +13,11 @@ const value = (input: string | number | undefined, unit: string) => input ? `${c
 	{title && <h2>{title}</h2>}
 	<div class='overflow-x-auto'>
 		<table class='w-full min-w-[680px] border-collapse text-left text-sm'>
-			<thead><tr class='border-y border-neutral-200'>{['Модель и размер', 'Глубина', 'Мощность ΔT70', ...(showTemperatures ? ['ΔT60', 'ΔT50'] : []), ...(showMass ? ['Масса без воды', 'Объем воды', 'С водой, без арматуры'] : []), hasConvector ? 'Прибор' : 'Цена радиатора', ...(hasConvector ? ['Базовая решетка', 'Прибор с решеткой'] : [])].map(label => <th scope='col' class='px-3 py-3 font-medium'>{label}</th>)}</tr></thead>
+			<thead><tr class='border-y border-neutral-200'>{['Модель и размер', hasConvector ? 'Глубина радиатора / ширина короба' : 'Глубина', 'Мощность ΔT70 и конвекция', ...(showTemperatures ? ['ΔT60', 'ΔT50'] : []), ...(showMass ? ['Масса без воды', 'Объем воды', 'С водой, без арматуры'] : []), hasConvector ? 'Прибор' : 'Цена радиатора', ...(hasConvector ? ['Базовая решетка', 'Прибор с решеткой'] : [])].map(label => <th scope='col' class='px-3 py-3 font-medium'>{label}</th>)}</tr></thead>
 			<tbody>{rows.map(({ model, radiator, href, price, grillePrice, total }) => <tr class='border-b border-neutral-200'>
-				<th scope='row' class='px-3 py-4 font-medium'><a href={`${href}#model-variants`} class='text-red-700 underline decoration-red-300 underline-offset-2 hover:decoration-transparent'>Velar {model.name}</a><span class='mt-1 block font-normal'>{radiator.height} × {radiator.length} мм{radiator.sections ? `, ${radiator.sections} секций` : ''}</span></th>
+				<th scope='row' class='px-3 py-4 font-medium'><a href={`${href}#model-variants`} class='text-red-700 underline decoration-red-300 underline-offset-2 hover:decoration-transparent'>Velar {model.name}</a><span class='mt-1 block font-normal'>{formatDimensions(model.type, radiator)}{radiator.sections ? `, ${formatSections(radiator.sections)}` : ''}</span></th>
 				<td class='whitespace-nowrap px-3 py-4'>{value(radiator.width, 'мм')}</td>
-				<td class='whitespace-nowrap px-3 py-4'>{value(radiator.dt70, 'Вт')}</td>
+				<td class='px-3 py-4'><span class='whitespace-nowrap'>{value(radiator.dt70, 'Вт')}</span>{hasConvector && <span class='mt-1 block text-xs leading-5 text-neutral-600'>{model.id === 'kwhv' || model.id === 'kwhv24' ? 'С вентилятором; скорость для этой мощности уточняется у производителя' : 'Естественная конвекция'}</span>}</td>
 				{showTemperatures && <><td class='whitespace-nowrap px-3 py-4'>{value(radiator.dt60, 'Вт')}</td><td class='whitespace-nowrap px-3 py-4'>{value(radiator.dt50, 'Вт')}</td></>}
 				{showMass && <><td class='whitespace-nowrap px-3 py-4'>{value(radiator.weight, 'кг')}</td><td class='whitespace-nowrap px-3 py-4'>{value(radiator.volume, 'л')}</td><td class='whitespace-nowrap px-3 py-4'>{radiator.weight && radiator.volume ? `${(catalogNumber(radiator.weight) + catalogNumber(radiator.volume)).toLocaleString('ru-RU')} кг` : 'уточняйте'}</td></>}
 				<td class='whitespace-nowrap px-3 py-4'>{rub(price)}</td>

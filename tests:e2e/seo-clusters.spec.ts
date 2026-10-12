@@ -12,20 +12,15 @@ async function schemaNodes(page: Page) {
 	return nodes
 }
 
-test('horizontal cards and offers use horizontal model prices and destinations', async ({ page }) => {
+test('horizontal catalog keeps model destinations without ambiguous Product offers', async ({ page }) => {
 	await page.goto('/design/gorizontalnye')
 	await expect(page.locator('#series-p30 > a')).toHaveAttribute('href', '/model/p30h')
 	await expect(page.locator('#series-p30')).toContainText(/12\s*440/)
 	const nodes = await schemaNodes(page)
-	expect(nodes.some(node => node['@type'] === 'ProductGroup')).toBe(false)
-	const products = nodes.filter(node => node['@type'] === 'Product')
-	expect(products.length).toBe(10)
-	expect(products.every(product => product.sku.endsWith('h'))).toBe(true)
-	const p30 = products.find(product => product.sku === 'p30h')
-	expect(p30.offers.price).toBe('12440')
-	expect(p30.image).toMatch(/\/p30h\/main\.jpg$/)
-	expect(products.every(product => product.offers['@type'] === 'Offer' && Number(product.offers.price) > 0)).toBe(true)
-	expect(products.every(product => product.offers.availability === 'https://schema.org/PreOrder')).toBe(true)
+	expect(nodes.some(node => ['ProductGroup', 'Product', 'Offer'].includes(node['@type']))).toBe(false)
+	const list = nodes.find(node => node['@type'] === 'ItemList')
+	expect(list.itemListElement).toHaveLength(10)
+	expect(list.itemListElement.every(item => item.url.includes('/model/') && item.url.endsWith('h'))).toBe(true)
 })
 
 test('1800 collection keeps nearest height, price and click destination consistent', async ({ page }) => {
