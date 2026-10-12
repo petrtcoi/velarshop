@@ -1,0 +1,10 @@
+
+Running 5 tests using 2 workers
+
+  ✓  1 [chromium] › room-radiator-comparison.spec.ts:12:1 › comparison fits one heat load using the minimum section count of each series (5.6s)
+  ✓  2 [chromium] › room-radiator-comparison.spec.ts:31:1 › lower water temperature requires a new selection for the same room (5.7s)
+  ✓  4 [chromium] › room-radiator-comparison.spec.ts:78:1 › mobile comparison scrolls within the table without widening the page (1.4s)
+  ✓  5 [chromium] › room-radiator-comparison.spec.ts:93:1 › model and category pages lead to the concrete room comparison (3.1s)
+  ✓  3 [chromium] › room-radiator-comparison.spec.ts:44:1 › article metadata, visible FAQ and all three illustrations agree (5.3s)
+
+  5 passed (14.4s)

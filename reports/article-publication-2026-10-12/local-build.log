@@ -1,0 +1,627 @@
+06:43:09 PM [content] Types generated 10.35s
+06:43:09 PM [build] output target: static
+06:43:09 PM [build] Collecting build info...
+06:43:09 PM [build] Completed in 10.62s.
+06:43:09 PM [build] Building static entrypoints...
+Browserslist: caniuse-lite is outdated. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+The language "text" doesn't exist, falling back to plaintext.
+The language "text" doesn't exist, falling back to plaintext.
+The language "text" doesn't exist, falling back to plaintext.
+The language "text" doesn't exist, falling back to plaintext.
+The language "text" doesn't exist, falling back to plaintext.
+The language "text" doesn't exist, falling back to plaintext.
+The language "text" doesn't exist, falling back to plaintext.
+06:43:17 PM [build] Completed in 7.95s.
+
+ building client
+Completed in 0.90s.
+
+
+ generating static routes
+▶ src/pages/index.astro
+  └─ /index.html (+191ms)
+▶ src/pages/collections/index.astro
+  └─ /collections/index.html (+13ms)
+▶ src/pages/collections/radiatory-po-mezhosevomu-rasstoyaniyu.astro
+  └─ /collections/radiatory-po-mezhosevomu-rasstoyaniyu/index.html (+6ms)
+▶ src/pages/collections/verticalnye-radiatory-1800-mm.astro
+  └─ /collections/verticalnye-radiatory-1800-mm/index.html (+13ms)
+▶ src/pages/collections/[collection].astro
+  ├─ /collections/radiatory-mezhosevoe-rasstoyanie-500-mm/index.html (+25ms)
+  ├─ /collections/radiatory-mezhosevoe-rasstoyanie-300-mm/index.html (+16ms)
+  ├─ /collections/radiatory-mezhosevoe-rasstoyanie-450-mm/index.html (+14ms)
+  ├─ /collections/radiatory-vysotoy-300-mm/index.html (+13ms)
+  ├─ /collections/radiatory-vysotoy-400-mm/index.html (+13ms)
+  ├─ /collections/radiatory-vysotoy-500-mm/index.html (+27ms)
+  ├─ /collections/radiatory-vysotoy-550-mm/index.html (+14ms)
+  ├─ /collections/radiatory-vysotoy-750-mm/index.html (+13ms)
+  ├─ /collections/radiatory-vysotoy-1000-mm/index.html (+13ms)
+  ├─ /collections/radiatory-vysotoy-1250-mm/index.html (+13ms)
+  ├─ /collections/radiatory-vysotoy-1500-mm/index.html (+14ms)
+  ├─ /collections/radiatory-vysotoy-2000-mm/index.html (+14ms)
+  ├─ /collections/radiatory-vysotoy-2250-mm/index.html (+19ms)
+  ├─ /collections/radiatory-vysotoy-2500-mm/index.html (+13ms)
+  ├─ /collections/2-trubchatye-radiatory/index.html (+7ms)
+  ├─ /collections/3-trubchatye-radiatory/index.html (+8ms)
+  ├─ /collections/4-trubchatye-radiatory/index.html (+8ms)
+  ├─ /collections/5-trubchatye-radiatory/index.html (+7ms)
+  ├─ /collections/nizkie-trubchatye-radiatory/index.html (+16ms)
+  ├─ /collections/vnutripolnye-konvektory-bez-ventilyatora/index.html (+5ms)
+  └─ /collections/vnutripolnye-konvektory-s-ventilyatorom/index.html (+5ms)
+▶ src/pages/convector/kwhv-24v.astro
+  └─ /convector/kwhv-24v/index.html (+1ms)
+▶ src/pages/convector/kwhv.astro
+  └─ /convector/kwhv/index.html (+1ms)
+▶ src/pages/convector/kwh.astro
+  └─ /convector/kwh/index.html (+1ms)
+▶ src/pages/convector.astro
+  └─ /convector/index.html (+24ms)
+▶ src/pages/columns/[model].astro
+  ├─ /columns/3020/index.html (+19ms)
+  ├─ /columns/2030/index.html (+24ms)
+  ├─ /columns/3030/index.html (+10ms)
+  ├─ /columns/4030/index.html (+9ms)
+  ├─ /columns/2037/index.html (+9ms)
+  ├─ /columns/3037/index.html (+9ms)
+  ├─ /columns/4037/index.html (+9ms)
+  ├─ /columns/2040/index.html (+14ms)
+  ├─ /columns/3040/index.html (+9ms)
+  ├─ /columns/4040/index.html (+9ms)
+  ├─ /columns/2045/index.html (+8ms)
+  ├─ /columns/3045/index.html (+8ms)
+  ├─ /columns/4045/index.html (+8ms)
+  ├─ /columns/2050/index.html (+16ms)
+  ├─ /columns/3050/index.html (+10ms)
+  ├─ /columns/4050/index.html (+9ms)
+  ├─ /columns/2055/index.html (+9ms)
+  ├─ /columns/3055/index.html (+12ms)
+  ├─ /columns/4055/index.html (+17ms)
+  ├─ /columns/2057/index.html (+18ms)
+  ├─ /columns/3057/index.html (+10ms)
+  ├─ /columns/4057/index.html (+9ms)
+  ├─ /columns/2060/index.html (+9ms)
+  ├─ /columns/3060/index.html (+9ms)
+  ├─ /columns/4060/index.html (+9ms)
+  ├─ /columns/2075/index.html (+15ms)
+  ├─ /columns/3075/index.html (+10ms)
+  ├─ /columns/4075/index.html (+9ms)
+  ├─ /columns/2090/index.html (+9ms)
+  ├─ /columns/3090/index.html (+10ms)
+  ├─ /columns/4090/index.html (+9ms)
+  ├─ /columns/2100/index.html (+11ms)
+  ├─ /columns/3100/index.html (+7ms)
+  ├─ /columns/4100/index.html (+7ms)
+  ├─ /columns/2110/index.html (+8ms)
+  ├─ /columns/3110/index.html (+7ms)
+  ├─ /columns/4110/index.html (+7ms)
+  ├─ /columns/2120/index.html (+7ms)
+  ├─ /columns/3120/index.html (+11ms)
+  ├─ /columns/4120/index.html (+7ms)
+  ├─ /columns/2150/index.html (+7ms)
+  ├─ /columns/3150/index.html (+7ms)
+  ├─ /columns/4150/index.html (+7ms)
+  ├─ /columns/2180/index.html (+7ms)
+  ├─ /columns/3180/index.html (+7ms)
+  ├─ /columns/4180/index.html (+14ms)
+  ├─ /columns/2200/index.html (+10ms)
+  ├─ /columns/3200/index.html (+7ms)
+  ├─ /columns/4200/index.html (+7ms)
+  ├─ /columns/5030/index.html (+8ms)
+  ├─ /columns/5037/index.html (+8ms)
+  ├─ /columns/5040/index.html (+12ms)
+  ├─ /columns/5045/index.html (+8ms)
+  ├─ /columns/5050/index.html (+7ms)
+  ├─ /columns/2052/index.html (+9ms)
+  ├─ /columns/3052/index.html (+11ms)
+  ├─ /columns/4052/index.html (+9ms)
+  ├─ /columns/5052/index.html (+12ms)
+  ├─ /columns/5055/index.html (+9ms)
+  ├─ /columns/5057/index.html (+8ms)
+  ├─ /columns/5060/index.html (+8ms)
+  ├─ /columns/5075/index.html (+8ms)
+  ├─ /columns/5090/index.html (+7ms)
+  ├─ /columns/5100/index.html (+14ms)
+  ├─ /columns/5110/index.html (+7ms)
+  ├─ /columns/5120/index.html (+7ms)
+  ├─ /columns/5150/index.html (+7ms)
+  ├─ /columns/5180/index.html (+6ms)
+  └─ /columns/5200/index.html (+6ms)
+▶ src/pages/columns.astro
+  └─ /columns/index.html (+41ms)
+▶ src/pages/request.astro
+  └─ /request/index.html (+20ms)
+▶ src/pages/design/gorizontalnye.astro
+  └─ /design/gorizontalnye/index.html (+20ms)
+▶ src/pages/design/vertikalnye.astro
+  └─ /design/vertikalnye/index.html (+7ms)
+▶ src/pages/design/[series].astro
+  ├─ /design/p30/index.html (+12ms)
+  ├─ /design/p60/index.html (+14ms)
+  ├─ /design/q40/index.html (+9ms)
+  ├─ /design/q60/index.html (+8ms)
+  ├─ /design/q80/index.html (+6ms)
+  ├─ /design/r32/index.html (+9ms)
+  ├─ /design/r42/index.html (+7ms)
+  ├─ /design/r89/index.html (+13ms)
+  ├─ /design/s/index.html (+8ms)
+  └─ /design/sp/index.html (+8ms)
+▶ src/pages/design.astro
+  └─ /design/index.html (+15ms)
+▶ src/pages/floor.astro
+  └─ /floor/index.html (+19ms)
+▶ src/pages/model/[model].astro
+  ├─ /model/r42v/index.html (+24ms)
+  ├─ /model/r42h/index.html (+26ms)
+  ├─ /model/p30v/index.html (+48ms)
+  ├─ /model/p30h/index.html (+40ms)
+  ├─ /model/p60v/index.html (+30ms)
+  ├─ /model/p60h/index.html (+24ms)
+  ├─ /model/sv/index.html (+43ms)
+  ├─ /model/sh/index.html (+31ms)
+  ├─ /model/spv/index.html (+30ms)
+  ├─ /model/sph/index.html (+34ms)
+  ├─ /model/q40v/index.html (+29ms)
+  ├─ /model/q40h/index.html (+24ms)
+  ├─ /model/q60v/index.html (+27ms)
+  ├─ /model/q60h/index.html (+16ms)
+  ├─ /model/q80v/index.html (+15ms)
+  ├─ /model/q80h/index.html (+16ms)
+  ├─ /model/r32v/index.html (+38ms)
+  ├─ /model/r32h/index.html (+25ms)
+  ├─ /model/r89v/index.html (+17ms)
+  ├─ /model/r89h/index.html (+15ms)
+  ├─ /model/rt1v/index.html (+24ms)
+  ├─ /model/rt2v/index.html (+13ms)
+  ├─ /model/rt1wv/index.html (+24ms)
+  ├─ /model/qt1v/index.html (+20ms)
+  ├─ /model/qt2v/index.html (+15ms)
+  ├─ /model/q500/index.html (+13ms)
+  ├─ /model/p200/index.html (+21ms)
+  ├─ /model/p300/index.html (+11ms)
+  ├─ /model/kwh/index.html (+129ms)
+  ├─ /model/kwhv/index.html (+74ms)
+  ├─ /model/kwhv24/index.html (+93ms)
+  ├─ /model/nostalgia500/index.html (+13ms)
+  ├─ /model/historic500/index.html (+12ms)
+  ├─ /model/nostalgia300/index.html (+10ms)
+  └─ /model/historic300/index.html (+19ms)
+▶ src/pages/retro/nostalgia.astro
+  └─ /retro/nostalgia/index.html (+3ms)
+▶ src/pages/retro/historic.astro
+  └─ /retro/historic/index.html (+2ms)
+▶ src/pages/retro.astro
+  └─ /retro/index.html (+17ms)
+▶ src/pages/cart.astro
+  └─ /cart/index.html (+20ms)
+▶ src/pages/info/index.astro
+  └─ /info/index.html (+91ms)
+▶ src/pages/info/oshibki-pri-vybore-radiatorov-otopleniya.astro
+  └─ /info/oshibki-pri-vybore-radiatorov-otopleniya/index.html (+25ms)
+▶ src/pages/info/radiatory-s-ornamentom-kachestvo-litya.astro
+  └─ /info/radiatory-s-ornamentom-kachestvo-litya/index.html (+3ms)
+▶ src/pages/info/patina-i-tsveta-dlya-retro-radiatorov.astro
+  └─ /info/patina-i-tsveta-dlya-retro-radiatorov/index.html (+3ms)
+▶ src/pages/info/radiatory-dlya-panoramnyh-okon.astro
+  └─ /info/radiatory-dlya-panoramnyh-okon/index.html (+2ms)
+▶ src/pages/info/[article].astro
+  ├─ /info/velar-p30v-q40v-r32v-sravnenie/index.html (+22ms)
+  ├─ /info/matovyy-ili-glyantsevyy-radiator/index.html (+9ms)
+  ├─ /info/radiator-dlya-spalni/index.html (+10ms)
+  ├─ /info/trubchatye-radiatory-v-interere/index.html (+10ms)
+  ├─ /info/kak-vybrat-reshetku-dlya-vnutripolnogo-konvektora/index.html (+9ms)
+  ├─ /info/raschet-sekciy-chugunnogo-retro-radiatora/index.html (+16ms)
+  ├─ /info/kak-podobrat-dizayn-radiator-pod-gotovye-vyvody-trub/index.html (+8ms)
+  ├─ /info/trubchatye-radiatory-dlya-chastnogo-doma/index.html (+8ms)
+  ├─ /info/nizkie-trubchatye-radiatory-pod-okno/index.html (+8ms)
+  ├─ /info/dizayn-radiator-s-tenom-kogda-nuzhen/index.html (+8ms)
+  ├─ /info/kakoy-radiator-vybrat-dlya-kvartiry/index.html (+12ms)
+  ├─ /info/kakoy-radiator-vybrat-dlya-chastnogo-doma/index.html (+15ms)
+  ├─ /info/kak-podgotovit-dannye-dlya-rascheta-radiatora/index.html (+10ms)
+  ├─ /info/oshibki-ekspluatacii-trubchatyh-radiatorov/index.html (+8ms)
+  ├─ /info/kwh-kwhv-kwhv24-chto-vybrat/index.html (+11ms)
+  ├─ /info/trubchatye-radiatory-velar-dlya-kvartiry/index.html (+18ms)
+  ├─ /info/wall/index.html (+18ms)
+  ├─ /info/radiatory-s-ornamentom-ili-bez/index.html (+12ms)
+  ├─ /info/chugunnye-retro-radiatory-v-interere/index.html (+9ms)
+  ├─ /info/column-radiators-pros-cons/index.html (+10ms)
+  ├─ /info/2-3-4-trubchatye-radiatory-chto-vybrat/index.html (+9ms)
+  ├─ /info/chto-postavit-pered-panoramnym-oknom/index.html (+55ms)
+  ├─ /info/vnutripolnyy-konvektor-scenarii/index.html (+102ms)
+  ├─ /info/trubchatye-radiatory-vs-panelnye/index.html (+9ms)
+  ├─ /info/kompaktnye-dizayn-radiatory/index.html (+7ms)
+  ├─ /info/oshibki-pri-vybore-dizain-radiatorov/index.html (+7ms)
+  ├─ /info/forma-trub-dizayn-radiatorov/index.html (+7ms)
+  ├─ /info/oshibki-pri-vybore-radiatorov/index.html (+6ms)
+  ├─ /info/teplovaya-zavesa-u-panoramnyh-okon/index.html (+8ms)
+  ├─ /info/bezopasnost-radiatorov-dlya-detej/index.html (+6ms)
+  ├─ /info/nostalgia-ili-historic-chto-vybrat/index.html (+8ms)
+  ├─ /info/restavratsiya-chugunnyh-radiatorov/index.html (+7ms)
+  ├─ /info/vnutripolnye-konvektory-podbor-i-montazh/index.html (+7ms)
+  ├─ /info/vnutripolnye-konvektory-s-ventilyatorom/index.html (+8ms)
+  ├─ /info/kreplenie-radiatora-k-stene/index.html (+8ms)
+  ├─ /info/teplootdacha-radiatora-delta-t-chto-eto/index.html (+8ms)
+  ├─ /info/zamena-panelnyh-radiatorov-na-trubchatye-velar/index.html (+8ms)
+  ├─ /info/obsluzhivanie-vnutripolnyh-konvektorov/index.html (+8ms)
+  ├─ /info/kak-otlichit-kachestvennoe-lite-radiatorov/index.html (+6ms)
+  ├─ /info/vnutripolnye-konvektory-prinuditelnaia-vs-estestvennaia-konvekciia/index.html (+6ms)
+  ├─ /info/pravila-ekspluatacii-chugunnyh-radiatorov/index.html (+7ms)
+  ├─ /info/raschet-radiatorov-dlya-uglovoy-komnaty/index.html (+6ms)
+  ├─ /info/kak-vybirat-vnutripolnye-konvektory/index.html (+13ms)
+  ├─ /info/kak-podobrat-radiatory-dlya-kuhni/index.html (+10ms)
+  ├─ /info/tsvet-interera-i-radiator/index.html (+9ms)
+  ├─ /info/kak-chistit-trubchatyj-radiator-otopleniya/index.html (+7ms)
+  ├─ /info/pochemu-radiator-ne-greet-polnostyu/index.html (+6ms)
+  ├─ /info/termostats/index.html (+7ms)
+  ├─ /info/compatibility-materials-radiators/index.html (+6ms)
+  ├─ /info/air-in-radiators/index.html (+6ms)
+  ├─ /info/vertical-designer-radiators/index.html (+7ms)
+  ├─ /info/tube-radiators-myths-and-facts/index.html (+6ms)
+  ├─ /info/termostat-installation-errors/index.html (+9ms)
+  ├─ /info/220v-vs-24v/index.html (+7ms)
+  ├─ /info/horizontal-designer-radiators/index.html (+7ms)
+  ├─ /info/teplootdacha/index.html (+6ms)
+  ├─ /info/colors/index.html (+6ms)
+  ├─ /info/radiatory-dlya-panoramnykh-okon-tipy-osobennosti/index.html (+8ms)
+  ├─ /info/cold/index.html (+6ms)
+  ├─ /info/panoramnie-okna/index.html (+8ms)
+  ├─ /info/kak-podobrat-radiator-pod-dizajn-kvartiry/index.html (+7ms)
+  ├─ /info/floor-design-radiators/index.html (+7ms)
+  ├─ /info/iron-cast-radiators/index.html (+9ms)
+  ├─ /info/tube-radiators/index.html (+8ms)
+  ├─ /info/convectors-pros-cons/index.html (+6ms)
+  ├─ /info/chernye-dizainerskie-radiatory-otopleniya/index.html (+7ms)
+  ├─ /info/radiator-types/index.html (+8ms)
+  ├─ /info/steel-tube-radiators-guide/index.html (+7ms)
+  ├─ /info/vertical/index.html (+7ms)
+  ├─ /info/design/index.html (+6ms)
+  ├─ /info/power/index.html (+6ms)
+  ├─ /info/heating/index.html (+7ms)
+  ├─ /info/steel/index.html (+6ms)
+  ├─ /info/convectors/index.html (+10ms)
+  ├─ /info/modern/index.html (+6ms)
+  └─ /info/ironcast/index.html (+6ms)
+▶ src/pages/item/index.astro
+  └─ /item/index.html (+6ms)
+▶ src/pages/item/[item].astro
+  ├─ /item/wh-wt/index.html (+7ms)
+  ├─ /item/wh-bk/index.html (+6ms)
+  ├─ /item/wh-gd/index.html (+5ms)
+  ├─ /item/brt-500/index.html (+8ms)
+  ├─ /item/kvu-150-65-90/index.html (+9ms)
+  ├─ /item/kvu-150-65-135/index.html (+9ms)
+  ├─ /item/kvu-200-65-90/index.html (+13ms)
+  ├─ /item/kvu-200-65-135/index.html (+7ms)
+  ├─ /item/kvu-250-65-90/index.html (+7ms)
+  ├─ /item/kvu-250-65-135/index.html (+7ms)
+  ├─ /item/kvu-300-65-90/index.html (+6ms)
+  ├─ /item/kvu-300-65-135/index.html (+6ms)
+  ├─ /item/kvu-350-65-90/index.html (+5ms)
+  ├─ /item/kvu-350-65-135/index.html (+5ms)
+  ├─ /item/kvu-420-65-90/index.html (+5ms)
+  ├─ /item/kvu-420-65-135/index.html (+5ms)
+  ├─ /item/kvu-150-85-90/index.html (+5ms)
+  ├─ /item/kvu-150-85-135/index.html (+5ms)
+  ├─ /item/kvu-200-85-90/index.html (+7ms)
+  ├─ /item/kvu-200-85-135/index.html (+4ms)
+  ├─ /item/kvu-250-85-90/index.html (+4ms)
+  ├─ /item/kvu-250-85-135/index.html (+4ms)
+  ├─ /item/kvu-300-85-90/index.html (+4ms)
+  ├─ /item/kvu-300-85-135/index.html (+4ms)
+  ├─ /item/kvu-350-85-90/index.html (+4ms)
+  ├─ /item/kvu-350-85-135/index.html (+4ms)
+  ├─ /item/kvu-420-85-90/index.html (+4ms)
+  ├─ /item/kvu-420-85-135/index.html (+4ms)
+  ├─ /item/kvu-150-105-90/index.html (+4ms)
+  ├─ /item/kvu-150-105-135/index.html (+4ms)
+  ├─ /item/kvu-200-105-90/index.html (+7ms)
+  ├─ /item/kvu-200-105-135/index.html (+5ms)
+  ├─ /item/kvu-250-105-90/index.html (+5ms)
+  ├─ /item/kvu-250-105-135/index.html (+5ms)
+  ├─ /item/kvu-300-105-90/index.html (+4ms)
+  ├─ /item/kvu-300-105-135/index.html (+6ms)
+  ├─ /item/kvu-350-105-90/index.html (+4ms)
+  ├─ /item/kvu-350-105-135/index.html (+5ms)
+  ├─ /item/kvu-420-105-90/index.html (+5ms)
+  ├─ /item/kvu-420-105-135/index.html (+5ms)
+  ├─ /item/kvu-200-120-90/index.html (+7ms)
+  ├─ /item/kvu-200-120-135/index.html (+6ms)
+  ├─ /item/kvu-250-120-90/index.html (+12ms)
+  ├─ /item/kvu-250-120-135/index.html (+6ms)
+  ├─ /item/kvu-350-120-90/index.html (+5ms)
+  ├─ /item/kvu-350-120-135/index.html (+5ms)
+  ├─ /item/kvu-420-120-90/index.html (+5ms)
+  ├─ /item/kvu-420-120-135/index.html (+5ms)
+  ├─ /item/kvu-200-140-90/index.html (+9ms)
+  ├─ /item/kvu-200-140-135/index.html (+6ms)
+  ├─ /item/kvu-250-140-90/index.html (+5ms)
+  ├─ /item/kvu-250-140-135/index.html (+5ms)
+  ├─ /item/kvu-300-140-90/index.html (+5ms)
+  ├─ /item/kvu-300-140-135/index.html (+4ms)
+  ├─ /item/kvu-350-140-90/index.html (+7ms)
+  ├─ /item/kvu-350-140-135/index.html (+5ms)
+  ├─ /item/kvu-420-140-90/index.html (+4ms)
+  └─ /item/kvu-420-140-135/index.html (+4ms)
+▶ src/pages/news/index.astro
+  └─ /news/index.html (+7ms)
+▶ src/pages/news/[article].astro
+  ├─ /news/trubchatye-vmesto-panelnyh/index.html (+10ms)
+  ├─ /news/velar-5-columns/index.html (+6ms)
+  ├─ /news/2025-consoles/index.html (+5ms)
+  ├─ /news/kz-2025/index.html (+5ms)
+  ├─ /news/velar-p30-povyshenie-cen-avgust-2025/index.html (+4ms)
+  ├─ /news/2025-prices-P30/index.html (+5ms)
+  ├─ /news/columns-warranty-15/index.html (+7ms)
+  ├─ /news/new-package/index.html (+6ms)
+  ├─ /news/aquaflame-moscow-2024/index.html (+5ms)
+  ├─ /news/ral9005/index.html (+4ms)
+  ├─ /news/evraros/index.html (+5ms)
+  ├─ /news/3columns-velar-wh/index.html (+5ms)
+  └─ /news/aquatherm-moscow-2023/index.html (+4ms)
+▶ src/pages/404.astro
+  └─ /404.html (+3ms)
+λ src/pages/api/hero-configurator/[model].json.ts
+  ├─ /api/hero-configurator/r42v.json (+1ms)
+  ├─ /api/hero-configurator/r42h.json (+1ms)
+  ├─ /api/hero-configurator/p30v.json (+1ms)
+  ├─ /api/hero-configurator/p30h.json (+1ms)
+  ├─ /api/hero-configurator/p60v.json (+1ms)
+  ├─ /api/hero-configurator/p60h.json (+1ms)
+  ├─ /api/hero-configurator/sv.json (+1ms)
+  ├─ /api/hero-configurator/sh.json (+1ms)
+  ├─ /api/hero-configurator/spv.json (+1ms)
+  ├─ /api/hero-configurator/sph.json (+1ms)
+  ├─ /api/hero-configurator/q40v.json (+1ms)
+  ├─ /api/hero-configurator/q40h.json (+1ms)
+  ├─ /api/hero-configurator/q60v.json (+1ms)
+  ├─ /api/hero-configurator/q60h.json (+0ms)
+  ├─ /api/hero-configurator/q80v.json (+0ms)
+  ├─ /api/hero-configurator/q80h.json (+0ms)
+  ├─ /api/hero-configurator/r32v.json (+1ms)
+  ├─ /api/hero-configurator/r32h.json (+1ms)
+  ├─ /api/hero-configurator/r89v.json (+0ms)
+  ├─ /api/hero-configurator/r89h.json (+1ms)
+  ├─ /api/hero-configurator/rt1v.json (+0ms)
+  ├─ /api/hero-configurator/rt2v.json (+0ms)
+  ├─ /api/hero-configurator/rt1wv.json (+0ms)
+  ├─ /api/hero-configurator/qt1v.json (+0ms)
+  ├─ /api/hero-configurator/qt2v.json (+0ms)
+  ├─ /api/hero-configurator/q500.json (+0ms)
+  ├─ /api/hero-configurator/p200.json (+0ms)
+  ├─ /api/hero-configurator/p300.json (+0ms)
+  ├─ /api/hero-configurator/kwh.json (+3ms)
+  ├─ /api/hero-configurator/kwhv.json (+2ms)
+  ├─ /api/hero-configurator/kwhv24.json (+2ms)
+  ├─ /api/hero-configurator/nostalgia500.json (+0ms)
+  ├─ /api/hero-configurator/historic500.json (+0ms)
+  ├─ /api/hero-configurator/nostalgia300.json (+0ms)
+  ├─ /api/hero-configurator/historic300.json (+0ms)
+  ├─ /api/hero-configurator/3020.json (+1ms)
+  ├─ /api/hero-configurator/2030.json (+1ms)
+  ├─ /api/hero-configurator/3030.json (+1ms)
+  ├─ /api/hero-configurator/4030.json (+0ms)
+  ├─ /api/hero-configurator/2037.json (+0ms)
+  ├─ /api/hero-configurator/3037.json (+0ms)
+  ├─ /api/hero-configurator/4037.json (+0ms)
+  ├─ /api/hero-configurator/2040.json (+0ms)
+  ├─ /api/hero-configurator/3040.json (+1ms)
+  ├─ /api/hero-configurator/4040.json (+0ms)
+  ├─ /api/hero-configurator/2045.json (+0ms)
+  ├─ /api/hero-configurator/3045.json (+0ms)
+  ├─ /api/hero-configurator/4045.json (+0ms)
+  ├─ /api/hero-configurator/2050.json (+0ms)
+  ├─ /api/hero-configurator/3050.json (+0ms)
+  ├─ /api/hero-configurator/4050.json (+0ms)
+  ├─ /api/hero-configurator/2055.json (+1ms)
+  ├─ /api/hero-configurator/3055.json (+1ms)
+  ├─ /api/hero-configurator/4055.json (+0ms)
+  ├─ /api/hero-configurator/2057.json (+0ms)
+  ├─ /api/hero-configurator/3057.json (+1ms)
+  ├─ /api/hero-configurator/4057.json (+0ms)
+  ├─ /api/hero-configurator/2060.json (+1ms)
+  ├─ /api/hero-configurator/3060.json (+1ms)
+  ├─ /api/hero-configurator/4060.json (+1ms)
+  ├─ /api/hero-configurator/2075.json (+1ms)
+  ├─ /api/hero-configurator/3075.json (+1ms)
+  ├─ /api/hero-configurator/4075.json (+0ms)
+  ├─ /api/hero-configurator/2090.json (+0ms)
+  ├─ /api/hero-configurator/3090.json (+0ms)
+  ├─ /api/hero-configurator/4090.json (+0ms)
+  ├─ /api/hero-configurator/2100.json (+0ms)
+  ├─ /api/hero-configurator/3100.json (+0ms)
+  ├─ /api/hero-configurator/4100.json (+0ms)
+  ├─ /api/hero-configurator/2110.json (+0ms)
+  ├─ /api/hero-configurator/3110.json (+0ms)
+  ├─ /api/hero-configurator/4110.json (+0ms)
+  ├─ /api/hero-configurator/2120.json (+0ms)
+  ├─ /api/hero-configurator/3120.json (+0ms)
+  ├─ /api/hero-configurator/4120.json (+0ms)
+  ├─ /api/hero-configurator/2150.json (+0ms)
+  ├─ /api/hero-configurator/3150.json (+0ms)
+  ├─ /api/hero-configurator/4150.json (+0ms)
+  ├─ /api/hero-configurator/2180.json (+0ms)
+  ├─ /api/hero-configurator/3180.json (+0ms)
+  ├─ /api/hero-configurator/4180.json (+0ms)
+  ├─ /api/hero-configurator/2200.json (+0ms)
+  ├─ /api/hero-configurator/3200.json (+0ms)
+  ├─ /api/hero-configurator/4200.json (+0ms)
+  ├─ /api/hero-configurator/5030.json (+0ms)
+  ├─ /api/hero-configurator/5037.json (+0ms)
+  ├─ /api/hero-configurator/5040.json (+0ms)
+  ├─ /api/hero-configurator/5045.json (+0ms)
+  ├─ /api/hero-configurator/5050.json (+0ms)
+  ├─ /api/hero-configurator/2052.json (+0ms)
+  ├─ /api/hero-configurator/3052.json (+0ms)
+  ├─ /api/hero-configurator/4052.json (+0ms)
+  ├─ /api/hero-configurator/5052.json (+0ms)
+  ├─ /api/hero-configurator/5055.json (+0ms)
+  ├─ /api/hero-configurator/5057.json (+1ms)
+  ├─ /api/hero-configurator/5060.json (+1ms)
+  ├─ /api/hero-configurator/5075.json (+0ms)
+  ├─ /api/hero-configurator/5090.json (+0ms)
+  ├─ /api/hero-configurator/5100.json (+0ms)
+  ├─ /api/hero-configurator/5110.json (+0ms)
+  ├─ /api/hero-configurator/5120.json (+0ms)
+  ├─ /api/hero-configurator/5150.json (+0ms)
+  ├─ /api/hero-configurator/5180.json (+0ms)
+  └─ /api/hero-configurator/5200.json (+0ms)
+▶ src/pages/faq/design.astro
+  └─ /faq/design/index.html (+7ms)
+▶ src/pages/[page].astro
+  ├─ /about/index.html (+9ms)
+  ├─ /accepted/index.html (+6ms)
+  ├─ /agreement/index.html (+7ms)
+  ├─ /delivery/index.html (+6ms)
+  ├─ /guarantees/index.html (+5ms)
+  ├─ /oferta/index.html (+7ms)
+  ├─ /privacy/index.html (+5ms)
+  └─ /success/index.html (+5ms)
+λ /model/3020
+  └─ /model/3020/index.html (+1ms)
+λ /model/2030
+  └─ /model/2030/index.html (+0ms)
+λ /model/3030
+  └─ /model/3030/index.html (+0ms)
+λ /model/4030
+  └─ /model/4030/index.html (+0ms)
+λ /model/2037
+  └─ /model/2037/index.html (+0ms)
+λ /model/3037
+  └─ /model/3037/index.html (+0ms)
+λ /model/4037
+  └─ /model/4037/index.html (+0ms)
+λ /model/2040
+  └─ /model/2040/index.html (+0ms)
+λ /model/3040
+  └─ /model/3040/index.html (+0ms)
+λ /model/4040
+  └─ /model/4040/index.html (+1ms)
+λ /model/2045
+  └─ /model/2045/index.html (+0ms)
+λ /model/3045
+  └─ /model/3045/index.html (+0ms)
+λ /model/4045
+  └─ /model/4045/index.html (+0ms)
+λ /model/2050
+  └─ /model/2050/index.html (+0ms)
+λ /model/3050
+  └─ /model/3050/index.html (+0ms)
+λ /model/4050
+  └─ /model/4050/index.html (+0ms)
+λ /model/2052
+  └─ /model/2052/index.html (+0ms)
+λ /model/3052
+  └─ /model/3052/index.html (+0ms)
+λ /model/4052
+  └─ /model/4052/index.html (+6ms)
+λ /model/5052
+  └─ /model/5052/index.html (+1ms)
+λ /model/2055
+  └─ /model/2055/index.html (+0ms)
+λ /model/3055
+  └─ /model/3055/index.html (+0ms)
+λ /model/4055
+  └─ /model/4055/index.html (+1ms)
+λ /model/5055
+  └─ /model/5055/index.html (+0ms)
+λ /model/2057
+  └─ /model/2057/index.html (+0ms)
+λ /model/3057
+  └─ /model/3057/index.html (+0ms)
+λ /model/4057
+  └─ /model/4057/index.html (+0ms)
+λ /model/5057
+  └─ /model/5057/index.html (+0ms)
+λ /model/2060
+  └─ /model/2060/index.html (+0ms)
+λ /model/3060
+  └─ /model/3060/index.html (+0ms)
+λ /model/4060
+  └─ /model/4060/index.html (+0ms)
+λ /model/5060
+  └─ /model/5060/index.html (+0ms)
+λ /model/2075
+  └─ /model/2075/index.html (+0ms)
+λ /model/3075
+  └─ /model/3075/index.html (+0ms)
+λ /model/4075
+  └─ /model/4075/index.html (+0ms)
+λ /model/5075
+  └─ /model/5075/index.html (+0ms)
+λ /model/2090
+  └─ /model/2090/index.html (+0ms)
+λ /model/3090
+  └─ /model/3090/index.html (+0ms)
+λ /model/4090
+  └─ /model/4090/index.html (+0ms)
+λ /model/5090
+  └─ /model/5090/index.html (+0ms)
+λ /model/2100
+  └─ /model/2100/index.html (+0ms)
+λ /model/3100
+  └─ /model/3100/index.html (+0ms)
+λ /model/4100
+  └─ /model/4100/index.html (+0ms)
+λ /model/5100
+  └─ /model/5100/index.html (+0ms)
+λ /model/2110
+  └─ /model/2110/index.html (+0ms)
+λ /model/3110
+  └─ /model/3110/index.html (+0ms)
+λ /model/4110
+  └─ /model/4110/index.html (+0ms)
+λ /model/5110
+  └─ /model/5110/index.html (+0ms)
+λ /model/2120
+  └─ /model/2120/index.html (+0ms)
+λ /model/3120
+  └─ /model/3120/index.html (+0ms)
+λ /model/4120
+  └─ /model/4120/index.html (+0ms)
+λ /model/5120
+  └─ /model/5120/index.html (+0ms)
+λ /model/2150
+  └─ /model/2150/index.html (+0ms)
+λ /model/3150
+  └─ /model/3150/index.html (+0ms)
+λ /model/4150
+  └─ /model/4150/index.html (+0ms)
+λ /model/5150
+  └─ /model/5150/index.html (+0ms)
+λ /model/2180
+  └─ /model/2180/index.html (+0ms)
+λ /model/3180
+  └─ /model/3180/index.html (+0ms)
+λ /model/4180
+  └─ /model/4180/index.html (+0ms)
+λ /model/5180
+  └─ /model/5180/index.html (+0ms)
+λ /model/2200
+  └─ /model/2200/index.html (+0ms)
+λ /model/3200
+  └─ /model/3200/index.html (+0ms)
+λ /model/4200
+  └─ /model/4200/index.html (+0ms)
+λ /model/5200
+  └─ /model/5200/index.html (+0ms)
+λ /model/5030
+  └─ /model/5030/index.html (+0ms)
+λ /model/5037
+  └─ /model/5037/index.html (+0ms)
+λ /model/5040
+  └─ /model/5040/index.html (+0ms)
+λ /model/5045
+  └─ /model/5045/index.html (+0ms)
+λ /model/5050
+  └─ /model/5050/index.html (+0ms)
+λ /info/trubchatyy-radiator-ili-panelnyy
+  └─ /info/trubchatyy-radiator-ili-panelnyy/index.html (+0ms)
+λ /info/raschet-sekciy-trubchatogo-radiatora-uglovaya-komnata
+  └─ /info/raschet-sekciy-trubchatogo-radiatora-uglovaya-komnata/index.html (+0ms)
+Completed in 4.12s.
+
+@astrojs/sitemap: `sitemap-index.xml` is created.
+
+06:43:22 PM [build] 317 page(s) built in 23.90s
+06:43:22 PM [build] Complete!

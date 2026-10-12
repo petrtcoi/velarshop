@@ -1,0 +1,398 @@
+{
+  "checked_utc": "2026-10-12T16:51:54.919729+00:00",
+  "mode": "public-http",
+  "article": "https://velarshop.ru/info/velar-p30v-q40v-r32v-sravnenie",
+  "http_status": 200,
+  "h1": [
+    "P30V, Q40V или R32V: размеры и стоимость для одной комнаты"
+  ],
+  "canonical": [
+    "https://velarshop.ru/info/velar-p30v-q40v-r32v-sravnenie"
+  ],
+  "date_published": "2026-10-12",
+  "date_modified": "2026-10-12",
+  "faq_questions": 5,
+  "incoming_cluster_pages": [
+    {
+      "source": "/model/p30v",
+      "status": 200,
+      "links": [
+        {
+          "href": "/info/velar-p30v-q40v-r32v-sravnenie",
+          "text": "Сравнить P30V, Q40V и R32V по размерам и цене для одной комнаты",
+          "in_prose": false,
+          "related": false
+        }
+      ]
+    },
+    {
+      "source": "/model/q40v",
+      "status": 200,
+      "links": [
+        {
+          "href": "/info/velar-p30v-q40v-r32v-sravnenie",
+          "text": "Сравнить P30V, Q40V и R32V по размерам и цене для одной комнаты",
+          "in_prose": false,
+          "related": false
+        }
+      ]
+    },
+    {
+      "source": "/model/r32v",
+      "status": 200,
+      "links": [
+        {
+          "href": "/info/velar-p30v-q40v-r32v-sravnenie",
+          "text": "Сравнить P30V, Q40V и R32V по размерам и цене для одной комнаты",
+          "in_prose": false,
+          "related": false
+        }
+      ]
+    },
+    {
+      "source": "/design",
+      "status": 200,
+      "links": [
+        {
+          "href": "/info/velar-p30v-q40v-r32v-sravnenie",
+          "text": "сравнение P30V, Q40V и R32V по размерам и цене для одной комнаты",
+          "in_prose": false,
+          "related": false
+        }
+      ]
+    },
+    {
+      "source": "/info/wall",
+      "status": 200,
+      "links": [
+        {
+          "href": "/info/velar-p30v-q40v-r32v-sravnenie",
+          "text": "сравнение P30V, Q40V и R32V для одной комнаты",
+          "in_prose": true,
+          "related": false
+        }
+      ]
+    },
+    {
+      "source": "/info/vertical-designer-radiators",
+      "status": 200,
+      "links": [
+        {
+          "href": "/info/velar-p30v-q40v-r32v-sravnenie",
+          "text": "сравнение P30V, Q40V и R32V по размерам и стоимости",
+          "in_prose": true,
+          "related": false
+        }
+      ]
+    },
+    {
+      "source": "/info/forma-trub-dizayn-radiatorov",
+      "status": 200,
+      "links": [
+        {
+          "href": "/info/velar-p30v-q40v-r32v-sravnenie",
+          "text": "сравнение P30V, Q40V и R32V для одной комнаты",
+          "in_prose": true,
+          "related": false
+        }
+      ]
+    },
+    {
+      "source": "/info",
+      "status": 200,
+      "links": [
+        {
+          "href": "/info/velar-p30v-q40v-r32v-sravnenie",
+          "text": "P30V, Q40V или R32V: размеры и стоимость для одной комнаты Сравниваем три вертикальных радиатора Velar высотой 1750 мм под одну условную тепловую нагрузку: число секций, ширину, вылет от стены, мощность и цену.",
+          "in_prose": false,
+          "related": false
+        }
+      ]
+    }
+  ],
+  "required_outgoing_cluster_paths": [
+    "/model/p30v",
+    "/model/q40v",
+    "/model/r32v",
+    "/design",
+    "/design/vertikalnye",
+    "/info/wall",
+    "/info/vertical-designer-radiators",
+    "/info/forma-trub-dizayn-radiatorov",
+    "/info/teplootdacha-radiatora-delta-t-chto-eto",
+    "/info/kak-podgotovit-dannye-dlya-rascheta-radiatora",
+    "/info/kak-podobrat-dizayn-radiator-pod-gotovye-vyvody-trub",
+    "/request"
+  ],
+  "outgoing_links": [
+    {
+      "href": "/model/p30v",
+      "text": "Velar P30V",
+      "in_prose": true,
+      "related": false
+    },
+    {
+      "href": "/model/q40v",
+      "text": "Q40V",
+      "in_prose": true,
+      "related": false
+    },
+    {
+      "href": "/model/r32v",
+      "text": "R32V",
+      "in_prose": true,
+      "related": false
+    },
+    {
+      "href": "/model/p30v#model-variants",
+      "text": "Velar P 30 V",
+      "in_prose": true,
+      "related": false
+    },
+    {
+      "href": "/model/q40v#model-variants",
+      "text": "Velar Q 40 V",
+      "in_prose": true,
+      "related": false
+    },
+    {
+      "href": "/model/r32v#model-variants",
+      "text": "Velar R 32 V",
+      "in_prose": true,
+      "related": false
+    },
+    {
+      "href": "/info/kak-podgotovit-dannye-dlya-rascheta-radiatora",
+      "text": "что нужно для расчета радиатора",
+      "in_prose": true,
+      "related": false
+    },
+    {
+      "href": "/info/vertical-designer-radiators",
+      "text": "о вертикальном радиаторе в интерьере",
+      "in_prose": true,
+      "related": false
+    },
+    {
+      "href": "/info/wall",
+      "text": "обзора настенных дизайн-радиаторов",
+      "in_prose": true,
+      "related": false
+    },
+    {
+      "href": "/info/forma-trub-dizayn-radiatorov",
+      "text": "о форме труб дизайн-радиаторов",
+      "in_prose": true,
+      "related": false
+    },
+    {
+      "href": "/docs/passports/passport-p30v.pdf",
+      "text": "паспорте P30V",
+      "in_prose": true,
+      "related": false
+    },
+    {
+      "href": "/docs/passports/passport-q40v.pdf",
+      "text": "паспорте Q40V",
+      "in_prose": true,
+      "related": false
+    },
+    {
+      "href": "/docs/passports/passport-r32v.pdf",
+      "text": "паспорте R32V",
+      "in_prose": true,
+      "related": false
+    },
+    {
+      "href": "/model/p30v#model-variants",
+      "text": "Velar P 30 V",
+      "in_prose": true,
+      "related": false
+    },
+    {
+      "href": "/model/q40v#model-variants",
+      "text": "Velar Q 40 V",
+      "in_prose": true,
+      "related": false
+    },
+    {
+      "href": "/model/r32v#model-variants",
+      "text": "Velar R 32 V",
+      "in_prose": true,
+      "related": false
+    },
+    {
+      "href": "/info/teplootdacha-radiatora-delta-t-chto-eto",
+      "text": "материале о теплоотдаче и ΔT",
+      "in_prose": true,
+      "related": false
+    },
+    {
+      "href": "/docs/schemas/p30v.pdf",
+      "text": "монтажной схемой P30V",
+      "in_prose": true,
+      "related": false
+    },
+    {
+      "href": "/docs/schemas/q40v.pdf",
+      "text": "Q40V",
+      "in_prose": true,
+      "related": false
+    },
+    {
+      "href": "/docs/schemas/r32v.pdf",
+      "text": "R32V",
+      "in_prose": true,
+      "related": false
+    },
+    {
+      "href": "/info/kak-podobrat-dizayn-radiator-pod-gotovye-vyvody-trub",
+      "text": "подбор радиатора под готовые выводы",
+      "in_prose": true,
+      "related": false
+    },
+    {
+      "href": "/request",
+      "text": "Получить сравнение для комнаты",
+      "in_prose": true,
+      "related": false
+    },
+    {
+      "href": "/design/vertikalnye",
+      "text": "Смотреть вертикальные радиаторы",
+      "in_prose": true,
+      "related": false
+    },
+    {
+      "href": "/design/vertikalnye",
+      "text": "каталога вертикальных дизайн-радиаторов",
+      "in_prose": true,
+      "related": false
+    },
+    {
+      "href": "/model/p30v",
+      "text": "P30V",
+      "in_prose": true,
+      "related": false
+    },
+    {
+      "href": "/model/q40v",
+      "text": "Q40V",
+      "in_prose": true,
+      "related": false
+    },
+    {
+      "href": "/model/r32v",
+      "text": "R32V",
+      "in_prose": true,
+      "related": false
+    },
+    {
+      "href": "/request",
+      "text": "Получить подбор радиатора",
+      "in_prose": true,
+      "related": false
+    },
+    {
+      "href": "/design",
+      "text": "Открыть каталог дизайна",
+      "in_prose": true,
+      "related": false
+    },
+    {
+      "href": "/info/kak-podobrat-radiator-pod-dizajn-kvartiry",
+      "text": "→ Как выбрать дизайнерский радиатор",
+      "in_prose": true,
+      "related": true
+    },
+    {
+      "href": "/info/vertical-designer-radiators",
+      "text": "→ Вертикальные или горизонтальные радиаторы",
+      "in_prose": true,
+      "related": true
+    },
+    {
+      "href": "/info/horizontal-designer-radiators",
+      "text": "→ Радиаторы в интерьере: горизонтальные модели",
+      "in_prose": true,
+      "related": true
+    },
+    {
+      "href": "/info/colors",
+      "text": "→ Цвета RAL для радиаторов",
+      "in_prose": true,
+      "related": true
+    },
+    {
+      "href": "/design",
+      "text": "Дизайн-радиаторы Velar",
+      "in_prose": true,
+      "related": true
+    },
+    {
+      "href": "/design/vertikalnye",
+      "text": "Вертикальные дизайн-радиаторы",
+      "in_prose": true,
+      "related": true
+    },
+    {
+      "href": "/design/gorizontalnye",
+      "text": "Горизонтальные дизайн-радиаторы",
+      "in_prose": true,
+      "related": true
+    },
+    {
+      "href": "/model/p30v",
+      "text": "P30V",
+      "in_prose": true,
+      "related": true
+    },
+    {
+      "href": "/model/p60v",
+      "text": "P60V",
+      "in_prose": true,
+      "related": true
+    },
+    {
+      "href": "/model/q40v",
+      "text": "Q40V",
+      "in_prose": true,
+      "related": true
+    },
+    {
+      "href": "/model/r32v",
+      "text": "R32V",
+      "in_prose": true,
+      "related": true
+    }
+  ],
+  "unique_outgoing_urls": 23,
+  "http_urls_checked": 30,
+  "images": [
+    {
+      "url": "/images/articles/velar-p30v-6-same-room.webp",
+      "bytes": 140834,
+      "sha256": "f4c0bae10b5dd64fd00dfc0411142b5b378a576be02da33386edeaeab5a60d05",
+      "matches_selected_asset": true,
+      "verified_visible_sections": 6
+    },
+    {
+      "url": "/images/articles/velar-q40v-8-same-room.webp",
+      "bytes": 126580,
+      "sha256": "70ca6aff7d2a17c5797013c043a2f58ff2887aec3cad11d350b6c1e7d8ea5652",
+      "matches_selected_asset": true,
+      "verified_visible_sections": 8
+    },
+    {
+      "url": "/images/articles/velar-r32v-9-same-room.webp",
+      "bytes": 136094,
+      "sha256": "029d2293c077f6466fb5c9d030406f1dfff4d9d866c74b7284805cba91397e5c",
+      "matches_selected_asset": true,
+      "verified_visible_sections": 9
+    }
+  ],
+  "sitemap_urls": 303,
+  "googlebot_allowed": true,
+  "errors": [],
+  "status": "passed"
+}

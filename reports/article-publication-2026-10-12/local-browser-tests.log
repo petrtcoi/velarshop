@@ -1,0 +1,15 @@
+
+Running 10 tests using 2 workers
+
+  ✓  2 [chromium] › room-radiator-comparison.spec.ts:31:1 › lower water temperature requires a new selection for the same room (1.7s)
+  ✓  1 [chromium] › room-radiator-comparison.spec.ts:12:1 › comparison fits one heat load using the minimum section count of each series (1.7s)
+  ✓  4 [chromium] › room-radiator-comparison.spec.ts:78:1 › mobile comparison scrolls within the table without widening the page (1.0s)
+  ✓  3 [chromium] › room-radiator-comparison.spec.ts:44:1 › article metadata, visible FAQ and all three illustrations agree (1.4s)
+  ✓  6 [chromium] › seo-clusters.spec.ts:15:1 › horizontal catalog keeps model destinations without ambiguous Product offers (782ms)
+  ✓  5 [chromium] › room-radiator-comparison.spec.ts:93:1 › model and category pages lead to the concrete room comparison (1.6s)
+  ✓  7 [chromium] › seo-clusters.spec.ts:26:1 › 1800 collection keeps nearest height, price and click destination consistent (1.8s)
+  ✓  8 [chromium] › seo-clusters.spec.ts:38:1 › retro examples distinguish full height, spacing, complete price and material (1.4s)
+  ✓  9 [chromium] › seo-clusters.spec.ts:52:1 › consolidated article retains both sets of visible FAQ in one schema (1.1s)
+  ✓  10 [chromium] › seo-clusters.spec.ts:63:1 › commercial pages keep tables inside their own scroll area on mobile (1.4s)
+
+  10 passed (11.9s)
