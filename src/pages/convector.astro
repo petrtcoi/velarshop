@@ -10,6 +10,7 @@ import JsonLd from '../components/seo/JsonLd.astro'
 import OrderScope from '../components/product/OrderScope.astro'
 import CatalogExamples from '../components/product/CatalogExamples.astro'
 import { getCategorySeo } from '../lib/seo/categorySeo'
+import { catalogRange } from '../lib/catalogFacts'
 
 const pageDescription =
 	'Внутрипольные конвекторы для панорамных окон и скрытого отопления: каталог Velar, цены, модели с вентилятором и без, решетки, расчет и доставка по России.'
@@ -43,8 +44,6 @@ const modelCopy: Record<
 		whenToChoose: string
 		useCase: string
 		cardSpecs: string
-		width: string
-		height: string
 		typeLabel: string
 	}
 > = {
@@ -54,9 +53,7 @@ const modelCopy: Record<
 		whenToChoose:
 			'если нужен тихий конвектор в пол без вентиляторов для умеренных теплопотерь.',
 		useCase: 'Для спокойной тепловой завесы без вентиляторов и лишнего шума.',
-		cardSpecs: 'естественная конвекция · без вентиляторов · высота 65-140 мм',
-		width: '150-420 мм',
-		height: '65-140 мм',
+		cardSpecs: 'естественная конвекция · без вентиляторов',
 		typeLabel: 'естественная конвекция',
 	},
 	kwhv: {
@@ -65,9 +62,7 @@ const modelCopy: Record<
 		whenToChoose:
 			'если у панорамного окна большие теплопотери и нужна более высокая мощность.',
 		useCase: 'Для панорамных окон, холодных зон и активного обогрева.',
-		cardSpecs: 'принудительная конвекция · вентиляторы · высота 85-140 мм',
-		width: '250-420 мм',
-		height: '85-140 мм',
+		cardSpecs: 'принудительная конвекция · вентиляторы',
 		typeLabel: 'принудительная конвекция',
 	},
 	kwhv24: {
@@ -77,8 +72,6 @@ const modelCopy: Record<
 			'если нужны вентиляторы 24V, безопасное низкое напряжение и интеграция с автоматикой.',
 		useCase: 'Для проектов с низковольтными вентиляторами и гибким управлением.',
 		cardSpecs: 'принудительная конвекция · вентиляторы 24V · управление',
-		width: '200-420 мм',
-		height: '85-140 мм',
 		typeLabel: 'принудительная конвекция, вентиляторы 24V',
 	},
 }
@@ -102,9 +95,7 @@ const convectorModels = preferredModelOrder
 			description: copy.description,
 			whenToChoose: copy.whenToChoose,
 			useCase: copy.useCase,
-			cardSpecs: copy.cardSpecs,
-			width: copy.width,
-			height: copy.height,
+			cardSpecs: `${copy.cardSpecs} · ширина ${catalogRange(radiators, 'width')} · высота ${catalogRange(radiators, 'height')} (по каталогу)`,
 			typeLabel: copy.typeLabel,
 		}
 	})
@@ -348,7 +339,7 @@ const faqItems = [
 	],
 	[
 		'Какая высота конвектора нужна?',
-		'Высота зависит от глубины пола, нужной мощности и выбранной модели. У Velar есть решения высотой от 65 мм, но точный вариант нужно подбирать по нише, теплопотерям и типу конвекции.',
+		`Высота зависит от глубины пола, нужной мощности и выбранной модели. В текущем каталоге Velar представлены высоты ${catalogRange(radiatorsJsonData.filter(radiator => preferredModelOrder.includes(radiator.model_id)), 'height')}. Точный вариант нужно подбирать по нише, теплопотерям и типу конвекции, а монтажный чертеж согласовать до подготовки ниши.`,
 	],
 	[
 		'Как подобрать длину конвектора?',

@@ -1,0 +1,13 @@
+---
+import { radiatorsJsonData } from '@entities/Radiator'
+import { catalogRange } from '../../lib/catalogFacts'
+
+interface Props {
+	modelId: string
+	field: 'width' | 'height'
+}
+
+const { modelId, field } = Astro.props
+const variants = radiatorsJsonData.filter(radiator => radiator.model_id === modelId)
+---
+{catalogRange(variants, field)}

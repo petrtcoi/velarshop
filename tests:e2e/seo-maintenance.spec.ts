@@ -1,4 +1,40 @@
 import { test, expect } from '@playwright/test'
+import { readFileSync } from 'node:fs'
+import { modelsJsonData } from '../src/6-entities/Model/jsonData/models.ts'
+
+test('legacy redirect rules cover existing models with and without a final slash', () => {
+	const config = readFileSync('docs/deploy/nginx-radiator-redirects.conf', 'utf8')
+	const rules = [...config.matchAll(/^rewrite "([^"]+)" (\S+) permanent;$/gm)]
+		.map(([, pattern, target]) => ({ pattern: new RegExp(pattern), target }))
+	expect(rules).toHaveLength(2)
+	expect(config).not.toContain('location ~')
+	for (const model of modelsJsonData) {
+		const expected = model.type === 'columns' ? `/columns/${model.id}` : `/model/${model.id}`
+		const paths = [`/model/${model.id}/example`, `/model/${model.id}/example/`]
+		if (model.type === 'columns') paths.push(`/model/${model.id}`, `/model/${model.id}/`)
+		for (const path of paths) {
+			const matching = rules.filter(rule => rule.pattern.test(path))
+			expect(matching, path).toHaveLength(1)
+			expect(path.replace(matching[0].pattern, matching[0].target), path).toBe(expected)
+		}
+	}
+	for (const path of ['/model/abc/x', '/model/2999', '/model/5999/x', '/model/kwh/x/y']) {
+		expect(rules.some(rule => rule.pattern.test(path)), path).toBe(false)
+	}
+})
+
+test('convector cards and article use the same available catalog dimensions', async ({ page }) => {
+	await page.goto('/convector')
+	for (const [id, width, height] of [['kwh', '160–420 мм', '70–140 мм'], ['kwhv', '250–420 мм', '85–140 мм'], ['kwhv24', '250–420 мм', '85–140 мм']]) {
+		const card = page.locator(`[data-convector-card="${id}"]`)
+		await expect(card).toContainText(`ширина ${width}`)
+		await expect(card).toContainText(`высота ${height} (по каталогу)`)
+	}
+	await page.goto('/info/kwh-kwhv-kwhv24-chto-vybrat')
+	await expect(page.getByRole('row', { name: /Ширина корпуса по каталогу/ }).locator('td')).toHaveText(['Ширина корпуса по каталогу', '160–420 мм', '250–420 мм', '250–420 мм'])
+	await expect(page.getByRole('row', { name: /Высота корпуса по каталогу/ }).locator('td')).toHaveText(['Высота корпуса по каталогу', '70–140 мм', '85–140 мм', '85–140 мм'])
+	await expect(page.getByText(/поэтому более узкий корпус/)).toContainText('диапазоны совпадают с KWHV')
+})
 
 test('delta T calculator follows the chosen passport in low temperature operation', async ({ page }) => {
 	await page.goto('/info/teplootdacha-radiatora-delta-t-chto-eto')
@@ -41,7 +77,7 @@ test('tube comparison includes the fifth row at the same height and section coun
 
 test('updated articles and comparisons stay readable on a narrow screen', async ({ page }) => {
 	await page.setViewportSize({ width: 390, height: 844 })
-	for (const path of ['/info/air-in-radiators', '/info/termostats', '/info/kreplenie-radiatora-k-stene', '/info/teplootdacha-radiatora-delta-t-chto-eto', '/floor', '/convector', '/design']) {
+	for (const path of ['/info/air-in-radiators', '/info/termostats', '/info/kreplenie-radiatora-k-stene', '/info/teplootdacha-radiatora-delta-t-chto-eto', '/info/kwh-kwhv-kwhv24-chto-vybrat', '/floor', '/convector', '/design']) {
 		await page.goto(path)
 		await expect(page.locator('h1')).toHaveCount(1)
 		expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), path).toBe(true)
