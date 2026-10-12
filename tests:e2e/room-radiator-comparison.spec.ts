@@ -3,9 +3,9 @@ import radiators from '../src/6-entities/Radiator/jsonData/radiatorsDesign.ts'
 
 const path = '/info/velar-p30v-q40v-r32v-sravnenie'
 const expected = [
-	{ model: 'p30v', sections: 6, width: 284, projection: 90, image: 'velar-p30v-6-same-room.webp' },
-	{ model: 'q40v', sections: 8, width: 460, projection: 70, image: 'velar-q40v-8-same-room.webp' },
-	{ model: 'r32v', sections: 9, width: 432, projection: 61, image: 'velar-r32v-9-same-room-v2.webp' },
+	{ model: 'p30v', sections: 6, width: 284, projection: 90, image: 'velar-p30v-6-same-room-v2.webp' },
+	{ model: 'q40v', sections: 8, width: 460, projection: 70, image: 'velar-q40v-8-same-room-v2.webp' },
+	{ model: 'r32v', sections: 9, width: 432, projection: 61, image: 'velar-r32v-9-same-room-v3.webp' },
 ]
 const number = (value: string) => Number(value.replace(/[^\d]/g, ''))
 
@@ -56,7 +56,7 @@ test('article metadata, visible FAQ and all three illustrations agree', async ({
 	expect(article).toBeTruthy()
 	expect(article.datePublished).toBe('2026-10-12')
 	expect(Date.parse(article.dateModified)).toBeGreaterThanOrEqual(Date.parse(article.datePublished))
-	expect(JSON.stringify(article.image)).toContain('velar-p30v-6-same-room.webp')
+	expect(JSON.stringify(article.image)).toContain('velar-p30v-6-same-room-v2.webp')
 	const faq = nodes.find(node => node['@type'] === 'FAQPage')
 	expect(faq.mainEntity).toHaveLength(5)
 	for (const question of faq.mainEntity) {

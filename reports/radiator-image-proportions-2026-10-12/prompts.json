@@ -1,0 +1,78 @@
+{
+  "date": "2026-10-12",
+  "mode": "built-in image_gen",
+  "purpose": "Correct P30V profile orientation and approximate proportions of all three radiator illustrations",
+  "notes": [
+    "Raster content edited only with built-in image_gen; Sharp used solely for PNG to WebP encoding.",
+    "Count and profiles reviewed visually; dimensions in images remain approximate, not engineering drawings.",
+    "Rejected variants with missing sections were not published."
+  ],
+  "images": [
+    {
+      "model": "P30V",
+      "sections": 6,
+      "profile": "30 mm front face, 60 mm perpendicular to wall",
+      "width_mm": 284,
+      "height_mm": 1750,
+      "selected_png": "exec-c56d82e2-5c35-445b-8c0e-65902f864b4e.png",
+      "asset": "public/images/articles/velar-p30v-6-same-room-v2.webp",
+      "reference": "User-supplied p30v-8-min.jpg; section count of reference ignored",
+      "prompts": [
+        "Use case: precise-object-edit. Image 1 is the edit target room with SIX sections. Image 2 is the user's authoritative P30V product reference for profile orientation and appearance; ignore its eight-section count. Image 3 is the exact SIX-section front layout for count and proportions only (ignore its gradient). Image 4 is the official P30V drawing for 30-by-60 profile orientation.\nCorrect ONLY the P30V radiator in Image 1. It must have EXACTLY SIX straight rectangular tubes, each 30 mm wide facing the viewer and 60 mm deep extending PERPENDICULARLY AWAY FROM THE WALL. The broad 60 mm side plane is perpendicular to the wall; the narrow 30 mm front plane faces the room, just like the user's product photo. Do not turn the broad 60 mm face towards the camera and do not make it a square 30-by-30 or 40-by-40 profile.\nPreserve the same room and near-frontal camera. At body height 730 pixels (1750 mm), each visible narrow front face is about 12.5 pixels wide. Center pitch 50 mm is about 20.9 pixels, light gaps about 8.4 pixels. SIX front faces with FIVE gaps. Total body front width about 118 pixels for 284 mm: width/height=284/1750=0.1623. Keep radiator centered at x=750, top y=59, bottom y=789, roughly x=691..809. Depth goes back towards the wall, a slim dark side edge may show but must not widen the front faces. Rear collectors behind the tubes about 30 pixels inset from ends. Square-cut flat ends and crisp planar front faces. Matte graphite paint as in Image 1. Discreet central lower plumbing.\nKeep ALL room pixels outside radiator and immediate shadow unchanged: furniture, window, wall, plants, floor, sunlight, exposure and framing. Six existing sections remain six, no deletion or extra tube. No text, labels or watermark.",
+        "Change only the radiator's width. Horizontally squeeze the EXISTING complete six-section radiator from about144 pixels wide to118 pixels wide, centered at its existing position. Keep all SIX original tubes, all five gaps, height730 pixels, flat ends and bottom plumbing. The front face is30mm; the60mm side depth goes perpendicularly back toward the wall. Preserve the narrow flat front faces, not square tubes. Do not replace, add or remove a tube. Keep everything else in the entire room exactly unchanged.",
+        "Keep this exact SIX-section P30V and the entire room. Widen only the five gaps by about1pixel each so total radiator width becomes118pixels instead of112pixels. Keep every tube's current narrow planar front face and60mm depth perpendicular to the wall. Keep six tubes, their height730pixels, current top and bottom, flat ends, paint, plumbing and all background unchanged. No extra or removed section."
+      ],
+      "visual_review": {
+        "visible_sections": 6,
+        "approximate_body_pixels": {
+          "width": 116,
+          "height": 731
+        },
+        "width_height_ratio_error_percent": -2.22
+      }
+    },
+    {
+      "model": "Q40V",
+      "sections": 8,
+      "profile": "40 x 40 mm square",
+      "width_mm": 460,
+      "height_mm": 1750,
+      "selected_png": "exec-f90a0a23-0cfc-489d-985b-45103c864b15.png",
+      "asset": "public/images/articles/velar-q40v-8-same-room-v2.webp",
+      "prompts": [
+        "Change only radiator width. Horizontally squeeze the EXISTING complete EIGHT-section square-tube radiator from about217 pixels wide to192 pixels wide. Keep every one of the eight original tubes and all seven gaps, height730 pixels, square40x40mm profile, flat ends, graphite paint and bottom plumbing. Do not reconstruct, add or delete any tube. Keep entire room and camera unchanged.",
+        "Image1 is the edit target and has EIGHT square radiator tubes. Image2 is the same room with the same EIGHT tubes but a wider radiator. Keep the eight square tubes and their flat ends. Set radiator width midway between the two examples: about192–196pixels, retaining height730pixels and center nearx750. Front faces are40mm wide, depth40mm, all eight remain separately visible. Keep the room, graphite finish, light, camera and everything outside radiator exactly unchanged. Do not remove any tube. This is only a modest horizontal width adjustment of the existing complete radiator.",
+        "Apply one geometric change only: horizontally widen the entire black radiator assembly by about 10 percent around its center. Preserve every existing bar and both collectors exactly as in the reference. Keep vertical size, position, valves, color, flat ends and the entire interior unchanged. Do not redesign the radiator or change its bar count."
+      ],
+      "visual_review": {
+        "visible_sections": 8,
+        "approximate_body_pixels": {
+          "width": 206,
+          "height": 734
+        },
+        "width_height_ratio_error_percent": 6.77
+      }
+    },
+    {
+      "model": "R32V",
+      "sections": 9,
+      "profile": "32 mm circular tubes, flat cut ends",
+      "width_mm": 432,
+      "height_mm": 1750,
+      "selected_png": "exec-2759b354-7b0b-40b8-b66b-c694ec0de1bb.png",
+      "asset": "public/images/articles/velar-r32v-9-same-room-v3.webp",
+      "prompts": [
+        "Precise radiator spacing correction only. Image 1 is the edit target. Image 2 is the exact NINE-section front arrangement with correct 432 mm width and 1750 mm height and flat ends; use its aspect ratio and spacing, not its white background.\nKeep all NINE existing cylindrical tubes in image 1, their flat top and bottom ends, current diameter about 13 pixels, matte graphite material, height and vertical positions. Change ONLY their horizontal spacing: bring the nine tubes closer together so that the entire radiator front body is about 179 pixels wide for its 724 pixel height. Current body is around 219 pixels wide, which is too wide. This is a roughly 18 percent reduction of the assembly width by reducing the gaps, NOT by making the tubes thinner and NOT by removing a tube.\nDimension ratio must be width/height=432/1750=0.247. Tube diameter/height=32/1750, each tube stays about 13 pixels wide. Center pitch/height=50/1750, about 20.7 pixels, and the wall gap between tubes is about 7.4 pixels.\nTarget bounding box approximately x=655..834, y=64..788. Nine tube center lines approximately x=662,683,704,725,745,766,787,807,828. Preserve exactly NINE separate long tubes and eight gaps. Retain the same center of the complete radiator, same top and bottom; adjust the two rear manifolds to the new width, keeping them inset behind the row and the existing central plumbing.\nKeep everything outside the radiator and its immediate shadow unchanged: room, window, plants, furniture, floor, skirting, light, exposure, camera, crop. No text or extra object. Do not create hemispherical or domed caps. Nine tubes and correct narrow width are both mandatory.",
+        "Add exactly ONE slim tube immediately to the RIGHT of this radiator. There are currently EIGHT tubes; preserve all eight and add one identical13–14pixel-wide cylindrical tube at approximately x=835..848, y=66..786, with the same7–8pixel gap beside the last tube. The new tube has flat square-cut ends, no hemispherical cap. Extend rear top and bottom collectors behind it. Final count NINE:8originals+1new. Do not alter the eight originals, their narrow spacing, thickness, height, finish or the room, camera, lighting, floor, furniture or plumbing. Only one new tube, rear connection and its immediate shadow. No text."
+      ],
+      "visual_review": {
+        "visible_sections": 9,
+        "approximate_body_pixels": {
+          "width": 185,
+          "height": 721
+        },
+        "width_height_ratio_error_percent": 3.94
+      }
+    }
+  ]
+}
