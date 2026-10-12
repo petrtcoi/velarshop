@@ -89,11 +89,9 @@ const schema = [
 					brand: { '@type': 'Brand', name: 'Velar' },
 					offers: item.priceFrom > 0
 						? {
-								'@type': 'AggregateOffer',
+								'@type': 'Offer',
 								priceCurrency: 'RUB',
-								lowPrice: String(Math.round(item.priceFrom)),
-								highPrice: String(Math.round(item.models[0].priceTo)),
-								offerCount: item.models[0].variantCount,
+								price: String(Math.round(item.priceFrom)),
 								availability: 'https://schema.org/PreOrder',
 								url: new URL(item.href, canonicalUrl).toString(),
 							}

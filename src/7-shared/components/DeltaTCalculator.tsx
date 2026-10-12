@@ -1,52 +1,36 @@
 import { useMemo, useState } from "preact/hooks";
+import { powerAtDeltaT, type ThermalPoints } from '../../lib/thermalPower';
 
 const MIN_DT = 20;
 const MAX_DT = 70;
-const DEFAULT_Q70 = 1050;
-const N_HIGH = 1.2873828318254765;
-const N_LOW = 1.3593354963761421;
+type Configuration = ThermalPoints & { id: string; title: string };
+type Props = { configurations: Configuration[] };
 
-type PassportPoints = {
-  q50: number;
-  q60: number;
-  q70: number;
-};
-
-function derivePassport(q70: number): PassportPoints {
-  const safeQ70 = Math.max(q70, 0);
-  const q60 = safeQ70 * Math.pow(60 / 70, N_HIGH);
-  const q50 = q60 * Math.pow(50 / 60, N_LOW);
-  return { q50, q60, q70: safeQ70 };
-}
-
-function calcPowerByDt(dt: number, passport: PassportPoints): number {
-  const d = Math.max(MIN_DT, Math.min(MAX_DT, dt));
-
-  if (d >= 60) {
-    return passport.q70 * Math.pow(d / 70, N_HIGH);
-  }
-
-  if (d >= 50) {
-    return passport.q60 * Math.pow(d / 60, N_LOW);
-  }
-
-  return passport.q60 * Math.pow(d / 60, N_LOW);
-}
-
-export default function DeltaTPowerCalculator() {
-  const [q70, setQ70] = useState(DEFAULT_Q70);
+export default function DeltaTPowerCalculator({ configurations }: Props) {
+  const [configurationId, setConfigurationId] = useState(configurations[0].id);
+  const configuration = configurations.find(item => item.id === configurationId) ?? configurations[0];
+  const [q70, setQ70] = useState(configuration.q70);
   const [dt, setDt] = useState(60);
 
-  const passport = useMemo(() => derivePassport(q70), [q70]);
-  const power = useMemo(() => calcPowerByDt(dt, passport), [dt, passport]);
+  const points = useMemo(() => ({ q70: Math.max(q70, 0), q60: q70 * configuration.q60 / configuration.q70, q50: q70 * configuration.q50 / configuration.q70 }), [q70, configuration]);
+  const power = useMemo(() => powerAtDeltaT(dt, points), [dt, points]);
   const roundedPower = Math.round(power);
   const formattedPower = roundedPower.toLocaleString("ru-RU");
 
   return (
     <section class="not-prose my-6 rounded-2xl border border-neutral-200 bg-neutral-50 p-4 md:p-6">
+      <label class="mb-5 block text-sm text-neutral-600">
+        Модель для пересчета
+        <select class="mt-2 w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-base" value={configurationId} onChange={event => {
+          const chosen = configurations.find(item => item.id === event.currentTarget.value) ?? configurations[0];
+          setConfigurationId(chosen.id); setQ70(chosen.q70);
+        }}>
+          {configurations.map(item => <option value={item.id}>{item.title}</option>)}
+        </select>
+      </label>
       <label class="block">
         <div class="mb-1 text-sm text-neutral-600">
-          Паспортная мощность при ΔT=70
+          Мощность при ΔT70, Вт
         </div>
         <input
           class="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-base"
@@ -61,6 +45,7 @@ export default function DeltaTPowerCalculator() {
           }}
         />
       </label>
+      <p class="mt-3 text-sm leading-6 text-neutral-600">Для выбранной конфигурации в каталоге: ΔT70 — {configuration.q70} Вт, ΔT60 — {configuration.q60} Вт, ΔT50 — {configuration.q50} Вт. При изменении мощности ΔT70 сохраняется соотношение точек выбранной модели.</p>
 
       <div class="mt-6 rounded-xl bg-white p-4 ring-1 ring-neutral-200">
         <div class="mb-2 flex items-center justify-between text-sm text-neutral-600">
@@ -68,12 +53,13 @@ export default function DeltaTPowerCalculator() {
           <span class="font-semibold text-neutral-800">{dt}°</span>
         </div>
 
-        <input
+        <label class="sr-only" for="delta-t-value">Разница температур ΔT, °C</label>
+        <input id="delta-t-value"
           class="w-full accent-red-700"
           type="range"
           min={MIN_DT}
           max={MAX_DT}
-          step={1}
+          step={0.5}
           value={dt}
           onInput={(event) =>
             setDt(Number((event.currentTarget as HTMLInputElement).value))
@@ -84,19 +70,22 @@ export default function DeltaTPowerCalculator() {
           <span>{MAX_DT}°</span>
         </div>
       </div>
+      <div class="mt-4 flex flex-wrap gap-2">
+        {[{ label: '80/60/20 → ΔT50', value: 50 }, { label: '70/55/20 → ΔT42,5', value: 42.5 }, { label: '55/45/20 → ΔT30', value: 30 }].map(preset => <button type="button" class="rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm" onClick={() => setDt(preset.value)}>{preset.label}</button>)}
+      </div>
 
       <div class="mt-5 rounded-2xl bg-white p-4 ring-1 ring-neutral-200">
         <div class="text-sm text-neutral-600">
           Ориентировочная теплоотдача при текущем ΔT
         </div>
-        <div class="mt-1 text-3xl font-semibold text-neutral-900">
+        <div class="mt-1 text-3xl font-semibold text-neutral-900" role="status" aria-live="polite">
           {formattedPower} Вт
         </div>
       </div>
+      {dt < 50 && <p role="note" class="mt-4 text-sm leading-6 text-neutral-700">При ΔT ниже 50°C результат оценочный: используется экстраполяция. Для заказа подтвердите мощность у производителя или проектировщика.</p>}
 
       <div class="mt-4 text-xs text-neutral-600">
-        Расчет справочный. Паспортные значения мощности зависят от стандарта
-        испытаний. Реальная теплоотдача зависит от температур системы, расхода
+        Расчет справочный, по точкам выбранной конфигурации в каталоге. Он не рассчитывает теплопотери комнаты. Реальная теплоотдача зависит от температур системы, расхода
         теплоносителя, схемы подключения и условий установки.
       </div>
     </section>

@@ -1,0 +1,29 @@
+---
+import { catalogExamples, type ExampleSpec } from '../../lib/catalogExamples'
+import { catalogNumber } from '../../lib/catalogFacts'
+type Props = { specs: ExampleSpec[]; title?: string; showMass?: boolean; showTemperatures?: boolean; id?: string }
+const { specs, title, showMass = false, showTemperatures = false, id } = Astro.props as Props
+const rows = catalogExamples(specs)
+const hasConvector = rows.some(row => row.model.type === 'convector')
+const rub = (value: number) => `${Math.round(value).toLocaleString('ru-RU')} ₽`
+const value = (input: string | number | undefined, unit: string) => input ? `${catalogNumber(input).toLocaleString('ru-RU')} ${unit}` : '—'
+---
+<section id={id} class='my-8'>
+	{title && <h2>{title}</h2>}
+	<div class='overflow-x-auto'>
+		<table class='w-full min-w-[680px] border-collapse text-left text-sm'>
+			<thead><tr class='border-y border-neutral-200'>{['Модель и размер', 'Глубина', 'Мощность ΔT70', ...(showTemperatures ? ['ΔT60', 'ΔT50'] : []), ...(showMass ? ['Масса без воды', 'Объем воды', 'С водой, без арматуры'] : []), hasConvector ? 'Прибор' : 'Цена радиатора', ...(hasConvector ? ['Базовая решетка', 'Прибор с решеткой'] : [])].map(label => <th scope='col' class='px-3 py-3 font-medium'>{label}</th>)}</tr></thead>
+			<tbody>{rows.map(({ model, radiator, href, price, grillePrice, total }) => <tr class='border-b border-neutral-200'>
+				<th scope='row' class='px-3 py-4 font-medium'><a href={`${href}#model-variants`} class='text-red-700 underline decoration-red-300 underline-offset-2 hover:decoration-transparent'>Velar {model.name}</a><span class='mt-1 block font-normal'>{radiator.height} × {radiator.length} мм{radiator.sections ? `, ${radiator.sections} секций` : ''}</span></th>
+				<td class='whitespace-nowrap px-3 py-4'>{value(radiator.width, 'мм')}</td>
+				<td class='whitespace-nowrap px-3 py-4'>{value(radiator.dt70, 'Вт')}</td>
+				{showTemperatures && <><td class='whitespace-nowrap px-3 py-4'>{value(radiator.dt60, 'Вт')}</td><td class='whitespace-nowrap px-3 py-4'>{value(radiator.dt50, 'Вт')}</td></>}
+				{showMass && <><td class='whitespace-nowrap px-3 py-4'>{value(radiator.weight, 'кг')}</td><td class='whitespace-nowrap px-3 py-4'>{value(radiator.volume, 'л')}</td><td class='whitespace-nowrap px-3 py-4'>{radiator.weight && radiator.volume ? `${(catalogNumber(radiator.weight) + catalogNumber(radiator.volume)).toLocaleString('ru-RU')} кг` : 'уточняйте'}</td></>}
+				<td class='whitespace-nowrap px-3 py-4'>{rub(price)}</td>
+				{hasConvector && <><td class='whitespace-nowrap px-3 py-4'>{model.type === 'convector' ? rub(grillePrice) : 'не требуется'}</td><td class='whitespace-nowrap px-3 py-4'>{rub(total)}</td></>}
+			</tr>)}</tbody>
+		</table>
+	</div>
+	<p class='text-sm leading-6 text-neutral-600'>Цены выбранных конфигураций из действующего каталога. Арматура, управление, дополнительные опоры, специальные покрытия и доставка рассчитываются отдельно. {hasConvector && 'Для конвектора отдельно показана стоимость базовой решетки; это не полный комплект управления и монтажа.'} Мощность сравнивайте при одинаковом температурном режиме.</p>
+	{showMass && <p class='text-sm leading-6 text-neutral-600'>Масса с водой ориентировочная: к сухой массе добавлен объем воды из каталога из расчета около 1 кг/л. Арматуру и дополнительное оборудование монтажник учитывает отдельно.</p>}
+</section>

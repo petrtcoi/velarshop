@@ -204,18 +204,12 @@ export function buildSeriesJsonLd(input: BuildSeriesJsonLdInput): Record<string,
 	const organizationId = `${input.siteUrl}/#organization`
 	const websiteId = `${input.siteUrl}/#website`
 	const breadcrumbId = `${input.canonicalUrl}#breadcrumb`
-	const productGroupId = `${input.canonicalUrl}#product-group`
 	const variantsId = `${input.canonicalUrl}#variants`
 
 	const profile = trimValue(input.series.profile)
 	const profileShape = getProfileShape(profile)
 	const profileSize = getProfileSize(profile)
 	const orientationText = getOrientationText(input.variants)
-	const variantPrices = input.variants
-		.map(item => getVariantPrice(item.priceFrom))
-		.filter(Boolean)
-	const minVariantPrice = variantPrices.length ? Math.min(...variantPrices) : 0
-	const maxVariantPrice = variantPrices.length ? Math.max(...variantPrices) : 0
 
 	const additionalProperty = [
 		profileShape
@@ -255,42 +249,28 @@ export function buildSeriesJsonLd(input: BuildSeriesJsonLdInput): Record<string,
 		})),
 	}
 
-	const productGroup = {
-		'@type': 'ProductGroup',
-		'@id': productGroupId,
-		name: `Velar ${input.series.label}`,
+	const collectionPage = {
+		'@type': 'CollectionPage',
+		'@id': `${input.canonicalUrl}#collection`,
+		name: `Серия Velar ${input.series.label}`,
 		url: input.canonicalUrl,
-		description:
-			trimValue(input.series.description) ||
-			`Серия дизайн-радиаторов Velar ${input.series.label}. Доступные исполнения, размеры, цвета RAL, подбор мощности и подключения.`,
-		brand: {
-			'@type': 'Brand',
-			name: 'Velar',
-		},
-		category: trimValue(input.series.category) || 'Дизайн-радиаторы',
-		productGroupID: input.series.slug,
-		variesBy: ['https://schema.org/model'],
-		material: 'Сталь',
-		additionalProperty,
-		offers: minVariantPrice > 0
-			? {
-					'@type': 'AggregateOffer',
-					priceCurrency: 'RUB',
-					lowPrice: String(minVariantPrice),
-					highPrice: String(maxVariantPrice || minVariantPrice),
-					offerCount: String(variantPrices.length),
-					availability: 'https://schema.org/InStock',
-					url: input.canonicalUrl,
-					seller: {
-						'@id': organizationId,
-					},
-				}
-			: undefined,
-		hasVariant: input.variants.map(item => {
+		description: trimValue(input.series.description),
+		mainEntity: { '@id': variantsId },
+	}
+
+	const variantsList = {
+		'@type': 'ItemList',
+		'@id': variantsId,
+		name: `Модели серии Velar ${input.series.label}`,
+		numberOfItems: input.variants.length,
+		itemListElement: input.variants.map((item, index) => {
 			const variantUrl = normalizeAbsoluteUrl(item.url, input.siteUrl)
 			const price = getVariantPrice(item.priceFrom)
 
 			return {
+				'@type': 'ListItem',
+				position: index + 1,
+				item: {
 				'@type': 'Product',
 				'@id': `${variantUrl}#product`,
 				name: item.name,
@@ -298,35 +278,25 @@ export function buildSeriesJsonLd(input: BuildSeriesJsonLdInput): Record<string,
 				description: getVariantDescription(item, input.series),
 				image: item.image ? normalizeAbsoluteUrl(item.image, input.siteUrl) : undefined,
 				model: item.name,
+				brand: { '@type': 'Brand', name: 'Velar' },
+				material: 'Сталь',
+				additionalProperty,
 				offers: price > 0
 					? {
 							'@type': 'Offer',
 							url: variantUrl,
 							priceCurrency: 'RUB',
 							price: String(price),
-							availability: 'https://schema.org/InStock',
+							availability: 'https://schema.org/PreOrder',
 							itemCondition: 'https://schema.org/NewCondition',
 							seller: {
 								'@id': organizationId,
 							},
 						}
 					: undefined,
+				},
 			}
 		}),
-	}
-
-	const variantsList = {
-		'@type': 'ItemList',
-		'@id': variantsId,
-		name: `Варианты дизайн-радиатора Velar ${input.series.label}`,
-		itemListOrder: 'https://schema.org/ItemListOrderAscending',
-		numberOfItems: input.variants.length,
-		itemListElement: input.variants.map((item, index) => ({
-			'@type': 'ListItem',
-			position: index + 1,
-			url: normalizeAbsoluteUrl(item.url, input.siteUrl),
-			name: item.name,
-		})),
 	}
 
 	const graph: Record<string, unknown>[] = [
@@ -347,7 +317,7 @@ export function buildSeriesJsonLd(input: BuildSeriesJsonLdInput): Record<string,
 			},
 		},
 		breadcrumbList,
-		productGroup,
+		collectionPage,
 		variantsList,
 	]
 

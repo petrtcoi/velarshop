@@ -5,6 +5,8 @@ import HeroQuickConfigurator from '@widgets/pageMain/HeroQuickConfigurator'
 import type { ModelDetails } from '@widgets/pageMain/HeroQuickConfigurator'
 import { buildQuickConfiguratorModels } from '@widgets/pageMain/quickConfiguratorData'
 import JsonLd from '../components/seo/JsonLd.astro'
+import OrderScope from '../components/product/OrderScope.astro'
+import CatalogExamples from '../components/product/CatalogExamples.astro'
 import DesignSeriesGrid from '../components/design/DesignSeriesGrid.astro'
 import DesignUsefulLinks from '../components/design/DesignUsefulLinks.astro'
 import DesignFaq from '../components/design/DesignFaq.astro'
@@ -406,6 +408,9 @@ const seo = getCategorySeo({
 			</div>
 		</div>
 	</section>
+
+	<OrderScope />
+	<section class='bg-white py-10 md:py-14'><div class='mx-auto max-w-[1180px] px-4 md:px-6 xl:px-8'><h2 class='text-2xl font-semibold md:text-3xl'>Размеры, мощность и цена конкретных вертикальных исполнений</h2><CatalogExamples specs={[{modelId:'p30v',height:1750,sections:10}, {modelId:'q40v',height:1750,sections:10}, {modelId:'r32v',height:1750,sections:10}]} /></div></section>
 
 	<section id='design-series' class='bg-white py-10 md:py-14 xl:py-16'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>

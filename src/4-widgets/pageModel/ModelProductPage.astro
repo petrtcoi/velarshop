@@ -123,6 +123,7 @@ function toNumber(value?: string): number {
 
 const prices = modelRadiators.map(radiator => toNumber(radiator.price)).filter(Boolean)
 const minPrice = prices.length ? Math.min(...prices) : 0
+const basePriceConfiguration = modelRadiators.filter(radiator => toNumber(radiator.price) > 0).sort((a, b) => toNumber(a.price) - toNumber(b.price))[0]
 const priceFrom = minPrice > 0 ? `от ${minPrice.toLocaleString('ru-RU')} ₽` : 'уточняйте'
 
 const isHorizontal = model.orientation === 'horizontal'
@@ -450,6 +451,7 @@ const seo = getModelSeo({
 					<div class='border-r border-neutral-200 py-3 pr-4'>
 						<div class='text-neutral-600'>Цена от</div>
 						<div class='mt-1 text-xl font-semibold text-neutral-950'>{priceFrom}</div>
+						{basePriceConfiguration && <p class='mt-2 text-xs font-normal leading-5 text-neutral-600'>Базовое исполнение: {basePriceConfiguration.height} × {basePriceConfiguration.length} мм{basePriceConfiguration.sections ? `, ${basePriceConfiguration.sections} секций` : ''}. Арматура и доставка отдельно{model.type === 'convector' ? '; решетка и управление — по выбранному комплекту' : ''}.</p>}
 					</div>
 					<div class='py-3 pl-4'>
 						<div class='text-neutral-600'>Срок</div>

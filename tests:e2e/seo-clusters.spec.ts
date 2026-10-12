@@ -22,9 +22,9 @@ test('horizontal cards and offers use horizontal model prices and destinations',
 	expect(products.length).toBe(10)
 	expect(products.every(product => product.sku.endsWith('h'))).toBe(true)
 	const p30 = products.find(product => product.sku === 'p30h')
-	expect(p30.offers.lowPrice).toBe('12440')
+	expect(p30.offers.price).toBe('12440')
 	expect(p30.image).toMatch(/\/p30h\/main\.jpg$/)
-	expect(products.every(product => product.offers.offerCount > 0 && Number(product.offers.highPrice) >= Number(product.offers.lowPrice))).toBe(true)
+	expect(products.every(product => product.offers['@type'] === 'Offer' && Number(product.offers.price) > 0)).toBe(true)
 	expect(products.every(product => product.offers.availability === 'https://schema.org/PreOrder')).toBe(true)
 })
 

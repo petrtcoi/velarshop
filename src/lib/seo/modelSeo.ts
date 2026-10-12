@@ -35,6 +35,7 @@ type BuildModelJsonLdInput = {
 	imageUrl: string
 	priceMin?: number
 	priceMax?: number
+	baseConfiguration?: RadiatorJson
 	offerCount?: number
 	availabilityUrl: string
 	additionalProperties: ModelSpecItem[]
@@ -274,42 +275,23 @@ export function buildModelJsonLd(input: BuildModelJsonLdInput): Record<string, u
 		additionalProperty,
 	}
 
-	if (input.parentSeries) {
-		const parentSeriesUrl = normalizeAbsoluteUrl(input.parentSeries.url, input.siteUrl)
-		baseProduct.isVariantOf = {
-			'@type': 'ProductGroup',
-			'@id': `${parentSeriesUrl}#product-group`,
-			name: input.parentSeries.title,
-			productGroupID: input.parentSeries.slug,
-		}
-	}
+	if (input.parentSeries) baseProduct.inProductGroupWithID = input.parentSeries.slug
 
+	// The Offer describes the actual lowest-priced configuration shown on the page.
+	// A price range across sizes is not an aggregation of offers from merchants.
 	if (input.priceMin && input.priceMin > 0) {
-		if ((input.offerCount || 0) > 1) {
-			baseProduct.offers = {
-				'@type': 'AggregateOffer',
-				priceCurrency: 'RUB',
-				lowPrice: String(input.priceMin),
-				highPrice: String(input.priceMax || input.priceMin),
-				offerCount: String(input.offerCount),
-				availability: input.availabilityUrl,
-				url: input.canonicalUrl,
-				seller: {
-					'@id': organizationId,
-				},
-			}
-		} else {
-			baseProduct.offers = {
-				'@type': 'Offer',
-				url: input.canonicalUrl,
-				priceCurrency: 'RUB',
-				price: String(input.priceMin),
-				availability: input.availabilityUrl,
-				itemCondition: 'https://schema.org/NewCondition',
-				seller: {
-					'@id': organizationId,
-				},
-			}
+		baseProduct.offers = {
+			'@type': 'Offer',
+			url: input.canonicalUrl,
+			priceCurrency: 'RUB',
+			price: String(input.priceMin),
+			availability: input.availabilityUrl,
+			itemCondition: 'https://schema.org/NewCondition',
+			seller: { '@id': organizationId },
+		}
+		if (input.baseConfiguration) {
+			baseProduct.sku = input.baseConfiguration.slug
+			baseProduct.size = `${input.baseConfiguration.height} × ${input.baseConfiguration.length} мм`
 		}
 	}
 
@@ -426,6 +408,7 @@ export function getModelSeo(input: ModelSeoInput): ModelSeoResult {
 		imageUrl: ogImage,
 		priceMin,
 		priceMax,
+		baseConfiguration: input.radiators.filter(item => toNumber(item.price) > 0).sort((a, b) => toNumber(a.price) - toNumber(b.price))[0],
 			offerCount: input.radiators.length,
 			availabilityUrl: 'https://schema.org/PreOrder',
 			additionalProperties: input.additionalProperties,

@@ -1,6 +1,8 @@
 ---
 import Layout from '@shared/layouts/Layout.astro'
 import JsonLd from '../components/seo/JsonLd.astro'
+import OrderScope from '../components/product/OrderScope.astro'
+import CatalogExamples from '../components/product/CatalogExamples.astro'
 import ConfigurationExamples from '../components/product/ConfigurationExamples.astro'
 import ColumnsCollectionLinks from '../components/columns/ColumnsCollectionLinks.astro'
 
@@ -100,6 +102,8 @@ const seo = getCategorySeo({
 		intro='Сравните четыре конфигурации на 10 секций: низкую 3030, модели 2057 и 3057 с межосевым расстоянием 500 мм и высокую 2180. Цена относится ко всему радиатору с указанными размерами, а не к одной секции. Подходящее число секций определяют по теплопотерям помещения.'
 		modelIds={['3030', '2057', '3057', '2180']}
 	/>
+
+	<OrderScope />
 
 	<ColumnsCatalog models={columnsModels} />
 

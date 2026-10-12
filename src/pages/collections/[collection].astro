@@ -193,7 +193,9 @@ function buildFaqItems() {
 }
 
 const faqItems = buildFaqItems()
-const exampleModelIds = collection.kind === 'tube-count'
+const exampleModelIds = collection.kind === 'interaxial'
+	? modelRows.filter(row => row.type === 'columns').slice(0, 3).map(row => row.id)
+	: collection.kind === 'tube-count'
 	? [`${collection.tubeCount}030`, `${collection.tubeCount}057`, `${collection.tubeCount}180`].filter(id => modelRows.some(row => row.id === id))
 	: collection.kind === 'height' ? modelRows.slice(0, 3).map(row => row.id) : []
 const checkItems = collection.kind === 'interaxial'
@@ -288,8 +290,8 @@ const seo = getCategorySeo({
 
 	{exampleModelIds.length > 0 && <ConfigurationExamples
 		id='collection-price-examples'
-		title={collection.kind === 'height' ? `Цены исполнений высотой ${collection.height} мм` : `Цены ${collection.tubeCount}-трубчатых радиаторов на 10 секций`}
-		intro={collection.kind === 'height' ? `Примеры на 10 секций с полной высотой ${collection.height} мм. Сравнивайте мощность при одинаковом температурном режиме; на странице модели можно выбрать другую длину и число секций.` : 'Примеры низкой, стандартной и высокой конфигурации с одинаковым числом секций. Размеры, мощность и цена относятся к конкретному радиатору, что помогает сравнить варианты до расчета.'}
+		title={collection.kind === 'interaxial' ? `Цены радиаторов с межосевым расстоянием ${collection.spacing} мм` : collection.kind === 'height' ? `Цены исполнений высотой ${collection.height} мм` : `Цены ${collection.tubeCount}-трубчатых радиаторов на 10 секций`}
+		intro={collection.kind === 'interaxial' ? `Трубчатые исполнения на 10 секций с боковым подключением и межосевым расстоянием ${collection.spacing} мм. Таблица показывает отдельно полную высоту, глубину и длину: одинаковое межосевое расстояние не означает одинаковые габариты.` : collection.kind === 'height' ? `Примеры на 10 секций с полной высотой ${collection.height} мм. Сравнивайте мощность при одинаковом температурном режиме; на странице модели можно выбрать другую длину и число секций.` : 'Примеры низкой, стандартной и высокой конфигурации с одинаковым числом секций. Размеры, мощность и цена относятся к конкретному радиатору, что помогает сравнить варианты до расчета.'}
 		modelIds={exampleModelIds}
 		height={collection.height}
 	/>}

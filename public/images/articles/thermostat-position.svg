@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420" viewBox="0 0 760 420" role="img" aria-labelledby="title desc">
+<title id="title">Расположение термоголовки при нижнем и боковом подключении</title><desc id="desc">При обоих вариантах чувствительный элемент должен находиться в свободно циркулирующем воздухе, с учетом инструкции выбранного клапана.</desc>
+<rect width="760" height="420" fill="#fafafa"/><g font-family="Arial,sans-serif" fill="#262626"><text x="30" y="35" font-size="22">Нижнее подключение</text><text x="405" y="35" font-size="22">Боковое подключение</text>
+<g fill="#fff" stroke="#737373" stroke-width="3"><rect x="40" y="65" width="220" height="185" rx="8"/><rect x="415" y="65" width="220" height="185" rx="8"/>
+<path d="M67 70v175M99 70v175M131 70v175M163 70v175M195 70v175M227 70v175M442 70v175M474 70v175M506 70v175M538 70v175M570 70v175M602 70v175"/>
+<path d="M90 250v90M130 250v90M415 100h-25v240M415 225h-60v115" fill="none" stroke-width="8"/>
+<rect x="264" y="221" width="80" height="40" rx="8"/><rect x="281" y="80" width="84" height="40" rx="8"/><path d="M260 240h8M365 100h25" stroke-width="7"/></g>
+<g fill="none" stroke="#52765e" stroke-width="3"><path d="M288 180v-36m-7 10 7-10 7 10M321 180v-36m-7 10 7-10 7 10M302 149v-36m-7 10 7-10 7 10"/><path d="M299 175v-36m-7 10 7-10 7 10M338 175v-36m-7 10 7-10 7 10"/></g>
+<text x="30" y="370" font-size="20">Датчик в открытой зоне</text><text x="405" y="370" font-size="20">Положение — по инструкции клапана</text><text x="30" y="401" font-size="17" fill="#525252">Не закрывайте термоголовку шторой, экраном или мебелью.</text></g></svg>

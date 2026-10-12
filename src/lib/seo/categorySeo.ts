@@ -216,8 +216,8 @@ export function buildCategoryJsonLd(input: BuildCategoryJsonLdInput): Record<str
 				name: 'Velar',
 			},
 			offers: {
-				'@type': 'AggregateOffer',
-				lowPrice: offer.lowPrice,
+				'@type': 'Offer',
+				price: offer.lowPrice,
 				priceCurrency: 'RUB',
 				availability: offer.availability || 'https://schema.org/PreOrder',
 				url: offerUrl,

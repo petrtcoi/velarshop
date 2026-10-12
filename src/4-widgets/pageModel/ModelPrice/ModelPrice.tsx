@@ -14,14 +14,14 @@ function ModelPrice({ minPrice }: Props) {
       class="py-5 flex flex-row gap-8 items-end justify-center"
       itemProp="offers"
       itemScope
-      itemType="https://schema.org/AggregateOffer"
+      itemType="https://schema.org/Offer"
     >
       <meta
         itemProp="priceCurrency"
         content="RUB"
       />
       <meta
-        itemProp="lowPrice"
+        itemProp="price"
         content={minPrice.toString()}
       />
       <div>
