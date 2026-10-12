@@ -19,6 +19,7 @@ import { getModelSlug } from '@shared/utils/getModelSlug'
 import { getModelMainImagePath } from '@shared/utils/getModelMainImagePath'
 import { getModelSeo } from '../../lib/seo/modelSeo'
 import { formatDimensions, formatSections } from '../../lib/productFormat'
+import { catalogRange } from '../../lib/catalogFacts'
 import { interaxialCollections } from '../../lib/interaxialCollections'
 import { convectorModeCollections, exactHeightCollections, tubularCollections } from '../../lib/catalogCollections'
 
@@ -235,12 +236,12 @@ const specs: Array<{ label: string; value: string }> = [
 	{ label: 'Исполнение', value: isHorizontal ? 'горизонтальное' : isVertical ? 'вертикальное' : '' },
 	{ label: 'Межосевое расстояние', value: model.type === 'columns' ? interAxisValue : '' },
 	{ label: 'Форма труб', value: tubeShape === 'по серии' ? '' : tubeShape },
-	{ label: 'Диаметр / профиль труб', value: tubeSize ? `${tubeSize} мм` : '' },
-	{ label: 'Материал', value: model.type === 'ironcast' ? 'чугун' : 'сталь' },
+	{ label: model.type === 'convector' ? 'Ширина короба' : 'Диаметр / профиль труб', value: model.type === 'convector' ? catalogRange(modelRadiators, 'width') : tubeSize ? `${tubeSize} мм` : '' },
+	{ label: model.type === 'convector' ? 'Материал корпуса' : 'Материал', value: model.type === 'ironcast' ? 'чугун' : model.type === 'convector' ? 'оцинкованная сталь' : 'сталь' },
 	{ label: 'Подключение', value: connectionText },
 	{ label: 'Цвет', value: 'по каталогу RAL' },
 	{ label: 'Мощность (макс. по вариантам)', value: maxPower ? `${maxPower} Вт` : '' },
-	{ label: 'Монтаж', value: model.type === 'floor' || model.type === 'ironcast' ? 'напольный' : 'настенный / по проекту' },
+	{ label: 'Монтаж', value: model.type === 'convector' ? 'внутрипольный, в подготовленную нишу' : model.type === 'floor' || model.type === 'ironcast' ? 'напольный' : 'настенный / по проекту' },
 ].filter(item => item.value)
 
 const modelCode = model.name.replace(/[HV]$/i, '').trim()

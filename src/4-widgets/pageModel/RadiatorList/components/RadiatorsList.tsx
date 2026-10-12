@@ -1,3 +1,4 @@
+import { formatDimensions } from '../../../../lib/productFormat'
 import { useStore } from '@nanostores/preact'
 import { useEffect, useRef, useState } from 'preact/hooks'
 
@@ -40,6 +41,7 @@ function getPowerValue(radiator: RadiatorJson): string {
 }
 
 function getSizeLabel(model: ModelJson, radiator: RadiatorJson): string {
+	if (model.type === 'convector') return formatDimensions(model.type, radiator)
 	if (model.orientation === 'horizontal') {
 		return `${radiator.height} × ${radiator.length} мм`
 	}
@@ -50,7 +52,7 @@ function getSizeLabel(model: ModelJson, radiator: RadiatorJson): string {
 }
 
 function getCartItemDetails(model: ModelJson, radiator: RadiatorJson): string {
-	const dimensions =
+	const dimensions = model.type === 'convector' ? formatDimensions(model.type, radiator) :
 		model.orientation === 'vertical' || model.orientation === 'horizontal'
 			? `${radiator.height}x${radiator.length} мм`
 			: `${radiator.height}x${radiator.length}x${radiator.width} мм`
@@ -356,7 +358,7 @@ function RadiatorList(props: Props) {
 				)}
 				{filterByWidth && (
 					<RadiatorFilter
-						title={model.type === 'convector' ? 'Глубина (мм)' : 'Глубина'}
+						title={model.type === 'convector' ? 'Ширина короба (мм)' : 'Глубина'}
 						options={widths}
 						availableOptions={availableWidths}
 						selectedOption={selectedWidth}

@@ -52,6 +52,9 @@ test('updated articles and comparisons stay readable on a narrow screen', async 
 test('base model dimensions and grille scope match its Product Offer', async ({ page }) => {
 	await page.goto('/model/kwh')
 	await expect(page.getByText('Цена прибора без решетки', { exact: true })).toBeVisible()
+	await expect(page.getByLabel('Фильтр по параметру: Ширина короба (мм)')).toBeVisible()
+	await expect(page.locator('#radiators-list')).toContainText('160 × 70 × 600 мм (Ш × В × Д)')
+	await expect(page.locator('#model-specs')).toContainText('внутрипольный, в подготовленную нишу')
 	await expect(page.getByText(/Базовое исполнение:/)).toContainText('160 × 70 × 600 мм (Ш × В × Д)')
 	const raw = await page.locator('script[type="application/ld+json"]').allTextContents()
 	const nodes = raw.flatMap(text => JSON.parse(text)['@graph'] ?? [])
