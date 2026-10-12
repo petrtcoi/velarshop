@@ -42,7 +42,6 @@ const modelCopy: Record<
 		description: string
 		whenToChoose: string
 		useCase: string
-		schemaDescription: string
 		cardSpecs: string
 		width: string
 		height: string
@@ -55,8 +54,6 @@ const modelCopy: Record<
 		whenToChoose:
 			'если нужен тихий конвектор в пол без вентиляторов для умеренных теплопотерь.',
 		useCase: 'Для спокойной тепловой завесы без вентиляторов и лишнего шума.',
-		schemaDescription:
-			'Внутрипольный конвектор с естественной конвекцией для панорамных окон, умеренных теплопотерь и спокойной тепловой завесы.',
 		cardSpecs: 'естественная конвекция · без вентиляторов · высота 65-140 мм',
 		width: '150-420 мм',
 		height: '65-140 мм',
@@ -68,8 +65,6 @@ const modelCopy: Record<
 		whenToChoose:
 			'если у панорамного окна большие теплопотери и нужна более высокая мощность.',
 		useCase: 'Для панорамных окон, холодных зон и активного обогрева.',
-		schemaDescription:
-			'Внутрипольный конвектор с принудительной конвекцией для панорамных окон, холодных зон и помещений с повышенными теплопотерями.',
 		cardSpecs: 'принудительная конвекция · вентиляторы · высота 85-140 мм',
 		width: '250-420 мм',
 		height: '85-140 мм',
@@ -81,8 +76,6 @@ const modelCopy: Record<
 		whenToChoose:
 			'если нужны вентиляторы 24V, безопасное низкое напряжение и интеграция с автоматикой.',
 		useCase: 'Для проектов с низковольтными вентиляторами и гибким управлением.',
-		schemaDescription:
-			'Внутрипольный конвектор с принудительной конвекцией и вентиляторами 24V для современных инженерных проектов и автоматики.',
 		cardSpecs: 'принудительная конвекция · вентиляторы 24V · управление',
 		width: '200-420 мм',
 		height: '85-140 мм',
@@ -109,7 +102,6 @@ const convectorModels = preferredModelOrder
 			description: copy.description,
 			whenToChoose: copy.whenToChoose,
 			useCase: copy.useCase,
-			schemaDescription: copy.schemaDescription,
 			cardSpecs: copy.cardSpecs,
 			width: copy.width,
 			height: copy.height,
@@ -410,14 +402,6 @@ const seo = getCategorySeo({
 		products: convectorModels.map(model => ({
 			name: model.name,
 			url: model.href,
-		})),
-		productOffers: convectorModels.map(model => ({
-			name: model.name,
-			url: model.href,
-			image: model.image,
-			description: model.schemaDescription,
-			category: 'Внутрипольные конвекторы',
-			lowPrice: model.priceFrom,
 		})),
 		faq: faqItems.map(([question, answer]) => ({
 			question,

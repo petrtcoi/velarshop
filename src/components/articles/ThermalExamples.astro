@@ -1,15 +1,24 @@
 ---
-import { catalogExamples } from '../../lib/catalogExamples'
+import { catalogExamples, type ExampleSpec } from '../../lib/catalogExamples'
 import { catalogNumber } from '../../lib/catalogFacts'
 import DeltaTPowerCalculator from '@shared/components/DeltaTCalculator'
 import CatalogExamples from '../product/CatalogExamples.astro'
-const specs = [{ modelId: '2057', sections: 10 }, { modelId: '3057', sections: 10 }, { modelId: 'q40v', sections: 10, height: 1750 }]
-const configurations = catalogExamples(specs).map(({ model, radiator }) => ({
-	id: radiator.slug, title: `Velar ${model.name}, ${radiator.height} × ${radiator.length} мм, ${radiator.sections} секций`,
-	q50: catalogNumber(radiator.dt50), q60: catalogNumber(radiator.dt60), q70: catalogNumber(radiator.dt70),
-	exponent: model.type === 'columns' ? 1.40 : 1.30,
-	passportUrl: model.type === 'columns' ? '/docs/passports/passport-columns.pdf' : '/docs/passports/passport-q40v.pdf',
-}))
+// Each example requires its own verified passport exponent; there is no type-based default.
+const examples: Array<{ spec: ExampleSpec; exponent: number; passportUrl: string }> = [
+	{ spec: { modelId: '2057', sections: 10 }, exponent: 1.40, passportUrl: '/docs/passports/passport-columns.pdf' },
+	{ spec: { modelId: '3057', sections: 10 }, exponent: 1.40, passportUrl: '/docs/passports/passport-columns.pdf' },
+	{ spec: { modelId: 'q40v', sections: 10, height: 1750 }, exponent: 1.30, passportUrl: '/docs/passports/passport-q40v.pdf' },
+]
+const specs = examples.map(example => example.spec)
+const configurations = examples.map(({ spec, exponent, passportUrl }) => {
+	if (!Number.isFinite(exponent) || exponent <= 0 || !passportUrl) throw new Error(`Не указан подтвержденный паспортный показатель n для ${spec.modelId}`)
+	const { model, radiator } = catalogExamples([spec])[0]
+	return {
+		id: radiator.slug, title: `Velar ${model.name}, ${radiator.height} × ${radiator.length} мм, ${radiator.sections} секций`,
+		q50: catalogNumber(radiator.dt50), q60: catalogNumber(radiator.dt60), q70: catalogNumber(radiator.dt70),
+		exponent, passportUrl,
+	}
+})
 ---
 <CatalogExamples specs={specs} showTemperatures={true} />
 <DeltaTPowerCalculator configurations={configurations} client:load />

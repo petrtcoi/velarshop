@@ -223,7 +223,6 @@ const seo = getCategorySeo({
 		breadcrumbs,
 		itemListName: collection.title,
 		products: modelRows.map(model => ({ name: model.name, url: model.href })),
-		productOffers: modelRows.map(model => ({ name: model.name, url: model.href, image: model.image, category: model.typeLabel, description: `${model.description} ${collection.title}.`, lowPrice: model.priceFrom, availability: 'https://schema.org/PreOrder' })),
 		faq: faqItems,
 	},
 })

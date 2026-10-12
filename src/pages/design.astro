@@ -317,15 +317,6 @@ const seo = getCategorySeo({
 			name: series.title,
 			url: series.href,
 		})),
-		productOffers: designSeries.map(series => ({
-			name: series.title,
-			url: series.href,
-			image: series.image,
-			description: series.description,
-			category: 'Дизайн-радиаторы',
-			lowPrice: series.priceFrom,
-			availability: 'https://schema.org/PreOrder',
-		})),
 		faq: faqItems.map(([question, answer]) => ({
 			question,
 			answer,

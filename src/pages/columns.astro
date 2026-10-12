@@ -53,13 +53,6 @@ const seo = getCategorySeo({
 			name: `Velar ${model.name}`,
 			url: model.href,
 		})),
-		productOffers: popularModels.map(model => ({
-			name: `Velar ${model.name}`,
-			url: model.href,
-			image: model.image,
-			lowPrice: model.minPrice,
-			availability: 'https://schema.org/PreOrder',
-		})),
 		faq: columnsFaqItems.map(item => ({
 			question: item.question,
 			answer: item.answer,

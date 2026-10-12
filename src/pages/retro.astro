@@ -332,13 +332,6 @@ const seo = getCategorySeo({
 			name: model.title,
 			url: model.href,
 		})),
-		productOffers: retroModels.map(model => ({
-			name: model.title,
-			url: model.href,
-			image: model.image,
-			lowPrice: model.priceFrom,
-			availability: 'https://schema.org/PreOrder',
-		})),
 		faq: faqItems.map(([question, answer]) => ({
 			question,
 			answer,

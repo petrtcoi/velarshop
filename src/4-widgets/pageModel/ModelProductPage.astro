@@ -145,7 +145,7 @@ function getHeroBadge(targetModel: ModelJson): string {
 
 const heroBadge = getHeroBadge(model)
 const heroBenefits = [
-	'Цвет по RAL',
+	model.type === 'convector' ? 'Решетка на выбор' : 'Цвет по RAL',
 	model.type === 'ironcast' ? 'Рабочее давление 10 атм' : 'Давление до 16 атм',
 	'Сделано в России',
 	'Под заказ',
@@ -218,7 +218,9 @@ const galleryImages = [
 const modelDescriptionSlug = model.type === 'columns' ? 'columns' : model.slug
 const hasModelDescription = Boolean(await getEntryBySlug('modelDescriptions', modelDescriptionSlug))
 
-const heroDescription = isHorizontal
+const heroDescription = model.type === 'convector'
+	? `${productName} изготавливается под заказ. Стандартный цвет корпуса по паспорту — RAL 7016. Подберем размер, решетку и мощность под ваше помещение.`
+	: isHorizontal
 	? `Горизонтальный дизайн-радиатор ${productName} с ${tubeShapeInstrumental} формой труб${tubeSize ? ` ${tubeSize} мм` : ''}. Подходит для установки под окнами, в гостиных, спальнях и современных интерьерах. Доступен в разных размерах, цветах RAL и вариантах подключения.`
 	: isVertical
 		? `Вертикальный дизайн-радиатор ${productName} с ${tubeShapeInstrumental} формой труб${tubeSize ? ` ${tubeSize} мм` : ''}. Подходит для узких стен, зон у панорамных окон и современных интерьеров. Доступен в разных размерах, цветах RAL и вариантах подключения.`
@@ -239,7 +241,8 @@ const specs: Array<{ label: string; value: string }> = [
 	{ label: model.type === 'convector' ? 'Ширина короба' : 'Диаметр / профиль труб', value: model.type === 'convector' ? catalogRange(modelRadiators, 'width') : tubeSize ? `${tubeSize} мм` : '' },
 	{ label: model.type === 'convector' ? 'Материал корпуса' : 'Материал', value: model.type === 'ironcast' ? 'чугун' : model.type === 'convector' ? 'оцинкованная сталь' : 'сталь' },
 	{ label: 'Подключение', value: connectionText },
-	{ label: 'Цвет', value: 'по каталогу RAL' },
+	{ label: model.type === 'convector' ? 'Цвет корпуса' : 'Цвет', value: model.type === 'convector' ? 'RAL 7016 — стандартное исполнение по паспорту' : 'по каталогу RAL' },
+	{ label: 'Решетка', value: model.type === 'convector' ? 'анодированный алюминий, окраска RAL или дерево — на выбор' : '' },
 	{ label: 'Мощность (макс. по вариантам)', value: maxPower ? `${maxPower} Вт` : '' },
 	{ label: 'Монтаж', value: model.type === 'convector' ? 'внутрипольный, в подготовленную нишу' : model.type === 'floor' || model.type === 'ironcast' ? 'напольный' : 'настенный / по проекту' },
 ].filter(item => item.value)
@@ -569,6 +572,7 @@ const seo = getModelSeo({
 					</div>
 				))}
 			</dl>
+			{model.type === 'convector' && <p class='mt-5 max-w-[920px] text-sm font-normal leading-6 text-neutral-700'>В <a href='/docs/passports/passport-kwh-kwhv.pdf' class='text-red-700 underline decoration-red-300 underline-offset-2 hover:decoration-transparent'>паспорте</a> описан стандартный комплект с решеткой. Здесь доступен заказ прибора без решетки или с выбранной решеткой; состав заказа укажем в расчете. Перед подготовкой ниши согласуйте актуальный монтажный чертеж выбранного исполнения.</p>}
 		</div>
 	</section>
 

@@ -144,6 +144,7 @@ function buildModelDescription(params: {
 	modelFullName: string
 	orientationLabel: string
 	isDesign: boolean
+	isConvector?: boolean
 	prefix: string
 	profilePhrase: string
 	interaxialSpacing: string
@@ -158,8 +159,8 @@ function buildModelDescription(params: {
 	const interaxialChunk = interaxialSpacing ? ` Межосевое расстояние — ${interaxialSpacing}.` : ''
 
 	return interaxialChunk
-		? `Купить ${modelFullName} с доставкой по России. ${descriptor} Velar${profileChunk}.${interaxialChunk} Подбор размера, цвета RAL и подключения.`
-		: `Купить ${modelFullName} с доставкой по России. ${descriptor} Velar${profileChunk}: подбор размера, цвета RAL и подключения.`
+		? `Купить ${modelFullName} с доставкой по России. ${descriptor} Velar${profileChunk}.${interaxialChunk} Подбор размера, ${params.isConvector ? 'цвета решетки' : 'цвета RAL'} и подключения.`
+		: `Купить ${modelFullName} с доставкой по России. ${descriptor} Velar${profileChunk}: подбор размера, ${params.isConvector ? 'цвета решетки' : 'цвета RAL'} и подключения.`
 }
 
 function getOgDescription(params: {
@@ -167,6 +168,7 @@ function getOgDescription(params: {
 	orientationLabel: string
 	profilePhrase: string
 	isDesign: boolean
+	isConvector?: boolean
 	prefix: string
 	interaxialSpacing: string
 }): string {
@@ -178,7 +180,7 @@ function getOgDescription(params: {
 	const priceChunk = params.priceMin ? `Цена от ${params.priceMin.toLocaleString('ru-RU')} ₽. ` : ''
 	const profileChunk = params.profilePhrase ? ` ${params.profilePhrase}` : ''
 	const interaxialChunk = params.interaxialSpacing ? ` Межосевое расстояние — ${params.interaxialSpacing}.` : ''
-	return `${priceChunk}${descriptor}${profileChunk}.${interaxialChunk} Подбор размера, цвета RAL, подключения и доставка по России.`
+	return `${priceChunk}${descriptor}${profileChunk}.${interaxialChunk} Подбор размера, ${params.isConvector ? 'цвета решетки' : 'цвета RAL'}, подключения и доставка по России.`
 }
 
 function getInteraxialSpacing(model: ModelJson, radiators: RadiatorJson[]): string {
@@ -365,6 +367,7 @@ export function getModelSeo(input: ModelSeoInput): ModelSeoResult {
 		modelFullName,
 		orientationLabel,
 		isDesign,
+		isConvector: input.model.type === 'convector',
 		prefix: input.model.prefix,
 		profilePhrase,
 		interaxialSpacing,
@@ -378,6 +381,7 @@ export function getModelSeo(input: ModelSeoInput): ModelSeoResult {
 		orientationLabel,
 		profilePhrase,
 		isDesign,
+		isConvector: input.model.type === 'convector',
 		prefix: input.model.prefix,
 		interaxialSpacing,
 	})

@@ -15,11 +15,6 @@ function formatModelName(model: ColumnsModelCard): string {
 	return `Трубчатый радиатор Velar ${model.name}`
 }
 
-function buildModelDescription(model: ColumnsModelCard): string {
-	const placement = model.height <= 700 ? 'под окно' : 'для жилых и коммерческих помещений'
-	return `${model.tubeCount}-трубчатый стальной радиатор высотой ${model.height} мм, ${placement}.`
-}
-
 export function buildColumnsCollectionPageSchema() {
 	return {
 		'@context': 'https://schema.org',

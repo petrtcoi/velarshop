@@ -8,16 +8,6 @@ type CategoryItem = {
 	url: string
 }
 
-type ProductOffer = {
-	name: string
-	url: string
-	image?: string
-	description?: string
-	category?: string
-	lowPrice: number
-	availability?: string
-}
-
 type FaqItem = {
 	question: string
 	answer: string
@@ -39,7 +29,6 @@ type CategoryData = {
 	indexable?: boolean
 	faq?: FaqItem[]
 	products?: CategoryItem[]
-	productOffers?: ProductOffer[]
 	breadcrumbs?: BreadcrumbItem[]
 	itemListName?: string
 }
@@ -49,7 +38,6 @@ type BuildCategoryJsonLdInput = {
 	canonicalUrl: string
 	category: CategoryData
 	products: CategoryItem[]
-	productOffers: ProductOffer[]
 	faq: FaqItem[]
 	breadcrumbs: BreadcrumbItem[]
 }
@@ -206,7 +194,6 @@ export function buildCategoryJsonLd(input: BuildCategoryJsonLdInput): Record<str
 		})
 	}
 
-
 	return {
 		'@context': 'https://schema.org',
 		'@graph': graph,
@@ -217,9 +204,6 @@ export function getCategorySeo(input: CategorySeoInput): CategorySeoResult {
 	const siteUrl = input.siteUrl ?? DEFAULT_SITE_URL
 	const canonicalUrl = normalizeAbsoluteUrl(input.category.url, siteUrl)
 	const products = sanitizeItems(input.category.products ?? [])
-	const productOffers = (input.category.productOffers ?? []).filter(
-		offer => offer.name.trim() && offer.url.trim() && offer.lowPrice > 0,
-	)
 	const faq = sanitizeFaq(input.category.faq ?? [])
 	const breadcrumbs = input.category.breadcrumbs ?? getDefaultBreadcrumbs(input.category)
 	const ogTitle = input.category.ogTitle ?? `${input.category.h1} — каталог Velar`
@@ -252,7 +236,6 @@ export function getCategorySeo(input: CategorySeoInput): CategorySeoResult {
 			canonicalUrl,
 			category: input.category,
 			products,
-			productOffers,
 			faq,
 			breadcrumbs,
 		}),

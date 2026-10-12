@@ -7,9 +7,6 @@ type SeriesVariant = {
 	name: string
 	url: string
 	image?: string
-	priceFrom?: number
-	description?: string
-	orientation?: string
 }
 
 type SeriesFaqItem = {
@@ -171,72 +168,11 @@ function sanitizeVariants(variants: SeriesVariant[]): SeriesVariant[] {
 	return variants.filter(item => trimValue(item.name) && trimValue(item.url))
 }
 
-function getVariantPrice(value?: number): number {
-	if (!value || !Number.isFinite(value) || value <= 0) return 0
-	return Math.round(value)
-}
-
-function getVariantOrientation(item: SeriesVariant): string {
-	if (item.orientation) return item.orientation
-
-	const name = item.name.toLowerCase()
-	if (name.endsWith(' v') || name.endsWith('v')) return 'vertical'
-	if (name.endsWith(' h') || name.endsWith('h')) return 'horizontal'
-	return ''
-}
-
-function getVariantDescription(item: SeriesVariant, series: SeriesSeoData): string {
-	const description = trimValue(item.description)
-	if (description) return description
-
-	const orientation = getVariantOrientation(item)
-	const orientationText =
-		orientation === 'vertical'
-			? 'вертикальный'
-			: orientation === 'horizontal'
-				? 'горизонтальный'
-				: 'дизайн'
-
-	return `${item.name} — ${orientationText} дизайн-радиатор Velar серии ${series.label}. Подбор размера, цвета RAL и подключения выполняется на странице модели.`
-}
-
 export function buildSeriesJsonLd(input: BuildSeriesJsonLdInput): Record<string, unknown> {
 	const organizationId = `${input.siteUrl}/#organization`
 	const websiteId = `${input.siteUrl}/#website`
 	const breadcrumbId = `${input.canonicalUrl}#breadcrumb`
 	const variantsId = `${input.canonicalUrl}#variants`
-
-	const profile = trimValue(input.series.profile)
-	const profileShape = getProfileShape(profile)
-	const profileSize = getProfileSize(profile)
-	const orientationText = getOrientationText(input.variants)
-
-	const additionalProperty = [
-		profileShape
-			? {
-					'@type': 'PropertyValue',
-					name: 'Форма профиля',
-					value: profileShape,
-				}
-			: null,
-		profileSize
-			? {
-					'@type': 'PropertyValue',
-					name: 'Размер профиля',
-					value: `${profileSize} мм`,
-				}
-			: null,
-		{
-			'@type': 'PropertyValue',
-			name: 'Варианты исполнения',
-			value: orientationText,
-		},
-		{
-			'@type': 'PropertyValue',
-			name: 'Цвет',
-			value: 'по каталогу RAL',
-		},
-	].filter(Boolean)
 
 	const breadcrumbList = {
 		'@type': 'BreadcrumbList',

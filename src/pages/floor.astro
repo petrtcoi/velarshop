@@ -320,14 +320,6 @@ const seo = getCategorySeo({
 			name: model.title,
 			url: model.href,
 		})),
-		productOffers: floorModels.map(model => ({
-			name: model.title,
-			url: model.href,
-			image: model.image,
-			description: model.description,
-			category: 'Напольные радиаторы',
-			lowPrice: model.priceFrom,
-		})),
 		faq: faqItems.map(([question, answer]) => ({
 			question,
 			answer,

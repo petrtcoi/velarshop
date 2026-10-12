@@ -441,15 +441,6 @@ const seo = getCategorySeo({
 			name: model.title,
 			url: model.href,
 		})),
-		productOffers: popularModels.map(model => ({
-			name: model.title,
-			url: model.href,
-			image: model.image,
-			category: model.typeLabel,
-			description: model.whenChoose,
-			lowPrice: model.priceFrom,
-			availability: 'https://schema.org/PreOrder',
-		})),
 		faq: faqItems,
 	},
 })
