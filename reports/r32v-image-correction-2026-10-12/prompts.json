@@ -1,0 +1,24 @@
+{
+  "mode": "built-in image_gen",
+  "date": "2026-10-12",
+  "change": "R32V flat tube ends and slimmer 32 mm tube appearance, corrected from product references.",
+  "references": [
+    "public/images/models/r32v/main.jpg",
+    "public/images/models/r32v/3.jpg",
+    "public/docs/schemas/r32v.pdf"
+  ],
+  "edit_target": "public/images/articles/velar-r32v-9-same-room.webp",
+  "selected_original": "/Users/petrtcoi/.codex/generated_images/01a12f1c-cf5d-76a1-b26d-9cfb8e83b339/exec-ab013309-ff5b-4ab9-93f7-f040df1c177d.png",
+  "output": "public/images/articles/velar-r32v-9-same-room-v2.webp",
+  "prompts": [
+    "Use case: precise-object-edit.\nAsset: accurate Velar R32V radiator visualization for an article comparing 9 sections in one room.\nInput images: Image 1 is the edit target (same room, 9 sections but WRONG thick tubes and domed ends). Image 2 is the authoritative actual R32V front product reference for tube slenderness and construction only; ignore its 6-section count and white color. Image 3 is the authoritative R32V engineering drawing: flat square-cut end silhouettes, circular 32 mm tube cross sections, rear horizontal collectors. Image 4 is an actual angled product reference for shape and flat end details only.\nPrimary correction: replace the radiator geometry in Image 1 with EXACTLY NINE much slimmer straight ROUND tubes with FLAT, flush, square-cut ends perpendicular to the tube axis, like references 2–4. A straight horizontal top edge with 90-degree outline corners, not a semicircular capsule, hemisphere, domed cap or rounded pill. Bottom ends are equally flat. Tubes remain cylindrical along their length, not square extrusions. Very subtle cylindrical highlight, no inflated rounded bulb at either end.\nDimension guide: tube diameter 32 mm, height 1750 mm, center-to-center pitch 50 mm, total front width 432 mm. With the existing body height about 730 pixels, each tube should be about 13 pixels wide, around one third thinner than the thick tubes in Image 1. Tube centers approximately x=675,696,717,738,759,780,801,822,843. Nine distinct slim tubes, eight visible wall gaps. Keep top at approximately y=59 and bottom y=789, same body center and wall position. Put the upper and lower collectors BEHIND the tube row, around 30 pixels inset from the flat ends, as on the real model.\nFinish: preserve the matte graphite paint from Image 1; do not copy the white finish of the product photographs.\nInvariants: preserve every part of the room, camera, crop, window, furniture, plants, floorboards, skirting, sunlight, shadows elsewhere, exposure and image size. Only correct radiator and its immediate shadow, retaining discreet bottom-center plumbing. Exactly nine visible sections; all nine tops and bottoms visible. No text, labels, logos or watermark. This is a product identity correction, not a different room or a different radiator series.",
+    "Precise single-object addition. This image currently contains EIGHT slender vertical radiator tubes. Preserve ALL EIGHT existing tubes exactly. ADD ONE identical slim cylindrical tube immediately to the LEFT of the radiator at about x=640..654, y=64..786. Same 13–14 pixel diameter, same matte graphite paint, FLAT square-cut top and bottom with straight horizontal edges and no domes or hemispheres. Extend the two rear manifolds to connect this one added tube; manifolds stay behind the row about 30 pixels inset from the ends. Final count must be NINE clearly separate tubes: 1 added left + 8 unchanged originals = 9. Keep the eight original tubes, their spacing, height and slimness; do not merge or remove any. Keep the entire room, camera, furniture, window, floor, plants, lighting, exposure and original plumbing exactly unchanged. Only add the single thin tube, rear connection and immediate shadow. No text or labels."
+  ],
+  "manual_qa": {
+    "visible_sections": 9,
+    "end_shape": "flat square-cut silhouettes, no hemispherical caps",
+    "tube_shape": "slender circular tubes, diameter 32 mm in article specification",
+    "same_interior": true
+  },
+  "postprocessing": "WebP encoding only"
+}

@@ -8,7 +8,7 @@ export const comparisonRoom = { height: 1750, heatLoad: 1500, deltaT: 70 } as co
 const illustratedModels = [
 	{ modelId: 'p30v', sections: 6, length: 284, projection: 90, exponent: 1.30, image: 'velar-p30v-6-same-room.webp' },
 	{ modelId: 'q40v', sections: 8, length: 460, projection: 70, exponent: 1.30, image: 'velar-q40v-8-same-room.webp' },
-	{ modelId: 'r32v', sections: 9, length: 432, projection: 61, exponent: 1.30, image: 'velar-r32v-9-same-room.webp' },
+	{ modelId: 'r32v', sections: 9, length: 432, projection: 61, exponent: 1.30, image: 'velar-r32v-9-same-room-v2.webp' },
 ] as const
 
 export function roomRadiatorComparison() {

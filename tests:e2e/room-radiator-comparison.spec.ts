@@ -3,9 +3,9 @@ import radiators from '../src/6-entities/Radiator/jsonData/radiatorsDesign.ts'
 
 const path = '/info/velar-p30v-q40v-r32v-sravnenie'
 const expected = [
-	{ model: 'p30v', sections: 6, width: 284, projection: 90 },
-	{ model: 'q40v', sections: 8, width: 460, projection: 70 },
-	{ model: 'r32v', sections: 9, width: 432, projection: 61 },
+	{ model: 'p30v', sections: 6, width: 284, projection: 90, image: 'velar-p30v-6-same-room.webp' },
+	{ model: 'q40v', sections: 8, width: 460, projection: 70, image: 'velar-q40v-8-same-room.webp' },
+	{ model: 'r32v', sections: 9, width: 432, projection: 61, image: 'velar-r32v-9-same-room-v2.webp' },
 ]
 const number = (value: string) => Number(value.replace(/[^\d]/g, ''))
 
@@ -64,7 +64,7 @@ test('article metadata, visible FAQ and all three illustrations agree', async ({
 		await expect(page.getByText(question.acceptedAnswer.text, { exact: true })).toBeVisible()
 	}
 	for (const spec of expected) {
-		const image = page.locator(`figure img[src="/images/articles/velar-${spec.model}-${spec.sections}-same-room.webp"]`)
+		const image = page.locator(`figure img[src="/images/articles/${spec.image}"]`)
 		await image.scrollIntoViewIfNeeded()
 		await expect(image).toHaveAttribute('alt', new RegExp(`${spec.sections} секций`))
 		await expect.poll(() => image.evaluate((el: HTMLImageElement) => el.complete && el.naturalWidth === 1536 && el.naturalHeight === 1024)).toBe(true)
