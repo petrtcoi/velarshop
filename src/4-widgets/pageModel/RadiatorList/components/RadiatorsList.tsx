@@ -85,6 +85,7 @@ function RadiatorList(props: Props) {
 	const [urlFiltersReady, setUrlFiltersReady] = useState(false)
 	const shouldScrollToVariants = useRef(false)
 	const [filteredRadiators, setFilteredRadiators] = useState<RadiatorJson[]>(initialFilteredRadiators)
+	const showTemperatureModes = ['p30v', 'p30h', 'r42v', 'r42h'].includes(model.id)
 	const shoppingCart = useStore(storeShoppingCart)
 	const getTotalCost = useStore(getRadiatorTotalCost)
 	const getTotalTitle = useStore(radiatorTotalTitle)
@@ -444,7 +445,15 @@ function RadiatorList(props: Props) {
 											<td class='px-2.5 py-2.5 text-center'>{radiator.height} мм</td>
 											<td class='px-2.5 py-2.5 text-center'>{radiator.n_spacing ? `${radiator.n_spacing} мм` : '—'}</td>
 											<td class='px-2.5 py-2.5 text-center'>{radiator.length} мм</td>
-											<td class='px-2.5 py-2.5 text-center'>{getPowerValue(radiator)} Вт</td>
+											<td class='px-2.5 py-2.5 text-center'>
+												<span class='whitespace-nowrap'>{showTemperatureModes ? 'ΔT70: ' : ''}{getPowerValue(radiator)} Вт</span>
+												{showTemperatureModes && (
+													<span class='mt-1 block leading-5 text-neutral-600'>
+														<span class='block whitespace-nowrap'>ΔT60: {radiator.dt60} Вт</span>
+														<span class='block whitespace-nowrap'>ΔT50: {radiator.dt50} Вт</span>
+													</span>
+												)}
+											</td>
 											<td class='px-2.5 py-2.5 text-right font-normal'>
 												{totalPrice.toLocaleString('ru-RU')} ₽
 											</td>
@@ -477,7 +486,8 @@ function RadiatorList(props: Props) {
 										{totalTitle}
 									</div>
 									<div class='mt-1 text-xs leading-5 text-neutral-700'>
-										Высота: {radiator.height} мм · М/о: {radiator.n_spacing || '—'} мм · Длина: {radiator.length} мм · Мощность: {getPowerValue(radiator)} Вт
+										Высота: {radiator.height} мм · М/о: {radiator.n_spacing || '—'} мм · Длина: {radiator.length} мм · Мощность{showTemperatureModes ? ' ΔT70' : ''}: {getPowerValue(radiator)} Вт
+										{showTemperatureModes && <span class='block'>ΔT60: {radiator.dt60} Вт · ΔT50: {radiator.dt50} Вт</span>}
 									</div>
 									<div class='mt-2 flex items-center justify-between gap-3'>
 										<div class='text-base font-semibold text-neutral-950'>
