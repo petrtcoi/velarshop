@@ -21566,7 +21566,7 @@ export default [
 	},
 	{
 		model_id: 'q60v',
-		slug: 'q60v-12-1750-860',
+		slug: 'q60v-11-1750-860',
 		sections: '11',
 		e_spacing: '770',
 		d_spacing: '365/445',
@@ -45564,7 +45564,7 @@ export default [
 	{
 		model_id: 'q80h',
 		slug: 'q80h-2-180-500',
-		sections: '12',
+		sections: '2',
 		e_spacing: '430',
 		d_spacing: '225',
 		n_spacing: '100',
@@ -45583,7 +45583,7 @@ export default [
 	{
 		model_id: 'q80h',
 		slug: 'q80h-2-180-550',
-		sections: '12',
+		sections: '2',
 		e_spacing: '480',
 		d_spacing: '250',
 		n_spacing: '100',

@@ -13160,7 +13160,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-600',
-		dt70: 358,
+		dt70: 323,
 		width: 350,
 		height: 120,
 		length: 600,
@@ -13177,7 +13177,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-700',
-		dt70: 476,
+		dt70: 430,
 		width: 350,
 		height: 120,
 		length: 700,
@@ -13194,7 +13194,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-800',
-		dt70: 594,
+		dt70: 537,
 		width: 350,
 		height: 120,
 		length: 800,
@@ -13211,7 +13211,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-900',
-		dt70: 712,
+		dt70: 644,
 		width: 350,
 		height: 120,
 		length: 900,
@@ -13228,7 +13228,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-1000',
-		dt70: 830,
+		dt70: 751,
 		width: 350,
 		height: 120,
 		length: 1000,
@@ -13245,7 +13245,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-1100',
-		dt70: 948,
+		dt70: 858,
 		width: 350,
 		height: 120,
 		length: 1100,
@@ -13262,7 +13262,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-1200',
-		dt70: 1066,
+		dt70: 965,
 		width: 350,
 		height: 120,
 		length: 1200,
@@ -13279,7 +13279,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-1300',
-		dt70: 1184,
+		dt70: 1072,
 		width: 350,
 		height: 120,
 		length: 1300,
@@ -13296,7 +13296,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-1400',
-		dt70: 1303,
+		dt70: 1179,
 		width: 350,
 		height: 120,
 		length: 1400,
@@ -13313,7 +13313,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-1500',
-		dt70: 1422,
+		dt70: 1286,
 		width: 350,
 		height: 120,
 		length: 1500,
@@ -13330,7 +13330,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-1600',
-		dt70: 1541,
+		dt70: 1392,
 		width: 350,
 		height: 120,
 		length: 1600,
@@ -13347,7 +13347,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-1700',
-		dt70: 1659,
+		dt70: 1498,
 		width: 350,
 		height: 120,
 		length: 1700,
@@ -13364,7 +13364,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-1800',
-		dt70: 1777,
+		dt70: 1604,
 		width: 350,
 		height: 120,
 		length: 1800,
@@ -13381,7 +13381,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-1900',
-		dt70: 1895,
+		dt70: 1710,
 		width: 350,
 		height: 120,
 		length: 1900,
@@ -13398,7 +13398,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-2000',
-		dt70: 2013,
+		dt70: 1816,
 		width: 350,
 		height: 120,
 		length: 2000,
@@ -13415,7 +13415,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-2100',
-		dt70: 2130,
+		dt70: 1923,
 		width: 350,
 		height: 120,
 		length: 2100,
@@ -13432,7 +13432,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-2200',
-		dt70: 2247,
+		dt70: 2030,
 		width: 350,
 		height: 120,
 		length: 2200,
@@ -13449,7 +13449,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-2300',
-		dt70: 2364,
+		dt70: 2137,
 		width: 350,
 		height: 120,
 		length: 2300,
@@ -13466,7 +13466,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-2400',
-		dt70: 2481,
+		dt70: 2244,
 		width: 350,
 		height: 120,
 		length: 2400,
@@ -13483,7 +13483,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-2500',
-		dt70: 2250,
+		dt70: 2037,
 		width: 350,
 		height: 120,
 		length: 2500,
@@ -13500,7 +13500,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-2600',
-		dt70: 2368,
+		dt70: 2144,
 		width: 350,
 		height: 120,
 		length: 2600,
@@ -13517,7 +13517,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-2700',
-		dt70: 2487,
+		dt70: 2251,
 		width: 350,
 		height: 120,
 		length: 2700,
@@ -13534,7 +13534,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-2800',
-		dt70: 2606,
+		dt70: 2358,
 		width: 350,
 		height: 120,
 		length: 2800,
@@ -13551,7 +13551,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-2900',
-		dt70: 2725,
+		dt70: 2465,
 		width: 350,
 		height: 120,
 		length: 2900,
@@ -13568,7 +13568,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-3000',
-		dt70: 2844,
+		dt70: 2572,
 		width: 350,
 		height: 120,
 		length: 3000,
@@ -13585,7 +13585,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-3100',
-		dt70: 2963,
+		dt70: 2678,
 		width: 350,
 		height: 120,
 		length: 3100,
@@ -13602,7 +13602,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-3200',
-		dt70: 3082,
+		dt70: 2784,
 		width: 350,
 		height: 120,
 		length: 3200,
@@ -13619,7 +13619,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-3300',
-		dt70: 3200,
+		dt70: 2890,
 		width: 350,
 		height: 120,
 		length: 3300,
@@ -13636,7 +13636,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-3400',
-		dt70: 3318,
+		dt70: 2996,
 		width: 350,
 		height: 120,
 		length: 3400,
@@ -13653,7 +13653,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-3500',
-		dt70: 3436,
+		dt70: 3102,
 		width: 350,
 		height: 120,
 		length: 3500,
@@ -13670,7 +13670,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-3600',
-		dt70: 3554,
+		dt70: 3208,
 		width: 350,
 		height: 120,
 		length: 3600,
@@ -13687,7 +13687,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-3700',
-		dt70: 3672,
+		dt70: 3314,
 		width: 350,
 		height: 120,
 		length: 3700,
@@ -13704,7 +13704,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-3800',
-		dt70: 3790,
+		dt70: 3420,
 		width: 350,
 		height: 120,
 		length: 3800,
@@ -13721,7 +13721,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-3900',
-		dt70: 3908,
+		dt70: 3526,
 		width: 350,
 		height: 120,
 		length: 3900,
@@ -13738,7 +13738,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-4000',
-		dt70: 4026,
+		dt70: 3632,
 		width: 350,
 		height: 120,
 		length: 4000,
@@ -13755,7 +13755,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-4100',
-		dt70: 4143,
+		dt70: 3739,
 		width: 350,
 		height: 120,
 		length: 4100,
@@ -13772,7 +13772,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-4200',
-		dt70: 4260,
+		dt70: 3846,
 		width: 350,
 		height: 120,
 		length: 4200,
@@ -13789,7 +13789,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-4300',
-		dt70: 4377,
+		dt70: 3953,
 		width: 350,
 		height: 120,
 		length: 4300,
@@ -13806,7 +13806,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-4400',
-		dt70: 4494,
+		dt70: 4060,
 		width: 350,
 		height: 120,
 		length: 4400,
@@ -13823,7 +13823,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-4500',
-		dt70: 4611,
+		dt70: 4167,
 		width: 350,
 		height: 120,
 		length: 4500,
@@ -13840,7 +13840,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-4600',
-		dt70: 4728,
+		dt70: 4274,
 		width: 350,
 		height: 120,
 		length: 4600,
@@ -13857,7 +13857,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-4700',
-		dt70: 4845,
+		dt70: 4381,
 		width: 350,
 		height: 120,
 		length: 4700,
@@ -13874,7 +13874,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh350-120-4800',
-		dt70: 4962,
+		dt70: 4488,
 		width: 350,
 		height: 120,
 		length: 4800,
@@ -13891,7 +13891,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-600',
-		dt70: 344,
+		dt70: 358,
 		width: 420,
 		height: 120,
 		length: 600,
@@ -13908,7 +13908,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-700',
-		dt70: 452,
+		dt70: 476,
 		width: 420,
 		height: 120,
 		length: 700,
@@ -13925,7 +13925,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-800',
-		dt70: 560,
+		dt70: 594,
 		width: 420,
 		height: 120,
 		length: 800,
@@ -13942,7 +13942,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-900',
-		dt70: 668,
+		dt70: 712,
 		width: 420,
 		height: 120,
 		length: 900,
@@ -13959,7 +13959,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-1000',
-		dt70: 776,
+		dt70: 830,
 		width: 420,
 		height: 120,
 		length: 1000,
@@ -13976,7 +13976,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-1100',
-		dt70: 882,
+		dt70: 948,
 		width: 420,
 		height: 120,
 		length: 1100,
@@ -13993,7 +13993,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-1200',
-		dt70: 990,
+		dt70: 1066,
 		width: 420,
 		height: 120,
 		length: 1200,
@@ -14010,7 +14010,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-1300',
-		dt70: 1099,
+		dt70: 1184,
 		width: 420,
 		height: 120,
 		length: 1300,
@@ -14027,7 +14027,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-1400',
-		dt70: 1206,
+		dt70: 1303,
 		width: 420,
 		height: 120,
 		length: 1400,
@@ -14044,7 +14044,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-1500',
-		dt70: 1314,
+		dt70: 1422,
 		width: 420,
 		height: 120,
 		length: 1500,
@@ -14061,7 +14061,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-1600',
-		dt70: 1424,
+		dt70: 1541,
 		width: 420,
 		height: 120,
 		length: 1600,
@@ -14078,7 +14078,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-1700',
-		dt70: 1533,
+		dt70: 1659,
 		width: 420,
 		height: 120,
 		length: 1700,
@@ -14095,7 +14095,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-1800',
-		dt70: 1642,
+		dt70: 1777,
 		width: 420,
 		height: 120,
 		length: 1800,
@@ -14112,7 +14112,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-1900',
-		dt70: 1751,
+		dt70: 1895,
 		width: 420,
 		height: 120,
 		length: 1900,
@@ -14129,7 +14129,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-2000',
-		dt70: 1860,
+		dt70: 2013,
 		width: 420,
 		height: 120,
 		length: 2000,
@@ -14146,7 +14146,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-2100',
-		dt70: 1971,
+		dt70: 2130,
 		width: 420,
 		height: 120,
 		length: 2100,
@@ -14163,7 +14163,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-2200',
-		dt70: 2081,
+		dt70: 2247,
 		width: 420,
 		height: 120,
 		length: 2200,
@@ -14180,7 +14180,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-2300',
-		dt70: 2193,
+		dt70: 2364,
 		width: 420,
 		height: 120,
 		length: 2300,
@@ -14197,7 +14197,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-2400',
-		dt70: 2301,
+		dt70: 2481,
 		width: 420,
 		height: 120,
 		length: 2400,
@@ -14214,7 +14214,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-2500',
-		dt70: 2089,
+		dt70: 2250,
 		width: 420,
 		height: 120,
 		length: 2500,
@@ -14231,7 +14231,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-2600',
-		dt70: 2198,
+		dt70: 2368,
 		width: 420,
 		height: 120,
 		length: 2600,
@@ -14248,7 +14248,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-2700',
-		dt70: 2305,
+		dt70: 2487,
 		width: 420,
 		height: 120,
 		length: 2700,
@@ -14265,7 +14265,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-2800',
-		dt70: 2412,
+		dt70: 2606,
 		width: 420,
 		height: 120,
 		length: 2800,
@@ -14282,7 +14282,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-2900',
-		dt70: 2520,
+		dt70: 2725,
 		width: 420,
 		height: 120,
 		length: 2900,
@@ -14299,7 +14299,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-3000',
-		dt70: 2628,
+		dt70: 2844,
 		width: 420,
 		height: 120,
 		length: 3000,
@@ -14316,7 +14316,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-3100',
-		dt70: 2738,
+		dt70: 2963,
 		width: 420,
 		height: 120,
 		length: 3100,
@@ -14333,7 +14333,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-3200',
-		dt70: 2848,
+		dt70: 3082,
 		width: 420,
 		height: 120,
 		length: 3200,
@@ -14350,7 +14350,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-3300',
-		dt70: 2957,
+		dt70: 3200,
 		width: 420,
 		height: 120,
 		length: 3300,
@@ -14367,7 +14367,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-3400',
-		dt70: 3066,
+		dt70: 3318,
 		width: 420,
 		height: 120,
 		length: 3400,
@@ -14384,7 +14384,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-3500',
-		dt70: 3175,
+		dt70: 3436,
 		width: 420,
 		height: 120,
 		length: 3500,
@@ -14401,7 +14401,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-3600',
-		dt70: 3284,
+		dt70: 3554,
 		width: 420,
 		height: 120,
 		length: 3600,
@@ -14418,7 +14418,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-3700',
-		dt70: 3393,
+		dt70: 3672,
 		width: 420,
 		height: 120,
 		length: 3700,
@@ -14435,7 +14435,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-3800',
-		dt70: 3502,
+		dt70: 3790,
 		width: 420,
 		height: 120,
 		length: 3800,
@@ -14452,7 +14452,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-3900',
-		dt70: 3611,
+		dt70: 3908,
 		width: 420,
 		height: 120,
 		length: 3900,
@@ -14469,7 +14469,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-4000',
-		dt70: 3720,
+		dt70: 4026,
 		width: 420,
 		height: 120,
 		length: 4000,
@@ -14486,7 +14486,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-4100',
-		dt70: 3831,
+		dt70: 4143,
 		width: 420,
 		height: 120,
 		length: 4100,
@@ -14503,7 +14503,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-4200',
-		dt70: 3942,
+		dt70: 4260,
 		width: 420,
 		height: 120,
 		length: 4200,
@@ -14520,7 +14520,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-4300',
-		dt70: 4052,
+		dt70: 4377,
 		width: 420,
 		height: 120,
 		length: 4300,
@@ -14537,7 +14537,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-4400',
-		dt70: 4162,
+		dt70: 4494,
 		width: 420,
 		height: 120,
 		length: 4400,
@@ -14554,7 +14554,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-4500',
-		dt70: 4274,
+		dt70: 4611,
 		width: 420,
 		height: 120,
 		length: 4500,
@@ -14571,7 +14571,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-4600',
-		dt70: 4386,
+		dt70: 4728,
 		width: 420,
 		height: 120,
 		length: 4600,
@@ -14588,7 +14588,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-4700',
-		dt70: 4494,
+		dt70: 4845,
 		width: 420,
 		height: 120,
 		length: 4700,
@@ -14605,7 +14605,7 @@ export default [
 	{
 		model_id: 'kwh',
 		slug: 'kwh420-120-4800',
-		dt70: 4602,
+		dt70: 4962,
 		width: 420,
 		height: 120,
 		length: 4800,
