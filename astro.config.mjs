@@ -58,5 +58,18 @@ export default defineConfig({
 			'/info/raschet-radiatorov-dlya-uglovoy-komnaty',
 		...legacyModelRedirects,
 	},
-	integrations: [tailwind(), mdx(), preact(), sitemap({ filter: shouldIncludeInSitemap })],
+	integrations: [
+		tailwind(),
+		mdx(),
+		preact(),
+		sitemap({
+			filter: shouldIncludeInSitemap,
+			serialize(item) {
+				// Фактическое изменение /columns: публикация подбора мощности 01.11.2026.
+				// При следующем существенном обновлении этой страницы дату надо пересмотреть.
+				const pathname = new URL(item.url, 'https://velarshop.ru').pathname.replace(/\/$/, '')
+				return pathname === '/columns' ? { ...item, lastmod: '2026-11-01' } : item
+			},
+		}),
+	],
 })
