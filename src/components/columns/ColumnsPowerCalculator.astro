@@ -1,0 +1,97 @@
+---
+import { modelsJsonData } from '@entities/Model'
+import { columnModels } from '@entities/Radiator/jsonData/column'
+import { columnColors } from '@entities/ColumnsColor'
+import { columnConnections } from '@entities/RadiatorConnection'
+import { getModelSlug } from '@shared/utils/getModelSlug'
+import { columnsSectionSubtitleClass, columnsSectionTitleClass } from './columnsTypography'
+import PowerCalculator, {
+	type PowerSelectorColor,
+	type PowerSelectorConnection,
+	type PowerSelectorModel,
+} from './PowerCalculator'
+
+// Сверка каталога с паспортом — §5 спецификации T04 (seo/power-mvp-spec.md):
+// 6 моделей с расхождением ΔT70 и серия ×052; 5-трубчатых в паспорте нет.
+const MISMATCH_DT70_IDS = ['4057', '4075', '4090', '4100', '4110', '4120']
+const OUTSIDE_PASSPORT_X052_IDS = ['2052', '3052', '4052']
+
+const selectorModels: PowerSelectorModel[] = modelsJsonData
+	.filter(model => model.type === 'columns')
+	.map(model => {
+		const row = columnModels.find(item => item.model_id === model.id)
+		if (!row?.dt70 || !row.sections || !row.price) {
+			throw new Error(`Power selector: в column.ts нет полной записи на секцию для модели ${model.id}`)
+		}
+		const tubes = Number.parseInt(model.id.slice(0, 1), 10)
+		const outsidePassport = tubes === 5 || OUTSIDE_PASSPORT_X052_IDS.includes(model.id)
+		return {
+			id: model.id,
+			name: model.name,
+			tubes,
+			height: Number.parseInt(row.height, 10),
+			depth: Number.parseInt(row.width, 10),
+			sectionLength: Number.parseInt(row.length, 10),
+			// dt70 каталога имеет 1 знак после запятой — в целых сотых ватта значение точное
+			dt70Hundredths: Math.round(Number.parseFloat(row.dt70) * 100),
+			maxSections: Number.parseInt(row.sections, 10),
+			pricePerSection: Number.parseInt(row.price, 10),
+			href: `${getModelSlug(model)}#model-variants`,
+			source: !outsidePassport && !MISMATCH_DT70_IDS.includes(model.id) ? 'passport' : 'catalog',
+		}
+	})
+
+// Классификация T04: 69 моделей = 43 «сверено с паспортом» + 6 расхождений + 20 вне паспорта
+const passportCount = selectorModels.filter(model => model.source === 'passport').length
+if (selectorModels.length !== 69 || passportCount !== 43) {
+	throw new Error(
+		`Power selector: ожидалось 69 моделей и 43 «сверено с паспортом», получено ${selectorModels.length} и ${passportCount} — сверить column.ts/models.ts с §5 спецификации T04`,
+	)
+}
+
+// T05B: каталоги цвета и подключения — те же данные, что использует действующий конфигуратор
+// (hero-configurator API / ColumnsQuickConfigurator); цены не дублируются
+const colorOptions: PowerSelectorColor[] = columnColors.map(color => ({
+	id: color.id,
+	label: color.title,
+	multiplicate: color.multiplicate,
+}))
+const connectionOptions: PowerSelectorConnection[] = columnConnections.map(connection => ({
+	id: connection.id,
+	label: connection.description,
+	priceRub: connection.priceRub,
+}))
+
+// Проверка ограничений по данным на 31.10.2026: у всех трубчатых моделей models.ts connections = '',
+// hero-configurator API отдаёт весь columnConnections каждому трубчатому; единственное
+// задокументированное ограничение — «только для 3-трубчатых» у нижнего по центру (с50с).
+// Ассерты не дадут пройти мимо, если каталоги изменятся.
+const centerConnection = columnConnections.find(connection => connection.id === 'с50с')
+if (!centerConnection || !centerConnection.description.includes('только для 3-трубчатых')) {
+	throw new Error('Power selector: ограничение «только для 3-трубчатых» не найдено в описании с50с — проверить columnConnections')
+}
+if (
+	!colorOptions.some(color => color.id === 'ral_9016_gloss' && color.multiplicate === 1) ||
+	!connectionOptions.some(connection => connection.id === 'lat1/2' && connection.priceRub === 0)
+) {
+	throw new Error('Power selector: в каталогах нет базового цвета ral_9016_gloss (×1) или бокового lat1/2 (0 ₽)')
+}
+if (!colorOptions.some(color => color.id === 'ral_any' && color.multiplicate === 1.2)) {
+	throw new Error('Power selector: в каталоге цветов нет ral_any (по шкале RAL, ×1,2) — проверить обработку кода RAL')
+}
+---
+
+<section id='podbor-po-moshchnosti' class='bg-white py-12 md:py-16 xl:py-20'>
+	<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+		<h2 class={columnsSectionTitleClass}>Подобрать радиатор по мощности при ΔT70 (95/85/20)</h2>
+		<p class={`mt-3 max-w-3xl ${columnsSectionSubtitleClass}`}>
+			Если расчёт отопления уже сделан — введите требуемую мощность отопления. Можно и приблизительно оценить
+			её по параметрам помещения — включите галочку ниже. Покажем реальные конфигурации Velar, у которых
+			мощность радиатора при ΔT70 (95/85/20) не меньше требуемой: число секций, размеры, ориентировочная цена,
+			ссылка на карточку.
+		</p>
+		<div class='mt-6 max-w-3xl'>
+			<PowerCalculator client:load models={selectorModels} colors={colorOptions} connections={connectionOptions} />
+		</div>
+	</div>
+</section>

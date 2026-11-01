@@ -33,7 +33,8 @@ function roundFor2DigitsAfterSeparator(value: string) {
 	return parseFloat(value).toFixed(2)
 }
 
-const columnModels: RadiatorJson[] = [
+// Сырые записи «на одну секцию» (dt70/цена/sections = максимум); getColumnRadiators() разворачивает их в конфигурации
+export const columnModels: RadiatorJson[] = [
 	{
 		model_id: '3020',
 		slug: '3020',

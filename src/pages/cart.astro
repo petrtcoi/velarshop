@@ -25,8 +25,8 @@ import ShoppingCartList from "@widgets/order/ShoppingCartList";
   <section class='utility-page__content'>
     <div class='utility-page__inner'>
     <div class='grid min-w-0 gap-8 lg:grid-cols-[minmax(0,1fr)_390px] lg:items-start'>
-      <ShoppingCartList client:load />
-      <OrderForm client:load />
+      <ShoppingCartList client:only="preact" />
+      <OrderForm client:only="preact" />
     </div>
     </div>
   </section>

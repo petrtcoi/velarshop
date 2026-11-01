@@ -8,6 +8,7 @@ import ColumnsCollectionLinks from '../components/columns/ColumnsCollectionLinks
 import ColumnsCatalog from '../components/columns/ColumnsCatalog.astro'
 import ColumnsComparison from '../components/columns/ColumnsComparison.astro'
 import ColumnsCalculator from '../components/columns/ColumnsCalculator.astro'
+import ColumnsPowerCalculator from '../components/columns/ColumnsPowerCalculator.astro'
 import ColumnsFaq from '../components/columns/ColumnsFaq.astro'
 import ColumnsHero from '../components/columns/ColumnsHero.astro'
 import ColumnsHowToOrderShort from '../components/columns/ColumnsHowToOrderShort.astro'
@@ -100,6 +101,8 @@ const seo = getCategorySeo({
 	<ColumnsCatalog models={columnsModels} />
 
 	<ColumnsCalculator />
+
+	<ColumnsPowerCalculator />
 
 	<ColumnsTaskSelector variant='expanded' />
 
