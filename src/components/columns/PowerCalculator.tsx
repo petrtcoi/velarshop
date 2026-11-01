@@ -710,14 +710,17 @@ export default function PowerCalculator({
 							</a>
 						</div>
 					) : (
-						<ul class='mt-2 space-y-2'>
-							{results.map(candidate => {
+						<ul class='mt-3 space-y-4 md:space-y-5'>
+							{results.map((candidate, index) => {
 								const expanded = expandedId === candidate.model.id
 								return (
 									<li
 										key={candidate.model.id}
-										class='rounded-xl border border-neutral-200 bg-neutral-50 p-3 md:p-4'
+										class={`rounded-xl border p-3.5 md:p-4 ${expanded ? 'border-red-300 bg-white shadow-sm ring-1 ring-red-100' : 'border-neutral-300 bg-neutral-50'}`}
 									>
+										<span class={`mb-2 flex w-fit rounded-md px-2 py-1 text-xs font-medium ${expanded ? 'bg-red-50 text-red-700' : 'bg-neutral-200 text-neutral-700'}`}>
+											Вариант {index + 1} из {results.length}
+										</span>
 										<a
 											href={candidate.model.href}
 											class='text-sm font-semibold leading-5 text-neutral-950 hover:text-red-700 md:text-base'
@@ -755,7 +758,7 @@ export default function PowerCalculator({
 													const details = getCartDetails(candidate, selectedColor, selectedConnection, ralCode)
 													const inCartQnty = shoppingCart.items.find(item => item.title === title)?.qnty ?? 0
 													return (
-														<div class='mt-3 rounded-xl border border-neutral-200 bg-white p-3'>
+														<div class='mt-4 border-t border-neutral-200 bg-white pt-4'>
 															<div class='grid gap-2 sm:grid-cols-2'>
 																<div>
 																	<label class={fieldLabelClass()} for='power-color-select'>
