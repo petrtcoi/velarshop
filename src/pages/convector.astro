@@ -3,6 +3,7 @@ import Picture from '@shared/components/Picture.astro';
 import { modelsJsonData } from '@entities/Model'
 import { radiatorsJsonData } from '@entities/Radiator'
 import Layout from '@shared/layouts/Layout.astro'
+import PageContents from '../components/navigation/PageContents.astro'
 import { getModelSlug } from '@shared/utils/getModelSlug'
 import HeroQuickConfigurator from '@widgets/pageMain/HeroQuickConfigurator'
 import { buildQuickConfiguratorModels } from '@widgets/pageMain/quickConfiguratorData'
@@ -14,6 +15,24 @@ import { catalogRange } from '../lib/catalogFacts'
 
 const pageDescription =
 	'Внутрипольные конвекторы для панорамных окон и скрытого отопления: каталог Velar, цены, модели с вентилятором и без, решетки, расчет и доставка по России.'
+
+const contents = [
+	{ id: 'convector-models', label: 'Каталог моделей' },
+	{ id: 'convector-choice', label: 'Сравнение моделей' },
+	{ id: 'convector-task-selector', label: 'Выбор по задаче' },
+	{ id: 'convector-who-fits', label: 'Кому подходят' },
+	{ id: 'order-scope', label: 'Что входит в стоимость' },
+	{ id: 'convector-price-examples', label: 'Примеры цен' },
+	{ id: 'convector-vs-floor', label: 'Сравнение с напольными' },
+	{ id: 'convector-how-to-choose', label: 'Как выбрать' },
+	{ id: 'convector-install-locations', label: 'Где устанавливают' },
+	{ id: 'convector-panoramic', label: 'Панорамные окна' },
+	{ id: 'convector-installation', label: 'Монтаж и обслуживание' },
+	{ id: 'convector-order', label: 'Как заказать' },
+	{ id: 'convector-delivery', label: 'Доставка и оплата' },
+	{ id: 'convector-faq', label: 'Вопросы и ответы' },
+	{ id: 'convector-useful', label: 'Полезные материалы' },
+]
 
 const breadcrumbs = [
 	{ title: 'Главная', url: '/' },
@@ -457,7 +476,7 @@ const textLinkClass =
 			</div>
 		</div>
 	</section>
-
+	<PageContents items={contents} />
 	<section id='convector-models' class='bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-4xl'>
@@ -507,7 +526,9 @@ const textLinkClass =
 		</div>
 	</section>
 
-	<section class='bg-white py-12 md:py-16 xl:py-20'>
+
+
+	<section id='convector-choice' class='bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-4xl'>
 				<h2 class='text-3xl font-bold leading-tight tracking-tight text-neutral-950 md:text-4xl'>Что выбрать: KWH, KWHV или KWHV 24V</h2>
@@ -550,7 +571,7 @@ const textLinkClass =
 		</div>
 	</section>
 
-	<section class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
+	<section id='convector-task-selector' class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-4xl'>
 				<h2 class='text-3xl font-bold leading-tight tracking-tight text-neutral-950 md:text-4xl'>Выбор внутрипольного конвектора по задаче</h2>
@@ -579,7 +600,7 @@ const textLinkClass =
 		</div>
 	</section>
 
-	<section class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
+	<section id='convector-who-fits' class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-4xl'>
 				<h2 class='text-3xl font-bold leading-tight tracking-tight text-neutral-950 md:text-4xl'>Кому подходят внутрипольные конвекторы Velar</h2>
@@ -621,7 +642,7 @@ const textLinkClass =
 	</section>
 
 	<OrderScope />
-	<section class='bg-white py-10 md:py-14'><div class='mx-auto max-w-[1180px] px-4 md:px-6 xl:px-8'><h2 class='text-2xl font-semibold md:text-3xl'>Примеры стоимости приборов длиной 1500 мм</h2><CatalogExamples specs={[{modelId:'p200',length:1500}, {modelId:'p300',length:1500}, {modelId:'kwh',length:1500}, {modelId:'kwhv',length:1500}, {modelId:'kwhv24',length:1500}]} /><p class='max-w-3xl text-sm leading-6 text-neutral-700'>Размеры и мощность относятся к указанным конфигурациям. Полную стоимость монтажа и комплект управления определяют после проверки ниши, подводки и температурного режима. Для вентиляторных моделей уточните режим мощности и требования к питанию по паспорту.</p></div></section>
+	<section id='convector-price-examples' class='bg-white py-10 md:py-14'><div class='mx-auto max-w-[1180px] px-4 md:px-6 xl:px-8'><h2 class='text-2xl font-semibold md:text-3xl'>Примеры стоимости приборов длиной 1500 мм</h2><CatalogExamples specs={[{modelId:'p200',length:1500}, {modelId:'p300',length:1500}, {modelId:'kwh',length:1500}, {modelId:'kwhv',length:1500}, {modelId:'kwhv24',length:1500}]} /><p class='max-w-3xl text-sm leading-6 text-neutral-700'>Размеры и мощность относятся к указанным конфигурациям. Полную стоимость монтажа и комплект управления определяют после проверки ниши, подводки и температурного режима. Для вентиляторных моделей уточните режим мощности и требования к питанию по паспорту.</p></div></section>
 
 	<section id='convector-vs-floor' class='bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
@@ -662,7 +683,7 @@ const textLinkClass =
 		</div>
 	</section>
 
-	<section class='bg-white py-12 md:py-16 xl:py-20'>
+	<section id='convector-how-to-choose' class='bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-4xl'>
 				<h2 class='text-3xl font-bold leading-tight tracking-tight text-neutral-950 md:text-4xl'>Как выбрать внутрипольный конвектор</h2>
@@ -681,7 +702,7 @@ const textLinkClass =
 		</div>
 	</section>
 
-	<section class='bg-white py-12 md:py-16 xl:py-20'>
+	<section id='convector-install-locations' class='bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-4xl'>
 				<h2 class='text-3xl font-bold leading-tight tracking-tight text-neutral-950 md:text-4xl'>Где устанавливают внутрипольные конвекторы</h2>
@@ -700,7 +721,7 @@ const textLinkClass =
 		</div>
 	</section>
 
-	<section class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
+	<section id='convector-panoramic' class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] xl:px-8'>
 			<div>
 				<h2 class='text-3xl font-bold leading-tight tracking-tight text-neutral-950 md:text-4xl'>Внутрипольные конвекторы для панорамных окон</h2>
@@ -725,7 +746,7 @@ const textLinkClass =
 		</div>
 	</section>
 
-	<section class='bg-white py-12 md:py-16 xl:py-20'>
+	<section id='convector-installation' class='bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-4xl'>
 				<h2 class='text-3xl font-bold leading-tight tracking-tight text-neutral-950 md:text-4xl'>Монтаж и обслуживание внутрипольных конвекторов</h2>
@@ -751,7 +772,7 @@ const textLinkClass =
 		</div>
 	</section>
 
-	<section class='bg-white py-12 md:py-16 xl:py-20'>
+	<section id='convector-order' class='bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-4xl'>
 				<h2 class='text-3xl font-bold leading-tight tracking-tight text-neutral-950 md:text-4xl'>Как заказать внутрипольный конвектор Velar</h2>
@@ -772,7 +793,7 @@ const textLinkClass =
 		</div>
 	</section>
 
-	<section class='bg-white py-12 md:py-16 xl:py-20'>
+	<section id='convector-delivery' class='bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-4xl'>
 				<h2 class='text-3xl font-bold leading-tight tracking-tight text-neutral-950 md:text-4xl'>Доставка и оплата</h2>
@@ -786,7 +807,7 @@ const textLinkClass =
 		</div>
 	</section>
 
-	<section class='bg-white py-12 md:py-16 xl:py-20'>
+	<section id='convector-faq' class='bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[900px] px-4 md:px-6 xl:px-8'>
 			<h2 class='text-3xl font-bold leading-tight tracking-tight text-neutral-950 md:text-4xl'>Частые вопросы</h2>
 			<div class='mt-6 border-y border-neutral-200'>
@@ -806,7 +827,7 @@ const textLinkClass =
 		</div>
 	</section>
 
-	<section class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
+	<section id='convector-useful' class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-4xl'>
 				<h2 class='text-3xl font-bold leading-tight tracking-tight text-neutral-950 md:text-4xl'>Полезные материалы</h2>

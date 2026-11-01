@@ -3,6 +3,7 @@ import Picture from '@shared/components/Picture.astro';
 import { modelsJsonData } from '@entities/Model'
 import { radiatorsJsonData } from '@entities/Radiator'
 import Layout from '@shared/layouts/Layout.astro'
+import PageContents from '../components/navigation/PageContents.astro'
 import { getModelSlug } from '@shared/utils/getModelSlug'
 import HeroQuickConfigurator from '@widgets/pageMain/HeroQuickConfigurator'
 import type { ModelDetails } from '@widgets/pageMain/HeroQuickConfigurator'
@@ -15,6 +16,22 @@ import { getCategorySeo } from '../lib/seo/categorySeo'
 
 const pageDescription =
 	'Напольные радиаторы Velar для панорамных окон, низких подоконников, зимних садов и готовых интерьеров. Подбор Q500, P200 и P300, расчет мощности и доставка по России.'
+
+const contents = [
+	{ id: 'floor-models', label: 'Каталог моделей' },
+	{ id: 'floor-task-selector', label: 'Быстрый выбор' },
+	{ id: 'floor-model-choice', label: 'Выбор модели' },
+	{ id: 'floor-who-fits', label: 'Кому подходят' },
+	{ id: 'order-scope', label: 'Что входит в стоимость' },
+	{ id: 'floor-price-examples', label: 'Примеры цен' },
+	{ id: 'floor-vs-convector', label: 'Сравнение с конвектором' },
+	{ id: 'floor-benefits', label: 'Преимущества' },
+	{ id: 'floor-request', label: 'Получить расчет' },
+	{ id: 'floor-order', label: 'Как заказать' },
+	{ id: 'floor-delivery', label: 'Доставка и оплата' },
+	{ id: 'floor-faq', label: 'Вопросы и ответы' },
+	{ id: 'floor-useful', label: 'Полезные материалы' },
+]
 
 const breadcrumbs = [
 	{ title: 'Главная', url: '/' },
@@ -397,25 +414,7 @@ const seo = getCategorySeo({
 			</div>
 		</div>
 	</section>
-
-	<section id='floor-task-selector' class='bg-neutral-50 py-6 md:py-7'>
-		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
-			<div class='flex flex-col gap-3 md:flex-row md:items-center md:justify-between'>
-				<h2 class='text-base font-semibold tracking-tight text-neutral-950 md:text-lg'>Быстро выбрать по задаче</h2>
-				<div class='flex flex-wrap gap-2'>
-					{quickChips.map(chip => (
-						<a
-							href={chip.href}
-							class='inline-flex h-9 items-center justify-center whitespace-nowrap rounded-full border border-neutral-200 bg-white px-4 text-xs font-medium text-neutral-800 transition hover:border-red-200 hover:bg-red-50 hover:text-red-700'
-						>
-							{chip.label}
-						</a>
-					))}
-				</div>
-			</div>
-		</div>
-	</section>
-
+	<PageContents items={contents} />
 	<section id='floor-models' class='bg-white py-10 md:py-14 xl:py-16'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-4xl'>
@@ -472,6 +471,26 @@ const seo = getCategorySeo({
 			</p>
 		</div>
 	</section>
+
+	<section id='floor-task-selector' class='bg-neutral-50 py-6 md:py-7'>
+		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
+			<div class='flex flex-col gap-3 md:flex-row md:items-center md:justify-between'>
+				<h2 class='text-base font-semibold tracking-tight text-neutral-950 md:text-lg'>Быстро выбрать по задаче</h2>
+				<div class='flex flex-wrap gap-2'>
+					{quickChips.map(chip => (
+						<a
+							href={chip.href}
+							class='inline-flex h-9 items-center justify-center whitespace-nowrap rounded-full border border-neutral-200 bg-white px-4 text-xs font-medium text-neutral-800 transition hover:border-red-200 hover:bg-red-50 hover:text-red-700'
+						>
+							{chip.label}
+						</a>
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
+
+
 
 	<section id='floor-model-choice' class='bg-white py-10 md:py-14 xl:py-16'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
@@ -546,7 +565,7 @@ const seo = getCategorySeo({
 		</div>
 	</section>
 
-	<section class='bg-white py-12 md:py-16 xl:py-20'>
+	<section id='floor-who-fits' class='bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] xl:px-8'>
 			<div>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Кому подходят напольные радиаторы Velar</h2>
@@ -620,7 +639,7 @@ const seo = getCategorySeo({
 	</section>
 
 	<OrderScope />
-	<section class='bg-white py-10 md:py-14'><div class='mx-auto max-w-[1180px] px-4 md:px-6 xl:px-8'><h2 class='text-2xl font-semibold md:text-3xl'>Примеры стоимости приборов длиной 1500 мм</h2><CatalogExamples specs={[{modelId:'p200',length:1500}, {modelId:'p300',length:1500}, {modelId:'kwh',length:1500}, {modelId:'kwhv',length:1500}, {modelId:'kwhv24',length:1500}]} /><p class='max-w-3xl text-sm leading-6 text-neutral-700'>Размеры и мощность относятся к указанным конфигурациям. Полную стоимость монтажа и комплект управления определяют после проверки ниши, подводки и температурного режима. Для вентиляторных моделей уточните режим мощности и требования к питанию по паспорту.</p></div></section>
+	<section id='floor-price-examples' class='bg-white py-10 md:py-14'><div class='mx-auto max-w-[1180px] px-4 md:px-6 xl:px-8'><h2 class='text-2xl font-semibold md:text-3xl'>Примеры стоимости приборов длиной 1500 мм</h2><CatalogExamples specs={[{modelId:'p200',length:1500}, {modelId:'p300',length:1500}, {modelId:'kwh',length:1500}, {modelId:'kwhv',length:1500}, {modelId:'kwhv24',length:1500}]} /><p class='max-w-3xl text-sm leading-6 text-neutral-700'>Размеры и мощность относятся к указанным конфигурациям. Полную стоимость монтажа и комплект управления определяют после проверки ниши, подводки и температурного режима. Для вентиляторных моделей уточните режим мощности и требования к питанию по паспорту.</p></div></section>
 
 	<section id='floor-vs-convector' class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
@@ -671,7 +690,7 @@ const seo = getCategorySeo({
 		</div>
 	</section>
 
-	<section class='bg-white py-12 md:py-16 xl:py-20'>
+	<section id='floor-benefits' class='bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:px-8'>
 			<div>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Почему выбирают напольные радиаторы Velar</h2>
@@ -704,7 +723,7 @@ const seo = getCategorySeo({
 		</div>
 	</section>
 
-	<section class='bg-white py-12 md:py-16 xl:py-20'>
+	<section id='floor-order' class='bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-3xl'>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Как заказать напольный радиатор Velar</h2>
@@ -724,7 +743,7 @@ const seo = getCategorySeo({
 		</div>
 	</section>
 
-	<section class='bg-white py-12 md:py-16 xl:py-20'>
+	<section id='floor-delivery' class='bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[900px] px-4 md:px-6 xl:px-8'>
 			<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Доставка и оплата</h2>
 			<p class='mt-5 text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>
@@ -740,7 +759,7 @@ const seo = getCategorySeo({
 		</div>
 	</section>
 
-	<section class='bg-white py-12 md:py-16 xl:py-20'>
+	<section id='floor-faq' class='bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[900px] px-4 md:px-6 xl:px-8'>
 			<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Частые вопросы о напольных радиаторах</h2>
 			<div class='mt-6 border-y border-neutral-200'>
@@ -760,7 +779,7 @@ const seo = getCategorySeo({
 		</div>
 	</section>
 
-	<section class='bg-white py-12 md:py-16 xl:py-20'>
+	<section id='floor-useful' class='bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[900px] px-4 md:px-6 xl:px-8'>
 			<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Полезные материалы</h2>
 			<p class='mt-3 text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>

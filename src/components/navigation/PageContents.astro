@@ -1,0 +1,94 @@
+---
+interface Props { items: { id: string; label: string }[] }
+const { items } = Astro.props
+---
+<div class='page-contents' data-page-contents>
+  <details class='contents-top'>
+    <summary>Содержание <span aria-hidden='true'>⌄</span></summary>
+    <nav aria-label='Содержание страницы'>
+      <ul>{items.map(item => <li><a href={`#${item.id}`}>{item.label}</a></li>)}</ul>
+    </nav>
+  </details>
+  <button class='contents-tab' type='button' aria-haspopup='dialog' aria-controls='contents-dialog' aria-label='Открыть содержание' hidden><span>Содержание</span></button>
+  <dialog id='contents-dialog' aria-labelledby='contents-title'>
+    <div class='contents-panel'>
+      <div class='contents-heading'><h2 id='contents-title'>Содержание</h2><button class='contents-close' type='button' aria-label='Закрыть содержание'>×</button></div>
+      <nav aria-label='Содержание страницы'><ul>{items.map(item => <li><a href={`#${item.id}`}>{item.label}</a></li>)}</ul></nav>
+    </div>
+  </dialog>
+</div>
+<style is:global>
+  .commercial-page main:has(> .page-contents) > section:not(:first-of-type) { padding-block: 24px !important; scroll-margin-top: 110px; }
+  .commercial-page main:has(> .page-contents) > section:not(:first-of-type)::before { top: 0; }
+  @media (max-width: 767px) { .commercial-page main:has(> .page-contents) > section:not(:first-of-type) > div:first-child { margin-right: 28px !important; } }
+  @media (min-width: 768px) { .commercial-page main:has(> .page-contents) > section:not(:first-of-type) { padding-block: 36px !important; } }
+  .page-contents { position: relative; max-width: 1240px; margin: 0 auto; padding: 16px 16px 0; }
+  .contents-top summary { cursor: pointer; display: inline-flex; gap: 12px; align-items: center; padding: 10px 14px; border: 1px solid #d4d4d4; background: white; font-size: 14px; font-weight: 500; list-style: none; }
+  .contents-top summary::-webkit-details-marker { display: none; }
+  .contents-top[open] summary span { transform: rotate(180deg); }
+  .page-contents ul { list-style: none; padding: 8px 0; margin: 0; }
+  .page-contents li { margin: 0; }
+  .page-contents nav a { display: block; padding: 7px 12px; color: #404040; font-size: 14px; text-decoration: none; }
+  .page-contents nav a:hover, .page-contents nav a[aria-current='location'] { color: #b91c1c; background: #f5f5f5; }
+  .contents-top nav { max-width: 360px; border: 1px solid #e5e5e5; border-top: 0; }
+  .contents-tab { position: fixed; z-index: 40; right: 0; top: 38%; width: 44px; padding: 0; border: 0; background: transparent; cursor: pointer; }
+  .contents-tab[hidden] { display: none; }
+  .contents-tab span { display: block; width: 34px; margin-left: auto; padding: 12px 8px; color: white; background: #262626; writing-mode: vertical-rl; transform: rotate(180deg); font-size: 14px; }
+  #contents-dialog { position: fixed; inset: 0 0 0 auto; width: min(360px, 90vw); height: 100%; max-height: none; max-width: none; margin: 0; padding: 0; border: 0; background: white; }
+  #contents-dialog::backdrop { background: rgb(0 0 0 / .45); }
+  .contents-panel { height: 100%; display: flex; flex-direction: column; }
+  .contents-heading { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-bottom: 1px solid #e5e5e5; }
+  .commercial-page:not(.home-page) main .contents-heading h2 { font-size: 18px; margin: 0; }
+  .contents-close { width: 44px; height: 44px; font-size: 28px; line-height: 1; }
+  .contents-panel nav { overflow-y: auto; overscroll-behavior: contain; padding: 8px; }
+  @media (prefers-reduced-motion: reduce) { .page-contents *, .page-contents *::before { scroll-behavior: auto !important; transition: none !important; } }
+</style>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-page-contents]').forEach(root => {
+    const top = root.querySelector<HTMLDetailsElement>('details')!
+    const tab = root.querySelector<HTMLButtonElement>('.contents-tab')!
+    const dialog = root.querySelector<HTMLDialogElement>('dialog')!
+    const close = root.querySelector<HTMLButtonElement>('.contents-close')!
+    const links = [...root.querySelectorAll<HTMLAnchorElement>('a[href^="#"]')]
+    const sections = links.slice(0, links.length / 2).map(link => document.getElementById(decodeURIComponent(link.hash.slice(1)))).filter((section): section is HTMLElement => !!section)
+    let opener: HTMLElement | null = null
+    let target: HTMLElement | null = null
+    let previousOverflow = '', previousPadding = ''
+    const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches
+    const go = (section: HTMLElement) => { section.setAttribute('tabindex', '-1'); section.focus({ preventScroll: true }); section.scrollIntoView({ behavior: reduced() ? 'instant' : 'smooth', block: 'start' }) }
+    const visible = () => { tab.hidden = top.querySelector('summary')!.getBoundingClientRect().bottom >= 0 }
+    addEventListener('scroll', visible, { passive: true }); visible()
+    tab.addEventListener('click', () => {
+      opener = document.activeElement as HTMLElement
+      previousOverflow = document.body.style.overflow; previousPadding = document.body.style.paddingRight
+      const gap = innerWidth - document.documentElement.clientWidth
+      document.body.style.overflow = 'hidden'; if (gap) document.body.style.paddingRight = `${gap}px`
+      dialog.showModal(); close.focus()
+    })
+    dialog.addEventListener('keydown', event => {
+      if (event.key !== 'Tab') return
+      const focusable = [...dialog.querySelectorAll<HTMLElement>('button:not([disabled]), a[href]')]
+      const first = focusable[0], last = focusable[focusable.length - 1]
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus() }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus() }
+    })
+    close.addEventListener('click', () => dialog.close())
+    dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close() })
+    dialog.addEventListener('close', () => {
+      document.body.style.overflow = previousOverflow; document.body.style.paddingRight = previousPadding
+      if (target) { const next = target; target = null; go(next) } else opener?.focus()
+    })
+    let startX = 0, startY = 0
+    dialog.addEventListener('touchstart', e => { startX = e.touches[0].clientX; startY = e.touches[0].clientY }, { passive: true })
+    dialog.addEventListener('touchend', e => { const dx = e.changedTouches[0].clientX - startX, dy = e.changedTouches[0].clientY - startY; if (dx > 80 && dx > Math.abs(dy) * 1.5) dialog.close() }, { passive: true })
+    links.forEach(link => link.addEventListener('click', event => {
+      const section = document.getElementById(decodeURIComponent(link.hash.slice(1)))
+      if (!section) return
+      event.preventDefault(); history.pushState(null, '', link.hash)
+      if (dialog.open) { target = section; dialog.close() } else { top.open = false; go(section) }
+    }))
+    addEventListener('popstate', () => { const section = document.getElementById(decodeURIComponent(location.hash.slice(1))); if (section) go(section) })
+    const mark = () => { let current = sections[0]; for (const section of sections) if (section.getBoundingClientRect().top <= 150) current = section; links.forEach(link => { if (link.hash === `#${current?.id}`) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current') }) }
+    addEventListener('scroll', mark, { passive: true }); mark()
+  })
+</script>

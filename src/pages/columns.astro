@@ -1,5 +1,6 @@
 ---
 import Layout from '@shared/layouts/Layout.astro'
+import PageContents from '../components/navigation/PageContents.astro'
 import JsonLd from '../components/seo/JsonLd.astro'
 import OrderScope from '../components/product/OrderScope.astro'
 import ConfigurationExamples from '../components/product/ConfigurationExamples.astro'
@@ -28,6 +29,27 @@ import {
 	usefulArticleGroups,
 } from '../components/columns/columnsData'
 import { getCategorySeo } from '../lib/seo/categorySeo'
+
+const contents = [
+ { id: 'columns-models', label: 'Каталог моделей' },
+ { id: 'columns-collections', label: 'Подбор по размерам' },
+ { id: 'columns-popular', label: 'Популярные модели' },
+ { id: 'columns-price-examples', label: 'Примеры цен' },
+ { id: 'columns-calculator', label: 'Подбор по параметрам' },
+ { id: 'podbor-po-moshchnosti', label: 'Подбор по мощности' },
+ { id: 'columns-task-selector', label: 'Выбор по задаче' },
+ { id: 'order-scope', label: 'Что входит в стоимость' },
+ { id: 'columns-how-order-short', label: 'Как заказать' },
+ { id: 'columns-tube-differences', label: 'Различия моделей' },
+ { id: 'columns-who-fits', label: 'Кому подходят' },
+ { id: 'columns-interiors', label: 'В интерьере' },
+ { id: 'columns-what-is', label: 'О трубчатых радиаторах' },
+ { id: 'columns-comparison', label: 'Сравнение радиаторов' },
+ { id: 'columns-use-cases', label: 'Где подходят' },
+ { id: 'columns-why-velar', label: 'Почему Velar' },
+ { id: 'columns-faq', label: 'Вопросы и ответы' },
+ { id: 'columns-useful-articles', label: 'Полезные материалы' },
+]
 
 const breadcrumbs = [
 	{ title: 'Главная', url: '/' },
@@ -86,6 +108,8 @@ const seo = getCategorySeo({
 	<JsonLd data={seo.jsonLd} />
 
 	<ColumnsHero />
+	<PageContents items={contents} />
+	<ColumnsCatalog models={columnsModels} />
 	<ColumnsCollectionLinks />
 
 	<PopularModels models={popularModels} />
@@ -96,15 +120,14 @@ const seo = getCategorySeo({
 		modelIds={['3030', '2057', '3057', '2180']}
 	/>
 
-	<OrderScope />
-
-	<ColumnsCatalog models={columnsModels} />
 
 	<ColumnsCalculator />
 
 	<ColumnsPowerCalculator />
 
 	<ColumnsTaskSelector variant='expanded' />
+
+	<OrderScope />
 
 	<ColumnsHowToOrderShort />
 
