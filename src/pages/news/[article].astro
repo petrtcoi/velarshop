@@ -20,10 +20,13 @@ const { Content } = await article.render();
 const { title, short_description, thumbnail, date } = article.data;
 const readingMinutes = Math.max(1, Math.ceil((article.body ?? '').split(/\s+/).filter(Boolean).length / 180));
 const publishedAt = new Date(`${date}T00:00:00+03:00`).toISOString();
+// timeZone явно: дата — полночь по Москве, и без него день зависел от часового пояса машины сборки
+// (сборка 03.11 на Mac в CET дала на всех новостях дату на день раньше).
 const humanDate = new Intl.DateTimeFormat('ru-RU', {
   day: 'numeric',
   month: 'long',
   year: 'numeric',
+  timeZone: 'Europe/Moscow',
 }).format(new Date(`${date}T00:00:00+03:00`));
 
 const imgPath = thumbnail.length > 0 ? `/images/news/${thumbnail}` : null;
