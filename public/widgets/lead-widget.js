@@ -4,7 +4,7 @@
 
 	const cfg = {
 		mount: script.dataset.mount || '#leadWidget',
-		webhook: 'https://arufefet.beget.app/webhook/calc-notify',
+		webhook: 'https://cloud.homekomfort.ru/api/new-order-notification',
 		successUrl: script.dataset.successUrl || 'https://homekomfort.ru/thanks', // УКАЖИ АДРЕС ТУТ
 		store: script.dataset.store || 'Arbonia-Store.ru',
 		primary: script.dataset.primary || '#018ed2',

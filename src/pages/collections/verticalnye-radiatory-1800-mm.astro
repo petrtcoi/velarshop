@@ -421,15 +421,22 @@ const popularModels = ['2180', '3180', '4180', '5180', 'p30v', 'q40v', 'r32v']
 	.map(id => modelById.get(id))
 	.filter((item): item is CollectionModel => Boolean(item))
 
+const collectionPriceFrom = Math.min(...allModels.map(model => model.priceFrom).filter(Boolean))
+const collectionPriceLabel = Number.isFinite(collectionPriceFrom)
+	? `${collectionPriceFrom.toLocaleString('ru-RU').replace(/\s/g, '\u00a0')}\u00a0₽`
+	: ''
+
 const seo = getCategorySeo({
 	category: {
 		slug: 'verticalnye-radiatory-1800-mm',
 		url: COLLECTION_URL,
 		name: 'Вертикальные радиаторы 1800 мм',
 		h1: 'Вертикальные радиаторы 1800 мм',
-		seoTitle: 'Вертикальные радиаторы 1800 мм — модели, размеры и цены Velar',
+		seoTitle: collectionPriceLabel
+			? `Трубчатые и вертикальные радиаторы 1800 мм — цены от ${collectionPriceLabel}`
+			: 'Трубчатые и вертикальные радиаторы 1800 мм — модели и цены Velar',
 		seoDescription:
-			'Купить вертикальные радиаторы Velar 1800 мм и близкой высоты: цены выбранных исполнений, мощность, размеры и подключение. Трубчатые и дизайнерские модели, цвета RAL, доставка по России.',
+			'Купить трубчатые и вертикальные радиаторы Velar высотой 1800 мм: цены выбранных исполнений, мощность, секции, размеры и подключение. Цвета RAL, доставка по России.',
 		ogTitle: 'Вертикальные радиаторы 1800 мм Velar',
 		ogDescription:
 			'Подборка вертикальных радиаторов Velar 1800 мм и около 180 см: трубчатые и профильные модели с расчетом, цветами RAL и доставкой по России.',

@@ -17,7 +17,7 @@ export const interaxialCollections: InteraxialCollectionConfig[] = [
 		slug: 'radiatory-mezhosevoe-rasstoyanie-500-mm',
 		href: '/collections/radiatory-mezhosevoe-rasstoyanie-500-mm',
 		title: 'Радиаторы с межосевым расстоянием 500 мм',
-		seoTitle: 'Радиаторы с межосевым расстоянием 500 мм — купить Velar',
+		seoTitle: 'Радиаторы с межосевым расстоянием 500 мм — цены от {priceFrom}',
 		seoDescription:
 			'Радиаторы Velar с межосевым расстоянием 500 мм — распространенный стандартный размер для замены секционных радиаторов. Модели, размеры, мощность и цены.',
 		intro:
@@ -33,7 +33,7 @@ export const interaxialCollections: InteraxialCollectionConfig[] = [
 		slug: 'radiatory-mezhosevoe-rasstoyanie-300-mm',
 		href: '/collections/radiatory-mezhosevoe-rasstoyanie-300-mm',
 		title: 'Радиаторы с межосевым расстоянием 300 мм',
-		seoTitle: 'Радиаторы с межосевым расстоянием 300 мм — купить Velar',
+		seoTitle: 'Радиаторы с межосевым расстоянием 300 мм — цены от {priceFrom}',
 		seoDescription:
 			'Радиаторы Velar с межосевым расстоянием 300 мм для замены невысоких алюминиевых и чугунных радиаторов. Боковое подключение, размеры, мощность и цены.',
 		intro:
@@ -49,7 +49,7 @@ export const interaxialCollections: InteraxialCollectionConfig[] = [
 		slug: 'radiatory-mezhosevoe-rasstoyanie-450-mm',
 		href: '/collections/radiatory-mezhosevoe-rasstoyanie-450-mm',
 		title: 'Радиаторы с межосевым расстоянием 450 мм',
-		seoTitle: 'Радиаторы с межосевым расстоянием 450 мм — купить Velar',
+		seoTitle: 'Радиаторы с межосевым расстоянием 450 мм — цены от {priceFrom}',
 		seoDescription:
 			'Радиаторы Velar с межосевым расстоянием 450 мм для замены панельного радиатора высотой 500 мм с боковым подключением. Размеры, мощность и цены.',
 		intro:

@@ -208,14 +208,19 @@ const checkItems = collection.kind === 'interaxial'
 				? [`Допустимую глубину для ${collection.tubeCount}-трубчатой секции.`, 'Полную доступную высоту и ширину.', 'Фото стены или оконной зоны.', 'Положение и тип подключения.', 'Площадь помещения, высоту потолка и город.']
 				: ['Полную доступную высоту и ширину.', 'Фото стены или оконной зоны.', 'Желаемую глубину прибора.', 'Положение и тип подключения.', 'Площадь помещения, высоту потолка и город.']
 
+// «{priceFrom}» в тексте подборки → минимальная цена исполнений этой подборки (как в блоке «Цена» на странице)
+const withPriceFrom = (text: string) => prices.length
+	? text.replace('{priceFrom}', `${Math.round(prices[0]).toLocaleString('ru-RU').replace(/\s/g, '\u00a0')}\u00a0₽`)
+	: text.replace(/\s*—\s*цены от \{priceFrom\}/, ' — каталог и цены').replace('{priceFrom}', '')
+
 const seo = getCategorySeo({
 	category: {
 		slug: collection.slug,
 		url: collection.href,
 		name: collection.title,
 		h1: collection.title,
-		seoTitle: collection.seoTitle,
-		seoDescription: collection.seoDescription,
+		seoTitle: withPriceFrom(collection.seoTitle),
+		seoDescription: withPriceFrom(collection.seoDescription),
 		ogTitle: collection.title,
 		ogDescription: collection.intro,
 		ogImage: modelRows[0]?.image ?? collection.image,

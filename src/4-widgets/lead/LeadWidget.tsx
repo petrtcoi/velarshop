@@ -25,7 +25,7 @@ function readFileAsDataUrl(file: File): Promise<string> {
 }
 
 function LeadWidget({
-	webhook = 'https://arufefet.beget.app/webhook/calc-notify',
+	webhook = 'https://cloud.homekomfort.ru/api/new-order-notification',
 	successUrl = 'https://homekomfort.ru/thanks',
 	store = 'Arbonia-Store.ru',
 	primary = '#c1121f',
@@ -133,27 +133,27 @@ function LeadWidget({
 		setMessageType(null)
 
 		try {
-			const formData = new FormData()
-			formData.append('store', store)
-			formData.append('name', name.trim())
-			formData.append('email', email.trim())
-			formData.append('city', city.trim())
-			formData.append('whatsapp', hasPhone ? normalizedPhone : whatsapp.trim())
-			formData.append('phoneFormatted', whatsapp.trim())
-			formData.append('wishes', wishes.trim())
-			formData.append('channels', JSON.stringify(channels))
-			if (file) {
-				formData.append('file', file, file.name)
-				formData.append('fileName', file.name)
-				formData.append('fileType', file.type || 'application/octet-stream')
-				formData.append('fileSize', String(file.size))
-				formData.append('fileDataUrl', await readFileAsDataUrl(file))
+			const payload = {
+				kind: 'lead',
+				store,
+				name: name.trim(),
+				email: email.trim(),
+				city: city.trim(),
+				whatsapp: hasPhone ? normalizedPhone : whatsapp.trim(),
+				wishes: wishes.trim(),
+				channels: channels.join(', '),
+				fileName: file?.name,
+				fileDataUrl: file ? await readFileAsDataUrl(file) : undefined,
 			}
 
-			const response = await fetch(webhook, { method: 'POST', body: formData })
+			const response = await fetch(webhook, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(payload),
+			})
 			const result = await response.json()
 
-			if (result.status === 'OK') {
+			if (response.ok && result.status === 'OK') {
 				reachMetrikaGoal('form_submit')
 				reachMetrikaGoal('calculation_submit')
 				setMessage('Успешно! Перенаправляем...')

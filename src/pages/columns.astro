@@ -23,15 +23,38 @@ import UsefulArticles from '../components/columns/UsefulArticles.astro'
 import {
 	columnsFaqItems,
 	columnsModels,
+	minCatalogPrice,
 	popularModels,
 	usefulArticleGroups,
 } from '../components/columns/columnsData'
 import { getCategorySeo } from '../lib/seo/categorySeo'
 
+const contents = [
+  { id: 'columns-configurator', label: 'Быстрый подбор', major: true, description: 'Модель, размеры, подключение и цвет' },
+  { id: 'columns-popular', label: 'Популярные модели', major: true, description: 'Низкие, стандартные и высокие модели' },
+  { id: 'columns-price-examples', label: 'Примеры цен', major: true, description: 'Готовые конфигурации на 10 секций' },
+  { id: 'order-scope', label: 'Что входит в стоимость', major: true, description: 'Комплектация и согласование перед заказом' },
+  { id: 'columns-models', label: 'Каталог моделей', major: true, description: 'Модели по высоте, числу труб и теплоотдаче' },
+  { id: 'columns-calculator', label: 'Калькулятор', major: true, description: 'Расчёт радиатора по параметрам' },
+  { id: 'columns-task-selector', label: 'Выбор по задаче', major: true, description: 'Подходящие модели для разных ситуаций' },
+  { id: 'columns-how-order-short', label: 'Как заказать' },
+  { id: 'columns-tube-differences', label: 'Различия моделей' },
+  { id: 'columns-who-fits', label: 'Кому подходят' },
+  { id: 'columns-interiors', label: 'В интерьере' },
+  { id: 'columns-what-is', label: 'О трубчатых радиаторах' },
+  { id: 'columns-comparison', label: 'Сравнение радиаторов' },
+  { id: 'columns-use-cases', label: 'Где подходят' },
+  { id: 'columns-why-velar', label: 'Почему Velar' },
+  { id: 'columns-faq', label: 'Вопросы и ответы' },
+  { id: 'columns-useful-articles', label: 'Полезные материалы' },
+]
+
 const breadcrumbs = [
 	{ title: 'Главная', url: '/' },
 	{ title: 'Трубчатые радиаторы', url: '/columns' },
 ]
+
+const priceFromLabel = `${minCatalogPrice.toLocaleString('ru-RU').replace(/\s/g, '\u00a0')}\u00a0₽`
 
 const seo = getCategorySeo({
 	category: {
@@ -39,9 +62,9 @@ const seo = getCategorySeo({
 		url: '/columns',
 		name: 'Трубчатые радиаторы',
 		h1: 'Трубчатые радиаторы отопления',
-		seoTitle: 'Трубчатые радиаторы отопления — купить, размеры и цены Velar',
+		seoTitle: `Трубчатые радиаторы отопления — цены от ${priceFromLabel}, купить Velar`,
 		seoDescription:
-			'Стальные трубчатые радиаторы для квартиры и дома: каталог Velar, цены, размеры, мощность, число секций, цвета RAL и варианты подключения. Доставка по России.',
+			`Стальные трубчатые радиаторы отопления Velar от ${priceFromLabel} за радиатор: 2-, 3- и 4-трубчатые модели, высота, секции и мощность, цвета RAL, боковое и нижнее подключение.`,
 		ogTitle: 'Трубчатые радиаторы - каталог моделей и цены',
 		ogDescription:
 			'Стальные трубчатые радиаторы Velar разных высот и секционности. Подбор мощности, цвета RAL и доставка по России.',
@@ -84,7 +107,7 @@ const seo = getCategorySeo({
 >
 	<JsonLd data={seo.jsonLd} />
 
-	<ColumnsHero />
+	<ColumnsHero items={contents} />
 	<ColumnsCollectionLinks />
 
 	<PopularModels models={popularModels} />

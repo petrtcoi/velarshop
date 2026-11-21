@@ -3,6 +3,7 @@ import Picture from '@shared/components/Picture.astro';
 import { modelsJsonData } from '@entities/Model'
 import { radiatorsJsonData } from '@entities/Radiator'
 import Layout from '@shared/layouts/Layout.astro'
+import PageContents from '../components/navigation/PageContents.astro'
 import { getModelSlug } from '@shared/utils/getModelSlug'
 import HeroQuickConfigurator from '@widgets/pageMain/HeroQuickConfigurator'
 import type { ModelDetails } from '@widgets/pageMain/HeroQuickConfigurator'
@@ -10,6 +11,26 @@ import { buildQuickConfiguratorModels } from '@widgets/pageMain/quickConfigurato
 import { get as getHeroConfiguratorData } from './api/hero-configurator/[model].json'
 import JsonLd from '../components/seo/JsonLd.astro'
 import { getCategorySeo } from '../lib/seo/categorySeo'
+
+const contents = [
+	{ id: 'retro-calculator', label: 'Быстрый подбор', major: true, description: 'Серия, высота, секции, цвет и подключение' },
+	{ id: 'retro-quick-choice', label: 'Быстрый выбор', major: true, description: 'Орнамент, размеры и отделка' },
+	{ id: 'retro-models', label: 'Каталог моделей', major: true, description: 'Nostalgia и Historic в размерах 300 и 500' },
+	{ id: 'retro-technical-comparison', label: 'Характеристики моделей', major: true, description: 'Размеры и характеристики четырёх моделей' },
+	{ id: 'retro-price-examples', label: 'Примеры цен', major: true, description: 'Готовые размеры на 8 или 10 секций' },
+	{ id: 'retro-photos', label: 'Фото моделей' },
+	{ id: 'retro-comparison', label: 'Сравнение моделей' },
+	{ id: 'retro-task-selector', label: 'Выбор по задаче' },
+	{ id: 'retro-who-fits', label: 'Кому подходят' },
+	{ id: 'retro-benefits', label: 'Преимущества' },
+	{ id: 'retro-finishes', label: 'Цвета и отделка' },
+	{ id: 'retro-interiors', label: 'В интерьере' },
+	{ id: 'retro-installation', label: 'Монтаж и эксплуатация' },
+	{ id: 'retro-order', label: 'Как заказать' },
+	{ id: 'retro-delivery', label: 'Доставка и оплата' },
+	{ id: 'retro-faq', label: 'Вопросы и ответы' },
+	{ id: 'retro-useful', label: 'Полезные материалы' },
+]
 import ConfigurationExamples from '../components/product/ConfigurationExamples.astro'
 import RetroModelComparison from '../components/product/RetroModelComparison.astro'
 import ModelPhotoExamples from '../components/product/ModelPhotoExamples.astro'
@@ -313,13 +334,18 @@ const faqItems = [
 	['Что нужно отправить для расчета?', 'Для расчета желательно отправить город, площадь помещения, высоту потолка, фото места установки, желаемую серию, высоту, количество секций, цвет, вариант отделки и параметры системы отопления. Если есть дизайн-проект или план, приложите его к заявке.'],
 ]
 
+const hubPriceFrom = Math.min(...retroModels.map(item => item.priceFrom).filter(Boolean))
+const hubPriceLabel = Number.isFinite(hubPriceFrom)
+	? `${hubPriceFrom.toLocaleString('ru-RU').replace(/\s/g, '\u00a0')}\u00a0₽`
+	: ''
+
 const seo = getCategorySeo({
 	category: {
 		slug: 'retro',
 		url: '/retro',
 		name: 'Чугунные радиаторы',
 		h1: 'Чугунные радиаторы в стиле ретро',
-		seoTitle: 'Чугунные радиаторы в стиле ретро - модели и цены',
+		seoTitle: hubPriceLabel ? `Чугунные ретро-радиаторы под старину — цены от ${hubPriceLabel}` : 'Чугунные радиаторы в стиле ретро - модели и цены',
 		seoDescription: pageDescription,
 		ogTitle: 'Чугунные радиаторы в стиле ретро - каталог моделей',
 		ogDescription:
@@ -363,12 +389,13 @@ const seo = getCategorySeo({
 	<JsonLd data={seo.jsonLd} />
 
 	<section class='border-b border-neutral-200 bg-white'>
-		<div class='mx-auto max-w-[1180px] px-4 pb-8 pt-6 md:px-6 md:py-10 xl:px-8'>
-			<div class='grid gap-7 min-[980px]:grid-cols-[minmax(0,1fr)_minmax(320px,380px)] min-[980px]:items-start min-[980px]:gap-12'>
-				<div class='min-w-0 max-w-[680px] min-[1250px]:max-w-[560px]'>
+		<div class='mx-auto max-w-[1180px] min-[1600px]:max-w-[1500px] px-4 pb-8 pt-6 md:px-6 md:py-10 xl:px-8'>
+			<div class='category-hero-grid grid gap-7 min-[980px]:grid-cols-[minmax(0,1fr)_minmax(320px,380px)] min-[980px]:items-start min-[980px]:gap-12 min-[1600px]:grid-cols-[minmax(0,1fr)_minmax(140px,220px)_minmax(380px,440px)]'>
+				<div class='min-w-0'>
 					<h1 class='retro-hero-title max-w-[680px] text-4xl font-semibold leading-tight tracking-tight text-neutral-950 md:text-5xl min-[1250px]:max-w-[560px]'>
 						Чугунные радиаторы в стиле ретро
 					</h1>
+					<PageContents items={contents} />
 					<p class='mt-4 max-w-[680px] text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7 min-[1250px]:max-w-[560px]'>
 						Чугунные радиаторы Velar в стиле ретро - декоративные отопительные приборы для классических интерьеров, лофта, ресторанов, отелей, загородных домов и дизайн-проектов. В линейке есть Nostalgia с орнаментом и Historic без активного декора, межосевые расстояния 300 и 500 мм, цвета RAL, патинация и декоративная отделка. Выберите модель ниже или отправьте параметры помещения - менеджер рассчитает мощность, количество секций, стоимость, оплату и доставку по России.
 					</p>
@@ -396,7 +423,9 @@ const seo = getCategorySeo({
 					</div>
 				</div>
 
-				<div id='retro-calculator' class='min-w-0 min-[980px]:col-start-2'>
+
+				<img src='/images/retro/hero/nostalgia-section.jpg' alt='Чугунный ретро-радиатор Velar Nostalgia' width='720' height='1744' loading='lazy' class='category-hero-center hidden max-h-[680px] w-full object-contain min-[1600px]:block' />
+				<div id='retro-calculator' class='min-w-0'>
 					<HeroQuickConfigurator
 						client:load
 						models={retroConfiguratorModels}
@@ -414,7 +443,7 @@ const seo = getCategorySeo({
 		</div>
 	</section>
 
-	<section class='bg-neutral-50 py-6 md:py-7'>
+	<section id='retro-quick-choice' class='bg-neutral-50 py-6 md:py-7'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='flex flex-col gap-3 md:flex-row md:items-center md:justify-between'>
 				<h2 class='text-base font-semibold tracking-tight text-neutral-950 md:text-lg'>Быстро выбрать</h2>
@@ -490,6 +519,10 @@ const seo = getCategorySeo({
 		</div>
 	</section>
 
+
+
+
+
 	<RetroModelComparison />
 	<ConfigurationExamples
 		id='retro-price-examples'
@@ -500,6 +533,7 @@ const seo = getCategorySeo({
 		showWeight={true}
 	/>
 
+	<span id='retro-photos' class='block scroll-mt-[110px]'></span>
 	<ModelPhotoExamples title='Орнамент и литье ретро-радиаторов крупным планом' items={[
 		{ src: '/images/models/nostalgia500/1.jpg', name: 'Velar Nostalgia 500', href: '/model/nostalgia500', caption: 'Цветочный орнамент и декоративная отделка секции. Арматура на фото — пример оформления; состав комплекта согласовывается отдельно.' },
 		{ src: '/images/models/historic500/1.jpg', name: 'Velar Historic 500', href: '/model/historic500', caption: 'Лаконичные секции без активного орнамента и напольные опоры. Арматура на фото — пример оформления.' },
@@ -583,7 +617,7 @@ const seo = getCategorySeo({
 		</div>
 	</section>
 
-	<section class='bg-white py-12 md:py-16 xl:py-20'>
+	<section id='retro-who-fits' class='bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-2 xl:px-8'>
 			<div>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Кому подходят ретро-радиаторы</h2>
@@ -611,7 +645,7 @@ const seo = getCategorySeo({
 		</div>
 	</section>
 
-	<section class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
+	<section id='retro-benefits' class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:px-8'>
 			<div>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Преимущества чугунных ретро-радиаторов Velar</h2>
@@ -634,7 +668,7 @@ const seo = getCategorySeo({
 	</section>
 
 	<section id='retro-finishes' class='bg-white py-12 md:py-16 xl:py-20'>
-		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:px-8'>
+		<div class='mx-auto grid grid-cols-1 max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:px-8'>
 			<div>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Цвета, патинация и декоративная отделка</h2>
 				<p class='mt-5 text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>
@@ -676,7 +710,7 @@ const seo = getCategorySeo({
 		</div>
 	</section>
 
-	<section class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
+	<section id='retro-interiors' class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-3xl'>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Чугунные ретро-радиаторы в интерьере</h2>
@@ -714,7 +748,7 @@ const seo = getCategorySeo({
 		</div>
 	</section>
 
-	<section class='bg-white py-12 md:py-16 xl:py-20'>
+	<section id='retro-installation' class='bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] xl:px-8'>
 			<div>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Рекомендации по монтажу и эксплуатации</h2>
@@ -734,7 +768,7 @@ const seo = getCategorySeo({
 		</div>
 	</section>
 
-	<section class='bg-white py-12 md:py-16 xl:py-20'>
+	<section id='retro-order' class='bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-3xl'>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Как заказать чугунные ретро-радиаторы Velar</h2>
@@ -756,7 +790,7 @@ const seo = getCategorySeo({
 		</div>
 	</section>
 
-	<section class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
+	<section id='retro-delivery' class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-3xl'>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Доставка и оплата</h2>
@@ -772,7 +806,7 @@ const seo = getCategorySeo({
 		</div>
 	</section>
 
-	<section class='bg-white py-12 md:py-16 xl:py-20'>
+	<section id='retro-faq' class='bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[900px] px-4 md:px-6 xl:px-8'>
 			<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Частые вопросы</h2>
 			<div class='mt-6 border-y border-neutral-200'>
@@ -792,7 +826,7 @@ const seo = getCategorySeo({
 		</div>
 	</section>
 
-	<section class='bg-white py-12 md:py-16 xl:py-20'>
+	<section id='retro-useful' class='bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-3xl'>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Полезные материалы</h2>

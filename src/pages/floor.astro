@@ -3,6 +3,7 @@ import Picture from '@shared/components/Picture.astro';
 import { modelsJsonData } from '@entities/Model'
 import { radiatorsJsonData } from '@entities/Radiator'
 import Layout from '@shared/layouts/Layout.astro'
+import PageContents from '../components/navigation/PageContents.astro'
 import { getModelSlug } from '@shared/utils/getModelSlug'
 import HeroQuickConfigurator from '@widgets/pageMain/HeroQuickConfigurator'
 import type { ModelDetails } from '@widgets/pageMain/HeroQuickConfigurator'
@@ -15,6 +16,23 @@ import { getCategorySeo } from '../lib/seo/categorySeo'
 
 const pageDescription =
 	'Напольные радиаторы Velar для панорамных окон, низких подоконников, зимних садов и готовых интерьеров. Подбор Q500, P200 и P300, расчет мощности и доставка по России.'
+
+const contents = [
+	{ id: 'floor-calculator', label: 'Быстрый подбор', major: true, description: 'Модель, длина, цвет и подключение' },
+	{ id: 'floor-task-selector', label: 'Быстрый выбор', major: true, description: 'Подбор под расположение и задачу' },
+	{ id: 'floor-models', label: 'Каталог моделей', major: true, description: 'Напольные модели Q500, P200 и P300' },
+	{ id: 'floor-model-choice', label: 'Выбор модели', major: true, description: 'Сравнение Q500, P200 и P300' },
+	{ id: 'floor-who-fits', label: 'Кому подходят', major: true, description: 'Для установки поверх пола' },
+	{ id: 'order-scope', label: 'Что входит в стоимость', major: true, description: 'Комплектация и согласование перед заказом' },
+	{ id: 'floor-price-examples', label: 'Примеры цен', major: true, description: 'Стоимость приборов длиной 1500 мм' },
+	{ id: 'floor-vs-convector', label: 'Сравнение с конвектором' },
+	{ id: 'floor-benefits', label: 'Преимущества' },
+	{ id: 'floor-request', label: 'Получить расчет' },
+	{ id: 'floor-order', label: 'Как заказать' },
+	{ id: 'floor-delivery', label: 'Доставка и оплата' },
+	{ id: 'floor-faq', label: 'Вопросы и ответы' },
+	{ id: 'floor-useful', label: 'Полезные материалы' },
+]
 
 const breadcrumbs = [
 	{ title: 'Главная', url: '/' },
@@ -301,13 +319,18 @@ const usefulLinkGroups = [
 	},
 ]
 
+const hubPriceFrom = Math.min(...floorModels.map(item => item.priceFrom).filter(Boolean))
+const hubPriceLabel = Number.isFinite(hubPriceFrom)
+	? `${hubPriceFrom.toLocaleString('ru-RU').replace(/\s/g, '\u00a0')}\u00a0₽`
+	: ''
+
 const seo = getCategorySeo({
 	category: {
 		slug: 'floor',
 		url: '/floor',
 		name: 'Напольные радиаторы',
 		h1: 'Напольные радиаторы отопления Velar',
-		seoTitle: 'Напольные радиаторы для панорамных окон - модели Velar и цены',
+		seoTitle: hubPriceLabel ? `Напольные радиаторы для панорамных окон — цены от ${hubPriceLabel}` : 'Напольные радиаторы для панорамных окон - модели Velar и цены',
 		seoDescription: pageDescription,
 		ogTitle: 'Напольные радиаторы Velar - Q500, P200 и P300',
 		ogDescription:
@@ -356,6 +379,7 @@ const seo = getCategorySeo({
 				<h1 class='max-w-[760px] text-[34px] font-semibold leading-[1.04] tracking-tight text-neutral-950 md:text-[44px] xl:text-[56px]'>
 					Напольные радиаторы отопления Velar
 				</h1>
+				<PageContents items={contents} />
 				<p class='mt-4 max-w-[820px] text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>
 					Напольные радиаторы Velar - решение для панорамных окон, низких подоконников, гостиных, зимних садов и интерьеров, где настенный радиатор поставить сложно или нежелательно. В линейке есть Q500 радиатор-скамейка, низкий P200 и более мощный P300 для зон с большими теплопотерями. Выберите модель ниже или отправьте размеры зоны установки - менеджер рассчитает мощность, стоимость, оплату и доставку по России.
 				</p>
@@ -379,6 +403,7 @@ const seo = getCategorySeo({
 					))}
 				</div>
 			</div>
+
 
 			<div id='floor-calculator' class='min-w-0'>
 				<HeroQuickConfigurator
@@ -473,6 +498,10 @@ const seo = getCategorySeo({
 		</div>
 	</section>
 
+
+
+
+
 	<section id='floor-model-choice' class='bg-white py-10 md:py-14 xl:py-16'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-4xl'>
@@ -546,7 +575,7 @@ const seo = getCategorySeo({
 		</div>
 	</section>
 
-	<section class='bg-white py-12 md:py-16 xl:py-20'>
+	<section id='floor-who-fits' class='bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] xl:px-8'>
 			<div>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Кому подходят напольные радиаторы Velar</h2>
@@ -620,7 +649,7 @@ const seo = getCategorySeo({
 	</section>
 
 	<OrderScope />
-	<section class='bg-white py-10 md:py-14'><div class='mx-auto max-w-[1180px] px-4 md:px-6 xl:px-8'><h2 class='text-2xl font-semibold md:text-3xl'>Примеры стоимости приборов длиной 1500 мм</h2><CatalogExamples specs={[{modelId:'p200',length:1500}, {modelId:'p300',length:1500}, {modelId:'kwh',length:1500}, {modelId:'kwhv',length:1500}, {modelId:'kwhv24',length:1500}]} /><p class='max-w-3xl text-sm leading-6 text-neutral-700'>Размеры и мощность относятся к указанным конфигурациям. Полную стоимость монтажа и комплект управления определяют после проверки ниши, подводки и температурного режима. Для вентиляторных моделей уточните режим мощности и требования к питанию по паспорту.</p></div></section>
+	<section id='floor-price-examples' class='bg-white py-10 md:py-14'><div class='mx-auto max-w-[1180px] px-4 md:px-6 xl:px-8'><h2 class='text-2xl font-semibold md:text-3xl'>Примеры стоимости приборов длиной 1500 мм</h2><CatalogExamples specs={[{modelId:'p200',length:1500}, {modelId:'p300',length:1500}, {modelId:'kwh',length:1500}, {modelId:'kwhv',length:1500}, {modelId:'kwhv24',length:1500}]} /><p class='max-w-3xl text-sm leading-6 text-neutral-700'>Размеры и мощность относятся к указанным конфигурациям. Полную стоимость монтажа и комплект управления определяют после проверки ниши, подводки и температурного режима. Для вентиляторных моделей уточните режим мощности и требования к питанию по паспорту.</p></div></section>
 
 	<section id='floor-vs-convector' class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
@@ -671,7 +700,7 @@ const seo = getCategorySeo({
 		</div>
 	</section>
 
-	<section class='bg-white py-12 md:py-16 xl:py-20'>
+	<section id='floor-benefits' class='bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto grid max-w-[1240px] gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:px-8'>
 			<div>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Почему выбирают напольные радиаторы Velar</h2>
@@ -704,7 +733,7 @@ const seo = getCategorySeo({
 		</div>
 	</section>
 
-	<section class='bg-white py-12 md:py-16 xl:py-20'>
+	<section id='floor-order' class='bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-3xl'>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Как заказать напольный радиатор Velar</h2>
@@ -724,7 +753,7 @@ const seo = getCategorySeo({
 		</div>
 	</section>
 
-	<section class='bg-white py-12 md:py-16 xl:py-20'>
+	<section id='floor-delivery' class='bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[900px] px-4 md:px-6 xl:px-8'>
 			<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Доставка и оплата</h2>
 			<p class='mt-5 text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>
@@ -740,7 +769,7 @@ const seo = getCategorySeo({
 		</div>
 	</section>
 
-	<section class='bg-white py-12 md:py-16 xl:py-20'>
+	<section id='floor-faq' class='bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[900px] px-4 md:px-6 xl:px-8'>
 			<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Частые вопросы о напольных радиаторах</h2>
 			<div class='mt-6 border-y border-neutral-200'>
@@ -760,7 +789,7 @@ const seo = getCategorySeo({
 		</div>
 	</section>
 
-	<section class='bg-white py-12 md:py-16 xl:py-20'>
+	<section id='floor-useful' class='bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[900px] px-4 md:px-6 xl:px-8'>
 			<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Полезные материалы</h2>
 			<p class='mt-3 text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>

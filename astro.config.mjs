@@ -56,6 +56,9 @@ export default defineConfig({
 		'/info/trubchatyy-radiator-ili-panelnyy': '/info/trubchatye-radiatory-vs-panelnye',
 		'/info/raschet-sekciy-trubchatogo-radiatora-uglovaya-komnata':
 			'/info/raschet-radiatorov-dlya-uglovoy-komnaty',
+		// Адреса статей с кириллицей внутри (найдены в GSC, отдавали 404)
+		'/info/vnutripolnye-konvektory-с-вентилятором': '/info/vnutripolnye-konvektory-s-ventilyatorom',
+		'/info/vnutripolnye-konvektory-podбор-и-монтаж': '/info/vnutripolnye-konvektory-podbor-i-montazh',
 		...legacyModelRedirects,
 	},
 	integrations: [tailwind(), mdx(), preact(), sitemap({ filter: shouldIncludeInSitemap })],

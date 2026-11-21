@@ -1,2 +1,1 @@
-export const API_URL = 'https://docker.mouselite.ru/email'
-// export const API_URL = 'http://localhost:3000/email'
+export const API_URL = 'https://cloud.homekomfort.ru/api/new-order-notification'

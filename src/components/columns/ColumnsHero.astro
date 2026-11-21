@@ -1,9 +1,13 @@
 ---
+import PageContents from '../navigation/PageContents.astro'
 import HeroQuickConfigurator from '@widgets/pageMain/HeroQuickConfigurator'
 import type { ModelDetails } from '@widgets/pageMain/HeroQuickConfigurator'
 import { buildQuickConfiguratorModels } from '@widgets/pageMain/quickConfiguratorData'
 import { get as getHeroConfiguratorData } from '../../pages/api/hero-configurator/[model].json'
 import { minCatalogPrice } from './columnsData'
+
+interface Props { items: { id: string; label: string; major?: boolean }[] }
+const { items } = Astro.props
 
 const modelOptions = buildQuickConfiguratorModels({ type: 'columns' })
 const defaultModelId = '3057'
@@ -43,12 +47,13 @@ const statItems = [
 ---
 
 <section id='columns-hero' class='border-b border-neutral-200 bg-white'>
-	<div class='mx-auto max-w-[1180px] px-4 pb-8 pt-6 md:px-6 md:py-10 xl:px-8'>
-		<div class='grid gap-7 min-[900px]:grid-cols-[minmax(0,1fr)_minmax(360px,420px)] min-[900px]:items-start min-[900px]:gap-8'>
+	<div class='mx-auto max-w-[1180px] px-4 pb-8 pt-6 md:px-6 md:py-10 min-[1600px]:max-w-[1500px] xl:px-8'>
+		<div class='category-hero-grid grid gap-7 min-[900px]:grid-cols-[minmax(0,1fr)_minmax(360px,420px)] min-[900px]:items-start min-[900px]:gap-8 min-[1600px]:grid-cols-[minmax(0,1fr)_minmax(140px,220px)_minmax(380px,440px)]'>
 			<div class='min-w-0'>
 				<h1 class='max-w-[620px] text-4xl font-semibold leading-tight tracking-tight text-neutral-950 md:text-5xl'>
 					Трубчатые радиаторы отопления
 				</h1>
+				<PageContents items={items} />
 				<p class='mt-4 max-w-[520px] text-sm leading-6 text-neutral-700 md:text-base md:leading-6'>
 					Стальные трубчатые радиаторы подходят для квартир, домов и дизайн-проектов. В каталоге Velar можно подобрать модель по высоте, количеству труб, секциям, подключению и цвету RAL: под окно, для замены старой батареи или как высокий радиатор на узкую стену. Выберите модель ниже или отправьте параметры помещения - менеджер рассчитает мощность, стоимость, оплату и доставку по России.
 				</p>
@@ -84,32 +89,16 @@ const statItems = [
 					))}
 				</div>
 			</div>
-
-			<div class='min-w-0 min-[900px]:col-start-2'>
-				<aside class='min-w-0'>
-					<div id='columns-configurator'>
-						<div>
-							<HeroQuickConfigurator
-								client:load
-								models={modelOptions}
-								defaultModelId={defaultModelId}
-								initialDetails={initialDetails}
-								variant='category'
-								title='Быстрый подбор'
-								modelResolutionMode='family-by-height'
-								category='tubular'
-								addToCartLabel='Добавить в запрос'
-								goToCartLabel='Перейти к запросу'
-								cartPillLabel='Запрос'
-								cartHref='/request'
-							/>
-							<p class='mt-2.5 text-xs leading-5 text-neutral-500'>
-								Добавьте вариант в запрос - менеджер проверит мощность, подключение, наличие или срок производства и рассчитает итоговую стоимость с доставкой.
-							</p>
-						</div>
-					</div>
-				</aside>
+			<img src='/images/models/columns/hero-black-column-radiator.png' alt='Вертикальный трубчатый радиатор Velar' width='586' height='1381' loading='lazy' class='category-hero-center hidden max-h-[680px] w-full object-contain min-[1600px]:block' />
+			<div id='columns-configurator' class='min-w-0'>
+				<HeroQuickConfigurator client:load models={modelOptions} defaultModelId={defaultModelId} initialDetails={initialDetails} variant='category' title='Быстрый подбор' modelResolutionMode='family-by-height' category='tubular' addToCartLabel='Добавить в запрос' goToCartLabel='Перейти к запросу' cartPillLabel='Запрос' cartHref='/request' />
+				<p class='mt-2.5 text-xs leading-5 text-neutral-500'>Добавьте вариант в запрос - менеджер проверит мощность, подключение, наличие или срок производства и рассчитает итоговую стоимость с доставкой.</p>
 			</div>
 		</div>
 	</div>
 </section>
+<style is:global>
+  .commercial-page main:has(> #columns-hero) > section:not(:first-of-type) { scroll-margin-top: 110px; --section-divider-color: #e5e5e5; }
+  .commercial-page main:has(> #columns-hero) #columns-configurator { scroll-margin-top: 110px; }
+  @media (max-width: 899px) { .commercial-page main:has(> #columns-hero) > section:not(:first-of-type) > div:first-child { margin-right: 34px !important; } }
+</style>
