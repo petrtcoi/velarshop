@@ -163,6 +163,91 @@ function buildModelDescription(params: {
 		: `Купить ${modelFullName} с доставкой по России. ${descriptor} Velar${profileChunk}: подбор размера, ${params.isConvector ? 'цвета решетки' : 'цвета RAL'} и подключения.`
 }
 
+const formatRub = (value: number) => `${Math.round(value).toLocaleString('ru-RU').replace(/\s/g, '\u00a0')}\u00a0₽`
+
+// Сниппет трубчатого радиатора: тип, высота, число труб и цена «от», чтобы отличаться
+// от одноимённых кодов Zehnder/Rifar и показать цену прямо в выдаче.
+function buildColumnsSnippet(params: {
+	model: ModelJson
+	radiators: RadiatorJson[]
+	modelFullName: string
+	priceMin?: number
+	interaxialSpacing: string
+}): { title: string; description: string } {
+	const heights = params.radiators.map(radiator => toNumber(radiator.height)).filter(value => value > 0)
+	const height = heights.length ? Math.round(Math.min(...heights)) : 0
+	const sections = params.radiators.map(radiator => toNumber(radiator.sections)).filter(value => value > 0)
+	const tubes = Number.parseInt(params.model.id[0] ?? '', 10)
+	const tubesLabel = Number.isFinite(tubes) && tubes > 1 ? `${tubes}-трубчатый` : 'трубчатый'
+	const heightLabel = height ? `, ${height} мм` : ''
+	const priceLabel = params.priceMin ? ` — цена от ${formatRub(params.priceMin)}` : ' — цена и наличие'
+	const title = `Трубчатый радиатор ${params.modelFullName}${heightLabel}${priceLabel}`
+
+	const specs = [
+		height ? `высота ${height} мм` : '',
+		params.interaxialSpacing ? `межосевое ${params.interaxialSpacing}` : '',
+		sections.length ? `${Math.min(...sections)}–${Math.max(...sections)} секций` : '',
+	].filter(Boolean)
+	const description = `${params.modelFullName} — ${tubesLabel} стальной радиатор${specs.length ? `: ${specs.join(', ')}` : ''}.${
+		params.priceMin ? ` От ${formatRub(params.priceMin)} за радиатор.` : ''
+	} Цвета RAL, подбор мощности и подключения, доставка по России.`
+	return { title, description }
+}
+
+// Сниппеты остальных типов: тип прибора, отличительный признак и цена «от».
+function buildTypedSnippet(params: {
+	model: ModelJson
+	radiators: RadiatorJson[]
+	modelFullName: string
+	priceMin?: number
+	orientationLabel: string
+	profilePhrase: string
+}): { title: string; description: string } | null {
+	const { model, radiators, modelFullName, priceMin, orientationLabel, profilePhrase } = params
+	const priceTitle = priceMin ? ` — цена от ${formatRub(priceMin)}` : ' — цена и наличие'
+	const priceText = priceMin ? ` От ${formatRub(priceMin)} за радиатор.` : ''
+	const sections = radiators.map(radiator => toNumber(radiator.sections)).filter(value => value > 0)
+	const sectionsText = sections.length ? `, ${Math.min(...sections)}–${Math.max(...sections)} секций` : ''
+
+	if (model.type === 'design') {
+		const size = profilePhrase.match(/\d+(?:×\d+)?\s*мм/u)?.[0] ?? ''
+		const orientation = orientationLabel ? ` ${orientationLabel}` : ''
+		return {
+			title: `Дизайн-радиатор ${modelFullName}${orientation}${size ? `, ${size}` : ''}${priceTitle}`,
+			description: `${modelFullName} — ${orientationLabel ? `${orientationLabel} ` : ''}дизайн-радиатор Velar${profilePhrase ? ` ${profilePhrase}` : ''}.${priceText} Подбор размера, мощности, цвета RAL и подключения, доставка по России.`,
+		}
+	}
+
+	if (model.type === 'ironcast') {
+		const series = normalizeModelName(model.name).replace(/\d+$/u, '').trim()
+		const spacing = radiators.map(radiator => radiator.n_spacing).find(Boolean)
+		const spacingText = spacing ? `, межосевое ${spacing} мм` : ''
+		return {
+			title: `Чугунный ретро-радиатор Velar ${series}${spacingText}${priceTitle}`,
+			description: `${modelFullName} — чугунный радиатор в стиле ретро${spacingText}${sectionsText}.${priceText} Цвета RAL и патина, подбор мощности и подключения, доставка по России.`,
+		}
+	}
+
+	if (model.type === 'convector') {
+		const convectorPriceText = priceMin ? ` От ${formatRub(priceMin)} за конвектор.` : ''
+		const id = model.id.toLowerCase()
+		const fan = id === 'kwh' ? 'без вентилятора' : id === 'kwhv24' ? 'с вентилятором 24 В' : 'с вентилятором'
+		return {
+			title: `Внутрипольный конвектор ${modelFullName} ${fan}${priceTitle}`,
+			description: `${modelFullName} — внутрипольный конвектор ${fan} для панорамных окон: длина, ширина и глубина под конструкцию пола.${convectorPriceText} Решётки, подбор мощности, доставка по России.`,
+		}
+	}
+
+	if (model.type === 'floor') {
+		return {
+			title: `Напольный дизайн-радиатор ${modelFullName}${priceTitle}`,
+			description: `${modelFullName} — напольный дизайн-радиатор Velar для панорамных окон и низких подоконников.${priceText} Подбор размера, мощности, цвета RAL и подключения, доставка по России.`,
+		}
+	}
+
+	return null
+}
+
 function getOgDescription(params: {
 	priceMin?: number
 	orientationLabel: string
@@ -242,6 +327,8 @@ function sanitizeProperties(properties: ModelSpecItem[]): Array<{ '@type': 'Prop
 		}))
 }
 
+const GOOGLE_PRODUCT_CATEGORY = 'Hardware > Heating, Ventilation & Air Conditioning'
+
 export function buildModelJsonLd(input: BuildModelJsonLdInput): Record<string, unknown> {
 	const organizationId = `${input.siteUrl}/#organization`
 	const websiteId = `${input.siteUrl}/#website`
@@ -273,7 +360,10 @@ export function buildModelJsonLd(input: BuildModelJsonLdInput): Record<string, u
 			'@type': 'Brand',
 			name: 'Velar',
 		},
-		category: input.categoryLabel,
+		// Google принимает в Product.category только путь из своей таксономии товаров:
+		// русское «Дизайн-радиаторы» GSC помечает как «Invalid value in field category».
+		// 499873 — водяные радиаторы и конвекторы относятся к HVAC, а не к электрообогревателям.
+		category: GOOGLE_PRODUCT_CATEGORY,
 		material: getMaterialValue(input.model),
 		additionalProperty,
 	}
@@ -361,9 +451,12 @@ export function getModelSeo(input: ModelSeoInput): ModelSeoResult {
 	const titleSuffix = isDesign
 		? `${orientationLabel ? `${orientationLabel} ` : ''}дизайн-радиатор Velar`
 		: `${input.model.prefix.toLowerCase()} Velar`
-	const title = `${modelFullName} купить | ${titleSuffix}`
+	const columnsSnippet = input.model.type === 'columns'
+		? buildColumnsSnippet({ model: input.model, radiators: input.radiators, modelFullName, priceMin, interaxialSpacing })
+		: buildTypedSnippet({ model: input.model, radiators: input.radiators, modelFullName, priceMin, orientationLabel, profilePhrase })
+	const title = columnsSnippet?.title ?? `${modelFullName} купить | ${titleSuffix}`
 
-	const description = buildModelDescription({
+	const description = columnsSnippet?.description ?? buildModelDescription({
 		modelFullName,
 		orientationLabel,
 		isDesign,
