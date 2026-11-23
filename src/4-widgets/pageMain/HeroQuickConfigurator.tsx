@@ -1,4 +1,5 @@
 import { addToCart, removeFromCart, storeShoppingCart } from '@features/order/ShoppingCart'
+import SaveSelection, { buildSelectionPath, buildSelectionText, formatSectionsLabel, lowerFirst } from '@features/saveSelection'
 import { useStore } from '@nanostores/preact'
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks'
 
@@ -581,6 +582,30 @@ export default function HeroQuickConfigurator({
 		})
 	}
 
+	// The saved link opens the model page, which restores radiator, connection and color (design and tubular models only).
+	const canSaveSelection = Boolean(
+		details && result && totalPrice > 0 && !selection.addon && (details.model.type === 'design' || details.model.type === 'columns'),
+	)
+	let saveSelectionPath = ''
+	let saveSelectionText = ''
+	if (details && result && canSaveSelection) {
+		const connectionOption = details.options.connections.find(item => item.id === selection.connection)
+		const colorOption = details.options.colors.find(item => item.id === selection.color)
+		const modelName = details.model.type === 'columns' ? details.model.name : details.model.name.replace(/\s/g, '')
+		saveSelectionPath = buildSelectionPath(details.model.href, result.slug, selection.connection, selection.color)
+		saveSelectionText = buildSelectionText(
+			[
+				`Velar ${modelName}`,
+				result.height ? `высота ${result.height} мм` : '',
+				details.model.type === 'design' && details.model.orientation === 'horizontal' && result.length ? `длина ${result.length} мм` : '',
+				formatSectionsLabel(result.sections),
+				connectionOption ? lowerFirst(connectionOption.label) : '',
+				colorOption ? lowerFirst(colorOption.label) : '',
+			],
+			totalPrice,
+		)
+	}
+
 	const handleRemoveFromCart = () => {
 		if (!itemTitle) return
 		removeFromCart({ title: itemTitle })
@@ -905,6 +930,17 @@ export default function HeroQuickConfigurator({
 									</button>
 								)}
 							</div>
+
+							{canSaveSelection && details && (
+								<div class='mt-2'>
+									<SaveSelection
+										path={saveSelectionPath}
+										text={saveSelectionText}
+										model={details.model.id}
+										compact
+									/>
+								</div>
+							)}
 
 							<div class={`mt-2 flex flex-wrap gap-x-3 gap-y-1 text-xs leading-5 ${isModal ? '' : 'md:mt-2 md:gap-x-4 md:text-[13px]'}`}>
 								<a

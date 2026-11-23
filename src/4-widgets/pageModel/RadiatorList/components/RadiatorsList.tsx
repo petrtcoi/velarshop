@@ -7,11 +7,12 @@ import RadiatorListHeader from './RadiatorListHeader'
 import RadiatorRow from './RadiatorRow'
 
 import SelectAddon from '@features/options/SelectAddons'
-import SelectColumnColor from '@features/options/SelectColumnColor'
-import SelectColumnConnection, { columnConnId } from '@features/options/SelectColumnConnection'
+import SelectColumnColor, { columnColor, columnColorId } from '@features/options/SelectColumnColor'
+import SelectColumnConnection, { columnConn, columnConnId } from '@features/options/SelectColumnConnection'
 import SelectConvectorGrill from '@features/options/SelectConvectorGrill'
-import SelectDesignColor from '@features/options/SelectDesignColor'
-import SelectConnection, { radiatorConnId } from '@features/options/SelectConnection'
+import SelectDesignColor, { designColor, designColorId } from '@features/options/SelectDesignColor'
+import SelectConnection, { radiatorConn, radiatorConnId } from '@features/options/SelectConnection'
+import SaveSelection, { buildSelectionPath, buildSelectionText, formatSectionsLabel, lowerFirst } from '@features/saveSelection'
 import SelectIroncastColor from '@features/options/SelectIroncastColor'
 import { addToCart, storeShoppingCart } from '@features/order/ShoppingCart'
 import { getRadiatorTotalCost } from '@features/radiator/RadiatorTotalCost'
@@ -19,6 +20,10 @@ import { radiatorTotalTitle } from '@features/radiator/RadiatorTotalTitle'
 import { getModelSlug } from '@shared/utils/getModelSlug'
 import { ALL } from '../constants/filterAll'
 import { filterRadiators } from '../utils/filterRadiators'
+
+import { columnColors } from '@entities/ColumnsColor'
+import { designColors } from '@entities/DesignColor'
+import { columnConnections } from '@entities/RadiatorConnection'
 
 import type { ModelJson } from '@entities/Model'
 import type { RadiatorJson } from '@entities/Radiator'
@@ -89,6 +94,12 @@ function RadiatorList(props: Props) {
 	const shoppingCart = useStore(storeShoppingCart)
 	const getTotalCost = useStore(getRadiatorTotalCost)
 	const getTotalTitle = useStore(radiatorTotalTitle)
+	const activeRadiatorConn = useStore(radiatorConn)
+	const activeColumnConn = useStore(columnConn)
+	const activeDesignColor = useStore(designColor)
+	const activeColumnColor = useStore(columnColor)
+	const [requestedRadiatorSlug, setRequestedRadiatorSlug] = useState<string | null>(null)
+	const scrollToRadiatorSlug = useRef<string | null>(null)
 
 	const changeHeightFilter = (height: string) => {
 		setSelectedHeight(height)
@@ -117,6 +128,9 @@ function RadiatorList(props: Props) {
 		const height = searchParams.get('height')
 		const collection = searchParams.get('collection')
 		const connection = searchParams.get('connection')
+		const radiatorSlug = searchParams.get('radiator')
+		const requestedConnectionId = searchParams.get('connection')
+		const requestedColorId = searchParams.get('color')
 		let hasValidContextFilter = false
 
 		if (requestedInterAxis && interAxes.includes(requestedInterAxis)) {
@@ -149,7 +163,25 @@ function RadiatorList(props: Props) {
 			}
 		}
 
-		shouldScrollToVariants.current = hasValidContextFilter
+		// Saved selection ("Сохранить подбор"): ?radiator=<slug>&connection=<id>&color=<id>
+		if (requestedConnectionId && requestedConnectionId !== 'side') {
+			if ((model.type === 'design' || model.type === 'floor') && model.connections.split(',').includes(requestedConnectionId)) {
+				radiatorConnId.set(requestedConnectionId)
+			}
+			if (model.type === 'columns' && columnConnections.some(item => item.id === requestedConnectionId)) {
+				columnConnId.set(requestedConnectionId)
+			}
+		}
+		if (requestedColorId) {
+			if (model.type === 'design' && designColors.some(item => item.id === requestedColorId)) designColorId.set(requestedColorId)
+			if (model.type === 'columns' && columnColors.some(item => item.id === requestedColorId)) columnColorId.set(requestedColorId)
+		}
+		if (radiatorSlug && radiators.some(item => item.slug === radiatorSlug)) {
+			setRequestedRadiatorSlug(radiatorSlug)
+			scrollToRadiatorSlug.current = radiatorSlug
+		}
+
+		shouldScrollToVariants.current = hasValidContextFilter || Boolean(scrollToRadiatorSlug.current)
 		setUrlFiltersReady(true)
 	}, [])
 
@@ -242,7 +274,15 @@ function RadiatorList(props: Props) {
 				const root = document.documentElement
 				const previousScrollBehavior = root.style.scrollBehavior
 				root.style.scrollBehavior = 'auto'
-				document.getElementById('model-variants')?.scrollIntoView({ block: 'start' })
+				const savedSlug = scrollToRadiatorSlug.current
+				scrollToRadiatorSlug.current = null
+				const savedTarget = savedSlug
+					? [`radiator-row-${savedSlug}`, `radiator-card-${savedSlug}`]
+							.map(id => document.getElementById(id))
+							.find(element => element && element.offsetParent !== null)
+					: null
+				if (savedTarget) savedTarget.scrollIntoView({ block: 'center' })
+				else document.getElementById('model-variants')?.scrollIntoView({ block: 'start' })
 				root.style.scrollBehavior = previousScrollBehavior
 			})
 		})
@@ -284,6 +324,38 @@ function RadiatorList(props: Props) {
 			linkSlug: modelHref,
 			itemType: 'radiator',
 		})
+	}
+
+	const canSaveSelection = model.type === 'design' || model.type === 'columns'
+	const renderSaveSelection = (radiator: RadiatorJson, align: 'start' | 'end') => {
+		if (model.type !== 'design' && model.type !== 'columns') return null
+		const connection = model.type === 'columns' ? activeColumnConn : activeRadiatorConn
+		const color = model.type === 'columns' ? activeColumnColor : activeDesignColor
+		const price = getTotalCost(model, radiator)
+		const isHorizontal = model.orientation === 'horizontal'
+		const modelName = model.type === 'columns' ? model.name : model.name.replace(/\s/g, '')
+		const text = buildSelectionText(
+			[
+				`Velar ${modelName}`,
+				radiator.height ? `высота ${radiator.height} мм` : '',
+				model.type === 'design' && isHorizontal && radiator.length ? `длина ${radiator.length} мм` : '',
+				formatSectionsLabel(radiator.sections),
+				connection ? lowerFirst(connection.description) : '',
+				color ? lowerFirst(color.title) : '',
+			],
+			price,
+		)
+		const path = buildSelectionPath(modelHref, radiator.slug, connection?.id ?? '', color?.id ?? '')
+		return (
+			<SaveSelection
+				path={path}
+				text={text}
+				model={model.id}
+				compact
+				managerLine='opened'
+				align={align}
+			/>
+		)
 	}
 
 	const getRadiatorQnty = (radiator: RadiatorJson) => {
@@ -436,7 +508,12 @@ function RadiatorList(props: Props) {
 									const totalTitle = getTotalTitle(model, radiator)
 									const totalPrice = getTotalCost(model, radiator)
 									return (
-										<tr class='border-b border-neutral-200 text-xs font-normal text-neutral-800 transition hover:bg-neutral-50 last:border-b-0'>
+										<tr
+											id={`radiator-row-${radiator.slug}`}
+											class={`border-b border-neutral-200 text-xs font-normal text-neutral-800 transition last:border-b-0 ${
+												radiator.slug === requestedRadiatorSlug ? 'bg-red-50' : 'hover:bg-neutral-50'
+											}`}
+										>
 											<td class='px-2.5 py-2.5'>
 												<div class='font-normal text-neutral-900'>
 													{totalTitle}
@@ -465,6 +542,7 @@ function RadiatorList(props: Props) {
 												>
 													{qnty > 0 ? `В корзине: ${qnty}` : 'В корзину'}
 												</button>
+												{canSaveSelection && (qnty > 0 || radiator.slug === requestedRadiatorSlug) && <div class='mt-2'>{renderSaveSelection(radiator, 'end')}</div>}
 											</td>
 										</tr>
 									)
@@ -481,7 +559,12 @@ function RadiatorList(props: Props) {
 							const totalTitle = getTotalTitle(model, radiator)
 							const totalPrice = getTotalCost(model, radiator)
 							return (
-								<article class='rounded-[3px] border border-neutral-200 bg-white p-2.5'>
+								<article
+									id={`radiator-card-${radiator.slug}`}
+									class={`rounded-[3px] border p-2.5 ${
+										radiator.slug === requestedRadiatorSlug ? 'border-red-300 bg-red-50' : 'border-neutral-200 bg-white'
+									}`}
+								>
 									<div class='text-xs font-normal leading-5 text-neutral-950'>
 										{totalTitle}
 									</div>
@@ -501,6 +584,7 @@ function RadiatorList(props: Props) {
 											{qnty > 0 ? `В корзине: ${qnty}` : 'В корзину'}
 										</button>
 									</div>
+									{canSaveSelection && (qnty > 0 || radiator.slug === requestedRadiatorSlug) && <div class='mt-2'>{renderSaveSelection(radiator, 'start')}</div>}
 								</article>
 							)
 						})}

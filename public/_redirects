@@ -239,3 +239,7 @@
 /model/nostalgia300/:radiator  /model/nostalgia300/  301
 /model/historic300/:radiator/  /model/historic300/  301
 /model/historic300/:radiator  /model/historic300/  301
+/model/s  /design/s  301!
+/model/s/  /design/s  301!
+/model/sp  /design/sp  301!
+/model/sp/  /design/sp  301!
