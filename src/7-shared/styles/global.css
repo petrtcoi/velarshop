@@ -1371,3 +1371,219 @@ main :where(.animate-spin) {
     width: 100%;
   }
 }
+
+/* Mobile bottom nav (src/components/layout/MobileBottomNav.tsx).
+   Shown at <= 900 px, the same breakpoint where Header.astro switches to the mobile layout.
+   z-index: above page content, below the header (50, its menu sheet lives inside it) and the quick-picker modal. */
+:root {
+  --mobile-bottom-nav-height: 56px;
+  --mobile-bottom-nav-offset: calc(var(--mobile-bottom-nav-height) + env(safe-area-inset-bottom, 0px));
+}
+
+.mobile-bottom-nav {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  body.site-page {
+    padding-bottom: var(--mobile-bottom-nav-offset);
+  }
+
+  .mobile-bottom-nav {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 45;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    background: #fff;
+    border-top: 1px solid #e5e5e5;
+    transition: transform 0.2s ease, visibility 0.2s;
+  }
+
+  .mobile-bottom-nav.is-hidden {
+    transform: translateY(100%);
+    visibility: hidden;
+  }
+
+  /* amoCRM button (gso.amocrm.ru/js/button.js) sets its bottom offset inline, so !important is needed */
+  .amo-button-holder {
+    bottom: calc(var(--mobile-bottom-nav-offset) + 24px) !important;
+  }
+
+  html.bottom-contact-open .amo-button-holder {
+    visibility: hidden;
+  }
+}
+
+.mobile-bottom-nav__list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  height: var(--mobile-bottom-nav-height);
+  list-style: none;
+}
+
+.mobile-bottom-nav__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: var(--radius-ui);
+  background: transparent;
+  color: #404040;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.mobile-bottom-nav__item:active {
+  background: #f5f5f5;
+}
+
+.mobile-bottom-nav__item.is-active {
+  color: #a30f19;
+}
+
+.mobile-bottom-nav__item:focus-visible {
+  outline: 2px solid #a30f19;
+  outline-offset: -4px;
+}
+
+.mobile-bottom-nav__icon {
+  position: relative;
+  display: inline-flex;
+}
+
+.mobile-bottom-nav__badge {
+  position: absolute;
+  top: -4px;
+  right: -10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+  min-width: 18px;
+  padding: 0 4px;
+  border-radius: var(--radius-ui);
+  background: #c1121f;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.mobile-bottom-nav__label {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.bottom-contact {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+}
+
+.bottom-contact__backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  border: 0;
+  background: rgba(0, 0, 0, 0.35);
+  cursor: default;
+  touch-action: none;
+}
+
+.bottom-contact__panel {
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: calc(var(--mobile-bottom-nav-offset) + 8px);
+  padding: 8px 16px 8px;
+  border: 1px solid #e5e5e5;
+  border-radius: var(--radius-ui);
+  background: #fff;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.16);
+  overscroll-behavior: contain;
+}
+
+.bottom-contact__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 4px 0 8px;
+}
+
+.bottom-contact__title {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #111;
+}
+
+.bottom-contact__close {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #111;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.bottom-contact__link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 8px 0;
+  border-top: 1px solid #f0f0f0;
+  color: #111;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.bottom-contact__link:active {
+  background: #fafafa;
+}
+
+.bottom-contact__close:focus-visible,
+.bottom-contact__link:focus-visible {
+  outline: 2px solid #a30f19;
+  outline-offset: 2px;
+}
+
+.bottom-contact__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: var(--radius-ui);
+  background: rgba(193, 18, 31, 0.06);
+  color: #c1121f;
+}
+
+.bottom-contact__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.bottom-contact__subtext {
+  font-size: 13px;
+  font-weight: 400;
+  color: #575757;
+}

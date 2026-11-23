@@ -7,6 +7,9 @@ type Props = {
 	defaultModelId: string
 	initialDetails?: ModelDetails | null
 	buttonClassName?: string
+	// Phone header: the trigger lives in the bottom bar, which opens this modal through a window event
+	hideTrigger?: boolean
+	openEventName?: string
 }
 
 export default function HeaderQuickSearch({
@@ -14,6 +17,8 @@ export default function HeaderQuickSearch({
 	defaultModelId,
 	initialDetails = null,
 	buttonClassName = '',
+	hideTrigger = false,
+	openEventName,
 }: Props) {
 	const [open, setOpen] = useState(false)
 	const [session, setSession] = useState(0)
@@ -41,31 +46,41 @@ export default function HeaderQuickSearch({
 		setOpen(true)
 	}
 
+	useEffect(() => {
+		if (!openEventName) return
+
+		const handleOpenEvent = () => openModal()
+		window.addEventListener(openEventName, handleOpenEvent)
+		return () => window.removeEventListener(openEventName, handleOpenEvent)
+	}, [openEventName])
+
 	return (
 		<>
-			<button
-				type='button'
-				aria-label='Открыть быстрый выбор модели'
-				class={`inline-flex h-11 w-11 items-center justify-center rounded-[3px] border border-[#e5e5e5] bg-white text-[#111] transition-colors hover:border-[#c1121f] hover:bg-white hover:text-[#a30f19] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300 ${buttonClassName}`}
-				onClick={openModal}
-				ref={triggerRef}
-			>
-				<svg
-					xmlns='http://www.w3.org/2000/svg'
-					width='20'
-					height='20'
-					viewBox='0 0 24 24'
-					fill='none'
-					stroke='currentColor'
-					strokeWidth='2'
-					strokeLinecap='round'
-					strokeLinejoin='round'
-					aria-hidden='true'
+			{!hideTrigger && (
+				<button
+					type='button'
+					aria-label='Открыть быстрый выбор модели'
+					class={`inline-flex h-11 w-11 items-center justify-center rounded-[3px] border border-[#e5e5e5] bg-white text-[#111] transition-colors hover:border-[#c1121f] hover:bg-white hover:text-[#a30f19] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300 ${buttonClassName}`}
+					onClick={openModal}
+					ref={triggerRef}
 				>
-					<circle cx='11' cy='11' r='8'></circle>
-					<path d='m21 21-4.3-4.3'></path>
-				</svg>
-			</button>
+					<svg
+						xmlns='http://www.w3.org/2000/svg'
+						width='20'
+						height='20'
+						viewBox='0 0 24 24'
+						fill='none'
+						stroke='currentColor'
+						strokeWidth='2'
+						strokeLinecap='round'
+						strokeLinejoin='round'
+						aria-hidden='true'
+					>
+						<circle cx='11' cy='11' r='8'></circle>
+						<path d='m21 21-4.3-4.3'></path>
+					</svg>
+				</button>
+			)}
 
 			{open && (
 				<div class='fixed inset-0 z-[90] flex items-center justify-center p-3 sm:p-4'>

@@ -89,7 +89,7 @@ const statItems = [
 					))}
 				</div>
 				<!-- 24.11.2026: собственное фото сайта вместо вырезанного радиатора (тот был виден только при ширине от 1600 px) -->
-				<picture class='mt-7 block max-w-[620px] overflow-hidden rounded-md bg-neutral-100'>
+				<picture class='mt-7 block max-w-none overflow-hidden rounded-md bg-neutral-100 min-[900px]:max-w-[620px]'>
 					<source type='image/avif' srcset='/images/columns/hero/black-tubular-interior-640.avif 640w, /images/columns/hero/black-tubular-interior-1200.avif 1200w' sizes='(max-width: 899px) calc(100vw - 32px), 620px' />
 					<source type='image/webp' srcset='/images/columns/hero/black-tubular-interior-640.webp 640w, /images/columns/hero/black-tubular-interior-1200.webp 1200w' sizes='(max-width: 899px) calc(100vw - 32px), 620px' />
 					<img src='/images/columns/hero/black-tubular-interior-1200.webp' alt='Черный высокий трубчатый радиатор Velar в интерьере' width='1200' height='750' decoding='async' class='block aspect-[16/10] h-auto w-full object-cover' />

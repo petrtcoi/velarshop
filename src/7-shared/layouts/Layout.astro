@@ -2,6 +2,7 @@
 import Breadcrumbs from '@widgets/breadcrumbs/Breadcrumbs.astro'
 import Footer from './components/Footer.astro'
 import Header from '../../components/layout/Header.astro'
+import MobileBottomNav from '../../components/layout/MobileBottomNav'
 import '@shared/styles/global.css'
 
 type BreadcrumbItem = {
@@ -339,6 +340,7 @@ const isItemPage = Astro.url.pathname === '/item' || Astro.url.pathname.startsWi
 
 		</main>
 		<Footer />
+		<MobileBottomNav client:load currentPath={Astro.url.pathname} />
 
 
 		<!-- START Cookie-Alert -->
@@ -399,6 +401,12 @@ const isItemPage = Astro.url.pathname === '/item' || Astro.url.pathname.startsWi
 				#cookie_note.show {
 					width: 80%;
 					min-width: 80%;
+				}
+			}
+			/* Телефон: над нижним меню (MobileBottomNav, переменная в global.css) */
+			@media (max-width: 900px) {
+				#cookie_note {
+					bottom: calc(var(--mobile-bottom-nav-offset) + 12px);
 				}
 			}
 		</style>

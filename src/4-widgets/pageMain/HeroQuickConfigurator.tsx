@@ -618,10 +618,15 @@ export default function HeroQuickConfigurator({
 	const showConfiguratorBody = !collapsibleOnMobile || mobileExpanded
 	const titleClass = isModal ? 'text-sm font-semibold tracking-tight' : 'text-sm font-semibold tracking-tight md:text-base'
 	const contentSpacingClass = isModal ? 'mt-2.5 space-y-2' : 'mt-2.5 space-y-2 md:mt-3 md:space-y-2'
+	const isHero = !isModal && !isCategory
+	// 601-819 px (tablet, hero in one column): card spans the full width, so connection and color share one row
+	const heroTabletPairClass = isHero ? ' min-[601px]:max-[819px]:col-span-1' : ''
 	const gridGapClass = isFloorModel
 		? isModal
 			? 'grid grid-cols-1 gap-x-2 gap-y-2'
-			: 'grid grid-cols-1 gap-x-2 gap-y-2 md:grid-cols-2 md:gap-2'
+			: isHero
+				? 'grid grid-cols-1 gap-x-2 gap-y-2 min-[601px]:grid-cols-2 md:grid-cols-2 md:gap-2'
+				: 'grid grid-cols-1 gap-x-2 gap-y-2 md:grid-cols-2 md:gap-2'
 		: isModal
 			? 'grid grid-cols-2 gap-x-2 gap-y-2'
 			: 'grid grid-cols-2 gap-x-2 gap-y-2 md:gap-2'
@@ -634,7 +639,7 @@ export default function HeroQuickConfigurator({
 					? 'rounded-none border-0 bg-transparent p-0 shadow-none'
 					: isCategory
 						? 'rounded-[18px] border border-neutral-200 bg-white p-3.5 shadow-none transition hover:border-neutral-300 md:p-4'
-					: 'max-w-[460px] rounded-[18px] border border-white/70 bg-white px-4 pb-3.5 pt-4 shadow-[0_24px_64px_rgba(0,0,0,0.28)] md:rounded-[20px] md:p-4 md:shadow-[0_28px_80px_rgba(0,0,0,0.30)]'
+					: 'max-w-[460px] min-[601px]:max-[819px]:max-w-none rounded-[18px] border border-white/70 bg-white px-4 pb-3.5 pt-4 shadow-[0_24px_64px_rgba(0,0,0,0.28)] md:rounded-[20px] md:p-4 md:shadow-[0_28px_80px_rgba(0,0,0,0.30)]'
 			}`}
 		>
 			<div class='mb-2.5 flex items-start justify-between gap-3 md:mb-3 md:gap-4'>
@@ -816,7 +821,7 @@ export default function HeroQuickConfigurator({
 								value={selection.connection}
 								options={details.options.connections.map(option => ({ value: option.id, label: option.label }))}
 								onChange={value => setSelection(current => ({ ...current, connection: value }))}
-								className='col-span-full'
+								className={`col-span-full${heroTabletPairClass}`}
 							/>
 						)}
 
@@ -826,7 +831,7 @@ export default function HeroQuickConfigurator({
 								value={selection.color}
 								options={details.options.colors.map(option => ({ value: option.id, label: colorOptionLabel(option) }))}
 								onChange={value => setSelection(current => ({ ...current, color: value }))}
-								className='col-span-full'
+								className={`col-span-full${heroTabletPairClass}`}
 							/>
 						)}
 
