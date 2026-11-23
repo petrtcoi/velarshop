@@ -497,11 +497,12 @@ const mobileIconSvg: Record<MobileIconName, string> = {
         isClosing = false;
         lockPage();
         summary?.setAttribute("aria-label", "Закрыть меню");
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            if (menu.open && !isClosing) menu.classList.add("is-sheet-visible");
-          });
-        });
+        // Force a style/layout flush so the off-screen start position is applied,
+        // then add the class: the slide-in transition runs without waiting for animation frames
+        // (requestAnimationFrame may not fire in background or throttled tabs).
+        const sheet = menu.querySelector(".mobile-sheet");
+        if (sheet instanceof HTMLElement) void sheet.offsetWidth;
+        if (menu.open && !isClosing) menu.classList.add("is-sheet-visible");
       } else {
         markClosed();
       }

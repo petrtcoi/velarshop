@@ -71,6 +71,7 @@ export default function MobileBottomNav({ currentPath = '/' }: Props) {
 	const backdropRef = useRef<HTMLButtonElement>(null)
 	const closeTimerRef = useRef(0)
 	const openFrameRef = useRef(0)
+	const openFallbackRef = useRef(0)
 	const dragRef = useRef<DragState | null>(null)
 	const suppressClickRef = useRef(false)
 
@@ -93,6 +94,7 @@ export default function MobileBottomNav({ currentPath = '/' }: Props) {
 	// Slides the panel down and fades the backdrop, then unmounts
 	const closeContact = (restoreFocus = true) => {
 		window.cancelAnimationFrame(openFrameRef.current)
+		window.clearTimeout(openFallbackRef.current)
 		window.clearTimeout(closeTimerRef.current)
 		dragRef.current = null
 		resetDragStyles()
@@ -251,6 +253,9 @@ export default function MobileBottomNav({ currentPath = '/' }: Props) {
 		openFrameRef.current = window.requestAnimationFrame(() => {
 			openFrameRef.current = window.requestAnimationFrame(() => setContactOpen(true))
 		})
+		// Fallback: requestAnimationFrame may not fire in throttled or background tabs
+		window.clearTimeout(openFallbackRef.current)
+		openFallbackRef.current = window.setTimeout(() => setContactOpen(true), 60)
 	}
 
 	// messenger_click is fired by the global wa.me / t.me / vk.me click listener in Layout.astro,
