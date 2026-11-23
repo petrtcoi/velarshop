@@ -29,7 +29,7 @@ const minor = items.filter(item => !item.major)
 </div>
 <style is:global>
   @media (min-width: 1050px) and (max-width: 1599px) {
-    .category-hero-grid { grid-template-columns: minmax(0, 1fr) minmax(100px, 120px) minmax(340px, 380px) !important; }
+    .category-hero-grid:not(.category-hero-grid--photo) { grid-template-columns: minmax(0, 1fr) minmax(100px, 120px) minmax(340px, 380px) !important; }
     .category-hero-center { display: block !important; }
   }
   .commercial-page main:has(> .r2-configurator) [id] { scroll-margin-top: 110px; }
