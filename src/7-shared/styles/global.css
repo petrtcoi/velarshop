@@ -1587,3 +1587,35 @@ main :where(.animate-spin) {
   font-weight: 400;
   color: #575757;
 }
+
+/* Безопасные зоны iPhone (24.11.2026). В meta viewport включен viewport-fit=cover:
+   iPhone сообщает высоту нижней полоски (env(safe-area-inset-bottom)) — ее учитывает нижнее меню.
+   Побочный эффект в горизонтальном положении: страница доходит до выреза камеры,
+   поэтому ниже отступы на ширину выреза. На экранах без выреза env(...) = 0 и ничего не меняется. */
+html {
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+}
+
+html .mobile-bottom-nav {
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+}
+
+html .bottom-contact__panel {
+  left: max(8px, env(safe-area-inset-left, 0px));
+  right: max(8px, env(safe-area-inset-right, 0px));
+}
+
+html .mobile-sheet {
+  padding-right: env(safe-area-inset-right, 0px);
+  padding-bottom: max(50px, env(safe-area-inset-bottom, 0px));
+}
+
+html .contents-tab {
+  right: env(safe-area-inset-right, 0px);
+}
+
+html #contents-dialog {
+  padding-right: env(safe-area-inset-right, 0px);
+}
