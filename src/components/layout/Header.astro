@@ -425,10 +425,28 @@ const mobileIconSvg: Record<MobileIconName, string> = {
 </header>
 
 <script is:inline>
+  // Sheet animation: the sheet is shown by the .is-sheet-visible class, not by [open] alone.
+  // Opening: <details> opens (native summary click or menu.open = true from MobileBottomNav),
+  // the toggle handler locks the page and adds the class two frames later, so the slide-in runs.
+  // Closing: closeSheet() removes the class and sets open = false only after the slide-out.
+  // 280 ms mirrors the .mobile-sheet transition below.
   document.querySelectorAll(".mobile-menu").forEach((menu) => {
+    if (!(menu instanceof HTMLDetailsElement)) return;
+
+    const SHEET_DURATION_MS = 280;
+    const summary = menu.querySelector("summary");
     let scrollPosition = 0;
+    let isLocked = false;
+    let isClosing = false;
+    let closeTimer = 0;
+
+    const prefersReducedMotion = () =>
+      typeof window.matchMedia === "function" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const lockPage = () => {
+      if (isLocked) return;
+      isLocked = true;
       scrollPosition = window.scrollY;
       document.documentElement.classList.add("mobile-menu-open");
       document.body.style.position = "fixed";
@@ -439,6 +457,8 @@ const mobileIconSvg: Record<MobileIconName, string> = {
     };
 
     const unlockPage = () => {
+      if (!isLocked) return;
+      isLocked = false;
       document.documentElement.classList.remove("mobile-menu-open");
       document.body.style.position = "";
       document.body.style.top = "";
@@ -448,33 +468,91 @@ const mobileIconSvg: Record<MobileIconName, string> = {
       window.scrollTo(0, scrollPosition);
     };
 
-    menu.addEventListener("toggle", () => {
-      if (!(menu instanceof HTMLDetailsElement)) return;
+    const markClosed = () => {
+      window.clearTimeout(closeTimer);
+      isClosing = false;
+      menu.classList.remove("is-sheet-visible");
+      unlockPage();
+      summary?.setAttribute("aria-label", "Открыть меню");
+    };
 
-      const summary = menu.querySelector("summary");
+    // Animated close; afterClose runs once the page is unlocked (used for in-page links)
+    const closeSheet = (afterClose) => {
+      if (!menu.open || isClosing) return;
+      isClosing = true;
+      menu.classList.remove("is-sheet-visible");
+      closeTimer = window.setTimeout(
+        () => {
+          menu.open = false;
+          markClosed();
+          if (typeof afterClose === "function") afterClose();
+        },
+        prefersReducedMotion() ? 0 : SHEET_DURATION_MS
+      );
+    };
+
+    menu.addEventListener("toggle", () => {
       if (menu.open) {
+        window.clearTimeout(closeTimer);
+        isClosing = false;
         lockPage();
         summary?.setAttribute("aria-label", "Закрыть меню");
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            if (menu.open && !isClosing) menu.classList.add("is-sheet-visible");
+          });
+        });
       } else {
-        unlockPage();
-        summary?.setAttribute("aria-label", "Открыть меню");
+        markClosed();
       }
     });
 
-    const closeItems = menu.querySelectorAll(
-      "[data-close-sheet], [data-close-sheet-link]"
-    );
-    closeItems.forEach((item) => {
-      item.addEventListener("click", () => {
-        if (menu instanceof HTMLDetailsElement) {
-          menu.removeAttribute("open");
+    // Burger click while open: animate out instead of the instant native close
+    summary?.addEventListener("click", (event) => {
+      if (!menu.open) return;
+      event.preventDefault();
+      closeSheet();
+    });
+
+    menu.querySelectorAll("[data-close-sheet]").forEach((item) => {
+      item.addEventListener("click", () => closeSheet());
+    });
+
+    menu.querySelectorAll("[data-close-sheet-link]").forEach((item) => {
+      item.addEventListener("click", (event) => {
+        if (!(item instanceof HTMLAnchorElement)) return;
+        if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+        const url = new URL(item.href, window.location.href);
+        const isInPageLink =
+          url.hash !== "" &&
+          url.origin === window.location.origin &&
+          url.pathname === window.location.pathname &&
+          url.search === window.location.search;
+
+        if (isInPageLink) {
+          // Unlock first, then jump: otherwise restoring the scroll position would undo the jump
+          event.preventDefault();
+          closeSheet(() => {
+            window.location.href = item.href;
+          });
+          return;
         }
+
+        // Other links (pages, tel:) are not held: the sheet slides out while the browser follows the link
+        closeSheet();
       });
     });
 
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape" && menu instanceof HTMLDetailsElement && menu.open) {
-        menu.removeAttribute("open");
+      if (event.key === "Escape" && menu.open) closeSheet();
+    });
+
+    // Back/forward cache: do not return to a page with the sheet half-closed
+    window.addEventListener("pageshow", (event) => {
+      if (event.persisted && menu.open) {
+        menu.open = false;
+        markClosed();
       }
     });
   });
@@ -717,7 +795,7 @@ const mobileIconSvg: Record<MobileIconName, string> = {
     border-left: 1px solid #ececec;
     padding: 0 0 50px;
     transform: translateX(100%);
-    transition: transform 0.25s ease;
+    transition: transform 280ms cubic-bezier(0.32, 0.72, 0, 1);
     z-index: 70;
     overflow-y: auto;
     overscroll-behavior: contain;
@@ -725,7 +803,8 @@ const mobileIconSvg: Record<MobileIconName, string> = {
     box-shadow: -20px 0 40px rgba(0, 0, 0, 0.22);
   }
 
-  .mobile-menu[open] .mobile-sheet {
+  /* .is-sheet-visible is set by the script above after [open], so the slide-in and fade-in run */
+  .mobile-menu.is-sheet-visible .mobile-sheet {
     transform: translateX(0);
   }
 
@@ -735,6 +814,19 @@ const mobileIconSvg: Record<MobileIconName, string> = {
     inset: 0;
     background: rgba(0, 0, 0, 0.35);
     z-index: 60;
+    opacity: 0;
+    transition: opacity 280ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  .mobile-menu.is-sheet-visible .mobile-sheet-backdrop {
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mobile-sheet,
+    .mobile-sheet-backdrop {
+      transition: none;
+    }
   }
 
   .mobile-sheet-header {

@@ -2,7 +2,7 @@ import { useStore } from '@nanostores/preact'
 
 import { storeCartTotalQnty } from '@features/order/ShoppingCart'
 
-function getGoodsWord(quantity: number) {
+export function getGoodsWord(quantity: number) {
 	const mod10 = quantity % 10
 	const mod100 = quantity % 100
 

@@ -10,6 +10,7 @@ export const contacts = {
 	emailFrom: 'VelarShop.ru <mail@velarshop.ru>',
 	vk: 'lovehomekomfort',
 	telegram: 'https://t.me/RadiatorLuxBot',
+	vkMessage: 'https://vk.me/-86767719',
 	emailNotifications: 'mail@velarshop.ru',
 	homekomfortWebsite: 'https://homekomfort.ru',
 }

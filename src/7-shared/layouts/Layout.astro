@@ -306,9 +306,10 @@ const isItemPage = Astro.url.pathname === '/item' || Astro.url.pathname.startsWi
 		>
 
 
+<!-- amoCRM chat button: only from 901 px at load time; on phones messengers are in the bottom bar (MobileBottomNav) -->
 <script
 	is:inline
-	set:html={`(function(a,m,o,c,r,m){a[m]={id:"414230",hash:"c0c75c3d5e1dcd0e0d52e9dd2041023fa0f94c612ab22920224c6282215c9d6e",locale:"ru",inline:false,setMeta:function(p){this.params=(this.params||[]).concat([p])}};a[o]=a[o]||function(){(a[o].q=a[o].q||[]).push(arguments)};var d=a.document,s=d.createElement('script');s.async=true;s.id=m+'_script';s.src='https://gso.amocrm.ru/js/button.js';d.head&&d.head.appendChild(s)}(window,0,'amoSocialButton',0,0,'amo_social_button'));`}
+	set:html={`if(window.matchMedia&&window.matchMedia('(min-width: 901px)').matches){(function(a,m,o,c,r,m){a[m]={id:"414230",hash:"c0c75c3d5e1dcd0e0d52e9dd2041023fa0f94c612ab22920224c6282215c9d6e",locale:"ru",inline:false,setMeta:function(p){this.params=(this.params||[]).concat([p])}};a[o]=a[o]||function(){(a[o].q=a[o].q||[]).push(arguments)};var d=a.document,s=d.createElement('script');s.async=true;s.id=m+'_script';s.src='https://gso.amocrm.ru/js/button.js';d.head&&d.head.appendChild(s)}(window,0,'amoSocialButton',0,0,'amo_social_button'));}`}
 />
 		
 	</head>
@@ -434,7 +435,14 @@ const isItemPage = Astro.url.pathname === '/item' || Astro.url.pathname.startsWi
 			return
 		}
 
-		if (href.includes('wa.me/') || href.includes('whatsapp.com/') || href.includes('t.me/')) {
+		if (
+			href.includes('wa.me/') ||
+			href.includes('whatsapp.com/') ||
+			href.includes('t.me/') ||
+			href.includes('vk.me/') ||
+			href.includes('vk.com/im') ||
+			href.includes('vk.com/write')
+		) {
 			reachMetrikaGoal('messenger_click')
 		}
 	})
