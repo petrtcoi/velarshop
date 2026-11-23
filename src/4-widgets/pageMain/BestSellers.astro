@@ -3,31 +3,43 @@ const models = [
   {
     name: "P30",
     href: "/model/p30v",
+    image: "p30",
+    alt: "Дизайн-радиатор Velar P30 V с плоскими трубами",
     text: "Плоский профиль для современных интерьеров",
   },
   {
     name: "P60",
     href: "/model/p60v",
+    image: "p60",
+    alt: "Дизайн-радиатор Velar P60 V с широкой плоской трубой",
     text: "Широкая плоская труба, больше теплового излучения",
   },
   {
     name: "Q40",
     href: "/model/q40v",
+    image: "q40",
+    alt: "Дизайн-радиатор Velar Q40 V с квадратным профилем",
     text: "Квадратный профиль для строгих интерьеров",
   },
   {
     name: "R32",
     href: "/model/r32v",
+    image: "r32",
+    alt: "Дизайн-радиатор Velar R32 V с круглой трубой",
     text: "Круглая труба и спокойная вертикальная геометрия",
   },
   {
     name: "3030",
     href: "/columns/3030",
+    image: "3030",
+    alt: "Белый трубчатый радиатор Velar на стене",
     text: "Трубчатый радиатор для установки под окно",
   },
   {
     name: "2180",
     href: "/columns/2180",
+    image: "2180",
+    alt: "Высокий трубчатый радиатор Velar в интерьере",
     text: "Высокий трубчатый радиатор для стен и простенков",
   },
 ];
@@ -46,6 +58,28 @@ const models = [
     {
       models.map((model) => (
         <article class="popular-model">
+          <a href={model.href} class="popular-model__image" tabindex="-1" aria-hidden="true">
+            <picture>
+              <source
+                type="image/avif"
+                srcset={`/images/main/popular/${model.image}-380.avif 380w, /images/main/popular/${model.image}-760.avif 760w`}
+                sizes="(max-width: 900px) calc(100vw - 32px), 380px"
+              />
+              <source
+                type="image/webp"
+                srcset={`/images/main/popular/${model.image}-380.webp 380w, /images/main/popular/${model.image}-760.webp 760w`}
+                sizes="(max-width: 900px) calc(100vw - 32px), 380px"
+              />
+              <img
+                src={`/images/main/popular/${model.image}-760.webp`}
+                alt={model.alt}
+                width="760"
+                height="570"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+          </a>
           <div>
             <h3>{model.name}</h3>
             <p>{model.text}</p>
@@ -115,6 +149,26 @@ const models = [
     background: #fff;
   }
 
+  .popular-model__image {
+    display: block;
+    margin: -22px -22px 0;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #f3f2ef;
+  }
+
+  .popular-model__image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .popular-model:hover .popular-model__image img {
+    transform: scale(1.02);
+  }
+
   .popular-model h3 {
     margin: 0;
     color: #111;
@@ -169,6 +223,10 @@ const models = [
     .popular-model {
       min-height: auto;
       padding: 18px;
+    }
+
+    .popular-model__image {
+      margin: -18px -18px 0;
     }
   }
 </style>
