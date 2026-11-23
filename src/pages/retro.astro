@@ -390,7 +390,7 @@ const seo = getCategorySeo({
 
 	<section class='border-b border-neutral-200 bg-white'>
 		<div class='mx-auto max-w-[1180px] min-[1600px]:max-w-[1500px] px-4 pb-8 pt-6 md:px-6 md:py-10 xl:px-8'>
-			<div class='category-hero-grid grid gap-7 min-[980px]:grid-cols-[minmax(0,1fr)_minmax(320px,380px)] min-[980px]:items-start min-[980px]:gap-12 min-[1600px]:grid-cols-[minmax(0,1fr)_minmax(140px,220px)_minmax(380px,440px)]'>
+			<div class='category-hero-grid category-hero-grid--photo grid gap-7 min-[980px]:grid-cols-[minmax(0,1fr)_minmax(320px,380px)] min-[980px]:items-start min-[980px]:gap-12'>
 				<div class='min-w-0'>
 					<h1 class='retro-hero-title max-w-[680px] text-4xl font-semibold leading-tight tracking-tight text-neutral-950 md:text-5xl min-[1250px]:max-w-[560px]'>
 						Чугунные радиаторы в стиле ретро
@@ -421,10 +421,15 @@ const seo = getCategorySeo({
 							</span>
 						))}
 					</div>
+					<!-- 24.11.2026: макрокадр Nostalgia с Диска Velar вместо узкой картинки, видной только от 1050 px -->
+					<picture class='mt-7 block max-w-[620px] overflow-hidden rounded-md bg-neutral-900'>
+						<source type='image/avif' srcset='/images/retro/hero/nostalgia-ornament-640.avif 640w, /images/retro/hero/nostalgia-ornament-1200.avif 1200w' sizes='(max-width: 979px) calc(100vw - 32px), 620px' />
+						<source type='image/webp' srcset='/images/retro/hero/nostalgia-ornament-640.webp 640w, /images/retro/hero/nostalgia-ornament-1200.webp 1200w' sizes='(max-width: 979px) calc(100vw - 32px), 620px' />
+						<img src='/images/retro/hero/nostalgia-ornament-1200.webp' alt='Орнамент чугунного ретро-радиатора Velar Nostalgia крупным планом' width='1200' height='750' decoding='async' class='block aspect-[16/10] h-auto w-full object-cover' />
+					</picture>
 				</div>
 
 
-				<img src='/images/retro/hero/nostalgia-section.jpg' alt='Чугунный ретро-радиатор Velar Nostalgia' width='720' height='1744' loading='lazy' class='category-hero-center hidden max-h-[680px] w-full object-contain min-[1600px]:block' />
 				<div id='retro-calculator' class='min-w-0'>
 					<HeroQuickConfigurator
 						client:load
