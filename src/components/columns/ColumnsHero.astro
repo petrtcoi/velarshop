@@ -48,7 +48,7 @@ const statItems = [
 
 <section id='columns-hero' class='border-b border-neutral-200 bg-white'>
 	<div class='mx-auto max-w-[1180px] px-4 pb-8 pt-6 md:px-6 md:py-10 min-[1600px]:max-w-[1500px] xl:px-8'>
-		<div class='category-hero-grid grid gap-7 min-[900px]:grid-cols-[minmax(0,1fr)_minmax(360px,420px)] min-[900px]:items-start min-[900px]:gap-8 min-[1600px]:grid-cols-[minmax(0,1fr)_minmax(140px,220px)_minmax(380px,440px)]'>
+		<div class='category-hero-grid grid gap-7 min-[900px]:grid-cols-[minmax(0,1fr)_minmax(360px,420px)] min-[900px]:items-start min-[900px]:gap-8'>
 			<div class='min-w-0'>
 				<h1 class='max-w-[620px] text-4xl font-semibold leading-tight tracking-tight text-neutral-950 md:text-5xl'>
 					Трубчатые радиаторы отопления
@@ -88,8 +88,13 @@ const statItems = [
 						</div>
 					))}
 				</div>
+				<!-- 24.11.2026: собственное фото сайта вместо вырезанного радиатора (тот был виден только при ширине от 1600 px) -->
+				<picture class='mt-7 block max-w-[620px] overflow-hidden rounded-md bg-neutral-100'>
+					<source type='image/avif' srcset='/images/columns/hero/black-tubular-interior-640.avif 640w, /images/columns/hero/black-tubular-interior-1200.avif 1200w' sizes='(max-width: 899px) calc(100vw - 32px), 620px' />
+					<source type='image/webp' srcset='/images/columns/hero/black-tubular-interior-640.webp 640w, /images/columns/hero/black-tubular-interior-1200.webp 1200w' sizes='(max-width: 899px) calc(100vw - 32px), 620px' />
+					<img src='/images/columns/hero/black-tubular-interior-1200.webp' alt='Черный высокий трубчатый радиатор Velar в интерьере' width='1200' height='750' decoding='async' class='block aspect-[16/10] h-auto w-full object-cover' />
+				</picture>
 			</div>
-			<img src='/images/models/columns/hero-black-column-radiator.png' alt='Вертикальный трубчатый радиатор Velar' width='586' height='1381' loading='lazy' class='category-hero-center hidden max-h-[680px] w-full object-contain min-[1600px]:block' />
 			<div id='columns-configurator' class='min-w-0'>
 				<HeroQuickConfigurator client:load models={modelOptions} defaultModelId={defaultModelId} initialDetails={initialDetails} variant='category' title='Быстрый подбор' modelResolutionMode='family-by-height' category='tubular' addToCartLabel='Добавить в запрос' goToCartLabel='Перейти к запросу' cartPillLabel='Запрос' cartHref='/request' />
 				<p class='mt-2.5 text-xs leading-5 text-neutral-500'>Добавьте вариант в запрос - менеджер проверит мощность, подключение, наличие или срок производства и рассчитает итоговую стоимость с доставкой.</p>
