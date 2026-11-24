@@ -10,10 +10,10 @@ const rows = ['nostalgia300', 'historic300', 'nostalgia500', 'historic500'].map(
 	const sections = catalogNumber(variant.sections)
 	return { model, variant, power: catalogNumber(variant.dt70) / sections, weight: catalogNumber(variant.weight) / sections }
 })
-const linkClass = 'text-red-700 underline decoration-red-300 underline-offset-2 transition hover:decoration-transparent'
+const linkClass = 'text-neutral-900 underline decoration-neutral-300 underline-offset-2 transition hover:decoration-neutral-900'
 ---
 
-<section id='retro-technical-comparison' class='bg-white py-10 md:py-16'>
+<section id='retro-technical-comparison' class='border-t border-neutral-200 bg-white py-10 md:py-16'>
 	<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 		<h2 class='text-2xl font-semibold leading-tight text-neutral-950 md:text-3xl'>Размеры и характеристики четырех ретро-моделей</h2>
 		<p class='mt-4 max-w-3xl text-sm font-normal leading-6 text-neutral-700 md:text-base'>

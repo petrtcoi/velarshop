@@ -278,7 +278,7 @@ export default function ColumnsFilters({ spacings = [] }: Props) {
 									</select>
 									<a
 										href={spacingHowToHref}
-										class='mt-2 inline-flex text-xs font-normal text-red-700 underline decoration-red-300 underline-offset-2 transition hover:decoration-transparent'
+										class='mt-2 inline-flex text-xs font-normal text-neutral-900 underline decoration-neutral-300 underline-offset-2 transition hover:decoration-neutral-900'
 									>
 										Как измерить межосевое
 									</a>

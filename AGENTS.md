@@ -77,10 +77,10 @@ Main principle: a Velar model page is not a decorative card-based landing page. 
 
 - Text links inside product descriptions, article prose, and MDX content must not use raw browser-default underline styles.
 - Links should be visible but calm:
-  - brand red color;
-  - thin underline;
+  - graphite color (#171717);
+  - thin light underline (decoration neutral-300) that darkens on hover;
   - small underline offset;
-  - hover state must visibly change the underline or remove it.
+  - brand red is reserved for the main CTA buttons and is not used for ordinary text links.
 - Do not apply text-link styles to buttons, navigation links, breadcrumbs, footer links, or card actions.
 - Always preserve internal links when rewriting product descriptions or article content.
 

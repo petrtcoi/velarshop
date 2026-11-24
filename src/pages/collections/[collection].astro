@@ -254,11 +254,11 @@ const seo = getCategorySeo({
 		</div>
 	</section>
 
-	<nav aria-label='Связанные подборки' class='border-b border-neutral-200 bg-neutral-50'>
+	<nav aria-label='Связанные подборки' class='border-t border-neutral-200 bg-white'>
 		<div class='mx-auto flex max-w-[1180px] flex-wrap items-center gap-x-5 gap-y-2 px-4 py-4 text-sm md:px-6 xl:px-8'>
 			<span class='font-medium text-neutral-950'>Другие варианты:</span>
-			{siblings.map(item => <a href={item.href} class='text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'>{item.shortTitle}</a>)}
-			<a href={collection.parentHref} class='text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'>{collection.parentLabel.toLocaleLowerCase('ru-RU')}</a>
+			{siblings.map(item => <a href={item.href} class='text-neutral-900 underline decoration-neutral-300 underline-offset-4 transition hover:decoration-neutral-900'>{item.shortTitle}</a>)}
+			<a href={collection.parentHref} class='text-neutral-900 underline decoration-neutral-300 underline-offset-4 transition hover:decoration-neutral-900'>{collection.parentLabel.toLocaleLowerCase('ru-RU')}</a>
 		</div>
 	</nav>
 
@@ -281,7 +281,7 @@ const seo = getCategorySeo({
 										<dl class='grid grid-cols-2 gap-x-5 gap-y-3 text-sm sm:col-start-2 md:grid-cols-3 lg:col-start-auto'>
 											<div><dt class='text-xs text-neutral-500'>Высота</dt><dd class='mt-1 font-medium text-neutral-950'>{model.heightLabel}</dd></div><div><dt class='text-xs text-neutral-500'>Глубина</dt><dd class='mt-1 font-medium text-neutral-950'>{model.depthLabel}</dd></div><div><dt class='text-xs text-neutral-500'>Длина</dt><dd class='mt-1 font-medium text-neutral-950'>{model.lengthLabel}</dd></div><div><dt class='text-xs text-neutral-500'>Мощность ΔT70</dt><dd class='mt-1 font-medium text-neutral-950'>{model.powerLabel}</dd></div><div><dt class='text-xs text-neutral-500'>{collection.kind === 'convector' ? 'Тип' : 'Подключение'}</dt><dd class='mt-1 font-medium text-neutral-950'>{model.connectionLabel}</dd></div>
 										</dl>
-										<div class='sm:col-start-2 lg:col-start-auto lg:text-right'><p class='text-base font-semibold text-neutral-950'>{model.priceLabel}</p><ContextFilteredLink href={`${model.href}#model-variants`} contextHref={model.filteredHref} class='mt-2 inline-flex text-sm font-medium text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'>Выбрать размер</ContextFilteredLink></div>
+										<div class='sm:col-start-2 lg:col-start-auto lg:text-right'><p class='text-base font-semibold text-neutral-950'>{model.priceLabel}</p><ContextFilteredLink href={`${model.href}#model-variants`} contextHref={model.filteredHref} class='mt-2 inline-flex text-sm font-medium text-neutral-900 underline decoration-neutral-300 underline-offset-4 transition hover:decoration-neutral-900'>Выбрать размер</ContextFilteredLink></div>
 									</div>
 								</article>
 							))}
@@ -300,7 +300,7 @@ const seo = getCategorySeo({
 		height={collection.height}
 	/>}
 
-	<section class='border-t border-neutral-200 bg-neutral-50 py-10 md:py-14 xl:py-16'>
+	<section class='border-t border-neutral-200 bg-white py-10 md:py-14 xl:py-16'>
 		<div class='mx-auto grid max-w-[1180px] gap-8 px-4 md:grid-cols-2 md:gap-12 md:px-6 xl:px-8'>
 			<div><h2 class='text-2xl font-semibold leading-tight text-neutral-950 md:text-3xl'>{collection.useCaseTitle}</h2><p class='mt-4 text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>{collection.useCaseText}</p><p class='mt-4 text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>{collection.selectionNote}</p></div>
 			<div><h2 class='text-2xl font-semibold leading-tight text-neutral-950 md:text-3xl'>Что прислать для проверки</h2><ul class='mt-5 space-y-3 text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>{checkItems.map(item => <li>{item}</li>)}</ul><a href='/request' class='mt-6 inline-flex h-11 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>Получить расчет</a></div>

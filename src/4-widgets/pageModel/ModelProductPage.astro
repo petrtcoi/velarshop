@@ -491,7 +491,7 @@ const seo = getModelSeo({
 		</div>
 	</section>
 
-	<section id='model-variants' class='bg-white py-10 md:py-16'>
+	<section id='model-variants' class='border-t border-neutral-200 bg-white py-10 md:py-16'>
 		<div class='mx-auto max-w-[1180px] px-3 md:px-5'>
 			<div class='max-w-3xl'>
 				<h2 class='text-2xl font-semibold leading-tight tracking-tight text-neutral-950'>Быстрый выбор размеров {productName}</h2>
@@ -501,13 +501,14 @@ const seo = getModelSeo({
 			</div>
 
 			{hasPopularCollectionLinks && (
-				<nav aria-label='Популярные подборки для модели' class='mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 border-y border-neutral-200 py-4 text-sm'>
-					<span class='font-medium text-neutral-950'>Популярное:</span>
+				<nav aria-label='Популярные подборки для модели' class='mt-5'>
+					<p class='mb-2 text-xs font-medium uppercase tracking-wide text-neutral-500'>Быстрые подборки</p>
+					<div class='flex flex-wrap gap-2'>
 					{interaxialCollectionLinks.map(collection => (
 						<ContextFilteredLink
 							href={`${modelUrl}#model-variants`}
 							contextHref={`${modelUrl}?mo=${collection.spacing}&connection=side#model-variants`}
-							class='text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'
+							class='inline-flex h-8 items-center whitespace-nowrap rounded-full border border-neutral-200 bg-white px-3.5 text-xs font-medium text-neutral-800 no-underline transition-colors hover:border-neutral-400 hover:bg-neutral-50'
 						>
 							М/о {collection.spacing} мм · боковое
 						</ContextFilteredLink>
@@ -516,7 +517,7 @@ const seo = getModelSeo({
 						<ContextFilteredLink
 							href={`${modelUrl}#model-variants`}
 							contextHref={`${modelUrl}?height=${collection.height}&collection=height-${collection.height}#model-variants`}
-							class='text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'
+							class='inline-flex h-8 items-center whitespace-nowrap rounded-full border border-neutral-200 bg-white px-3.5 text-xs font-medium text-neutral-800 no-underline transition-colors hover:border-neutral-400 hover:bg-neutral-50'
 						>
 							Высота {collection.height} мм
 						</ContextFilteredLink>
@@ -525,30 +526,31 @@ const seo = getModelSeo({
 						<ContextFilteredLink
 							href={`${modelUrl}#model-variants`}
 							contextHref={`${modelUrl}?height=${vertical1800Height}&collection=vertical-1800#model-variants`}
-							class='text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'
+							class='inline-flex h-8 items-center whitespace-nowrap rounded-full border border-neutral-200 bg-white px-3.5 text-xs font-medium text-neutral-800 no-underline transition-colors hover:border-neutral-400 hover:bg-neutral-50'
 						>
 							Высота около 1800 мм
 						</ContextFilteredLink>
 					)}
 					{tubularCollectionLinks.map(collection => (
-						<a href={collection.href} class='text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'>
+						<a href={collection.href} class='inline-flex h-8 items-center whitespace-nowrap rounded-full border border-neutral-200 bg-white px-3.5 text-xs font-medium text-neutral-800 no-underline transition-colors hover:border-neutral-400 hover:bg-neutral-50'>
 							Все {collection.shortTitle.toLocaleLowerCase('ru-RU')}
 						</a>
 					))}
 					{convectorCollectionLinks.map(collection => (
-						<a href={collection.href} class='text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'>
+						<a href={collection.href} class='inline-flex h-8 items-center whitespace-nowrap rounded-full border border-neutral-200 bg-white px-3.5 text-xs font-medium text-neutral-800 no-underline transition-colors hover:border-neutral-400 hover:bg-neutral-50'>
 							Все {collection.shortTitle.toLocaleLowerCase('ru-RU')}
 						</a>
 					))}
+					</div>
 				</nav>
 			)}
 
 			<RadiatorList model={model} />
 			{(model.type === 'columns' || model.type === 'design' || model.type === 'ironcast') && (
 				<p class='mt-5 max-w-3xl text-sm font-normal leading-6 text-neutral-700'>
-					Сравните другие модели в <a href={modelCategory.url} class='text-red-700 underline decoration-red-300 underline-offset-2 transition hover:decoration-transparent'>каталоге {categoryCatalogLabel}</a>.
-					{isInVertical1800Collection && <> Для высокой установки есть <a href='/collections/verticalnye-radiatory-1800-mm' class='text-red-700 underline decoration-red-300 underline-offset-2 transition hover:decoration-transparent'>подборка радиаторов около 1800 мм</a>.</>}
-					{matchingHeightCollections.map(collection => <> <a href={collection.href} class='text-red-700 underline decoration-red-300 underline-offset-2 transition hover:decoration-transparent'>Все радиаторы высотой {collection.height} мм</a>.</>)}
+					Сравните другие модели в <a href={modelCategory.url} class='text-neutral-900 underline decoration-neutral-300 underline-offset-2 transition hover:decoration-neutral-900'>каталоге {categoryCatalogLabel}</a>.
+					{isInVertical1800Collection && <> Для высокой установки есть <a href='/collections/verticalnye-radiatory-1800-mm' class='text-neutral-900 underline decoration-neutral-300 underline-offset-2 transition hover:decoration-neutral-900'>подборка радиаторов около 1800 мм</a>.</>}
+					{matchingHeightCollections.map(collection => <> <a href={collection.href} class='text-neutral-900 underline decoration-neutral-300 underline-offset-2 transition hover:decoration-neutral-900'>Все радиаторы высотой {collection.height} мм</a>.</>)}
 				</p>
 			)}
 
@@ -572,7 +574,7 @@ const seo = getModelSeo({
 					</div>
 				))}
 			</dl>
-			{model.type === 'convector' && <p class='mt-5 max-w-[920px] text-sm font-normal leading-6 text-neutral-700'>В <a href='/docs/passports/passport-kwh-kwhv.pdf' class='text-red-700 underline decoration-red-300 underline-offset-2 hover:decoration-transparent'>паспорте</a> описан стандартный комплект с решеткой. Здесь доступен заказ прибора без решетки или с выбранной решеткой; состав заказа укажем в расчете. Перед подготовкой ниши согласуйте актуальный монтажный чертеж выбранного исполнения.</p>}
+			{model.type === 'convector' && <p class='mt-5 max-w-[920px] text-sm font-normal leading-6 text-neutral-700'>В <a href='/docs/passports/passport-kwh-kwhv.pdf' class='text-neutral-900 underline decoration-neutral-300 underline-offset-2 hover:decoration-neutral-900'>паспорте</a> описан стандартный комплект с решеткой. Здесь доступен заказ прибора без решетки или с выбранной решеткой; состав заказа укажем в расчете. Перед подготовкой ниши согласуйте актуальный монтажный чертеж выбранного исполнения.</p>}
 		</div>
 	</section>
 
@@ -613,7 +615,7 @@ const seo = getModelSeo({
 	</section>
 
 	{isInVertical1800Collection && (
-		<section class='border-t border-neutral-200 bg-neutral-50 py-8 md:py-12'>
+		<section class='border-t border-neutral-200 bg-white py-8 md:py-12'>
 			<div class='mx-auto max-w-[1180px] px-3 md:px-5'>
 				<div class='flex flex-col gap-4 rounded-2xl border border-neutral-200 bg-white p-5 md:flex-row md:items-center md:justify-between'>
 					<div class='max-w-3xl'>
@@ -644,7 +646,7 @@ const seo = getModelSeo({
 					</div>
 					<nav aria-label='Подборки модели по межосевому расстоянию' class='flex flex-wrap gap-x-6 gap-y-3 border-y border-neutral-200 py-4'>
 						{interaxialCollectionLinks.map(collection => (
-							<a href={collection.href} class='text-sm font-medium text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'>
+							<a href={collection.href} class='text-sm font-medium text-neutral-900 underline decoration-neutral-300 underline-offset-4 transition hover:decoration-neutral-900'>
 								Межосевое {collection.spacing} мм
 							</a>
 						))}

@@ -84,7 +84,7 @@ export default function DeltaTPowerCalculator({ configurations }: Props) {
       {dt < 50 && <p role="note" class="mt-4 text-sm leading-6 text-neutral-700">При ΔT ниже 50°C результат оценочный: пересчет выполнен по коэффициенту n из паспорта выбранной модели. Для заказа подтвердите мощность у производителя или проектировщика.</p>}
 
       <div class="mt-4 text-xs text-neutral-600">
-        Расчет справочный, по формуле <a href={configuration.passportUrl} class="text-red-700 underline decoration-red-300 underline-offset-2">паспорта выбранной модели</a>. Он не рассчитывает теплопотери комнаты. Реальная теплоотдача зависит от температур системы, расхода
+        Расчет справочный, по формуле <a href={configuration.passportUrl} class="text-neutral-900 underline decoration-neutral-300 underline-offset-2 hover:decoration-neutral-900">паспорта выбранной модели</a>. Он не рассчитывает теплопотери комнаты. Реальная теплоотдача зависит от температур системы, расхода
         теплоносителя, схемы подключения и условий установки.
       </div>
     </section>

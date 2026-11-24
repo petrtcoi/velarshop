@@ -17,7 +17,7 @@ type Props = {
 	align?: 'start' | 'end'
 }
 
-const linkClass = 'text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'
+const linkClass = 'text-neutral-900 underline decoration-neutral-300 underline-offset-4 transition hover:decoration-neutral-900'
 
 function getAbsoluteUrl(path: string): string {
 	try {

@@ -37,6 +37,7 @@ export interface Props {
 	}
 	disableBreadcrumbJsonLd?: boolean
 	paddings?: boolean
+	mainClass?: string
 	hideShoppingCartWidgt?: boolean
 	breadcrumbs?: BreadcrumbItem[]
 }
@@ -73,6 +74,7 @@ const {
 	productMeta,
 	disableBreadcrumbJsonLd = false,
 	paddings = true,
+	mainClass = '',
 	canonicalUrl,
 	breadcrumbs = [],
 } = Astro.props as Props as Props
@@ -335,7 +337,7 @@ const isItemPage = Astro.url.pathname === '/item' || Astro.url.pathname.startsWi
 				</div>
 			)}
 
-				<main class:list={[{ 'max-w-6xl mx-auto p-3 md:p-5 lg:px-10 xl:px-0': paddings }, { 'p-0 m-0': !paddings }]}>
+				<main class:list={[{ 'max-w-6xl mx-auto p-3 md:p-5 lg:px-10 xl:px-0': paddings }, { 'p-0 m-0': !paddings }, mainClass]}>
 				<slot />
 
 

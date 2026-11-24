@@ -664,7 +664,7 @@ function RadiatorList(props: Props) {
 										Одной батареи не хватит, нужно две или модель с большим числом трубок.{' '}
 										{canUseMoreTubesModel && moreTubesModel && (
 											<>
-												<a href={moreTubesModel.href} class='text-red-700 underline decoration-red-300 underline-offset-2 transition hover:decoration-transparent'>
+												<a href={moreTubesModel.href} class='text-neutral-900 underline decoration-neutral-300 underline-offset-2 transition hover:decoration-neutral-900'>
 													Смотреть Velar {moreTubesModel.name}
 												</a>
 												.{' '}
@@ -857,7 +857,7 @@ function RadiatorList(props: Props) {
 					<div class='mt-5'>
 						<a
 							href={interAxisCollectionHref}
-							class='text-sm font-medium text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'
+							class='text-sm font-medium text-neutral-900 underline decoration-neutral-300 underline-offset-4 transition hover:decoration-neutral-900'
 						>
 							Смотреть все модели с м/о {selectedInterAxis} мм
 						</a>
@@ -868,7 +868,7 @@ function RadiatorList(props: Props) {
 					<div class='mt-5'>
 						<a
 							href={heightCollectionHref}
-							class='text-sm font-medium text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'
+							class='text-sm font-medium text-neutral-900 underline decoration-neutral-300 underline-offset-4 transition hover:decoration-neutral-900'
 						>
 							{heightCollectionLabel}
 						</a>

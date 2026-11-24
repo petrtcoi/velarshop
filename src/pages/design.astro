@@ -368,6 +368,7 @@ const seo = getCategorySeo({
 	breadcrumbs={breadcrumbs}
 	disableBreadcrumbJsonLd={true}
 	paddings={false}
+	mainClass='design-serif-trial'
 >
 	<JsonLd data={seo.jsonLd} />
 
@@ -414,7 +415,7 @@ const seo = getCategorySeo({
 
 
 
-	<section id='design-quick-type' class='bg-neutral-50 py-8 md:py-10'>
+	<section id='design-quick-type' class='bg-white py-8 md:py-10'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-3xl'>
 				<h2 class='text-xl font-semibold leading-tight text-neutral-950 md:text-2xl'>Быстро выбрать по типу</h2>
@@ -430,11 +431,11 @@ const seo = getCategorySeo({
 	</section>
 
 	<OrderScope />
-	<section id='design-price-examples' class='bg-white py-10 md:py-14'><div class='mx-auto max-w-[1180px] px-4 md:px-6 xl:px-8'><h2 class='text-2xl font-semibold md:text-3xl'>Размеры, мощность и цена конкретных вертикальных исполнений</h2><CatalogExamples specs={[{modelId:'p30v',height:1750,sections:10}, {modelId:'q40v',height:1750,sections:10}, {modelId:'r32v',height:1750,sections:10}]} /></div></section>
+	<section id='design-price-examples' class='border-t border-neutral-200 bg-white py-10 md:py-14'><div class='mx-auto max-w-[1180px] px-4 md:px-6 xl:px-8'><h2 class='text-2xl font-semibold md:text-3xl'>Размеры, мощность и цена конкретных вертикальных исполнений</h2><CatalogExamples specs={[{modelId:'p30v',height:1750,sections:10}, {modelId:'q40v',height:1750,sections:10}, {modelId:'r32v',height:1750,sections:10}]} /></div></section>
 
 
 
-	<section id='design-series' class='bg-white py-10 md:py-14 xl:py-16'>
+	<section id='design-series' class='border-t border-neutral-200 bg-white py-10 md:py-14 xl:py-16'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-3xl'>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Популярные серии дизайн-радиаторов</h2>
@@ -448,7 +449,7 @@ const seo = getCategorySeo({
 		</div>
 	</section>
 
-	<section id='design-task-selector' class='bg-neutral-50 py-10 md:py-14 xl:py-16'>
+	<section id='design-task-selector' class='border-t border-neutral-200 bg-white py-10 md:py-14 xl:py-16'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-3xl'>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Быстрый выбор по задаче</h2>
@@ -479,7 +480,7 @@ const seo = getCategorySeo({
 		</div>
 	</section>
 
-	<section id='design-series-choice' class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
+	<section id='design-series-choice' class='border-t border-neutral-200 bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-4xl'>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Какую серию Velar выбрать</h2>
@@ -487,7 +488,7 @@ const seo = getCategorySeo({
 					Главное различие между сериями - форма профиля и визуальная роль радиатора в интерьере. Чем крупнее профиль, тем заметнее радиатор. Если он должен быть спокойным элементом, выбирайте P30, P60, R32 или S. Если нужен выраженный акцент, смотрите Q60, Q80, R89, RT2 или QT2.
 				</p>
 				<p class='mt-3 text-sm leading-6 text-neutral-700 md:text-base'>
-					Для конкретной тепловой задачи посмотрите <a href='/info/velar-p30v-q40v-r32v-sravnenie' class='text-red-700 underline decoration-red-300 underline-offset-4 hover:decoration-red-700'>сравнение P30V, Q40V и R32V по размерам и цене для одной комнаты</a>: одинаковая высота 1750 мм и разное число секций.
+					Для конкретной тепловой задачи посмотрите <a href='/info/velar-p30v-q40v-r32v-sravnenie' class='text-neutral-900 underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-900'>сравнение P30V, Q40V и R32V по размерам и цене для одной комнаты</a>: одинаковая высота 1750 мм и разное число секций.
 				</p>
 			</div>
 
@@ -547,7 +548,7 @@ const seo = getCategorySeo({
 		{ src: '/images/models/p30h/main.jpg', name: 'Velar P30H', href: '/model/p30h', caption: 'Горизонтальная версия серии P30 для размещения под окном.' },
 	]} />
 
-	<section id='design-who-fits' class='bg-white py-12 md:py-16 xl:py-20'>
+	<section id='design-who-fits' class='border-t border-neutral-200 bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-4xl'>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Кому подходят дизайн-радиаторы Velar</h2>
@@ -584,7 +585,7 @@ const seo = getCategorySeo({
 		</div>
 	</section>
 
-	<section id='design-how-to-choose' class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
+	<section id='design-how-to-choose' class='border-t border-neutral-200 bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-4xl'>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Как выбрать дизайн-радиатор</h2>
@@ -603,7 +604,7 @@ const seo = getCategorySeo({
 		</div>
 	</section>
 
-	<section id='design-order' class='bg-white py-12 md:py-16 xl:py-20'>
+	<section id='design-order' class='border-t border-neutral-200 bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-4xl'>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Как заказать дизайн-радиатор Velar</h2>
@@ -627,7 +628,7 @@ const seo = getCategorySeo({
 		</div>
 	</section>
 
-	<section id='design-benefits' class='bg-neutral-50 py-12 md:py-16 xl:py-20'>
+	<section id='design-benefits' class='border-t border-neutral-200 bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-4xl'>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Преимущества Velar</h2>
@@ -646,7 +647,7 @@ const seo = getCategorySeo({
 		</div>
 	</section>
 
-	<section id='design-interiors' class='bg-white py-12 md:py-16 xl:py-20'>
+	<section id='design-interiors' class='border-t border-neutral-200 bg-white py-12 md:py-16 xl:py-20'>
 		<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 			<div class='max-w-4xl'>
 				<h2 class='text-[28px] font-semibold leading-[1.12] tracking-tight text-neutral-950 md:text-[34px] xl:text-[38px]'>Дизайн-радиаторы в интерьере</h2>

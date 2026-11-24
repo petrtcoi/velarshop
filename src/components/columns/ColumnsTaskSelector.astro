@@ -86,7 +86,7 @@ const cards: TaskCard[] = [
 ]
 ---
 
-<section id={variant === 'compact' ? 'columns-task-selector-compact' : 'columns-task-selector'} class={variant === 'compact' ? 'bg-white py-8 md:py-10' : 'bg-white py-10 md:py-12'}>
+<section id={variant === 'compact' ? 'columns-task-selector-compact' : 'columns-task-selector'} class={variant === 'compact' ? 'border-t border-neutral-200 bg-white py-8 md:py-10' : 'border-t border-neutral-200 bg-white py-10 md:py-12'}>
 	<div class='mx-auto max-w-[1240px] px-4 md:px-6 xl:px-8'>
 		{variant === 'compact' ? (
 			<>
@@ -170,10 +170,10 @@ const cards: TaskCard[] = [
 
 		<nav aria-label='Подбор по межосевому расстоянию' class='mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 border-y border-neutral-200 py-4 text-sm'>
 			<span class='font-medium text-neutral-950'>По межосевому расстоянию:</span>
-			<a href='/collections/radiatory-mezhosevoe-rasstoyanie-300-mm' class='text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'>300 мм</a>
-			<a href='/collections/radiatory-mezhosevoe-rasstoyanie-450-mm' class='text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'>450 мм</a>
-			<a href='/collections/radiatory-mezhosevoe-rasstoyanie-500-mm' class='text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'>500 мм</a>
-			<a href='/collections/radiatory-po-mezhosevomu-rasstoyaniyu' class='text-red-700 underline decoration-red-300 underline-offset-4 transition hover:decoration-transparent'>как выбрать</a>
+			<a href='/collections/radiatory-mezhosevoe-rasstoyanie-300-mm' class='text-neutral-900 underline decoration-neutral-300 underline-offset-4 transition hover:decoration-neutral-900'>300 мм</a>
+			<a href='/collections/radiatory-mezhosevoe-rasstoyanie-450-mm' class='text-neutral-900 underline decoration-neutral-300 underline-offset-4 transition hover:decoration-neutral-900'>450 мм</a>
+			<a href='/collections/radiatory-mezhosevoe-rasstoyanie-500-mm' class='text-neutral-900 underline decoration-neutral-300 underline-offset-4 transition hover:decoration-neutral-900'>500 мм</a>
+			<a href='/collections/radiatory-po-mezhosevomu-rasstoyaniyu' class='text-neutral-900 underline decoration-neutral-300 underline-offset-4 transition hover:decoration-neutral-900'>как выбрать</a>
 		</nav>
 	</div>
 </section>

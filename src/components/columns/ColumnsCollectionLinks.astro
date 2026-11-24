@@ -22,7 +22,7 @@ const groups = [
 		</p>
 		{groups.map(group => <nav aria-label={group.label} class='mt-4 flex flex-wrap items-center gap-x-5 gap-y-3 border-t border-neutral-200 pt-4 text-sm'>
 			<span class='font-medium text-neutral-950'>{group.label}:</span>
-			{group.links.map(([href, label]) => <a href={href} class='text-red-700 underline decoration-red-300 underline-offset-2 transition hover:decoration-transparent'>{label}</a>)}
+			{group.links.map(([href, label]) => <a href={href} class='text-neutral-900 underline decoration-neutral-300 underline-offset-2 transition hover:decoration-neutral-900'>{label}</a>)}
 		</nav>)}
 	</div>
 </div>
