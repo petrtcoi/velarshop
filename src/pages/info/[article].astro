@@ -2,6 +2,8 @@
 import { getCollection } from "astro:content";
 import Layout from "@shared/layouts/Layout.astro";
 import type { CollectionEntry } from "astro:content";
+import SaveArticle from "@features/saveArticle";
+import { contacts } from "@shared/constants/contacts";
 import ArticleCta from "../../components/articles/ArticleCta.astro";
 import ArticleModelCards from "../../components/articles/ArticleModelCards.astro";
 import { getArticleCommerce, getArticleModelCards, getArticleRequestHref, type ArticleTopic } from "../../lib/articleCommerce";
@@ -428,6 +430,9 @@ const crumbs = [
       <div class='article-shell article-shell--reading'>
         <h1 class='article-hero__title'>{title}</h1>
         <p class='article-hero__lead'>{short_description}</p>
+        <div class='article-hero__save'>
+          <SaveArticle client:idle slug={article.slug} title={title} path={`/info/${article.slug}`} compact />
+        </div>
       </div>
     </header>
 
@@ -447,6 +452,17 @@ const crumbs = [
           linkHref={endingCta.linkHref}
           trackPlace='footer'
         />
+
+        <section class='not-prose article-save' aria-label='Сохранить статью и подписаться'>
+          <p class='article-save__title'>Сохраните статью или подпишитесь</p>
+          <SaveArticle client:visible slug={article.slug} title={title} path={`/info/${article.slug}`} />
+          <p class='article-save__subscribe'>
+            Новые разборы по отоплению и интерьеру выходят в наших каналах:{" "}
+            <a href='https://dzen.ru/velarshop' target='_blank' rel='noopener' data-article-goal='article_subscribe_click' data-article-slug={article.slug} data-article-network='dzen'>Дзен</a>
+            {" и "}
+            <a href={`https://vk.com/${contacts.vk}`} target='_blank' rel='noopener' data-article-goal='article_subscribe_click' data-article-slug={article.slug} data-article-network='vk'>ВКонтакте</a>
+          </p>
+        </section>
 
         <section class='not-prose article-related'>
           {modelCards.length > 0 && <ArticleModelCards cards={modelCards} />}
@@ -510,7 +526,9 @@ const crumbs = [
     const goal = link.dataset.articleGoal
     if (!goal) return
 
-    const params = { slug: link.dataset.articleSlug ?? '', place: link.dataset.articlePlace ?? '' }
+    const params: Record<string, string> = { slug: link.dataset.articleSlug ?? '' }
+    if (link.dataset.articleNetwork) params.network = link.dataset.articleNetwork
+    else params.place = link.dataset.articlePlace ?? ''
     if (typeof window.ym === 'function') reachMetrikaGoal(goal, params)
     else reachMetrikaGoal(goal)
   })
