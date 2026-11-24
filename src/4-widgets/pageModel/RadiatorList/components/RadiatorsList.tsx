@@ -13,7 +13,7 @@ import SelectConvectorGrill from '@features/options/SelectConvectorGrill'
 import SelectDesignColor, { designColor, designColorId } from '@features/options/SelectDesignColor'
 import SelectConnection, { radiatorConn, radiatorConnId } from '@features/options/SelectConnection'
 import SaveSelection, { buildSelectionPath, buildSelectionText, formatSectionsLabel, lowerFirst } from '@features/saveSelection'
-import SelectIroncastColor from '@features/options/SelectIroncastColor'
+import SelectIroncastColor, { ironcastColorId } from '@features/options/SelectIroncastColor'
 import { addToCart, storeShoppingCart } from '@features/order/ShoppingCart'
 import { getRadiatorTotalCost } from '@features/radiator/RadiatorTotalCost'
 import { radiatorTotalTitle } from '@features/radiator/RadiatorTotalTitle'
@@ -23,6 +23,7 @@ import { filterRadiators } from '../utils/filterRadiators'
 
 import { columnColors } from '@entities/ColumnsColor'
 import { designColors } from '@entities/DesignColor'
+import { ironcastColors } from '@entities/IroncastColor'
 import { columnConnections } from '@entities/RadiatorConnection'
 
 import type { ModelJson } from '@entities/Model'
@@ -256,6 +257,8 @@ function RadiatorList(props: Props) {
 		if (requestedColorId) {
 			if (model.type === 'design' && designColors.some(item => item.id === requestedColorId)) designColorId.set(requestedColorId)
 			if (model.type === 'columns' && columnColors.some(item => item.id === requestedColorId)) columnColorId.set(requestedColorId)
+			// Подборка «Черные радиаторы» ведет на чугунные модели с ?color=emal_black.
+			if (model.type === 'ironcast' && ironcastColors.some(item => item.id === requestedColorId)) ironcastColorId.set(requestedColorId)
 		}
 		if (radiatorSlug && radiators.some(item => item.slug === radiatorSlug)) {
 			setRequestedRadiatorSlug(radiatorSlug)

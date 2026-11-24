@@ -19,7 +19,7 @@ export type FeaturedCollection = {
 }
 
 export type CollectionGroup = {
-	id: 'height' | 'interaxial' | 'tubular' | 'convector'
+	id: 'height' | 'interaxial' | 'tubular' | 'color' | 'convector'
 	title: string
 	description: string
 	href?: string
@@ -83,6 +83,7 @@ const heightItems = [...exactHeightItems, vertical1800Collection].sort((a, b) =>
 })
 const tubularItems = catalogCollections.filter(item => item.siblingGroup === 'tubular').map(toFeatured)
 const convectorItems = catalogCollections.filter(item => item.siblingGroup === 'convector').map(toFeatured)
+const colorItems = catalogCollections.filter(item => item.siblingGroup === 'color').map(toFeatured)
 
 export const collectionGroups: CollectionGroup[] = [
 	{
@@ -106,6 +107,12 @@ export const collectionGroups: CollectionGroup[] = [
 		href: '/columns',
 		linkLabel: 'Все трубчатые радиаторы',
 		items: tubularItems,
+	},
+	{
+		id: 'color',
+		title: 'По цвету',
+		description: 'Модели в популярных цветах RAL. Цена «от» в подборке посчитана для этого цвета, а ссылка на модель открывает ее уже в нем.',
+		items: colorItems,
 	},
 	{
 		id: 'convector',

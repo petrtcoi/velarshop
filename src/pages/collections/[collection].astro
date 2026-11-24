@@ -13,8 +13,10 @@ import ConfigurationExamples from '../../components/product/ConfigurationExample
 import { catalogConnections } from '../../lib/catalogFacts'
 import {
 	catalogCollections,
+	collectionColorId,
 	collectionMatchesModel,
 	collectionMatchesRadiator,
+	collectionRadiatorPrice,
 	type CatalogCollectionConfig,
 } from '../../lib/catalogCollections'
 import { getCategorySeo } from '../../lib/seo/categorySeo'
@@ -83,10 +85,19 @@ function resolveTypeLabel(type: ModelJson['type']): string {
 	return 'Другие модели'
 }
 
-function buildFilteredHref(href: string): string {
+function buildFilteredHref(href: string, model: ModelJson): string {
 	if (collection.kind === 'interaxial') return `${href}?mo=${collection.spacing}&connection=side#model-variants`
 	if (collection.kind === 'height') return `${href}?height=${collection.height}&collection=height-${collection.height}#model-variants`
+	// Подборка по цвету: RadiatorsList читает ?color=<id> и включает этот цвет в выборе.
+	const colorId = collection.kind === 'color' ? collectionColorId(collection, model) : undefined
+	if (colorId) return `${href}?color=${colorId}#model-variants`
 	return `${href}#model-variants`
+}
+
+/** Цены исполнений по возрастанию; у подборки по цвету уже с учетом цвета. */
+function pricesFor(model: ModelJson, radiators: RadiatorJson[]): number[] {
+	if (collection.kind !== 'color') return valuesFor(radiators, 'price')
+	return [...new Set(radiators.map(radiator => collectionRadiatorPrice(collection, model, radiator)).filter(Boolean))].sort((a, b) => a - b)
 }
 
 function buildModelRow(model: ModelJson, radiators: RadiatorJson[]): ModelRow {
@@ -94,15 +105,15 @@ function buildModelRow(model: ModelJson, radiators: RadiatorJson[]): ModelRow {
 	const depths = valuesFor(radiators, 'width')
 	const lengths = valuesFor(radiators, 'length')
 	const powers = valuesFor(radiators, 'dt70')
-	const prices = valuesFor(radiators, 'price')
+	const prices = pricesFor(model, radiators)
 	const href = getModelSlug(model)
 
 	return {
 		id: model.id,
 		name: `${model.prefix} Velar ${normalizeModelName(model.name)}`,
 		href,
-		filteredHref: buildFilteredHref(href),
-		image: getModelMainImagePath(model.slug, model.type === 'columns'),
+		filteredHref: buildFilteredHref(href, model),
+		image: collection.rowImageByModel?.[model.id] ?? collection.rowImageByType?.[model.type] ?? getModelMainImagePath(model.slug, model.type === 'columns'),
 		type: model.type,
 		typeLabel: resolveTypeLabel(model.type),
 		description: model.short_comment,
@@ -141,7 +152,9 @@ const modelGroups = groupOrder
 	.filter(group => group.items.length)
 
 const heights = valuesFor(matchingRadiators, 'height')
-const prices = valuesFor(matchingRadiators, 'price')
+const prices = collection.kind === 'color'
+	? [...new Set(modelRows.map(model => model.priceFrom).filter(Boolean))].sort((a, b) => a - b)
+	: valuesFor(matchingRadiators, 'price')
 const siblings = catalogCollections.filter(
 	item => item.siblingGroup === collection.siblingGroup && item.slug !== collection.slug,
 )
@@ -156,7 +169,16 @@ const breadcrumbs = breadcrumbCandidates.filter(
 	(item, index, items) => items.findIndex(candidate => candidate.url === item.url) === index,
 )
 
+// «{priceFrom}» в тексте подборки → минимальная цена исполнений этой подборки (как в блоке «Цена» на странице)
+const withPriceFrom = (text: string) => prices.length
+	? text.replace('{priceFrom}', `${Math.round(prices[0]).toLocaleString('ru-RU').replace(/\s/g, '\u00a0')}\u00a0₽`)
+	: text.replace(/\s*—\s*цены от \{priceFrom\}/, ' — каталог и цены').replace('{priceFrom}', '')
+
 function buildFaqItems() {
+	if (collection.faq?.length) {
+		return collection.faq.map(item => ({ question: item.question, answer: withPriceFrom(item.answer) }))
+	}
+
 	if (collection.kind === 'interaxial') {
 		return [
 			{ question: `Какая полная высота у радиатора с межосевым расстоянием ${collection.spacing} мм?`, answer: `В доступных моделях Velar полная высота составляет ${formatRange(heights)}. Точное значение зависит от серии: межосевое расстояние ${collection.spacing} мм не равно высоте корпуса.` },
@@ -206,12 +228,9 @@ const checkItems = collection.kind === 'interaxial'
 			? [`Проем для корпуса ${collection.height} мм с монтажными зазорами.`, 'Фото стены или оконной зоны.', 'Доступную ширину и глубину прибора.', 'Положение и тип подключения.', 'Площадь помещения, высоту потолка и город.']
 			: collection.kind === 'tube-count'
 				? [`Допустимую глубину для ${collection.tubeCount}-трубчатой секции.`, 'Полную доступную высоту и ширину.', 'Фото стены или оконной зоны.', 'Положение и тип подключения.', 'Площадь помещения, высоту потолка и город.']
-				: ['Полную доступную высоту и ширину.', 'Фото стены или оконной зоны.', 'Желаемую глубину прибора.', 'Положение и тип подключения.', 'Площадь помещения, высоту потолка и город.']
-
-// «{priceFrom}» в тексте подборки → минимальная цена исполнений этой подборки (как в блоке «Цена» на странице)
-const withPriceFrom = (text: string) => prices.length
-	? text.replace('{priceFrom}', `${Math.round(prices[0]).toLocaleString('ru-RU').replace(/\s/g, '\u00a0')}\u00a0₽`)
-	: text.replace(/\s*—\s*цены от \{priceFrom\}/, ' — каталог и цены').replace('{priceFrom}', '')
+				: collection.kind === 'color'
+					? ['Модель или тип радиатора, который нравится.', 'Цвет и фактуру: матовый или глянцевый.', 'Фото стены или оконной зоны.', 'Доступную высоту, ширину и глубину.', 'Площадь помещения, высоту потолка и город.']
+					: ['Полную доступную высоту и ширину.', 'Фото стены или оконной зоны.', 'Желаемую глубину прибора.', 'Положение и тип подключения.', 'Площадь помещения, высоту потолка и город.']
 
 const seo = getCategorySeo({
 	category: {
@@ -237,20 +256,37 @@ const seo = getCategorySeo({
 	<JsonLd data={seo.jsonLd} />
 
 	<section class='border-b border-neutral-200 bg-white py-8 md:py-12 xl:py-14'>
-		<div class='mx-auto max-w-[1180px] px-4 md:px-6 xl:px-8'>
-			<p class='text-xs font-medium uppercase tracking-[0.12em] text-red-700'>{collection.eyebrow}</p>
-			<h1 class='mt-3 max-w-4xl text-3xl font-semibold leading-tight tracking-tight text-neutral-950 md:text-4xl'>{collection.title}</h1>
-			<p class='mt-5 max-w-3xl text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>{collection.intro}</p>
-			<dl class='mt-7 flex flex-wrap gap-x-8 gap-y-4 border-y border-neutral-200 py-4'>
-				<div><dt class='text-xs font-normal text-neutral-500'>Моделей</dt><dd class='mt-1 text-lg font-semibold text-neutral-950'>{modelRows.length}</dd></div>
-				<div><dt class='text-xs font-normal text-neutral-500'>Конфигураций</dt><dd class='mt-1 text-lg font-semibold text-neutral-950'>{matchingRadiators.length}</dd></div>
-				<div><dt class='text-xs font-normal text-neutral-500'>{collection.kind === 'convector' ? 'Высота канала' : 'Полная высота'}</dt><dd class='mt-1 text-lg font-semibold text-neutral-950'>{formatRange(heights)}</dd></div>
-				<div><dt class='text-xs font-normal text-neutral-500'>Цена</dt><dd class='mt-1 text-lg font-semibold text-neutral-950'>{prices.length ? `от ${Math.round(prices[0]).toLocaleString('ru-RU')} ₽` : 'по запросу'}</dd></div>
-			</dl>
-			<div class='mt-6 flex flex-col gap-3 min-[420px]:flex-row min-[420px]:flex-wrap'>
-				<a href='#models' class='inline-flex h-11 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>Смотреть модели</a>
-				<a href='/request' class='inline-flex h-11 items-center justify-center rounded-lg border border-neutral-300 bg-white px-5 text-sm font-medium text-neutral-950 transition hover:border-neutral-950'>Получить расчет</a>
+		<div class:list={['mx-auto max-w-[1180px] px-4 md:px-6 xl:px-8', collection.heroImage && 'lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,0.8fr)] lg:items-center lg:gap-12']}>
+			<div class='min-w-0'>
+				<p class='text-xs font-medium uppercase tracking-[0.12em] text-red-700'>{collection.eyebrow}</p>
+				<h1 class='mt-3 max-w-4xl text-3xl font-semibold leading-tight tracking-tight text-neutral-950 md:text-4xl'>{collection.title}</h1>
+				<p class='mt-5 max-w-3xl text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>{collection.intro}</p>
+				<dl class='mt-7 flex flex-wrap gap-x-8 gap-y-4 border-y border-neutral-200 py-4'>
+					<div><dt class='text-xs font-normal text-neutral-500'>Моделей</dt><dd class='mt-1 text-lg font-semibold text-neutral-950'>{modelRows.length}</dd></div>
+					<div><dt class='text-xs font-normal text-neutral-500'>Конфигураций</dt><dd class='mt-1 text-lg font-semibold text-neutral-950'>{matchingRadiators.length}</dd></div>
+					<div><dt class='text-xs font-normal text-neutral-500'>{collection.kind === 'convector' ? 'Высота канала' : 'Полная высота'}</dt><dd class='mt-1 text-lg font-semibold text-neutral-950'>{formatRange(heights)}</dd></div>
+					<div><dt class='text-xs font-normal text-neutral-500'>Цена</dt><dd class='mt-1 text-lg font-semibold text-neutral-950'>{prices.length ? `от ${Math.round(prices[0]).toLocaleString('ru-RU')} ₽` : 'по запросу'}</dd></div>
+				</dl>
+				<div class='mt-6 flex flex-col gap-3 min-[420px]:flex-row min-[420px]:flex-wrap'>
+					<a href='#models' class='inline-flex h-11 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>Смотреть модели</a>
+					<a href='/request' class='inline-flex h-11 items-center justify-center rounded-lg border border-neutral-300 bg-white px-5 text-sm font-medium text-neutral-950 transition hover:border-neutral-950'>Получить расчет</a>
+				</div>
 			</div>
+			{collection.heroImage && (
+				<figure class='mt-8 lg:mt-0'>
+					<img
+						src={collection.heroImage.src}
+						srcset={collection.heroImage.srcset}
+						sizes={collection.heroImage.srcset ? '(min-width: 1024px) 460px, 100vw' : undefined}
+						width={collection.heroImage.width}
+						height={collection.heroImage.height}
+						alt={collection.heroImage.alt}
+						loading='eager'
+						decoding='async'
+						class='block h-auto max-h-[260px] w-full object-cover md:max-h-[360px] lg:max-h-none'
+					/>
+				</figure>
+			)}
 		</div>
 	</section>
 
@@ -276,8 +312,12 @@ const seo = getCategorySeo({
 							{group.items.map((model, index) => (
 								<article class:list={['py-5 md:py-6', index > 0 && 'border-t border-neutral-200']}>
 									<div class='grid gap-5 sm:grid-cols-[104px_minmax(0,1fr)] lg:grid-cols-[104px_minmax(210px,1fr)_minmax(360px,1.35fr)_auto] lg:items-center lg:gap-6'>
-										<a href={model.href} class='flex h-24 w-24 items-center justify-center bg-neutral-50 p-2'><Picture src={model.image} alt={model.name} title={model.name} loading='lazy' width={96} height={96} sizes='96px' class='h-full w-full object-contain' /></a>
-										<div class='min-w-0'><a href={model.href} class='text-base font-semibold leading-tight text-neutral-950 transition hover:text-red-700 md:text-lg'>{model.name}</a><p class='mt-2 text-sm font-normal leading-5 text-neutral-600'>{model.description}</p><p class='mt-2 text-xs text-neutral-500'>{model.variantCount} конфигураций</p></div>
+										{collection.kind === 'color'
+											? <ContextFilteredLink href={model.href} contextHref={model.filteredHref} class='flex h-24 w-24 items-center justify-center bg-neutral-50 p-2'><Picture src={model.image} alt={model.name} title={model.name} loading='lazy' width={96} height={96} sizes='96px' class='h-full w-full object-contain' /></ContextFilteredLink>
+											: <a href={model.href} class='flex h-24 w-24 items-center justify-center bg-neutral-50 p-2'><Picture src={model.image} alt={model.name} title={model.name} loading='lazy' width={96} height={96} sizes='96px' class='h-full w-full object-contain' /></a>}
+										<div class='min-w-0'>{collection.kind === 'color'
+											? <ContextFilteredLink href={model.href} contextHref={model.filteredHref} class='text-base font-semibold leading-tight text-neutral-950 transition hover:text-red-700 md:text-lg'>{model.name}</ContextFilteredLink>
+											: <a href={model.href} class='text-base font-semibold leading-tight text-neutral-950 transition hover:text-red-700 md:text-lg'>{model.name}</a>}<p class='mt-2 text-sm font-normal leading-5 text-neutral-600'>{model.description}</p><p class='mt-2 text-xs text-neutral-500'>{model.variantCount} конфигураций</p></div>
 										<dl class='grid grid-cols-2 gap-x-5 gap-y-3 text-sm sm:col-start-2 md:grid-cols-3 lg:col-start-auto'>
 											<div><dt class='text-xs text-neutral-500'>Высота</dt><dd class='mt-1 font-medium text-neutral-950'>{model.heightLabel}</dd></div><div><dt class='text-xs text-neutral-500'>Глубина</dt><dd class='mt-1 font-medium text-neutral-950'>{model.depthLabel}</dd></div><div><dt class='text-xs text-neutral-500'>Длина</dt><dd class='mt-1 font-medium text-neutral-950'>{model.lengthLabel}</dd></div><div><dt class='text-xs text-neutral-500'>Мощность ΔT70</dt><dd class='mt-1 font-medium text-neutral-950'>{model.powerLabel}</dd></div><div><dt class='text-xs text-neutral-500'>{collection.kind === 'convector' ? 'Тип' : 'Подключение'}</dt><dd class='mt-1 font-medium text-neutral-950'>{model.connectionLabel}</dd></div>
 										</dl>
@@ -300,9 +340,32 @@ const seo = getCategorySeo({
 		height={collection.height}
 	/>}
 
+	{collection.guide && collection.guide.length > 0 && (
+		<section class='border-t border-neutral-200 bg-white py-10 md:py-14 xl:py-16'>
+			<div class='mx-auto max-w-[1180px] px-4 md:px-6 xl:px-8'>
+				<h2 class='max-w-3xl text-2xl font-semibold leading-tight tracking-tight text-neutral-950 md:text-3xl'>{collection.guideTitle}</h2>
+				<div class='mt-6 border-y border-neutral-200 md:mt-8'>
+					{collection.guide.map((item, index) => (
+						<div class:list={['grid gap-2 py-5 md:grid-cols-[minmax(0,0.55fr)_minmax(0,1.45fr)] md:gap-10 md:py-6', index > 0 && 'border-t border-neutral-200']}>
+							<h3 class='text-base font-semibold leading-6 text-neutral-950'>{item.title}</h3>
+							<div>
+								<p class='max-w-3xl text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>{item.text}</p>
+								{item.links && item.links.length > 0 && (
+									<p class='mt-2 flex flex-wrap gap-x-5 gap-y-1 text-sm leading-6'>
+										{item.links.map(link => <a href={link.href} class='text-neutral-900 underline decoration-neutral-300 underline-offset-4 transition hover:decoration-neutral-900'>{link.label}</a>)}
+									</p>
+								)}
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+	)}
+
 	<section class='border-t border-neutral-200 bg-white py-10 md:py-14 xl:py-16'>
 		<div class='mx-auto grid max-w-[1180px] gap-8 px-4 md:grid-cols-2 md:gap-12 md:px-6 xl:px-8'>
-			<div><h2 class='text-2xl font-semibold leading-tight text-neutral-950 md:text-3xl'>{collection.useCaseTitle}</h2><p class='mt-4 text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>{collection.useCaseText}</p><p class='mt-4 text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>{collection.selectionNote}</p></div>
+			<div><h2 class='text-2xl font-semibold leading-tight text-neutral-950 md:text-3xl'>{collection.useCaseTitle}</h2><p class='mt-4 text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>{collection.useCaseText}</p><p class='mt-4 text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>{collection.selectionNote}</p>{collection.useCaseLink && <a href={collection.useCaseLink.href} class='mt-4 inline-flex text-sm font-medium text-neutral-900 underline decoration-neutral-300 underline-offset-4 transition hover:decoration-neutral-900'>{collection.useCaseLink.label}</a>}</div>
 			<div><h2 class='text-2xl font-semibold leading-tight text-neutral-950 md:text-3xl'>Что прислать для проверки</h2><ul class='mt-5 space-y-3 text-sm font-normal leading-6 text-neutral-700 md:text-base md:leading-7'>{checkItems.map(item => <li>{item}</li>)}</ul><a href='/request' class='mt-6 inline-flex h-11 items-center justify-center rounded-lg bg-red-700 px-5 text-sm font-semibold text-white transition hover:bg-red-800'>Получить расчет</a></div>
 		</div>
 	</section>

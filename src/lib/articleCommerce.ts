@@ -56,6 +56,7 @@ const hubInteraxial500: ArticleLink = {
 	label: 'Радиаторы с межосевым расстоянием 500 мм',
 }
 const hubFourTube: ArticleLink = { href: '/collections/4-trubchatye-radiatory', label: 'Четырехтрубчатые радиаторы' }
+const hubBlack: ArticleLink = { href: '/collections/chernye-radiatory-otopleniya', label: 'Черные радиаторы отопления: модели и цены' }
 
 export const articleCommerceBySlug: Record<string, ArticleCommerceConfig> = {
 	'kreplenie-radiatora-k-stene': {
@@ -219,6 +220,22 @@ export const articleCommerceBySlug: Record<string, ArticleCommerceConfig> = {
 		},
 		models: ['3057', '4057', '2180'],
 		hubs: [hubColumns, hubFourTube, hubDesignVertical],
+	},
+	// 24.11.2026: статья собирает запросы «черные радиаторы отопления» (GSC), ведем ее на коммерческую подборку.
+	'chernye-dizainerskie-radiatory-otopleniya': {
+		topic: 'design',
+		offer: {
+			title: 'Подберем черный радиатор под ваш интерьер',
+			text: 'Пришлите фото стены или дизайн-проект и размеры места установки. Подберем модель Velar, размер и мощность в черном RAL 9005, матовом или глянцевом, и рассчитаем цену. Черные дизайн-радиаторы P30 V, Q40 V и R42 V стоят от {priceFrom:p30v,q40v,r42v}.',
+		},
+		endingCta: {
+			title: 'Выбираете черный радиатор?',
+			description:
+				'Пришлите размеры стены, площадь комнаты и фото интерьера. Подберем модель и фактуру RAL 9005, рассчитаем мощность, количество секций и цену.',
+			hub: hubBlack,
+		},
+		models: ['p30v', 'q40v', 'r42v'],
+		hubs: [hubBlack, hubDesign, hubDesignVertical, hubColumns],
 	},
 }
 

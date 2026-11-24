@@ -1,11 +1,34 @@
+import { columnColors } from '@entities/ColumnsColor'
+import { designColors } from '@entities/DesignColor'
+import { ironcastColors, ironcastColorTypeTitles } from '@entities/IroncastColor'
 import { modelsJsonData, type ModelJson } from '@entities/Model'
 import type { RadiatorJson } from '@entities/Radiator'
+import { catalogNumber } from './catalogFacts'
 import {
 	interaxialCollections,
 	type InteraxialCollectionConfig,
 } from './interaxialCollections'
 
-export type CatalogCollectionKind = 'interaxial' | 'height' | 'tube-count' | 'low-tubular' | 'convector'
+export type CatalogCollectionKind = 'interaxial' | 'height' | 'tube-count' | 'low-tubular' | 'convector' | 'color'
+
+export type CollectionLink = {
+	href: string
+	label: string
+}
+
+/**
+ * Подборка по цвету: id цвета из справочника для каждого типа моделей.
+ * В подборку попадают только типы, для которых цвет задан. По этому id считается цена «от»
+ * (как в корзине, getRadiatorTotalCost) и строится ссылка на модель `?color=<id>`.
+ */
+export type CollectionColorFilter = {
+	/** id из columnColors */
+	columns?: string
+	/** id из designColors */
+	design?: string
+	/** id из ironcastColors */
+	ironcast?: string
+}
 
 export type CatalogCollectionConfig = {
 	kind: CatalogCollectionKind
@@ -24,7 +47,7 @@ export type CatalogCollectionConfig = {
 	selectionNote: string
 	parentHref: string
 	parentLabel: string
-	siblingGroup: 'interaxial' | 'height' | 'tubular' | 'convector'
+	siblingGroup: 'interaxial' | 'height' | 'tubular' | 'convector' | 'color'
 	height?: number
 	spacing?: number
 	tubeCount?: number
@@ -32,6 +55,18 @@ export type CatalogCollectionConfig = {
 	connectionLabel?: string
 	image: string
 	imageAlt: string
+	colorFilter?: CollectionColorFilter
+	/** Фото в первом экране подборки (справа на десктопе, под кнопками на телефоне). */
+	heroImage?: { src: string; srcset?: string; width: number; height: number; alt: string }
+	/** Фото строк вместо главного фото модели: по типу модели и точечно по id модели. */
+	rowImageByType?: Partial<Record<ModelJson['type'], string>>
+	rowImageByModel?: Record<string, string>
+	/** Блок пояснений после списка моделей. */
+	guideTitle?: string
+	guide?: { title: string; text: string; links?: CollectionLink[] }[]
+	useCaseLink?: CollectionLink
+	/** Свои вопросы вместо типовых; в ответе можно использовать {priceFrom}. */
+	faq?: { question: string; answer: string }[]
 }
 
 const heightCopy: Record<number, { intro: string; useCaseTitle: string; useCaseText: string; selectionNote: string }> = {
@@ -294,6 +329,281 @@ const convectorCollections: CatalogCollectionConfig[] = [
 	},
 ]
 
+/* ------------------------------------------------------------------ */
+/* Подборки по цвету                                                    */
+/* ------------------------------------------------------------------ */
+// Цены и наценки в текстах ниже берутся из справочников цветов (columnColors, designColors, ironcastColors).
+// Тексты исходят из того, что глянец и мат одного цвета стоят одинаково: если это изменится, сборка упадет на проверке.
+
+function findColor<T extends { id: string }>(list: T[], id: string, source: string): T {
+	const color = list.find(item => item.id === id)
+	if (!color) throw new Error(`catalogCollections: нет цвета ${id} в ${source}`)
+	return color
+}
+
+function assertSameMultiplicate(colors: { id: string; multiplicate: number }[], reason: string) {
+	if (colors.every(color => color.multiplicate === colors[0].multiplicate)) return
+	throw new Error(`catalogCollections: у цветов ${colors.map(color => color.id).join(', ')} разная наценка, а текст подборки исходит из одинаковой (${reason})`)
+}
+
+function surchargePercent(multiplicate: number): number {
+	return Math.round((multiplicate - 1) * 100)
+}
+
+/** «без наценки» или «наценка 20%». */
+function surchargePhrase(multiplicate: number): string {
+	const percent = surchargePercent(multiplicate)
+	return percent === 0 ? 'без наценки' : `наценка ${percent}%`
+}
+
+function priceVsWhiteSentence(subject: string, color: { multiplicate: number }, white: { multiplicate: number }): string {
+	const diff = Math.round((color.multiplicate / white.multiplicate - 1) * 100)
+	if (diff === 0) return `${subject} стоит столько же, сколько белый того же размера в RAL 9016.`
+	return `${subject} ${diff > 0 ? `дороже белого на ${diff}%` : `дешевле белого на ${-diff}%`}.`
+}
+
+function formatRub(value: number): string {
+	return `${Math.round(value).toLocaleString('ru-RU')} ₽`
+}
+
+const columnWhiteGloss = findColor(columnColors, 'ral_9016_gloss', 'columnColors')
+const columnWhiteMatte = findColor(columnColors, 'ral_9016_matte', 'columnColors')
+const columnBlackGloss = findColor(columnColors, 'ral_9005_gloss', 'columnColors')
+const columnBlackMatte = findColor(columnColors, 'ral_9005_matte', 'columnColors')
+const columnAnyRal = findColor(columnColors, 'ral_any', 'columnColors')
+const designWhiteGloss = findColor(designColors, 'ral_9016_gloss', 'designColors')
+const designBlackGloss = findColor(designColors, 'ral_9005_gloss', 'designColors')
+const designBlackMatte = findColor(designColors, 'ral_9005_matte', 'designColors')
+const designAnyRal = findColor(designColors, 'ral_any', 'designColors')
+const ironcastBlack = findColor(ironcastColors, 'emal_black', 'ironcastColors')
+
+assertSameMultiplicate([columnWhiteGloss, columnWhiteMatte], 'белый глянец и мат по одной цене')
+assertSameMultiplicate([columnBlackGloss, columnBlackMatte], 'черный глянец и мат по одной цене')
+assertSameMultiplicate([designBlackGloss, designBlackMatte], 'черный глянец и мат по одной цене')
+
+const ironcastBlackPerSection = formatRub(catalogNumber(ironcastBlack.price_section))
+const ironcastBlackFinish = (
+	ironcastColorTypeTitles.find(item => item.id === ironcastBlack.type_id)?.title ?? 'Эмаль'
+).toLocaleLowerCase('ru-RU')
+
+const columnPremiumPercents = columnColors
+	.filter(color => color.multiplicate > columnAnyRal.multiplicate)
+	.map(color => surchargePercent(color.multiplicate))
+const columnPremiumRange = columnPremiumPercents.length
+	? Math.min(...columnPremiumPercents) === Math.max(...columnPremiumPercents)
+		? `${Math.min(...columnPremiumPercents)}%`
+		: `${Math.min(...columnPremiumPercents)}-${Math.max(...columnPremiumPercents)}%`
+	: ''
+
+const blackColumnsSentence = priceVsWhiteSentence('Черный трубчатый радиатор', columnBlackMatte, columnWhiteGloss)
+const blackDesignSentence = priceVsWhiteSentence('Черный дизайн-радиатор', designBlackMatte, designWhiteGloss)
+const blackColumnsFree = columnBlackMatte.multiplicate === columnWhiteGloss.multiplicate
+
+const linkBlackCollection: CollectionLink = { href: '/collections/chernye-radiatory-otopleniya', label: 'Черные радиаторы отопления' }
+const linkWhiteCollection: CollectionLink = { href: '/collections/belye-trubchatye-radiatory', label: 'Белые трубчатые радиаторы' }
+const linkMatteGloss: CollectionLink = { href: '/info/matovyy-ili-glyantsevyy-radiator', label: 'Матовый или глянцевый радиатор: что выбрать' }
+
+const colorCollections: CatalogCollectionConfig[] = [
+	{
+		kind: 'color',
+		colorFilter: { columns: columnBlackMatte.id, design: designBlackMatte.id, ironcast: ironcastBlack.id },
+		slug: 'chernye-radiatory-otopleniya',
+		href: linkBlackCollection.href,
+		title: 'Черные радиаторы отопления',
+		shortTitle: 'Черные радиаторы',
+		seoTitle: 'Черные радиаторы отопления Velar — цены от {priceFrom}',
+		seoDescription: 'Черные радиаторы отопления Velar в RAL 9005, матовые и глянцевые: трубчатые, дизайнерские и чугунные модели. Размеры, мощность, цены от {priceFrom}, доставка по России.',
+		intro: 'Черные радиаторы отопления Velar в цвете RAL 9005, матовом или глянцевом. В подборке трубчатые, дизайнерские и чугунные модели, для которых черный цвет можно выбрать прямо на странице модели. Цены «от» посчитаны сразу для черного исполнения.',
+		eyebrow: 'Радиаторы по цвету',
+		modelSectionTitle: 'Модели Velar в черном цвете',
+		modelSectionIntro: 'В строке модели указана цена самого доступного размера в черном цвете. Ссылка «Выбрать размер» откроет страницу модели с уже выбранным черным: у стальных моделей это RAL 9005 матовый (глянец переключается там же), у чугунных черная эмаль.',
+		guideTitle: 'Как выбрать черный радиатор и сколько стоит цвет',
+		guide: [
+			{
+				title: 'Трубчатые радиаторы',
+				text: `У стальных трубчатых радиаторов в выборе цвета есть черный RAL 9005 глянцевый и матовый. ${blackColumnsSentence} Другой цвет по шкале RAL: ${surchargePhrase(columnAnyRal.multiplicate)}.`,
+				links: [
+					...(blackColumnsFree ? [{ href: '/news/ral9005', label: 'Трубчатые радиаторы в RAL 9005 без наценки' }] : []),
+					linkWhiteCollection,
+				],
+			},
+			{
+				title: 'Дизайн-радиаторы',
+				text: `Вертикальные и горизонтальные дизайн-радиаторы с плоским, квадратным, круглым и овальным профилем тоже доступны в RAL 9005 глянцевом и матовом. ${blackDesignSentence} Вертикальная модель визуально вытягивает помещение и становится акцентом на свободной стене, горизонтальная логично встает под окно.`,
+				links: [
+					{ href: '/design', label: 'Все дизайн-радиаторы Velar' },
+					{ href: '/design/vertikalnye', label: 'Вертикальные дизайн-радиаторы' },
+				],
+			},
+			{
+				title: 'Чугунные ретро-радиаторы',
+				text: `Черный цвет у Nostalgia с цветочным орнаментом и Historic без орнамента: ${ironcastBlackFinish}, ${ironcastBlackPerSection} за секцию. Эта доплата уже входит в цены на этой странице. Для лофта чаще выбирают Historic: он спокойнее и лучше сочетается с кирпичом, бетоном и металлом.`,
+				links: [{ href: '/retro', label: 'Чугунные радиаторы в стиле ретро' }],
+			},
+			{
+				title: 'Матовый или глянцевый',
+				text: 'Матовый финиш меньше бликует и выглядит спокойнее, глянец сильнее раскрывает цвет и форму. На матовых черных поверхностях могут быть заметнее следы от прикосновений, пыль и мелкие загрязнения, поэтому радиатор в проходной зоне потребует более регулярной сухой уборки.',
+				links: [linkMatteGloss],
+			},
+			{
+				title: 'Напольные радиаторы',
+				text: 'Напольные модели Q500, P200 и P300 тоже окрашивают в цвета RAL, но на странице модели цвет для них не выбирается, поэтому в списке их нет. Стоимость черного исполнения рассчитает менеджер.',
+				links: [{ href: '/floor', label: 'Напольные радиаторы Velar' }],
+			},
+		],
+		useCaseTitle: 'Где черный радиатор смотрится уместно',
+		useCaseText: 'Черный радиатор эффектнее всего смотрится на фоне светлых стен и там, где в интерьере уже есть темные элементы: оконные рамы, светильники, фурнитура. Он уместен в минимализме, скандинавском и индустриальном интерьере и сочетается с бетоном, деревом, стеклом, металлом и натуральным камнем.',
+		selectionNote: 'Цвет не меняет подбор мощности: размер и число секций считают по теплопотерям комнаты и паспортной мощности модели. Сначала выберите модель и размер, затем цвет и фактуру.',
+		useCaseLink: { href: '/info/chernye-dizainerskie-radiatory-otopleniya', label: 'Черные радиаторы в интерьере: как использовать темные акценты' },
+		faq: [
+			{
+				question: 'Сколько стоит черный радиатор отопления?',
+				answer: `Самое доступное черное исполнение в подборке стоит от {priceFrom}. ${blackColumnsSentence} ${blackDesignSentence} У чугунных моделей черная эмаль добавляет ${ironcastBlackPerSection} за секцию.`,
+			},
+			{
+				question: 'Что выбрать: черный матовый или глянцевый?',
+				answer: 'Матовый RAL 9005 меньше бликует и выглядит сдержанно и графично, глянцевый сильнее отражает свет и привлекает внимание. У трубчатых и дизайн-радиаторов оба варианта есть в выборе цвета и стоят одинаково.',
+			},
+			{
+				question: 'Можно ли заказать другой темный оттенок, например графит?',
+				answer: `Да, стальные радиаторы можно окрасить в цвет по шкале RAL. Для трубчатых моделей ${surchargePhrase(columnAnyRal.multiplicate)}, для дизайн-радиаторов ${surchargePhrase(designAnyRal.multiplicate)}. Номер RAL лучше согласовать заранее: один и тот же цвет на матовой и глянцевой поверхности выглядит по-разному.`,
+			},
+			{
+				question: 'Как открыть модель сразу в черном цвете?',
+				answer: 'Нажмите «Выбрать размер» в строке модели: страница откроется с выбранным черным цветом. Останется выбрать размер, число секций и подключение, а цвет при необходимости можно сменить в блоке «Цвет радиатора».',
+			},
+		],
+		parentHref: '/collections',
+		parentLabel: 'Все подборки',
+		siblingGroup: 'color',
+		connectionLabel: 'по модели',
+		image: '/images/collections/chernyy-trubchatyy-radiator.jpg',
+		imageAlt: 'Черный трубчатый радиатор Velar RAL 9005',
+		heroImage: {
+			src: '/images/columns/hero/black-tubular-interior-1200.webp',
+			srcset: '/images/columns/hero/black-tubular-interior-640.webp 640w, /images/columns/hero/black-tubular-interior-1200.webp 1200w',
+			width: 1200,
+			height: 750,
+			alt: 'Черный вертикальный трубчатый радиатор Velar в светлом интерьере',
+		},
+		rowImageByType: { columns: '/images/collections/chernyy-trubchatyy-radiator.jpg' },
+		rowImageByModel: {
+			historic500: '/images/models/historic500/1.jpg',
+			historic300: '/images/models/historic300/1.jpg',
+			nostalgia500: '/images/retro/retro_6.jpg',
+			nostalgia300: '/images/retro/retro_6.jpg',
+		},
+	},
+	{
+		kind: 'color',
+		colorFilter: { columns: columnWhiteGloss.id },
+		slug: 'belye-trubchatye-radiatory',
+		href: linkWhiteCollection.href,
+		title: 'Белые трубчатые радиаторы',
+		shortTitle: 'Белые трубчатые',
+		seoTitle: 'Белые трубчатые радиаторы RAL 9016 — цены от {priceFrom}',
+		seoDescription: 'Белые трубчатые радиаторы Velar в RAL 9016, глянцевые и матовые: от 2 до 5 труб в секции, низкие и высокие модели. Размеры, мощность, цены от {priceFrom}, доставка по России.',
+		intro: 'Белые трубчатые радиаторы Velar в цвете RAL 9016, глянцевом или матовом. Цены на этой странице указаны для белого исполнения. В подборке все трубчатые модели: от низких под окно до высоких вертикальных, с двумя, тремя, четырьмя и пятью трубками в секции.',
+		eyebrow: 'Радиаторы по цвету',
+		modelSectionTitle: 'Белые трубчатые модели Velar',
+		modelSectionIntro: 'В строке модели указана цена самого доступного размера в белом RAL 9016. Ссылка «Выбрать размер» откроет страницу модели с уже выбранным белым глянцем, матовый белый переключается там же.',
+		guideTitle: 'Как выбрать белый трубчатый радиатор',
+		guide: [
+			{
+				title: 'RAL 9016: глянец или мат',
+				text: 'В выборе цвета два белых варианта: RAL 9016 глянцевый и RAL 9016 матовый, оба по одной цене. Матовый финиш меньше бликует и спокойнее соединяется со стеной, глянцевый сильнее раскрывает цвет и обычно проще протирается мягкой салфеткой.',
+				links: [linkMatteGloss],
+			},
+			{
+				title: 'Число труб и глубина',
+				text: 'Чем больше труб в секции, тем больше глубина радиатора и мощность секции. Двухтрубчатые модели самые компактные по глубине, пятитрубчатые самые глубокие и помогают набрать мощность на коротком участке стены.',
+				links: [
+					{ href: '/collections/2-trubchatye-radiatory', label: '2 трубки' },
+					{ href: '/collections/3-trubchatye-radiatory', label: '3 трубки' },
+					{ href: '/collections/4-trubchatye-radiatory', label: '4 трубки' },
+					{ href: '/collections/5-trubchatye-radiatory', label: '5 трубок' },
+				],
+			},
+			{
+				title: 'Высота и место установки',
+				text: 'Под низкий подоконник подходят модели высотой до 600 мм, на свободную стену высокие вертикальные. Полная высота корпуса и межосевое расстояние не одно и то же: при замене старой батареи сверяйте оба размера.',
+				links: [
+					{ href: '/collections/nizkie-trubchatye-radiatory', label: 'Низкие трубчатые радиаторы' },
+					{ href: '/collections/verticalnye-radiatory-1800-mm', label: 'Вертикальные около 1800 мм' },
+					{ href: '/collections/radiatory-po-mezhosevomu-rasstoyaniyu', label: 'По межосевому расстоянию' },
+				],
+			},
+			{
+				title: 'Если нужен не белый',
+				text: `Тот же радиатор можно заказать в черном RAL 9005, глянцевом или матовом. ${blackColumnsSentence} Свой цвет по шкале RAL: ${surchargePhrase(columnAnyRal.multiplicate)}.${columnPremiumRange ? ` Металлик, лаки и цвета Bronze, Gold, Old Gold считаются с наценкой ${columnPremiumRange}.` : ''}`,
+				links: [linkBlackCollection],
+			},
+		],
+		useCaseTitle: 'Где белый трубчатый радиатор уместен',
+		useCaseText: 'Лаконичный белый радиатор под окно или на свободную стену не создает визуальной перегрузки. Для спокойных интерьеров чаще выбирают белый, графитовый или цвет стены.',
+		selectionNote: 'Сначала подберите высоту, число труб и секций по месту установки и теплопотерям комнаты, затем финиш: глянец или мат. Перед заказом проверьте глубину радиатора и расстояние до подоконника и штор.',
+		faq: [
+			{
+				question: 'Сколько стоят белые трубчатые радиаторы?',
+				answer: `Самый доступный белый трубчатый радиатор в подборке стоит от {priceFrom}. Цена зависит от высоты, числа труб, количества секций и подключения. Белый RAL 9016, глянцевый и матовый, ${columnWhiteGloss.multiplicate === 1 ? 'входит в базовую цену' : `считается с наценкой ${surchargePercent(columnWhiteGloss.multiplicate)}%`}.`,
+			},
+			{
+				question: 'Какой оттенок белого у трубчатых радиаторов Velar?',
+				answer: `В выборе цвета белый RAL 9016, глянцевый или матовый. Другой оттенок белого можно заказать по шкале RAL: ${surchargePhrase(columnAnyRal.multiplicate)}.`,
+			},
+			{
+				question: 'Есть ли белые трубчатые радиаторы в наличии?',
+				answer: 'Наличие и срок зависят от модели, цвета, подключения, количества секций и загрузки производства. Добавьте вариант в корзину или отправьте заявку: менеджер проверит наличие или срок производства и рассчитает итоговую стоимость с доставкой.',
+			},
+			{
+				question: 'Как открыть модель сразу в белом цвете?',
+				answer: 'Нажмите «Выбрать размер» в строке модели: страница откроется с выбранным белым RAL 9016 глянцевым. Останется выбрать размер, число секций и подключение, а матовый белый выбирается в блоке «Цвет радиатора».',
+			},
+		],
+		parentHref: '/columns',
+		parentLabel: 'Все трубчатые радиаторы',
+		siblingGroup: 'color',
+		connectionLabel: 'боковое или нижнее',
+		image: '/images/models/columns/main3b.jpg',
+		imageAlt: 'Белый трубчатый радиатор Velar RAL 9016',
+		heroImage: {
+			src: '/images/columns/interiors/classic.webp',
+			width: 900,
+			height: 675,
+			alt: 'Белый трубчатый радиатор Velar в светлой гостиной',
+		},
+	},
+]
+
+/** Цвет подборки для модели (id из справочника ее типа) или undefined, если тип в подборку не входит. */
+export function collectionColorId(collection: CatalogCollectionConfig, model: ModelJson): string | undefined {
+	const filter = collection.colorFilter
+	if (!filter) return undefined
+	if (model.type === 'columns') return filter.columns
+	if (model.type === 'design') return filter.design
+	if (model.type === 'ironcast') return filter.ironcast
+	return undefined
+}
+
+/**
+ * Цена исполнения в цвете подборки, как в корзине (getRadiatorTotalCost): у трубчатых и дизайн-радиаторов
+ * цена × коэффициент цвета, у чугунных + цена цвета за секцию. Подключение по умолчанию без доплаты.
+ * Для подборок без цвета это просто цена из каталога.
+ */
+export function collectionRadiatorPrice(collection: CatalogCollectionConfig, model: ModelJson, radiator: RadiatorJson): number {
+	const base = catalogNumber(radiator.price)
+	if (!base) return 0
+	const colorId = collectionColorId(collection, model)
+	if (!colorId) return base
+	if (model.type === 'columns') return Math.round(findColor(columnColors, colorId, 'columnColors').multiplicate * base)
+	if (model.type === 'design') return Math.round(findColor(designColors, colorId, 'designColors').multiplicate * base)
+	if (model.type === 'ironcast') {
+		const perSection = catalogNumber(findColor(ironcastColors, colorId, 'ironcastColors').price_section)
+		return Math.round(base + perSection * catalogNumber(radiator.sections))
+	}
+	return base
+}
+
 function adaptInteraxialCollection(collection: InteraxialCollectionConfig): CatalogCollectionConfig {
 	return {
 		...collection,
@@ -317,11 +627,13 @@ export const catalogCollections: CatalogCollectionConfig[] = [
 	...tubeCollections,
 	lowTubularCollection,
 	...convectorCollections,
+	...colorCollections,
 ]
 
 export const exactHeightCollections = heightCollections
 export const tubularCollections = [...tubeCollections, lowTubularCollection]
 export const convectorModeCollections = convectorCollections
+export const colorModeCollections = colorCollections
 
 export function collectionMatchesModel(collection: CatalogCollectionConfig, model: ModelJson): boolean {
 	if (collection.kind === 'interaxial') {
@@ -331,6 +643,7 @@ export function collectionMatchesModel(collection: CatalogCollectionConfig, mode
 	if (collection.kind === 'height') return model.type !== 'convector'
 	if (collection.kind === 'tube-count') return model.type === 'columns' && (collection.modelIds?.includes(model.id) ?? false)
 	if (collection.kind === 'low-tubular') return model.type === 'columns'
+	if (collection.kind === 'color') return Boolean(collectionColorId(collection, model))
 	return collection.modelIds?.includes(model.id) ?? false
 }
 
