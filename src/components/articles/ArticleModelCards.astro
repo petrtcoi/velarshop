@@ -1,0 +1,43 @@
+---
+/**
+ * Карточки «Подходящие модели» в конце статьи /info: фото, название с коммерческим анкором, тип, цена «от».
+ * Данные считаются в src/lib/articleCommerce.ts из каталога (modelsJsonData + radiatorsJsonData).
+ */
+import { formatRub, type ArticleModelCard } from '../../lib/articleCommerce'
+
+type Props = {
+	cards: ArticleModelCard[]
+	title?: string
+}
+
+const { cards, title = 'Подходящие модели' } = Astro.props as Props
+---
+
+{
+	cards.length > 0 && (
+		<div class='article-related__block article-models'>
+			<h2 class='article-related__title'>{title}</h2>
+			<div class='article-models__grid'>
+				{cards.map(card => (
+					<div class='article-models__card'>
+						<a class='article-models__image' href={card.href} tabindex='-1' aria-hidden='true'>
+							<img src={card.image} alt={card.title} width='320' height='240' loading='lazy' decoding='async' />
+						</a>
+						<div class='article-models__body'>
+							<a class='article-models__title' href={card.href}>
+								{card.title}
+							</a>
+							{card.typeLine && <span class='article-models__type'>{card.typeLine}</span>}
+							{card.priceFrom > 0 && (
+								<span class='article-models__price'>
+									от {formatRub(card.priceFrom)}
+									{card.priceNote && <span class='article-models__price-note'> {card.priceNote}</span>}
+								</span>
+							)}
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	)
+}

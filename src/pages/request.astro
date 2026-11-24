@@ -1,6 +1,11 @@
 ---
+import { getCollection } from 'astro:content';
 import LeadWidget from '@widgets/lead'
 import Layout from '@shared/layouts/Layout.astro';
+
+// Для /request?from=<slug>: LeadWidget допишет в комментарий заявки, с какой статьи пришел посетитель.
+const articles = await getCollection('articles');
+const articleTitles = Object.fromEntries(articles.map((article) => [article.slug, article.data.title]));
 // TODO !! Форма закрывает часть сайта
 ---
 
@@ -32,6 +37,7 @@ import Layout from '@shared/layouts/Layout.astro';
     border='#e5e5e5'
     privacyUrl='/privacy'
     termsUrl='/agreement'
+    articleTitles={articleTitles}
   />
   </div>
 </section>

@@ -3,6 +3,8 @@ import { getCollection } from "astro:content";
 import Layout from "@shared/layouts/Layout.astro";
 import type { CollectionEntry } from "astro:content";
 import ArticleCta from "../../components/articles/ArticleCta.astro";
+import ArticleModelCards from "../../components/articles/ArticleModelCards.astro";
+import { getArticleCommerce, getArticleModelCards, getArticleRequestHref, type ArticleTopic } from "../../lib/articleCommerce";
 import { buildArticleJsonLd, buildFaqPageJsonLd } from "../../lib/seo/articleSeo";
 
 export async function getStaticPaths() {
@@ -35,7 +37,7 @@ const articleJsonLd = buildArticleJsonLd({
 });
 const faqPageJsonLd = buildFaqPageJsonLd(faq);
 
-type Topic = "safety" | "design" | "columns" | "convector" | "retro" | "generic";
+type Topic = ArticleTopic;
 
 type ArticleCandidate = {
   slug: string;
@@ -136,30 +138,31 @@ const sectionLinkSets: Record<Topic, SectionLink[]> = {
 
 const modelLinkSets: Record<Topic, SectionLink[]> = {
   safety: [
-    { href: "/model/p30v", label: "P30V" },
-    { href: "/model/r32v", label: "R32V" },
-    { href: "/model/q40v", label: "Q40V" },
+    { href: "/model/p30v", label: "Дизайн-радиатор Velar P30V" },
+    { href: "/model/r32v", label: "Дизайн-радиатор Velar R32V" },
+    { href: "/model/q40v", label: "Дизайн-радиатор Velar Q40V" },
   ],
   design: [
-    { href: "/model/p30v", label: "P30V" },
-    { href: "/model/p60v", label: "P60V" },
-    { href: "/model/q40v", label: "Q40V" },
-    { href: "/model/r32v", label: "R32V" },
+    { href: "/model/p30v", label: "Дизайн-радиатор Velar P30V" },
+    { href: "/model/p60v", label: "Дизайн-радиатор Velar P60V" },
+    { href: "/model/q40v", label: "Дизайн-радиатор Velar Q40V" },
+    { href: "/model/r32v", label: "Дизайн-радиатор Velar R32V" },
   ],
   columns: [
     { href: "/columns", label: "Серии трубчатых радиаторов" },
-    { href: "/columns/3020", label: "Серия 3020" },
-    { href: "/columns/3030", label: "Серия 3030" },
+    { href: "/columns/3030", label: "Трубчатый радиатор Velar 3030" },
+    { href: "/columns/3057", label: "Трубчатый радиатор Velar 3057" },
+    { href: "/columns/2180", label: "Трубчатый радиатор Velar 2180" },
   ],
   convector: [
-    { href: "/model/kwh", label: "KWH" },
-    { href: "/model/kwhv", label: "KWHV" },
-    { href: "/model/kwhv24", label: "KWHV 24V" },
+    { href: "/model/kwh", label: "Внутрипольный конвектор Velar KWH" },
+    { href: "/model/kwhv", label: "Конвектор Velar KWHV с вентилятором" },
+    { href: "/model/kwhv24", label: "Конвектор Velar KWHV 24V" },
   ],
   retro: [
-    { href: "/model/nostalgia500", label: "Nostalgia 500" },
-    { href: "/model/historic500", label: "Historic 500" },
-    { href: "/model/nostalgia300", label: "Nostalgia 300" },
+    { href: "/model/nostalgia500", label: "Чугунный радиатор Nostalgia 500" },
+    { href: "/model/historic500", label: "Чугунный радиатор Historic 500" },
+    { href: "/model/nostalgia300", label: "Чугунный радиатор Nostalgia 300" },
   ],
   generic: [
     { href: "/design", label: "Дизайн-радиаторы" },
@@ -170,9 +173,9 @@ const modelLinkSets: Record<Topic, SectionLink[]> = {
 
 const endingCtaByTopic: Record<Topic, CtaConfig> = {
   safety: {
-    title: "Подберем безопасный радиатор под вашу задачу",
+    title: "Подберем радиатор под помещение и систему отопления",
     description: "Учитываем мощность, высоту, температуру поверхности, подключение и размещение в комнате.",
-    buttonText: "Получить подбор радиатора",
+    buttonText: "Получить расчет",
     buttonHref: "/request",
     linkText: "Смотреть дизайн-радиаторы",
     linkHref: "/design",
@@ -180,7 +183,7 @@ const endingCtaByTopic: Record<Topic, CtaConfig> = {
   design: {
     title: "Подберем дизайн-радиатор под интерьер и отопление",
     description: "Поможем совместить эстетику, мощность, тип подключения и доступные цвета RAL.",
-    buttonText: "Получить подбор радиатора",
+    buttonText: "Получить расчет",
     buttonHref: "/request",
     linkText: "Открыть каталог дизайна",
     linkHref: "/design",
@@ -212,18 +215,21 @@ const endingCtaByTopic: Record<Topic, CtaConfig> = {
   generic: {
     title: "Нужна помощь с выбором радиатора?",
     description: "Подготовим практичный подбор по площади, температурному режиму и типу подключения.",
-    buttonText: "Получить консультацию",
+    buttonText: "Получить расчет",
     buttonHref: "/request",
     linkText: "Перейти в каталог",
     linkHref: "/design",
   },
 };
 
+// Fallback for articles without an explicit entry in src/lib/articleCommerce.ts.
+// Retro is checked before columns so that «raschet-sekciy-chugunnogo-retro-radiatora» is not caught by «sekci»;
+// «ornament» and the dizayn/dizain/dizajn spellings used in slugs were previously falling through to generic.
 function getTopicBySlug(slug: string): Topic {
   if (/convektor|konvektor|convector|panoram|teplovaya-zavesa|220v|24v|kwh/.test(slug)) return "convector";
+  if (/chugun|retro|iron|lite|restavrats|nostalgi|histor|ornament/.test(slug)) return "retro";
   if (/trubchat|tube|column|sekci|panelnyh|termostat|chistit/.test(slug)) return "columns";
-  if (/chugun|retro|iron|lite|restavrats|nostalgi|histor/.test(slug)) return "retro";
-  if (/design|vertical|horizontal|tsvet|interer|colors|wall|kuhni|chernye|forma-trub|matov|glyant|p30v-q40v-r32v/.test(slug)) return "design";
+  if (/design|dizayn|dizain|dizajn|kompaktn|^steel$|vertical|horizontal|tsvet|interer|colors|wall|kuhni|chernye|forma-trub|matov|glyant|p30v-q40v-r32v/.test(slug)) return "design";
   if (/bezopasnost|vybor|vybrat|oshibki|power|radiator-ne-greet|kreplenie|teplootdacha|heating|spalni/.test(slug)) return "safety";
   return "generic";
 }
@@ -360,7 +366,8 @@ function getFirstHeadingFromBody(body: string): { level: number; text: string } 
   return null;
 }
 
-const topic = getTopicBySlug(article.slug);
+const commerce = getArticleCommerce(article.slug);
+const topic = commerce?.topic ?? getTopicBySlug(article.slug);
 
 const existingRelatedLinks = new Set<string>();
 const readMoreLinks = [...relatedArticleSets[topic], ...relatedArticleSets.generic]
@@ -378,9 +385,19 @@ const readMoreLinks = [...relatedArticleSets[topic], ...relatedArticleSets.gener
     description: articleTitleBySlug.get(candidate.slug) ?? "",
   }));
 
-const sectionLinks = sectionLinkSets[topic];
+const sectionLinks = commerce?.hubs ?? sectionLinkSets[topic];
 const modelLinks = modelLinkSets[topic];
-const endingCta = endingCtaByTopic[topic];
+const modelCards = commerce ? getArticleModelCards(commerce.models) : [];
+const endingCta: CtaConfig = commerce
+  ? {
+      title: commerce.endingCta.title,
+      description: commerce.endingCta.description,
+      buttonText: commerce.endingCta.button ?? "Получить расчет",
+      buttonHref: getArticleRequestHref(article.slug),
+      linkText: commerce.endingCta.hub.label,
+      linkHref: commerce.endingCta.hub.href,
+    }
+  : endingCtaByTopic[topic];
 
 const firstBodyHeading = getFirstHeadingFromBody(article.body ?? "");
 const shouldHideDuplicateIntroHeading =
@@ -428,9 +445,12 @@ const crumbs = [
           buttonHref={endingCta.buttonHref}
           linkText={endingCta.linkText}
           linkHref={endingCta.linkHref}
+          trackPlace='footer'
         />
 
         <section class='not-prose article-related'>
+          {modelCards.length > 0 && <ArticleModelCards cards={modelCards} />}
+
           <div class='article-related__block'>
             <h2 class='article-related__title'>Полезные материалы по теме</h2>
             <ul class='article-related__list'>
@@ -456,18 +476,42 @@ const crumbs = [
             </ul>
           </div>
 
-          <div class='article-related__block'>
-            <h2 class='article-related__title'>Популярные модели</h2>
-            <ul class='article-related__chips'>
-              {modelLinks.map((item) => (
-                <li>
-                  <a href={item.href}>{item.label}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {modelCards.length === 0 && (
+            <div class='article-related__block'>
+              <h2 class='article-related__title'>Популярные модели</h2>
+              <ul class='article-related__chips'>
+                {modelLinks.map((item) => (
+                  <li>
+                    <a href={item.href}>{item.label}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </section>
       </article>
     </div>
   </div>
 </Layout>
+
+<script>
+  // Metrika goals for article CTAs: article_offer_click (ArticleOffer) and article_cta_click (ArticleCta).
+  // The counter starts a few seconds after load; until then reachMetrikaGoal drops goals with params,
+  // so the bare goal name is queued instead.
+  import { reachMetrikaGoal } from '@shared/utils/metrika'
+
+  document.addEventListener('click', event => {
+    const target = event.target
+    if (!(target instanceof Element)) return
+
+    const link = target.closest('[data-article-goal]')
+    if (!(link instanceof HTMLElement)) return
+
+    const goal = link.dataset.articleGoal
+    if (!goal) return
+
+    const params = { slug: link.dataset.articleSlug ?? '', place: link.dataset.articlePlace ?? '' }
+    if (typeof window.ym === 'function') reachMetrikaGoal(goal, params)
+    else reachMetrikaGoal(goal)
+  })
+</script>

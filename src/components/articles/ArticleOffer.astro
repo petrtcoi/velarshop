@@ -1,0 +1,42 @@
+---
+/**
+ * Спокойный блок предложения в середине статьи /info.
+ * Текст берется из src/lib/articleCommerce.ts по slug статьи; title/text/button можно переопределить пропсами.
+ * Кнопка ведет на /request?from=<slug>, клик отправляет цель Метрики article_offer_click (скрипт в src/pages/info/[article].astro).
+ */
+import { fillPriceTokens, getArticleCommerce, getArticleRequestHref } from '../../lib/articleCommerce'
+
+type Props = {
+	slug: string
+	title?: string
+	text?: string
+	button?: string
+}
+
+const { slug, title: titleProp, text: textProp, button: buttonProp } = Astro.props as Props
+const offer = getArticleCommerce(slug)?.offer
+
+const title = titleProp ?? offer?.title
+const text = textProp ?? offer?.text
+const button = buttonProp ?? offer?.button ?? 'Получить расчет'
+
+if (!title) throw new Error(`ArticleOffer: нет текста предложения для статьи ${slug}`)
+---
+
+<aside class='not-prose article-offer'>
+	<div class='article-offer__content'>
+		<p class='article-offer__title'>{title}</p>
+		{text && <p class='article-offer__text'>{fillPriceTokens(text)}</p>}
+	</div>
+	<div class='article-offer__actions'>
+		<a
+			class='article-cta__button article-offer__button'
+			href={getArticleRequestHref(slug)}
+			data-article-goal='article_offer_click'
+			data-article-slug={slug}
+			data-article-place='offer'
+		>
+			{button}
+		</a>
+	</div>
+</aside>

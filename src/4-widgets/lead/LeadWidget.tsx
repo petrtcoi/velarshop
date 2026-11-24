@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'preact/hooks'
+import { useEffect, useMemo, useRef, useState } from 'preact/hooks'
 import { reachMetrikaGoal } from '@shared/utils/metrika'
 import { deleteRuPhoneInputDigit, formatRuPhoneInput, getRuPhoneSubscriberDigits, normalizeRuPhone } from '@shared/utils/phone'
 
@@ -10,7 +10,13 @@ type LeadWidgetProps = {
 	border?: string
 	privacyUrl?: string
 	termsUrl?: string
+	/** slug -> заголовок статьи /info. Если форма открыта по ссылке /request?from=<slug>, статья дописывается в комментарий заявки. */
+	articleTitles?: Record<string, string>
 }
+
+type SourceArticle = { slug: string; title: string }
+
+const ARTICLE_SLUG_PATTERN = /^[a-z0-9-]{1,120}$/
 
 const MAX_FILE_SIZE = 20 * 1024 * 1024
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -32,6 +38,7 @@ function LeadWidget({
 	border = '#e5e5e5',
 	privacyUrl = '/privacy',
 	termsUrl = '/agreement',
+	articleTitles,
 }: LeadWidgetProps) {
 	const [name, setName] = useState('')
 	const [email, setEmail] = useState('')
@@ -48,6 +55,17 @@ function LeadWidget({
 	const [message, setMessage] = useState('')
 	const [messageType, setMessageType] = useState<'ok' | 'err' | null>(null)
 	const [loading, setLoading] = useState(false)
+	const [sourceArticle, setSourceArticle] = useState<SourceArticle | null>(null)
+
+	// ?from=<slug> ставят кнопки в статьях /info. Принимаем только известные slug, чтобы в заявку не попадал произвольный текст.
+	useEffect(() => {
+		if (!articleTitles) return
+		const from = new URLSearchParams(window.location.search).get('from')
+		if (!from || !ARTICLE_SLUG_PATTERN.test(from)) return
+		if (!Object.prototype.hasOwnProperty.call(articleTitles, from)) return
+		const title = articleTitles[from]
+		if (typeof title === 'string' && title) setSourceArticle({ slug: from, title })
+	}, [articleTitles])
 
 	const fileInputRef = useRef<HTMLInputElement>(null)
 
@@ -140,7 +158,12 @@ function LeadWidget({
 				email: email.trim(),
 				city: city.trim(),
 				whatsapp: hasPhone ? normalizedPhone : whatsapp.trim(),
-				wishes: wishes.trim(),
+				wishes: [
+					wishes.trim(),
+					sourceArticle ? `Со статьи: ${sourceArticle.title} (${window.location.origin}/info/${sourceArticle.slug})` : '',
+				]
+					.filter(Boolean)
+					.join('\n\n'),
 				channels: channels.join(', '),
 				fileName: file?.name,
 				fileDataUrl: file ? await readFileAsDataUrl(file) : undefined,

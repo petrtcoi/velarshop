@@ -1377,6 +1377,159 @@ main :where(.animate-spin) {
   }
 }
 
+/* ------------------------------------------------------------------
+   Article commerce blocks (src/lib/articleCommerce.ts)
+   - .article-offer: mid-article offer, ArticleOffer.astro. Calm: thin border, neutral background;
+     the button reuses .article-cta__button (brand red), so its prose-link overrides above apply.
+   - .article-models: «Подходящие модели» cards at the end, ArticleModelCards.astro.
+     One column with a small image on phones, three columns from 768px.
+   - Footer CTA hub link stays white after a visit (.article-prose a:visited would turn it graphite on black).
+   ------------------------------------------------------------------ */
+.article-offer {
+  display: grid;
+  gap: 14px;
+  margin-block: 32px;
+  border: 1px solid #e5e7eb;
+  background: #fafafa;
+  padding: 18px 16px;
+}
+
+.article-offer .article-offer__title {
+  margin: 0;
+  color: #111111;
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.article-offer .article-offer__text {
+  margin: 6px 0 0;
+  max-width: 620px;
+  color: #52525b;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.article-offer__actions {
+  display: flex;
+}
+
+.article-prose .article-cta--footer .article-cta__link,
+.article-prose .article-cta--footer .article-cta__link:visited {
+  color: #ffffff;
+}
+
+.article-models__grid {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+}
+
+.article-models__card {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  padding: 12px;
+  transition: border-color 160ms ease;
+}
+
+.article-models__card:hover {
+  border-color: #d4d4d8;
+}
+
+.article-prose .article-models__image {
+  display: flex;
+  height: 112px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #f5f5f4;
+  text-decoration: none;
+}
+
+.article-models .article-models__image img {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 0;
+  object-fit: contain;
+}
+
+.article-models__body {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.article-prose .article-models__title,
+.article-prose .article-models__title:visited {
+  color: #111111;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.35;
+  text-decoration-line: none;
+}
+
+.article-prose .article-models__title:hover,
+.article-prose .article-models__title:focus-visible {
+  color: #000000;
+  text-decoration-line: underline;
+  text-decoration-color: rgba(23, 23, 23, 0.4);
+}
+
+.article-models__type {
+  color: #52525b;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.article-models__price {
+  margin-top: 2px;
+  color: #111111;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.article-models__price-note {
+  color: #71717a;
+  font-size: 0.8125rem;
+  font-weight: 400;
+}
+
+@media (min-width: 768px) {
+  .article-offer {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 24px;
+    padding: 22px 24px;
+  }
+
+  .article-models__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .article-models__card {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: stretch;
+    padding: 14px;
+  }
+
+  .article-prose .article-models__image {
+    height: 180px;
+  }
+}
+
 /* Mobile bottom nav (src/components/layout/MobileBottomNav.tsx).
    Shown at <= 900 px, the same breakpoint where Header.astro switches to the mobile layout.
    z-index: above page content, below the header (50, its menu sheet lives inside it) and the quick-picker modal. */

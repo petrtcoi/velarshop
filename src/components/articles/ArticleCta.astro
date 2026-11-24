@@ -12,6 +12,8 @@ type Props = {
 	size?: 'default' | 'compact'
 	class?: string
 	className?: string
+	/** Место CTA для цели Метрики article_cta_click: 'inline' (в тексте статьи) или 'footer' (в конце). */
+	trackPlace?: 'inline' | 'footer'
 }
 
 const {
@@ -25,6 +27,7 @@ const {
 	size = 'default',
 	class: classAttr = '',
 	className = '',
+	trackPlace = 'inline',
 } = Astro.props as Props
 
 const variantClass =
@@ -35,6 +38,15 @@ const variantClass =
 			: 'article-cta--default'
 
 const sizeClass = size === 'compact' ? 'article-cta--compact' : ''
+
+// На страницах статей /info/<slug> кнопка на форму получает ?from=<slug> (LeadWidget допишет статью в комментарий)
+// и отправляет цель Метрики article_cta_click. Скрипт цели подключен в src/pages/info/[article].astro.
+const articleSlug = Astro.url.pathname.match(/^\/info\/([a-z0-9-]+)\/?$/)?.[1]
+const resolvedButtonHref =
+	articleSlug && buttonHref === '/request' ? `/request?from=${encodeURIComponent(articleSlug)}` : buttonHref
+const trackAttrs = articleSlug
+	? { 'data-article-goal': 'article_cta_click', 'data-article-slug': articleSlug, 'data-article-place': trackPlace }
+	: {}
 ---
 
 <aside class:list={['not-prose article-cta', variantClass, sizeClass, classAttr, className]}>
@@ -44,7 +56,7 @@ const sizeClass = size === 'compact' ? 'article-cta--compact' : ''
 	</div>
 
 	<div class='article-cta__actions'>
-		<a class='article-cta__button' href={buttonHref}>{buttonText}</a>
+		<a class='article-cta__button' href={resolvedButtonHref} {...trackAttrs}>{buttonText}</a>
 		{linkText && linkHref && <a class='article-cta__link' href={linkHref}>{linkText}</a>}
 	</div>
 </aside>

@@ -5,7 +5,7 @@ Disallow: /search-index.json
 User-agent: Yandex
 Disallow: /search-index.json
 Clean-param: etext
-Clean-param: model /request
+Clean-param: model&from /request
 Clean-param: mo&connection&height&collection&radiator&color /model
 Clean-param: mo&connection&height&collection&radiator&color /columns
 Clean-param: check /columns
