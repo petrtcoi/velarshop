@@ -173,7 +173,7 @@ const breadcrumbs = breadcrumbCandidates.filter(
 // «{priceFrom}» в тексте подборки → минимальная цена исполнений этой подборки (как в блоке «Цена» на странице)
 const withPriceFrom = (text: string) => prices.length
 	? text.replace('{priceFrom}', `${Math.round(prices[0]).toLocaleString('ru-RU').replace(/\s/g, '\u00a0')}\u00a0₽`)
-	: text.replace(/\s*—\s*цены от \{priceFrom\}/, ' — каталог и цены').replace('{priceFrom}', '')
+	: text.replace(/,\s*цены от \{priceFrom\}/, ', каталог и цены').replace('{priceFrom}', '')
 
 function buildFaqItems() {
 	if (collection.faq?.length) {
