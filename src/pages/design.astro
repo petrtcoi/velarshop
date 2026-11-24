@@ -334,7 +334,7 @@ const seo = getCategorySeo({
 		ogTitle: 'Дизайнерские радиаторы Velar - вертикальные и горизонтальные модели',
 		ogDescription:
 			'Дизайн-радиаторы Velar для квартиры, дома и интерьера: вертикальные и горизонтальные модели, профили P, Q, R, S, цвета RAL и подбор под проект.',
-		ogImage: '/images/design/hero/vertical-design-radiator.jpg',
+		ogImage: '/images/design/hero/q40v-black-interior-1200.jpg',
 		ogImageAlt: 'Дизайнерские радиаторы Velar в интерьере',
 		breadcrumbs,
 		itemListName: 'Серии дизайнерских радиаторов Velar',
@@ -373,7 +373,7 @@ const seo = getCategorySeo({
 	<JsonLd data={seo.jsonLd} />
 
 	<section class='border-b border-neutral-200 bg-white'>
-		<div class='category-hero-grid mx-auto grid max-w-[1180px] min-[1600px]:max-w-[1500px] gap-7 px-4 pb-8 pt-6 md:px-6 md:py-10 min-[900px]:grid-cols-[minmax(0,1fr)_minmax(380px,440px)] min-[900px]:items-start min-[900px]:gap-8 min-[1600px]:grid-cols-[minmax(0,1fr)_minmax(140px,220px)_minmax(380px,440px)] xl:px-8'>
+		<div class='category-hero-grid category-hero-grid--photo mx-auto grid max-w-[1180px] gap-7 px-4 pb-8 pt-6 md:px-6 md:py-10 min-[900px]:grid-cols-[minmax(0,1fr)_minmax(380px,440px)] min-[900px]:items-start min-[900px]:gap-8 xl:px-8'>
 			<div class='min-w-0'>
 				<h1 class='max-w-[680px] text-4xl font-semibold leading-tight tracking-tight text-neutral-950 md:text-5xl'>
 					Дизайнерские радиаторы отопления Velar
@@ -390,10 +390,16 @@ const seo = getCategorySeo({
 					<a href='#design-series' class='inline-flex h-11 items-center justify-center rounded-lg border border-neutral-300 bg-white px-5 text-sm font-medium text-neutral-950 transition hover:border-neutral-400 hover:bg-neutral-50'>Смотреть серии</a>
 					<a href='#design-calculator' class='inline-flex h-11 items-center justify-center rounded-lg border border-neutral-300 bg-white px-5 text-sm font-medium text-neutral-950 transition hover:border-neutral-400 hover:bg-neutral-50'>Подобрать по параметрам</a>
 				</div>
+				<!-- 24.11.2026: визуализация в интерьере вместо студийного фото (то было видно только от 1600 px) -->
+				<figure class='mt-7 max-w-none min-[900px]:max-w-[620px]'>
+					<picture class='block overflow-hidden rounded-md bg-neutral-100'>
+						<source type='image/avif' srcset='/images/design/hero/q40v-black-interior-640.avif 640w, /images/design/hero/q40v-black-interior-1200.avif 1200w' sizes='(max-width: 899px) calc(100vw - 32px), 620px' />
+						<source type='image/webp' srcset='/images/design/hero/q40v-black-interior-640.webp 640w, /images/design/hero/q40v-black-interior-1200.webp 1200w' sizes='(max-width: 899px) calc(100vw - 32px), 620px' />
+						<img src='/images/design/hero/q40v-black-interior-1200.jpg' alt='Черный вертикальный дизайн-радиатор Velar Q40 V в интерьере гостиной' width='1200' height='750' decoding='async' class='block aspect-[16/10] h-auto w-full object-cover' />
+					</picture>
+					<figcaption class='mt-1.5 text-xs text-neutral-500'>Визуализация</figcaption>
+				</figure>
 			</div>
-
-
-			<img src='/images/design/hero/vertical-design-radiator.jpg' alt='Вертикальный дизайн-радиатор Velar' width='1095' height='3680' loading='lazy' class='category-hero-center hidden max-h-[680px] w-full object-contain min-[1600px]:block' />
 			<div id='design-calculator' class='min-w-0'>
 				<HeroQuickConfigurator
 					client:load

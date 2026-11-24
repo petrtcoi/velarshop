@@ -411,7 +411,7 @@ const seo = getCategorySeo({
 		ogTitle: 'Внутрипольные конвекторы - подбор и каталог',
 		ogDescription:
 			'KWH, KWHV и KWHV 24V для панорамных окон и скрытого отопления. Поможем выбрать тип конвекции, размеры, решетку и доставку.',
-		ogImage: '/images/convector/hero/top-view-convector.png',
+		ogImage: '/images/convector/hero/panoramic-floor-convector-1200.jpg',
 		ogImageAlt: 'Внутрипольные конвекторы Velar для панорамных окон',
 		breadcrumbs,
 		itemListName: 'Модели внутрипольных конвекторов Velar',
@@ -453,7 +453,7 @@ const textLinkClass =
 	<JsonLd data={seo.jsonLd} />
 
 	<section class='border-b border-neutral-200 bg-white pb-10 pt-7 md:py-10'>
-		<div class='category-hero-grid mx-auto grid max-w-[1180px] min-[1600px]:max-w-[1500px] gap-8 px-4 md:px-6 min-[980px]:grid-cols-[minmax(0,1fr)_minmax(320px,380px)] min-[980px]:items-start min-[980px]:gap-8 min-[1600px]:grid-cols-[minmax(0,1fr)_minmax(140px,220px)_minmax(380px,440px)] xl:px-8'>
+		<div class='category-hero-grid category-hero-grid--photo mx-auto grid max-w-[1180px] gap-8 px-4 md:px-6 min-[980px]:grid-cols-[minmax(0,1fr)_minmax(320px,380px)] min-[980px]:items-start min-[980px]:gap-8 xl:px-8'>
 			<div class='min-w-0'>
 				<h1 class='max-w-[760px] text-4xl font-semibold leading-tight tracking-tight text-neutral-950 md:text-5xl'>Внутрипольные конвекторы</h1>
 				<PageContents items={contents} />
@@ -465,10 +465,16 @@ const textLinkClass =
 					<a href='#convector-models' class='inline-flex h-11 items-center justify-center rounded-lg border border-neutral-300 px-5 text-sm font-semibold text-neutral-950 transition hover:border-red-700 hover:text-red-700'>Смотреть модели</a>
 					<a href='#convector-calculator' class='inline-flex h-11 items-center justify-center rounded-lg border border-neutral-300 px-5 text-sm font-semibold text-neutral-950 transition hover:border-red-700 hover:text-red-700'>Подобрать по параметрам</a>
 				</div>
+				<!-- 24.11.2026: визуализация в интерьере вместо студийного фото (то было видно только от 1600 px) -->
+				<figure class='mt-7 max-w-none min-[900px]:max-w-[620px]'>
+					<picture class='block overflow-hidden rounded-md bg-neutral-100'>
+						<source type='image/avif' srcset='/images/convector/hero/panoramic-floor-convector-640.avif 640w, /images/convector/hero/panoramic-floor-convector-1200.avif 1200w' sizes='(max-width: 899px) calc(100vw - 32px), 620px' />
+						<source type='image/webp' srcset='/images/convector/hero/panoramic-floor-convector-640.webp 640w, /images/convector/hero/panoramic-floor-convector-1200.webp 1200w' sizes='(max-width: 899px) calc(100vw - 32px), 620px' />
+						<img src='/images/convector/hero/panoramic-floor-convector-1200.jpg' alt='Внутрипольный конвектор Velar с решеткой в полу у панорамного окна' width='1200' height='750' decoding='async' class='block aspect-[16/10] h-auto w-full object-cover' />
+					</picture>
+					<figcaption class='mt-1.5 text-xs text-neutral-500'>Визуализация</figcaption>
+				</figure>
 			</div>
-
-
-			<img src='/images/convector/hero/top-view-convector.png' alt='Внутрипольный конвектор Velar' width='690' height='1858' loading='lazy' class='category-hero-center hidden max-h-[680px] w-full object-contain min-[1600px]:block' />
 			<div id='convector-calculator' class='min-w-0'>
 				<HeroQuickConfigurator
 					client:load
