@@ -1,0 +1,314 @@
+---
+import Layout from '@shared/layouts/Layout.astro'
+import JsonLd from '../components/seo/JsonLd.astro'
+import { modelsJsonData } from '@entities/Model'
+import { radiatorsJsonData } from '@entities/Radiator'
+import { designColors } from '@entities/DesignColor/jsonData/designColors'
+import { columnColors } from '@entities/ColumnsColor/jsonData/columnColors'
+import { ironcastColorTypeTitles } from '@entities/IroncastColor/jsonData/ironcastColorTypeTitles'
+import { designSeries } from '../components/design/designData'
+import { contacts } from '@shared/constants/contacts'
+import { catalogNumber } from '../lib/catalogFacts'
+
+// Все числа считаются из данных каталога (src/6-entities), а не вписываются вручную.
+const modelsByType = (type: string) => modelsJsonData.filter(model => model.type === type)
+const designModels = modelsByType('design')
+const columnsModels = modelsByType('columns')
+const ironcastModels = modelsByType('ironcast')
+const convectorModels = modelsByType('convector')
+const floorModels = modelsByType('floor')
+const totalModels = modelsJsonData.length
+
+const designSeriesCount = designSeries.length
+const designVertical = designModels.filter(model => model.orientation === 'vertical').length
+const designHorizontal = designModels.filter(model => model.orientation === 'horizontal').length
+
+const tubeCounts = [...new Set(columnsModels.map(model => Number.parseInt(model.id[0], 10)))]
+	.filter(Number.isFinite)
+	.sort((a, b) => a - b)
+const columnIds = new Set(columnsModels.map(model => model.id))
+const columnHeights = radiatorsJsonData
+	.filter(item => columnIds.has(item.model_id))
+	.map(item => catalogNumber(item.height))
+	.filter(value => value > 0)
+const columnHeightMin = Math.min(...columnHeights)
+const columnHeightMax = Math.max(...columnHeights)
+
+const formatNumber = (value: number) => value.toLocaleString('ru-RU')
+const pluralModels = (count: number) => {
+	const lastTwo = count % 100
+	const last = count % 10
+	if (lastTwo >= 11 && lastTwo <= 14) return 'моделей'
+	if (last === 1) return 'модель'
+	if (last >= 2 && last <= 4) return 'модели'
+	return 'моделей'
+}
+const names = (models: { name: string }[]) => models.map(model => model.name.replace(/\s+/g, ' ')).join(', ')
+
+const siteOrigin = (Astro.site ?? new URL('https://velarshop.ru')).origin
+const pageUrl = `${siteOrigin}/velar`
+const updated = '24.11.2026'
+
+const title = 'Радиаторы Velar: производитель, гарантия, серии и характеристики | VelarShop'
+const description =
+	'Кто производит радиаторы Velar, какая гарантия и давление, какие серии, цвета и модели есть. Факты с источниками и таблица моделей. Официальный дилер VelarShop.'
+
+const breadcrumbs = [
+	{ title: 'Главная', url: '/' },
+	{ title: 'Радиаторы Velar', url: '/velar' },
+]
+
+const linkClass = 'text-[#b91c1c] underline decoration-[#b91c1c]/40 underline-offset-[3px] hover:no-underline'
+
+const faq = [
+	{
+		question: 'Кто производит радиаторы Velar?',
+		answer:
+			'Радиаторы Velar производит российская компания ООО «Профкаст» в Санкт-Петербурге. Это указано на сайте производителя velarwh.ru. Интернет-магазин VelarShop производителем не является: это дилер, который продает продукцию Velar.',
+	},
+	{
+		question: 'Радиаторы Velar российские или импортные?',
+		answer:
+			'Российские. Производитель называет себя российским предприятием в Санкт-Петербурге, а на карточках моделей VelarShop указано «Сделано в России».',
+	},
+	{
+		question: 'Какая гарантия на радиаторы Velar?',
+		answer:
+			'На отопительное оборудование Velar действует гарантия от 5 до 10 лет в зависимости от модели. Точный срок указан в паспорте изделия. Гарантия сохраняется, если монтаж выполнили сертифицированные специалисты.',
+	},
+	{
+		question: 'Какое рабочее давление у радиаторов Velar?',
+		answer:
+			'В паспорте модели P 30 указано максимальное рабочее давление 1,6 МПа (16 атм) и испытательное давление 2,4 МПа (24 атм). На карточках стальных моделей сайта указано давление до 16 атм, для чугунных ретро-радиаторов рабочее давление 10 атм. Для остальных моделей ориентируйтесь на паспорт изделия.',
+	},
+	{
+		question: 'Какие серии и сколько моделей Velar есть в каталоге VelarShop?',
+		answer: `В каталоге ${totalModels} моделей: ${designModels.length} дизайн-радиаторов, ${columnsModels.length} трубчатых радиаторов, ${ironcastModels.length} чугунных ретро-радиатора, ${convectorModels.length} внутрипольных конвектора и ${floorModels.length} напольных радиатора. Размеры, мощность и цены собраны в таблице моделей.`,
+	},
+	{
+		question: 'Можно ли заказать радиатор Velar в нужный цвет?',
+		answer:
+			'Да. Для дизайн-радиаторов и трубчатых радиаторов доступны белый и черный цвета RAL в глянце и мате, любой цвет по шкале RAL, металлик, Bronze, Gold, Old Gold и лаки. Для чугунных радиаторов предусмотрены покраска по RAL, термостойкая эмаль, патина и другие виды отделки. Стоимость с выбранным цветом считает менеджер.',
+	},
+	{
+		question: 'Где купить радиаторы Velar и является ли VelarShop официальным дилером?',
+		answer:
+			'Производитель продает продукцию Velar через дилерскую сеть. VelarShop указан на сайте как официальный дилер Velar, сертификат дилера доступен на странице «О магазине». Доставка выполняется по России транспортными компаниями.',
+	},
+	{
+		question: 'Есть ли отзывы о радиаторах Velar?',
+		answer:
+			'На этой странице отзывы не публикуются. Проверить продукцию можно по документам: паспорт изделия, сертификаты соответствия на странице «Сертификаты и гарантии» и сертификат официального дилера на странице «О магазине».',
+	},
+]
+
+const jsonLd = {
+	'@context': 'https://schema.org',
+	'@graph': [
+		{
+			'@type': 'WebPage',
+			'@id': `${pageUrl}#webpage`,
+			url: pageUrl,
+			name: 'Радиаторы Velar: производитель, гарантия, характеристики',
+			description,
+			inLanguage: 'ru-RU',
+			dateModified: '2026-11-24',
+			isPartOf: { '@id': `${siteOrigin}/#website` },
+			breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
+			about: { '@id': `${pageUrl}#brand` },
+			publisher: { '@id': `${siteOrigin}/#organization` },
+		},
+		{
+			'@type': 'BreadcrumbList',
+			'@id': `${pageUrl}#breadcrumb`,
+			itemListElement: breadcrumbs.map((item, index) => ({
+				'@type': 'ListItem',
+				position: index + 1,
+				name: item.title,
+				item: new URL(item.url, `${siteOrigin}/`).toString(),
+			})),
+		},
+		{
+			'@type': 'Brand',
+			'@id': `${pageUrl}#brand`,
+			name: 'Velar',
+			url: 'https://velarwh.ru/',
+			description:
+				'Российская марка стальных дизайн-радиаторов, трубчатых радиаторов, внутрипольных конвекторов и чугунных ретро-радиаторов.',
+		},
+		{
+			'@type': 'Organization',
+			'@id': `${pageUrl}#manufacturer`,
+			name: 'ООО «Профкаст»',
+			url: 'https://velarwh.ru/',
+			brand: { '@id': `${pageUrl}#brand` },
+			address: {
+				'@type': 'PostalAddress',
+				addressLocality: 'Санкт-Петербург',
+				addressCountry: 'RU',
+			},
+		},
+		{
+			'@type': 'FAQPage',
+			'@id': `${pageUrl}#faq`,
+			mainEntity: faq.map(item => ({
+				'@type': 'Question',
+				name: item.question,
+				acceptedAnswer: { '@type': 'Answer', text: item.answer },
+			})),
+		},
+	],
+}
+
+const sources = [
+	{ href: 'https://velarwh.ru/company', label: 'velarwh.ru: О компании' },
+	{ href: 'https://velarwh.ru/buy', label: 'velarwh.ru: Где купить' },
+	{ href: 'https://velarwh.ru/10letgarantii', label: 'velarwh.ru: Увеличение гарантии' },
+	{ href: 'https://velarwh.ru/warranty', label: 'velarwh.ru: Гарантии и сертификаты' },
+	{ href: 'https://velarwh.ru/konvektory', label: 'velarwh.ru: Конвекторы' },
+]
+---
+
+<Layout title={title} description={description} breadcrumbs={breadcrumbs} disableBreadcrumbJsonLd={true}>
+	<JsonLd data={jsonLd} />
+
+	<article class='mx-auto max-w-[860px] px-2 pb-6 md:px-0'>
+		<header class='space-y-4 pb-8 pt-4 md:pb-10'>
+			<h1 class='m-0 text-[30px] font-semibold leading-tight tracking-tight text-neutral-950 md:text-[40px]'>Радиаторы Velar: производитель, гарантия, характеристики</h1>
+			<p class='m-0 text-base leading-7 text-neutral-700'>
+				Velar - российская марка стальных дизайн-радиаторов, трубчатых радиаторов, внутрипольных конвекторов и чугунных ретро-радиаторов. На странице собраны проверяемые факты: кто производит, какие серии есть, какая гарантия, какие цвета и где купить. Источники указаны в конце страницы.
+			</p>
+			<p class='m-0 text-sm text-neutral-500'>Обновлено: {updated}</p>
+		</header>
+
+		<div class='space-y-10 md:space-y-14'>
+			<section id='proizvoditel' class='space-y-3'>
+				<h2 class='m-0 text-[24px] font-semibold leading-tight text-neutral-950'>Кто производит радиаторы Velar и где</h2>
+				<p class='m-0 text-base leading-7 text-neutral-700'>
+					Радиаторы Velar выпускает российская компания ООО «Профкаст» в Санкт-Петербурге. На сайте производителя она названа российским производителем отопительного оборудования, а в разделе «Где купить» указаны производство и склад готовой продукции в Санкт-Петербурге.
+				</p>
+				<p class='m-0 text-base leading-7 text-neutral-700'>
+					По рассказу компании, ее история началась в 2014 году с внутрипольных конвекторов. Дизайн-радиаторы из профильных труб она разрабатывает с 2018 года, первые модели вышли в мае 2019 года. Бренд Velar представлен в феврале 2023 года на выставке «Акватерм» в Москве, до этого продукция выпускалась под маркой WH. В 2023 году на производстве запущена автоматическая линия порошковой окраски.
+				</p>
+				<p class='m-0 text-base leading-7 text-neutral-700'>
+					VelarShop - интернет-магазин, а не производитель. Магазин ведет ООО «Хоум Комфорт» (Санкт-Петербург), и он работает как официальный дилер Velar. Подробнее на странице <a class={linkClass} href='/about'>О магазине</a>.
+				</p>
+			</section>
+
+			<section id='serii' class='space-y-3'>
+				<h2 class='m-0 text-[24px] font-semibold leading-tight text-neutral-950'>Какие серии Velar есть</h2>
+				<p class='m-0 text-base leading-7 text-neutral-700'>В каталоге VelarShop сейчас {totalModels} {pluralModels(totalModels)} Velar пяти типов.</p>
+				<ul class='m-0 list-disc space-y-2 pl-5 text-base leading-7 text-neutral-700'>
+					<li>
+						<a class={linkClass} href='/design'>Дизайн-радиаторы</a>: {designModels.length} моделей в {designSeriesCount} сериях, из них {designVertical} вертикальных и {designHorizontal} горизонтальных. Профиль трубы плоский, квадратный, круглый или овальный.
+					</li>
+					<li>
+						<a class={linkClass} href='/columns'>Трубчатые радиаторы</a>: {columnsModels.length} моделей, {tubeCounts.length > 1 ? `${tubeCounts.slice(0, -1).map(count => `${count}-`).join(', ')} и ${tubeCounts[tubeCounts.length - 1]}-трубчатые` : `${tubeCounts[0]}-трубчатые`}, высотой от {formatNumber(columnHeightMin)} до {formatNumber(columnHeightMax)} мм. Радиатор собирают из секций, в каталоге доступны варианты от 4 секций.
+					</li>
+					<li>
+						<a class={linkClass} href='/retro'>Чугунные ретро-радиаторы</a>: {ironcastModels.length} модели ({names(ironcastModels)}). Nostalgia с цветочным орнаментом, Historic без орнамента.
+					</li>
+					<li>
+						<a class={linkClass} href='/convector'>Внутрипольные конвекторы</a>: {convectorModels.length} модели ({names(convectorModels)}), с естественной и принудительной конвекцией.
+					</li>
+					<li>
+						<a class={linkClass} href='/floor'>Напольные радиаторы</a>: {floorModels.length} модели ({names(floorModels)}).
+					</li>
+				</ul>
+				<p class='m-0 text-base leading-7 text-neutral-700'>
+					Размеры, мощность и цены всех моделей собраны в <a class={linkClass} href='/tablica-modeley'>таблице моделей Velar</a>.
+				</p>
+			</section>
+
+			<section id='materialy' class='space-y-3'>
+				<h2 class='m-0 text-[24px] font-semibold leading-tight text-neutral-950'>Материалы и рабочее давление</h2>
+				<p class='m-0 text-base leading-7 text-neutral-700'>
+					Дизайн-радиаторы и трубчатые модели стальные. В паспорте модели P 30 указаны: профильная труба 30x60 мм, толщина стенки 2,0 мм, максимальное рабочее давление 1,6 МПа (16 атм), испытательное давление 2,4 МПа (24 атм), максимальная температура теплоносителя 110 °C, подключение G1/2, соответствие ГОСТ 31311-2005. <a class={linkClass} href='/docs/passports/passport-p30v.pdf' target='_blank' rel='noopener'>Паспорт P 30 V (PDF)</a>.
+				</p>
+				<p class='m-0 text-base leading-7 text-neutral-700'>
+					На карточках моделей сайта для стальных радиаторов и конвекторов указано давление до 16 атм, для чугунных ретро-радиаторов рабочее давление 10 атм. Для остальных моделей значения уточняйте в паспорте изделия.
+				</p>
+				<p class='m-0 text-base leading-7 text-neutral-700'>
+					Для трубчатых радиаторов производитель называет толщину стенки 1,6 мм и двойную стенку в месте соединения вертикальных и горизонтальных коллекторов. Корпус конвекторов, по данным производителя, сделан из оцинкованной стали толщиной от 1,2 мм.
+				</p>
+			</section>
+
+			<section id='garantiya' class='space-y-3'>
+				<h2 class='m-0 text-[24px] font-semibold leading-tight text-neutral-950'>Гарантия</h2>
+				<p class='m-0 text-base leading-7 text-neutral-700'>
+					На отопительное оборудование Velar предоставляется гарантия от 5 до 10 лет в зависимости от модели. Точный срок указан в паспорте изделия. В 2024 году производитель увеличил гарантию на радиаторы Velar до 10 лет; для трубчатых радиаторов новый срок действует с 15 июня 2024 года.
+				</p>
+				<p class='m-0 text-base leading-7 text-neutral-700'>
+					Гарантия сохраняется, если монтаж выполнили сертифицированные специалисты. Если установку делала компания без лицензии на такие работы, гарантия недействительна. Гарантийные случаи рассматривают авторизованные сервисные центры, они указаны в паспорте изделия. Полные условия - на странице <a class={linkClass} href='/guarantees'>Сертификаты и гарантии</a>.
+				</p>
+			</section>
+
+			<section id='dokumenty' class='space-y-3'>
+				<h2 class='m-0 text-[24px] font-semibold leading-tight text-neutral-950'>Сертификаты и документы</h2>
+				<p class='m-0 text-base leading-7 text-neutral-700'>
+					На странице <a class={linkClass} href='/guarantees'>Сертификаты и гарантии</a> размещены сертификаты соответствия на дизайн-радиаторы, внутрипольные конвекторы и чугунные радиаторы. Производитель сообщает, что радиаторы прошли обязательную сертификацию и испытания в специализированной лаборатории.
+				</p>
+				<p class='m-0 text-base leading-7 text-neutral-700'>
+					Статус дилера подтверждает <a class={linkClass} href='/docs/cert.pdf' target='_blank' rel='noopener'>сертификат официального дилера Velar</a> (PDF). Паспорта изделий в формате PDF доступны на страницах моделей, для которых они подготовлены.
+				</p>
+			</section>
+
+			<section id='tsveta' class='space-y-3'>
+				<h2 class='m-0 text-[24px] font-semibold leading-tight text-neutral-950'>Цвета и покрытие</h2>
+				<p class='m-0 text-base leading-7 text-neutral-700'>
+					Для дизайн-радиаторов в конфигураторе сайта доступно {designColors.length} вариантов покрытия, для трубчатых радиаторов - {columnColors.length}: белый RAL 9016 и черный RAL 9005 в глянце и мате, любой цвет по шкале RAL, цвета металлик, Bronze, Gold, Old Gold и лаки (медь, бронза, технолак, латунь).
+				</p>
+				<p class='m-0 text-base leading-7 text-neutral-700'>
+					Для чугунных ретро-радиаторов предусмотрено {ironcastColorTypeTitles.length} видов отделки: цвет из палитры RAL, термостойкая эмаль, патина, комбинированная покраска в два цвета с набивкой узоров и лаком, дизайнерское исполнение по образцу заказчика. Производитель также сообщает, что с 2025 года принимает заказы на покраску в дизайнерские лаки.
+				</p>
+				<p class='m-0 text-base leading-7 text-neutral-700'>Стоимость с выбранным цветом и подключением считает менеджер.</p>
+			</section>
+
+			<section id='sroki' class='space-y-3'>
+				<h2 class='m-0 text-[24px] font-semibold leading-tight text-neutral-950'>Сроки и доставка</h2>
+				<p class='m-0 text-base leading-7 text-neutral-700'>
+					Радиаторы изготавливают под заказ. Срок производства зависит от модели, цвета и текущей загрузки и уточняется при расчете.
+				</p>
+				<p class='m-0 text-base leading-7 text-neutral-700'>
+					Доставка возможна в любой город России. В регионы заказы уходят транспортными компаниями (Деловые Линии, Возовоз, Байкал-Сервис, ПЭК и другие), доставка до терминала в городе отправления выполняется за счет магазина. Подробности - на странице <a class={linkClass} href='/delivery'>Доставка и оплата</a>.
+				</p>
+			</section>
+
+			<section id='gde-kupit' class='space-y-3'>
+				<h2 class='m-0 text-[24px] font-semibold leading-tight text-neutral-950'>Где купить радиаторы Velar</h2>
+				<p class='m-0 text-base leading-7 text-neutral-700'>
+					Производитель сообщает, что продукцию Velar можно купить только через дилерскую сеть. VelarShop указан на сайте как официальный дилер Velar. Расчет и подбор: <a class={linkClass} href='/request'>оставить заявку</a> или позвонить по телефону <a class={linkClass} href={`tel:${contacts.phone495}`}>{contacts.phone495String}</a> (Москва) или <a class={linkClass} href={`tel:${contacts.phone812}`}>{contacts.phone812String}</a> (Санкт-Петербург).
+				</p>
+			</section>
+
+			<section id='faq' class='space-y-4'>
+				<h2 class='m-0 text-[24px] font-semibold leading-tight text-neutral-950'>Вопросы и ответы</h2>
+				<div class='space-y-5'>
+					{
+						faq.map(item => (
+							<div class='space-y-1.5'>
+								<h3 class='m-0 text-base font-semibold leading-snug text-neutral-950'>{item.question}</h3>
+								<p class='m-0 text-base leading-7 text-neutral-700'>{item.answer}</p>
+							</div>
+						))
+					}
+				</div>
+			</section>
+
+			<section id='istochniki' class='space-y-3'>
+				<h2 class='m-0 text-[24px] font-semibold leading-tight text-neutral-950'>Источники</h2>
+				<ul class='m-0 list-disc space-y-1.5 pl-5 text-sm leading-6 text-neutral-700'>
+					{
+						sources.map(source => (
+							<li>
+								<a class={linkClass} href={source.href} target='_blank' rel='noopener noreferrer'>{source.label}</a>
+							</li>
+						))
+					}
+					<li>Данные каталога VelarShop: модели, цвета, размеры, мощность и цены (<a class={linkClass} href='/tablica-modeley'>таблица моделей</a>).</li>
+					<li>Страницы сайта: <a class={linkClass} href='/about'>О магазине</a>, <a class={linkClass} href='/guarantees'>Сертификаты и гарантии</a>, <a class={linkClass} href='/delivery'>Доставка и оплата</a>.</li>
+				</ul>
+			</section>
+		</div>
+	</article>
+</Layout>

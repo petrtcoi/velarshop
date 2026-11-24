@@ -1,0 +1,151 @@
+---
+import Layout from '@shared/layouts/Layout.astro'
+import JsonLd from '../components/seo/JsonLd.astro'
+import { getModelTableGroups } from '../lib/modelTable'
+
+const groups = getModelTableGroups()
+const totalModels = groups.reduce((sum, group) => sum + group.rows.length, 0)
+
+const siteOrigin = (Astro.site ?? new URL('https://velarshop.ru')).origin
+const pageUrl = `${siteOrigin}/tablica-modeley`
+
+const title = 'Таблица моделей Velar: размеры, мощность и цены | VelarShop'
+const description =
+	'Все модели радиаторов Velar в одной таблице: тип, профиль, высота, межосевое расстояние, глубина, мощность и цена от. Дизайн, трубчатые, ретро, конвекторы.'
+
+const breadcrumbs = [
+	{ title: 'Главная', url: '/' },
+	{ title: 'Таблица моделей', url: '/tablica-modeley' },
+]
+
+function formatPrice(value: number): string {
+	return value > 0 ? `от ${value.toLocaleString('ru-RU')} ₽` : 'уточняйте'
+}
+
+const jsonLd = {
+	'@context': 'https://schema.org',
+	'@graph': [
+		{
+			'@type': 'WebPage',
+			'@id': `${pageUrl}#webpage`,
+			url: pageUrl,
+			name: 'Таблица моделей Velar',
+			description,
+			isPartOf: { '@id': `${siteOrigin}/#website` },
+			breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
+			mainEntity: { '@id': `${pageUrl}#itemlist` },
+		},
+		{
+			'@type': 'BreadcrumbList',
+			'@id': `${pageUrl}#breadcrumb`,
+			itemListElement: breadcrumbs.map((item, index) => ({
+				'@type': 'ListItem',
+				position: index + 1,
+				name: item.title,
+				item: new URL(item.url, `${siteOrigin}/`).toString(),
+			})),
+		},
+		{
+			'@type': 'ItemList',
+			'@id': `${pageUrl}#itemlist`,
+			name: 'Модели радиаторов Velar',
+			numberOfItems: totalModels,
+			itemListElement: groups
+				.flatMap(group => group.rows)
+				.map((row, index) => ({
+					'@type': 'ListItem',
+					position: index + 1,
+					name: row.title,
+					url: new URL(row.href, `${siteOrigin}/`).toString(),
+				})),
+		},
+	],
+}
+---
+
+<Layout
+	title={title}
+	description={description}
+	breadcrumbs={breadcrumbs}
+	disableBreadcrumbJsonLd={true}
+>
+	<JsonLd data={jsonLd} />
+
+	<article class='mx-auto max-w-6xl px-2 pb-6 md:px-0'>
+		<header class='space-y-4 pb-8 pt-4 md:pb-10'>
+			<h1 class='m-0 text-[30px] font-semibold leading-tight tracking-tight text-neutral-950 md:text-[40px]'>Таблица моделей Velar</h1>
+			<p class='m-0 max-w-[820px] text-base leading-7 text-neutral-700'>
+				Все {totalModels} моделей каталога VelarShop в одной таблице: тип, профиль или число труб, доступные высоты, межосевое расстояние, глубина, мощность по ΔT70 и цена от. Название модели ведет на страницу с размерами и конфигуратором.
+			</p>
+			<p class='m-0 max-w-[820px] text-sm leading-6 text-neutral-600'>
+				Цены и мощности из каталога сайта; точную стоимость с цветом и подключением считает менеджер. Подробнее о бренде и производителе - на странице <a class='text-[#b91c1c] underline decoration-[#b91c1c]/40 underline-offset-[3px] hover:no-underline' href='/velar'>Радиаторы Velar</a>.
+			</p>
+			<p class='m-0 text-sm text-neutral-500'>Обновлено: 24.11.2026</p>
+			<nav aria-label='Типы моделей' class='flex flex-wrap gap-2 pt-2'>
+				{
+					groups.map(group => (
+						<a
+							href={`#${group.anchor}`}
+							class='inline-flex h-9 items-center rounded-full border border-neutral-300 px-4 text-sm text-neutral-800 no-underline hover:border-neutral-950'
+						>
+							{group.title} ({group.rows.length})
+						</a>
+					))
+				}
+			</nav>
+		</header>
+
+		<div class='space-y-12 md:space-y-16'>
+			{
+				groups.map(group => (
+					<section id={group.anchor} class='scroll-mt-24 space-y-3'>
+						<h2 class='m-0 text-[24px] font-semibold leading-tight text-neutral-950'>{group.title}</h2>
+						<p class='m-0 max-w-[820px] text-sm leading-6 text-neutral-600'>
+							{group.intro} <a class='text-[#b91c1c] underline decoration-[#b91c1c]/40 underline-offset-[3px] hover:no-underline' href={group.hubHref}>Раздел каталога</a>.
+						</p>
+						<div class='overflow-x-auto rounded-md border border-neutral-200' tabindex='0' role='region' aria-label={`Таблица: ${group.title}`}>
+							<table class='w-full min-w-[820px] border-collapse text-left text-sm'>
+								<thead class='bg-neutral-50 text-xs text-neutral-600'>
+									<tr>
+										<th class='px-3 py-2.5 font-medium'>Модель</th>
+										<th class='px-3 py-2.5 font-medium'>Профиль / трубы</th>
+										<th class='px-3 py-2.5 font-medium'>Высота, мм</th>
+										<th class='px-3 py-2.5 font-medium'>Межосевое, мм</th>
+										<th class='px-3 py-2.5 font-medium'>Глубина, мм</th>
+										<th class='px-3 py-2.5 font-medium'>Мощность ΔT70</th>
+										<th class='px-3 py-2.5 text-right font-medium'>Цена</th>
+									</tr>
+								</thead>
+								<tbody>
+									{group.rows.map(row => (
+										<tr class='border-t border-neutral-200 align-top'>
+											<td class='px-3 py-2.5 font-medium text-neutral-950'>
+												<a class='text-[#b91c1c] underline decoration-[#b91c1c]/40 underline-offset-[3px] hover:no-underline' href={row.href}>{row.title}</a>
+											</td>
+											<td class='px-3 py-2.5 text-neutral-700'>{row.profile}</td>
+											<td class='whitespace-nowrap px-3 py-2.5 text-neutral-700'>{row.heights}</td>
+											<td class='whitespace-nowrap px-3 py-2.5 text-neutral-700'>{row.centerDistance}</td>
+											<td class='whitespace-nowrap px-3 py-2.5 text-neutral-700'>{row.depth}</td>
+											<td class='whitespace-nowrap px-3 py-2.5 text-neutral-700'>{row.power}</td>
+											<td class='whitespace-nowrap px-3 py-2.5 text-right font-medium text-neutral-950'>{formatPrice(row.priceFrom)}</td>
+										</tr>
+									))}
+								</tbody>
+							</table>
+						</div>
+					</section>
+				))
+			}
+		</div>
+
+		<section class='mt-12 space-y-3 md:mt-16'>
+			<h2 class='m-0 text-[24px] font-semibold leading-tight text-neutral-950'>Как пользоваться таблицей</h2>
+			<ul class='m-0 max-w-[820px] list-disc space-y-2 pl-5 text-sm leading-6 text-neutral-700'>
+				<li>Для дизайн-радиаторов, ретро-радиаторов, конвекторов и напольных моделей мощность дана для радиатора целиком, для трубчатых - на одну секцию.</li>
+				<li>Высоты и межосевое расстояние показаны списком, если вариантов до четырех, и диапазоном, если их больше. Точный размер выбирают на странице модели.</li>
+				<li>Цена «от» - минимальная цена варианта модели в каталоге. Цвет, подключение, решетка конвектора и комплектующие считаются отдельно.</li>
+				<li>Нужен подбор под помещение? <a class='text-[#b91c1c] underline decoration-[#b91c1c]/40 underline-offset-[3px] hover:no-underline' href='/request'>Оставьте заявку</a>, менеджер рассчитает мощность и стоимость.</li>
+			</ul>
+		</section>
+	</article>
+</Layout>

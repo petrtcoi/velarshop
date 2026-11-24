@@ -12,7 +12,7 @@ type LeadWidgetProps = {
 	termsUrl?: string
 }
 
-const MAX_FILE_SIZE = 5 * 1024 * 1024
+const MAX_FILE_SIZE = 20 * 1024 * 1024
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 function readFileAsDataUrl(file: File): Promise<string> {
@@ -86,7 +86,7 @@ function LeadWidget({
 
 		if (nextFile.size > MAX_FILE_SIZE) {
 			setFile(null)
-			setFileNote('Файл слишком большой. Выберите файл до 5 Мб.')
+			setFileNote('Файл слишком большой. Выберите файл до 20 МБ.')
 			if (fileInputRef.current) fileInputRef.current.value = ''
 			return
 		}
@@ -319,7 +319,7 @@ function LeadWidget({
 						Выбрать файл
 					</label>
 					<div class='text-sm text-[#666]'>{selectedFileName}</div>
-					<div class='text-xs text-[#888]'>до 5 Мб</div>
+					<div class='text-xs text-[#888]'>до 20 МБ</div>
 				</div>
 				{fileNote ? <div class={`mt-1 text-xs ${file ? 'text-[#0a7a2f]' : 'text-[#b00020]'}`}>{fileNote}</div> : null}
 			</div>

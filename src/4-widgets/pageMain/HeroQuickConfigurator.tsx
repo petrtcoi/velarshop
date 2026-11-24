@@ -3,6 +3,8 @@ import SaveSelection, { buildSelectionPath, buildSelectionText, formatSectionsLa
 import { useStore } from '@nanostores/preact'
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks'
 
+import ColorSwatches, { hasColorSwatches } from '@shared/components/ColorSwatches'
+
 type ModelType = 'design' | 'floor' | 'convector' | 'ironcast' | 'columns'
 type Orientation = 'vertical' | 'horizontal' | ''
 type ModelResolutionMode = 'exact-model' | 'family-by-height'
@@ -94,15 +96,17 @@ type Props = {
 	collapsibleOnMobile?: boolean
 	/** Подпись кнопки раскрытия на мобильных экранах. */
 	mobileToggleLabel?: string
-	/** Варианты места установки перед выбором модели; показываются только при variant='category'. */
+	/** Варианты места установки перед выбором модели; показываются при variant='category' и 'hero' (не в модальном окне). */
 	placementOptions?: PlacementOption[]
 }
 
-/** Первый шаг «Где будет стоять»: выбор места предвыбирает модель (только для страницы трубчатых). */
+/** Первый шаг «Где будет стоять»: выбор места предвыбирает модель (страница трубчатых и главная). */
 export type PlacementOption = {
 	id: string
 	label: string
 	modelId: string
+	/** Высота, которую выставить после загрузки модели (если такая есть в ее размерах). */
+	height?: string
 }
 
 type InlineSelectOption = {
@@ -460,6 +464,7 @@ export default function HeroQuickConfigurator({
 	const comboboxRef = useRef<HTMLDivElement>(null)
 	const modelSearchInputRef = useRef<HTMLInputElement>(null)
 	const skipInitialFetchRef = useRef(Boolean(initialDetails))
+	const pendingPlacementHeightRef = useRef('')
 
 	const selectedModel = useMemo(
 		() => models.find(model => model.id === selectedModelId) ?? models[0],
@@ -533,8 +538,14 @@ export default function HeroQuickConfigurator({
 				return response.json() as Promise<ModelDetails>
 			})
 			.then(payload => {
+				const nextSelection = buildInitialSelection(payload)
+				const placementHeight = pendingPlacementHeightRef.current
+				pendingPlacementHeightRef.current = ''
+				if (placementHeight && payload.filters.height && payload.options.heights.includes(placementHeight)) {
+					nextSelection.height = placementHeight
+				}
 				setDetails(payload)
-				setSelection(buildInitialSelection(payload))
+				setSelection(nextSelection)
 			})
 			.catch(fetchError => {
 				if (fetchError.name === 'AbortError') return
@@ -642,7 +653,7 @@ export default function HeroQuickConfigurator({
 			? 'grid grid-cols-2 gap-x-2 gap-y-2'
 			: 'grid grid-cols-2 gap-x-2 gap-y-2 md:gap-2'
 	const configuratorTitle = title ?? (isCategory ? 'Быстрый подбор' : 'Быстрый выбор')
-	const availablePlacements = isCategory ? placementOptions.filter(option => models.some(model => model.id === option.modelId)) : []
+	const availablePlacements = isModal ? [] : placementOptions.filter(option => models.some(model => model.id === option.modelId))
 	// Место подсвечено, пока выбрана предложенная для него модель; ручная смена модели снимает подсветку.
 	const activePlacement = availablePlacements.find(option => option.id === placementId && option.modelId === selectedModelId)
 
@@ -691,20 +702,36 @@ export default function HeroQuickConfigurator({
 					{availablePlacements.length > 0 && (
 						<div class='mb-2.5'>
 							<div class={fieldLabelClass()} id='hero_placement_label'>Где будет стоять</div>
-							<div class='mt-1 grid grid-cols-3 gap-1.5' role='group' aria-labelledby='hero_placement_label'>
+							<div
+								class={`mt-1 grid gap-1.5 ${
+									availablePlacements.length === 4
+										? `grid-cols-2${isHero ? ' min-[601px]:max-[819px]:grid-cols-4' : ''}`
+										: 'grid-cols-3'
+								}`}
+								role='group'
+								aria-labelledby='hero_placement_label'
+							>
 								{availablePlacements.map(option => {
 									const active = activePlacement?.id === option.id
 									return (
 										<button
 											type='button'
 											aria-pressed={active}
-											class={`min-h-9 rounded-lg border px-1.5 py-1.5 text-center text-xs font-normal leading-4 transition ${
+											class={`min-h-[36px] rounded-lg border px-1.5 py-1.5 text-center text-xs font-normal leading-4 transition ${
 												active ? 'border-red-500 bg-red-50 text-red-700' : 'border-neutral-200 bg-neutral-50 text-neutral-900 hover:border-neutral-300'
 											}`}
 											onClick={() => {
 												setPlacementId(option.id)
-												setSelectedModelId(option.modelId)
 												setOpen(false)
+												const placementHeight = option.height ?? ''
+												if (details?.model.id === option.modelId && option.modelId === selectedModelId) {
+													if (placementHeight && details.filters.height && details.options.heights.includes(placementHeight)) {
+														setSelection(current => ({ ...current, height: placementHeight }))
+													}
+													return
+												}
+												pendingPlacementHeightRef.current = placementHeight
+												setSelectedModelId(option.modelId)
 											}}
 										>
 											{option.label}
@@ -865,7 +892,18 @@ export default function HeroQuickConfigurator({
 							/>
 						)}
 
-						{details.filters.color && details.options.colors.length > 0 && (
+						{details.filters.color && details.options.colors.length > 0 && (details.model.type === 'design' || details.model.type === 'columns') && hasColorSwatches(details.options.colors.map(option => option.id)) ? (
+							<div class={`min-w-0 col-span-full${heroTabletPairClass}`}>
+								<div class={fieldLabelClass()} id='hero_color_label'>Цвет</div>
+								<ColorSwatches
+									options={details.options.colors.map(option => ({ id: option.id, label: colorOptionLabel(option) }))}
+									selected={selection.color}
+									onChange={value => setSelection(current => ({ ...current, color: value }))}
+									labelledBy='hero_color_label'
+									compact
+								/>
+							</div>
+						) : details.filters.color && details.options.colors.length > 0 && (
 							<InlineSelect
 								label={details.model.type === 'ironcast' ? 'Отделка / цвет' : 'Цвет'}
 								value={selection.color}

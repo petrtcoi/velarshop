@@ -1,7 +1,7 @@
 import { useStore } from '@nanostores/preact'
 import { useEffect } from 'preact/hooks'
 
-import Select from '@shared/components/Select'
+import ColorSwatches from '@shared/components/ColorSwatches'
 import { designColors } from '@entities/DesignColor'
 import { designColorId as storeDesignColorId } from '../store/designColor'
 
@@ -9,11 +9,12 @@ function SelectDesignColor() {
 	const designColorId = useStore(storeDesignColorId)
 	const options = designColors.map(color => ({
 		id: color.id,
-		label:
+		label: (
 			`${color.title} ` +
 			(color.multiplicate === 1
 				? ''
-				: `(+${Math.round((color.multiplicate - 1) * 100)}%)`),
+				: `(+${Math.round((color.multiplicate - 1) * 100)}%)`)
+		).trim(),
 	}))
 
 	useEffect(() => {
@@ -26,17 +27,17 @@ function SelectDesignColor() {
 
 	return (
 		<div class='mt-5 mb-2'>
-			<label
-				for='select_design_radiator_color'
+			<div
+				id='select_design_radiator_color_label'
 				class='block text-xs font-thin'
 			>
 				Цвет радиатора:
-			</label>
-			<Select
-				id='select_design_radiator_color'
+			</div>
+			<ColorSwatches
 				options={options}
 				selected={designColorId}
 				onChange={handleChange}
+				labelledBy='select_design_radiator_color_label'
 			/>
 		</div>
 	)

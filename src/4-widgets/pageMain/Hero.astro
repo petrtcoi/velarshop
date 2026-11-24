@@ -1,12 +1,21 @@
 ---
 import HeroQuickConfigurator from "./HeroQuickConfigurator";
-import type { ModelDetails } from "./HeroQuickConfigurator";
+import type { ModelDetails, PlacementOption } from "./HeroQuickConfigurator";
 import { buildQuickConfiguratorModels } from "./quickConfiguratorData";
 import { get as getHeroConfiguratorData } from "../../pages/api/hero-configurator/[model].json";
 
 const modelOptions = buildQuickConfiguratorModels();
 
 const defaultModelId = "3030";
+// Первый шаг подбора на главной: место установки предвыбирает модель из всего ассортимента.
+// 3030 - трубчатый высотой 300 мм (под окно), 3057 - межосевое 500 мм (замена старой батареи),
+// P30 V высотой 1750 мм (вертикальный дизайн-радиатор), KWH - внутрипольный конвектор (панорамное остекление).
+const placementOptions: PlacementOption[] = [
+  { id: "window", label: "Под окно", modelId: "3030" },
+  { id: "replace", label: "Вместо старой батареи", modelId: "3057" },
+  { id: "tall", label: "Высокий на стену", modelId: "p30v", height: "1750" },
+  { id: "panoramic", label: "У панорамного окна", modelId: "kwh" },
+];
 let initialDetails: ModelDetails | null = null;
 
 try {
@@ -197,6 +206,7 @@ const scenarios = [
         models={modelOptions}
         defaultModelId={defaultModelId}
         initialDetails={initialDetails}
+        placementOptions={placementOptions}
       />
     </div>
   </div>
