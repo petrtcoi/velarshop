@@ -206,7 +206,7 @@ export function getCategorySeo(input: CategorySeoInput): CategorySeoResult {
 	const products = sanitizeItems(input.category.products ?? [])
 	const faq = sanitizeFaq(input.category.faq ?? [])
 	const breadcrumbs = input.category.breadcrumbs ?? getDefaultBreadcrumbs(input.category)
-	const ogTitle = input.category.ogTitle ?? `${input.category.h1} — каталог Velar`
+	const ogTitle = input.category.ogTitle ?? `${input.category.h1}: каталог Velar`
 	const ogDescription =
 		input.category.ogDescription ??
 		'Выберите модель, размер, цвет и подключение. Поможем рассчитать мощность и доставку по России.'

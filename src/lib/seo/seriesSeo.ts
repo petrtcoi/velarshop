@@ -103,7 +103,7 @@ function getProfileSuffix(profile: string): string {
 }
 
 function buildSeriesTitle(label: string, profile: string): string {
-	return `Velar ${label} — дизайн-радиатор ${getProfileSuffix(profile)}`
+	return `Velar ${label}, дизайн-радиатор ${getProfileSuffix(profile)}`
 }
 
 function buildSeriesDescription(params: {

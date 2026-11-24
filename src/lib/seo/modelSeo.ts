@@ -180,7 +180,7 @@ function buildColumnsSnippet(params: {
 	const tubes = Number.parseInt(params.model.id[0] ?? '', 10)
 	const tubesLabel = Number.isFinite(tubes) && tubes > 1 ? `${tubes}-трубчатый` : 'трубчатый'
 	const heightLabel = height ? `, ${height} мм` : ''
-	const priceLabel = params.priceMin ? ` — цена от ${formatRub(params.priceMin)}` : ' — цена и наличие'
+	const priceLabel = params.priceMin ? `, цена от ${formatRub(params.priceMin)}` : ', цена и наличие'
 	const title = `Трубчатый радиатор ${params.modelFullName}${heightLabel}${priceLabel}`
 
 	const specs = [
@@ -204,7 +204,7 @@ function buildTypedSnippet(params: {
 	profilePhrase: string
 }): { title: string; description: string } | null {
 	const { model, radiators, modelFullName, priceMin, orientationLabel, profilePhrase } = params
-	const priceTitle = priceMin ? ` — цена от ${formatRub(priceMin)}` : ' — цена и наличие'
+	const priceTitle = priceMin ? `, цена от ${formatRub(priceMin)}` : ', цена и наличие'
 	const priceText = priceMin ? ` От ${formatRub(priceMin)} за радиатор.` : ''
 	const sections = radiators.map(radiator => toNumber(radiator.sections)).filter(value => value > 0)
 	const sectionsText = sections.length ? `, ${Math.min(...sections)}–${Math.max(...sections)} секций` : ''
@@ -467,8 +467,8 @@ export function getModelSeo(input: ModelSeoInput): ModelSeoResult {
 	})
 
 	const ogTitle = isDesign
-		? `${modelFullName} — ${orientationLabel || 'дизайн'} дизайн-радиатор Velar`
-		: `${modelFullName} — ${input.model.prefix.toLowerCase()} Velar`
+		? `${modelFullName}, ${orientationLabel || 'дизайн'} дизайн-радиатор Velar`
+		: `${modelFullName}, ${input.model.prefix.toLowerCase()} Velar`
 	const ogDescription = getOgDescription({
 		priceMin,
 		orientationLabel,
@@ -480,8 +480,8 @@ export function getModelSeo(input: ModelSeoInput): ModelSeoResult {
 	})
 	const ogImage = resolveModelImage(input.model, siteUrl)
 	const ogImageAlt = isDesign
-		? `${modelFullName} — дизайн-радиатор Velar`
-		: `${modelFullName} — ${input.model.prefix.toLowerCase()} Velar`
+		? `${modelFullName}, дизайн-радиатор Velar`
+		: `${modelFullName}, ${input.model.prefix.toLowerCase()} Velar`
 
 	const hasHiddenFlag = Boolean((input.model as unknown as { hidden?: boolean; noindex?: boolean }).hidden)
 	const hasNoindexFlag = Boolean((input.model as unknown as { hidden?: boolean; noindex?: boolean }).noindex)
