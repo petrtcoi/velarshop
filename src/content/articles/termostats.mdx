@@ -8,6 +8,8 @@ dateModified: "2026-10-12"
 metaTitle: "Установка термоголовки: нижнее и боковое подключение радиатора"
 metaDescription: "Где установить термоголовку при нижнем и боковом подключении. Схемы расположения датчика, совместимость арматуры, шторы, ниши и выносной датчик."
 ---
+
+import ResponsiveImage from '../../7-shared/components/ResponsiveImage.astro';
 import ArticleCta from '../../components/articles/ArticleCta.astro';
 import ArticleOffer from '../../components/articles/ArticleOffer.astro';
 
@@ -37,7 +39,7 @@ import ArticleOffer from '../../components/articles/ArticleOffer.astro';
 Правильное решение - **горизонтальная установка**, при которой термоголовка обращена в сторону помещения и свободно омывается воздухом. Это позволяет датчику реагировать именно на реальную температуру в комнате.
 
 <div class='flex align-middle justify-center items-center'>
-	<img
+	<ResponsiveImage sizes="(max-width: 424px) calc(100vw - 24px), 400px"
 		src='/images/articles/20240912-2.jpg'
 		width='400'
 		height='400'
@@ -50,7 +52,7 @@ import ArticleOffer from '../../components/articles/ArticleOffer.astro';
 ## Термоголовка при нижнем и боковом подключении
 
 <figure>
-  <div class='overflow-x-auto'><img class='min-w-[760px] !max-w-none' src='/images/articles/thermostat-position.svg' width='760' height='420' loading='lazy' alt='Схема нижнего и бокового подключения: термоголовка расположена в открытой зоне со свободной циркуляцией воздуха' /></div>
+  <div class='overflow-x-auto'><ResponsiveImage sizes="(max-width: 784px) calc(100vw - 24px), 760px" class='min-w-[760px] !max-w-none' src='/images/articles/thermostat-position.svg' width='760' height='420' loading='lazy' alt='Схема нижнего и бокового подключения: термоголовка расположена в открытой зоне со свободной циркуляцией воздуха' /></div>
   <figcaption>Схема показывает расположение датчика, а не направление потока для конкретной модели. Подачу, обратку и положение клапана сверяют с монтажным чертежом радиатора и инструкцией арматуры.</figcaption>
 </figure>
 

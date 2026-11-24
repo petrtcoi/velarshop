@@ -1,4 +1,5 @@
 ---
+import ResponsiveImage from '@shared/components/ResponsiveImage.astro'
 /**
  * Карточки «Подходящие модели» в конце статьи /info: фото, название с коммерческим анкором, тип, цена «от».
  * Данные считаются в src/lib/articleCommerce.ts из каталога (modelsJsonData + radiatorsJsonData).
@@ -21,7 +22,7 @@ const { cards, title = 'Подходящие модели' } = Astro.props as Pr
 				{cards.map(card => (
 					<div class='article-models__card'>
 						<a class='article-models__image' href={card.href} tabindex='-1' aria-hidden='true'>
-							<img src={card.image} alt={card.title} width='320' height='240' loading='lazy' decoding='async' />
+							<ResponsiveImage src={card.image} alt={card.title} width='320' height='240' sizes='(max-width: 640px) 50vw, 240px' loading='lazy' />
 						</a>
 						<div class='article-models__body'>
 							<a class='article-models__title' href={card.href}>

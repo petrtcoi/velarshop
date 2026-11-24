@@ -17,6 +17,7 @@ import { modelsJsonData } from '@entities/Model'
 import { radiatorsJsonData } from '@entities/Radiator'
 import { getModelSlug } from '@shared/utils/getModelSlug'
 import { getModelMainImagePath } from '@shared/utils/getModelMainImagePath'
+import { getModelFolderImages } from '../../lib/modelImages'
 import { getModelSeo } from '../../lib/seo/modelSeo'
 import { formatDimensions, formatSections } from '../../lib/productFormat'
 import { catalogRange } from '../../lib/catalogFacts'
@@ -195,14 +196,10 @@ function resolveConnectionText(connections: string): string {
 const connectionText = resolveConnectionText(model.connections)
 
 const imagePath = getModelMainImagePath(model.slug, model.type === 'columns')
-const imageModules = import.meta.glob('../../../public/images/models/*/*.*')
-const modelImageModules = Object.entries(imageModules)
-	.filter(([key]) => key.includes(`/images/models/${model.slug}/`) && !key.endsWith('/main.jpg'))
-	.sort(([a], [b]) => a.localeCompare(b))
-
-const extraImages = await Promise.all(modelImageModules.map(([, value]) => value()))
-// @ts-ignore Astro image module typing
-const renderedExtraImages = extraImages.map(image => image.default)
+// Photos are served from /public by path (AVIF/WebP variants via the image manifest).
+const renderedExtraImages = getModelFolderImages(model.slug)
+	.map(image => image.src)
+	.filter(src => !src.endsWith('/main.jpg'))
 const galleryImages = [
 	{
 		src: imagePath,

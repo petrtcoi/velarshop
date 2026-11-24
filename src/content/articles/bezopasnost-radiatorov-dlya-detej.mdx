@@ -7,6 +7,8 @@ sortRank: 200000580
 metaTitle: 'Безопасность радиаторов отопления в доме'
 metaDescription: 'Температура радиаторов, риск ожогов, экраны и выбор безопасных отопительных приборов для детей и домашних животных.'
 ---
+
+import ResponsiveImage from '../../7-shared/components/ResponsiveImage.astro';
 import ArticleCta from '../../components/articles/ArticleCta.astro';
 
 ## Безопасность радиаторов отопления - как защитить детей и домашних животных
@@ -16,7 +18,7 @@ import ArticleCta from '../../components/articles/ArticleCta.astro';
 Для дома с детьми и домашними животными радиатор нужно оценивать не только по дизайну и [<span class="text-red-500 hover:underline">мощности радиатора</span>](/info/power), но и по сценарию контакта: где стоит прибор, насколько легко до него дотянуться, есть ли острые элементы, можно ли ограничить температуру поверхности и не ухудшить отопление.
 
 <div class="flex align-middle justify-center items-center">
-  <img
+  <ResponsiveImage sizes="(max-width: 524px) calc(100vw - 24px), 500px"
     src="/images/articles/design2.jpg"
     width="500"
     height="500"

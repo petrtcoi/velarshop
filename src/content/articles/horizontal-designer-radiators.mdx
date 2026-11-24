@@ -6,6 +6,8 @@ thumbnail: "horizontal-designer-radiators.jpg"
 sortRank: 2000
 dateModified: "2026-10-03"
 ---
+
+import ResponsiveImage from '../../7-shared/components/ResponsiveImage.astro';
 import ArticleCta from '../../components/articles/ArticleCta.astro';
 
 ## Горизонтальные дизайн-радиаторы: где использовать лучше
@@ -43,7 +45,7 @@ import ArticleCta from '../../components/articles/ArticleCta.astro';
 Модели с небольшой высотой (2-секционные радиаторы) обладают ограниченной мощностью, но идеально подходят как дополнительный источник тепла или тепловая завеса перед холодными зонами - особенно там, где эстетика важнее максимальной мощности.
 
 <div class="flex align-middle justify-center items-center mt-4 mb-6">
-  <img 
+  <ResponsiveImage sizes="(max-width: 624px) calc(100vw - 24px), 600px" 
     src='/images/models/p60h/3.jpg'
     width="600"
     height="600"

@@ -34,11 +34,11 @@ const hasMultipleImages = images.length > 1
 								alt={image.alt || productName}
 								title={image.title || image.alt || productName}
 								loading={index === 0 ? 'eager' : 'lazy'}
+								fetchpriority={index === 0 ? 'high' : undefined}
 								aspectRatio='1:1'
-								widths={[420, 640, 820]}
 								width={760}
 								height={760}
-								sizes='(max-width: 768px) 100vw, 44vw'
+								sizes='(max-width: 767px) calc(100vw - 24px), 520px'
 								class='h-full w-full object-contain'
 							/>
 						</div>
@@ -86,7 +86,6 @@ const hasMultipleImages = images.length > 1
 						title={image.title || image.alt || productName}
 						loading='lazy'
 						aspectRatio='1:1'
-						widths={[80, 120]}
 						width={120}
 						height={120}
 						sizes='72px'

@@ -1,6 +1,7 @@
 ---
 import { CollectionEntry, getCollection } from "astro:content";
 import Layout from "@shared/layouts/Layout.astro";
+import ResponsiveImage from "@shared/components/ResponsiveImage.astro";
 
 export async function getStaticPaths() {
   const pages = await getCollection("pages");
@@ -172,13 +173,13 @@ const deliveryJsonLd = isDeliveryPage
 
         <div class='article-shell article-shell--reading article-layout'>
           <article class='article-content article-prose article-prose--hide-duplicate-intro-heading'>
-            <Content />
+            <Content components={{ img: ResponsiveImage }} />
           </article>
         </div>
       </div>
     ) : (
       <article class={articleClass}>
-        <Content />
+        <Content components={{ img: ResponsiveImage }} />
       </article>
     )
   }

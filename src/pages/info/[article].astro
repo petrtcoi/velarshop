@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "@shared/layouts/Layout.astro";
+import ResponsiveImage from "@shared/components/ResponsiveImage.astro";
 import type { CollectionEntry } from "astro:content";
 import SaveArticle from "@features/saveArticle";
 import { contacts } from "@shared/constants/contacts";
@@ -438,7 +439,7 @@ const crumbs = [
 
     <div class='article-shell article-shell--reading article-layout'>
       <article class:list={['article-content', 'article-prose', shouldHideDuplicateIntroHeading && 'article-prose--hide-duplicate-intro-heading', article.slug === 'wall' && 'muted-links']}>
-        <Content />
+        <Content components={{ img: ResponsiveImage }} />
 
         <ArticleCta
           className='article-cta--footer'

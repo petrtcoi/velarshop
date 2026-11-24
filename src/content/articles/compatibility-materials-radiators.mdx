@@ -6,6 +6,8 @@ thumbnail: "compatibility-materials-radiators.jpg"
 sortRank: 20240823
 dateModified: "2026-10-03"
 ---
+
+import ResponsiveImage from '../../7-shared/components/ResponsiveImage.astro';
 import ArticleCta from '../../components/articles/ArticleCta.astro';
 import GoToFormBlock from '@shared/components/GoToFormBlock.astro';
 import ArticleOffer from '../../components/articles/ArticleOffer.astro';
@@ -16,7 +18,7 @@ import ArticleOffer from '../../components/articles/ArticleOffer.astro';
 
 Ниже - наглядная схема основных рисков при смешении материалов и способов сделать систему безопасной.
 
-<img 
+<ResponsiveImage sizes="(max-width: 924px) calc(100vw - 24px), 900px" 
 	src="/images/articles/compatibility-materials-radiators.avif"
 	width="100%"
 	height="auto"

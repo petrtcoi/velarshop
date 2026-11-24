@@ -1,4 +1,5 @@
 ---
+import ResponsiveImage from '@shared/components/ResponsiveImage.astro'
 import Picture from '@shared/components/Picture.astro';
 import { modelsJsonData } from '@entities/Model'
 import { radiatorsJsonData } from '@entities/Radiator'
@@ -741,10 +742,11 @@ const seo = getCategorySeo({
 			</div>
 			<div class='-mx-4 mt-8 flex gap-4 overflow-x-auto px-4 pb-2 md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0 xl:grid-cols-4'>
 				{interiorImages.map(([src, alt]) => (
-					<img
+					<ResponsiveImage
 						src={src}
 						alt={alt}
 						title={alt}
+						sizes='(max-width: 767px) 280px, (max-width: 1279px) 33vw, 300px'
 						loading='lazy'
 						class='h-auto min-w-[280px] rounded-[18px] border border-neutral-200 md:min-w-0'
 					/>

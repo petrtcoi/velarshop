@@ -6,6 +6,8 @@ thumbnail: "black-3.jpg"
 sortRank: 100
 dateModified: "2026-11-24"
 ---
+
+import ResponsiveImage from '../../7-shared/components/ResponsiveImage.astro';
 import CatalogExamples from '../../components/product/CatalogExamples.astro';
 import ArticleCta from '../../components/articles/ArticleCta.astro';
 import ArticleOffer from '../../components/articles/ArticleOffer.astro';
@@ -17,7 +19,7 @@ import ArticleOffer from '../../components/articles/ArticleOffer.astro';
 В отличие от классических белых радиаторов, черные модели не стремятся «раствориться» на фоне стены. Напротив, они работают с контрастом, формой и текстурой, что особенно актуально для современных интерьеров - от минимализма до индустриального стиля.
 
 <div class="flex align-middle justify-center items-center">
-  <img 
+  <ResponsiveImage sizes="(max-width: 524px) calc(100vw - 24px), 500px" 
     src="/images/articles/black-3.jpg"
     width="500"
     height="500"
@@ -82,7 +84,7 @@ import ArticleOffer from '../../components/articles/ArticleOffer.astro';
 </ul>
 
 <div class="flex align-middle justify-center items-center">
-  <img 
+  <ResponsiveImage sizes="(max-width: 524px) calc(100vw - 24px), 500px" 
     src="/images/articles/black-1.jpg"
     width="500"
     height="500"
@@ -130,7 +132,7 @@ import ArticleOffer from '../../components/articles/ArticleOffer.astro';
 </ul>
 
 <div class="flex align-middle justify-center items-center">
-  <img 
+  <ResponsiveImage sizes="(max-width: 524px) calc(100vw - 24px), 500px" 
     src="/images/articles/black-2.jpg"
     width="500"
     height="500"

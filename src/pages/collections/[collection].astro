@@ -5,6 +5,7 @@ import type { RadiatorJson } from '@entities/Radiator'
 import { radiatorsJsonData } from '@entities/Radiator'
 import ContextFilteredLink from '@shared/components/ContextFilteredLink.astro'
 import Picture from '@shared/components/Picture.astro'
+import ResponsiveImage from '@shared/components/ResponsiveImage.astro'
 import Layout from '@shared/layouts/Layout.astro'
 import { getModelMainImagePath } from '@shared/utils/getModelMainImagePath'
 import { getModelSlug } from '@shared/utils/getModelSlug'
@@ -283,15 +284,15 @@ function modelsWord(count: number): string {
 			</div>
 			{collection.heroImage && (
 				<figure class='mt-8 lg:mt-0'>
-					<img
+					<ResponsiveImage
 						src={collection.heroImage.src}
 						srcset={collection.heroImage.srcset}
-						sizes={collection.heroImage.srcset ? '(min-width: 1024px) 460px, 100vw' : undefined}
+						sizes='(min-width: 1024px) 460px, 100vw'
 						width={collection.heroImage.width}
 						height={collection.heroImage.height}
 						alt={collection.heroImage.alt}
 						loading='eager'
-						decoding='async'
+						fetchpriority='high'
 						class='block h-auto max-h-[260px] w-full object-cover md:max-h-[360px] lg:max-h-none'
 					/>
 				</figure>

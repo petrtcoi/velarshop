@@ -1,5 +1,6 @@
 ---
 import { getEntryBySlug } from "astro:content";
+import ResponsiveImage from "@shared/components/ResponsiveImage.astro";
 
 type Props = { slug: string };
 const { slug } = Astro.props as Props;
@@ -14,7 +15,7 @@ const { Content } = itemDescription
 {
   Content !== null && (
     <div class="prose-sm">
-      <Content />
+      <Content components={{ img: ResponsiveImage }} />
     </div>
   )
 }

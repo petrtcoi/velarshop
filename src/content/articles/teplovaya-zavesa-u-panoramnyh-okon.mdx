@@ -7,6 +7,8 @@ sortRank: 200000600
 metaTitle: 'Тепловая завеса у панорамных окон'
 metaDescription: 'Как убрать холод у панорамных окон: расчет тепловой завесы, мощность, точка росы, шум и реальные ошибки.'
 ---
+
+import ResponsiveImage from '../../7-shared/components/ResponsiveImage.astro';
 import ArticleCta from '../../components/articles/ArticleCta.astro';
 
 import GoToFormBlock from '@shared/components/GoToFormBlock.astro';
@@ -18,7 +20,7 @@ import GoToFormBlock from '@shared/components/GoToFormBlock.astro';
 Задача тепловой завесы - не просто добавить мощность отопления, а правильно направить теплый воздух. Поэтому для панорамного остекления часто используют [<span class="text-red-500 hover:underline">внутрипольные конвекторы</span>](/convector), напольные радиаторы или низкие горизонтальные приборы, которые работают вдоль всей ширины окна.
 
 <div class="flex align-middle justify-center items-center">
-  <img
+  <ResponsiveImage sizes="(max-width: 624px) calc(100vw - 24px), 600px"
     src="/images/articles/panorama.jpg"
     width="600"
     height="auto"

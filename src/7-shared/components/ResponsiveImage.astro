@@ -1,0 +1,84 @@
+---
+/**
+ * <picture> with AVIF -> WebP -> original fallback for images processed by
+ * scripts/images/build_variants.py (listed in src/lib/imageManifest.json).
+ * Anything else (external URL, svg, unprocessed file) renders as a plain <img>.
+ *
+ * `class` / `imgClass` go to the <img> (drop-in replacement for <img>), so layouts
+ * that style the image keep working.  <picture> gets the global `.rimg` class
+ * (display: contents) and is layout-transparent; add `pictureClass` only when the
+ * wrapper itself needs styles.
+ */
+import manifest from '../../lib/imageManifest.json'
+import { buildSrcset, getImageEntry, heightForWidth, type ImageManifest } from '../../lib/responsiveImage'
+
+type Props = {
+	src: string
+	alt?: string
+	class?: string
+	imgClass?: string
+	pictureClass?: string
+	sizes?: string
+	loading?: 'eager' | 'lazy'
+	decoding?: 'async' | 'auto' | 'sync'
+	fetchpriority?: 'high' | 'low' | 'auto'
+	width?: number | string
+	height?: number | string
+	/** Only used for images without generated variants. */
+	srcset?: string
+	[attr: string]: unknown
+}
+
+const {
+	src,
+	alt = '',
+	class: className,
+	imgClass,
+	pictureClass,
+	sizes = '100vw',
+	loading = 'lazy',
+	decoding = 'async',
+	fetchpriority,
+	width,
+	height,
+	srcset,
+	...attrs
+} = Astro.props as Props
+
+const entry = getImageEntry(manifest as ImageManifest, src)
+const imgClassList = [className, imgClass].filter(Boolean).join(' ') || undefined
+const imgWidth = width ?? entry?.w
+const imgHeight = height ?? (width == null ? entry?.h : heightForWidth(entry, width))
+---
+
+{entry ? (
+	<picture class:list={['rimg', pictureClass]}>
+		<source type='image/avif' srcset={buildSrcset(src, entry.variants, 'avif')} sizes={sizes} />
+		<source type='image/webp' srcset={buildSrcset(src, entry.variants, 'webp')} sizes={sizes} />
+		<img
+			{...attrs}
+			src={src}
+			alt={alt}
+			class={imgClassList}
+			width={imgWidth}
+			height={imgHeight}
+			loading={loading}
+			decoding={decoding}
+			fetchpriority={fetchpriority}
+		/>
+	</picture>
+) : (
+	<img
+		{...attrs}
+		src={src}
+		srcset={srcset}
+		sizes={srcset ? sizes : undefined}
+		alt={alt}
+		class={imgClassList}
+		width={imgWidth}
+		height={imgHeight}
+		loading={loading}
+		decoding={decoding}
+		fetchpriority={fetchpriority}
+	/>
+)}

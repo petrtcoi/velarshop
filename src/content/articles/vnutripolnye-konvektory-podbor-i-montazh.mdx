@@ -7,6 +7,8 @@ sortRank: 200000560
 metaTitle: 'Внутрипольные конвекторы - подбор и монтаж'
 metaDescription: 'Подробное руководство по подбору и монтажу внутрипольных конвекторов: расчет мощности, размеры, ниша, гидравлика и типичные ошибки.'
 ---
+
+import ResponsiveImage from '../../7-shared/components/ResponsiveImage.astro';
 import ArticleCta from '../../components/articles/ArticleCta.astro';
 
 import GoToFormBlock from '@shared/components/GoToFormBlock.astro';
@@ -21,7 +23,7 @@ import GoToFormBlock from '@shared/components/GoToFormBlock.astro';
 Для практического сценарного подбора по комнатам дополнительно полезен разбор [<span class="text-red-500 hover:underline">выбор внутрипольного конвектора под разные комнаты</span>](/info/vnutripolnyy-konvektor-scenarii).
 
 <div class="flex align-middle justify-center items-center mt-6 mb-6">
-  <img
+  <ResponsiveImage sizes="(max-width: 624px) calc(100vw - 24px), 600px"
     src="/images/articles/velar-kwh.jpg"
     width="600"
     height="600"

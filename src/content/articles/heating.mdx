@@ -5,6 +5,8 @@ slug: "heating"
 thumbnail: "heating.jpg"
 sortRank: 2
 ---
+
+import ResponsiveImage from '../../7-shared/components/ResponsiveImage.astro';
 import ArticleCta from '../../components/articles/ArticleCta.astro';
 
 import GoToFormBlock from '@shared/components/GoToFormBlock.astro';
@@ -13,7 +15,7 @@ import GoToFormBlock from '@shared/components/GoToFormBlock.astro';
 
 Множество заблуждений возникает вокруг понятий, связанных с тепловым излучением, ИК-излучением, тепловыми волнами и т.д. С одной стороны, они не представляют угрозы, но иногда заказчики слишком увлекаются этими понятиями и забывают о важных аспектах при выборе радиаторов отопления. Основные способы обогрева помещения, которые используют отопительные приборы, - это тепловое излучение и конвекция.
 <div class="flex align-middle justify-center items-center">
-<img 
+<ResponsiveImage sizes="(max-width: 424px) calc(100vw - 24px), 400px" 
   src='/images/articles/heating0.jpg'
   width="400"
   height="214"

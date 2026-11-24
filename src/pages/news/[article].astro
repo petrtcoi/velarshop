@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Layout from '@shared/layouts/Layout.astro';
 import type { CollectionEntry } from 'astro:content';
 import Picture from '@shared/components/Picture.astro';
+import ResponsiveImage from '@shared/components/ResponsiveImage.astro';
 
 export async function getStaticPaths() {
   const articles = await getCollection('news');
@@ -106,7 +107,7 @@ const newsArticleSchema = {
         <meta itemprop='mainEntityOfPage' content={articleUrl} />
         <meta itemprop='author' content='Velar' />
         <meta itemprop='publisher' content='Velar' />
-        <Content />
+        <Content components={{ img: ResponsiveImage }} />
 
         {
           imgPath && (
@@ -116,10 +117,9 @@ const newsArticleSchema = {
               title={title}
               loading='lazy'
               aspectRatio='1:1'
-              widths={[400, 800]}
               width={800}
               height={800}
-              sizes='800'
+              sizes='(max-width: 840px) calc(100vw - 40px), 800px'
             />
           )
         }

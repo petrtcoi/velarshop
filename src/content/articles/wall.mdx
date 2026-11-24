@@ -9,6 +9,8 @@ metaDescription: "Как выбрать настенный дизайнерск�
 datePublished: "2023-12-08"
 dateModified: "2026-10-12"
 ---
+
+import ResponsiveImage from '../../7-shared/components/ResponsiveImage.astro';
 import CatalogExamples from '../../components/product/CatalogExamples.astro';
 import ArticleCta from '../../components/articles/ArticleCta.astro';
 import ArticleOffer from '../../components/articles/ArticleOffer.astro';
@@ -147,7 +149,7 @@ import ArticleOffer from '../../components/articles/ArticleOffer.astro';
 Вертикальные модели выбирают для узких простенков, прихожих, гостиных с панорамным остеклением и помещений, где под окном нет места для обычного радиатора. Такой формат занимает минимум ширины и может стать заметным элементом интерьера. Подробнее о таких моделях - в статье [вертикальные дизайнерские радиаторы: экономия места и стиль](/info/vertical-designer-radiators), а посмотреть модели можно в каталоге [вертикальных дизайн-радиаторов Velar](/design/vertikalnye).
 
 <figure class="my-4 flex flex-col items-center md:my-6">
-  <img
+  <ResponsiveImage sizes="(max-width: 444px) calc(100vw - 24px), 420px"
     src='/images/articles/wall-4.jpg'
     width="1000"
     height="1000"
@@ -162,7 +164,7 @@ import ArticleOffer from '../../components/articles/ArticleOffer.astro';
 Горизонтальные модели чаще используют под окнами, вдоль низких стен, в спальнях, гостиных и кухнях-гостиных. Это хороший вариант, когда нужно заменить обычную батарею на более аккуратный дизайнерский радиатор без изменения привычного места установки. Подробнее - в статье [горизонтальные дизайн-радиаторы: где использовать лучше](/info/horizontal-designer-radiators), а модели смотрите в каталоге [горизонтальных дизайн-радиаторов Velar](/design/gorizontalnye).
 
 <figure class="my-4 flex flex-col items-center md:my-6">
-  <img
+  <ResponsiveImage sizes="(max-width: 444px) calc(100vw - 24px), 420px"
     src='/images/articles/wall-3.jpg'
     width="1000"
     height="1000"
@@ -263,19 +265,19 @@ import ArticleOffer from '../../components/articles/ArticleOffer.astro';
 
 <div class="my-6 grid grid-cols-2 gap-3 not-prose md:grid-cols-4">
   <a href="/design/p30" class="flex flex-col items-center rounded-xl border border-gray-200 p-2.5 text-center no-underline transition-shadow hover:shadow-md">
-    <img src="/images/design/series/p30-hero.png" width="483" height="1249" loading="lazy" class="h-[220px] w-auto object-contain" alt="Velar P30 - плоский профиль" />
+    <ResponsiveImage sizes="(max-width: 507px) calc(100vw - 24px), 483px" src="/images/design/series/p30-hero.png" width="483" height="1249" loading="lazy" class="h-[220px] w-auto object-contain" alt="Velar P30 - плоский профиль" />
     <span class="mt-2 text-sm font-medium text-neutral-900">Профиль P · Velar P30</span>
   </a>
   <a href="/design/q40" class="flex flex-col items-center rounded-xl border border-gray-200 p-2.5 text-center no-underline transition-shadow hover:shadow-md">
-    <img src="/images/design/series/q40-hero.png" width="254" height="890" loading="lazy" class="h-[220px] w-auto object-contain" alt="Velar Q40 - квадратный профиль" />
+    <ResponsiveImage sizes="(max-width: 278px) calc(100vw - 24px), 254px" src="/images/design/series/q40-hero.png" width="254" height="890" loading="lazy" class="h-[220px] w-auto object-contain" alt="Velar Q40 - квадратный профиль" />
     <span class="mt-2 text-sm font-medium text-neutral-900">Профиль Q · Velar Q40</span>
   </a>
   <a href="/design/r32" class="flex flex-col items-center rounded-xl border border-gray-200 p-2.5 text-center no-underline transition-shadow hover:shadow-md">
-    <img src="/images/design/series/r32-hero.jpg" width="279" height="1024" loading="lazy" class="h-[220px] w-auto object-contain" alt="Velar R32 - круглый профиль" />
+    <ResponsiveImage sizes="(max-width: 303px) calc(100vw - 24px), 279px" src="/images/design/series/r32-hero.jpg" width="279" height="1024" loading="lazy" class="h-[220px] w-auto object-contain" alt="Velar R32 - круглый профиль" />
     <span class="mt-2 text-sm font-medium text-neutral-900">Профиль R · Velar R32</span>
   </a>
   <a href="/design/s" class="flex flex-col items-center rounded-xl border border-gray-200 p-2.5 text-center no-underline transition-shadow hover:shadow-md">
-    <img src="/images/design/series/s-hero.png" width="313" height="900" loading="lazy" class="h-[220px] w-auto object-contain" alt="Velar S - овальный профиль" />
+    <ResponsiveImage sizes="(max-width: 337px) calc(100vw - 24px), 313px" src="/images/design/series/s-hero.png" width="313" height="900" loading="lazy" class="h-[220px] w-auto object-contain" alt="Velar S - овальный профиль" />
     <span class="mt-2 text-sm font-medium text-neutral-900">Профиль S · Velar S</span>
   </a>
 </div>
@@ -368,11 +370,11 @@ import ArticleOffer from '../../components/articles/ArticleOffer.astro';
 
 <div class="my-4 grid grid-cols-2 gap-3 not-prose md:my-6">
   <div class="flex flex-col items-center text-center">
-    <img src="/images/articles/tsvet-interera-i-radiator/white.avif" width="240" height="240" loading="lazy" class="h-[160px] w-full rounded-xl object-cover md:h-[200px]" alt="Настенный радиатор Velar в цвет стены" />
+    <ResponsiveImage sizes="(max-width: 264px) calc(100vw - 24px), 240px" src="/images/articles/tsvet-interera-i-radiator/white.avif" width="240" height="240" loading="lazy" class="h-[160px] w-full rounded-xl object-cover md:h-[200px]" alt="Настенный радиатор Velar в цвет стены" />
     <span class="mt-2 text-xs text-neutral-600">Радиатор растворяется в цвете стены</span>
   </div>
   <div class="flex flex-col items-center text-center">
-    <img src="/images/articles/tsvet-interera-i-radiator/black.avif" width="240" height="240" loading="lazy" class="h-[160px] w-full rounded-xl object-cover md:h-[200px]" alt="Акцентный черный настенный радиатор Velar" />
+    <ResponsiveImage sizes="(max-width: 264px) calc(100vw - 24px), 240px" src="/images/articles/tsvet-interera-i-radiator/black.avif" width="240" height="240" loading="lazy" class="h-[160px] w-full rounded-xl object-cover md:h-[200px]" alt="Акцентный черный настенный радиатор Velar" />
     <span class="mt-2 text-xs text-neutral-600">Радиатор как акцентная деталь интерьера</span>
   </div>
 </div>
@@ -558,8 +560,8 @@ import ArticleOffer from '../../components/articles/ArticleOffer.astro';
 Некоторые модели можно дополнить фирменными аксессуарами Velar: крючками и вешалками для ванных и прихожих, декоративными панелями и решетками в цвет RAL, радиаторами с зеркальной поверхностью или встроенной полкой.
 
 <div class="my-4 grid grid-cols-2 gap-3 not-prose md:my-6">
-  <img src='/images/articles/wall-1.jpg' width="300" height="300" loading="lazy" class="h-[160px] w-full rounded-xl object-cover md:h-[200px]" alt="Крючки для вертикальных настенных радиаторов Velar" />
-  <img src='/images/articles/wall-2.jpg' width="300" height="300" loading="lazy" class="h-[160px] w-full rounded-xl object-cover md:h-[200px]" alt="Пример крючков на вертикальном дизайнерском радиаторе Velar" />
+  <ResponsiveImage sizes="(max-width: 324px) calc(100vw - 24px), 300px" src='/images/articles/wall-1.jpg' width="300" height="300" loading="lazy" class="h-[160px] w-full rounded-xl object-cover md:h-[200px]" alt="Крючки для вертикальных настенных радиаторов Velar" />
+  <ResponsiveImage sizes="(max-width: 324px) calc(100vw - 24px), 300px" src='/images/articles/wall-2.jpg' width="300" height="300" loading="lazy" class="h-[160px] w-full rounded-xl object-cover md:h-[200px]" alt="Пример крючков на вертикальном дизайнерском радиаторе Velar" />
 </div>
 
 ## Полезные материалы по выбору дизайн-радиаторов

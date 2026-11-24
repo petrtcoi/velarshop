@@ -711,6 +711,24 @@ main :where(.animate-spin) {
   font-weight: 400;
 }
 
+/* ResponsiveImage / Picture: the <picture> wrapper is layout-transparent, the <img> inside
+   keeps the classes and the layout it had before. Scoped rules like
+   `.retro-model-image-wrapper :global(picture)` still win (higher specificity). */
+.rimg {
+  display: contents;
+}
+
+/* Typography plugin zeroes `picture > img` margins; keep the old prose image spacing. */
+.prose picture.rimg > img {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.prose-sm picture.rimg > img {
+  margin-top: 1.7142857em;
+  margin-bottom: 1.7142857em;
+}
+
 .article-prose img {
   max-width: 100%;
   height: auto;

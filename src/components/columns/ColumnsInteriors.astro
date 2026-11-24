@@ -1,4 +1,5 @@
 ---
+import ResponsiveImage from '@shared/components/ResponsiveImage.astro'
 import { columnsSectionSubtitleClass, columnsSectionTitleClass } from './columnsTypography'
 
 const interiors = [
@@ -38,14 +39,14 @@ const interiors = [
 		<div class='-mx-4 mt-7 flex gap-4 overflow-x-auto px-4 pb-2 md:mx-0 md:grid md:grid-cols-2 md:overflow-visible md:px-0 xl:grid-cols-4'>
 			{interiors.map(item => (
 				<article class='min-w-[270px] overflow-hidden rounded-[20px] border border-neutral-200 bg-white transition hover:border-neutral-300 md:min-w-0'>
-					<img
+					<ResponsiveImage
 						src={item.image}
 						alt={item.title}
 						title={item.title}
 						width='900'
 						height='675'
+						sizes='(max-width: 767px) 270px, (max-width: 1279px) 50vw, 300px'
 						loading='lazy'
-						decoding='async'
 						style={`object-position: ${item.position};`}
 						class='h-[220px] w-full object-cover'
 					/>

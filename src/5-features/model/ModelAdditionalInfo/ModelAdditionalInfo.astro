@@ -1,6 +1,7 @@
 ---
 import type { ModelJson } from "@entities/Model";
 import { getEntryBySlug } from "astro:content";
+import ResponsiveImage from "@shared/components/ResponsiveImage.astro";
 
 type Props = {
   model: ModelJson;
@@ -21,7 +22,7 @@ const { Content } = modelAdditionalInfo
       class="prose-sm mt-10"
       aria-label={`Дополнительная информация о Velar ${model.name}`}
     >
-      <Content />
+      <Content components={{ img: ResponsiveImage }} />
     </div>
   )
 }

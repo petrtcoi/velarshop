@@ -4,6 +4,8 @@ description: "VelarShop специализируется на дизайнерс
 slug: "about"
 ---
 
+import ResponsiveImage from '../../7-shared/components/ResponsiveImage.astro';
+
 <div class="not-prose mx-auto max-w-[980px] space-y-12 py-2 md:space-y-16 md:py-4">
   <section class="space-y-4">
     <h1 class="m-0 text-[34px] font-semibold leading-[1.08] tracking-tight text-neutral-950 md:text-[44px]">О магазине VelarShop</h1>
@@ -60,7 +62,7 @@ slug: "about"
 
   <section class="grid gap-6 rounded-md border border-neutral-200 bg-neutral-50 p-5 md:grid-cols-[320px_minmax(0,1fr)] md:items-start">
     <a href="/docs/cert.pdf" target="_blank" rel="noopener" aria-label="Открыть сертификат официального дилера Velar" class="block overflow-hidden rounded-md border border-neutral-200 bg-white p-2 transition hover:border-neutral-400">
-      <img
+      <ResponsiveImage sizes="(max-width: 424px) calc(100vw - 24px), 400px"
         class="h-auto w-full rounded"
         src="/docs/cert.jpg"
         alt="Сертификат официального дилера Velar"

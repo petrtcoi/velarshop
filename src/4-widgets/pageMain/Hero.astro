@@ -1,4 +1,5 @@
 ---
+import ResponsiveImage from "@shared/components/ResponsiveImage.astro";
 import HeroQuickConfigurator from "./HeroQuickConfigurator";
 import type { ModelDetails, PlacementOption } from "./HeroQuickConfigurator";
 import { buildQuickConfiguratorModels } from "./quickConfiguratorData";
@@ -237,10 +238,11 @@ const scenarios = [
       {
         scenarios.map((item) => (
           <a href={item.href} class="scenario-card">
-            <img
+            <ResponsiveImage
               src={item.image}
               alt={item.title}
               class="scenario-card-image"
+              sizes="(max-width: 819px) 72px, 240px"
               loading="lazy"
             />
             <div class="scenario-card-copy">
