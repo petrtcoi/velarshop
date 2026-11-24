@@ -429,8 +429,8 @@ const seo = getModelSeo({
 	<JsonLd data={seo.jsonLd} />
 
 	<section class='border-b border-neutral-200 bg-white'>
-		<div class='mx-auto grid max-w-[1180px] gap-5 px-3 pb-7 pt-3 md:grid-cols-[minmax(0,0.44fr)_minmax(0,0.56fr)] md:items-start md:px-5 md:py-10'>
-			<div class='order-2 max-w-[520px] md:order-1'>
+		<div class='mx-auto grid max-w-[1180px] grid-cols-[minmax(0,1fr)] gap-5 px-3 pb-7 pt-3 md:grid-cols-[minmax(0,0.44fr)_minmax(0,0.56fr)] md:items-start md:px-5 md:py-10'>
+			<div class='order-2 min-w-0 max-w-[520px] md:order-1'>
 				<ProductGallery images={galleryImages} productName={productName} isHorizontal={isHorizontal} />
 			</div>
 
