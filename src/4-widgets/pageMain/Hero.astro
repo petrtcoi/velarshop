@@ -65,14 +65,14 @@ const scenarios = [
 
 <section id="hero" class="hero">
   <picture class="hero-picture">
-    <source srcset="/main/hero.avif" type="image/avif" />
-    <source srcset="/main/hero.webp" type="image/webp" />
+    <source srcset="/images/main/hero/velar-lineup-1400.avif 1400w, /images/main/hero/velar-lineup-2400.avif 2400w" sizes="100vw" type="image/avif" />
+    <source srcset="/images/main/hero/velar-lineup-1400.webp 1400w, /images/main/hero/velar-lineup-2400.webp 2400w" sizes="100vw" type="image/webp" />
     <img
-      src="/main/hero.jpg"
+      src="/images/main/hero/velar-lineup-1400.jpg"
       alt=""
       aria-hidden="true"
-      width="1920"
-      height="1080"
+      width="2400"
+      height="900"
       class="hero-bg"
       loading="eager"
       decoding="async"
@@ -80,6 +80,7 @@ const scenarios = [
     />
   </picture>
   <div class="hero-overlay"></div>
+  <span class="hero-caption">Визуализация</span>
 
   <div class="hero-content items-stretch">
     <div class="hero-left">
@@ -301,6 +302,17 @@ const scenarios = [
       rgba(0, 0, 0, 0.3) 62%,
       rgba(0, 0, 0, 0.1) 100%
     );
+  }
+
+  .hero-caption {
+    position: absolute;
+    right: 12px;
+    bottom: 8px;
+    z-index: 3;
+    font-size: 12px;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.7);
+    pointer-events: none;
   }
 
   .hero-content {

@@ -385,6 +385,30 @@ const variantSelectionText = hasSelectableHeight
 	? 'Выберите подходящий размер, чтобы добавить модель в корзину. Если не знаете точные параметры, отправьте заявку — поможем подобрать высоту, длину, подключение и цвет.'
 	: 'Выберите подходящий размер, чтобы добавить модель в корзину. Высота этой модели фиксирована; поможем подобрать длину, мощность, подключение и цвет.'
 
+const usefulLinks: { href: string; label: string }[] = [
+	{ href: '/info/power', label: 'Как определить требуемую мощность радиатора' },
+	model.type === 'convector'
+		? { href: '/info/panoramnie-okna', label: 'Конвектор для панорамного окна: выбор KWH, KWHV и подготовка ниши' }
+		: { href: '/info/kreplenie-radiatora-k-stene', label: 'Крепление радиатора к стене: какие кронштейны и анкеры выбрать' },
+]
+if (model.type === 'columns' || model.type === 'design') {
+	usefulLinks.push(
+		{ href: '/collections/chernye-radiatory-otopleniya', label: 'Черные радиаторы отопления: все модели в RAL 9005' },
+		{ href: `${modelUrl}?color=ral_9005_matte`, label: `Показать ${productName} в черном RAL 9005` },
+	)
+	if (model.type === 'columns') usefulLinks.push({ href: '/collections/belye-trubchatye-radiatory', label: 'Белые трубчатые радиаторы' })
+}
+if (model.type === 'convector') {
+	convectorModeCollections.forEach(collection => usefulLinks.push({ href: collection.href, label: collection.title }))
+}
+if (model.type === 'ironcast') {
+	usefulLinks.push(
+		{ href: '/info/restavratsiya-chugunnyh-radiatorov', label: 'Реставрация чугунных радиаторов: как восстановить и не испортить' },
+		{ href: '/collections/chernye-radiatory-otopleniya', label: 'Черные радиаторы отопления' },
+		{ href: `${modelUrl}?color=emal_black`, label: `Показать ${productName} в черной эмали` },
+	)
+}
+
 const seo = getModelSeo({
 	model,
 	radiators: modelRadiators,
@@ -693,6 +717,17 @@ const seo = getModelSeo({
 			<a href='/delivery' class='mt-4 inline-flex h-9 items-center justify-center rounded-[3px] border border-neutral-300 bg-white px-4 text-sm font-semibold text-neutral-900 transition hover:border-neutral-500'>
 				Подробнее о доставке и оплате
 			</a>
+		</div>
+	</section>
+
+	<section id='useful-before-order' class='border-t border-neutral-200 bg-white py-10 md:py-16'>
+		<div class='mx-auto max-w-[1180px] px-3 md:px-5'>
+			<h2 class='text-2xl font-semibold leading-tight tracking-tight text-neutral-950'>Полезно перед заказом</h2>
+			<ul class='mt-4 max-w-[820px] space-y-2 text-base leading-7 text-neutral-700'>
+				{usefulLinks.map(link => (
+					<li class='flex gap-2'><span class='text-red-700'>•</span><a href={link.href} class='text-neutral-900 underline decoration-neutral-300 underline-offset-2 transition hover:decoration-neutral-900'>{link.label}</a></li>
+				))}
+			</ul>
 		</div>
 	</section>
 
