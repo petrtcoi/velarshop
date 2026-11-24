@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'preact/hooks'
 
+import SiteSearch from './SiteSearch'
 import HeroQuickConfigurator, { type ModelDetails, type ModelOption } from '@widgets/pageMain/HeroQuickConfigurator'
 
 type Props = {
@@ -59,7 +60,7 @@ export default function HeaderQuickSearch({
 			{!hideTrigger && (
 				<button
 					type='button'
-					aria-label='Открыть быстрый выбор модели'
+					aria-label='Поиск и быстрый подбор'
 					class={`inline-flex h-11 w-11 items-center justify-center rounded-[3px] border border-[#e5e5e5] bg-white text-[#111] transition-colors hover:border-[#c1121f] hover:bg-white hover:text-[#a30f19] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300 ${buttonClassName}`}
 					onClick={openModal}
 					ref={triggerRef}
@@ -115,14 +116,16 @@ export default function HeaderQuickSearch({
 							</p>
 						</div>
 						<div class='mt-4'>
-							<HeroQuickConfigurator
-								key={`modal-config-${session}`}
-								variant='modal'
-								models={models}
-								defaultModelId={defaultModelId}
-								initialDetails={initialDetails}
-								onNavigate={() => setOpen(false)}
-							/>
+							<SiteSearch key={`modal-search-${session}`} onNavigate={() => setOpen(false)}>
+								<HeroQuickConfigurator
+									key={`modal-config-${session}`}
+									variant='modal'
+									models={models}
+									defaultModelId={defaultModelId}
+									initialDetails={initialDetails}
+									onNavigate={() => setOpen(false)}
+								/>
+							</SiteSearch>
 						</div>
 					</div>
 				</div>
