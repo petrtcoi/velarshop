@@ -250,6 +250,15 @@ const seo = getCategorySeo({
 		faq: faqItems,
 	},
 })
+
+function modelsWord(count: number): string {
+	const n = count % 100
+	const d = n % 10
+	if (n >= 11 && n <= 14) return 'моделей'
+	if (d === 1) return 'модель'
+	if (d >= 2 && d <= 4) return 'модели'
+	return 'моделей'
+}
 ---
 
 <Layout title={seo.title} description={seo.description} canonicalUrl={seo.canonicalUrl} robots={seo.robots} ogType='website' ogTitle={seo.ogTitle} ogDescription={seo.ogDescription} ogUrl={seo.canonicalUrl} ogImageUrl={seo.ogImage} ogImageAlt={seo.ogImageAlt} twitterCard='summary_large_image' twitterTitle={seo.twitterTitle} twitterDescription={seo.twitterDescription} twitterImage={seo.twitterImage} twitterImageAlt={seo.twitterImageAlt} breadcrumbs={breadcrumbs} disableBreadcrumbJsonLd={true} paddings={false}>
@@ -307,7 +316,7 @@ const seo = getCategorySeo({
 			<div class='mt-9 space-y-12 md:mt-12 md:space-y-16'>
 				{modelGroups.map(group => (
 					<section>
-						<div class='flex items-end justify-between gap-4'><h3 class='text-xl font-semibold leading-tight text-neutral-950 md:text-2xl'>{group.title}</h3><span class='text-sm text-neutral-500'>{group.items.length} {(() => { const n = group.items.length % 100, d = n % 10; return n >= 11 && n <= 14 ? 'моделей' : d === 1 ? 'модель' : d >= 2 && d <= 4 ? 'модели' : 'моделей' })()}</span></div>
+						<div class='flex items-end justify-between gap-4'><h3 class='text-xl font-semibold leading-tight text-neutral-950 md:text-2xl'>{group.title}</h3><span class='text-sm text-neutral-500'>{group.items.length} {modelsWord(group.items.length)}</span></div>
 						<div class='mt-4 border-y border-neutral-200'>
 							{group.items.map((model, index) => (
 								<article class:list={['py-5 md:py-6', index > 0 && 'border-t border-neutral-200']}>
