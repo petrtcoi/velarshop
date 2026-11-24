@@ -1043,7 +1043,10 @@ const mobileIconSvg: Record<MobileIconName, string> = {
       display: none;
     }
 
+    /* 24.11.2026: on phones the header scrolls away with the page;
+       navigation stays reachable in the bottom bar (MobileBottomNav) */
     .site-header {
+      position: relative;
       height: 70px;
     }
 

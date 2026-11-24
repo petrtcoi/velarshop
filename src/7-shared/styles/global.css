@@ -1644,3 +1644,11 @@ html .contents-tab {
 html #contents-dialog {
   padding-right: env(safe-area-inset-right, 0px);
 }
+
+/* 24.11.2026: on phones the header is not sticky, so anchor targets no longer need
+   the 110px offset reserved for it (PageContents, ColumnsHero) */
+@media (max-width: 900px) {
+  .commercial-page [id] {
+    scroll-margin-top: 12px !important;
+  }
+}
