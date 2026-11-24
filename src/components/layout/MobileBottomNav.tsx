@@ -14,7 +14,7 @@ type Props = {
 	currentPath?: string
 }
 
-// Listened by the phone instance of HeaderQuickSearch in Header.astro
+// Listened by the single HeaderQuickSearch island in Header.astro (its trigger is hidden on phones)
 const QUICK_SEARCH_OPEN_EVENT = 'velar:open-quick-search'
 
 // Drawer "Написать": duration mirrors the transitions of .bottom-contact* in global.css (vaul-like bottom sheet)

@@ -282,24 +282,20 @@ const mobileIconSvg: Record<MobileIconName, string> = {
       <a href="/request" class="header-cta has-short-label" data-short-label="Расчет"
         ><span class="label-full">Получить расчет</span></a
       >
-      <HeaderQuickSearch
-        client:load
-        models={quickSearchModels}
-        defaultModelId={resolvedDefaultModelId}
-      />
+      <!-- Один остров на все ширины: лупа видна на десктопе, на телефоне модалку открывает нижнее меню событием velar:open-quick-search (см. CSS .quick-search-slot). Список моделей модалка грузит сама из /api/quick-search-models.json -->
+      <span class="quick-search-slot">
+        <HeaderQuickSearch
+          client:load
+          defaultModelId={resolvedDefaultModelId}
+          openEventName="velar:open-quick-search"
+        />
+      </span>
       <HeaderCartButton client:load />
     </div>
 
     <div class="mobile-right">
       <a href="/request" class="mobile-calc-button">Расчет</a>
-      <!-- Телефон: лупа и корзина перенесены в нижнее меню (MobileBottomNav); модалка подбора остается здесь и открывается событием из нижнего меню -->
-      <HeaderQuickSearch
-        client:load
-        models={quickSearchModels}
-        defaultModelId={resolvedDefaultModelId}
-        hideTrigger
-        openEventName="velar:open-quick-search"
-      />
+      <!-- Телефон: лупа и корзина перенесены в нижнее меню (MobileBottomNav); модалка подбора живет в .desktop-right и открывается событием из нижнего меню -->
       <details class="mobile-menu">
         <summary class="mobile-burger" aria-label="Открыть меню">
           <svg
@@ -1027,9 +1023,23 @@ const mobileIconSvg: Record<MobileIconName, string> = {
     }
   }
 
+  .quick-search-slot {
+    display: contents;
+  }
+
   @media (max-width: 900px) {
-    .desktop-menu,
+    .desktop-menu {
+      display: none;
+    }
+
+    /* Блок не дает своей коробки и прячет все, кроме острова HeaderQuickSearch: его модалка (position: fixed)
+       должна открываться по событию из нижнего меню, а кнопка-лупа на телефоне скрыта, как раньше */
     .desktop-right {
+      display: contents;
+    }
+
+    .desktop-right > :global(:not(.quick-search-slot)),
+    .quick-search-slot > :global(astro-island > button) {
       display: none;
     }
 

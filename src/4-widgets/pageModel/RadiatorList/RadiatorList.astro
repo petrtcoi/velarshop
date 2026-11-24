@@ -1,14 +1,13 @@
 ---
 import RadiatorsList from "./components/RadiatorsList";
 import { sortStringsAsInts } from "@shared/utils/sortStringsAsInts";
-import { filterRadiators } from "./utils/filterRadiators";
+import { pickRadiatorListFields } from "./utils/pickRadiatorListFields";
 import { getModelFilters } from "./utils/getModelFilters";
 
 import { radiatorsJsonData } from "@entities/Radiator";
 import { modelsJsonData } from "@entities/Model";
 import { getModelSlug } from "@shared/utils/getModelSlug";
 
-import { ALL } from "./constants/filterAll";
 import type { ModelJson } from "@entities/Model";
 
 type Props = {
@@ -62,20 +61,14 @@ const moreTubesModel = moreTubesModelSource
     }
   : null;
 
-const initialFilteredRadiators = filterRadiators({
-  radiators,
-  selectedHeight: ALL,
-  selectedLength: ALL,
-  selectedWidth: ALL,
-  selectedInterAxis: ALL,
-});
+// В остров уходят только поля, которые читает список; начальный отфильтрованный список RadiatorsList считает сам.
+const radiatorListItems = radiators.map(pickRadiatorListFields);
 ---
 
 <RadiatorsList
   client:load
   model={model}
-  radiators={radiators}
-  initialFilteredRadiators={initialFilteredRadiators}
+  radiators={radiatorListItems}
   filterByHeight={filterByHeight}
   filterByWidth={filterByWidth}
   filterByLength={filterByLength}

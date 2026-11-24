@@ -3,8 +3,32 @@ import { useEffect, useRef, useState } from 'preact/hooks'
 import SiteSearch from './SiteSearch'
 import HeroQuickConfigurator, { type ModelDetails, type ModelOption } from '@widgets/pageMain/HeroQuickConfigurator'
 
+// Список моделей грузим один раз при первом открытии модалки и держим в модуле (как индекс в SiteSearch),
+// чтобы не отдавать его props'ами в HTML каждой страницы.
+let modelsCache: ModelOption[] | null = null
+let modelsPromise: Promise<ModelOption[]> | null = null
+
+function loadModels(): Promise<ModelOption[]> {
+	if (modelsCache) return Promise.resolve(modelsCache)
+	if (!modelsPromise) {
+		modelsPromise = fetch('/api/quick-search-models.json')
+			.then(response => {
+				if (!response.ok) throw new Error(`quick-search-models ${response.status}`)
+				return response.json() as Promise<ModelOption[]>
+			})
+			.then(data => {
+				modelsCache = data
+				return data
+			})
+			.catch(error => {
+				modelsPromise = null
+				throw error
+			})
+	}
+	return modelsPromise
+}
+
 type Props = {
-	models: ModelOption[]
 	defaultModelId: string
 	initialDetails?: ModelDetails | null
 	buttonClassName?: string
@@ -14,7 +38,6 @@ type Props = {
 }
 
 export default function HeaderQuickSearch({
-	models,
 	defaultModelId,
 	initialDetails = null,
 	buttonClassName = '',
@@ -23,7 +46,26 @@ export default function HeaderQuickSearch({
 }: Props) {
 	const [open, setOpen] = useState(false)
 	const [session, setSession] = useState(0)
+	const [models, setModels] = useState<ModelOption[] | null>(modelsCache)
+	const [modelsFailed, setModelsFailed] = useState(false)
 	const triggerRef = useRef<HTMLButtonElement>(null)
+
+	useEffect(() => {
+		if (!open || models) return
+
+		let cancelled = false
+		setModelsFailed(false)
+		loadModels()
+			.then(data => {
+				if (!cancelled) setModels(data)
+			})
+			.catch(() => {
+				if (!cancelled) setModelsFailed(true)
+			})
+		return () => {
+			cancelled = true
+		}
+	}, [open, session])
 
 	useEffect(() => {
 		if (!open) return
@@ -117,14 +159,24 @@ export default function HeaderQuickSearch({
 						</div>
 						<div class='mt-4'>
 							<SiteSearch key={`modal-search-${session}`} onNavigate={() => setOpen(false)}>
-								<HeroQuickConfigurator
-									key={`modal-config-${session}`}
-									variant='modal'
-									models={models}
-									defaultModelId={defaultModelId}
-									initialDetails={initialDetails}
-									onNavigate={() => setOpen(false)}
-								/>
+								{models ? (
+									<HeroQuickConfigurator
+										key={`modal-config-${session}`}
+										variant='modal'
+										models={models}
+										defaultModelId={defaultModelId}
+										initialDetails={initialDetails}
+										onNavigate={() => setOpen(false)}
+									/>
+								) : modelsFailed ? (
+									<div class='rounded-xl border border-red-100 bg-red-50 p-2.5 text-xs text-red-700 md:p-3 md:text-[13px]'>
+										Не удалось загрузить подбор. Закройте окно и откройте его еще раз.
+									</div>
+								) : (
+									<div class='rounded-xl bg-neutral-50 p-2.5 text-xs text-neutral-600 md:p-3 md:text-[13px]'>
+										Загружаем доступные параметры...
+									</div>
+								)}
 							</SiteSearch>
 						</div>
 					</div>

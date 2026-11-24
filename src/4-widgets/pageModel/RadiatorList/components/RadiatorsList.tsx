@@ -1,6 +1,6 @@
 import { formatDimensions } from '../../../../lib/productFormat'
 import { useStore } from '@nanostores/preact'
-import { useEffect, useRef, useState } from 'preact/hooks'
+import { useEffect, useMemo, useRef, useState } from 'preact/hooks'
 
 import RadiatorFilter from './RadiatorFilter'
 import RadiatorListHeader from './RadiatorListHeader'
@@ -20,6 +20,7 @@ import { radiatorTotalTitle } from '@features/radiator/RadiatorTotalTitle'
 import { getModelSlug } from '@shared/utils/getModelSlug'
 import { ALL } from '../constants/filterAll'
 import { filterRadiators } from '../utils/filterRadiators'
+import type { RadiatorListItem } from '../utils/pickRadiatorListFields'
 
 import { columnColors } from '@entities/ColumnsColor'
 import { designColors } from '@entities/DesignColor'
@@ -31,8 +32,8 @@ import type { RadiatorJson } from '@entities/Radiator'
 
 type Props = {
 	model: ModelJson
-	radiators: RadiatorJson[]
-	initialFilteredRadiators: RadiatorJson[]
+	/** Только поля, нужные списку (см. pickRadiatorListFields): props острова уходят в HTML страницы. */
+	radiators: RadiatorListItem[]
 	heights: string[]
 	lengths: string[]
 	widths: string[]
@@ -140,8 +141,7 @@ function getCartItemDetails(model: ModelJson, radiator: RadiatorJson): string {
 function RadiatorList(props: Props) {
 	const {
 		model,
-		radiators,
-		initialFilteredRadiators,
+		radiators: radiatorItems,
 		heights,
 		lengths,
 		widths,
@@ -151,6 +151,12 @@ function RadiatorList(props: Props) {
 		filterByLength = false,
 		moreTubesModel = null,
 	} = props
+
+	// model_id в props не передаем (все строки этой модели); возвращаем его, чтобы объекты подходили общим хелперам с RadiatorJson.
+	const radiators = useMemo<RadiatorJson[]>(
+		() => radiatorItems.map(radiator => ({ ...radiator, model_id: model.id })),
+		[radiatorItems, model.id],
+	)
 
 	const [lastFilterUpdate, setLastFilterUpdate] = useState<'length' | 'height' | 'width' | 'interAxis'>('height')
 	const [selectedHeight, setSelectedHeight] = useState<string>(ALL)
@@ -162,7 +168,16 @@ function RadiatorList(props: Props) {
 	const [requestedConnection, setRequestedConnection] = useState<string | null>(null)
 	const [urlFiltersReady, setUrlFiltersReady] = useState(false)
 	const shouldScrollToVariants = useRef(false)
-	const [filteredRadiators, setFilteredRadiators] = useState<RadiatorJson[]>(initialFilteredRadiators)
+	// Начальный список считаем здесь же (раньше приходил вторым props'ом и дублировал radiators в HTML): фильтры в положении «все», как в первом рендере.
+	const [filteredRadiators, setFilteredRadiators] = useState<RadiatorJson[]>(() =>
+		filterRadiators({
+			radiators,
+			selectedHeight: ALL,
+			selectedLength: ALL,
+			selectedWidth: ALL,
+			selectedInterAxis: ALL,
+		}),
+	)
 	const showTemperatureModes = ['p30v', 'p30h', 'r42v', 'r42h'].includes(model.id)
 	const shoppingCart = useStore(storeShoppingCart)
 	const getTotalCost = useStore(getRadiatorTotalCost)
