@@ -8,7 +8,7 @@ export const contacts = {
 	website: 'www.velarshop.ru',
 	email: 'mail@velarshop.ru',
 	emailFrom: 'VelarShop.ru <mail@velarshop.ru>',
-	vk: 'lovehomekomfort',
+	vk: 'velarshop', // группа магазина; сообщения в ВК идут через vkMessage
 	telegram: 'https://t.me/RadiatorLuxBot',
 	vkMessage: 'https://vk.me/-86767719',
 	emailNotifications: 'mail@velarshop.ru',
