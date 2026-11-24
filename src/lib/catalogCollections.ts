@@ -458,7 +458,7 @@ const colorCollections: CatalogCollectionConfig[] = [
 		faq: [
 			{
 				question: 'Сколько стоит черный радиатор отопления?',
-				answer: `Самое доступное черное исполнение в подборке стоит от {priceFrom}. ${blackColumnsSentence} ${blackDesignSentence} У чугунных моделей черная эмаль добавляет ${ironcastBlackPerSection} за секцию.`,
+				answer: `Самое доступное черное исполнение в подборке стоит от {priceFrom}. ${blackColumnsSentence === blackDesignSentence.replace('Черный дизайн-радиатор', 'Черный трубчатый радиатор') && blackColumnsSentence.includes('столько же') ? 'Черные трубчатые и дизайн-радиаторы стоят столько же, сколько белые того же размера в RAL 9016.' : `${blackColumnsSentence} ${blackDesignSentence}`} У чугунных моделей черная эмаль добавляет ${ironcastBlackPerSection} за секцию.`,
 			},
 			{
 				question: 'Что выбрать: черный матовый или глянцевый?',
@@ -511,7 +511,7 @@ const colorCollections: CatalogCollectionConfig[] = [
 		guide: [
 			{
 				title: 'RAL 9016: глянец или мат',
-				text: 'В выборе цвета два белых варианта: RAL 9016 глянцевый и RAL 9016 матовый, оба по одной цене. Матовый финиш меньше бликует и спокойнее соединяется со стеной, глянцевый сильнее раскрывает цвет и обычно проще протирается мягкой салфеткой.',
+				text: 'В выборе цвета два белых варианта: RAL 9016 глянцевый и RAL 9016 матовый, оба по одной цене. Матовый финиш меньше бликует и спокойнее соединяется со стеной, глянцевый сильнее раскрывает цвет.',
 				links: [linkMatteGloss],
 			},
 			{
