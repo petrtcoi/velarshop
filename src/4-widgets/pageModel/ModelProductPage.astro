@@ -503,7 +503,7 @@ const seo = getModelSeo({
 			{hasPopularCollectionLinks && (
 				<nav aria-label='Популярные подборки для модели' class='mt-5'>
 					<p class='mb-2 text-xs font-medium uppercase tracking-wide text-neutral-500'>Быстрые подборки</p>
-					<div class='flex flex-wrap gap-2'>
+					<div class='-mx-3 flex gap-2 overflow-x-auto px-3 pb-1 md:mx-0 md:flex-wrap md:overflow-visible md:px-0 md:pb-0'>
 					{interaxialCollectionLinks.map(collection => (
 						<ContextFilteredLink
 							href={`${modelUrl}#model-variants`}

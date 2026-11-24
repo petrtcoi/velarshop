@@ -160,6 +160,8 @@ function parseQuery(raw: string): ParsedQuery {
 	const numbers: string[] = []
 	const words: string[] = []
 	const colors: string[] = []
+	// Токены без цвета и стоп-слов: по ним ищем код модели («черный p30» → «p30»)
+	const rest: string[] = []
 
 	for (let index = 0; index < tokens.length; index += 1) {
 		const token = tokens[index]
@@ -175,17 +177,21 @@ function parseQuery(raw: string): ParsedQuery {
 		}
 		if (/^\d+$/.test(token)) {
 			numbers.push(token)
+			rest.push(token)
 			continue
 		}
-		if (isStopWord(token) || token.length < 2) continue
+		if (isStopWord(token)) continue
+		rest.push(token)
+		if (token.length < 2) continue
 		words.push(token)
 	}
 
 	const codes: string[] = []
-	if (!colors.length && text.length >= 2) {
-		const direct = squash(text)
+	const codeText = rest.join(' ')
+	if (codeText.length >= 2) {
+		const direct = squash(codeText)
 		codes.push(direct)
-		const converted = squash(layoutToLatin(text))
+		const converted = squash(layoutToLatin(codeText))
 		if (converted !== direct) codes.push(converted)
 	}
 

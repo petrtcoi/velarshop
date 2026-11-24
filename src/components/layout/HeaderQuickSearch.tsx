@@ -109,10 +109,10 @@ export default function HeaderQuickSearch({
 						</button>
 						<div class='pr-10'>
 							<h2 id='quick-search-title' class='text-lg font-semibold text-neutral-950'>
-								Быстрый выбор модели
+								Поиск и быстрый подбор
 							</h2>
 							<p id='quick-search-description' class='mt-1 text-sm text-neutral-600'>
-								Найдите модель, выберите параметры и добавьте товар в корзину.
+								Найдите модель по коду, высоте или цвету либо подберите параметры ниже.
 							</p>
 						</div>
 						<div class='mt-4'>
