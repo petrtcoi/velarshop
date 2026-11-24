@@ -2,6 +2,14 @@
 
 Основной контент-план и история публикаций — [reports/content-plan-2026-10-12.md](reports/content-plan-2026-10-12.md). Здесь — текущие проверки, решения и стратегия, в первую очередь по кластеру трубчатых радиаторов (`/columns`, `/columns/<код>`, `/collections/*`).
 
+## 24.11.2026 — заголовки разделов, моделей, главной и статей без длинного тире
+
+- Коммиты `ea0d888`, `a5789ec`. Продолжение правки подборок (`c643059`): во всех title, og:title, twitter:title и подписях og/twitter-картинки «—» заменено на запятую или двоеточие.
+- Шаблоны: `modelSeo.ts` (title карточек «…, цена от N ₽» / «…, цена и наличие», og:title и alt «Velar 3057, трубчатый радиатор Velar»), `seriesSeo.ts` («Velar Q40, дизайн-радиатор с квадратным профилем»), `categorySeo.ts` (og «…: каталог Velar»), разделы `/columns` и `/design` (двоеточие), `/retro`, `/convector`, `/floor` (запятая), главная «Радиаторы Velar: магазин VelarShop», `/item`, `DesignOrientationPage.astro` (`/design/vertikalnye`, `/design/gorizontalnye`), `about.mdx`, metaTitle 4 статей (`column-radiators-pros-cons`, `kak-podobrat-dizayn-radiator-pod-gotovye-vyvody-trub`, `trubchatye-radiatory-vs-panelnye`, `velar-p30v-q40v-r32v-sravnenie`).
+- Сверка с production без случайных uid: изменились 128 страниц и только title, og:title, twitter:title, og:image:alt, twitter:image:alt; H1, тексты и ссылки те же. В собранном сайте 0 страниц с «—» в title и og:title. 395 страниц.
+- Не трогали: длинное тире в текстах страниц и в description; дефис « - » в некоторых og:title разделов.
+- Откат: `tar -xzf /root/velarshop-before-titles2-20261124.tar.gz -C /srv/homekomfort` (возвращает и правку подборок).
+
 ## 24.11.2026 — заголовки подборок без длинного тире
 
 - Коммит `c643059`. По правилу «тексты сайта без длинных тире» в title подборок «— цены от N ₽» заменено на «, цены от N ₽»; у подборок по высоте «Радиаторы высотой 500 мм: трубчатые и дизайнерские, цены от…»; у `/collections/radiatory-po-mezhosevomu-rasstoyaniyu` «Радиаторы Velar по межосевому расстоянию 300, 450 и 500 мм»; у `/collections/verticalnye-radiatory-1800-mm` запятая и двоеточие. Запасной заголовок без цены теперь «, каталог и цены».
