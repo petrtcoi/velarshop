@@ -1,7 +1,7 @@
 ---
 import PageContents from '../navigation/PageContents.astro'
 import HeroQuickConfigurator from '@widgets/pageMain/HeroQuickConfigurator'
-import type { ModelDetails } from '@widgets/pageMain/HeroQuickConfigurator'
+import type { ModelDetails, PlacementOption } from '@widgets/pageMain/HeroQuickConfigurator'
 import { buildQuickConfiguratorModels } from '@widgets/pageMain/quickConfiguratorData'
 import { get as getHeroConfiguratorData } from '../../pages/api/hero-configurator/[model].json'
 import { minCatalogPrice } from './columnsData'
@@ -11,6 +11,13 @@ const { items } = Astro.props
 
 const modelOptions = buildQuickConfiguratorModels({ type: 'columns' })
 const defaultModelId = '3057'
+// Первый шаг подбора: место установки предвыбирает модель из каталога.
+// 3030 - высота 300 мм (под окно), 3057 - межосевое 500 мм (замена старой батареи), 2180 - высота 1800 мм.
+const placementOptions: PlacementOption[] = [
+	{ id: 'window', label: 'Под окно', modelId: '3030' },
+	{ id: 'replace', label: 'Вместо старой батареи', modelId: '3057' },
+	{ id: 'tall', label: 'Высокий на стену', modelId: '2180' },
+]
 let initialDetails: ModelDetails | null = null
 
 try {
@@ -96,7 +103,7 @@ const statItems = [
 				</picture>
 			</div>
 			<div id='columns-configurator' class='min-w-0'>
-				<HeroQuickConfigurator client:load models={modelOptions} defaultModelId={defaultModelId} initialDetails={initialDetails} variant='category' title='Быстрый подбор' modelResolutionMode='family-by-height' category='tubular' addToCartLabel='Добавить в запрос' goToCartLabel='Перейти к запросу' cartPillLabel='Запрос' cartHref='/request' />
+				<HeroQuickConfigurator client:load models={modelOptions} defaultModelId={defaultModelId} initialDetails={initialDetails} variant='category' title='Быстрый подбор' placementOptions={placementOptions} modelResolutionMode='family-by-height' category='tubular' addToCartLabel='Добавить в запрос' goToCartLabel='Перейти к запросу' cartPillLabel='Запрос' cartHref='/request' />
 				<p class='mt-2.5 text-xs leading-5 text-neutral-500'>Добавьте вариант в запрос - менеджер проверит мощность, подключение, наличие или срок производства и рассчитает итоговую стоимость с доставкой.</p>
 			</div>
 		</div>

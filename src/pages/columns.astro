@@ -3,7 +3,6 @@ import Layout from '@shared/layouts/Layout.astro'
 import JsonLd from '../components/seo/JsonLd.astro'
 import OrderScope from '../components/product/OrderScope.astro'
 import ConfigurationExamples from '../components/product/ConfigurationExamples.astro'
-import ColumnsCollectionLinks from '../components/columns/ColumnsCollectionLinks.astro'
 
 import ColumnsCatalog from '../components/columns/ColumnsCatalog.astro'
 import ColumnsComparison from '../components/columns/ColumnsComparison.astro'
@@ -31,11 +30,11 @@ import { getCategorySeo } from '../lib/seo/categorySeo'
 
 const contents = [
   { id: 'columns-configurator', label: 'Быстрый подбор', major: true, description: 'Модель, размеры, подключение и цвет' },
+  { id: 'columns-models', label: 'Каталог моделей', major: true, description: 'Модели по высоте, числу труб и теплоотдаче' },
   { id: 'columns-popular', label: 'Популярные модели', major: true, description: 'Низкие, стандартные и высокие модели' },
   { id: 'columns-price-examples', label: 'Примеры цен', major: true, description: 'Готовые конфигурации на 10 секций' },
   { id: 'order-scope', label: 'Что входит в стоимость', major: true, description: 'Комплектация и согласование перед заказом' },
-  { id: 'columns-models', label: 'Каталог моделей', major: true, description: 'Модели по высоте, числу труб и теплоотдаче' },
-  { id: 'columns-calculator', label: 'Калькулятор', major: true, description: 'Расчёт радиатора по параметрам' },
+  { id: 'columns-calculator', label: 'Подбор по параметрам', major: true, description: 'Расчет радиатора по параметрам' },
   { id: 'columns-task-selector', label: 'Выбор по задаче', major: true, description: 'Подходящие модели для разных ситуаций' },
   { id: 'columns-how-order-short', label: 'Как заказать' },
   { id: 'columns-tube-differences', label: 'Различия моделей' },
@@ -108,7 +107,9 @@ const seo = getCategorySeo({
 	<JsonLd data={seo.jsonLd} />
 
 	<ColumnsHero items={contents} />
-	<ColumnsCollectionLinks />
+
+	{/* 24.11.2026: фильтр моделей сразу после первого экрана; подборки (/collections/*) встроены в него */}
+	<ColumnsCatalog models={columnsModels} />
 
 	<PopularModels models={popularModels} />
 	<ConfigurationExamples
@@ -119,8 +120,6 @@ const seo = getCategorySeo({
 	/>
 
 	<OrderScope />
-
-	<ColumnsCatalog models={columnsModels} />
 
 	<ColumnsCalculator />
 

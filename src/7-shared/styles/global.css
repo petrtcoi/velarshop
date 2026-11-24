@@ -188,7 +188,6 @@ main :where(.animate-spin) {
  * Tubular landing: explicit surfaces and firm chapter dividers, following
  * the technical rhythm used on Tubogshop while retaining Velar colours.
  */
-.commercial-page main > section#columns-popular,
 .commercial-page main > section#columns-models,
 .commercial-page main > section#columns-who-fits,
 .commercial-page main > section#columns-interiors,
@@ -198,6 +197,8 @@ main :where(.animate-spin) {
   background-color: #f7f7f7 !important;
 }
 
+/* 24.11.2026: фильтр моделей поднят сразу под первый экран, популярные модели после него - белые, чтобы фоны чередовались */
+.commercial-page main > section#columns-popular,
 .commercial-page main > section#columns-calculator,
 .commercial-page main > section#columns-task-selector,
 .commercial-page main > section#columns-how-order-short,

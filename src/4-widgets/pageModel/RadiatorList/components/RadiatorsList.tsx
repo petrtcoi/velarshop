@@ -39,6 +39,49 @@ type Props = {
 	filterByHeight?: boolean
 	filterByWidth?: boolean
 	filterByLength?: boolean
+	/** Трубчатые: модель той же высоты с большим числом трубок (для подсказки «Сколько секций нужно»). */
+	moreTubesModel?: { name: string; href: string; maxPowerDt60: number } | null
+}
+
+// «Сколько секций нужно» (только трубчатые). Метод сайта: /info/power - площадь × 100 Вт/м²;
+// /info/raschet-radiatorov-dlya-uglovoy-komnaty - потолки выше 3 м: +10% за каждые 0,5 м.
+// Сравнение по ΔT 60 (график 90/70), как в /info/trubchatye-radiatory-velar-dlya-kvartiry.
+const COLUMNS_VISIBLE_ROWS = 10
+const POWER_PER_M2 = 100
+const DEFAULT_CEILING = 2.7
+
+type PowerNeed = { area: number; ceiling: number; factor: number; watts: number }
+
+function parseDecimal(value: string | undefined): number {
+	if (!value) return 0
+	const parsed = Number.parseFloat(value.replace(',', '.').trim())
+	return Number.isFinite(parsed) ? parsed : 0
+}
+
+function formatDecimal(value: number): string {
+	return value.toLocaleString('ru-RU', { maximumFractionDigits: 2 })
+}
+
+function formatWatts(value: number): string {
+	return Math.round(value).toLocaleString('ru-RU')
+}
+
+function getCeilingFactor(ceiling: number): number {
+	if (ceiling <= 3) return 1
+	return Math.round((1 + 0.2 * (ceiling - 3)) * 100) / 100
+}
+
+/** Подпись строки для покупателя. Идентификатор позиции в корзине (getTotalTitle) не меняется. */
+function getColumnsRowLabel(
+	model: ModelJson,
+	radiator: RadiatorJson,
+	connection: { description: string } | null | undefined,
+	color: { title: string } | null | undefined,
+): string {
+	const parts = [`Velar ${model.name}`, formatSectionsLabel(radiator.sections)]
+	if (connection) parts.push(lowerFirst(connection.description.replace(/\s*\(.*\)\s*$/, '').replace('подключение ', '')))
+	if (color) parts.push(/^[А-Я]/.test(color.title) ? lowerFirst(color.title) : color.title)
+	return parts.filter(Boolean).join(', ')
 }
 
 function getPowerValue(radiator: RadiatorJson): string {
@@ -77,6 +120,7 @@ function RadiatorList(props: Props) {
 		filterByHeight = false,
 		filterByWidth = false,
 		filterByLength = false,
+		moreTubesModel = null,
 	} = props
 
 	const [lastFilterUpdate, setLastFilterUpdate] = useState<'length' | 'height' | 'width' | 'interAxis'>('height')
@@ -100,6 +144,13 @@ function RadiatorList(props: Props) {
 	const activeColumnColor = useStore(columnColor)
 	const [requestedRadiatorSlug, setRequestedRadiatorSlug] = useState<string | null>(null)
 	const scrollToRadiatorSlug = useRef<string | null>(null)
+	const isColumns = model.type === 'columns'
+	const [roomArea, setRoomArea] = useState('')
+	const [ceilingHeight, setCeilingHeight] = useState('2,7')
+	const [powerNeed, setPowerNeed] = useState<PowerNeed | null>(null)
+	const [powerError, setPowerError] = useState('')
+	const [showAllRows, setShowAllRows] = useState(false)
+	const scrollToSuggested = useRef(false)
 
 	const changeHeightFilter = (height: string) => {
 		setSelectedHeight(height)
@@ -315,6 +366,69 @@ function RadiatorList(props: Props) {
 		window.location.assign(`${modelHref}#model-variants`)
 	}
 
+	// Наименьшая строка, мощность которой при ΔT 60 покрывает расчетную потребность.
+	const suggestedRadiator = isColumns && powerNeed
+		? filteredRadiators.reduce<RadiatorJson | null>((best, radiator) => {
+				const power = parseDecimal(radiator.dt60)
+				if (power < powerNeed.watts) return best
+				if (!best || power < parseDecimal(best.dt60)) return radiator
+				return best
+			}, null)
+		: null
+	const suggestedSlug = suggestedRadiator?.slug ?? null
+	const canUseMoreTubesModel = Boolean(moreTubesModel && powerNeed && moreTubesModel.maxPowerDt60 >= powerNeed.watts)
+
+	// Короткий список: 10 строк вокруг подходящей (или первые 10); строка из сохраненной ссылки видна всегда.
+	const getDisplayedRadiators = (): RadiatorJson[] => {
+		if (!isColumns || showAllRows || filteredRadiators.length <= COLUMNS_VISIBLE_ROWS) return filteredRadiators
+		const anchorSlug = suggestedSlug ?? requestedRadiatorSlug
+		const anchorIndex = anchorSlug ? filteredRadiators.findIndex(radiator => radiator.slug === anchorSlug) : -1
+		const start = anchorIndex < 0
+			? 0
+			: Math.max(0, Math.min(anchorIndex - Math.floor(COLUMNS_VISIBLE_ROWS / 2) + 1, filteredRadiators.length - COLUMNS_VISIBLE_ROWS))
+		return filteredRadiators.filter((radiator, index) =>
+			(index >= start && index < start + COLUMNS_VISIBLE_ROWS) ||
+			radiator.slug === requestedRadiatorSlug ||
+			radiator.slug === suggestedSlug,
+		)
+	}
+	const displayedRadiators = getDisplayedRadiators()
+	const hasHiddenRows = displayedRadiators.length < filteredRadiators.length
+
+	const isHighlightedRow = (radiator: RadiatorJson) => radiator.slug === requestedRadiatorSlug || radiator.slug === suggestedSlug
+	const getRowLabel = (radiator: RadiatorJson, totalTitle: string) =>
+		isColumns ? getColumnsRowLabel(model, radiator, activeColumnConn, activeColumnColor) : totalTitle
+
+	const submitPowerNeed = (event: Event) => {
+		event.preventDefault()
+		const area = parseDecimal(roomArea)
+		if (area <= 0 || area > 1000) {
+			setPowerNeed(null)
+			setPowerError('Введите площадь комнаты, например 18')
+			return
+		}
+		const parsedCeiling = parseDecimal(ceilingHeight)
+		const ceiling = parsedCeiling >= 1.5 && parsedCeiling <= 10 ? parsedCeiling : DEFAULT_CEILING
+		const factor = getCeilingFactor(ceiling)
+		const watts = Math.ceil((area * POWER_PER_M2 * factor) / 10) * 10
+		setPowerError('')
+		setPowerNeed({ area, ceiling, factor, watts })
+		scrollToSuggested.current = true
+	}
+
+	useEffect(() => {
+		if (!scrollToSuggested.current) return
+		scrollToSuggested.current = false
+		if (!suggestedSlug) return
+		const frame = window.requestAnimationFrame(() => {
+			const target = [`radiator-row-${suggestedSlug}`, `radiator-card-${suggestedSlug}`]
+				.map(id => document.getElementById(id))
+				.find(element => element && element.offsetParent !== null)
+			target?.scrollIntoView({ block: 'center', behavior: 'smooth' })
+		})
+		return () => window.cancelAnimationFrame(frame)
+	}, [powerNeed, suggestedSlug])
+
 	const addRadiatorToRequest = (radiator: RadiatorJson) => {
 		const title = getTotalTitle(model, radiator)
 		addToCart({
@@ -440,6 +554,68 @@ function RadiatorList(props: Props) {
 					/>
 				)}
 
+				{isColumns && (
+					<form class='mb-4 border-b border-neutral-200 pb-4' onSubmit={submitPowerNeed} noValidate>
+						<div class='text-sm font-medium text-neutral-950'>Сколько секций нужно</div>
+						<div class='mt-2 flex flex-wrap items-end gap-3'>
+							<label class='block'>
+								<span class='block text-xs font-normal text-neutral-600'>Площадь комнаты, м²</span>
+								<input
+									type='text'
+									inputMode='decimal'
+									value={roomArea}
+									placeholder='18'
+									onInput={event => setRoomArea((event.currentTarget as HTMLInputElement).value)}
+									class='mt-1 h-10 w-32 rounded-[3px] border border-neutral-300 bg-white px-3 text-base font-normal text-neutral-950 outline-none transition focus:border-red-500 md:text-sm'
+								/>
+							</label>
+							<label class='block'>
+								<span class='block text-xs font-normal text-neutral-600'>Высота потолка, м</span>
+								<input
+									type='text'
+									inputMode='decimal'
+									value={ceilingHeight}
+									onInput={event => setCeilingHeight((event.currentTarget as HTMLInputElement).value)}
+									class='mt-1 h-10 w-24 rounded-[3px] border border-neutral-300 bg-white px-3 text-base font-normal text-neutral-950 outline-none transition focus:border-red-500 md:text-sm'
+								/>
+							</label>
+							<button
+								type='submit'
+								class='inline-flex h-10 items-center justify-center rounded-[3px] border border-red-300 bg-white px-4 text-sm font-medium text-red-700 transition hover:border-red-700 hover:bg-red-50'
+							>
+								Подобрать
+							</button>
+						</div>
+						{powerError && <p class='mt-3 text-xs font-normal leading-5 text-red-700'>{powerError}</p>}
+						{powerNeed && (
+							<p class='mt-3 max-w-3xl text-xs font-normal leading-5 text-neutral-700'>
+								Нужно около {formatWatts(powerNeed.watts)} Вт: {formatDecimal(powerNeed.area)} м² × {POWER_PER_M2} Вт/м²
+								{powerNeed.factor > 1
+									? ` × ${formatDecimal(powerNeed.factor)} (потолок ${formatDecimal(powerNeed.ceiling)} м: +10% за каждые 0,5 м выше 3 м).`
+									: `, потолок ${formatDecimal(powerNeed.ceiling)} м.`}{' '}
+								{suggestedRadiator ? (
+									<>
+										Подходит {formatSectionsLabel(suggestedRadiator.sections)}: {formatWatts(parseDecimal(suggestedRadiator.dt60))} Вт при ΔT 60 (график 90/70), строка выделена в списке. В таблице мощность указана при ΔT 70.{' '}
+									</>
+								) : (
+									<>
+										Одной батареи не хватит, нужно две или модель с большим числом трубок.{' '}
+										{canUseMoreTubesModel && moreTubesModel && (
+											<>
+												<a href={moreTubesModel.href} class='text-red-700 underline decoration-red-300 underline-offset-2 transition hover:decoration-transparent'>
+													Смотреть Velar {moreTubesModel.name}
+												</a>
+												.{' '}
+											</>
+										)}
+									</>
+								)}
+								Это ориентир, точный расчет сделает менеджер.
+							</p>
+						)}
+					</form>
+				)}
+
 				{model.type === 'convector' && (
 					<>
 						<SelectConvectorGrill />
@@ -503,7 +679,7 @@ function RadiatorList(props: Props) {
 								</tr>
 							</thead>
 							<tbody>
-								{filteredRadiators.map(radiator => {
+								{displayedRadiators.map(radiator => {
 									const qnty = getRadiatorQnty(radiator)
 									const totalTitle = getTotalTitle(model, radiator)
 									const totalPrice = getTotalCost(model, radiator)
@@ -511,13 +687,18 @@ function RadiatorList(props: Props) {
 										<tr
 											id={`radiator-row-${radiator.slug}`}
 											class={`border-b border-neutral-200 text-xs font-normal text-neutral-800 transition last:border-b-0 ${
-												radiator.slug === requestedRadiatorSlug ? 'bg-red-50' : 'hover:bg-neutral-50'
+												isHighlightedRow(radiator) ? 'bg-red-50' : 'hover:bg-neutral-50'
 											}`}
 										>
 											<td class='px-2.5 py-2.5'>
 												<div class='font-normal text-neutral-900'>
-													{totalTitle}
+													{getRowLabel(radiator, totalTitle)}
 												</div>
+												{radiator.slug === suggestedSlug && (
+													<div class='mt-0.5 text-xs font-normal text-red-700'>
+														Подходит по расчету: {formatWatts(parseDecimal(radiator.dt60))} Вт при ΔT 60
+													</div>
+												)}
 											</td>
 											<td class='px-2.5 py-2.5 text-center'>{radiator.height} мм</td>
 											<td class='px-2.5 py-2.5 text-center'>{radiator.n_spacing ? `${radiator.n_spacing} мм` : '—'}</td>
@@ -554,7 +735,7 @@ function RadiatorList(props: Props) {
 
 				{model.type !== 'convector' && (
 					<div class='mt-4 grid gap-2 md:hidden'>
-						{filteredRadiators.map(radiator => {
+						{displayedRadiators.map(radiator => {
 							const qnty = getRadiatorQnty(radiator)
 							const totalTitle = getTotalTitle(model, radiator)
 							const totalPrice = getTotalCost(model, radiator)
@@ -562,19 +743,24 @@ function RadiatorList(props: Props) {
 								<article
 									id={`radiator-card-${radiator.slug}`}
 									class={`rounded-[3px] border p-2.5 ${
-										radiator.slug === requestedRadiatorSlug ? 'border-red-300 bg-red-50' : 'border-neutral-200 bg-white'
+										isHighlightedRow(radiator) ? 'border-red-300 bg-red-50' : 'border-neutral-200 bg-white'
 									}`}
 								>
 									<div class='text-xs font-normal leading-5 text-neutral-950'>
-										{totalTitle}
+										{getRowLabel(radiator, totalTitle)}
 									</div>
+									{radiator.slug === suggestedSlug && (
+										<div class='mt-0.5 text-xs font-normal leading-5 text-red-700'>
+											Подходит по расчету: {formatWatts(parseDecimal(radiator.dt60))} Вт при ΔT 60
+										</div>
+									)}
 									<div class='mt-1 text-xs leading-5 text-neutral-700'>
 										Высота: {radiator.height} мм · М/о: {radiator.n_spacing || '—'} мм · Длина: {radiator.length} мм · Мощность{showTemperatureModes ? ' ΔT70' : ''}: {getPowerValue(radiator)} Вт
 										{showTemperatureModes && <span class='block'>ΔT60: {radiator.dt60} Вт · ΔT50: {radiator.dt50} Вт</span>}
 									</div>
 									<div class='mt-2 flex items-center justify-between gap-3'>
 										<div class='text-base font-semibold text-neutral-950'>
-											от {totalPrice.toLocaleString('ru-RU')} ₽
+											{isColumns ? '' : 'от '}{totalPrice.toLocaleString('ru-RU')} ₽
 										</div>
 										<button
 											type='button'
@@ -588,6 +774,18 @@ function RadiatorList(props: Props) {
 								</article>
 							)
 						})}
+					</div>
+				)}
+
+				{isColumns && hasHiddenRows && (
+					<div class='mt-4 flex justify-center'>
+						<button
+							type='button'
+							onClick={() => setShowAllRows(true)}
+							class='inline-flex h-10 items-center justify-center rounded-[3px] border border-neutral-300 bg-white px-5 text-sm font-medium text-neutral-900 transition hover:border-neutral-500'
+						>
+							Все размеры ({filteredRadiators.length})
+						</button>
 					</div>
 				)}
 

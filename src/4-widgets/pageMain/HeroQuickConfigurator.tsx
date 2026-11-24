@@ -94,6 +94,15 @@ type Props = {
 	collapsibleOnMobile?: boolean
 	/** Подпись кнопки раскрытия на мобильных экранах. */
 	mobileToggleLabel?: string
+	/** Варианты места установки перед выбором модели; показываются только при variant='category'. */
+	placementOptions?: PlacementOption[]
+}
+
+/** Первый шаг «Где будет стоять»: выбор места предвыбирает модель (только для страницы трубчатых). */
+export type PlacementOption = {
+	id: string
+	label: string
+	modelId: string
 }
 
 type InlineSelectOption = {
@@ -436,9 +445,11 @@ export default function HeroQuickConfigurator({
 	resultNote,
 	collapsibleOnMobile = false,
 	mobileToggleLabel = 'Открыть подбор',
+	placementOptions = [],
 }: Props) {
 	const shoppingCart = useStore(storeShoppingCart)
 	const [selectedModelId, setSelectedModelId] = useState(defaultModelId)
+	const [placementId, setPlacementId] = useState('')
 	const [query, setQuery] = useState('')
 	const [open, setOpen] = useState(false)
 	const [mobileExpanded, setMobileExpanded] = useState(!collapsibleOnMobile)
@@ -631,6 +642,9 @@ export default function HeroQuickConfigurator({
 			? 'grid grid-cols-2 gap-x-2 gap-y-2'
 			: 'grid grid-cols-2 gap-x-2 gap-y-2 md:gap-2'
 	const configuratorTitle = title ?? (isCategory ? 'Быстрый подбор' : 'Быстрый выбор')
+	const availablePlacements = isCategory ? placementOptions.filter(option => models.some(model => model.id === option.modelId)) : []
+	// Место подсвечено, пока выбрана предложенная для него модель; ручная смена модели снимает подсветку.
+	const activePlacement = availablePlacements.find(option => option.id === placementId && option.modelId === selectedModelId)
 
 	return (
 		<div
@@ -674,6 +688,32 @@ export default function HeroQuickConfigurator({
 
 			{showConfiguratorBody && (
 				<>
+					{availablePlacements.length > 0 && (
+						<div class='mb-2.5'>
+							<div class={fieldLabelClass()} id='hero_placement_label'>Где будет стоять</div>
+							<div class='mt-1 grid grid-cols-3 gap-1.5' role='group' aria-labelledby='hero_placement_label'>
+								{availablePlacements.map(option => {
+									const active = activePlacement?.id === option.id
+									return (
+										<button
+											type='button'
+											aria-pressed={active}
+											class={`min-h-9 rounded-lg border px-1.5 py-1.5 text-center text-xs font-normal leading-4 transition ${
+												active ? 'border-red-500 bg-red-50 text-red-700' : 'border-neutral-200 bg-neutral-50 text-neutral-900 hover:border-neutral-300'
+											}`}
+											onClick={() => {
+												setPlacementId(option.id)
+												setSelectedModelId(option.modelId)
+												setOpen(false)
+											}}
+										>
+											{option.label}
+										</button>
+									)
+								})}
+							</div>
+						</div>
+					)}
 					<div
 						class='mt-0'
 						ref={comboboxRef}

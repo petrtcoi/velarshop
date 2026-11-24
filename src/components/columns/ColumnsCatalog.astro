@@ -1,7 +1,8 @@
 ---
 import Picture from '@shared/components/Picture.astro';
 import ColumnsFilters from './ColumnsFilters'
-import type { ColumnsModelCard } from './columnsData'
+import ColumnsCollectionLinks from './ColumnsCollectionLinks.astro'
+import { columnsCenterDistances, type ColumnsModelCard } from './columnsData'
 import { columnsSectionSubtitleClass, columnsSectionTitleClass } from './columnsTypography'
 
 type Props = {
@@ -34,10 +35,11 @@ function depthByTubes(tubes: number): number {
 			</p>
 		</div>
 
-		<ColumnsFilters client:load />
+		<ColumnsFilters client:load spacings={columnsCenterDistances} />
 
 		<p class='mt-4 rounded-xl border border-neutral-200 bg-white px-4 py-3 text-[13px] leading-[1.6] text-neutral-600 md:text-sm'>
 			<span class='font-medium text-neutral-900'>Подсказка:</span> 300 мм - под низкое окно. 576 мм - замена стандартной батареи. 1500-2000 мм - высокий радиатор на узкую стену. 2 трубки - меньше глубина. 3-5 трубок - больше мощность.
+			<span class='mt-1 block'>Как читать код модели: первая цифра - число трубок, остальные - примерная высота в сантиметрах. Например, 3057 - 3 трубки, высота 576 мм.</span>
 		</p>
 
 		<div aria-label='Список моделей трубчатых радиаторов Velar' class='mt-4 overflow-hidden rounded-2xl border border-neutral-200 bg-white'>
@@ -59,6 +61,7 @@ function depthByTubes(tubes: number): number {
 						data-columns-card='1'
 						data-model-id={model.id}
 						data-height={String(model.height)}
+						data-spacing={String(model.centerDistance)}
 						data-tubes={String(model.tubeCount)}
 						data-purpose={model.purposeTags.join(',')}
 						data-price={String(model.minPrice)}
@@ -85,7 +88,7 @@ function depthByTubes(tubes: number): number {
 									<span class='shrink-0 text-sm font-semibold text-neutral-950'>от {model.minPrice.toLocaleString('ru-RU')} ₽</span>
 								</div>
 								<p class='mt-1 text-xs leading-5 text-neutral-600'>
-									{model.tubeCount} труб · {model.height} мм · {depthByTubes(model.tubeCount)} мм · нижнее/боковое
+									{model.tubeCount} труб · {model.height} мм · {depthByTubes(model.tubeCount)} мм · м/о {model.centerDistance} мм · нижнее/боковое
 								</p>
 								<a href={model.href} class='mt-1 inline-flex text-xs font-medium text-red-700 hover:underline'>Подробнее →</a>
 							</div>
@@ -108,7 +111,7 @@ function depthByTubes(tubes: number): number {
 									<a href={model.href} class='text-sm font-semibold text-neutral-950 hover:text-red-700 hover:underline'>
 										Velar {model.name}
 									</a>
-									<p class='mt-0.5 truncate text-xs text-neutral-500'>{model.height <= 700 ? 'низкая модель под окно' : 'высокая или универсальная модель'}</p>
+									<p class='mt-0.5 truncate text-xs text-neutral-500'>{model.height <= 700 ? 'низкая модель под окно' : 'высокая или универсальная модель'} · м/о {model.centerDistance} мм</p>
 								</div>
 							</div>
 							<div class='text-sm text-neutral-800'>{model.tubeCount}</div>
@@ -134,5 +137,7 @@ function depthByTubes(tubes: number): number {
 				Показать ещё
 			</button>
 		</div>
+
+		<ColumnsCollectionLinks />
 	</div>
 </section>

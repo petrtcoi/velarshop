@@ -5,6 +5,8 @@ import { filterRadiators } from "./utils/filterRadiators";
 import { getModelFilters } from "./utils/getModelFilters";
 
 import { radiatorsJsonData } from "@entities/Radiator";
+import { modelsJsonData } from "@entities/Model";
+import { getModelSlug } from "@shared/utils/getModelSlug";
 
 import { ALL } from "./constants/filterAll";
 import type { ModelJson } from "@entities/Model";
@@ -35,6 +37,31 @@ const interAxes = [
 const { filterByHeight, filterByWidth, filterByLength } =
   getModelFilters(model);
 
+// Трубчатые: модель той же высоты с числом трубок на одну больше (3057 -> 4057) для подсказки «Сколько секций нужно».
+const moreTubesModelSource =
+  model.type === "columns" && /^\d/.test(model.id)
+    ? modelsJsonData.find(
+        (item) =>
+          item.type === "columns" &&
+          item.id === `${Number.parseInt(model.id[0], 10) + 1}${model.id.slice(1)}`
+      )
+    : undefined;
+const moreTubesMaxPower = moreTubesModelSource
+  ? Math.max(
+      0,
+      ...radiatorsJsonData
+        .filter((r) => r.model_id === moreTubesModelSource.id)
+        .map((r) => Number.parseFloat(r.dt60 || "0") || 0)
+    )
+  : 0;
+const moreTubesModel = moreTubesModelSource
+  ? {
+      name: moreTubesModelSource.name,
+      href: getModelSlug(moreTubesModelSource),
+      maxPowerDt60: moreTubesMaxPower,
+    }
+  : null;
+
 const initialFilteredRadiators = filterRadiators({
   radiators,
   selectedHeight: ALL,
@@ -56,5 +83,5 @@ const initialFilteredRadiators = filterRadiators({
   widths={widths}
   lengths={lengths}
   interAxes={interAxes}
-  
+  moreTubesModel={moreTubesModel}
 />

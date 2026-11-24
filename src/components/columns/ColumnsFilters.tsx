@@ -3,6 +3,12 @@ import { useEffect, useState } from 'preact/hooks'
 type FilterState = {
 	height: string
 	tubes: string
+	spacing: string
+}
+
+type Props = {
+	/** Межосевые расстояния, которые есть в данных моделей, мм. */
+	spacings?: number[]
 }
 
 type FilterStats = {
@@ -15,7 +21,10 @@ const PAGE_SIZE = 20
 const initialState: FilterState = {
 	height: 'all',
 	tubes: 'all',
+	spacing: 'all',
 }
+
+const spacingHowToHref = '/collections/radiatory-po-mezhosevomu-rasstoyaniyu'
 
 const heightOptions = [
 	{ value: 'all', label: 'Любая' },
@@ -67,7 +76,8 @@ function applyFilters(state: FilterState, visibleLimit: number): FilterStats {
 
 		const matchHeight = matchesHeight(height, state.height)
 		const matchTubes = state.tubes === 'all' || tubes === state.tubes
-		const show = matchHeight && matchTubes
+		const matchSpacing = state.spacing === 'all' || (card.dataset.spacing || '') === state.spacing
+		const show = matchHeight && matchTubes && matchSpacing
 
 		if (show) {
 			matchedCards.push(card)
@@ -92,13 +102,14 @@ function filterButtonClass(active: boolean): string {
 		: 'inline-flex h-8 !cursor-pointer items-center justify-center whitespace-nowrap rounded-full border border-neutral-200 bg-white px-3.5 text-xs font-medium text-neutral-800 transition-colors hover:cursor-pointer hover:border-neutral-300 hover:bg-neutral-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300 focus-visible:ring-offset-2'
 }
 
-export default function ColumnsFilters() {
+export default function ColumnsFilters({ spacings = [] }: Props) {
 	const [filters, setFilters] = useState<FilterState>(initialState)
 	const [visibleCount, setVisibleCount] = useState(0)
 	const [visibleLimit, setVisibleLimit] = useState(PAGE_SIZE)
 	const [wasChanged, setWasChanged] = useState(false)
 
-	const hasActiveFilters = filters.height !== 'all' || filters.tubes !== 'all'
+	const hasActiveFilters = filters.height !== 'all' || filters.tubes !== 'all' || filters.spacing !== 'all'
+	const spacingOptions = [{ value: 'all', label: 'Любое' }, ...spacings.map(value => ({ value: String(value), label: String(value) }))]
 
 	useEffect(() => {
 		const stats = applyFilters(filters, visibleLimit)
@@ -162,8 +173,8 @@ export default function ColumnsFilters() {
 				return
 			}
 			if (!detail.field || !detail.value) return
-			if (detail.field !== 'height' && detail.field !== 'tubes') return
-			setFilters(prev => ({ ...prev, [detail.field as 'height' | 'tubes']: detail.value as string }))
+			if (detail.field !== 'height' && detail.field !== 'tubes' && detail.field !== 'spacing') return
+			setFilters(prev => ({ ...prev, [detail.field as 'height' | 'tubes' | 'spacing']: detail.value as string }))
 		}
 
 		window.addEventListener('columns:setFilter', onSetFilter)
@@ -244,6 +255,36 @@ export default function ColumnsFilters() {
 								))}
 							</div>
 						</div>
+
+						{spacingOptions.length > 1 ? (
+							<div class='grid gap-2 md:grid-cols-[140px_1fr] md:items-start'>
+								<div class='text-xs font-medium uppercase tracking-wide text-neutral-500 md:pt-2'>Межосевое, мм</div>
+								<div>
+									{/* 18 values do not fit as buttons on a phone, so a select is used */}
+									<select
+										aria-label='Межосевое расстояние, мм'
+										value={filters.spacing}
+										class='h-9 w-full max-w-[220px] cursor-pointer rounded-full border border-neutral-200 bg-white px-4 text-sm font-normal text-neutral-800 transition-colors hover:border-neutral-300 focus:border-neutral-400 focus:outline-none'
+										onChange={event => {
+											const value = (event.currentTarget as HTMLSelectElement).value
+											setWasChanged(true)
+											setVisibleLimit(PAGE_SIZE)
+											setFilters(prev => ({ ...prev, spacing: value }))
+										}}
+									>
+										{spacingOptions.map(option => (
+											<option value={option.value}>{option.value === 'all' ? option.label : `${option.label} мм`}</option>
+										))}
+									</select>
+									<a
+										href={spacingHowToHref}
+										class='mt-2 inline-flex text-xs font-normal text-red-700 underline decoration-red-300 underline-offset-2 transition hover:decoration-transparent'
+									>
+										Как измерить межосевое
+									</a>
+								</div>
+							</div>
+						) : null}
 					</div>
 
 					{hasActiveFilters ? (

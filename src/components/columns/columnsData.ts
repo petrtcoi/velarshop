@@ -12,6 +12,7 @@ export type ColumnsModelCard = {
 	image: string
 	minPrice: number
 	height: number
+	centerDistance: number
 	tubeCount: number
 	powerSection: number
 	sectionsMin: number
@@ -67,6 +68,10 @@ const columnsModels = getColumnsModelsSource().map(model => {
 	const heights = radiators.map(r => toNum(r.height)).filter(v => v > 0)
 	const height = heights.length ? heights[0] : 0
 
+	// Межосевое расстояние (n_spacing) одинаково для всех секций модели.
+	const spacings = radiators.map(r => toNum(r.n_spacing)).filter(v => v > 0)
+	const centerDistance = spacings.length ? spacings[0] : 0
+
 	const sectionsValues = radiators
 		.map(r => toNum(r.sections))
 		.filter(v => Number.isFinite(v) && v > 0)
@@ -98,6 +103,7 @@ const columnsModels = getColumnsModelsSource().map(model => {
 		image,
 		minPrice,
 		height,
+		centerDistance,
 		tubeCount: Number.isFinite(tubeCount) ? tubeCount : 0,
 		powerSection,
 		sectionsMin,
@@ -105,6 +111,8 @@ const columnsModels = getColumnsModelsSource().map(model => {
 		purposeTags: getPurposeTags(height),
 	} satisfies ColumnsModelCard
 })
+
+const columnsCenterDistances = [...new Set(columnsModels.map(model => model.centerDistance).filter(v => v > 0))].sort((a, b) => a - b)
 
 const popularIds = new Set(['3030', '3057', '2180', '3180'])
 
@@ -387,6 +395,7 @@ const columnsHowToSteps = [
 ]
 
 export {
+	columnsCenterDistances,
 	columnsFaqItems,
 	columnsHowToSteps,
 	columnsModels,
